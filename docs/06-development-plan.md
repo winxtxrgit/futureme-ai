@@ -1,6 +1,6 @@
 # 06 · Development Plan
 
-[← Architecture](05-system-architecture.md) · [Back to README](../README.md) · [Next: Roadmap →](07-roadmap.md)
+[← Architecture](05-system-architecture.md) · [Back to README](../READMEEN.md) · [Next: Roadmap →](07-roadmap.md)
 
 ---
 
@@ -129,4 +129,4 @@ polish is what makes the product attractive; those four are what make it defensi
 
 ---
 
-[← Architecture](05-system-architecture.md) · [Back to README](../README.md) · [Next: Roadmap →](07-roadmap.md)
+[← Architecture](05-system-architecture.md) · [Back to README](../READMEEN.md) · [Next: Roadmap →](07-roadmap.md)

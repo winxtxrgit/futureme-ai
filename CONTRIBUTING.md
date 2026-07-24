@@ -1,6 +1,6 @@
 # Contributing
 
-[← Back to README](README.md)
+[← Back to README](READMEEN.md)
 
 Thanks for looking. This is a student hackathon project for JUMP Thailand Hackathon 2026, and
 outside input genuinely improves it.
@@ -47,4 +47,4 @@ Small fixes — typos, broken links, wrong figures — need no prior issue. Just
 
 ---
 
-[← Back to README](README.md)
+[← Back to README](READMEEN.md)

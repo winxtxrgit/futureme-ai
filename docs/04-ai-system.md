@@ -1,6 +1,6 @@
 # 04 · AI System
 
-[← User Experience](03-user-experience.md) · [Back to README](../README.md) · [Next: Architecture →](05-system-architecture.md)
+[← User Experience](03-user-experience.md) · [Back to README](../READMEEN.md) · [Next: Architecture →](05-system-architecture.md)
 
 ---
 
@@ -199,4 +199,4 @@ Each is tracked in [07 · Roadmap](07-roadmap.md).
 
 ---
 
-[← User Experience](03-user-experience.md) · [Back to README](../README.md) · [Next: Architecture →](05-system-architecture.md)
+[← User Experience](03-user-experience.md) · [Back to README](../READMEEN.md) · [Next: Architecture →](05-system-architecture.md)

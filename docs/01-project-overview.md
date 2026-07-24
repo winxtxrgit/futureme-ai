@@ -1,6 +1,6 @@
 # 01 · Project Overview
 
-[← Back to README](../README.md) · [Next: Research →](02-research-and-evidence.md)
+[← Back to README](../READMEEN.md) · [Next: Research →](02-research-and-evidence.md)
 
 ---
 
@@ -120,4 +120,4 @@ See [07 · Roadmap](07-roadmap.md) for how each of these is meant to be closed.
 
 ---
 
-[← Back to README](../README.md) · [Next: Research →](02-research-and-evidence.md)
+[← Back to README](../READMEEN.md) · [Next: Research →](02-research-and-evidence.md)

@@ -1,6 +1,6 @@
 # 05 · System Architecture
 
-[← AI System](04-ai-system.md) · [Back to README](../README.md) · [Next: Development Plan →](06-development-plan.md)
+[← AI System](04-ai-system.md) · [Back to README](../READMEEN.md) · [Next: Development Plan →](06-development-plan.md)
 
 ---
 
@@ -176,4 +176,4 @@ be presented as nothing more.
 
 ---
 
-[← AI System](04-ai-system.md) · [Back to README](../README.md) · [Next: Development Plan →](06-development-plan.md)
+[← AI System](04-ai-system.md) · [Back to README](../READMEEN.md) · [Next: Development Plan →](06-development-plan.md)
