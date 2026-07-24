@@ -1,0 +1,86 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="FutureMe AI — career and study guidance for Thai students that shows its reasoning">
+  <defs>
+    <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#6D5EF6"/>
+      <stop offset="48%" stop-color="#C13BF0"/>
+      <stop offset="100%" stop-color="#FF6B6B"/>
+    </linearGradient>
+    <radialGradient id="glowIndigo" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6D5EF6" stop-opacity="0.55"/>
+      <stop offset="100%" stop-color="#6D5EF6" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowMagenta" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#C13BF0" stop-opacity="0.40"/>
+      <stop offset="100%" stop-color="#C13BF0" stop-opacity="0"/>
+    </radialGradient>
+    <radialGradient id="glowMint" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4FE3C1" stop-opacity="0.30"/>
+      <stop offset="100%" stop-color="#4FE3C1" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6D5EF6"/>
+      <stop offset="60%" stop-color="#C13BF0"/>
+      <stop offset="100%" stop-color="#FF6B6B"/>
+    </linearGradient>
+    <clipPath id="card">
+      <rect x="0" y="0" width="1280" height="400" rx="28"/>
+    </clipPath>
+  </defs>
+
+  <g clip-path="url(#card)">
+    <rect x="0" y="0" width="1280" height="400" fill="#0B0B14"/>
+    <ellipse cx="180" cy="60" rx="420" ry="300" fill="url(#glowIndigo)"/>
+    <ellipse cx="700" cy="420" rx="480" ry="300" fill="url(#glowMagenta)"/>
+    <ellipse cx="1150" cy="140" rx="360" ry="260" fill="url(#glowMint)"/>
+
+    <!-- brand mark -->
+    <g transform="translate(72,58)">
+      <rect x="0" y="0" width="44" height="44" rx="14" fill="url(#markGrad)"/>
+      <circle cx="22" cy="22" r="12.5" fill="#0B0B14"/>
+      <circle cx="22" cy="22" r="5" fill="#4FE3C1"/>
+      <text x="60" y="20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F5F5FA" letter-spacing="0.4">FutureMe AI</text>
+      <text x="60" y="38" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#A0A0B8" letter-spacing="1.6">AURORA DIRECTION</text>
+    </g>
+
+    <!-- eyebrow -->
+    <g transform="translate(72,140)">
+      <rect x="0" y="0" width="432" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.14"/>
+      <circle cx="18" cy="15" r="4" fill="#4FE3C1"/>
+      <text x="32" y="19.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#D8D4E5" letter-spacing="1.15">JUMP THAILAND HACKATHON 2026 · AIS ACADEMY × NIA</text>
+    </g>
+
+    <!-- headline -->
+    <text x="72" y="235" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="52" font-weight="700" fill="#F5F5FA" letter-spacing="-1">A next step students can</text>
+    <text x="72" y="292" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="52" font-weight="700" fill="url(#aurora)" letter-spacing="-1">actually explain.</text>
+
+    <text x="72" y="335" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" fill="#A0A0B8">Socratic interview · evidence missions · three explainable routes · a 30-day plan</text>
+
+    <!-- route motif -->
+    <g transform="translate(872,60)" fill="none" stroke-linecap="round">
+      <path d="M40 140 C 110 140, 120 46, 190 46 L 300 46" stroke="#6D5EF6" stroke-opacity="0.55" stroke-width="2.5"/>
+      <path d="M40 140 L 300 140" stroke="#4FE3C1" stroke-opacity="0.95" stroke-width="3"/>
+      <path d="M40 140 C 110 140, 120 234, 190 234 L 300 234" stroke="#FF6B6B" stroke-opacity="0.55" stroke-width="2.5"/>
+
+      <circle cx="40" cy="140" r="15" fill="#0B0B14" stroke="#F5F5FA" stroke-opacity="0.85" stroke-width="2.5"/>
+      <circle cx="40" cy="140" r="5.5" fill="#F5F5FA" stroke="none"/>
+
+      <g stroke="none">
+        <circle cx="190" cy="46" r="8" fill="#0B0B14" stroke="#6D5EF6" stroke-width="2.5"/>
+        <circle cx="300" cy="46" r="8" fill="#6D5EF6" fill-opacity="0.85"/>
+        <circle cx="190" cy="140" r="9" fill="#0B0B14" stroke="#4FE3C1" stroke-width="3"/>
+        <circle cx="300" cy="140" r="9" fill="#4FE3C1"/>
+        <circle cx="190" cy="234" r="8" fill="#0B0B14" stroke="#FF6B6B" stroke-width="2.5"/>
+        <circle cx="300" cy="234" r="8" fill="#FF6B6B" fill-opacity="0.85"/>
+      </g>
+
+      <g font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11" font-weight="700" letter-spacing="1.1" stroke="none">
+        <text x="-16" y="176" fill="#A0A0B8">NOW</text>
+        <text x="176" y="24" fill="#8E86C9">INTEREST GROWTH</text>
+        <text x="176" y="118" fill="#4FE3C1">BALANCED NEXT STEP</text>
+        <text x="176" y="212" fill="#D89090">PRACTICAL ACCESS</text>
+      </g>
+    </g>
+
+    <rect x="0" y="396" width="1280" height="4" fill="url(#aurora)"/>
+  </g>
+</svg>
