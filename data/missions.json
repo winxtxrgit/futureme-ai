@@ -1,0 +1,72 @@
+{
+  "meta": {
+    "notice": "Missions produce behavioural evidence that is scored deterministically by rules in lib/decision-engine/scoring.ts. No trained model evaluates these responses, and the rubric has not been validated."
+  },
+  "missions": [
+    {
+      "id": "mission-school-problem",
+      "title": "Fix something that annoys people at your school",
+      "minutes": 12,
+      "objective": "Pick one real, small problem at your school and describe how you would actually attack it. There is no correct answer — the point is what your choices reveal about how you like to work.",
+      "prompt": "Think of something at your school that wastes people's time or makes them frustrated. A sign-up sheet nobody can read. A queue that is always chaotic. Equipment that keeps breaking.",
+      "steps": [
+        {
+          "id": "problem",
+          "type": "text",
+          "required": true,
+          "minLength": 20,
+          "label": "What is the problem, and who does it affect?",
+          "placeholder": "Describe the problem in a sentence or two, and say who it affects."
+        },
+        {
+          "id": "approach",
+          "type": "multi",
+          "required": true,
+          "minSelected": 2,
+          "maxSelected": 4,
+          "label": "How would you start? Choose the 2–4 steps you would genuinely do first.",
+          "help": "Choose what you would really do, not what sounds best.",
+          "options": [
+            { "value": "observe", "label": "Watch it happen a few times and take notes", "evidence": { "I": 2, "C": 1 } },
+            { "value": "interview", "label": "Ask the people affected what actually bothers them", "evidence": { "S": 2, "I": 1 } },
+            { "value": "measure", "label": "Count or measure something to see how bad it is", "evidence": { "I": 2, "C": 2 } },
+            { "value": "prototype", "label": "Sketch or mock up a better version", "evidence": { "A": 2, "R": 1 } },
+            { "value": "build", "label": "Build or physically rearrange the thing itself", "evidence": { "R": 3 } },
+            { "value": "organise", "label": "Write a clear procedure or schedule people can follow", "evidence": { "C": 3 } },
+            { "value": "pitch", "label": "Convince a teacher or committee to back the change", "evidence": { "E": 3 } },
+            { "value": "recruit", "label": "Get a group of friends together to help run it", "evidence": { "E": 2, "S": 2 } }
+          ]
+        },
+        {
+          "id": "evidence",
+          "type": "text",
+          "required": true,
+          "minLength": 20,
+          "label": "How would you know whether it actually worked?",
+          "placeholder": "What would you look at, count, or ask to tell whether the problem got better?"
+        },
+        {
+          "id": "energy",
+          "type": "single",
+          "required": true,
+          "label": "Which part of that would you most look forward to?",
+          "options": [
+            { "value": "figuring", "label": "Working out what is really going on", "evidence": { "I": 3 } },
+            { "value": "making", "label": "Making or building the fix", "evidence": { "R": 2, "A": 2 } },
+            { "value": "people", "label": "Talking to the people involved", "evidence": { "S": 3 } },
+            { "value": "leading", "label": "Getting it approved and rolled out", "evidence": { "E": 3 } },
+            { "value": "ordering", "label": "Making it tidy, documented and repeatable", "evidence": { "C": 3 } }
+          ]
+        }
+      ],
+      "textEvidenceKeywords": {
+        "R": ["build", "built", "fix", "fixed", "repair", "machine", "wire", "tool", "assemble", "hardware"],
+        "I": ["why", "data", "measure", "test", "analyse", "analyze", "research", "experiment", "cause", "pattern"],
+        "A": ["design", "draw", "poster", "video", "write", "creative", "layout", "colour", "color", "story"],
+        "S": ["help", "helped", "teach", "taught", "explain", "friend", "classmate", "together", "support", "listen"],
+        "E": ["organise", "organize", "lead", "led", "start", "started", "convince", "pitch", "sell", "team"],
+        "C": ["schedule", "spreadsheet", "record", "list", "sort", "track", "budget", "accurate", "system", "order"]
+      }
+    }
+  ]
+}
