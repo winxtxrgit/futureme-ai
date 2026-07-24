@@ -82,11 +82,11 @@ access to implement and test.
 ## Immediate next steps
 
 ```mermaid
-flowchart LR
-    A["1 · Confirm ม.3 and ม.5<br/>as first segments"] --> B["2 · Interview students,<br/>parents, counsellors"]
-    B --> C["3 · Validate RIASEC<br/>and mission rubrics"]
-    C --> D["4 · Build one<br/>end-to-end demo"]
-    D --> E["5 · Safety, consent<br/>and evaluation rules"]
+flowchart TB
+    A["1 · Confirm ม.3 and ม.5 as the first research segments"] --> B["2 · Interview students, parents and counsellors"]
+    B --> C["3 · Validate the RIASEC instrument and mission rubrics"]
+    C --> D["4 · Build one complete end-to-end demo"]
+    D --> E["5 · Safety, consent and evaluation rules"]
     E --> F["6 · School pilot"]
 ```
 

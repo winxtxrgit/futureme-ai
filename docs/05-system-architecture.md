@@ -71,12 +71,12 @@ Recommendations become a **Directed Acyclic Graph**, then a topological sort ord
 that nothing appears before its prerequisites.
 
 ```mermaid
-flowchart LR
-    N1["Current state<br/>ป.6 / ม.3 / ม.5"] --> N2["Skills<br/>+ free courses"]
-    N2 --> N3["Academic track<br/>ม.4 or ปวช./DVE"]
-    N3 --> N4["Target faculty<br/>TCAS · TGAT/TPAT/A-Level"]
-    N4 --> N5["Portfolio<br/>projects · activities"]
-    N5 --> N6["Career entry<br/>entry-level → senior"]
+flowchart TB
+    N1["Current state — ป.6 / ม.3 / ม.5"] --> N2["Skill milestones — hard and soft, plus free courses"]
+    N2 --> N3["Academic track — ม.4 plan, or ปวช. / DVE"]
+    N3 --> N4["Target faculty — TCAS criteria, TGAT / TPAT / A-Level"]
+    N4 --> N5["Portfolio and experience — projects, activities, internships"]
+    N5 --> N6["Career entry — entry-level role, then progression"]
 ```
 
 The DAG is built, prerequisite edges are added, an acyclic check runs, the sort produces a

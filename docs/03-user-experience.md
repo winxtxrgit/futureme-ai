@@ -74,22 +74,19 @@ language and discards its social mechanics:
 journey
     title Student journey — first session, about 20 minutes
     section Arrive
-      Land on the page: 4: Student
-      Start as guest, no signup: 5: Student
+      Start as guest: 5: Student
     section Reflect
-      Socratic interview, 5-10 min: 4: Student
-      Answer with real past examples: 3: Student
+      Socratic interview: 4: Student
+      Recall real examples: 3: Student
     section Try
-      Scenario mission, 3-5 min: 5: Student
-      Get evidence-based feedback: 5: Student
+      Scenario mission: 5: Student
     section Compare
-      Read three routes with reasons: 5: Student
-      Check what is still unknown: 4: Student
+      Read three routes: 5: Student
+      Check unknowns: 4: Student
     section Plan
-      Open the interactive roadmap: 5: Student
-      Accept a 30-day plan: 4: Student
+      Accept 30-day plan: 4: Student
     section Share
-      Choose to share with a counsellor: 3: Student
+      Share with counsellor: 3: Student
 ```
 
 **Guest-first is deliberate.** A student can complete the entire interview and mission without

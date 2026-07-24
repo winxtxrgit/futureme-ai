@@ -81,14 +81,33 @@ chat transcript**.
 
 ```mermaid
 flowchart LR
-    A["Student"] --> B["Phase 1<br/>Socratic interview<br/>5–10 min"]
-    B --> C["RIASEC profile<br/>+ STAR evidence"]
-    C --> D["Phase 2<br/>Scenario mission<br/>3–5 min"]
-    D --> E["Rule-based<br/>decision engine"]
-    E --> F["Qdrant hybrid<br/>retrieval"]
-    F --> G["LLM writes the<br/>explanation"]
-    G --> H["Three routes<br/>with evidence"]
-    H --> I["Interactive roadmap<br/>+ 30-day plan"]
+    A(["Student"]) --> B
+
+    subgraph EV ["1 · Evidence — two independent streams"]
+        direction TB
+        B["Phase 1 · Socratic interview<br/>5–10 min → RIASEC + STAR"]
+        C["Phase 2 · Scenario mission<br/>3–5 min → behavioural evidence"]
+        B --> C
+    end
+
+    C --> D
+
+    subgraph EN ["2 · Engine — deterministic, no LLM"]
+        direction TB
+        D["Rule-based filter<br/>+ 5-weight decision matrix"]
+        E["Qdrant hybrid retrieval<br/>dense + sparse, RRF fused"]
+        D --> E
+    end
+
+    E --> F["3 · LLM writes<br/>the explanation"]
+    F --> G
+
+    subgraph OUT ["4 · Output"]
+        direction TB
+        G["Three routes,<br/>each with its evidence"]
+        H["Interactive roadmap<br/>+ 30-day plan"]
+        G --> H
+    end
 ```
 
 Two independent evidence streams feed one deterministic engine. The model never picks the
