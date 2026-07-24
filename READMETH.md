@@ -1,7 +1,7 @@
 <a id="top"></a>
 
 <p align="center">
-  <img src="assets/banner/banner.svg" alt="FutureMe AI — ก้าวต่อไปที่นักเรียนอธิบายได้จริง" width="100%">
+  <img src="assets/banner/banner-th.svg" alt="FutureMe AI — ก้าวต่อไปที่นักเรียนอธิบายได้จริง" width="100%">
 </p>
 
 <p align="center">
@@ -226,7 +226,7 @@ flowchart LR
 
 ## ระบบ AI
 
-![น้ำหนักของตารางการตัดสินใจ](assets/diagrams/decision-matrix.svg)
+![น้ำหนักของตารางการตัดสินใจ](assets/diagrams/decision-matrix-th.svg)
 
 5 เกณฑ์ แต่ละเกณฑ์ให้คะแนน 0–100 แล้วรวมเป็นคะแนนถ่วงน้ำหนักเดียว
 **ความเป็นไปได้จริงอยู่อันดับสองที่ 25%** — เพราะคำแนะนำที่นักเรียนจ่ายไม่ไหว เดินทางไปไม่ถึง
@@ -629,9 +629,9 @@ futureme-ai/
 ├── CONTRIBUTING.md
 ├── .gitignore
 ├── assets/
-│   ├── banner/banner.svg            แบนเนอร์ที่ออกแบบเอง
-│   ├── diagrams/                    decision-matrix.svg
-│   └── screenshots/                 Mockup Aurora 6 ภาพ
+│   ├── banner/                      banner.svg · banner-th.svg
+│   ├── diagrams/                    decision-matrix.svg · decision-matrix-th.svg
+│   └── screenshots/                 Mockup Aurora 6 ภาพ ใช้ร่วมกันทั้งสองภาษา
 ├── docs/
 │   ├── 01-project-overview.md
 │   ├── 02-research-and-evidence.md

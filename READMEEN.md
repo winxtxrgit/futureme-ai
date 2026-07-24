@@ -601,9 +601,9 @@ futureme-ai/
 ├── CONTRIBUTING.md
 ├── .gitignore
 ├── assets/
-│   ├── banner/banner.svg            custom hero banner
-│   ├── diagrams/                    decision-matrix.svg
-│   └── screenshots/                 six Aurora mockups
+│   ├── banner/                      banner.svg · banner-th.svg
+│   ├── diagrams/                    decision-matrix.svg · decision-matrix-th.svg
+│   └── screenshots/                 six Aurora mockups, shared by both languages
 ├── docs/
 │   ├── 01-project-overview.md
 │   ├── 02-research-and-evidence.md
