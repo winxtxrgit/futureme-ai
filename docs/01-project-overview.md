@@ -25,8 +25,13 @@ Thai students choose a study track years before anyone helps them understand wha
 leads to — and the cost of that gap shows up after graduation.
 
 Per TDRI's 2025 analysis, **56% of Thai higher-education graduates work outside their field of
-study** and **27% work below their qualification level**. Globally, OECD places field mismatch at
-roughly 35–40%, with a 15–20% wage penalty attached to it.
+study** and **27% work below their qualification level**. *(Both figures are reported by TDRI; this
+project has not re-traced them to a citable page — see the reference table.)*
+
+Internationally the picture is more specific than "mismatch is bad". OECD analysis finds that
+field-of-study mismatch **on its own** carries little or no wage penalty in most countries. The
+penalty — around 25% lower hourly earnings — appears when field mismatch is combined with
+**overqualification**, which affects roughly 40% of field-mismatched workers.
 
 The full evidence base, with sources and the claims we deliberately excluded, is in
 [02 · Research and Evidence](02-research-and-evidence.md).

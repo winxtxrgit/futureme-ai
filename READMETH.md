@@ -9,10 +9,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-hackathon_prototype-6D5EF6?style=flat-square" alt="สถานะ: ต้นแบบสำหรับแฮกกาธอน">
-  <img src="https://img.shields.io/badge/JUMP_Thailand-2026-4FE3C1?style=flat-square" alt="JUMP Thailand Hackathon 2026">
-  <img src="https://img.shields.io/badge/FastAPI-Next.js-14141F?style=flat-square" alt="FastAPI และ Next.js">
-  <img src="https://img.shields.io/badge/RAG-Qdrant_+_BGE--M3-14141F?style=flat-square" alt="RAG: Qdrant และ BGE-M3">
+  <img src="https://img.shields.io/badge/status-functional_prototype-6D5EF6?style=flat-square" alt="สถานะ: ต้นแบบที่ใช้งานได้">
+  <img src="https://img.shields.io/badge/demo-runnable_end--to--end-4FE3C1?style=flat-square" alt="เดโมใช้งานได้ครบวงจร">
+  <img src="https://img.shields.io/badge/Next.js_15-TypeScript-14141F?style=flat-square" alt="Next.js 15 และ TypeScript">
+  <img src="https://img.shields.io/badge/tests-64_unit_+_9_e2e-14141F?style=flat-square" alt="เทสต์ 64 รายการ และ end-to-end 9 รายการ">
   <img src="https://img.shields.io/badge/license-MIT-A0A0B8?style=flat-square" alt="สัญญาอนุญาต MIT">
 </p>
 
@@ -24,9 +24,52 @@
 
 ---
 
+> ### สถานะปัจจุบัน
+>
+> **ต้นแบบที่ใช้งานได้จริง พร้อมเดโมที่เดินได้ครบวงจร** ผลลัพธ์คำแนะนำมีไว้เพื่อการสำรวจทางเลือกเท่านั้น
+> และ**ยังไม่ผ่าน**การตรวจสอบความถูกต้องทางคลินิก ทางการศึกษา หรือทางสถิติ
+> แบบประเมินเป็นฉบับย่อและไม่ใช่แบบทดสอบ RIASEC ที่ผ่านการตรวจสอบ
+> ข้อมูลเส้นทางเป็นข้อมูลตัวอย่างสำหรับเดโม ยังไม่ได้ตรวจสอบกับแหล่งข้อมูลทางการล่าสุด
+> และยังไม่เคยทดลองใช้กับนักเรียนจริง
+
+```bash
+git clone https://github.com/winxtxrgit/futureme-ai.git
+cd futureme-ai
+npm install
+npm run dev            # http://localhost:3000 — ไม่ต้องใช้ API key
+```
+
+จากนั้น: **เริ่มแบบ Guest → บทสนทนา → ภารกิจ → เส้นทาง → เปรียบเทียบ → แผน 30 วัน**
+
+---
+
+<a id="what-you-can-verify-today"></a>
+
+## สิ่งที่ตรวจสอบได้จริงวันนี้
+
+ทุกข้อด้านล่างมีโค้ดในคลังนี้รองรับ ไม่ใช่เป็นเพียงภาพ Mockup
+
+| คุณทำได้ | อยู่ที่ |
+|---|---|
+| เริ่มเซสชันแบบ Guest โดยไม่ต้องมีบัญชี และกู้คืนได้หลังรีเฟรช | `lib/session/` |
+| ทำบทสนทนาฉบับย่อ พร้อมแถบความคืบหน้า การตรวจสอบข้อมูล และแก้คำตอบได้ | `app/interview/` |
+| ส่งภารกิจเชิงพฤติกรรม 1 ภารกิจ และกลับมาแก้ไขได้ | `app/mission/` |
+| ได้รับเส้นทางที่อธิบายได้ **1–3 เส้นทาง** หรือไม่ได้เลยเมื่อหลักฐานไม่พอ | `lib/decision-engine/` |
+| อ่านเหตุผลที่แต่ละเส้นทางปรากฏ หลักฐาน ข้อจำกัด และคำถามที่ยังไม่มีคำตอบ | `app/routes/` |
+| เปรียบเทียบทุกเส้นทางด้วยเกณฑ์เดียวกัน | `app/compare/` |
+| สร้างแผน 30 วันพร้อมเช็กอินที่ไม่หายหลังรีเฟรช | `lib/plan/`, `app/plan/` |
+| เห็นระบบปฏิเสธที่จะตอบ แทนที่จะเดา | `npm test` → *evidence gates* |
+| ยืนยันว่าแอปทำงานได้โดย**ไม่มี** LLM API key | `app/api/explain/` |
+| ลบข้อมูลทั้งหมดของคุณ และตรวจสอบว่าหายจริง | `app/privacy/` |
+| รันเทสต์ 64 รายการ และเทสต์บนเบราว์เซอร์ 9 รายการ | `npm test`, `npm run test:e2e` |
+
+<sub><a href="#top">↑ กลับขึ้นด้านบน</a></sub>
+
+---
+
 <table>
 <tr>
-<td align="center" width="33%"><a href="#overview"><b>ภาพรวม</b></a><br><sub>ปัญหา แนวทางแก้<br>และกลุ่มผู้ใช้งาน</sub></td>
+<td align="center" width="33%"><a href="#what-you-can-verify-today"><b>ตรวจสอบได้</b></a><br><sub>สิ่งที่ทำงานได้จริง<br>มีโค้ดรองรับ</sub></td>
 <td align="center" width="33%"><a href="#research-foundation"><b>งานวิจัย</b></a><br><sub>ฐานข้อมูล 7 หมวด แหล่งอ้างอิง<br>และข้อมูลที่เราตัดออก</sub></td>
 <td align="center" width="33%"><a href="#key-features"><b>ผลิตภัณฑ์</b></a><br><sub>6 ความสามารถหลัก<br>พร้อมสถานะจริง</sub></td>
 </tr>
@@ -36,9 +79,9 @@
 <td align="center"><a href="#system-architecture"><b>สถาปัตยกรรม</b></a><br><sub>ภาพรวมการทำงาน เทคโนโลยี<br>และความเป็นส่วนตัว</sub></td>
 </tr>
 <tr>
-<td align="center"><a href="#local-development"><b>การพัฒนา</b></a><br><sub>การติดตั้ง API<br>และโครงสร้างโปรเจกต์</sub></td>
+<td align="center"><a href="#local-development"><b>การพัฒนา</b></a><br><sub>รัน ทดสอบ<br>และอ่านเอนจิน</sub></td>
 <td align="center"><a href="#documentation"><b>เอกสารประกอบ</b></a><br><sub>เอกสารเชิงลึก<br>7 ฉบับ</sub></td>
-<td align="center"><a href="#project-status"><b>แผนการพัฒนา</b></a><br><sub>อะไรทำได้ อะไรยังไม่ได้<br>และก้าวต่อไป</sub></td>
+<td align="center"><a href="#current-limitations"><b>ข้อจำกัด</b></a><br><sub>สิ่งที่ยังไม่ผ่านการตรวจสอบ<br>ระบุอย่างตรงไปตรงมา</sub></td>
 </tr>
 </table>
 
@@ -169,52 +212,65 @@ flowchart LR
 
 ## ตัวอย่างหน้าจอ
 
-ทิศทางการออกแบบ **Aurora** ซึ่งคัดเลือกมาจาก 11 คอนเซปต์
-ภาพเหล่านี้เป็น Mockup ความละเอียดสูง ไม่ใช่ภาพหน้าจอจากระบบที่รันจริง
+### หน้าจอต้นแบบที่สร้างเสร็จแล้ว
+
+ถ่ายจากแอปที่รันอยู่จริงด้วย Playwright ไม่ใช่ภาพ Mockup
 
 <table>
 <tr>
-<td width="50%"><a href="assets/screenshots/01-landing-desktop.png"><img src="assets/screenshots/01-landing-desktop.png" alt="หน้าแรก"></a><br><b>หน้าแรก</b><br><sub>“อนาคตไม่ได้มีคำตอบเดียว” เริ่มใช้งานแบบ Guest ได้ทันที ไม่ต้องสมัครสมาชิกก็ทำครบทั้งกระบวนการ</sub></td>
-<td width="50%"><a href="assets/screenshots/02-socratic-interview.png"><img src="assets/screenshots/02-socratic-interview.png" alt="บทสนทนาเชิงโสเครติส"></a><br><b>บทสนทนาเชิงโสเครติส</b><br><sub>บทสนทนาที่ปรับตามคำตอบ แสดงความคืบหน้าชัดเจน และข้ามคำถามได้</sub></td>
+<td width="50%"><a href="assets/screenshots/app/landing-desktop.png"><img src="assets/screenshots/app/landing-desktop.png" alt="หน้าแรกของต้นแบบที่รันจริง"></a><br><b>หน้าแรก</b> · <sub>สร้างแล้ว</sub><br><sub>เริ่มแบบ Guest ได้ทันที ไม่ต้องมีบัญชีก็ทำได้ครบทั้งกระบวนการ</sub></td>
+<td width="50%"><a href="assets/screenshots/app/interview-desktop.png"><img src="assets/screenshots/app/interview-desktop.png" alt="หน้าบทสนทนาของต้นแบบที่รันจริง"></a><br><b>บทสนทนา</b> · <sub>สร้างแล้ว</sub><br><sub>มีแถบความคืบหน้า แก้คำตอบได้ ตรวจสอบข้อมูล และแสดงป้าย “แบบประเมินฉบับย่อสำหรับต้นแบบ” ชัดเจน</sub></td>
 </tr>
 <tr>
-<td width="50%"><a href="assets/screenshots/03-three-routes.png"><img src="assets/screenshots/03-three-routes.png" alt="การเปรียบเทียบ 3 เส้นทาง"></a><br><b>3 เส้นทาง</b><br><sub>แต่ละการ์ดบอก: ทำไมจึงเสนอทางนี้ จำนวนหลักฐาน สิ่งที่ยังไม่รู้ และก้าวแรกที่ย้อนกลับได้</sub></td>
-<td width="50%"><a href="assets/screenshots/04-counselor-dashboard.png"><img src="assets/screenshots/04-counselor-dashboard.png" alt="แดชบอร์ดครูแนะแนว"></a><br><b>แดชบอร์ดครูแนะแนว</b><br><sub>ภาพรวมของทั้งชั้นเรียนและคำถามแนะนำสำหรับการโค้ช — ไม่มีบทสนทนาส่วนตัวรายบุคคล</sub></td>
+<td width="50%"><a href="assets/screenshots/app/routes-desktop.png"><img src="assets/screenshots/app/routes-desktop.png" alt="ผลลัพธ์ 3 เส้นทางในต้นแบบที่รันจริง"></a><br><b>3 เส้นทาง</b> · <sub>สร้างแล้ว</sub><br><sub>น้ำหนักภาพเท่ากัน ปุ่มเหมือนกัน ไม่มีผู้ชนะ ระดับหลักฐานสื่อด้วยรูปทรงและคำ ไม่ใช้สีเพียงอย่างเดียว ในภาพนี้ระบบตรวจพบว่าบทสนทนาและภารกิจให้ผลขัดแย้งกัน</sub></td>
+<td width="50%"><a href="assets/screenshots/app/compare-desktop.png"><img src="assets/screenshots/app/compare-desktop.png" alt="ตารางเปรียบเทียบเส้นทางในต้นแบบที่รันจริง"></a><br><b>การเปรียบเทียบ</b> · <sub>สร้างแล้ว</sub><br><sub>ใช้เกณฑ์เดียวกันกับทุกเส้นทาง แสดงคะแนนเป็นช่วงกว้าง เพราะการบอกเปอร์เซ็นต์ละเอียดจะสื่อความแม่นยำที่ระบบไม่มีจริง</sub></td>
+</tr>
+<tr>
+<td width="50%"><a href="assets/screenshots/app/plan-desktop.png"><img src="assets/screenshots/app/plan-desktop.png" alt="แผน 30 วันในต้นแบบที่รันจริง"></a><br><b>แผน 30 วัน</b> · <sub>สร้างแล้ว</sub><br><sub>เป้าหมายรายสัปดาห์ เช็กอินที่บันทึกไว้ และงานเพิ่มเติมที่ระบบใส่ให้ตามช่องว่างที่ตรวจพบ</sub></td>
+<td width="50%"><a href="assets/screenshots/app/insufficient-desktop.png"><img src="assets/screenshots/app/insufficient-desktop.png" alt="สถานะไม่มีเส้นทางในต้นแบบที่รันจริง"></a><br><b>สถานะไม่มีเส้นทาง</b> · <sub>สร้างแล้ว</sub><br><sub>เมื่อหลักฐานไม่เพียงพอ ระบบจะไม่เสนอเส้นทางใดเลยและบอกตรง ๆ แทนที่จะเติมให้ครบ 3 ทาง</sub></td>
 </tr>
 </table>
 
 <details>
-<summary><b>มุมมองบนมือถือและระบบการออกแบบ</b></summary>
+<summary><b>หน้าจอบนมือถือ ความปลอดภัย และความเป็นส่วนตัว</b></summary>
 
 <br>
 
 <table>
 <tr>
-<td width="30%"><img src="assets/screenshots/06-landing-mobile.png" alt="หน้าแรกบนมือถือ"></td>
-<td width="30%"><img src="assets/screenshots/05-roadmap-mobile.png" alt="Roadmap บนมือถือ"></td>
-<td width="40%" valign="top">
-
-**Aurora Tokens**
-
-| | โหมดมืด | โหมดสว่าง |
-|---|---|---|
-| พื้นหลัง | `#0B0B14` | `#F7F6FB` |
-| Indigo | `#6D5EF6` | `#5142D6` |
-| Mint | `#4FE3C1` | `#087F69` |
-
-ไล่เฉดสี `#6D5EF6 → #C13BF0 → #FF6B6B` ใช้กับพื้นที่แสงและคำสำคัญในหัวเรื่องได้ไม่เกิน 1 คำ
-ห้ามใช้กับย่อหน้า สถานะจะไม่สื่อด้วยสีเพียงอย่างเดียว ตัวอักษรเนื้อหาขนาดไม่ต่ำกว่า 16px
-ออกแบบโดยยึดภาษาไทยเป็นหลัก และผ่านมาตรฐาน WCAG AA ทั้งสองโหมด
-
-</td>
+<td width="33%"><a href="assets/screenshots/app/interview-mobile.png"><img src="assets/screenshots/app/interview-mobile.png" alt="บทสนทนาบนมือถือ"></a><br><sub><b>บทสนทนา</b> · มือถือ</sub></td>
+<td width="33%"><a href="assets/screenshots/app/routes-mobile.png"><img src="assets/screenshots/app/routes-mobile.png" alt="เส้นทางบนมือถือ"></a><br><sub><b>เส้นทาง</b> · มือถือ การ์ดเรียงต่อกัน</sub></td>
+<td width="33%"><a href="assets/screenshots/app/plan-mobile.png"><img src="assets/screenshots/app/plan-mobile.png" alt="แผนบนมือถือ"></a><br><sub><b>แผน 30 วัน</b> · มือถือ</sub></td>
+</tr>
+<tr>
+<td><a href="assets/screenshots/app/safety-desktop.png"><img src="assets/screenshots/app/safety-desktop.png" alt="หน้าจอหยุดพักเพื่อความปลอดภัย"></a><br><sub><b>หยุดพักเพื่อความปลอดภัย</b> — ระบบหยุดให้คำแนะนำ และเสนอช่องทางขอความช่วยเหลือ</sub></td>
+<td><a href="assets/screenshots/app/privacy-mobile.png"><img src="assets/screenshots/app/privacy-mobile.png" alt="หน้าความเป็นส่วนตัวบนมือถือ"></a><br><sub><b>ความเป็นส่วนตัว</b> — เก็บอะไรบ้าง พร้อมปุ่มลบ</sub></td>
+<td><a href="assets/screenshots/app/compare-mobile.png"><img src="assets/screenshots/app/compare-mobile.png" alt="การเปรียบเทียบบนมือถือ"></a><br><sub><b>การเปรียบเทียบ</b> · มือถือ เลื่อนตารางแนวนอน</sub></td>
 </tr>
 </table>
 
-**สิ่งที่ตัดออกอย่างตั้งใจ:** ไม่มีปุ่มไลก์ ไม่มีลีดเดอร์บอร์ด ไม่มีการจัดอันดับ ไม่มีการเปรียบเทียบระหว่างเพื่อน
-คอนเซปต์ที่ได้คะแนนสูงสุดด้าน Gen-Z ให้ความรู้สึกเหมือนโซเชียลแอป
-ซึ่งผิดทางอย่างยิ่งสำหรับผลิตภัณฑ์ที่ต้องรับมือกับความไม่มั่นใจในตัวเองของวัยรุ่น
+</details>
 
-→ ระบบการออกแบบฉบับเต็มใน [03 · ประสบการณ์ใช้งาน](docs/03-user-experience.md)
+<details>
+<summary><b>งานออกแบบเชิงคอนเซปต์ — ยังไม่ได้สร้าง</b></summary>
+
+<br>
+
+ทิศทางการออกแบบ **Aurora** ที่คัดเลือกจาก 11 คอนเซปต์ ภาพเหล่านี้เป็น Mockup ความละเอียดสูง
+ของผลิตภัณฑ์ฉบับสมบูรณ์ตามที่ตั้งใจไว้ และมีหน้าจอที่ยังไม่มีอยู่ในโค้ด
+
+<table>
+<tr>
+<td width="50%"><a href="assets/screenshots/01-landing-desktop.png"><img src="assets/screenshots/01-landing-desktop.png" alt="คอนเซปต์หน้าแรก"></a><br><b>หน้าแรก</b> · <sub>คอนเซปต์</sub></td>
+<td width="50%"><a href="assets/screenshots/02-socratic-interview.png"><img src="assets/screenshots/02-socratic-interview.png" alt="คอนเซปต์บทสนทนาเชิงโสเครติส"></a><br><b>บทสนทนาเชิงโสเครติส</b> · <sub>คอนเซปต์</sub></td>
+</tr>
+<tr>
+<td width="50%"><a href="assets/screenshots/03-three-routes.png"><img src="assets/screenshots/03-three-routes.png" alt="คอนเซปต์ 3 เส้นทาง"></a><br><b>3 เส้นทาง</b> · <sub>คอนเซปต์</sub><br><sub>สังเกตว่า Mockup นี้ใส่ปุ่มทึบให้การ์ดเดียว ซึ่งสื่อว่ามีผู้ชนะ หน้าจอที่สร้างจริงได้แก้จุดนี้แล้ว</sub></td>
+<td width="50%"><a href="assets/screenshots/04-student-dashboard.png"><img src="assets/screenshots/04-student-dashboard.png" alt="คอนเซปต์หน้าจอส่วนตัวของนักเรียน"></a><br><b>หน้าจอส่วนตัวของนักเรียน</b> · <sub>คอนเซปต์</sub><br><sub>พื้นที่ส่วนตัวของนักเรียนเอง <b>ไม่ใช่</b>หน้าจอครูแนะแนว ซึ่งยังไม่ได้ออกแบบและยังไม่ได้สร้าง</sub></td>
+</tr>
+</table>
+
+→ ระบบการออกแบบฉบับเต็มใน [03 · User Experience](docs/03-user-experience.md)
 
 </details>
 
@@ -343,7 +399,7 @@ flowchart TD
 
 ผู้ใช้งานเป็นผู้เยาว์ ความเป็นส่วนตัวจึงเป็นข้อกำหนดเชิงสถาปัตยกรรม ไม่ใช่หน้านโยบาย
 
-- **บทสนทนาไม่ออกจากตัวนักเรียน** ผู้ปกครองและครูแนะแนวเห็นเฉพาะข้อมูลสรุปที่ประมวลแล้ว ไม่มีทางลัดข้ามข้อกำหนดนี้
+- **บทสนทนาจะไม่ถูกแชร์ให้ผู้ปกครองหรือครูแนะแนว** ทั้งสองฝ่ายเห็นเฉพาะข้อมูลสรุปที่ประมวลแล้ว และไม่มีทางลัดข้ามข้อกำหนดนี้ ทั้งนี้เป็นการรับประกันเรื่อง*สิทธิ์การเข้าถึง* ว่าใครมีสิทธิ์อ่านข้อมูล **ไม่ใช่**ข้ออ้างที่แรงกว่าว่าข้อมูลไม่เคยออกจากเครื่องเลย สำหรับโหมด Guest ในต้นแบบที่สร้างแล้ว ข้ออ้างที่แรงกว่านั้นก็เป็นจริงด้วย เพราะไม่มีการส่งข้อมูลออกไปไหนทั้งสิ้น ดู [08 · Privacy](docs/08-privacy-and-data.md)
 - **ความยินยอมแยกตามผู้รับแต่ละราย** มองเห็นได้บนหน้าจอ และเพิกถอนได้
 - **สิทธิ์ผู้ปกครองต้องผ่านการยืนยันความสัมพันธ์** ส่วนครูแนะแนวต้องมีนักเรียนอยู่ในความดูแล
 - **โหมด Guest** ใช้งานได้ครบทั้งกระบวนการโดยไม่ต้องมีบัญชีและไม่มีการเก็บอัตลักษณ์
@@ -428,7 +484,7 @@ flowchart TD
 <td width="50%" valign="top">
 
 **01 · สถิติการทำงานไม่ตรงสาย**
-<sub>TDRI 2025: 56% ทำงานไม่ตรงสาย 27% ทำงานต่ำกว่าคุณวุฒิ · OECD: ทั่วโลก 35–40% และรายได้ต่ำกว่า 15–20% · WEF 2025: 39% ของชุดทักษะจะเปลี่ยนภายในปี 2030</sub>
+<sub>TDRI 2025: 56% ทำงานไม่ตรงสาย 27% ทำงานต่ำกว่าคุณวุฒิ <i>(เป็นตัวเลขที่รายงานไว้ ยังไม่ได้ย้อนกลับไปหาหน้าอ้างอิงที่แน่ชัด)</i> · OECD: การทำงานไม่ตรงสายเพียงอย่างเดียวแทบไม่มีผลต่อรายได้ แต่รายได้จะต่ำกว่าราว 25% เมื่อ<b>ไม่ตรงสายร่วมกับ</b>การทำงานต่ำกว่าคุณวุฒิ · WEF 2025: 39% ของชุดทักษะจะเปลี่ยนภายในปี 2030</sub>
 
 **02 · หลักสูตรการศึกษาไทย**
 <sub>แผนการเรียน ม.4 จำนวน 5 แผน · 12 กลุ่มสาขา ปวช. 2567 · โครงสร้าง TCAS ปัญหาไม่ได้อยู่ที่ทางเลือกมีน้อย แต่อยู่ที่ไม่มีใครอธิบายว่าแต่ละทางพาไปไหน</sub>
@@ -479,10 +535,14 @@ Schema พร้อม RAG Pipeline และชุดตรวจสอบค�
 | เอนจินตัดสินใจ — RIASEC, STAR, Matrix, Routing | 🟢 เสร็จสมบูรณ์ | 100% | ปรับค่าตามผลลัพธ์จริง |
 | Schema และสัญญา API | 🟢 เสร็จสมบูรณ์ | 100% | — |
 | ระบบการออกแบบและ Mockup Aurora | 🟢 เสร็จสมบูรณ์ | 100% | หน้าจอที่เหลือ |
-| FastAPI Endpoints | 🟡 กำลังพัฒนา | ~70% | ชั้นจัดเก็บข้อมูล — ปัจจุบันเก็บในหน่วยความจำ |
-| RAG Pipeline — Qdrant + BGE-M3 | 🟡 กำลังพัฒนา | ~65% | นำเข้าคลังข้อมูลเต็มรูปแบบ และใช้ Embedding จริง |
-| Frontend Next.js | 🟡 กำลังพัฒนา | ~35% | สร้างจาก Mockup Aurora |
-| หน้าจอ Roadmap แบบโต้ตอบ | 🟠 อยู่ในแผน | ~20% | ออกแบบ DAG แล้ว ยังไม่ได้สร้างตัวแสดงผล |
+| **เดโมครบวงจร** — Guest → บทสนทนา → ภารกิจ → เส้นทาง → เปรียบเทียบ → แผน | 🟢 สร้างแล้ว | 100% | — |
+| **เอนจินแบบตายตัวใน TypeScript** รองรับผล 0–3 เส้นทาง | 🟢 สร้างแล้ว | 100% | ค่าน้ำหนักยังไม่ได้ปรับตามผลลัพธ์จริง |
+| **เซสชัน Guest และการกู้คืนหลังรีเฟรช** | 🟢 สร้างแล้ว | 100% | — |
+| **ชุดเทสต์** — 64 unit/integration และ 9 end-to-end | 🟢 สร้างแล้ว | 100% | — |
+| **กฎความปลอดภัยระดับต้นแบบ** | 🟢 สร้างแล้ว | 100% | ระดับคำสำคัญเท่านั้น ยังไม่ผ่านการตรวจสอบ |
+| บัญชีผู้ใช้ การแชร์ และการเก็บข้อมูลบนเซิร์ฟเวอร์ | 🟠 อยู่ในแผน | 0% | ยังไม่เริ่ม มีเฉพาะโหมด Guest |
+| RAG Pipeline — Qdrant + BGE-M3 | 🟠 อยู่ในแผน | ~10% | ต้นแบบใช้คลังข้อมูล JSON ตั้งต้น |
+| หน้าจอ Roadmap แบบ DAG โต้ตอบได้ | 🟠 อยู่ในแผน | ~20% | ปัจจุบันแผนเป็นเทมเพลต 4 สัปดาห์แบบเส้นตรง |
 | การเชื่อมต่อ AIS Open API | 🟠 อยู่ในแผน | ~15% | ต้องใช้สิทธิ์นักพัฒนา |
 | แดชบอร์ดครูแนะแนว | 🟠 อยู่ในแผน | ~15% | ออกแบบแล้ว ยังไม่ได้สร้าง |
 | การ Fine-tune ด้วย QLoRA | 🔴 ติดปัญหา | ~10% | ชุดข้อมูลใช้งานไม่ได้ |
@@ -553,6 +613,7 @@ flowchart LR
 | [05 · System Architecture](docs/05-system-architecture.md) | ภาพรวมการทำงาน เทคโนโลยี Roadmap แบบ DAG ความเป็นส่วนตัว การติดตั้ง และ API |
 | [06 · Development Plan](docs/06-development-plan.md) | หมุดหมาย สถานะองค์ประกอบ อุปสรรค ก้าวต่อไป และทีมงาน |
 | [07 · Roadmap](docs/07-roadmap.md) | 5 เฟส ข้อกำหนดการตรวจสอบ และเงื่อนไขการหยุดโครงการ |
+| [08 · Privacy and Data Flow](docs/08-privacy-and-data.md) | เก็บข้อมูลอะไร ไปที่ไหน อะไรเปลี่ยนไป และอะไรที่ยังไม่ได้สร้าง |
 
 <sub><a href="#top">↑ กลับขึ้นด้านบน</a></sub>
 
@@ -562,56 +623,90 @@ flowchart LR
 
 ## การติดตั้งและพัฒนา
 
-> **หมายเหตุ** คลังนี้เป็นเอกสารประกอบและหน้าแสดงผลงานออกแบบของโปรเจกต์
-> ส่วนซอร์สโค้ดของแอปพลิเคชันอยู่ใน Workspace ของทีมและกำลังเตรียมเผยแพร่ —
-> คำสั่งด้านล่างอธิบายการติดตั้งชุดนั้น
+ทุกคำสั่งด้านล่างถูกรันในคลังนี้แล้ว เดโมพื้นฐาน**ไม่ต้องใช้ตัวแปรสภาพแวดล้อมและไม่ต้องใช้ API key**
 
 ```bash
 git clone https://github.com/winxtxrgit/futureme-ai.git
 cd futureme-ai
+npm install
+npm run dev
+```
+
+เปิด <http://localhost:3000> แล้วกด **Start as guest**
+
+| คำสั่ง | ทำอะไร | ผลที่ตรวจสอบแล้ว |
+|---|---|---|
+| `npm install` | ติดตั้ง dependency (ใช้ npm มี lockfile ในคลัง) | ✅ |
+| `npm run dev` | เซิร์ฟเวอร์สำหรับพัฒนาที่พอร์ต 3000 | ✅ |
+| `npm run build` | Build สำหรับ production | ✅ คอมไพล์ 9 เส้นทาง |
+| `npm run start` | รันไฟล์ที่ build แล้ว | ✅ |
+| `npm run typecheck` | `tsc --noEmit` โหมด strict | ✅ 0 ข้อผิดพลาด |
+| `npm run lint` | ESLint ผ่าน `next lint` | ✅ 0 คำเตือน |
+| `npm test` | Vitest unit + integration | ✅ ผ่าน 64 รายการ |
+| `npm run test:e2e:install` | ทำครั้งเดียว: ดาวน์โหลดเบราว์เซอร์ที่ Playwright ใช้ | — |
+| `npm run test:e2e` | Playwright end-to-end บนไฟล์ production | ✅ ผ่าน 9 รายการ |
+
+หากการดาวน์โหลดเบราว์เซอร์ของ Playwright ถูกบล็อกในเครื่องคุณ ให้ใช้ Google Chrome ที่ติดตั้งอยู่แล้วแทน
+โดยเทสต์ชุดเดียวกัน:
+
+```bash
+PW_CHANNEL=chrome npm run test:e2e
 ```
 
 <details>
-<summary><b>การติดตั้ง Backend — FastAPI</b></summary>
+<summary><b>ทางเลือก: ชั้นคำอธิบายด้วย AI</b></summary>
 
 <br>
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-
-uvicorn app.main:app --reload --port 8000
-```
-
-เอกสาร API แบบโต้ตอบอยู่ที่ `http://localhost:8000/docs`
-
-**บริการเสริม**
+แอปทำงานได้ครบถ้วนโดยไม่ต้องมีส่วนนี้ หน้าที่ของมันคือเรียบเรียงคำอธิบายให้อ่านนุ่มขึ้นเท่านั้น
+และไม่มีสิทธิ์เปลี่ยนว่าเส้นทางใดถูกเลือก
 
 ```bash
-docker run -p 6333:6333 qdrant/qdrant                     # vector database
-docker run -p 5432:5432 -e POSTGRES_PASSWORD=dev postgres # relational database
+cp .env.example .env.local
+# แล้วกำหนดค่า ANTHROPIC_API_KEY ใน .env.local
 ```
 
-หากไม่มี Qdrant ระบบ RAG จะถอยไปใช้ Embedding แบบแฮชที่ให้ผลตายตัว
-ซึ่งทำให้ Pipeline ยังรันได้ แต่ผลลัพธ์ที่ได้**ไม่มีความหมาย**
+เมื่อไม่มี key `/api/explain` จะคืนค่า `{ "source": "fallback" }` และใช้ข้อความจากเทมเพลตแบบตายตัว
+กรณี timeout ผู้ให้บริการขัดข้อง หรือรูปแบบคำตอบผิดเพี้ยน ก็ให้ผลเช่นเดียวกัน —
+ทุกกรณีคืนค่า HTTP 200 เพื่อให้แอปไม่พัง ทั้งสองเส้นทางมีเทสต์ end-to-end ครอบคลุม
 
 </details>
 
 <details>
-<summary><b>รายการ API</b></summary>
+<summary><b>เอนจินแนะนำเส้นทางทำงานอย่างไร</b></summary>
 
 <br>
 
-| Method | Endpoint | หน้าที่ |
-|---|---|---|
-| `POST` | `/v1/missions/recommend` | ระดับชั้นและความสนใจ → ภารกิจสำรวจที่แนะนำ |
-| `POST` | `/v1/missions/{id}/submissions` | คำตอบของภารกิจ → ผลประเมินและคำถามถัดไปที่ปรับตามคำตอบ |
-| `POST` | `/v1/future-paths` | โปรไฟล์นักเรียนฉบับเต็ม → 3 เส้นทางพร้อมรายละเอียดคะแนน |
-| `GET` | `/v1/future-paths/{id}` | เรียกดูผลประเมินและรายละเอียดเส้นทางที่บันทึกไว้ |
+เป็น TypeScript แบบให้ผลตายตัวใน `lib/decision-engine/` ทำงานในเบราว์เซอร์
+คำตอบเดิมให้เส้นทางเดิมเสมอ และตัวเลขทุกตัวย้อนกลับไปหาบรรทัดโค้ดได้
 
-ข้อมูลรับส่งทั้งหมดตรวจสอบด้วย Pydantic ปัจจุบันการจัดเก็บ Future Path ยังอยู่**ในหน่วยความจำ**
-ซึ่งเป็นข้อจำกัดของต้นแบบ ไม่ใช่การออกแบบที่ตั้งใจ
+```text
+lib/decision-engine/
+├── types.ts          มิติ รหัสเหตุผล และรูปแบบผลลัพธ์
+├── scoring.ts        Likert → RIASEC, หลักฐานจากภารกิจ, ค่าน้ำหนัก 5 เกณฑ์
+├── eligibility.ts    เงื่อนไขบังคับ: ระดับชั้น ค่าใช้จ่าย พื้นที่ ความเก่าของข้อมูล
+├── explanations.ts   ข้อความเหตุผลและป้ายระดับหลักฐานแบบตายตัว
+└── index.ts          recommend() — ด่านตรวจ การให้คะแนน การทำเครื่องหมายคะแนนเสมอ
+```
+
+**ลำดับการทำงาน**
+
+1. **ปรับมาตรฐาน** — Likert 1–5 → 0..1 ต่อมิติ RIASEC ข้อที่ไม่ตอบจะถูก*ตัดออก* ไม่ใช่คิดเป็นศูนย์
+2. **หลักฐานจากภารกิจ** — แม็ปตัวเลือกสู่มิติ บวกการตรวจจับคำสำคัญ แล้วปรับเป็นเวกเตอร์ที่สองที่เป็นอิสระ
+3. **ด่าน 1** — ตอบน้อยกว่า 8 ข้อ → ไม่คืนเส้นทางใดเลย
+4. **ด่าน 2** — โปรไฟล์ราบเกินกว่าจะแยกความต่างได้ → ไม่คืนเส้นทางใดเลย
+5. **คุณสมบัติ** — ตัวกรองบังคับให้รหัสเหตุผลที่บล็อก ส่วนคำตอบ “ยังไม่รู้” ไม่บล็อก แต่ขึ้นเป็นข้อสังเกต
+6. **ให้คะแนน** — 5 เกณฑ์ถ่วงน้ำหนัก: ความสนใจ 30% ความเป็นไปได้จริง 25% จุดแข็ง 20% รูปแบบการเรียนรู้ 15% ความยืดหยุ่น 10%
+7. **ระดับหลักฐาน** — แข็งแรง / ปานกลาง / จำกัด / ต้องสำรวจเพิ่ม โดยดูจาก*ปริมาณสิ่งที่รู้* ไม่ใช่คะแนนที่สูง และจะไม่เป็น “แข็งแรง” เลยหากยังไม่ทำภารกิจ
+8. **ด่าน 3** — ถ้าทุกเส้นทางที่เหลือมีหลักฐานไม่เพียงพอ → ไม่คืนเส้นทางใดเลย
+9. **คะแนนเสมอ** — ผลต่างไม่เกิน 4 คะแนน ถือว่าเสมอกันและแสดงอย่างเท่าเทียม
+
+**การตัดสินใจเชิงออกแบบที่ควรรู้**
+
+- คืนผล **0 ถึง 3** เส้นทาง ไม่มีการเติมให้ครบ 3
+- ความเป็นไปได้จริงถ่วงน้ำหนักเป็นอันดับสอง เพราะเส้นทางที่จ่ายไม่ไหวหรือไปไม่ถึงไม่นับเป็นคำแนะนำ
+- ความขัดแย้งระหว่างบทสนทนากับภารกิจจะถูกแสดงให้นักเรียนเห็น ไม่ถูกเฉลี่ยกลบ
+- ค่าน้ำหนักมาจากดุลยพินิจการออกแบบ **ไม่ได้**ปรับตามข้อมูลผลลัพธ์จริง เพราะยังไม่มีข้อมูลนั้น
 
 </details>
 
@@ -625,26 +720,55 @@ futureme-ai/
 ├── README.md                        หน้าเลือกภาษา
 ├── READMEEN.md                      English
 ├── READMETH.md                      ภาษาไทย — เอกสารฉบับนี้
-├── LICENSE                          MIT
-├── CONTRIBUTING.md
-├── .gitignore
+├── package.json · package-lock.json
+├── .env.example                     ทุกค่าเป็นทางเลือก
+├── app/                             Next.js App Router
+│   ├── page.tsx                     หน้าแรก
+│   ├── interview/ mission/ routes/ compare/ plan/ privacy/
+│   └── api/explain/                 ชั้น LLM แบบทางเลือก
+├── components/                      Shell, Button, Card, EvidenceBadge, SafetyPause
+├── lib/
+│   ├── decision-engine/             กฎการแนะนำเส้นทาง
+│   ├── plan/                        ตัวสร้างแผน 30 วัน
+│   ├── safety/                      กฎความปลอดภัยระดับต้นแบบ
+│   └── session/                     เซสชัน Guest และการตรวจสอบ
+├── data/                            questions · missions · routes (ข้อมูลตั้งต้น)
+├── tests/                           unit + integration (vitest)
+├── e2e/                             end-to-end (playwright)
 ├── assets/
-│   ├── banner/                      banner.svg · banner-th.svg
-│   ├── diagrams/                    decision-matrix.svg · decision-matrix-th.svg
-│   └── screenshots/                 Mockup Aurora 6 ภาพ ใช้ร่วมกันทั้งสองภาษา
-├── docs/
-│   ├── 01-project-overview.md
-│   ├── 02-research-and-evidence.md
-│   ├── 03-user-experience.md
-│   ├── 04-ai-system.md
-│   ├── 05-system-architecture.md
-│   ├── 06-development-plan.md
-│   └── 07-roadmap.md
+│   ├── banner/ diagrams/
+│   └── screenshots/
+│       ├── app/                     ถ่ายจากแอปที่รันจริง
+│       └── *.png                    Mockup คอนเซปต์ Aurora
+├── docs/                            01–08
 └── source-materials/
-    └── README.md                    สิ่งที่ไม่ได้เผยแพร่ และเหตุผล
 ```
 
 </details>
+
+<sub><a href="#top">↑ กลับขึ้นด้านบน</a></sub>
+
+---
+
+<a id="current-limitations"></a>
+
+## ข้อจำกัดในปัจจุบัน
+
+ระบุอย่างตรงไปตรงมา เพราะเดโมที่ใช้งานได้สามารถกลบสิ่งเหล่านี้ไว้ได้ทั้งหมด
+
+| ข้อจำกัด | รายละเอียด |
+|---|---|
+| **แบบประเมินยังไม่ผ่านการตรวจสอบเชิงจิตมิติ** | มี 12 ข้อ สร้างบนโครงของแบบจำลอง RIASEC ของ Holland ในแอปมีป้ายกำกับว่า “Demo assessment — shortened for prototype evaluation” และไม่ใช่แบบทดสอบ RIASEC |
+| **ข้อมูลเส้นทางเป็นเพียงตัวอย่าง** | มี 6 เส้นทางสำหรับเดโม เกณฑ์รับเข้า ค่าใช้จ่าย และชื่อสถาบัน **ยังไม่ได้**ตรวจสอบกับแหล่งข้อมูลทางการล่าสุด แอปแสดงวันที่รวบรวมข้อมูลและเตือนเมื่อข้อมูลเก่าเกินไป |
+| **ข้อมูลเส้นทางล้าสมัยได้** | เกณฑ์ TCAS และหลักสูตรเปลี่ยนทุกปี แต่ยังไม่มีกระบวนการอัปเดต |
+| **เอนจินใช้กฎระดับต้นแบบ** | ค่าน้ำหนัก 5 เกณฑ์มาจากดุลยพินิจการออกแบบ ไม่ได้ปรับตามผลลัพธ์จริงของนักเรียน เพราะยังไม่มีข้อมูลนั้น |
+| **ยังไม่เคยทดลองใช้จริง** | ทุกข้อความที่พูดถึงประสิทธิผลเป็นเป้าหมายการออกแบบ ไม่ใช่ผลที่วัดได้ |
+| **ไม่ใช่สิ่งที่มาแทนครูแนะแนว** | เป็นเครื่องมือสนับสนุนการตัดสินใจเพื่อสำรวจทางเลือก ไม่พยากรณ์การสอบติด การได้งาน หรือรายได้ |
+| **ระบบดูแลความปลอดภัยมีน้อยมาก** | เป็นกฎคำสำคัญที่ทำงานในเบราว์เซอร์ ไม่ใช่การประเมินความเสี่ยง จะพลาดบางกรณีและจะเตือนผิดพลาดได้ และไม่มีการแจ้งเตือนใครทั้งสิ้น |
+| **ชั้น LLM อาจไม่พร้อมใช้งาน** | ตามการออกแบบ มันปิดอยู่หากไม่ได้ตั้ง key และทุกเส้นทางความผิดพลาดจะถอยไปใช้ข้อความแบบตายตัว |
+| **ไม่มีบัญชี การแชร์ หรือการเก็บข้อมูลบนเซิร์ฟเวอร์** | มีเฉพาะโหมด Guest หน้าจอผู้ปกครองและครูแนะแนวออกแบบไว้แล้วแต่ยังไม่ได้สร้าง |
+| **ข้ออ้างงานวิจัยบางส่วนยังย้อนแหล่งไม่ครบ** | ตัวเลข TDRI ของไทยที่ใช้ในการนำเสนอมากที่สุด ยังไม่มีการบันทึกเลขหน้าและ URL ดู [ตารางแหล่งอ้างอิง](docs/02-research-and-evidence.md#reference-table) |
+| **ยังไม่มีการตรวจสอบอคติ** | ยังไม่ทราบว่าเอนจินชี้นำนักเรียนอย่างเป็นระบบตามเพศ ภูมิภาค หรือขนาดโรงเรียนหรือไม่ |
 
 <sub><a href="#top">↑ กลับขึ้นด้านบน</a></sub>
 

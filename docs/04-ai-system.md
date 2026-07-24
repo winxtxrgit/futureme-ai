@@ -4,6 +4,11 @@
 
 ---
 
+> **Implementation note.** The engine described here is implemented in this repository as
+> deterministic TypeScript under `lib/decision-engine/` and is covered by the tests in `tests/`.
+> The Python/FastAPI module paths referenced below describe the team's separate backend workspace
+> and the planned production service — they are not files in this repository.
+
 ## The governing principle: do not let the LLM decide
 
 This came directly from advisor review and it shapes everything below. The system is split so
@@ -69,12 +74,12 @@ An adaptive conversation, 5–10 minutes, tone and vocabulary adjusted per educa
 
 **RIASEC scoring.** A 30-item instrument, 5 items per dimension, 1–5 Likert. Produces raw
 scores, normalised scores, a three-letter Holland code (e.g. `RIA`) and a percentage breakdown.
-→ `app/decision_engine/riasec.py`
+→ Implemented: `lib/decision-engine/scoring.ts` · planned service: `app/decision_engine/riasec.py`
 
 **STAR extraction.** 5–8 qualitative questions evaluated for Situation → Task → Action → Result
 structure. Answers grounded in something the student actually did score higher than opinions;
 Socratic follow-ups probe where the structure is incomplete. Yields strengths and
-learning-style signals. → `app/decision_engine/star_eval.py`
+learning-style signals. → Implemented: `lib/decision-engine/scoring.ts` · planned service: `app/decision_engine/star_eval.py`
 
 Laddering pushes from stated behaviour toward underlying values; Motivational Interviewing keeps
 the tone non-judgemental so the student is not defending a position.
@@ -125,7 +130,7 @@ keeps the output honest about constraints that guidance advice usually ignores.
 > These weights are **set by design judgement, not fitted to outcome data.** No student outcome
 > data exists yet. Calibrating them against real results is a roadmap item.
 
-→ `app/decision_engine/matrix.py`
+→ Implemented: `lib/decision-engine/scoring.ts` (`WEIGHTS`) · planned service: `app/decision_engine/matrix.py`
 
 ---
 
@@ -144,7 +149,7 @@ The **safety route** at lower secondary is worth noting: when a student's confid
 are uncertain, the engine returns a parallel fallback spanning both general and vocational
 options, explicitly flagged for a counsellor conversation rather than an autonomous decision.
 
-→ `app/decision_engine/multi_tier.py`
+→ Implemented: `lib/decision-engine/eligibility.ts` · planned service: `app/decision_engine/multi_tier.py`
 
 ---
 
@@ -161,7 +166,7 @@ A deterministic hash-based embedding fallback exists so the pipeline runs withou
 present. It is a development convenience — **not** a substitute for real embeddings, and results
 produced under it are not meaningful.
 
-→ `app/rag/pipeline.py`, `app/rag/qdrant_client.py`
+→ **Not implemented in this repository.** The prototype retrieves from a seeded JSON catalogue (`data/routes.json`); planned service: `app/rag/pipeline.py`, `app/rag/qdrant_client.py`
 
 ---
 

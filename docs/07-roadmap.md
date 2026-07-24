@@ -1,6 +1,6 @@
 # 07 · Roadmap
 
-[← Development Plan](06-development-plan.md) · [Back to README](../READMEEN.md)
+[← Development Plan](06-development-plan.md) · [Back to README](../READMEEN.md) · [Next: Privacy →](08-privacy-and-data.md)
 
 ---
 
@@ -133,4 +133,4 @@ nothing.
 
 ---
 
-[← Development Plan](06-development-plan.md) · [Back to README](../READMEEN.md)
+[← Development Plan](06-development-plan.md) · [Back to README](../READMEEN.md) · [Next: Privacy →](08-privacy-and-data.md)

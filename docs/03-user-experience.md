@@ -89,8 +89,19 @@ journey
       Share with counsellor: 3: Student
 ```
 
-**Guest-first is deliberate.** A student can complete the entire interview and mission without
-creating an account. Identity is requested only when there is something worth saving.
+**Guest-first is deliberate, and it is implemented.** A student completes the entire interview,
+mission, route comparison and 30-day plan without an account. Identity is requested only when there
+is something worth saving — and in the prototype, accounts do not exist at all, so nothing is asked
+for.
+
+This ordering is now consistent across the UX flow, the architecture diagram and the running app.
+[05 · System Architecture](05-system-architecture.md) previously placed login before the assessment;
+that was a documentation error and has been corrected.
+
+```text
+Landing → Start as guest → Interview → Mission → Three routes
+        → Compare → 30-day plan → (optional account, not implemented)
+```
 
 ---
 
@@ -104,7 +115,7 @@ creating an account. Identity is requested only when there is something worth sa
 | Three routes | Side-by-side comparison with evidence and unknowns | *Open details* on one route |
 | Interactive roadmap | Step-by-step nodes from now to career entry | Check in on a milestone |
 | 30-day plan | Concrete weekly actions with free course links | Mark today's action done |
-| Counsellor dashboard | Class-level patterns and coaching prompts | Open a student summary |
+| Counsellor dashboard *(not designed or built)* | Class-level patterns and coaching prompts | Open a student summary |
 
 ### Three routes, always
 
@@ -160,15 +171,39 @@ Consent is per-recipient, visible in the interface, and revocable.
 
 ## Interface previews
 
-All screens below are Aurora high-fidelity mockups. They are design artefacts, not screenshots
-of a running build.
+Two sets, kept separate on purpose.
+
+### Implemented prototype screens
+
+Captured from the running application with Playwright. These are the screens a reviewer sees.
 
 | | |
 |---|---|
-| ![Landing](../assets/screenshots/01-landing-desktop.png) | ![Interview](../assets/screenshots/02-socratic-interview.png) |
-| **Landing** — three routes, not one answer | **Socratic interview** — adaptive dialogue |
-| ![Routes](../assets/screenshots/03-three-routes.png) | ![Dashboard](../assets/screenshots/04-counselor-dashboard.png) |
-| **Three routes** — evidence and unknowns per card | **Counsellor dashboard** — class-level view |
+| ![Landing](../assets/screenshots/app/landing-desktop.png) | ![Interview](../assets/screenshots/app/interview-desktop.png) |
+| **Landing** — *implemented* | **Interview** — *implemented*, with progress and editable answers |
+| ![Routes](../assets/screenshots/app/routes-desktop.png) | ![Compare](../assets/screenshots/app/compare-desktop.png) |
+| **Three routes** — *implemented*, equal weight, no winner | **Comparison** — *implemented*, consistent criteria |
+| ![Plan](../assets/screenshots/app/plan-desktop.png) | ![Insufficient](../assets/screenshots/app/insufficient-desktop.png) |
+| **30-day plan** — *implemented*, with check-ins | **No-route state** — *implemented*, refuses to guess |
+
+Mobile: [interview](../assets/screenshots/app/interview-mobile.png) ·
+[mission](../assets/screenshots/app/mission-mobile.png) ·
+[routes](../assets/screenshots/app/routes-mobile.png) ·
+[compare](../assets/screenshots/app/compare-mobile.png) ·
+[plan](../assets/screenshots/app/plan-mobile.png) ·
+[privacy](../assets/screenshots/app/privacy-mobile.png)
+
+### Concept designs — not implemented
+
+Aurora high-fidelity mockups. Design artefacts showing the intended full product, including Thai
+copy and screens that do not exist in code.
+
+| | |
+|---|---|
+| ![Landing concept](../assets/screenshots/01-landing-desktop.png) | ![Interview concept](../assets/screenshots/02-socratic-interview.png) |
+| **Landing** — *concept design* | **Socratic interview** — *concept design* |
+| ![Routes concept](../assets/screenshots/03-three-routes.png) | ![Dashboard concept](../assets/screenshots/04-student-dashboard.png) |
+| **Three routes** — *concept design*. Note this mockup gives one card a filled button, implying a winner; the implemented screen corrects that. | **Student private dashboard** — *concept design*. The student's own space, **not** a counsellor view. |
 
 ---
 

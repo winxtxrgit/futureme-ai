@@ -4,17 +4,78 @@
 
 ---
 
-## End-to-end flow
+> **Read this first.** This document describes two things. The **implemented prototype** is a
+> Next.js/TypeScript app whose engine runs in the browser — that is what you can clone and run.
+> The **planned production architecture** (FastAPI, Qdrant, PostgreSQL, AIS Cloud) is a design, not
+> code in this repository. Every section says which one it is describing.
+
+---
+
+## Implemented: the prototype architecture
+
+```mermaid
+flowchart LR
+    A["Browser"] --> B["Next.js app<br/>static pages"]
+    B --> C["localStorage<br/>guest session"]
+    B --> D["Decision engine<br/>lib/decision-engine, runs client-side"]
+    D --> E["Routes, comparison, 30-day plan"]
+    B -.->|"optional, off by default"| F["/api/explain<br/>LLM rewording only"]
+
+    style F stroke-dasharray: 5 5
+```
+
+| Concern | How the prototype handles it |
+|---|---|
+| Identity | None. Guest session only, random id in `localStorage`. |
+| Persistence | `localStorage`, validated on read, discarded if corrupt or from an old version. |
+| Recommendation | Deterministic TypeScript, executed in the browser. No network call. |
+| Explanation | Deterministic templates. Optional LLM rewording via `/api/explain`, disabled without an API key. |
+| Storage | No server-side storage of any kind. |
+
+Source: `app/`, `components/`, `lib/`, `data/`. Tests: `tests/`, `e2e/`.
+
+---
+
+## Planned: the production flow
+
+**Everything below this line is design, not implemented code.**
+
+### Guest-first, and why the earlier diagram was wrong
+
+An earlier version of this document placed authentication *before* the assessment, while
+[03 · User Experience](03-user-experience.md) said identity is requested only when there is
+something worth saving. Those contradicted each other. The UX document was right, and the
+architecture is corrected here: **the assessment runs before any identity step, for guests.**
+
+Authentication exists to *save and share* results, not to gate them. Requiring a phone number
+before a 15-year-old can find out anything would lose most of them at the first screen, and it is
+also the least privacy-preserving ordering available.
 
 ```mermaid
 flowchart TD
-    subgraph L1 ["1 · Client and authentication"]
-        A["Student / parent / counsellor"] --> B{"Login method"}
-        B -->|AIS mobile| C["AIS Number Verify<br/>CAMARA standard"]
-        B -->|Other network| D["AIS OTP via SMS"]
-        C --> E["SIM Swap check"]
-        D --> E
-        E --> F["Assign role · verify PDPA consent"]
+    A["Landing page"] --> B["Start as guest<br/>no account"]
+    B --> C["Interview"]
+    C --> D["Behavioural mission"]
+    D --> E["Up to three routes"]
+    E --> F["Compare"]
+    F --> G["30-day plan"]
+    G --> H{"Want to keep<br/>or share it?"}
+    H -->|"No"| I["Stays in the browser"]
+    H -->|"Yes"| J["Optional account<br/>AIS Number Verify / OTP"]
+    J --> K["Assign role · record PDPA consent"]
+    K --> L["Server-side save"]
+    L --> M{"RBAC"}
+    M -->|Student| N["Full private view"]
+    M -->|Parent| O["Summary + 30-day plan, if consented"]
+    M -->|Counsellor| P["Summary + class dashboard, if consented"]
+```
+
+### Planned backend stages
+
+```mermaid
+flowchart TD
+    subgraph L1 ["1 · Optional identity, only when saving"]
+        E["Assign role · verify PDPA consent"]
     end
 
     subgraph L2 ["2 · Two-phase assessment"]
@@ -49,6 +110,20 @@ flowchart TD
 ---
 
 ## Technology stack
+
+The **Implemented** column is what runs in this repository today.
+
+| Layer | Prototype (implemented) | Production (planned) |
+|---|---|---|
+| Frontend | Next.js 15 + React 19 + TypeScript + Tailwind | Same |
+| Recommendation | Deterministic TypeScript, client-side | Same rules, served by FastAPI |
+| Persistence | `localStorage` | PostgreSQL |
+| Retrieval | None — routes are a seeded JSON catalogue | Qdrant hybrid search + BGE-M3 |
+| LLM | Optional, wording only, off by default | Same, plus QLoRA-adapted Thai model |
+| Identity | None (guest only) | AIS Open APIs — Number Verify, OTP, SIM Swap |
+| Hosting | Any Node host or Vercel | AIS Cloud on OCI, Kubernetes (OKE) |
+
+### Original production design rationale
 
 | Layer | Choice | Why |
 |---|---|---|
@@ -93,11 +168,14 @@ sequence.
 
 ## Privacy and PDPA
 
+Full detail, including a correction to an earlier overstated claim, is in
+[08 · Privacy and Data Flow](08-privacy-and-data.md).
+
 Privacy is an architectural constraint here, not a policy page. The users are minors.
 
 **What is enforced in the design**
 
-- **Chat transcripts never leave the student.** Parents and counsellors see derived summaries only. There is no override.
+- **Chat transcripts are never shared with parents or counsellors.** They see derived summaries only, with no override. This is a *permission* guarantee, not a claim that data never leaves the device — the two are different, and [08 · Privacy](08-privacy-and-data.md) separates them.
 - **Consent is per-recipient**, visible in the UI, and revocable.
 - **Parent access requires a verified relationship**; counsellor access requires the student to be on that counsellor's roster.
 - **Guest mode** allows a full session with no account and no persistent identity.
@@ -143,6 +221,17 @@ class at once. Container auto-scaling suits that pattern better than fixed provi
 
 ## API surface
 
+### Implemented
+
+| Method | Endpoint | Purpose |
+|---|---|---|
+| `POST` | `/api/explain` | Optional LLM rewording of an explanation. Returns `{ source: "fallback" }` when no API key is set, on timeout, on a provider error, or on a malformed response. Always HTTP 200 so the caller never breaks. |
+
+There is no recommendation endpoint, by design: the engine runs in the browser, which is what
+makes the guest-mode privacy claim true.
+
+### Planned
+
 | Method | Endpoint | Purpose |
 |---|---|---|
 | `POST` | `/v1/missions/recommend` | Education level and interests → recommended exploration missions |
@@ -150,8 +239,8 @@ class at once. Container auto-scaling suits that pattern better than fixed provi
 | `POST` | `/v1/future-paths` | Full student profile → three route alternatives with matrix breakdown |
 | `GET` | `/v1/future-paths/{id}` | Retrieve a stored evaluation and route detail |
 
-All request and response bodies are Pydantic-validated. Current persistence for future-path
-nodes is **in-memory** — a prototype-stage limitation, not the intended design.
+These are specified with Pydantic schemas in the team's separate backend workspace. They are not
+part of this repository.
 
 ---
 

@@ -9,10 +9,10 @@
 </p>
 
 <p align="center">
-  <img src="https://img.shields.io/badge/status-hackathon_prototype-6D5EF6?style=flat-square" alt="Status: hackathon prototype">
-  <img src="https://img.shields.io/badge/JUMP_Thailand-2026-4FE3C1?style=flat-square" alt="JUMP Thailand Hackathon 2026">
-  <img src="https://img.shields.io/badge/FastAPI-Next.js-14141F?style=flat-square" alt="FastAPI and Next.js">
-  <img src="https://img.shields.io/badge/RAG-Qdrant_+_BGE--M3-14141F?style=flat-square" alt="RAG: Qdrant and BGE-M3">
+  <img src="https://img.shields.io/badge/status-functional_prototype-6D5EF6?style=flat-square" alt="Status: functional prototype">
+  <img src="https://img.shields.io/badge/demo-runnable_end--to--end-4FE3C1?style=flat-square" alt="Runnable end-to-end demo">
+  <img src="https://img.shields.io/badge/Next.js_15-TypeScript-14141F?style=flat-square" alt="Next.js 15 and TypeScript">
+  <img src="https://img.shields.io/badge/tests-64_unit_+_9_e2e-14141F?style=flat-square" alt="64 unit and integration tests, 9 end-to-end tests">
   <img src="https://img.shields.io/badge/license-MIT-A0A0B8?style=flat-square" alt="MIT license">
 </p>
 
@@ -24,9 +24,50 @@
 
 ---
 
+> ### Current status
+>
+> **Functional prototype with a runnable end-to-end demo flow.** The recommendation output is
+> intended for exploration and has **not** been clinically, educationally, or statistically
+> validated. The assessment is shortened and is not a validated RIASEC instrument. Route data is
+> illustrative demo data, not verified against current official sources. No pilot with real
+> students has been run.
+
+```bash
+git clone https://github.com/winxtxrgit/futureme-ai.git
+cd futureme-ai
+npm install
+npm run dev            # http://localhost:3000 — no API key needed
+```
+
+Then: **Start as guest → interview → mission → routes → compare → 30-day plan.**
+
+---
+
+## What you can verify today
+
+Every item below is backed by code in this repository, not by a mockup.
+
+| You can | Where |
+|---|---|
+| Start a guest session with no account, and recover it after a refresh | `lib/session/` |
+| Complete the shortened interview with progress, validation and editable answers | `app/interview/` |
+| Submit one behavioural mission and edit it afterwards | `app/mission/` |
+| Receive **one to three** explainable routes — or none, when evidence is thin | `lib/decision-engine/` |
+| Read why each route appeared, its evidence, limitations and open questions | `app/routes/` |
+| Compare every route on consistent criteria | `app/compare/` |
+| Generate a 30-day plan with check-ins that survive a refresh | `lib/plan/`, `app/plan/` |
+| See the engine refuse to answer rather than guess | `npm test` → *evidence gates* |
+| Confirm the app works with **no LLM API key** | `app/api/explain/` |
+| Delete all your data and verify it is gone | `app/privacy/` |
+| Run 64 unit/integration tests and 9 browser tests | `npm test`, `npm run test:e2e` |
+
+<sub><a href="#top">↑ Back to top</a></sub>
+
+---
+
 <table>
 <tr>
-<td align="center" width="33%"><a href="#overview"><b>Overview</b></a><br><sub>The problem, the approach,<br>and who it serves</sub></td>
+<td align="center" width="33%"><a href="#what-you-can-verify-today"><b>Verify</b></a><br><sub>What actually works,<br>backed by code</sub></td>
 <td align="center" width="33%"><a href="#research-foundation"><b>Research</b></a><br><sub>Seven categories, sources,<br>and the claims we cut</sub></td>
 <td align="center" width="33%"><a href="#key-features"><b>Product</b></a><br><sub>Six capabilities<br>and their real status</sub></td>
 </tr>
@@ -36,9 +77,9 @@
 <td align="center"><a href="#system-architecture"><b>Architecture</b></a><br><sub>End-to-end flow,<br>stack, and privacy</sub></td>
 </tr>
 <tr>
-<td align="center"><a href="#local-development"><b>Development</b></a><br><sub>Setup, API surface,<br>repository layout</sub></td>
+<td align="center"><a href="#local-development"><b>Development</b></a><br><sub>Run it, test it,<br>read the engine</sub></td>
 <td align="center"><a href="#documentation"><b>Documentation</b></a><br><sub>Seven detailed<br>project documents</sub></td>
-<td align="center"><a href="#project-status"><b>Roadmap</b></a><br><sub>What works, what doesn't,<br>and what's next</sub></td>
+<td align="center"><a href="#current-limitations"><b>Limitations</b></a><br><sub>What is not validated,<br>stated plainly</sub></td>
 </tr>
 </table>
 
@@ -161,52 +202,65 @@ corpus, not in the weights.
 
 ## Interface preview
 
-The **Aurora** design direction, chosen from eleven concepts. These are high-fidelity mockups,
-not screenshots of a running build.
+### Implemented prototype screens
+
+Captured from the running app with Playwright — these are not mockups.
 
 <table>
 <tr>
-<td width="50%"><a href="assets/screenshots/01-landing-desktop.png"><img src="assets/screenshots/01-landing-desktop.png" alt="Landing page"></a><br><b>Landing</b><br><sub>“The future doesn't have one answer.” Guest-first — no signup required to complete a full session.</sub></td>
-<td width="50%"><a href="assets/screenshots/02-socratic-interview.png"><img src="assets/screenshots/02-socratic-interview.png" alt="Socratic interview"></a><br><b>Socratic interview</b><br><sub>Adaptive dialogue with visible progress and skippable questions.</sub></td>
+<td width="50%"><a href="assets/screenshots/app/landing-desktop.png"><img src="assets/screenshots/app/landing-desktop.png" alt="Landing page of the running prototype"></a><br><b>Landing</b> · <sub>implemented</sub><br><sub>Guest-first. No account required to complete the whole flow.</sub></td>
+<td width="50%"><a href="assets/screenshots/app/interview-desktop.png"><img src="assets/screenshots/app/interview-desktop.png" alt="Interview screen of the running prototype"></a><br><b>Interview</b> · <sub>implemented</sub><br><sub>Progress indicator, editable answers, validation, and a visible “shortened demo assessment” label.</sub></td>
 </tr>
 <tr>
-<td width="50%"><a href="assets/screenshots/03-three-routes.png"><img src="assets/screenshots/03-three-routes.png" alt="Three route comparison"></a><br><b>Three routes</b><br><sub>Each card: why it was suggested, the evidence count, what's still unknown, and a reversible first step.</sub></td>
-<td width="50%"><a href="assets/screenshots/04-counselor-dashboard.png"><img src="assets/screenshots/04-counselor-dashboard.png" alt="Counsellor dashboard"></a><br><b>Counsellor dashboard</b><br><sub>Class-level patterns and suggested coaching questions — never individual chat transcripts.</sub></td>
+<td width="50%"><a href="assets/screenshots/app/routes-desktop.png"><img src="assets/screenshots/app/routes-desktop.png" alt="Three route results in the running prototype"></a><br><b>Three routes</b> · <sub>implemented</sub><br><sub>Equal visual weight, identical actions, no winner. Evidence strength shown by shape and word, not colour alone. Here the engine has detected that the interview and mission disagree.</sub></td>
+<td width="50%"><a href="assets/screenshots/app/compare-desktop.png"><img src="assets/screenshots/app/compare-desktop.png" alt="Route comparison table in the running prototype"></a><br><b>Comparison</b> · <sub>implemented</sub><br><sub>Consistent criteria across routes. Scores are shown as coarse bands — precise percentages would imply accuracy the engine does not have.</sub></td>
+</tr>
+<tr>
+<td width="50%"><a href="assets/screenshots/app/plan-desktop.png"><img src="assets/screenshots/app/plan-desktop.png" alt="30-day plan in the running prototype"></a><br><b>30-day plan</b> · <sub>implemented</sub><br><sub>Weekly objectives, check-ins that persist, and extra tasks injected for the specific gaps the engine found.</sub></td>
+<td width="50%"><a href="assets/screenshots/app/insufficient-desktop.png"><img src="assets/screenshots/app/insufficient-desktop.png" alt="No-route state in the running prototype"></a><br><b>No-route state</b> · <sub>implemented</sub><br><sub>When evidence is too thin the engine returns nothing and says so, rather than padding the list to three.</sub></td>
 </tr>
 </table>
 
 <details>
-<summary><b>Mobile views and the design system</b></summary>
+<summary><b>Mobile, safety and privacy screens</b></summary>
 
 <br>
 
 <table>
 <tr>
-<td width="30%"><img src="assets/screenshots/06-landing-mobile.png" alt="Mobile landing"></td>
-<td width="30%"><img src="assets/screenshots/05-roadmap-mobile.png" alt="Mobile roadmap"></td>
-<td width="40%" valign="top">
-
-**Aurora tokens**
-
-| | Dark | Light |
-|---|---|---|
-| Canvas | `#0B0B14` | `#F7F6FB` |
-| Indigo | `#6D5EF6` | `#5142D6` |
-| Mint | `#4FE3C1` | `#087F69` |
-
-Gradient `#6D5EF6 → #C13BF0 → #FF6B6B` is used for light fields and at most one hero word — never
-paragraphs. Status never relies on hue alone. Body text is 16px minimum, Thai-first, WCAG AA in
-both themes.
-
-</td>
+<td width="33%"><a href="assets/screenshots/app/interview-mobile.png"><img src="assets/screenshots/app/interview-mobile.png" alt="Interview on mobile"></a><br><sub><b>Interview</b> · mobile</sub></td>
+<td width="33%"><a href="assets/screenshots/app/routes-mobile.png"><img src="assets/screenshots/app/routes-mobile.png" alt="Routes on mobile"></a><br><sub><b>Routes</b> · mobile, cards stack</sub></td>
+<td width="33%"><a href="assets/screenshots/app/plan-mobile.png"><img src="assets/screenshots/app/plan-mobile.png" alt="Plan on mobile"></a><br><sub><b>30-day plan</b> · mobile</sub></td>
+</tr>
+<tr>
+<td><a href="assets/screenshots/app/safety-desktop.png"><img src="assets/screenshots/app/safety-desktop.png" alt="Safeguarding pause screen"></a><br><sub><b>Safeguarding pause</b> — recommendations stop; support offered</sub></td>
+<td><a href="assets/screenshots/app/privacy-mobile.png"><img src="assets/screenshots/app/privacy-mobile.png" alt="Privacy screen on mobile"></a><br><sub><b>Privacy</b> — what is collected, plus delete</sub></td>
+<td><a href="assets/screenshots/app/compare-mobile.png"><img src="assets/screenshots/app/compare-mobile.png" alt="Comparison on mobile"></a><br><sub><b>Comparison</b> · mobile, scrolls horizontally</sub></td>
 </tr>
 </table>
 
-**Explicitly excluded:** no likes, no leaderboards, no rankings, no peer comparison. The highest-
-scoring concept on Gen-Z appeal read as a social app — exactly wrong for a product handling
-adolescent self-doubt.
+</details>
 
-→ Full system in [03 · User Experience](docs/03-user-experience.md)
+<details>
+<summary><b>Concept designs — not implemented</b></summary>
+
+<br>
+
+The **Aurora** design direction, chosen from eleven concepts. These are high-fidelity mockups of the
+intended full product, in Thai. They include screens that do not exist in code.
+
+<table>
+<tr>
+<td width="50%"><a href="assets/screenshots/01-landing-desktop.png"><img src="assets/screenshots/01-landing-desktop.png" alt="Landing concept design"></a><br><b>Landing</b> · <sub>concept design</sub></td>
+<td width="50%"><a href="assets/screenshots/02-socratic-interview.png"><img src="assets/screenshots/02-socratic-interview.png" alt="Interview concept design"></a><br><b>Socratic interview</b> · <sub>concept design</sub></td>
+</tr>
+<tr>
+<td width="50%"><a href="assets/screenshots/03-three-routes.png"><img src="assets/screenshots/03-three-routes.png" alt="Three routes concept design"></a><br><b>Three routes</b> · <sub>concept design</sub><br><sub>Note this mockup gives one card a filled button, implying a winner. The implemented screen fixes that.</sub></td>
+<td width="50%"><a href="assets/screenshots/04-student-dashboard.png"><img src="assets/screenshots/04-student-dashboard.png" alt="Student private dashboard concept design"></a><br><b>Student private dashboard</b> · <sub>concept design</sub><br><sub>The student's own space — <b>not</b> a counsellor view, which is neither designed nor built.</sub></td>
+</tr>
+</table>
+
+→ Full design system in [03 · User Experience](docs/03-user-experience.md)
 
 </details>
 
@@ -330,7 +384,7 @@ flowchart TD
 
 The users are minors, so privacy is an architectural constraint rather than a policy page.
 
-- **Chat transcripts never leave the student.** Parents and counsellors see derived summaries only. There is no override.
+- **Chat transcripts are never shared with parents or counsellors.** They see derived summaries only, with no override. Note this is a *permission* guarantee about who may read the data — it is **not** the stronger claim that the data never leaves the device. In the implemented prototype's guest mode the stronger claim also holds, because nothing is transmitted at all. See [08 · Privacy](docs/08-privacy-and-data.md).
 - **Consent is per-recipient**, visible in the interface, and revocable.
 - **Parent access requires a verified relationship**; counsellor access requires the student on that counsellor's roster.
 - **Guest mode** allows a complete session with no account and no persistent identity.
@@ -410,7 +464,7 @@ Seven research categories were assembled before any design work began.
 <td width="50%" valign="top">
 
 **01 · Mismatch statistics**
-<sub>TDRI 2025: 56% work outside their field, 27% below qualification. OECD: 35–40% global mismatch, 15–20% wage penalty. WEF 2025: 39% of skill sets change by 2030.</sub>
+<sub>TDRI 2025: 56% work outside their field, 27% below qualification <i>(reported, not re-traced to a citable page)</i>. OECD: field mismatch alone carries little or no wage penalty — the ~25% penalty attaches to mismatch <b>combined with</b> overqualification. WEF 2025: 39% of skill sets change by 2030.</sub>
 
 **02 · Thai curricula**
 <sub>5 ม.4 learning tracks · 12 ปวช. 2567 vocational areas · TCAS structure. The gap isn't a shortage of options — it's that nobody explains which leads where.</sub>
@@ -459,10 +513,14 @@ schemas and RAG pipeline, and the verification suite.
 | Decision engine — RIASEC, STAR, matrix, routing | 🟢 Completed | 100% | Calibration against real outcomes |
 | Schemas and API contracts | 🟢 Completed | 100% | — |
 | Design system and Aurora mockups | 🟢 Completed | 100% | Remaining screens |
-| FastAPI endpoints | 🟡 In progress | ~70% | Persistence — in-memory today |
-| RAG pipeline — Qdrant + BGE-M3 | 🟡 In progress | ~65% | Full corpus ingestion; real embeddings |
-| Next.js frontend | 🟡 In progress | ~35% | Building from Aurora mockups |
-| Interactive roadmap UI | 🟠 Planned | ~20% | DAG designed; renderer not built |
+| **Runnable vertical slice** — guest → interview → mission → routes → compare → plan | 🟢 Implemented | 100% | — |
+| **Deterministic engine in TypeScript** with 0–3 route handling | 🟢 Implemented | 100% | Weights still unfitted to outcomes |
+| **Guest session + refresh recovery** | 🟢 Implemented | 100% | — |
+| **Test suite** — 64 unit/integration, 9 end-to-end | 🟢 Implemented | 100% | — |
+| **Prototype safeguarding rule** | 🟢 Implemented | 100% | Keyword-level only; not validated |
+| Accounts, sharing, server persistence | 🟠 Planned | 0% | Not started — guest mode only |
+| RAG pipeline — Qdrant + BGE-M3 | 🟠 Planned | ~10% | Prototype uses a seeded JSON catalogue |
+| Interactive DAG roadmap UI | 🟠 Planned | ~20% | Plan is a linear 4-week template today |
 | AIS Open API integration | 🟠 Planned | ~15% | Needs developer credentials |
 | Counsellor dashboard | 🟠 Planned | ~15% | Designed, not implemented |
 | QLoRA fine-tuning | 🔴 Blocked | ~10% | Dataset unusable |
@@ -527,6 +585,7 @@ Building a guidance tool that quietly narrows a child's options would be worse t
 | [05 · System Architecture](docs/05-system-architecture.md) | End-to-end flow, stack, DAG roadmap, privacy, deployment, API surface |
 | [06 · Development Plan](docs/06-development-plan.md) | Milestones, component status, blockers, next steps, team |
 | [07 · Roadmap](docs/07-roadmap.md) | Five phases, validation requirements, stop conditions |
+| [08 · Privacy and Data Flow](docs/08-privacy-and-data.md) | What is collected, where it goes, what changed, and what is not built |
 
 <sub><a href="#top">↑ Back to top</a></sub>
 
@@ -534,56 +593,91 @@ Building a guidance tool that quietly narrows a child's options would be worse t
 
 ## Local development
 
-> **Note.** This repository is the project's documentation and design showcase. The application
-> source lives in the team's development workspace and is being prepared for publication — the
-> commands below describe that build.
+Everything below has been run in this repository. The basic demo needs **no environment variables
+and no API key**.
 
 ```bash
 git clone https://github.com/winxtxrgit/futureme-ai.git
 cd futureme-ai
+npm install
+npm run dev
+```
+
+Open <http://localhost:3000> and click **Start as guest**.
+
+| Command | What it does | Verified result |
+|---|---|---|
+| `npm install` | Installs dependencies (npm, lockfile committed) | ✅ |
+| `npm run dev` | Dev server on :3000 | ✅ |
+| `npm run build` | Production build | ✅ 9 routes compiled |
+| `npm run start` | Serves the production build | ✅ |
+| `npm run typecheck` | `tsc --noEmit`, strict mode | ✅ 0 errors |
+| `npm run lint` | ESLint via `next lint` | ✅ 0 warnings |
+| `npm test` | Vitest unit + integration | ✅ 64 passed |
+| `npm run test:e2e:install` | One-off: download the browser Playwright drives | — |
+| `npm run test:e2e` | Playwright end-to-end against the production build | ✅ 9 passed |
+
+If the Playwright browser download is blocked in your environment, drive a locally installed Chrome
+instead — same tests:
+
+```bash
+PW_CHANNEL=chrome npm run test:e2e
 ```
 
 <details>
-<summary><b>Backend setup — FastAPI</b></summary>
+<summary><b>Optional: the AI explanation layer</b></summary>
 
 <br>
 
-```bash
-python3 -m venv .venv
-source .venv/bin/activate          # Windows: .venv\Scripts\activate
-pip install -r requirements.txt
-
-uvicorn app.main:app --reload --port 8000
-```
-
-Interactive API docs at `http://localhost:8000/docs`.
-
-**Optional services**
+The app is fully functional without this. It only rewords explanations more warmly; it never
+changes which routes were selected.
 
 ```bash
-docker run -p 6333:6333 qdrant/qdrant                     # vector database
-docker run -p 5432:5432 -e POSTGRES_PASSWORD=dev postgres # relational database
+cp .env.example .env.local
+# then set ANTHROPIC_API_KEY in .env.local
 ```
 
-Without Qdrant the RAG pipeline falls back to a deterministic hash embedding. It keeps the
-pipeline runnable, but results under it are **not meaningful**.
+With no key, `/api/explain` returns `{ "source": "fallback" }` and the deterministic template text is
+used. The same happens on a timeout, a provider error, or a malformed response — it always returns
+HTTP 200 so the app cannot break. Both paths are covered by end-to-end tests.
 
 </details>
 
 <details>
-<summary><b>API surface</b></summary>
+<summary><b>How the recommendation engine works</b></summary>
 
 <br>
 
-| Method | Endpoint | Purpose |
-|---|---|---|
-| `POST` | `/v1/missions/recommend` | Education level and interests → recommended exploration missions |
-| `POST` | `/v1/missions/{id}/submissions` | Mission answers → evaluation and adaptive follow-up questions |
-| `POST` | `/v1/future-paths` | Full student profile → three routes with matrix breakdown |
-| `GET` | `/v1/future-paths/{id}` | Retrieve a stored evaluation and route detail |
+Deterministic TypeScript in `lib/decision-engine/`, executed in the browser. The same answers always
+produce the same routes, and every number traces to a line of code.
 
-All bodies are Pydantic-validated. Future-path persistence is currently **in-memory** — a
-prototype limitation, not the intended design.
+```text
+lib/decision-engine/
+├── types.ts          Dimensions, reason codes, result shapes
+├── scoring.ts        Likert → RIASEC, mission evidence, the five WEIGHTS
+├── eligibility.ts    Hard constraints: tier, cost, location, staleness
+├── explanations.ts   Deterministic reason text and evidence labels
+└── index.ts          recommend() — gates, scoring, tie marking
+```
+
+**The pipeline**
+
+1. **Normalise** — Likert 1–5 → 0..1 per RIASEC dimension. Unanswered items are *excluded*, not scored as zero.
+2. **Mission evidence** — option→dimension maps plus keyword spotting, normalised into a second, independent vector.
+3. **Gate 1** — fewer than 8 interview items answered → return no routes.
+4. **Gate 2** — profile too flat to distinguish anything → return no routes.
+5. **Eligibility** — hard filters produce blocking reason codes. "I don't know" never blocks; it raises a notice.
+6. **Score** — five weighted criteria: interests 30%, feasibility 25%, strengths 20%, learning style 15%, flexibility 10%.
+7. **Evidence strength** — Strong / Moderate / Limited / More exploration needed, based on *how much is known*, not how high the score is. Never "strong" without a completed mission.
+8. **Gate 3** — every surviving route has insufficient evidence → return no routes.
+9. **Ties** — totals within 4 points are marked tied and presented as equals.
+
+**Design decisions worth knowing**
+
+- Returns **0 to 3** routes. Never padded to three.
+- Feasibility is weighted second because a route you cannot afford or reach is not a recommendation.
+- Interview/mission contradictions are surfaced to the learner, not averaged away.
+- Weights are design judgement, **not** fitted to outcome data — no outcome data exists.
 
 </details>
 
@@ -597,26 +691,53 @@ futureme-ai/
 ├── README.md                        language selection page
 ├── READMEEN.md                      English — this document
 ├── READMETH.md                      ภาษาไทย
-├── LICENSE                          MIT
-├── CONTRIBUTING.md
-├── .gitignore
+├── package.json · package-lock.json
+├── .env.example                     all values optional
+├── app/                             Next.js App Router
+│   ├── page.tsx                     landing
+│   ├── interview/ mission/ routes/ compare/ plan/ privacy/
+│   └── api/explain/                 optional LLM layer
+├── components/                      Shell, Button, Card, EvidenceBadge, SafetyPause
+├── lib/
+│   ├── decision-engine/             the recommendation rules
+│   ├── plan/                        30-day plan builder
+│   ├── safety/                      prototype safeguarding rule
+│   └── session/                     guest session + validation
+├── data/                            questions · missions · routes (seed data)
+├── tests/                           unit + integration (vitest)
+├── e2e/                             end-to-end (playwright)
 ├── assets/
-│   ├── banner/                      banner.svg · banner-th.svg
-│   ├── diagrams/                    decision-matrix.svg · decision-matrix-th.svg
-│   └── screenshots/                 six Aurora mockups, shared by both languages
-├── docs/
-│   ├── 01-project-overview.md
-│   ├── 02-research-and-evidence.md
-│   ├── 03-user-experience.md
-│   ├── 04-ai-system.md
-│   ├── 05-system-architecture.md
-│   ├── 06-development-plan.md
-│   └── 07-roadmap.md
+│   ├── banner/ diagrams/
+│   └── screenshots/
+│       ├── app/                     captured from the running app
+│       └── *.png                    Aurora concept mockups
+├── docs/                            01–08
 └── source-materials/
-    └── README.md                    what stayed private, and why
 ```
 
 </details>
+
+<sub><a href="#top">↑ Back to top</a></sub>
+
+---
+
+## Current limitations
+
+Stated plainly, because a working demo can hide all of this.
+
+| Limitation | Detail |
+|---|---|
+| **The assessment is not psychometrically validated** | 12 items built on the structure of Holland's RIASEC model. It is labelled "Demo assessment — shortened for prototype evaluation" in the app. It is not a RIASEC test. |
+| **Route data is illustrative** | Six demo routes. Entry requirements, costs and institution names are **not** verified against current official sources. The app shows the compile date and warns when it goes stale. |
+| **Route data goes out of date** | TCAS criteria and curricula change annually. There is no refresh process. |
+| **The engine uses prototype rules** | The five weights are design judgement, not fitted to student outcomes. No outcome data exists. |
+| **No pilot has run** | Every statement about effectiveness is a design goal, not a measured result. |
+| **Not a replacement for a counsellor** | It is decision-support for exploration. It does not predict admission, employment or income. |
+| **Safeguarding is minimal** | A keyword rule in the browser. Not a risk assessment. It will miss cases and produce false positives. Nobody is alerted. |
+| **The LLM layer may be unavailable** | By design it is off unless a key is set, and every failure path falls back to deterministic text. |
+| **No accounts, sharing, or server storage** | Guest mode only. Parent and counsellor views are designed, not built. |
+| **Some research claims are not fully traced** | The Thai TDRI figures the pitch leans on lack recorded page numbers and URLs. See the [reference table](docs/02-research-and-evidence.md#reference-table). |
+| **No bias audit** | Unknown whether the engine systematically steers students by gender, region or school size. |
 
 <sub><a href="#top">↑ Back to top</a></sub>
 

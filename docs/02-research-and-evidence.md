@@ -23,12 +23,39 @@ as importantly — records the claims we removed.
 
 ### Global
 
+> **Correction (2026-07).** An earlier version of this document stated a
+> "15–20% wage penalty for mismatched work". That figure was unsourced and it
+> conflated three separate things. It has been replaced with what the OECD
+> source actually reports. See §1.1.
+
 | Measure | Figure | Source |
 |---|---|---|
-| Field-of-study mismatch | 35–40% | OECD (PIAAC) |
-| Wage penalty for mismatched work | 15–20% below matched peers | OECD |
-| Employers requiring prior experience | 60%+ | ILO / OECD |
+| Field-mismatched workers who are **also overqualified** | ~40% of all field-mismatched workers | OECD / Montt 2015 |
+| Wage penalty for workers who are field-mismatched **and** overqualified | ~25% lower hourly earnings than well-matched peers with the same field and education level | OECD / Montt 2015 |
+| Wage penalty for workers who are field-mismatched but **well-qualified** | **No penalty in the majority of countries** | OECD / Montt 2015 |
 | Skill sets expected to change or become outdated, 2025–2030 | **39%** | WEF *Future of Jobs Report 2025* |
+
+### 1.1 · Three things that are not the same
+
+This distinction matters because collapsing them produces a scarier number than
+the evidence supports:
+
+| Concept | What it means |
+|---|---|
+| **Field-of-study mismatch** | Working outside the field you studied |
+| **Overqualification** | Holding a higher qualification than the job requires |
+| **Skills mismatch** | Your actual skills do not match what the job uses |
+
+The OECD finding is that **field-of-study mismatch on its own carries little or
+no wage penalty in most countries.** The penalty appears when field mismatch is
+combined with overqualification — and that combination affects roughly 40% of
+field-mismatched workers, not all of them.
+
+For this project the implication is specific: "working outside your field" is
+not automatically a bad outcome, and the product must not imply that it is. The
+outcome worth avoiding is ending up *overqualified and mismatched* — which is an
+argument for testing a direction early, not for picking the "right" field first
+time.
 
 **The reading.** This is a structural problem, not a series of individual bad choices. The
 education system produces one thing and the labour market asks for another, and the decision
@@ -159,6 +186,36 @@ The research audit produced two findings worth publishing:
    before any model evaluation is reported. This is tracked in [07 · Roadmap](07-roadmap.md).
 2. **Statistical claims required an audit pass.** Four unsupported figures were removed (see §1).
    A programmatic verification script now checks that they do not return.
+
+---
+
+## Reference table
+
+Every load-bearing claim, with its verification status. **Nothing marked
+"Unverified" may be used in a pitch or a slide until it has been checked against
+the primary source.**
+
+| Claim | Source | Date | Where | What it actually supports | Status |
+|---|---|---|---|---|---|
+| ~40% of field-mismatched workers are also overqualified | Montt, G., *The causes and consequences of field-of-study mismatch*, OECD Social, Employment and Migration Working Papers No. 167 | 2015 | Summarised in the OECD Skills and Work post, 20 July 2015 | The overlap between the two conditions | ✅ Verified |
+| ~25% lower hourly earnings for field-mismatched **and** overqualified workers | Montt 2015 (as above) | 2015 | Same | The wage penalty attaches to the *combination*, measured against same-field, same-education matched peers | ✅ Verified |
+| No wage penalty in most countries for field-mismatched but well-qualified workers | Montt 2015 (as above) | 2015 | Same | Field mismatch alone is not the driver | ✅ Verified |
+| 39% of skill sets change or become outdated 2025–2030 | WEF, *Future of Jobs Report 2025* | 2025 | Headline skills-disruption finding | Skill churn, **not** unemployment or mismatch | ⚠️ Not re-verified against the report PDF |
+| 56% of Thai higher-education graduates work outside their field | TDRI | 2025 | Not recorded | Thai field-of-study mismatch rate | ⚠️ **Unverified** — no direct URL, page or table recorded |
+| 27% of Thai graduates work below their qualification level | TDRI | 2025 | Not recorded | Thai overqualification rate | ⚠️ **Unverified** — same gap |
+| Experience requirements are a barrier in several STEM fields | TDRI analysis of 304,378 job postings, Q2/2025 | 2025 | Not recorded | Employer demand for experience, varying by occupation | ⚠️ **Unverified** — same gap |
+| NDLP's guidance component is a static RIASEC test | NDLP platform | — | Direct observation of the platform | The gap this product addresses | ⚠️ Observation, not a citation |
+
+**Known weakness, stated plainly.** The Thai figures are the ones the pitch
+leans on hardest and they are the ones with the weakest traceability. They came
+from a research summary that did not record page numbers or direct URLs. Until
+someone re-traces them to a TDRI publication with a citable location, they
+should be presented as "reported by TDRI" rather than as established fact.
+
+### Sources verified for this document
+
+- Montt, G. (2015). *The causes and consequences of field-of-study mismatch: Evidence from PIAAC.* OECD Social, Employment and Migration Working Papers No. 167. https://www.oecd.org/content/dam/oecd/en/publications/reports/2015/07/the-causes-and-consequences-of-field-of-study-mismatch_g17a26a5/5jrxm4dhv9r2-en.pdf
+- OECD Skills and Work (2015). *The psychologist at the call centre and the mathematician on the trading floor: the many facets of field of study mismatch.* https://oecdskillsandwork.wordpress.com/2015/07/20/the-psychologist-at-the-call-centre-and-the-mathematician-on-the-trading-floor-the-many-facets-of-field-of-study-mismatch/
 
 ---
 
