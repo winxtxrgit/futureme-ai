@@ -2,7 +2,7 @@
   <img src="assets/banner/banner.svg" alt="FutureMe AI — a next step students can actually explain" width="100%">
 </p>
 
-# FutureMe AI
+<h1 align="center">FutureMe AI</h1>
 
 <p align="center">
   <b>Career and study guidance for Thai students — built on a questionnaire, a real task, and reasoning you can inspect.</b>
@@ -20,9 +20,9 @@
 
 ---
 
-## Read the documentation
+<h2 align="center">Read the documentation</h2>
 
-<table>
+<table align="center" width="100%">
 <tr>
 <td align="center" width="50%">
 <h3><a href="READMEEN.md">Read in English&nbsp;→</a></h3>
@@ -37,7 +37,7 @@
 
 ---
 
-## Run it
+<h2 align="center">Run it</h2>
 
 ```bash
 git clone https://github.com/winxtxrgit/futureme-ai.git
@@ -64,7 +64,7 @@ The routes screen from the <b>running application</b> — equal visual weight, n
 
 ---
 
-## Status
+<h2 align="center">Status</h2>
 
 <p align="center">
 <b>Runnable prototype.</b> The whole guest journey works end to end with no account and no API key.<br>
@@ -76,7 +76,7 @@ Route data is illustrative. No pilot with real students has run.</sub>
 ข้อมูลเส้นทางเป็นข้อมูลตัวอย่าง และยังไม่เคยทดลองใช้กับนักเรียนจริง</sub>
 </p>
 
-<table>
+<table align="center" width="100%">
 <tr>
 <td align="center" width="25%"><a href="READMEEN.md#current-prototype"><b>What works today</b></a><br><sub>Backed by code and tests<br>สิ่งที่ทำได้แล้ววันนี้</sub></td>
 <td align="center" width="25%"><a href="docs/06-development-plan.md#component-status"><b>Implemented vs planned</b></a><br><sub>Every capability, classified<br>สร้างแล้วเทียบกับอยู่ในแผน</sub></td>
