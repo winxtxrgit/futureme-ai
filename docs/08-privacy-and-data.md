@@ -51,6 +51,22 @@ request in the recommendation path, so there is nothing to intercept, log or ret
 Storage key: `futureme.guest.v1`. It is inspectable in browser developer tools, which is
 deliberate — a privacy claim a user can verify themselves is worth more than one they must trust.
 
+**Writes happen as you type.** Mission answers are autosaved on a short debounce so a refresh does
+not discard unfinished writing. This is a usability decision with a privacy consequence worth
+stating: a half-written answer is on disk in this browser from the moment it is typed, not only
+once it is submitted. It is covered by the same delete control.
+
+**Reads are treated as untrusted.** localStorage is writable by the user, by extensions, and by
+anything that has run on this origin. The session is therefore not parsed and used — it is rebuilt
+field by field against the seed data on every read. Question ids, Likert values, context options,
+mission steps, option values and route ids are all checked against what the app actually offers;
+anything unrecognised is dropped rather than passed to the scorer, collections are capped, and a
+container that cannot be trusted at all resets to a clean session. The learner is told once when
+something was discarded.
+
+This is a correctness property before it is a security one: an out-of-range Likert value silently
+reaching the scorer would produce a recommendation nobody could explain.
+
 **Deletion.** `/privacy` has a *Delete my data* control that removes the key immediately. Because
 no copy exists anywhere else, deletion is complete rather than a request queued for processing.
 

@@ -40,15 +40,15 @@ export default function Home() {
 
       <section className="mt-12 grid gap-4 sm:grid-cols-3">
         <Card>
-          <h2 className="text-sm font-bold">Talk, don&apos;t tick</h2>
+          <h2 className="text-sm font-bold">Ask, then check</h2>
           <p className="mt-2 text-sm text-muted">
-            A shortened interview plus your own words — not only multiple choice.
+            A shortened interview plus your own words gives a starting guess — not a verdict.
           </p>
         </Card>
         <Card>
           <h2 className="text-sm font-bold">Try, don&apos;t guess</h2>
           <p className="mt-2 text-sm text-muted">
-            One mission produces evidence from what you would actually do.
+            A mission picked from your answers tests that guess against what you would actually do.
           </p>
         </Card>
         <Card>

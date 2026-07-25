@@ -40,7 +40,10 @@ export default function PrivacyPage() {
                 <td className="p-2">Until you clear it</td>
               </tr>
               <tr className="border-b border-line/50">
-                <td className="p-2">Mission answers, including free text</td>
+                <td className="p-2">
+                  Mission answers, including free text — saved as you type, so a refresh does not
+                  lose unfinished writing
+                </td>
                 <td className="p-2">This browser only</td>
                 <td className="p-2">Until you clear it</td>
               </tr>
@@ -77,9 +80,15 @@ export default function PrivacyPage() {
           what you see.
         </p>
         <p className="mt-2 text-sm text-muted">
-          If it were enabled, your scored profile and route names would be sent to the model
-          provider to be rewritten more warmly. Your free-text answers would not be included. The
-          route selection would not change, because the engine has already decided it.
+          If it were enabled, and only when you pressed the button on a route card, exactly two
+          things would be sent to the model provider: <strong className="text-ink">the route&apos;s
+          name</strong> and <strong className="text-ink">the reason codes</strong> the engine
+          already produced — short fixed labels like <code className="text-ink">INTEREST_MATCH</code>.
+        </p>
+        <p className="mt-2 text-sm text-muted">
+          Not sent: your free text, your interview answers, your mission answers, your scores, or
+          your session id. The route selection could not change either, because the engine has
+          already decided it and the endpoint is never given the list.
         </p>
       </Card>
 
