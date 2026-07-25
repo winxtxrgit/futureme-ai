@@ -13,7 +13,7 @@
 <p align="center">
   <a href="https://github.com/winxtxrgit/futureme-ai/actions/workflows/ci.yml"><img src="https://github.com/winxtxrgit/futureme-ai/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
   <img src="https://img.shields.io/badge/status-runnable_prototype-6D5EF6?style=flat-square" alt="Status: runnable prototype">
-  <img src="https://img.shields.io/badge/tests-136_unit_·_16_e2e-14141F?style=flat-square" alt="136 unit and integration tests, 16 end-to-end tests">
+  <img src="https://img.shields.io/badge/tests-136_unit_·_18_e2e-14141F?style=flat-square" alt="136 unit and integration tests, 18 end-to-end tests">
   <img src="https://img.shields.io/badge/Next.js-15.5.21-14141F?style=flat-square" alt="Next.js 15.5.21">
   <img src="https://img.shields.io/badge/license-MIT-A0A0B8?style=flat-square" alt="MIT license">
 </p>
@@ -143,7 +143,7 @@ Everything in this section is backed by code in this repository and by a test yo
 | Watch the engine refuse to answer rather than guess | `npm test` → *evidence gates* |
 | Confirm the app works with **no LLM API key** | `app/api/explain/` |
 | Delete all your data and verify it is gone | `app/privacy/` |
-| Run 136 unit/integration tests and 16 browser tests | `npm test`, `npm run test:e2e` |
+| Run 136 unit/integration tests and 18 browser tests | `npm test`, `npm run test:e2e` |
 
 ### What it does not do yet
 
@@ -537,7 +537,7 @@ npm run dev            # http://localhost:3000 — then "Start as guest"
 | `npm test` | Vitest unit + integration | ✅ 136 passed |
 | `npm run build` | Production build | ✅ 9 routes |
 | `npm run test:e2e:install` | One-off: download the browser Playwright drives | — |
-| `npm run test:e2e` | Playwright against the production build | ✅ 16 passed |
+| `npm run test:e2e` | Playwright against the production build | ✅ 18 passed |
 | `npm run verify` | Typecheck, lint, test and build in one go | ✅ |
 
 If the Playwright browser download is blocked in your environment, drive a locally installed

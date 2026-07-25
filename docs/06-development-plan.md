@@ -64,7 +64,7 @@ Every claim of 🟢 above corresponds to something executable.
 | Types | `npm run typecheck` | 0 errors, strict mode |
 | Lint | `npm run lint` | 0 warnings |
 | Unit and integration | `npm test` | 136 passing |
-| End-to-end | `npm run test:e2e` | 16 passing, against the production build |
+| End-to-end | `npm run test:e2e` | 18 passing, against the production build |
 | Production build | `npm run build` | 9 routes |
 | All of the above | `npm run verify` | Also runs on every pull request |
 

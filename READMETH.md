@@ -13,7 +13,7 @@
 <p align="center">
   <a href="https://github.com/winxtxrgit/futureme-ai/actions/workflows/ci.yml"><img src="https://github.com/winxtxrgit/futureme-ai/actions/workflows/ci.yml/badge.svg" alt="สถานะ CI"></a>
   <img src="https://img.shields.io/badge/status-runnable_prototype-6D5EF6?style=flat-square" alt="สถานะ: ต้นแบบที่รันได้จริง">
-  <img src="https://img.shields.io/badge/tests-136_unit_·_16_e2e-14141F?style=flat-square" alt="เทสต์ 136 รายการ และ e2e 16 รายการ">
+  <img src="https://img.shields.io/badge/tests-136_unit_·_18_e2e-14141F?style=flat-square" alt="เทสต์ 136 รายการ และ e2e 18 รายการ">
   <img src="https://img.shields.io/badge/Next.js-15.5.21-14141F?style=flat-square" alt="Next.js 15.5.21">
   <img src="https://img.shields.io/badge/license-MIT-A0A0B8?style=flat-square" alt="สัญญาอนุญาต MIT">
 </p>
@@ -141,7 +141,7 @@ npm run dev            # http://localhost:3000
 | เห็นเอนจินปฏิเสธที่จะตอบ แทนที่จะเดา | `npm test` → *evidence gates* |
 | ยืนยันว่าแอปทำงานได้โดย**ไม่มี** API key ของ LLM | `app/api/explain/` |
 | ลบข้อมูลทั้งหมดและตรวจสอบว่าหายจริง | `app/privacy/` |
-| รันเทสต์ 136 รายการ และเทสต์บนเบราว์เซอร์ 16 รายการ | `npm test`, `npm run test:e2e` |
+| รันเทสต์ 136 รายการ และเทสต์บนเบราว์เซอร์ 18 รายการ | `npm test`, `npm run test:e2e` |
 
 ### สิ่งที่ยังทำไม่ได้
 
@@ -520,7 +520,7 @@ npm run dev            # http://localhost:3000 — แล้วกด "Start as 
 | `npm test` | Vitest unit + integration | ✅ ผ่าน 136 รายการ |
 | `npm run build` | บิลด์สำหรับใช้งานจริง | ✅ 9 เส้นทาง |
 | `npm run test:e2e:install` | ทำครั้งเดียว: ดาวน์โหลดเบราว์เซอร์ที่ Playwright ใช้ | — |
-| `npm run test:e2e` | Playwright ทดสอบกับบิลด์จริง | ✅ ผ่าน 16 รายการ |
+| `npm run test:e2e` | Playwright ทดสอบกับบิลด์จริง | ✅ ผ่าน 18 รายการ |
 | `npm run verify` | typecheck, lint, test และ build ในคำสั่งเดียว | ✅ |
 
 หากสภาพแวดล้อมของคุณบล็อกการดาวน์โหลดเบราว์เซอร์ของ Playwright ให้ใช้ Chrome ที่ติดตั้งในเครื่องแทน — เทสต์ชุดเดียวกัน:

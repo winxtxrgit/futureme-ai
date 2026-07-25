@@ -335,6 +335,52 @@ test("the AI endpoint survives a malformed request", async ({ request }) => {
   expect((await res.json()).source).toBe("fallback");
 });
 
+test("hand-edited local storage is repaired, not trusted", async ({ page }) => {
+  await completeInterview(page);
+
+  // Rewrite the stored session the way an extension, an older release, or a
+  // curious student with devtools might: a Likert value off the scale, a
+  // question that does not exist, and a route that was deleted.
+  await page.evaluate(() => {
+    const key = "futureme.guest.v1";
+    const raw = window.localStorage.getItem(key);
+    if (!raw) throw new Error("expected a stored session");
+    const session = JSON.parse(raw);
+    session.interview.interest.R1 = 99;
+    session.interview.interest.NOT_A_QUESTION = 5;
+    session.selectedRouteId = "route-deleted-last-year";
+    window.localStorage.setItem(key, JSON.stringify(session));
+  });
+
+  await page.goto("/interview");
+
+  // The learner is told, once, that something was dropped.
+  await expect(page.getByText(/could not be read/i)).toBeVisible();
+
+  // The out-of-range answer is gone rather than scored...
+  await expect(page.getByTestId("q-R1-5")).toHaveAttribute("aria-pressed", "false");
+  // ...while everything valid survived.
+  await expect(page.getByTestId("q-R2-5")).toHaveAttribute("aria-pressed", "true");
+  await expect(page.getByTestId("ctx-tier-LOWER_SECONDARY")).toHaveAttribute("aria-pressed", "true");
+
+  // The unrecognised values are not written back.
+  const cleaned = await page.evaluate(() =>
+    JSON.parse(window.localStorage.getItem("futureme.guest.v1") ?? "{}"),
+  );
+  expect(cleaned.interview.interest.NOT_A_QUESTION).toBeUndefined();
+  expect(cleaned.interview.interest.R1).toBeUndefined();
+  expect(cleaned.selectedRouteId).toBeNull();
+});
+
+test("unreadable local storage resets to a clean session", async ({ page }) => {
+  await page.goto("/");
+  await page.evaluate(() => window.localStorage.setItem("futureme.guest.v1", "{ not json"));
+
+  await page.goto("/interview");
+  await expect(page.getByText(/start you a new session/i)).toBeVisible();
+  await expect(page.getByTestId("q-R1-5")).toHaveAttribute("aria-pressed", "false");
+});
+
 test("data deletion clears the guest session", async ({ page }) => {
   await completeInterview(page);
   await page.goto("/privacy");
