@@ -123,6 +123,43 @@ export default function ComparePage() {
         </ul>
       ),
     },
+    {
+      // Last row on purpose. The three rows above it — cost, relocation and
+      // timing — are the team's estimates, and this is the screen where a
+      // learner is most likely to treat them as facts.
+      label: "Where this comes from",
+      render: (i) => {
+        const p = routes[i].provenance;
+        return (
+          <div className="space-y-1 text-xs">
+            <span
+              className={[
+                "inline-block rounded-full border px-2 py-0.5 font-bold",
+                p.status === "partially-verified"
+                  ? "border-mint/40 bg-mint/5 text-mint"
+                  : "border-warning/40 bg-warning/5 text-warning",
+              ].join(" ")}
+            >
+              {p.status}
+            </span>
+            {p.sourceUrl && p.source ? (
+              <p className="text-muted">
+                <a
+                  href={p.sourceUrl}
+                  target="_blank"
+                  rel="noreferrer noopener"
+                  className="underline underline-offset-2"
+                >
+                  {p.source}
+                </a>
+              </p>
+            ) : (
+              <p className="text-muted">No source recorded.</p>
+            )}
+          </div>
+        );
+      },
+    },
   ];
 
   return (
@@ -188,6 +225,14 @@ export default function ComparePage() {
           </tbody>
         </table>
       </div>
+
+      <p className="mt-4 text-xs text-muted" data-testid="compare-caveat">
+        <strong className="text-ink">Read the last row before you trust the middle ones.</strong>{" "}
+        Relative cost, whether you would need to move, and time before earning are the team&rsquo;s
+        estimates — no source in this prototype supports them, and they are what the engine used to
+        rule routes in or out. Check anything you would act on against the institution&rsquo;s own
+        current page.
+      </p>
 
       <div className="mt-6">
         <Button href="/routes" variant="secondary">

@@ -1,6 +1,6 @@
 # 08 · Privacy and Data Flow
 
-[← Roadmap](07-roadmap.md) · [Back to README](../READMEEN.md)
+[← Roadmap](07-roadmap.md) · [Back to README](../READMEEN.md) · [Next: Source Review →](09-source-review.md)
 
 ---
 
@@ -142,4 +142,4 @@ The users are minors, so this matters more than usual. The honest position:
 
 ---
 
-[← Roadmap](07-roadmap.md) · [Back to README](../READMEEN.md)
+[← Roadmap](07-roadmap.md) · [Back to README](../READMEEN.md) · [Next: Source Review →](09-source-review.md)
