@@ -112,6 +112,11 @@ test("guest completes interview → mission → routes → compare → 30-day pl
   await expect(page.getByRole("table")).toBeVisible();
   await expect(page.getByText("Evidence strength")).toBeVisible();
 
+  // The comparison is where estimates are most likely to be read as facts, so
+  // the table has to say which rows are unsourced.
+  await expect(page.getByText("Where this comes from")).toBeVisible();
+  await expect(page.getByTestId("compare-caveat")).toContainText(/estimates/i);
+
   // Select a route from the comparison table.
   await page.locator('[data-testid^="compare-select-"]').first().click();
 
