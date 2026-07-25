@@ -76,7 +76,7 @@ journey
     section Arrive
       Start as guest: 5: Student
     section Reflect
-      Socratic interview: 4: Student
+      Interview: 4: Student
       Recall real examples: 3: Student
     section Try
       Scenario mission: 5: Student
@@ -107,28 +107,33 @@ Landing → Start as guest → Interview → Mission → Three routes
 
 ## Screen by screen
 
-| Screen | Purpose | The one dominant action |
-|---|---|---|
-| Landing | Set the promise: three routes, not one answer | *Start as guest* |
-| Socratic interview | Adaptive dialogue; visible progress; skippable questions | Answer the current question |
-| Scenario mission | A short realistic task in the direction of interest | Submit the attempt |
-| Three routes | Side-by-side comparison with evidence and unknowns | *Open details* on one route |
-| Interactive roadmap | Step-by-step nodes from now to career entry | Check in on a milestone |
-| 30-day plan | Concrete weekly actions with free course links | Mark today's action done |
-| Counsellor dashboard *(not designed or built)* | Class-level patterns and coaching prompts | Open a student summary |
+| Screen | Purpose | The one dominant action | Status |
+|---|---|---|:--:|
+| Landing | Set the promise: routes to compare, not one answer | *Start as guest* | 🟢 |
+| Interview | Visible progress, editable answers, validation | Answer the current item | 🟡 static, English |
+| Scenario mission | A short realistic task, chosen from the interview profile | Submit the attempt | 🟢 |
+| Routes | Evidence, limitations, unknowns and provenance per route | *Build a plan* on one route | 🟢 |
+| Comparison | The same criteria across every route | Select a route | 🟢 |
+| 30-day plan | Concrete weekly actions; check-ins persist | Mark an action done | 🟡 linear template |
+| Privacy | What is stored, and delete it | *Delete everything* | 🟢 |
+| Interactive roadmap | Step-by-step nodes from now to career entry | Check in on a milestone | 📐 planned |
+| Counsellor dashboard | Class-level patterns and coaching prompts | Open a student summary | 📐 planned |
 
-### Three routes, always
+### Up to three routes, never a winner
 
-Every recommendation returns exactly three alternatives, and none is presented as the winner:
+The engine returns **between zero and three** routes. It is not padded to three, and when the
+evidence is too thin it returns none and explains why.
 
-| Route | What it optimises for | Suits a student who |
-|---|---|---|
-| **Balanced Next Step** | Keeps the most doors open | Is uncertain, or wants to defer commitment safely |
-| **Interest Growth** | Depth in the strongest interest signal | Has a clear, evidence-backed pull toward one area |
-| **Practical Access** | Fastest route to real work | Wants to earn sooner, or prefers learning by doing |
+> An earlier version of this document described three fixed archetypes — *Balanced Next Step*,
+> *Interest Growth* and *Practical Access*. **The implemented engine does not work that way.** It
+> scores every route in the catalogue on the same five criteria and returns the highest-scoring
+> survivors, marking any that are too close to separate as tied. The archetype names were removed
+> rather than reverse-engineered into the code, because a route's character should come from what
+> it is, not from a slot it was assigned to fill.
 
-Each route card carries: why this was suggested · the evidence behind it · what is still unknown ·
-and a **reversible first step** that can be taken this week.
+Each route card carries: why this appeared · the evidence behind it · what is still unknown ·
+where its information came from and how old that is · and a **reversible first step** that can be
+taken this week.
 
 ---
 

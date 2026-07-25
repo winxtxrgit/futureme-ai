@@ -27,9 +27,11 @@ flowchart LR
 | Concern | How the prototype handles it |
 |---|---|
 | Identity | None. Guest session only, random id in `localStorage`. |
-| Persistence | `localStorage`, validated on read, discarded if corrupt or from an old version. |
+| Persistence | `localStorage`, rebuilt field by field on read against the seed data. Valid fields are kept, unrecognised ones dropped, and an unusable container resets to a clean session. v1 sessions are migrated. |
+| Mission selection | A rule over the interview profile in `lib/mission/`. Deterministic, explained on screen, overridable by the learner. |
 | Recommendation | Deterministic TypeScript, executed in the browser. No network call. |
-| Explanation | Deterministic templates. Optional LLM rewording via `/api/explain`, disabled without an API key. |
+| Explanation | Deterministic templates. Optional LLM rewording via `/api/explain`, absent without an API key, labelled when used. |
+| Data provenance | Every route carries its source, status and last-checked date; the page reports the catalogue's age and names the unsourced fields. |
 | Storage | No server-side storage of any kind. |
 
 Source: `app/`, `components/`, `lib/`, `data/`. Tests: `tests/`, `e2e/`.
@@ -72,39 +74,44 @@ flowchart TD
 
 ### Planned backend stages
 
+Top to bottom, so the stages stay readable on a phone.
+
 ```mermaid
 flowchart TD
-    subgraph L1 ["1 · Optional identity, only when saving"]
-        E["Assign role · verify PDPA consent"]
+    subgraph L2 ["1 · Two-phase assessment"]
+        G["Socratic interview"]
+        H["STAR extraction<br/>RIASEC scoring"]
+        I["Scenario mission"]
+        J["Combined profile"]
+        G --> H --> I --> J
     end
 
-    subgraph L2 ["2 · Two-phase assessment"]
-        F --> G["Phase 1 · Socratic interview"]
-        G --> H["STAR extraction + RIASEC scoring"]
-        H --> I["Phase 2 · Scenario mission"]
-        I --> J["Combined evidence profile"]
+    subgraph L3 ["2 · Recommendation"]
+        K["Rule filter by tier"]
+        L["Qdrant hybrid retrieval"]
+        M["LLM writes<br/>the explanation"]
+        K --> L --> M
     end
 
-    subgraph L3 ["3 · Recommendation"]
-        J --> K["Rule-based filter by tier"]
-        K --> L["Qdrant hybrid retrieval"]
-        L --> M["LLM synthesis · structured JSON"]
+    subgraph L4 ["3 · Roadmap"]
+        N["Build DAG"]
+        O["Topological sort"]
+        P["Interactive roadmap"]
+        N --> O --> P
     end
 
-    subgraph L4 ["4 · Roadmap"]
-        M --> N["Build DAG"]
-        N --> O["Topological sort"]
-        O --> P["Interactive roadmap"]
-    end
-
-    subgraph L5 ["5 · Storage and access"]
-        P --> Q["PostgreSQL"]
-        Q --> R{"RBAC"}
+    subgraph L5 ["4 · Save and share"]
+        Q["Optional account<br/>PDPA consent"]
+        R{"RBAC"}
+        Q --> R
         R -->|Student| S["Full private view"]
-        R -->|Parent| T["Summary + 30-day plan"]
-        R -->|Counsellor| U["Summary + class dashboard"]
-        Q --> V["AIS SMS reminders"]
+        R -->|Parent| T["Summary + plan"]
+        R -->|Counsellor| U["Class dashboard"]
     end
+
+    J --> K
+    M --> N
+    P --> Q
 ```
 
 ---
@@ -140,10 +147,13 @@ The **Implemented** column is what runs in this repository today.
 
 ---
 
-## The roadmap generator
+## Planned: the roadmap generator
 
-Recommendations become a **Directed Acyclic Graph**, then a topological sort orders the nodes so
-that nothing appears before its prerequisites.
+**Not implemented.** The prototype renders a linear four-week plan from a template in
+`lib/plan/`. The design below is what would replace it.
+
+Recommendations would become a **Directed Acyclic Graph**, then a topological sort would order the
+nodes so that nothing appears before its prerequisites.
 
 ```mermaid
 flowchart TB
@@ -154,9 +164,13 @@ flowchart TB
     N5 --> N6["Career entry — entry-level role, then progression"]
 ```
 
-The DAG is built, prerequisite edges are added, an acyclic check runs, the sort produces a
-valid ordering, and the graph is serialised to JSON for the frontend. Students expand any node
-for detail and check in to record progress.
+The DAG would be built, prerequisite edges added, an acyclic check run, the sort producing a valid
+ordering, and the graph serialised to JSON for the frontend. Students would expand any node for
+detail and check in to record progress.
+
+Each node would carry its own evidence reference and data year, rather than a hard-coded score
+threshold — TCAS criteria change annually, and a roadmap that states last year's requirement with
+this year's confidence is worse than one that admits it does not know.
 
 **Why a DAG rather than a list:** prerequisites are genuinely partial, not linear. A student can
 build a portfolio while preparing for TPAT. A DAG expresses that; a checklist forces a false
@@ -184,8 +198,9 @@ Privacy is an architectural constraint here, not a policy page. The users are mi
 
 **What the cloud provides, and what it does not**
 
-AIS Cloud offers in-country data residency and ISO 27001 / ISO 27018 certification. That covers
-where data lives and how the facility is run. It does **not** deliver PDPA compliance on its own:
+AIS Cloud's published specifications list Thai data centres, ISO 27001 / 27017 / 27018, CSA-STAR
+and dSURE Cloud 3-star. That covers where data lives and how the facility is run. It does **not**
+deliver PDPA compliance on its own:
 consent management, access control, minimisation, retention and processor governance are
 application-layer responsibilities. This distinction is stated in the research and repeated here
 because conflating the two is the most common way a project like this gets compliance wrong.
@@ -207,7 +222,7 @@ flowchart TD
     C --> G["PostgreSQL pods"]
     E --> H["AIS Open API Gateway<br/>Number Verify · OTP · SMS"]
     E --> I["LLM API over TLS"]
-    F --> J["Data resident in Thailand<br/>ISO 27001 / 27018"]
+    F --> J["Data resident in Thailand<br/>ISO 27001 / 27017 / 27018"]
     G --> J
 ```
 
@@ -225,10 +240,12 @@ class at once. Container auto-scaling suits that pattern better than fixed provi
 
 | Method | Endpoint | Purpose |
 |---|---|---|
-| `POST` | `/api/explain` | Optional LLM rewording of an explanation. Returns `{ source: "fallback" }` when no API key is set, on timeout, on a provider error, or on a malformed response. Always HTTP 200 so the caller never breaks. |
+| `GET` | `/api/explain` | Availability probe. Returns `{ available: boolean }` so the UI can offer the rewording control only when it is configured, rather than showing a button that always falls back. |
+| `POST` | `/api/explain` | Optional LLM rewording of an explanation the engine already produced. Accepts a route name and reason codes, which are filtered against the engine's own vocabulary before anything is forwarded. Returns `{ source: "fallback" }` with the deterministic text when no API key is set, on timeout, on a provider error, or on a malformed response — always HTTP 200, so the caller never breaks. |
 
 There is no recommendation endpoint, by design: the engine runs in the browser, which is what
-makes the guest-mode privacy claim true.
+makes the guest-mode privacy claim true. `/api/explain` is never given the list of routes, so it
+cannot add, remove or reorder one.
 
 ### Planned
 
@@ -255,13 +272,18 @@ flowchart LR
     style B stroke-dasharray: 5 5
 ```
 
-Dashed lines are deliberate. Integrating with DEEP SSO and NDLP content would give the product
-national reach and remove a separate login, and NDLP's static RIASEC test is precisely the gap
-this system fills.
+Dashed lines are deliberate. Integrating with DEEP and NDLP would give the product national reach
+and remove a separate login.
 
-**But no agreement exists.** This depends on official API documentation, technical access
-approval, and a formal partnership — none of which are in place. It is a roadmap item and should
-be presented as nothing more.
+**Almost nothing about that is confirmed.** The July 2026 source audit could not read either
+platform's technical pages. It therefore does not support DEEP offering SSO or an API, and it does
+not support the claim — which this repository previously made — that NDLP's guidance layer is a
+static RIASEC test. What *is* supported is that the Ministry is expanding NDLP under its
+*Anywhere Anytime* programme towards two-way learning.
+
+So the honest position is **aligned with the direction of national policy**, not connected to it.
+Integration would need API documentation, technical access, a data-sharing agreement and a formal
+partnership, none of which exist. See [02 · Research §5](02-research-and-evidence.md).
 
 ---
 
