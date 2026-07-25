@@ -4,113 +4,153 @@
 
 ---
 
-## Milestones delivered
+> **Status as of 25 July 2026.** Statuses below describe *this repository*, not the team's private
+> workspace. Where something exists only as a design, it says so.
 
-Four milestones were completed before this repository was assembled.
+## Status vocabulary
 
-| # | Milestone | Scope | Status |
-|:--:|---|---|:--:|
-| **M1** | Data and claim refactor | Audit of all research categories, blueprints, summaries and flowcharts; removal of unsupported statistical claims; repair of broken links | ✅ Done |
-| **M2** | Product design and decision engine | Multi-tier engine across four education tiers, 30-item RIASEC, 5–8 STAR questions, five-weighted decision matrix, three route alternatives | ✅ Done |
-| **M3** | Schemas, APIs and RAG pipeline | Pydantic schemas, FastAPI endpoints, Qdrant hybrid search with BGE-M3, QLoRA dataset generator | ✅ Done |
-| **M4** | Verification agent and audit suite | Programmatic script validating statistical claims, the 12 ปวช. areas, TPAT mappings, API contracts and RAG metrics | ✅ Done |
+Used consistently across this repository, including in the README and the roadmap.
 
-### Acceptance criteria met
-
-- [x] No unverified 52% mismatch, 65% blanket experience, 85% dual-job or WEF 44% claims remain
-- [x] All 12 ปวช. 2567 vocational subject areas correctly represented
-- [x] TPAT1–5 mappings match the official MyTCAS blueprint
-- [x] Zero broken local file links across documentation and data
-- [x] Engine outputs three distinct routes — Balanced, Interest Growth, Practical Access
-- [x] ม.3 transition supported alongside ป.4–ป.6 exploration and ม.ปลาย/ปวช. TCAS context
-- [x] Mission, submission and future-path endpoints functional against valid JSON schemas
-- [x] Verification script passes all programmatic content and contract checks
+| Label | Meaning |
+|---|---|
+| 🟢 **Implemented** | Runs in this repository. Backed by a file you can open and a test you can run |
+| 🟡 **Prototype implementation** | Runs, but in a reduced form that is not what the product needs |
+| 📐 **Planned** | Designed, documented, not built |
+| 🔴 **Blocked** | Cannot proceed until something outside the code changes |
+| ⛔ **Not started** | Neither designed in detail nor built |
 
 ---
 
 ## Component status
 
-Progress percentages below are **team estimates of scope completed**, not measured coverage.
-They are included to show relative maturity, and should be read as approximate.
+| Component | Status | What exists | What remains |
+|---|:--:|---|---|
+| Runnable guest journey — interview → mission → routes → compare → plan | 🟢 | Complete end to end, no account, no API key | — |
+| Deterministic decision engine | 🟢 | Five weighted criteria, hard filters, 0–3 routes, tie handling | Weights are unfitted to outcomes |
+| Refusal gates | 🟢 | Three gates that return nothing rather than guess | — |
+| Mission selection | 🟢 | Rule over the interview profile, explained on screen, learner-overridable | Three missions is a thin catalogue |
+| Mission draft autosave | 🟢 | Debounced write; a refresh mid-mission loses nothing | — |
+| Guest session validation | 🟢 | Field-by-field rebuild against the seed data, with v1 migration | — |
+| Route data provenance and freshness | 🟢 | Per-route source, status and last-checked date; catalogue age on screen | The catalogue itself is still illustrative |
+| Optional LLM explanation layer | 🟢 | Connected, labelled, cannot affect ranking, degrades to deterministic text | Not evaluated for quality |
+| Safeguarding pause | 🟡 | Keyword rule, Thai and English, stops recommendations and offers support | Not a risk assessment. Nobody is alerted |
+| Interest instrument | 🟡 | 12 items, static, English | Not adaptive, not Thai, not validated |
+| Route catalogue | 🟡 | Six routes with declared provenance | Cost, location, timing and flexibility carry no source |
+| 30-day plan | 🟡 | Four-week template plus gap-specific tasks, progress persists | Linear, not the planned DAG |
+| Continuous integration | 🟢 | Typecheck, lint, unit, integration, build and end-to-end on every PR | — |
+| Accounts, sharing, server persistence | 📐 | Designed | Guest mode only today |
+| RAG pipeline — Qdrant + BGE-M3 | 📐 | Designed | Prototype reads a seeded JSON catalogue |
+| Adaptive Thai Socratic interview | 📐 | Designed | Static English questionnaire today |
+| STAR extraction from free text | 📐 | Designed | Keyword spotting today |
+| Interactive DAG roadmap | 📐 | Algorithm designed | Linear plan today |
+| Counsellor and parent views | 📐 | Designed | Not implemented |
+| AIS Open API integration | 📐 | Specified against CAMARA | Needs developer credentials |
+| QLoRA fine-tuning | 🔴 | — | Dataset unusable — see below |
+| Instrument validation | ⛔ | — | Needs qualified assessment professionals |
+| Bias audit | ⛔ | — | Needs an evaluation set and a defined protocol |
+| School pilot | ⛔ | — | Needs everything above |
 
-| Component | Status | Est. | What remains |
-|---|---|--:|---|
-| Research base — 7 categories | 🟢 Completed | 100% | — |
-| Data and claim audit | 🟢 Completed | 100% | — |
-| Decision engine — RIASEC, STAR, matrix, routing | 🟢 Completed | 100% | Calibration against real outcomes |
-| Pydantic schemas and API contracts | 🟢 Completed | 100% | — |
-| Design system and 11 concepts | 🟢 Completed | 100% | — |
-| Aurora mockups — 6 key views | 🟢 Completed | 100% | Remaining screens |
-| FastAPI endpoints | 🟡 In progress | ~70% | Persistence layer; in-memory storage today |
-| RAG pipeline — Qdrant + BGE-M3 | 🟡 In progress | ~65% | Corpus ingestion at full scale; real embeddings in place of the fallback |
-| Next.js frontend | 🟡 In progress | ~35% | Built from Aurora mockups |
-| Interactive roadmap UI | 🟠 Planned | ~20% | DAG logic designed; renderer not built |
-| AIS Open API integration | 🟠 Planned | ~15% | Specified; requires developer credentials |
-| Counsellor dashboard | 🟠 Planned | ~15% | Designed; not implemented |
-| QLoRA fine-tuning | 🔴 Blocked | ~10% | Dataset unusable — see below |
-| Instrument validation | 🔴 Not started | 0% | Requires qualified assessment experts |
-| School pilot | 🔴 Not started | 0% | Requires everything above |
+Percentage estimates were removed from this table. They implied a precision the team does not
+have, and a five-level status is more honest than a number nobody measured.
 
-**Legend** 🟢 Completed · 🟡 In progress · 🟠 Planned · 🔴 Blocked or not started
+---
+
+## Verification
+
+Every claim of 🟢 above corresponds to something executable.
+
+| Check | Command | Result |
+|---|---|---|
+| Types | `npm run typecheck` | 0 errors, strict mode |
+| Lint | `npm run lint` | 0 warnings |
+| Unit and integration | `npm test` | 136 passing |
+| End-to-end | `npm run test:e2e` | 18 passing, against the production build |
+| Production build | `npm run build` | 9 routes |
+| All of the above | `npm run verify` | Also runs on every pull request |
 
 ---
 
 ## Known blockers
 
 **1 · The QLoRA dataset is not usable.**
-`qwen_qlora_dataset.jsonl` and `test_qwen_qlora.jsonl` are byte-identical and contain ten
-examples each. Evaluating a fine-tune on data it trained on measures nothing. The sets must be
-separated and expanded by roughly two orders of magnitude before any evaluation figure is
-reported. Until then, no fine-tuning metric exists and none should be claimed.
+The train and test files are byte-identical and contain ten examples each. Evaluating a fine-tune
+on data it trained on measures nothing. The sets must be separated and expanded by roughly two
+orders of magnitude before any evaluation figure is reported. Until then no fine-tuning metric
+exists and none may be claimed.
 
 **2 · No validated instruments.**
-The 30-item RIASEC instrument and the scenario-mission rubrics were written from published
-frameworks but have not been reviewed by qualified assessment professionals. They are
-defensible as a prototype and not defensible as an assessment.
+The interest items and the mission rubrics were written from published frameworks but have not
+been reviewed by qualified assessment professionals. They are defensible as a prototype and not
+defensible as an assessment.
 
 **3 · No pilot data.**
 Every effectiveness statement in this project is a design intention. Nothing has been measured
 with real students, so the decision-matrix weights remain design judgement rather than fitted
 parameters.
 
-**4 · AIS Open API credentials.**
-Number Verify, OTP and SMS integration is specified against CAMARA standards but needs developer
-access to implement and test.
+**4 · The route catalogue has no authoritative source.**
+Cost, location, timing and flexibility drive the eligibility filters and none of them carries a
+citation. Replacing them with licensed data — per programme, per year — is the single change that
+would most improve the product's honesty.
+
+**5 · External platform access.**
+AIS Open API credentials, and any NDLP or DEEP integration, need agreements that do not exist. The
+July 2026 source audit could not verify the technical claims previously made about either
+Ministry platform.
+
+---
+
+## What changed since the last plan
+
+The four milestones this document previously listed as complete described the team's private
+workspace, and two of their acceptance criteria did not survive re-checking:
+
+| Previously claimed | Now |
+|---|---|
+| "All 12 ปวช. 2567 vocational subject areas correctly represented" | Withdrawn. The source registry forbids hard-coding subject-area counts, which change per curriculum revision. A test fails if one reappears |
+| "TPAT1–5 mappings match the official MyTCAS blueprint" | Withdrawn. Not modelled in this repository and not re-verifiable from a citable source |
+| "No unverified 52% / 65% / 85% / WEF 44% claims remain" | Partly wrong. WEF 44% is a real 2023-report figure for 2023–2027, not a misquote of 39%. See [09 · Source Review](09-source-review.md) |
+| "Verification script passes all programmatic checks" | That script is not in this repository. The equivalent checks are now unit tests that run in CI |
 
 ---
 
 ## Immediate next steps
 
 ```mermaid
-flowchart TB
-    A["1 · Confirm ม.3 and ม.5 as the first research segments"] --> B["2 · Interview students, parents and counsellors"]
-    B --> C["3 · Validate the RIASEC instrument and mission rubrics"]
-    C --> D["4 · Build one complete end-to-end demo"]
-    D --> E["5 · Safety, consent and evaluation rules"]
+flowchart TD
+    A["1 · Validate the instrument<br/>with qualified experts"] --> B["2 · Interview students,<br/>parents and counsellors"]
+    B --> C["3 · Replace the route catalogue<br/>with licensed data"]
+    C --> D["4 · Build an evaluation set<br/>and run a bias audit"]
+    D --> E["5 · Safety escalation<br/>and child-consent handling"]
     E --> F["6 · School pilot"]
 ```
 
-1. **Confirm ม.3 and ม.5 as the first research segments.** These sit immediately before the two irreversible decisions.
-2. **Interview students, parents and counsellors** across different Thai school contexts — urban and rural, large and small.
-3. **Validate the 30-item RIASEC instrument and mission rubrics** with qualified experts.
-4. **Build one complete end-to-end demo:** guest interview → one mission → three explainable routes → 30-day roadmap → consented counsellor summary. One path working entirely beats six paths working partially.
-5. **Establish source-freshness rules, PDPA and child-consent handling, safety escalation, and an independent AI evaluation set** before any pilot.
+1. **Validate the interest instrument and mission rubrics** with qualified professionals. Until
+   this happens, everything downstream inherits an unmeasured instrument.
+2. **Interview ม.3 and ม.5 students, parents and counsellors** across different Thai school
+   contexts — urban and rural, large and small. These two years sit immediately before the
+   irreversible decisions.
+3. **Replace the demo catalogue** with per-programme, per-year data carrying a source and a
+   validity window.
+4. **Build an independent evaluation set and run a bias audit** across gender, region, school size
+   and income before any student sees the output.
+5. **Establish safety escalation and PDPA child-consent handling**, including a route to appeal a
+   recommendation.
 6. **Run a school pilot** and use the results to calibrate the matrix weights.
 
 ---
 
 ## Team
 
-This is student hackathon work. Roles are functional rather than formal, and the same people
-cover several of them.
+Student hackathon work. Roles are functional rather than formal, and the same people cover several.
 
 | Function | Responsibility |
 |---|---|
-| Research and data | Seven-category research base, claim auditing, source verification |
-| Product and UX | Concept exploration, Aurora design system, user journey, accessibility |
-| AI and backend | Decision engine, RAG pipeline, FastAPI services, schemas |
-| Infrastructure | Cloud architecture, container deployment, PDPA and security design |
-| Verification | Programmatic audit of claims, contracts and content |
+| Research and data | Research base, claim auditing, source verification |
+| Product and UX | Concept exploration, design system, user journey, accessibility |
+| AI and backend | Decision engine, planned RAG pipeline, schemas |
+| Infrastructure | Cloud architecture, deployment, PDPA and security design |
+| Verification | Tests, CI, and auditing claims against the code |
 
 Contributions are welcome — see [CONTRIBUTING.md](../CONTRIBUTING.md).
 
@@ -120,8 +160,8 @@ Contributions are welcome — see [CONTRIBUTING.md](../CONTRIBUTING.md).
 
 If the deadline compresses, the design rules are already agreed:
 
-> **Simplify Aurora's visual effects before reducing recommendation transparency, consent,
-> safety, or accessibility.**
+> **Simplify the visual design before reducing recommendation transparency, consent, safety, or
+> accessibility.**
 
 Concretely: cut animation, cut screens, cut features. Do not cut the "why this was suggested"
 panel, the "what we still don't know" field, the consent gate, or the disclaimer. The visual

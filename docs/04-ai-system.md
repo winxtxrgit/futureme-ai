@@ -4,198 +4,239 @@
 
 ---
 
-## The governing principle: do not let the LLM decide
-
-This came directly from advisor review and it shapes everything below. The system is split so
-that **rules decide and the model communicates**.
-
-| | Rule-based engine | LLM |
-|---|---|---|
-| RIASEC scoring | ● | — |
-| Eligibility and hard constraints | ● | — |
-| Decision-matrix weighting | ● | — |
-| Route selection | ● | — |
-| Conducting the interview | — | ● |
-| Extracting STAR structure from free text | — | ● |
-| Writing the explanation | — | ● |
-
-**Why.** A recommendation that changes between runs cannot be defended to a student, a parent or
-a counsellor. Deterministic scoring means the same evidence always produces the same routes, and
-every number is traceable to a line of code. The model handles what it is genuinely better at:
-conversation and explanation.
-
-The second reason is cost. A small, Thai-capable model plus retrieval plus a LoRA adapter is
-cheaper and faster than a large general model, and the retrieval corpus is where the actual
-domain knowledge lives.
+> **Read this first.** This document is in two halves and they are not the same kind of thing.
+>
+> **Part A — Current prototype** is what runs when you clone this repository and type `npm run
+> dev`. Every claim in it is backed by a file you can open and a test you can run.
+>
+> **Part B — Planned architecture** is design work. None of it is running. It is here because the
+> reasoning is worth showing, not because it exists.
 
 ---
 
-## Pipeline
+# Part A — Current prototype
+
+## A1 · What actually decides
+
+Everything that affects which routes a learner sees is deterministic TypeScript running in the
+browser. There is no model in the decision path, and there is no network call in it either.
+
+| Step | Where | Model involved? |
+|---|---|:--:|
+| Interest scoring (Likert → RIASEC) | `lib/decision-engine/scoring.ts` | No |
+| Mission evidence scoring | `lib/decision-engine/scoring.ts` | No |
+| Mission selection | `lib/mission/index.ts` | No |
+| Eligibility and hard constraints | `lib/decision-engine/eligibility.ts` | No |
+| Decision-matrix weighting | `lib/decision-engine/scoring.ts` | No |
+| Route selection, ranking and tie handling | `lib/decision-engine/index.ts` | No |
+| Refusal gates | `lib/decision-engine/index.ts` | No |
+| 30-day plan generation | `lib/plan/index.ts` | No |
+| **Rewording an explanation already produced** | `app/api/explain/route.ts` | Optional |
+
+The same answers always produce the same routes. That is the property that makes the output
+defensible to a student, a parent or a counsellor — and it is why the model is kept out.
+
+### The implemented pipeline
 
 ```mermaid
 flowchart TD
-    A["Student profile<br/>RIASEC + STAR + mission result"] --> B["FastAPI orchestrator"]
-
-    subgraph RULES ["Rule-based engine — deterministic"]
-        B --> C["Hard constraints<br/>tier, grades, geography"]
-        C --> D["Filter ineligible pathways"]
-    end
-
-    subgraph RAG ["Qdrant hybrid retrieval"]
-        D --> E["BGE-M3 embedding<br/>1024 dimensions"]
-        E --> F["Dense semantic search"]
-        E --> G["Sparse keyword search<br/>subjects, faculties, TPQI"]
-        F --> H["Reciprocal Rank Fusion"]
-        G --> H
-        H --> I["Career clusters +<br/>Thai curriculum context"]
-    end
-
-    subgraph LLM ["LLM synthesis"]
-        I --> J["Context + profile → LLM"]
-        J --> K["Structured JSON output<br/>enforced by template"]
-        K --> L["Strengths · evidence · unknowns"]
-    end
-
-    L --> M["Three routes → roadmap generator"]
+    A["Interview<br/>12 Likert items + context"] --> B["RIASEC profile"]
+    C["Mission<br/>one scenario task"] --> D["Second RIASEC vector"]
+    B --> E{"Enough evidence?"}
+    D --> E
+    E -->|No| F["Return nothing<br/>and say why"]
+    E -->|Yes| G["Hard filters<br/>tier · cost · location"]
+    G --> H["Five weighted criteria"]
+    H --> I["0–3 routes<br/>each with evidence and unknowns"]
 ```
 
----
+## A2 · Phase 1 — the interview
 
-## Phase 1 — Socratic interview
+**What it is:** twelve Likert items, two per RIASEC dimension, plus four context questions and one
+optional free-text prompt. Static, in English, presented in a fixed order.
 
-An adaptive conversation, 5–10 minutes, tone and vocabulary adjusted per education tier.
+**What it is not:** it is not adaptive, not conversational, and not in Thai. It is labelled
+*"Demo assessment — shortened for prototype evaluation"* on screen for exactly that reason.
 
-**Two things run in parallel:**
+Unanswered items are excluded from the average rather than scored as zero, so a partial interview
+does not silently look like a low score.
 
-**RIASEC scoring.** A 30-item instrument, 5 items per dimension, 1–5 Likert. Produces raw
-scores, normalised scores, a three-letter Holland code (e.g. `RIA`) and a percentage breakdown.
-→ `app/decision_engine/riasec.py`
+→ `data/questions.json`, `lib/decision-engine/scoring.ts`, `app/interview/page.tsx`
 
-**STAR extraction.** 5–8 qualitative questions evaluated for Situation → Task → Action → Result
-structure. Answers grounded in something the student actually did score higher than opinions;
-Socratic follow-ups probe where the structure is incomplete. Yields strengths and
-learning-style signals. → `app/decision_engine/star_eval.py`
+## A3 · Phase 2 — the scenario mission
 
-Laddering pushes from stated behaviour toward underlying values; Motivational Interviewing keeps
-the tone non-judgemental so the student is not defending a position.
+Three missions, each a short planning task with text, multi-select and single-select steps. Each
+option carries a fixed evidence map from option to RIASEC dimensions; free text is scored by
+keyword spotting. **No model reads the answers.**
 
----
+**Which mission a learner gets** is decided by a rule that walks their RIASEC dimensions
+strongest-first and takes the first mission listing that dimension in its `bestFor`. Catalogue
+order breaks ties. The rule states its reason on screen, and it declines to choose — falling back
+to the default and saying so — when the interview is too short or too flat to justify a choice.
+The learner can always pick a different mission.
 
-## Phase 2 — Scenario mission
+Every mission offers options spanning all six dimensions, not only the ones it is chosen for. That
+is deliberate and it is enforced by a test: if a mission could only produce evidence in the
+dimensions it was chosen for, it could never contradict the interview, and the contradiction
+signal is the whole point of running a second phase.
 
-A short hands-on task, 3–5 minutes, chosen in the direction Phase 1 pointed toward.
+**A contradiction is not discarded — it is shown to the learner** as something worth investigating
+rather than averaged away.
 
-```mermaid
-flowchart LR
-    A["Phase 1 signals"] --> B["Select mission"]
-    B --> C["Student attempts it<br/>in the browser"]
-    C --> D["Score the attempt"]
-    D --> E{"Agrees with<br/>the interview?"}
-    E -->|Yes| F["Confidence up"]
-    E -->|No| G["Flag the conflict<br/>surface it in the result"]
-```
+→ `data/missions.json`, `lib/mission/index.ts`, `app/mission/page.tsx`
 
-This is what separates the product from a questionnaire. A student who *says* they like design
-gets a small design problem; the result is independent evidence. **A contradiction is not
-discarded — it is shown to the student** as something worth investigating.
-
-Missions currently defined: exploring AI and software, exploring the 12 ปวช. vocational areas
-and DVE, and planning a TCAS/TPAT route.
-
----
-
-## The decision matrix
-
-Five criteria, each scored 0–100, combined into one weighted composite.
+## A4 · The decision matrix
 
 ![Decision matrix weights](../assets/diagrams/decision-matrix.svg)
 
 | Criterion | Weight | Fed by |
-|---|---:|---|
-| Interests | 30% | RIASEC profile |
-| Feasibility | 25% | GPA readiness, financial access, geographic access |
-| Strengths | 20% | STAR evidence and mission result |
-| Learning style | 15% | Extracted preferences |
-| Future flexibility | 10% | Cross-industry versatility, further-study openness |
+|---|--:|---|
+| Interests | 30% | RIASEC profile from the interview |
+| Feasibility | 25% | Cost, location and timing answers |
+| Strengths | 20% | Mission evidence — neutral 50 when no mission is complete |
+| Learning style | 15% | Route learning style against the profile |
+| Future flexibility | 10% | The route's own flexibility value |
 
-**Feasibility at 25% is a deliberate choice.** A recommendation a student cannot afford, cannot
-reach, or cannot academically qualify for is not a recommendation. Weighting it second-highest
-keeps the output honest about constraints that guidance advice usually ignores.
+**Feasibility at 25% is a deliberate choice.** A route a student cannot afford or cannot reach is
+not a recommendation. Weighting it second-highest keeps the output honest about the constraints
+that guidance advice usually ignores.
 
-> These weights are **set by design judgement, not fitted to outcome data.** No student outcome
-> data exists yet. Calibrating them against real results is a roadmap item.
+> These weights are **design judgement, not fitted to outcome data.** No student outcome data
+> exists. The constant lives in one place, `WEIGHTS` in `lib/decision-engine/scoring.ts`, so the
+> code and this table cannot drift apart.
 
-→ `app/decision_engine/matrix.py`
+## A5 · Refusing to answer
 
----
+Three gates make the engine return **nothing** rather than guess. This is the feature the team is
+most confident about, because it is the one a demo is least likely to show.
 
-## Multi-tier routing
-
-The same engine serves four education tiers with different pathway sets.
-
-| Tier | Grades | Pathways considered |
+| Gate | Condition | Why |
 |---|---|---|
-| `PRIMARY` | ป.4 – ป.6 | Play-based interest discovery, career awareness |
-| `LOWER_SECONDARY` | ม.1 – ม.3 | 5 ม.4 tracks, 12 ปวช. areas, DVE, plus a counsellor safety route |
-| `UPPER_SECONDARY` | ม.4 – ม.6 | Faculty matching, TCAS context, TPAT1–5 mapping, portfolio |
-| `VOCATIONAL` | ปวช. – ปวส. | ปวส. progression, bachelor's technology track, direct employment |
+| 1 | Fewer than 8 of 12 interest items answered | Too little was said to say anything back |
+| 2 | Profile spread below 0.15 | Every answer was the same; a "match" would be an invented preference |
+| 3 | Every surviving route rated `insufficient` | Routes passed the filters but nothing supports them |
 
-The **safety route** at lower secondary is worth noting: when a student's confidence or grades
-are uncertain, the engine returns a parallel fallback spanning both general and vocational
-options, explicitly flagged for a counsellor conversation rather than an autonomous decision.
+Evidence strength is about **how much is known**, not how high the score is. A high score from a
+half-finished interview is still weak evidence, and no route can reach "strong" without a
+completed mission.
 
-→ `app/decision_engine/multi_tier.py`
+## A6 · The optional explanation layer
+
+```text
+deterministic engine → structured result → [optional rewording] → wording on screen
+```
+
+`/api/explain` receives a route name and a set of reason codes and returns warmer wording. It is
+reachable from each route card when an API key is configured, and absent when one is not.
+
+Four properties make it safe to ship:
+
+- **It never sees the route list**, so it cannot add, remove or reorder a route.
+- **Reason codes are filtered against the engine's own vocabulary** before anything is forwarded,
+  so the endpoint cannot relay arbitrary strings to a third party.
+- **The learner's free text is never sent** — not the interview's "something you were proud of"
+  answer, not the mission writing.
+- **Every failure path returns HTTP 200 with the deterministic text**, so a provider outage
+  changes nothing on screen.
+
+Reworded text is labelled as reworded, says what it did not change, and the original is one click
+away.
+
+→ `app/api/explain/route.ts`, `app/routes/page.tsx`
+
+## A7 · What is wrong with the current prototype
+
+Stated plainly, because a working demo hides all of this.
+
+| Gap | Consequence |
+|---|---|
+| The instrument is not validated | 12 items written from the structure of Holland's RIASEC model, never reviewed by a qualified assessment professional. It is not a RIASEC test |
+| Mission rubrics are not validated | Same standard. The option→dimension maps are the team's judgement |
+| The weights are not fitted | Design judgement against no outcome data |
+| No evaluation set exists | Recommendation quality cannot be measured, so no accuracy figure may be stated in any form |
+| No bias audit | Unknown whether the engine steers students by gender, region, school size or income |
+| No pilot | Every effectiveness statement in this repository is a design goal |
+| Route data is illustrative | Cost, location, timing and flexibility carry no source. See [02 · Research](02-research-and-evidence.md#source-registry) |
+| The safeguarding rule is a keyword match | It will miss cases and produce false positives, and nobody is alerted |
+| English only | The target users are Thai students |
 
 ---
 
-## Retrieval
+# Part B — Planned architecture
 
-| Component | Choice | Reason |
+**None of this is implemented.** It is recorded because the design reasoning is part of the
+submission, not because any of it runs.
+
+## B1 · What the planned system would add
+
+| Capability | Status | What the prototype does instead |
 |---|---|---|
-| Embedding | BAAI/BGE-M3, 1024-dim | Strong multilingual and Thai performance |
-| Vector store | Qdrant | Hybrid dense + sparse in one query |
-| Retrieval | Dense semantic + sparse keyword, fused with RRF | Thai queries mix semantic intent with exact terms — faculty names, TPAT codes, TPQI qualifications, which pure vector search retrieves poorly |
-| Corpus | Career clusters, curricula, vocational programmes, skill taxonomy | Domain knowledge lives here, not in model weights |
+| Adaptive Thai-language Socratic interview | 📐 Planned | Static English Likert questionnaire |
+| STAR extraction from free text | 📐 Planned | Keyword spotting against a fixed dimension map |
+| Qdrant hybrid retrieval (dense + sparse, RRF-fused) | 📐 Planned | A seeded JSON catalogue of six routes |
+| BGE-M3 embeddings, 1024-dim | 📐 Planned | No embeddings at all |
+| LLM synthesis into structured JSON | 📐 Planned | Deterministic template text, optionally reworded |
+| FastAPI orchestrator, PostgreSQL, RBAC | 📐 Planned | Everything runs in the browser; nothing is stored server-side |
+| DAG roadmap with topological sort | 📐 Planned | A linear four-week plan from a template |
+| QLoRA adapter for Thai tone | 🔴 Blocked | Not attempted |
 
-A deterministic hash-based embedding fallback exists so the pipeline runs without model weights
-present. It is a development convenience — **not** a substitute for real embeddings, and results
-produced under it are not meaningful.
+### The planned retrieval pipeline
 
-→ `app/rag/pipeline.py`, `app/rag/qdrant_client.py`
+```mermaid
+flowchart TD
+    A["Scored profile"] --> B["Rule engine<br/>hard constraints"]
+    B --> C["Dense semantic search"]
+    B --> D["Sparse keyword search"]
+    C --> E["Reciprocal Rank Fusion"]
+    D --> E
+    E --> F["Career and curriculum context"]
+    F --> G["LLM writes the explanation"]
+    G --> H["Routes with evidence IDs"]
+```
 
----
+**Why hybrid retrieval would be needed.** Thai guidance queries mix semantic intent with exact
+terms — faculty names, TPAT codes, TPQI qualification numbers. Pure vector search retrieves those
+poorly, so dense and sparse results would be fused rather than chosen between.
 
-## Generation
+**Why the split survives into the planned design.** Even with retrieval and generation in place,
+the rule engine still decides. The model's job grows — conducting the interview, extracting
+structure, writing the explanation — but it never gains the decision. A recommendation that
+changes between runs cannot be defended to a child.
 
-The LLM receives retrieved context plus the scored profile and returns **structured JSON under a
-prompt template** — not free prose. Every generated route must carry:
+**Why not a large model.** A small Thai-capable model plus retrieval is cheaper and faster, and
+the domain knowledge belongs in a corpus that can be corrected in an afternoon, not in weights
+that have to be retrained.
 
-- the reasons it was suggested
-- the specific evidence supporting each reason
-- **what the system is still unsure about**
+## B2 · Why LoRA is not the answer to the data problem
 
-That third field is required, not optional. A recommendation engine that never expresses
-uncertainty is either lying or overfitted, and for a decision this consequential it needs to
-say what it does not know.
+Fine-tuning is the wrong tool for teaching a model which programmes exist and what they require.
+That information changes every admission cycle and is far easier to update through retrieval.
 
-**Model strategy:** a Thai-capable LLM API (Claude / Typhoon class) for live conversation, with
-a small local model plus QLoRA adapter evaluated as a lower-cost alternative for the interview
-turn. Both routes are documented; neither is locked in.
+A LoRA adapter would be justified for *style and format* — safe non-leading Thai conversation,
+consistent extraction into one schema, explanations that follow a rubric — and only once there is
+an expert-reviewed example set, a test split that does not overlap the training split, and a
+prompting baseline to beat.
 
----
+**The current dataset does not meet that bar.** The train and test files are byte-identical and
+contain ten examples each. Evaluating a fine-tune on data it trained on measures nothing. No
+fine-tuning metric exists for this project and none should be claimed.
 
-## What is not working yet
+## B3 · How the planned system would be evaluated
 
-Stated plainly, because a demo can hide all of this:
+No evaluation has been run. This is what would have to exist before a pilot.
 
-- **The QLoRA dataset is not usable.** Train and test files are identical, ten examples each. No fine-tune has been evaluated and no evaluation numbers exist.
-- **No independent evaluation set.** There is no held-out benchmark for recommendation quality, so "accuracy" cannot be claimed in any form.
-- **The RIASEC instrument is unvalidated.** 30 items written from the Holland framework, not psychometrically validated by qualified experts.
-- **Mission rubrics are unvalidated** by the same standard.
-- **The embedding fallback is active** wherever BGE-M3 weights are absent.
-- **No bias audit** across gender, region, school size or socioeconomic status has been run.
+| Layer | Measure |
+|---|---|
+| Retrieval | Source recall, citation precision, freshness of what was retrieved |
+| Mapping | Correctness of occupation ↔ skill ↔ programme edges |
+| Recommendation | Counsellor agreement, student-reported usefulness, diversity of options offered |
+| Safety | Rate of advice exceeding the evidence; stereotyping; bias by gender, income and region |
+| Product | Can the student explain why they were shown this, and did they act on it? |
 
-Each is tracked in [07 · Roadmap](07-roadmap.md).
+The test set has to include the cases the system is most likely to get wrong: students with no
+idea what they want, vocational learners, GED / สกร. / homeschool routes, students outside
+Bangkok, students with a hard budget limit, and cases where the honest answer is that there is not
+enough evidence yet.
 
 ---
 

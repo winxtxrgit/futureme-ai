@@ -1,0 +1,209 @@
+{
+  "meta": {
+    "notice": "Missions produce behavioural evidence that is scored deterministically by rules in lib/decision-engine/scoring.ts. No trained model evaluates these responses, and the rubric has not been validated.",
+    "selection": "Which mission a learner is given is decided by lib/mission/select.ts from the interview profile alone — a transparent rule, not a model. `bestFor` lists the RIASEC dimensions a mission is chosen for; it does not limit the evidence it can produce, because every mission offers options across all six dimensions so that a mission can still disagree with the interview."
+  },
+  "missions": [
+    {
+      "id": "mission-school-problem",
+      "bestFor": ["I", "C"],
+      "title": "Fix something that annoys people at your school",
+      "chosenBecause": "your answers leaned towards working things out and keeping things organised",
+      "minutes": 12,
+      "objective": "Pick one real, small problem at your school and describe how you would actually attack it. There is no correct answer — the point is what your choices reveal about how you like to work.",
+      "prompt": "Think of something at your school that wastes people's time or makes them frustrated. A sign-up sheet nobody can read. A queue that is always chaotic. Equipment that keeps breaking.",
+      "steps": [
+        {
+          "id": "problem",
+          "type": "text",
+          "required": true,
+          "minLength": 20,
+          "label": "What is the problem, and who does it affect?",
+          "placeholder": "Describe the problem in a sentence or two, and say who it affects."
+        },
+        {
+          "id": "approach",
+          "type": "multi",
+          "required": true,
+          "minSelected": 2,
+          "maxSelected": 4,
+          "label": "How would you start? Choose the 2–4 steps you would genuinely do first.",
+          "help": "Choose what you would really do, not what sounds best.",
+          "options": [
+            { "value": "observe", "label": "Watch it happen a few times and take notes", "evidence": { "I": 2, "C": 1 } },
+            { "value": "interview", "label": "Ask the people affected what actually bothers them", "evidence": { "S": 2, "I": 1 } },
+            { "value": "measure", "label": "Count or measure something to see how bad it is", "evidence": { "I": 2, "C": 2 } },
+            { "value": "prototype", "label": "Sketch or mock up a better version", "evidence": { "A": 2, "R": 1 } },
+            { "value": "build", "label": "Build or physically rearrange the thing itself", "evidence": { "R": 3 } },
+            { "value": "organise", "label": "Write a clear procedure or schedule people can follow", "evidence": { "C": 3 } },
+            { "value": "pitch", "label": "Convince a teacher or committee to back the change", "evidence": { "E": 3 } },
+            { "value": "recruit", "label": "Get a group of friends together to help run it", "evidence": { "E": 2, "S": 2 } }
+          ]
+        },
+        {
+          "id": "evidence",
+          "type": "text",
+          "required": true,
+          "minLength": 20,
+          "label": "How would you know whether it actually worked?",
+          "placeholder": "What would you look at, count, or ask to tell whether the problem got better?"
+        },
+        {
+          "id": "energy",
+          "type": "single",
+          "required": true,
+          "label": "Which part of that would you most look forward to?",
+          "options": [
+            { "value": "figuring", "label": "Working out what is really going on", "evidence": { "I": 3 } },
+            { "value": "making", "label": "Making or building the fix", "evidence": { "R": 2, "A": 2 } },
+            { "value": "people", "label": "Talking to the people involved", "evidence": { "S": 3 } },
+            { "value": "leading", "label": "Getting it approved and rolled out", "evidence": { "E": 3 } },
+            { "value": "ordering", "label": "Making it tidy, documented and repeatable", "evidence": { "C": 3 } }
+          ]
+        }
+      ],
+      "textEvidenceKeywords": {
+        "R": ["build", "built", "fix", "fixed", "repair", "machine", "wire", "tool", "assemble", "hardware"],
+        "I": ["why", "data", "measure", "test", "analyse", "analyze", "research", "experiment", "cause", "pattern"],
+        "A": ["design", "draw", "poster", "video", "write", "creative", "layout", "colour", "color", "story"],
+        "S": ["help", "helped", "teach", "taught", "explain", "friend", "classmate", "together", "support", "listen"],
+        "E": ["organise", "organize", "lead", "led", "start", "started", "convince", "pitch", "sell", "team"],
+        "C": ["schedule", "spreadsheet", "record", "list", "sort", "track", "budget", "accurate", "system", "order"]
+      }
+    },
+    {
+      "id": "mission-make-something",
+      "bestFor": ["R", "A"],
+      "title": "Make one small thing better with your own hands",
+      "chosenBecause": "your answers leaned towards making, building and designing",
+      "minutes": 12,
+      "objective": "Choose one object or space you use often and plan how you would actually remake or repair it. What matters is which part of the work you reach for first.",
+      "prompt": "Think of something physical or visual you use every week that could be better. A shelf that never holds what you need. A club poster nobody reads. A bag, a bike, a workbench, a room layout.",
+      "steps": [
+        {
+          "id": "thing",
+          "type": "text",
+          "required": true,
+          "minLength": 20,
+          "label": "What would you remake, and what is wrong with it now?",
+          "placeholder": "Name the thing and say plainly what does not work about it."
+        },
+        {
+          "id": "approach",
+          "type": "multi",
+          "required": true,
+          "minSelected": 2,
+          "maxSelected": 4,
+          "label": "How would you start? Choose the 2–4 steps you would genuinely do first.",
+          "help": "Choose what you would really do, not what sounds most impressive.",
+          "options": [
+            { "value": "takeapart", "label": "Take it apart to see how it is actually made", "evidence": { "R": 3 } },
+            { "value": "sketch", "label": "Sketch several versions before committing to one", "evidence": { "A": 3 } },
+            { "value": "measure", "label": "Measure everything and work out what will fit", "evidence": { "C": 2, "I": 1 } },
+            { "value": "research", "label": "Find out how other people solved the same thing", "evidence": { "I": 3 } },
+            { "value": "ask", "label": "Ask the people who use it what annoys them most", "evidence": { "S": 2, "I": 1 } },
+            { "value": "materials", "label": "Work out the materials, the cost and where to get them", "evidence": { "C": 2, "E": 1 } },
+            { "value": "rough", "label": "Build a rough version immediately and improve it later", "evidence": { "R": 2, "A": 1 } },
+            { "value": "recruit", "label": "Get other people involved and split up the work", "evidence": { "E": 2, "S": 2 } }
+          ]
+        },
+        {
+          "id": "tradeoff",
+          "type": "text",
+          "required": true,
+          "minLength": 20,
+          "label": "What would you have to give up to make it work?",
+          "placeholder": "Time, money, space, someone else's preference — say which, and why you would accept it."
+        },
+        {
+          "id": "energy",
+          "type": "single",
+          "required": true,
+          "label": "Which part of that would you most look forward to?",
+          "options": [
+            { "value": "hands", "label": "The actual making — cutting, fitting, assembling", "evidence": { "R": 3 } },
+            { "value": "look", "label": "Getting the look and feel exactly right", "evidence": { "A": 3 } },
+            { "value": "solving", "label": "Working out why the old version failed", "evidence": { "I": 3 } },
+            { "value": "precision", "label": "Getting the measurements and the plan exact", "evidence": { "C": 3 } },
+            { "value": "showing", "label": "Handing it over and seeing someone use it", "evidence": { "S": 2, "E": 2 } }
+          ]
+        }
+      ],
+      "textEvidenceKeywords": {
+        "R": ["build", "built", "fix", "fixed", "repair", "machine", "wire", "tool", "assemble", "hardware"],
+        "I": ["why", "data", "measure", "test", "analyse", "analyze", "research", "experiment", "cause", "pattern"],
+        "A": ["design", "draw", "poster", "video", "write", "creative", "layout", "colour", "color", "story"],
+        "S": ["help", "helped", "teach", "taught", "explain", "friend", "classmate", "together", "support", "listen"],
+        "E": ["organise", "organize", "lead", "led", "start", "started", "convince", "pitch", "sell", "team"],
+        "C": ["schedule", "spreadsheet", "record", "list", "sort", "track", "budget", "accurate", "system", "order"]
+      }
+    },
+    {
+      "id": "mission-run-something",
+      "bestFor": ["S", "E"],
+      "title": "Get one small thing to happen for other people",
+      "chosenBecause": "your answers leaned towards working with people and getting things started",
+      "minutes": 12,
+      "objective": "Plan one small real activity that other people would take part in, and describe how you would actually get it to happen. The interesting part is which job you would take yourself.",
+      "prompt": "Think of something small you could genuinely organise: a study session before an exam, a clean-up, a stall at a school event, a group that helps younger students with one specific subject.",
+      "steps": [
+        {
+          "id": "activity",
+          "type": "text",
+          "required": true,
+          "minLength": 20,
+          "label": "What would you run, and who is it for?",
+          "placeholder": "Describe the activity in a sentence or two, and say who would turn up."
+        },
+        {
+          "id": "approach",
+          "type": "multi",
+          "required": true,
+          "minSelected": 2,
+          "maxSelected": 4,
+          "label": "How would you start? Choose the 2–4 steps you would genuinely do first.",
+          "help": "Choose what you would really do, not what a good organiser is supposed to do.",
+          "options": [
+            { "value": "askneed", "label": "Ask people what they actually need before deciding", "evidence": { "S": 3 } },
+            { "value": "persuade", "label": "Get a teacher or the school to say yes", "evidence": { "E": 3 } },
+            { "value": "plan", "label": "Write the schedule, the roles and the checklist", "evidence": { "C": 3 } },
+            { "value": "promote", "label": "Design the poster or the message that gets people there", "evidence": { "A": 2, "E": 1 } },
+            { "value": "setup", "label": "Handle the physical setup — space, chairs, equipment", "evidence": { "R": 3 } },
+            { "value": "teach", "label": "Run the session itself and explain things to people", "evidence": { "S": 2, "E": 1 } },
+            { "value": "check", "label": "Work out beforehand what could go wrong and why", "evidence": { "I": 3 } },
+            { "value": "budget", "label": "Work out what it costs and how to cover it", "evidence": { "C": 2, "E": 1 } }
+          ]
+        },
+        {
+          "id": "hard",
+          "type": "text",
+          "required": true,
+          "minLength": 20,
+          "label": "What is the part most likely to go wrong, and what would you do about it?",
+          "placeholder": "Nobody turns up, the room is double-booked, one person does all the work — pick one and say how you would handle it."
+        },
+        {
+          "id": "energy",
+          "type": "single",
+          "required": true,
+          "label": "Which part of that would you most look forward to?",
+          "options": [
+            { "value": "helping", "label": "Actually helping the people who came", "evidence": { "S": 3 } },
+            { "value": "rallying", "label": "Getting people on board and keeping them going", "evidence": { "E": 3 } },
+            { "value": "running", "label": "Making the plan run exactly as it should", "evidence": { "C": 3 } },
+            { "value": "makinglook", "label": "Making it look and feel like something worth joining", "evidence": { "A": 3 } },
+            { "value": "hands", "label": "Setting up and handling the practical side", "evidence": { "R": 3 } }
+          ]
+        }
+      ],
+      "textEvidenceKeywords": {
+        "R": ["build", "built", "fix", "fixed", "repair", "machine", "wire", "tool", "assemble", "hardware"],
+        "I": ["why", "data", "measure", "test", "analyse", "analyze", "research", "experiment", "cause", "pattern"],
+        "A": ["design", "draw", "poster", "video", "write", "creative", "layout", "colour", "color", "story"],
+        "S": ["help", "helped", "teach", "taught", "explain", "friend", "classmate", "together", "support", "listen"],
+        "E": ["organise", "organize", "lead", "led", "start", "started", "convince", "pitch", "sell", "team"],
+        "C": ["schedule", "spreadsheet", "record", "list", "sort", "track", "budget", "accurate", "system", "order"]
+      }
+    }
+  ]
+}

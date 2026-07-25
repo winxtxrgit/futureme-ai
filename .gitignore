@@ -1,3 +1,15 @@
+node_modules/
+.next/
+out/
+build/
+.env
+.env.local
+.env*.local
+playwright-report/
+test-results/
+.vercel
+next-env.d.ts
+*.tsbuildinfo
 # macOS
 .DS_Store
 
@@ -27,5 +39,10 @@ dist/
 .agents/
 
 # Private source materials — see source-materials/README.md
-Data/
+#
+# NOTE: do not add a `Data/` rule here. The private research folder lives in the
+# parent workspace, outside this repository, so the rule was never needed — and
+# on case-insensitive filesystems (macOS, Windows) it also silently ignores the
+# application's `data/` seed files, which breaks the demo.
 *.m4a
+*.pdf

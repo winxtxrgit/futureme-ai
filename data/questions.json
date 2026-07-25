@@ -1,0 +1,86 @@
+{
+  "meta": {
+    "id": "demo-assessment-v1",
+    "label": "Demo assessment — shortened for prototype evaluation",
+    "notice": "This is a shortened, prototype instrument built on the structure of Holland's RIASEC model. It has NOT been psychometrically validated and must not be presented as a validated RIASEC assessment.",
+    "itemsPerDimension": 2
+  },
+  "interest": [
+    { "id": "R1", "dimension": "R", "text": "I would rather fix or build something with my hands than read about how it works." },
+    { "id": "R2", "dimension": "R", "text": "I enjoy working with tools, machines, or physical materials." },
+    { "id": "I1", "dimension": "I", "text": "When something breaks, I want to understand why before I try to fix it." },
+    { "id": "I2", "dimension": "I", "text": "I enjoy digging into data or evidence to work out what is really going on." },
+    { "id": "A1", "dimension": "A", "text": "I often come up with my own ideas rather than following an existing example." },
+    { "id": "A2", "dimension": "A", "text": "I enjoy designing, drawing, writing, composing, or making things look and feel right." },
+    { "id": "S1", "dimension": "S", "text": "People come to me when they need help or need something explained." },
+    { "id": "S2", "dimension": "S", "text": "I find it satisfying to teach someone until they genuinely understand." },
+    { "id": "E1", "dimension": "E", "text": "I am comfortable persuading people or leading a group towards a decision." },
+    { "id": "E2", "dimension": "E", "text": "I like starting things — projects, clubs, small businesses — rather than joining them." },
+    { "id": "C1", "dimension": "C", "text": "I prefer clear instructions and a tidy system over figuring it out as I go." },
+    { "id": "C2", "dimension": "C", "text": "I am good at keeping records, schedules, or numbers accurate and organised." }
+  ],
+  "context": [
+    {
+      "id": "tier",
+      "type": "single",
+      "required": true,
+      "text": "Where are you right now?",
+      "help": "This decides which routes are relevant to you.",
+      "options": [
+        { "value": "LOWER_SECONDARY", "label": "ม.1 – ม.3 (lower secondary)" },
+        { "value": "UPPER_SECONDARY", "label": "ม.4 – ม.6 (upper secondary)" },
+        { "value": "VOCATIONAL", "label": "ปวช. – ปวส. (vocational)" }
+      ]
+    },
+    {
+      "id": "cost",
+      "type": "single",
+      "required": true,
+      "text": "How much does cost matter in your decision?",
+      "help": "Routes you cannot afford are not recommendations. Answer honestly.",
+      "options": [
+        { "value": "tight", "label": "It matters a lot — I need a low-cost route" },
+        { "value": "moderate", "label": "It matters somewhat" },
+        { "value": "flexible", "label": "It is not a major constraint" },
+        { "value": "unknown", "label": "I do not know yet" }
+      ]
+    },
+    {
+      "id": "mobility",
+      "type": "single",
+      "required": true,
+      "text": "Could you study away from your home province?",
+      "options": [
+        { "value": "local_only", "label": "No — it needs to be near home" },
+        { "value": "can_move", "label": "Yes — I could move" },
+        { "value": "unknown", "label": "I do not know yet" }
+      ]
+    },
+    {
+      "id": "horizon",
+      "type": "single",
+      "required": true,
+      "text": "How soon do you want to be earning?",
+      "options": [
+        { "value": "soon", "label": "As soon as possible" },
+        { "value": "later", "label": "I am willing to study for several years first" },
+        { "value": "unsure", "label": "I am not sure" }
+      ]
+    },
+    {
+      "id": "proud",
+      "type": "text",
+      "required": false,
+      "text": "Describe one thing you made, fixed, organised, or helped with that you were proud of.",
+      "help": "Optional. Free text is scanned for evidence keywords only — it is never sent anywhere in guest mode.",
+      "placeholder": "For example: I rebuilt the school club's sign-up sheet so nobody got double-booked…"
+    }
+  ],
+  "scale": [
+    { "value": 1, "label": "Not like me" },
+    { "value": 2, "label": "A little" },
+    { "value": 3, "label": "Somewhat" },
+    { "value": 4, "label": "Quite like me" },
+    { "value": 5, "label": "Very like me" }
+  ]
+}

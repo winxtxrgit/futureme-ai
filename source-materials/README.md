@@ -18,7 +18,7 @@ Seven categories of Thai-language research documents, assembled before design wo
 | **02** Thai national curricula | Basic education (สพฐ.), vocational ปวช. 2567, higher education and TCAS | [02 · Research §2](../docs/02-research-and-evidence.md) |
 | **03** Career, degree and skills mapping | Five career clusters mapped to tracks, faculties and skills | [02 · Research §3](../docs/02-research-and-evidence.md) |
 | **04** Qualitative interviewing research | Socratic, Motivational Interviewing, RIASEC, Ikigai, Laddering, STAR | [02 · Research §4](../docs/02-research-and-evidence.md), [04 · AI System](../docs/04-ai-system.md) |
-| **05** NDLP / Ministry of Education | NDLP platform architecture, DEEP SSO and ecosystem integration | [02 · Research §5](../docs/02-research-and-evidence.md), [05 · Architecture](../docs/05-system-architecture.md) |
+| **05** NDLP / Ministry of Education | Ministry digital-learning policy. The technical claims previously drawn from this category did not survive the July 2026 audit | [02 · Research §5](../docs/02-research-and-evidence.md), [09 · Source Review](../docs/09-source-review.md) |
 | **06** AIS Cloud and infrastructure | Cloud architecture, CAMARA Open APIs, roadmap DAG algorithm | [02 · Research §6](../docs/02-research-and-evidence.md), [05 · Architecture](../docs/05-system-architecture.md) |
 | **07** System blueprints and flowcharts | Master operations flowchart, six sub-system flowcharts, implementation plan | [05 · Architecture](../docs/05-system-architecture.md) |
 
@@ -48,8 +48,9 @@ repository — none were present in the source materials either.
 ## Citation
 
 Statistical claims in the published documents cite their primary sources inline. Where a figure
-could not be traced to a primary source, it was removed rather than softened; the four removed
-claims are listed in [02 · Research §1](../docs/02-research-and-evidence.md).
+could not be traced to a primary source, it was removed rather than softened; the withdrawn claims
+are listed in [02 · Research §7](../docs/02-research-and-evidence.md), and the July 2026 audit that
+produced most of them is documented in [09 · Source Review](../docs/09-source-review.md).
 
 If you need access to the underlying research for review, evaluation, or academic purposes,
 please [open an issue](https://github.com/winxtxrgit/futureme-ai/issues).

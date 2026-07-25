@@ -7,15 +7,17 @@ outside input genuinely improves it.
 
 ## Most useful contributions
 
-**Corrections to the research base.** Four unsupported statistics were already removed from this
-project. If you find a fifth, please say so — with a source if you have one. Open an issue
-labelled `research`.
+**Corrections to the research base.** Ten unsupported figures have been withdrawn so far, and the
+July 2026 source audit corrected several more that were real but misstated. If you find another,
+please say so — with a source if you have one. Open an issue labelled `research`. The registry is
+in [02 · Research](docs/02-research-and-evidence.md#source-registry) and the audit trail in
+[09 · Source Review](docs/09-source-review.md).
 
 **Thai education domain expertise.** Curriculum structures, TCAS criteria and ปวช. programme
 details change. If something here is out of date or wrong, we want to know.
 
-**Assessment and psychometrics review.** The 30-item RIASEC instrument and the scenario-mission
-rubrics have not been validated by qualified experts. Informed criticism is welcome, and formal
+**Assessment and psychometrics review.** The twelve-item interest questionnaire and the
+scenario-mission rubrics have not been validated by qualified experts. Informed criticism is welcome, and formal
 review would be more welcome still.
 
 **Accessibility feedback.** Particularly on Thai typography, contrast, and behaviour with

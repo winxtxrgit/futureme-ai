@@ -76,7 +76,7 @@ journey
     section Arrive
       Start as guest: 5: Student
     section Reflect
-      Socratic interview: 4: Student
+      Interview: 4: Student
       Recall real examples: 3: Student
     section Try
       Scenario mission: 5: Student
@@ -89,35 +89,51 @@ journey
       Share with counsellor: 3: Student
 ```
 
-**Guest-first is deliberate.** A student can complete the entire interview and mission without
-creating an account. Identity is requested only when there is something worth saving.
+**Guest-first is deliberate, and it is implemented.** A student completes the entire interview,
+mission, route comparison and 30-day plan without an account. Identity is requested only when there
+is something worth saving — and in the prototype, accounts do not exist at all, so nothing is asked
+for.
+
+This ordering is now consistent across the UX flow, the architecture diagram and the running app.
+[05 · System Architecture](05-system-architecture.md) previously placed login before the assessment;
+that was a documentation error and has been corrected.
+
+```text
+Landing → Start as guest → Interview → Mission → Three routes
+        → Compare → 30-day plan → (optional account, not implemented)
+```
 
 ---
 
 ## Screen by screen
 
-| Screen | Purpose | The one dominant action |
-|---|---|---|
-| Landing | Set the promise: three routes, not one answer | *Start as guest* |
-| Socratic interview | Adaptive dialogue; visible progress; skippable questions | Answer the current question |
-| Scenario mission | A short realistic task in the direction of interest | Submit the attempt |
-| Three routes | Side-by-side comparison with evidence and unknowns | *Open details* on one route |
-| Interactive roadmap | Step-by-step nodes from now to career entry | Check in on a milestone |
-| 30-day plan | Concrete weekly actions with free course links | Mark today's action done |
-| Counsellor dashboard | Class-level patterns and coaching prompts | Open a student summary |
+| Screen | Purpose | The one dominant action | Status |
+|---|---|---|:--:|
+| Landing | Set the promise: routes to compare, not one answer | *Start as guest* | 🟢 |
+| Interview | Visible progress, editable answers, validation | Answer the current item | 🟡 static, English |
+| Scenario mission | A short realistic task, chosen from the interview profile | Submit the attempt | 🟢 |
+| Routes | Evidence, limitations, unknowns and provenance per route | *Build a plan* on one route | 🟢 |
+| Comparison | The same criteria across every route | Select a route | 🟢 |
+| 30-day plan | Concrete weekly actions; check-ins persist | Mark an action done | 🟡 linear template |
+| Privacy | What is stored, and delete it | *Delete everything* | 🟢 |
+| Interactive roadmap | Step-by-step nodes from now to career entry | Check in on a milestone | 📐 planned |
+| Counsellor dashboard | Class-level patterns and coaching prompts | Open a student summary | 📐 planned |
 
-### Three routes, always
+### Up to three routes, never a winner
 
-Every recommendation returns exactly three alternatives, and none is presented as the winner:
+The engine returns **between zero and three** routes. It is not padded to three, and when the
+evidence is too thin it returns none and explains why.
 
-| Route | What it optimises for | Suits a student who |
-|---|---|---|
-| **Balanced Next Step** | Keeps the most doors open | Is uncertain, or wants to defer commitment safely |
-| **Interest Growth** | Depth in the strongest interest signal | Has a clear, evidence-backed pull toward one area |
-| **Practical Access** | Fastest route to real work | Wants to earn sooner, or prefers learning by doing |
+> An earlier version of this document described three fixed archetypes — *Balanced Next Step*,
+> *Interest Growth* and *Practical Access*. **The implemented engine does not work that way.** It
+> scores every route in the catalogue on the same five criteria and returns the highest-scoring
+> survivors, marking any that are too close to separate as tied. The archetype names were removed
+> rather than reverse-engineered into the code, because a route's character should come from what
+> it is, not from a slot it was assigned to fill.
 
-Each route card carries: why this was suggested · the evidence behind it · what is still unknown ·
-and a **reversible first step** that can be taken this week.
+Each route card carries: why this appeared · the evidence behind it · what is still unknown ·
+where its information came from and how old that is · and a **reversible first step** that can be
+taken this week.
 
 ---
 
@@ -160,15 +176,39 @@ Consent is per-recipient, visible in the interface, and revocable.
 
 ## Interface previews
 
-All screens below are Aurora high-fidelity mockups. They are design artefacts, not screenshots
-of a running build.
+Two sets, kept separate on purpose.
+
+### Implemented prototype screens
+
+Captured from the running application with Playwright. These are the screens a reviewer sees.
 
 | | |
 |---|---|
-| ![Landing](../assets/screenshots/01-landing-desktop.png) | ![Interview](../assets/screenshots/02-socratic-interview.png) |
-| **Landing** — three routes, not one answer | **Socratic interview** — adaptive dialogue |
-| ![Routes](../assets/screenshots/03-three-routes.png) | ![Dashboard](../assets/screenshots/04-counselor-dashboard.png) |
-| **Three routes** — evidence and unknowns per card | **Counsellor dashboard** — class-level view |
+| ![Landing](../assets/screenshots/app/landing-desktop.png) | ![Interview](../assets/screenshots/app/interview-desktop.png) |
+| **Landing** — *implemented* | **Interview** — *implemented*, with progress and editable answers |
+| ![Routes](../assets/screenshots/app/routes-desktop.png) | ![Compare](../assets/screenshots/app/compare-desktop.png) |
+| **Three routes** — *implemented*, equal weight, no winner | **Comparison** — *implemented*, consistent criteria |
+| ![Plan](../assets/screenshots/app/plan-desktop.png) | ![Insufficient](../assets/screenshots/app/insufficient-desktop.png) |
+| **30-day plan** — *implemented*, with check-ins | **No-route state** — *implemented*, refuses to guess |
+
+Mobile: [interview](../assets/screenshots/app/interview-mobile.png) ·
+[mission](../assets/screenshots/app/mission-mobile.png) ·
+[routes](../assets/screenshots/app/routes-mobile.png) ·
+[compare](../assets/screenshots/app/compare-mobile.png) ·
+[plan](../assets/screenshots/app/plan-mobile.png) ·
+[privacy](../assets/screenshots/app/privacy-mobile.png)
+
+### Concept designs — not implemented
+
+Aurora high-fidelity mockups. Design artefacts showing the intended full product, including Thai
+copy and screens that do not exist in code.
+
+| | |
+|---|---|
+| ![Landing concept](../assets/screenshots/01-landing-desktop.png) | ![Interview concept](../assets/screenshots/02-socratic-interview.png) |
+| **Landing** — *concept design* | **Socratic interview** — *concept design* |
+| ![Routes concept](../assets/screenshots/03-three-routes.png) | ![Dashboard concept](../assets/screenshots/04-student-dashboard.png) |
+| **Three routes** — *concept design*. Note this mockup gives one card a filled button, implying a winner; the implemented screen corrects that. | **Student private dashboard** — *concept design*. The student's own space, **not** a counsellor view. |
 
 ---
 

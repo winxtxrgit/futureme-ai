@@ -24,9 +24,17 @@ the theme *AI for the Future of Thai Education*.
 Thai students choose a study track years before anyone helps them understand what that track
 leads to — and the cost of that gap shows up after graduation.
 
-Per TDRI's 2025 analysis, **56% of Thai higher-education graduates work outside their field of
-study** and **27% work below their qualification level**. Globally, OECD places field mismatch at
-roughly 35–40%, with a 15–20% wage penalty attached to it.
+Per TDRI's 2025 analysis, **56% of Thai people with education above upper-secondary level work
+outside their field of study** and **27% work below their skill or qualification level**.
+
+The important detail is what is *not* wrong. Thai graduate unemployment is **2.0%** — close to the
+national rate of 1.0% (NESDC, 2024). Graduates are not mostly out of work; they are working in the
+wrong place. This product is therefore about direction, not employability.
+
+Internationally the picture is more specific than "mismatch is bad". OECD analysis finds that
+field-of-study mismatch **on its own** carries little or no wage penalty in most countries. The
+penalty — around 25% lower hourly earnings — appears when field mismatch is combined with
+**overqualification**, which affects roughly 40% of field-mismatched workers.
 
 The full evidence base, with sources and the claims we deliberately excluded, is in
 [02 · Research and Evidence](02-research-and-evidence.md).
@@ -37,7 +45,7 @@ The full evidence base, with sources and the claims we deliberately excluded, is
 
 | What students have today | What is missing |
 |---|---|
-| Static RIASEC questionnaires (including the one inside the Ministry's NDLP platform) | No follow-up, no probing, no adaptation to the answer |
+| Static interest questionnaires | No follow-up, no probing, no adaptation to the answer |
 | Multiple-choice interest tests | Students answer with what sounds acceptable, not what is true |
 | University open days and marketing | Shows the destination, never the steps between here and there |
 | A counsellor shared across hundreds of students | No time for individual depth; rural and small schools have less access still |
@@ -59,18 +67,19 @@ flowchart LR
     D --> E["30-day plan<br/>+ roadmap"]
 ```
 
-**Phase 1 — what the student says.** An adaptive Socratic conversation (5–10 minutes) using
-Motivational Interviewing to lower defensiveness, Laddering to reach underlying values, and
-STAR to anchor claims in things the student has actually done. It produces a RIASEC interest
-profile plus extracted strengths and learning-style signals.
+**Phase 1 — what the student says.** *In the running prototype:* a twelve-item interest
+questionnaire plus four context questions, producing a RIASEC profile. *Planned:* an adaptive
+Thai-language Socratic conversation using Motivational Interviewing to lower defensiveness,
+Laddering to reach underlying values, and STAR to anchor claims in things the student has
+actually done.
 
-**Phase 2 — what the student does.** A short scenario mission (3–5 minutes) in the direction
-the interview pointed toward. A student who says they like design gets a small design problem.
-Doing beats declaring, and the mission result is scored as separate evidence.
+**Phase 2 — what the student does.** A short scenario mission chosen from the interview profile by
+a transparent rule. Doing beats declaring, and the mission is scored as separate evidence — so it
+can contradict the interview, and when it does, the learner is shown the contradiction.
 
-**Then: three routes, not one answer.** Every recommendation ships with the reasons it was
-made, the evidence supporting it, and an explicit statement of what the system still does not
-know.
+**Then: up to three routes, not one answer.** Every recommendation ships with the reasons it was
+made, the evidence supporting it, where its information came from, and an explicit statement of
+what the system still does not know. When the evidence is too thin, it returns nothing.
 
 ---
 
@@ -91,15 +100,16 @@ suggested coaching questions. Neither ever sees the raw chat transcript.
 
 ## What makes it different
 
-**Three routes, never one.** The engine always returns a Balanced Next Step, an Interest Growth
-route, and a Practical Access route. A single ranked answer would imply a confidence the
-system does not have.
+**Up to three routes, never a winner.** The engine returns between zero and three routes, shown
+with equal weight and no ranking. A single ranked answer would imply a confidence the system does
+not have — and when the evidence does not support even one route, it says so instead of padding
+the list.
 
 **Evidence you can inspect.** Each route lists what supports it, what would change it, and what
 is still unverified — including a reversible "small step you can take first."
 
-**Vocational routes treated as first class.** All 12 ปวช. 2567 subject areas and the dual
-vocational education (DVE) track are modelled with the same weight as university paths.
+**Vocational routes treated as first class.** ปวช. programmes and the ทวิภาคี dual system are
+scored by the same criteria as university paths, not offered as a fallback.
 
 **Privacy that a school can actually accept.** Role-based access, consent-gated sharing, and
 chat transcripts that stay with the student by default.
@@ -108,15 +118,19 @@ chat transcripts that stay with the student by default.
 
 ## Honest scope
 
-This is hackathon-stage work with a real research base and a working backend engine, not a
-deployed product. Specifically:
+This is hackathon-stage work with a real research base and a runnable prototype, not a deployed
+product. Specifically:
 
-- The RIASEC instrument and mission rubrics **have not been validated** by qualified assessment experts.
+- The interest instrument and mission rubrics **have not been validated** by qualified assessment experts.
+- The interview is a **static English questionnaire**, not the adaptive Thai conversation described above.
+- The route catalogue is **illustrative**. Cost, location and timing carry no source, and they drive the eligibility filters.
 - **No student pilot has run.** Every effectiveness claim in this repository is a design goal, not a measured result.
-- NDLP/DEEP integration is a **future possibility**, dependent on official API documentation and partnership approval.
+- NDLP/DEEP integration is a **future possibility**, dependent on documentation and partnership approval that do not exist. The July 2026 source audit could not verify the technical claims previously made about either platform.
 - AIS Cloud is the **intended deployment target**, described from published specifications. Nothing is deployed there yet.
 
-See [07 · Roadmap](07-roadmap.md) for how each of these is meant to be closed.
+A capability-by-capability breakdown of what is implemented, what is a reduced prototype and what
+is only designed, is in [06 · Development Plan](06-development-plan.md#component-status). See
+[07 · Roadmap](07-roadmap.md) for how each gap is meant to be closed.
 
 ---
 
