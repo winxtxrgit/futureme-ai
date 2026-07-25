@@ -23,6 +23,13 @@ function route(overrides: Partial<RouteResult> = {}): RouteResult {
     timeToEarning: "soon",
     tiedWith: [],
     stale: false,
+    provenance: {
+      status: "partially-verified",
+      source: "VEC Data Catalog — หลักสูตร ปวช. 2567",
+      sourceUrl: "https://ckan.vec.go.th/th/dataset/voc_curriculum",
+      lastVerified: "2026-07-24",
+      note: "test fixture",
+    },
     ...overrides,
   };
 }

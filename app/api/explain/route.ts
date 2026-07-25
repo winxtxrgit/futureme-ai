@@ -1,25 +1,54 @@
 import { NextResponse } from "next/server";
+import { REASON_TEXT } from "@/lib/decision-engine/explanations";
+import type { ReasonCode } from "@/lib/decision-engine/types";
 
 export const runtime = "nodejs";
 
 /**
  * OPTIONAL explanation layer.
  *
- * The app never depends on this. Route selection has already happened
- * deterministically in lib/decision-engine before anything reaches here; this
- * endpoint only rewrites the wording. Every failure path returns
- * `{ source: "fallback" }` with HTTP 200 so the caller can carry on unchanged.
+ *     deterministic engine → structured result → [this] → wording on screen
  *
- * Deliberately, the caller sends only the route name and reason codes — never
- * the learner's free text.
+ * By the time anything reaches here the decision is already made. Eligibility,
+ * scoring, ranking and the refusal gates all ran in lib/decision-engine in the
+ * browser. This endpoint receives the *conclusion* and rewrites the sentence;
+ * it cannot add, remove or reorder a route, because it is never given the list.
+ *
+ * What the caller sends is deliberately narrow: a route name and a set of
+ * reason codes drawn from a fixed vocabulary. The learner's free text — the
+ * "something you were proud of" answer, the mission writing — is never
+ * included, so enabling this layer does not turn guest mode into a service
+ * that transmits what a child wrote about themselves.
+ *
+ * Every failure path returns `{ source: "fallback" }` with HTTP 200 and the
+ * deterministic text unchanged, so the page cannot break on a provider outage.
  */
 
 const TIMEOUT_MS = 8000;
+const MAX_REASONS = 8;
+const MAX_TEXT = 1000;
+
+const KNOWN_REASONS = new Set(Object.keys(REASON_TEXT));
 
 interface ExplainRequest {
   routeName?: string;
   reasons?: string[];
   fallbackText?: string;
+}
+
+/**
+ * Availability probe. The UI asks first so it can offer the control only when
+ * the layer can actually do something, rather than presenting a button that
+ * always falls back.
+ */
+export function GET() {
+  return NextResponse.json(
+    {
+      available: Boolean(process.env.ANTHROPIC_API_KEY),
+      note: "When unavailable, every explanation on screen is the deterministic template text.",
+    },
+    { status: 200 },
+  );
 }
 
 export async function POST(request: Request) {
@@ -34,11 +63,25 @@ export async function POST(request: Request) {
     );
   }
 
-  const fallback = body.fallbackText ?? "";
+  const fallback = typeof body.fallbackText === "string" ? body.fallbackText.slice(0, MAX_TEXT) : "";
 
-  if (!body.routeName || !Array.isArray(body.reasons)) {
+  if (typeof body.routeName !== "string" || !Array.isArray(body.reasons)) {
     return NextResponse.json(
       { source: "fallback", text: fallback, note: "Missing routeName or reasons." },
+      { status: 200 },
+    );
+  }
+
+  // Only reason codes the engine can actually emit are forwarded. This is not
+  // about the model's safety — it is about keeping this endpoint incapable of
+  // relaying arbitrary caller-supplied strings to a third party.
+  const reasons = body.reasons
+    .filter((r): r is ReasonCode => typeof r === "string" && KNOWN_REASONS.has(r))
+    .slice(0, MAX_REASONS);
+
+  if (reasons.length === 0) {
+    return NextResponse.json(
+      { source: "fallback", text: fallback, note: "No recognised reason codes." },
       { status: 200 },
     );
   }
@@ -70,13 +113,19 @@ export async function POST(request: Request) {
       body: JSON.stringify({
         model: process.env.ANTHROPIC_MODEL ?? "claude-sonnet-5",
         max_tokens: 300,
+        system:
+          "You rewrite a study-route explanation that a rule-based engine has already produced. " +
+          "You are not deciding anything. Do not add facts, numbers, institutions or predictions. " +
+          "Do not say the route is the best one, recommended, or a match. Do not promise admission, " +
+          "employment or income. Keep every reason that was given and drop none. " +
+          "Write plain, warm English for a Thai secondary student, under 70 words.",
         messages: [
           {
             role: "user",
             content:
-              `Rewrite this study-route explanation for a Thai secondary student in plain, warm English. ` +
-              `Do not add facts, do not add numbers, do not claim certainty, and keep it under 70 words.\n\n` +
-              `Route: ${body.routeName}\nReasons: ${body.reasons.join("; ")}\nCurrent text: ${fallback}`,
+              `Route: ${body.routeName.slice(0, 200)}\n` +
+              `Reasons the engine gave:\n${reasons.map((r) => `- ${REASON_TEXT[r]}`).join("\n")}\n` +
+              `Current wording: ${fallback}`,
           },
         ],
       }),
@@ -99,7 +148,7 @@ export async function POST(request: Request) {
       );
     }
 
-    return NextResponse.json({ source: "llm", text }, { status: 200 });
+    return NextResponse.json({ source: "llm", text: text.slice(0, MAX_TEXT) }, { status: 200 });
   } catch (err) {
     const aborted = err instanceof Error && err.name === "AbortError";
     return NextResponse.json(

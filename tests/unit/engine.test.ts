@@ -231,7 +231,7 @@ describe("staleness", () => {
   it("warns once the data passes its shelf life", () => {
     const asOf = new Date(routesData.meta.dataAsOf);
     const past = new Date(
-      asOf.getTime() + (routesData.meta.stalenessWarningAfterDays + 5) * 86_400_000,
+      asOf.getTime() + (routesData.meta.freshnessThresholdDays + 5) * 86_400_000,
     );
     expect(isStale(past)).toBe(true);
     expect(recommend(build(["I"]), handsOnMission, past).notices).toContain("STALE_ROUTE_DATA");

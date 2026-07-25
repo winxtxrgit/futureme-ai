@@ -19,6 +19,7 @@ import type {
   MissionInput,
   Recommendation,
   ReasonCode,
+  RouteProvenance,
   RouteResult,
   ScoreBreakdown,
 } from "./types";
@@ -28,7 +29,7 @@ export const MAX_ROUTES = 3;
 
 export * from "./types";
 export { WEIGHTS, MIN_INTEREST_ANSWERS, TIE_EPSILON } from "./scoring";
-export { routeDataAsOf, isStale } from "./eligibility";
+export { routeDataAsOf, isStale, freshness, unverifiedFields } from "./eligibility";
 export { REASON_TEXT, STRENGTH_LABELS, STRENGTH_HELP, DIMENSION_LABELS } from "./explanations";
 
 const LEARNING_STYLE_AFFINITY: Record<string, Partial<Record<Dimension, number>>> = {
@@ -149,6 +150,7 @@ export function recommend(
       timeToEarning: route.timeToEarning,
       tiedWith: [],
       stale: isStale(now),
+      provenance: route.provenance as RouteProvenance,
     });
   }
 

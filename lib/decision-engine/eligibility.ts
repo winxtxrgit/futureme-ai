@@ -59,11 +59,40 @@ export function evaluateEligibility(route: RouteDef, input: InterviewInput): Eli
 
 /** Route data ages: entry criteria and costs change every academic year. */
 export function isStale(now: Date = new Date()): boolean {
-  const asOf = new Date(routesData.meta.dataAsOf);
-  const days = (now.getTime() - asOf.getTime()) / 86_400_000;
-  return days > routesData.meta.stalenessWarningAfterDays;
+  return ageInDays(now) > routesData.meta.freshnessThresholdDays;
 }
 
 export function routeDataAsOf(): string {
   return routesData.meta.dataAsOf;
+}
+
+export function ageInDays(now: Date = new Date()): number {
+  const asOf = new Date(routesData.meta.dataAsOf);
+  return Math.floor((now.getTime() - asOf.getTime()) / 86_400_000);
+}
+
+export interface FreshnessReport {
+  dataAsOf: string;
+  ageInDays: number;
+  thresholdDays: number;
+  stale: boolean;
+}
+
+/**
+ * The catalogue's age, for a UI that has to distinguish "current" from
+ * "past its threshold" rather than just warning once and hoping.
+ */
+export function freshness(now: Date = new Date()): FreshnessReport {
+  const age = ageInDays(now);
+  return {
+    dataAsOf: routesData.meta.dataAsOf,
+    ageInDays: age,
+    thresholdDays: routesData.meta.freshnessThresholdDays,
+    stale: age > routesData.meta.freshnessThresholdDays,
+  };
+}
+
+/** Fields that carry no source for any route. Stated once in the seed data. */
+export function unverifiedFields(): string[] {
+  return routesData.meta.fieldStatus.unverified;
 }

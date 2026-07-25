@@ -59,6 +59,23 @@ export interface ScoreBreakdown {
   total: number;
 }
 
+/**
+ * Where a route's description came from, carried through to the screen.
+ *
+ * `status` describes the route as a whole. The per-field picture is coarser
+ * and lives once in `data/routes.json` under `meta.fieldStatus`, because cost,
+ * location and timing are unsourced for every route and repeating that per
+ * route would only let the copies drift apart.
+ */
+export interface RouteProvenance {
+  status: "partially-verified" | "illustrative" | "unverified";
+  source: string | null;
+  sourceUrl: string | null;
+  /** ISO date the source was last checked, or null when there is no source. */
+  lastVerified: string | null;
+  note: string;
+}
+
 export interface RouteResult {
   routeId: string;
   name: string;
@@ -78,6 +95,7 @@ export interface RouteResult {
   timeToEarning: string;
   tiedWith: string[];
   stale: boolean;
+  provenance: RouteProvenance;
 }
 
 export interface IneligibleRoute {

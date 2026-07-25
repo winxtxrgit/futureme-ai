@@ -2,16 +2,45 @@
   "meta": {
     "notice": "Demo route catalogue. Entry requirements, costs and institution names are illustrative and NOT verified against current official sources. `dataAsOf` drives the staleness warning shown in the UI.",
     "dataAsOf": "2026-01-15",
-    "stalenessWarningAfterDays": 180
+    "freshnessThresholdDays": 180,
+    "sourceRegistry": "docs/02-research-and-evidence.md#source-registry",
+    "statusLegend": {
+      "partially-verified": "The route exists and its structure is described by the listed source. The per-route figures below are still the team's own framing.",
+      "illustrative": "Written by the team from general knowledge of the Thai system. No single source verifies this route as described.",
+      "unverified": "Named in the product but not supported by any source in the registry."
+    },
+    "fieldStatus": {
+      "notice": "Applies to every route unless its own entry says otherwise. Stated once here rather than repeated per route, so it cannot drift.",
+      "verified": [],
+      "unverified": [
+        "costBand",
+        "requiresRelocation",
+        "timeToEarning",
+        "flexibility",
+        "strengths",
+        "limitations"
+      ],
+      "reason": "No fee schedule, provision map or outcome dataset with a clear licence has been ingested. These are the team's estimates and drive the eligibility filters, so they are the first thing to replace before any pilot."
+    }
   },
   "routes": [
     {
       "id": "sci-math-engineering",
       "name": "Science–Maths track towards engineering",
       "shortName": "Sci–Maths → Engineering",
-      "tiers": ["LOWER_SECONDARY", "UPPER_SECONDARY"],
+      "tiers": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY"
+      ],
       "summary": "A general upper-secondary science track aimed at engineering or applied-science faculties.",
-      "interestWeights": { "R": 0.3, "I": 0.4, "A": 0.05, "S": 0.05, "E": 0.1, "C": 0.1 },
+      "interestWeights": {
+        "R": 0.3,
+        "I": 0.4,
+        "A": 0.05,
+        "S": 0.05,
+        "E": 0.1,
+        "C": 0.1
+      },
       "learningStyle": "structured-analytical",
       "costBand": "high",
       "requiresRelocation": true,
@@ -26,15 +55,32 @@
         "Heavy maths and physics load that is difficult to switch out of late"
       ],
       "nextExperiment": "Spend one weekend following an engineering teardown video and rebuilding the explanation in your own words. Notice whether the detail energises or drains you.",
-      "planTemplate": "analytical"
+      "planTemplate": "analytical",
+      "provenance": {
+        "status": "partially-verified",
+        "source": "myTCAS — TCAS70 programme search",
+        "sourceUrl": "https://school.mytcas.com/",
+        "lastVerified": "2026-07-24",
+        "note": "TCAS is the real admission route into engineering and applied-science faculties. Which subjects a given faculty requires changes by programme and by admission year and is not modelled here."
+      }
     },
     {
       "id": "vocational-digital",
       "name": "Vocational ปวช. — Digital and IT",
       "shortName": "ปวช. Digital & IT",
-      "tiers": ["LOWER_SECONDARY", "VOCATIONAL"],
-      "summary": "One of the 12 ปวช. 2567 subject areas, mixing classroom study with practical digital work.",
-      "interestWeights": { "R": 0.25, "I": 0.25, "A": 0.15, "S": 0.05, "E": 0.1, "C": 0.2 },
+      "tiers": [
+        "LOWER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "summary": "A ปวช. 2567 programme in the digital and IT subject area, mixing classroom study with practical work.",
+      "interestWeights": {
+        "R": 0.25,
+        "I": 0.25,
+        "A": 0.15,
+        "S": 0.05,
+        "E": 0.1,
+        "C": 0.2
+      },
       "learningStyle": "hands-on",
       "costBand": "low",
       "requiresRelocation": false,
@@ -50,15 +96,32 @@
         "Quality varies significantly between colleges"
       ],
       "nextExperiment": "Build one tiny thing end to end this week — a one-page site, a small automation, a repaired device — and write down which part you enjoyed.",
-      "planTemplate": "hands-on"
+      "planTemplate": "hands-on",
+      "provenance": {
+        "status": "partially-verified",
+        "source": "VEC Data Catalog — หลักสูตร ปวช. 2567",
+        "sourceUrl": "https://ckan.vec.go.th/th/dataset/voc_curriculum",
+        "lastVerified": "2026-07-24",
+        "note": "The catalogue publishes ประเภทวิชา, สาขาวิชา and สาขางาน for ปวช. 2567. The counts are deliberately not hard-coded here: they change with each curriculum revision and must be read from the current dataset."
+      }
     },
     {
       "id": "dve-dual",
       "name": "Dual vocational education (ทวิภาคี)",
       "shortName": "DVE dual system",
-      "tiers": ["LOWER_SECONDARY", "VOCATIONAL"],
+      "tiers": [
+        "LOWER_SECONDARY",
+        "VOCATIONAL"
+      ],
       "summary": "Study combined with paid placement at a partner employer, alternating college and workplace.",
-      "interestWeights": { "R": 0.35, "I": 0.15, "A": 0.05, "S": 0.15, "E": 0.15, "C": 0.15 },
+      "interestWeights": {
+        "R": 0.35,
+        "I": 0.15,
+        "A": 0.05,
+        "S": 0.15,
+        "E": 0.15,
+        "C": 0.15
+      },
       "learningStyle": "hands-on",
       "costBand": "low",
       "requiresRelocation": false,
@@ -73,15 +136,32 @@
         "Narrower specialisation, harder to change direction later"
       ],
       "nextExperiment": "Find one company near you that takes ทวิภาคี students and ask what a first-year placement actually involves.",
-      "planTemplate": "hands-on"
+      "planTemplate": "hands-on",
+      "provenance": {
+        "status": "partially-verified",
+        "source": "VEC Data Catalog — vocational curriculum group",
+        "sourceUrl": "https://ckan.vec.go.th/group/course",
+        "lastVerified": "2026-07-24",
+        "note": "ทวิภาคี is a real study-with-employer arrangement, but placement length, pay and employment outcomes depend on the agreement for each programme. Any blanket employment figure for DVE is unsupported and must not be shown."
+      }
     },
     {
       "id": "arts-design",
       "name": "Arts track towards design and creative work",
       "shortName": "Arts → Design",
-      "tiers": ["LOWER_SECONDARY", "UPPER_SECONDARY"],
+      "tiers": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY"
+      ],
       "summary": "An arts-leaning track towards communication design, architecture or digital media.",
-      "interestWeights": { "R": 0.1, "I": 0.1, "A": 0.5, "S": 0.1, "E": 0.15, "C": 0.05 },
+      "interestWeights": {
+        "R": 0.1,
+        "I": 0.1,
+        "A": 0.5,
+        "S": 0.1,
+        "E": 0.15,
+        "C": 0.05
+      },
       "learningStyle": "exploratory",
       "costBand": "moderate",
       "requiresRelocation": true,
@@ -96,15 +176,33 @@
         "Early-career income is often uneven"
       ],
       "nextExperiment": "Redesign one thing you use weekly — a form, a poster, an app screen — and show it to two people who use it.",
-      "planTemplate": "portfolio"
+      "planTemplate": "portfolio",
+      "provenance": {
+        "status": "illustrative",
+        "source": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "note": "Portfolio-driven entry is normal in Thai design and architecture programmes, but no source in the registry states it as a general rule. Treat the entry description as the team's framing."
+      }
     },
     {
       "id": "business-admin",
       "name": "Business and administration",
       "shortName": "Business & admin",
-      "tiers": ["LOWER_SECONDARY", "UPPER_SECONDARY", "VOCATIONAL"],
+      "tiers": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
       "summary": "Accounting, marketing or business administration, available through both general and vocational tracks.",
-      "interestWeights": { "R": 0.05, "I": 0.15, "A": 0.1, "S": 0.2, "E": 0.3, "C": 0.2 },
+      "interestWeights": {
+        "R": 0.05,
+        "I": 0.15,
+        "A": 0.1,
+        "S": 0.2,
+        "E": 0.3,
+        "C": 0.2
+      },
       "learningStyle": "structured-social",
       "costBand": "moderate",
       "requiresRelocation": false,
@@ -119,15 +217,33 @@
         "Wide field — you still have to choose a specialism later"
       ],
       "nextExperiment": "Run the money or scheduling side of one small real thing — a club event, a family shop's stock list — for two weeks.",
-      "planTemplate": "structured"
+      "planTemplate": "structured",
+      "provenance": {
+        "status": "illustrative",
+        "source": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "note": "Business and accounting are offered through both the general and the vocational systems. Nothing in the registry supports the comparative claims about how much the qualification is worth."
+      }
     },
     {
       "id": "health-care",
       "name": "Health and care pathway",
       "shortName": "Health & care",
-      "tiers": ["LOWER_SECONDARY", "UPPER_SECONDARY", "VOCATIONAL"],
+      "tiers": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
       "summary": "Nursing, allied health or care work, through either the science track or a vocational health programme.",
-      "interestWeights": { "R": 0.15, "I": 0.25, "A": 0.05, "S": 0.4, "E": 0.05, "C": 0.1 },
+      "interestWeights": {
+        "R": 0.15,
+        "I": 0.25,
+        "A": 0.05,
+        "S": 0.4,
+        "E": 0.05,
+        "C": 0.1
+      },
       "learningStyle": "structured-social",
       "costBand": "high",
       "requiresRelocation": true,
@@ -142,40 +258,159 @@
         "Emotionally demanding; shift work is normal"
       ],
       "nextExperiment": "Shadow or interview someone doing the day-to-day version of the job, not the version shown on television.",
-      "planTemplate": "structured"
+      "planTemplate": "structured",
+      "provenance": {
+        "status": "illustrative",
+        "source": null,
+        "sourceUrl": null,
+        "lastVerified": null,
+        "note": "Nursing and allied health are licensed professions with programme-specific entry requirements. Those requirements are not modelled here and must be checked against each institution and the relevant professional council."
+      }
     }
   ],
   "planTemplates": {
     "analytical": {
       "weeks": [
-        { "objective": "Test whether the analytical part actually holds your attention", "tasks": ["Pick one topic from the route and study it for 45 minutes, three times", "Write half a page explaining it to someone two years younger", "Note honestly when you got bored"] },
-        { "objective": "Find out what the work looks like in practice", "tasks": ["Find two people doing this job and read or watch them describe a normal day", "List three things you did not expect", "Write one question you still cannot answer"] },
-        { "objective": "Check the entry requirements yourself", "tasks": ["Look up the actual current requirements from an official source", "Write down the gap between where you are and what is required", "Identify the one subject that matters most"] },
-        { "objective": "Decide what would change your mind", "tasks": ["Write the strongest argument against this route for you specifically", "Talk it through with a counsellor or an adult who knows you", "Decide whether to keep, park, or drop this route"] }
+        {
+          "objective": "Test whether the analytical part actually holds your attention",
+          "tasks": [
+            "Pick one topic from the route and study it for 45 minutes, three times",
+            "Write half a page explaining it to someone two years younger",
+            "Note honestly when you got bored"
+          ]
+        },
+        {
+          "objective": "Find out what the work looks like in practice",
+          "tasks": [
+            "Find two people doing this job and read or watch them describe a normal day",
+            "List three things you did not expect",
+            "Write one question you still cannot answer"
+          ]
+        },
+        {
+          "objective": "Check the entry requirements yourself",
+          "tasks": [
+            "Look up the actual current requirements from an official source",
+            "Write down the gap between where you are and what is required",
+            "Identify the one subject that matters most"
+          ]
+        },
+        {
+          "objective": "Decide what would change your mind",
+          "tasks": [
+            "Write the strongest argument against this route for you specifically",
+            "Talk it through with a counsellor or an adult who knows you",
+            "Decide whether to keep, park, or drop this route"
+          ]
+        }
       ]
     },
     "hands-on": {
       "weeks": [
-        { "objective": "Make one small real thing", "tasks": ["Choose the smallest useful project in this direction", "Finish it, even badly, within the week", "Write down which part you would happily repeat"] },
-        { "objective": "See the real workplace", "tasks": ["Find one local college or employer offering this route", "Ask what a first-year student actually does day to day", "Note the difference from what you imagined"] },
-        { "objective": "Test the routine, not the highlight", "tasks": ["Do the least glamorous part of the work for two sessions", "Rate your energy after each one", "Decide whether the routine is tolerable"] },
-        { "objective": "Get one outside opinion", "tasks": ["Show what you made to someone who does this work", "Ask what they would do differently", "Decide whether to keep, park, or drop this route"] }
+        {
+          "objective": "Make one small real thing",
+          "tasks": [
+            "Choose the smallest useful project in this direction",
+            "Finish it, even badly, within the week",
+            "Write down which part you would happily repeat"
+          ]
+        },
+        {
+          "objective": "See the real workplace",
+          "tasks": [
+            "Find one local college or employer offering this route",
+            "Ask what a first-year student actually does day to day",
+            "Note the difference from what you imagined"
+          ]
+        },
+        {
+          "objective": "Test the routine, not the highlight",
+          "tasks": [
+            "Do the least glamorous part of the work for two sessions",
+            "Rate your energy after each one",
+            "Decide whether the routine is tolerable"
+          ]
+        },
+        {
+          "objective": "Get one outside opinion",
+          "tasks": [
+            "Show what you made to someone who does this work",
+            "Ask what they would do differently",
+            "Decide whether to keep, park, or drop this route"
+          ]
+        }
       ]
     },
     "portfolio": {
       "weeks": [
-        { "objective": "Start a portfolio piece, not a plan", "tasks": ["Pick one thing that annoys you and redesign it", "Keep every rough draft, not just the final", "Write two sentences on what you were trying to fix"] },
-        { "objective": "Put it in front of real people", "tasks": ["Show it to two people who would actually use it", "Write down what confused them", "Revise once based on what they said"] },
-        { "objective": "Understand how entry really works", "tasks": ["Find two programmes and read what their portfolio actually requires", "List what you are missing", "Pick the next piece to make"] },
-        { "objective": "Check the trade-off honestly", "tasks": ["Read about early-career reality in this field, including income", "Talk to a counsellor about the risk", "Decide whether to keep, park, or drop this route"] }
+        {
+          "objective": "Start a portfolio piece, not a plan",
+          "tasks": [
+            "Pick one thing that annoys you and redesign it",
+            "Keep every rough draft, not just the final",
+            "Write two sentences on what you were trying to fix"
+          ]
+        },
+        {
+          "objective": "Put it in front of real people",
+          "tasks": [
+            "Show it to two people who would actually use it",
+            "Write down what confused them",
+            "Revise once based on what they said"
+          ]
+        },
+        {
+          "objective": "Understand how entry really works",
+          "tasks": [
+            "Find two programmes and read what their portfolio actually requires",
+            "List what you are missing",
+            "Pick the next piece to make"
+          ]
+        },
+        {
+          "objective": "Check the trade-off honestly",
+          "tasks": [
+            "Read about early-career reality in this field, including income",
+            "Talk to a counsellor about the risk",
+            "Decide whether to keep, park, or drop this route"
+          ]
+        }
       ]
     },
     "structured": {
       "weeks": [
-        { "objective": "Run one small real responsibility", "tasks": ["Take charge of the money, schedule, or records for one real activity", "Keep it accurate for the whole week", "Note where you slipped and why"] },
-        { "objective": "Meet the field", "tasks": ["Interview one person working in this area", "Ask what the boring 80% of the job is", "Write down whether that 80% sounds bearable"] },
-        { "objective": "Check requirements and cost", "tasks": ["Find the current entry requirements from an official source", "Write down the realistic total cost", "Identify who could help you cover it"] },
-        { "objective": "Decide the next step", "tasks": ["List what would make you confident, and what would put you off", "Discuss with a counsellor", "Decide whether to keep, park, or drop this route"] }
+        {
+          "objective": "Run one small real responsibility",
+          "tasks": [
+            "Take charge of the money, schedule, or records for one real activity",
+            "Keep it accurate for the whole week",
+            "Note where you slipped and why"
+          ]
+        },
+        {
+          "objective": "Meet the field",
+          "tasks": [
+            "Interview one person working in this area",
+            "Ask what the boring 80% of the job is",
+            "Write down whether that 80% sounds bearable"
+          ]
+        },
+        {
+          "objective": "Check requirements and cost",
+          "tasks": [
+            "Find the current entry requirements from an official source",
+            "Write down the realistic total cost",
+            "Identify who could help you cover it"
+          ]
+        },
+        {
+          "objective": "Decide the next step",
+          "tasks": [
+            "List what would make you confident, and what would put you off",
+            "Discuss with a counsellor",
+            "Decide whether to keep, park, or drop this route"
+          ]
+        }
       ]
     }
   }
