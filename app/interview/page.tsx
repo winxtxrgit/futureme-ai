@@ -6,7 +6,7 @@ import questions from "@/data/questions.json";
 import { Button, Card, Notice, Shell } from "@/components/ui";
 import { MIN_INTEREST_ANSWERS } from "@/lib/decision-engine";
 import { checkText, SUPPORT_MESSAGE } from "@/lib/safety";
-import { loadOrCreate, saveSession, type GuestSession } from "@/lib/session";
+import { loadSessionResult, newSession, saveSession, type GuestSession } from "@/lib/session";
 import SafetyPause from "@/components/SafetyPause";
 
 type ContextKey = "tier" | "cost" | "mobility" | "horizon" | "proud";
@@ -15,11 +15,17 @@ export default function InterviewPage() {
   const router = useRouter();
   const [session, setSession] = useState<GuestSession | null>(null);
   const [storageOk, setStorageOk] = useState(true);
+  const [recovered, setRecovered] = useState<"repaired" | "reset" | null>(null);
   const [showErrors, setShowErrors] = useState(false);
   const [safety, setSafety] = useState(false);
 
   useEffect(() => {
-    setSession(loadOrCreate());
+    const result = loadSessionResult();
+    setSession(result.session ?? newSession());
+    // Only worth saying when something was actually lost. A clean read, or an
+    // empty one on a first visit, is not news.
+    if (result.status === "reset" && result.discarded.length > 0) setRecovered("reset");
+    else if (result.status === "repaired" && result.discarded.length > 0) setRecovered("repaired");
   }, []);
 
   const persist = (next: GuestSession) => {
@@ -103,6 +109,23 @@ export default function InterviewPage() {
           <Notice tone="warning" title="Progress will not be saved">
             This browser is blocking local storage, so refreshing the page will lose your answers.
             You can still finish the demo in one sitting.
+          </Notice>
+        </div>
+      ) : null}
+
+      {recovered ? (
+        <div className="mb-5">
+          <Notice
+            tone="warning"
+            title={
+              recovered === "reset"
+                ? "We had to start you a new session"
+                : "Some saved answers could not be read"
+            }
+          >
+            {recovered === "reset"
+              ? "The data stored in this browser could not be read, so it was cleared and a fresh session started. Nothing was sent anywhere."
+              : "Part of what was stored in this browser did not match anything this version asks, so it was discarded rather than guessed at. Everything still shown below was read back intact."}
           </Notice>
         </div>
       ) : null}

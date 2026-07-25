@@ -23,17 +23,64 @@ async function completeInterview(page: Page, high: "practical" | "people" = "pra
   await page.getByTestId("ctx-horizon-soon").click();
 }
 
-async function completeMission(page: Page) {
+/**
+ * Which mission appears depends on the interview, so the helper fills whichever
+ * one is on screen rather than assuming a fixed set of fields.
+ */
+const MISSION_ANSWERS: Record<
+  string,
+  { texts: Record<string, string>; multi: string[]; single: string }
+> = {
+  "mission-school-problem": {
+    texts: {
+      problem: "The tool cupboard is disorganised and people waste time looking for equipment.",
+      evidence: "I would time how long it takes to find a tool before and after the change.",
+    },
+    multi: ["observe", "organise"],
+    single: "ordering",
+  },
+  "mission-make-something": {
+    texts: {
+      thing: "The club shelf is too shallow, so half the equipment sits on the floor instead.",
+      tradeoff: "I would give up two weekends and some of my own money to buy the timber.",
+    },
+    multi: ["takeapart", "rough"],
+    single: "hands",
+  },
+  "mission-run-something": {
+    texts: {
+      activity: "A revision session before the maths exam for anyone in my year who wants one.",
+      hard: "Nobody turns up, so I would ask people to commit the week before and remind them.",
+    },
+    multi: ["askneed", "teach"],
+    single: "helping",
+  },
+};
+
+async function currentMissionId(page: Page): Promise<string> {
   await expect(page).toHaveURL(/\/mission/);
-  await page
-    .getByTestId("m-problem")
-    .fill("The tool cupboard is disorganised and people waste time looking for equipment.");
-  await page.getByTestId("m-approach-observe").click();
-  await page.getByTestId("m-approach-organise").click();
-  await page
-    .getByTestId("m-evidence")
-    .fill("I would time how long it takes to find a tool before and after the change.");
-  await page.getByTestId("m-energy-ordering").click();
+  const id = await page.getByTestId("mission-title").getAttribute("data-mission-id");
+  expect(id, "the mission page must declare which mission it is showing").toBeTruthy();
+  return id!;
+}
+
+async function fillMission(page: Page): Promise<string> {
+  const id = await currentMissionId(page);
+  const answers = MISSION_ANSWERS[id];
+  expect(answers, `no e2e answers defined for mission ${id}`).toBeTruthy();
+
+  for (const [step, text] of Object.entries(answers.texts)) {
+    await page.getByTestId(`m-${step}`).fill(text);
+  }
+  for (const value of answers.multi) {
+    await page.getByTestId(`m-approach-${value}`).click();
+  }
+  await page.getByTestId(`m-energy-${answers.single}`).click();
+  return id;
+}
+
+async function completeMission(page: Page) {
+  await fillMission(page);
   await page.getByTestId("mission-submit").click();
 }
 
@@ -112,6 +159,63 @@ test("no route is presented as the winner", async ({ page }) => {
   const classes = await buttons.evaluateAll((els) => els.map((e) => e.className));
   expect(new Set(classes).size).toBe(1);
   for (const c of classes) expect(c).not.toContain("bg-mint ");
+});
+
+test("the mission is chosen from the interview profile", async ({ page }) => {
+  await completeInterview(page, "practical");
+  await page.getByTestId("interview-continue").click();
+  expect(await currentMissionId(page)).toBe("mission-make-something");
+  await expect(page.getByTestId("mission-rationale")).toContainText(/strongest interest/i);
+
+  // A different profile must reach a different mission, or selection is not
+  // actually reading the interview.
+  await page.goto("/privacy");
+  await page.getByTestId("delete-data").click();
+
+  await completeInterview(page, "people");
+  await page.getByTestId("interview-continue").click();
+  expect(await currentMissionId(page)).toBe("mission-run-something");
+});
+
+test("a half-written mission survives a refresh", async ({ page }) => {
+  await completeInterview(page, "practical");
+  await page.getByTestId("interview-continue").click();
+  const id = await currentMissionId(page);
+
+  // Part of the mission only: one text answer and one selection, never submitted.
+  const partial = "Half a thought I do not want to type twice";
+  await page.getByTestId("m-thing").fill(partial);
+  await page.getByTestId("m-approach-takeapart").click();
+  await expect(page.getByTestId("draft-status")).toContainText(/refresh will not lose/i);
+
+  await page.reload();
+
+  expect(await currentMissionId(page)).toBe(id);
+  await expect(page.getByTestId("m-thing")).toHaveValue(partial);
+  await expect(page.getByTestId("m-approach-takeapart")).toHaveAttribute("aria-pressed", "true");
+
+  // An unsubmitted draft is not behavioural evidence. The interview alone can
+  // still produce routes, but none of them may claim strong evidence — that
+  // rating is only reachable with a completed mission.
+  await page.goto("/routes");
+  await expect(page.getByTestId("routes-heading")).toBeVisible();
+  await expect(page.getByText("Strong evidence")).toHaveCount(0);
+});
+
+test("the learner can overrule the chosen mission", async ({ page }) => {
+  await completeInterview(page, "practical");
+  await page.getByTestId("interview-continue").click();
+  expect(await currentMissionId(page)).toBe("mission-make-something");
+
+  await page.getByTestId("mission-alternatives").click();
+  await page.getByTestId("switch-mission-run-something").click();
+
+  expect(await currentMissionId(page)).toBe("mission-run-something");
+  await expect(page.getByTestId("mission-rationale")).toContainText(/chose this mission yourself/i);
+
+  // The override is a decision, so it has to survive a refresh too.
+  await page.reload();
+  expect(await currentMissionId(page)).toBe("mission-run-something");
 });
 
 test("guest progress survives a page refresh mid-interview", async ({ page }) => {

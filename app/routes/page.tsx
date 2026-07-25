@@ -42,7 +42,9 @@ export default function RoutesPage() {
     );
   }
 
-  if (session.safetyTriggered && session.mission === null) return <SafetyPause />;
+  // A half-written mission draft is not a completed mission, so the pause must
+  // still hold — otherwise autosaving a draft would silently dismiss it.
+  if (session.safetyTriggered && !session.mission?.completed) return <SafetyPause />;
 
   if (error) {
     return (
