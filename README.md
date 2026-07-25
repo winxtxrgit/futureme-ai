@@ -26,7 +26,7 @@
 <tr>
 <td align="center" width="50%">
 <h3><a href="READMEEN.md">Read in English&nbsp;→</a></h3>
-<sub>Overview · demo · current prototype · how it works<br>features · architecture · privacy · research · roadmap</sub>
+<sub>Overview · demo · current prototype · how it works<br>features · architecture · privacy · research </sub>
 </td>
 <td align="center" width="50%">
 <h3><a href="READMETH.md">อ่านภาษาไทย&nbsp;→</a></h3>
