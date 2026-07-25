@@ -26,11 +26,11 @@
 <tr>
 <td align="center" width="50%">
 <h3><a href="READMEEN.md">Read in English&nbsp;→</a></h3>
-<sub>Overview · demo · current prototype · how it works<br>features · architecture · privacy · research </sub>
+<sub>Overview · demo · current prototype · how it works<br>features · architecture · privacy · research · roadmap </sub>
 </td>
 <td align="center" width="50%">
 <h3><a href="READMETH.md">อ่านภาษาไทย&nbsp;→</a></h3>
-<sub>ภาพรวม · ทดลองใช้ · ต้นแบบปัจจุบัน · ระบบทำงานอย่างไร<br>ฟีเจอร์ · สถาปัตยกรรม · ความเป็นส่วนตัว · งานวิจัย </sub>
+<sub>ภาพรวม · ทดลองใช้ · ต้นแบบปัจจุบัน · ระบบทำงานอย่างไร<br>ฟีเจอร์ · สถาปัตยกรรม · ความเป็นส่วนตัว · งานวิจัย ·แผนการพัฒนา</sub>
 </td>
 </tr>
 </table>
