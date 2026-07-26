@@ -4,7 +4,7 @@
 
 ---
 
-> **Last source audit: 24 July 2026.** Every external link below was opened and followed, and
+> **Last source audit: 26 July 2026.** Every external link below was opened and followed, and
 > every figure was compared against the page it comes from. What changed in that audit, and what
 > this repository got wrong before it, is recorded in [09 · Source Review](09-source-review.md).
 
@@ -20,22 +20,23 @@ it is removed.
 
 | Measure | Figure | Scope | Source |
 |---|--:|---|---|
-| Work outside their field of study | **56%** | People with education **above upper-secondary level** — not new graduates specifically | TDRI, 2025 |
-| Work below their skill or qualification level | **27%** | Same group | TDRI, 2025 |
+| Work outside their field of study | **56%** | Workers TDRI describes broadly as highly educated; the public article does not publish the denominator or method | TDRI, 2025 |
+| Work below their skill or qualification level | **27%** | Same scope and caveat | TDRI, 2025 |
 | STEM graduates working outside science | **38.1%** | Thailand, 2024 | NSO, *Social Indicators 2025*, p. 185 |
 | Unemployment — higher-education graduates | **2.0%** | Thailand, 2024 | NESDC, Q2/2568 |
 | Unemployment — Gen Z | **3.8%** | Thailand, 2024 | NESDC, Q2/2568 |
 | Unemployment — national | **1.0%** | Thailand, 2024 | NESDC, Q2/2568 |
 | STEM share of online job postings | **5.6%** (42,374 of 756,300) | 23 job sites, July 2024 – June 2025 | TDRI Big Data, Q2/2025 |
 
-**The reading, and it is not the obvious one.** Thai graduates are not mostly unemployed — at 2.0%
-they are close to the national rate. They are employed in the wrong place. That is why this
-product is about *direction*, not about employability: the failure this system tries to reduce is
-choosing a track that leads somewhere the student never wanted to go, and finding out four years
-later.
+**The careful reading.** NESDC reports a 1.0% national unemployment rate, 2.0% for people with
+higher education and 3.8% for Gen Z in 2024. Those figures describe different populations from
+the TDRI field-mismatch figures and should not be combined into a single causal claim. Working
+outside a field of study is also not automatically a failure. FutureMe therefore focuses on
+*exploration before commitment*: helping a student test whether a direction fits, while there is
+still time to learn and adjust.
 
-The decision that locks in that divergence is made at ม.3 and again at ม.6, with almost no
-support, and students in small and provincial schools get the least of it.
+ม.3 and ม.6 are visible choice points in the Thai education journey. Changing direction remains
+possible, but it can carry practical costs in time, prerequisites and admissions preparation.
 
 ### 1.2 · International
 
@@ -64,8 +65,8 @@ Collapsing these produces a scarier number than the evidence supports.
 | **Skills mismatch** | Your actual skills do not match what the job uses |
 
 The OECD finding is that **field-of-study mismatch on its own carries little or no wage penalty in
-most countries.** The penalty appears when field mismatch is combined with overqualification — a
-combination affecting roughly 40% of field-mismatched workers, not all of them.
+most countries.** The negative consequences are concentrated where field mismatch is also
+associated with qualification mismatch, rather than applying to everyone who changes field.
 
 For this product the implication is specific and it constrains the interface: "working outside
 your field" is not automatically a bad outcome, and nothing in the app may imply that it is. The
@@ -76,7 +77,8 @@ testing a direction early — not for picking the right field first time.
 
 ## 2 · Thai curriculum structure
 
-Thai education branches at ม.3 and again at ม.6, into paths that are hard to reverse.
+Thai education presents visible decisions after ม.3 and again after ม.6. Routes can change, but
+prerequisites, admission calendars, time and cost can make later changes harder.
 
 ### Where the forks are
 
@@ -134,14 +136,16 @@ point for Thai professional standards.
 
 ---
 
-## 4 · Why conversation beats a questionnaire
+## 4 · Why FutureMe adds action to self-report
 
-The central methodological finding: **multiple-choice interest tests measure what a student
-believes is an acceptable answer.** Adolescents answer to meet perceived expectations.
+FutureMe combines a short self-report with a small scenario mission. This is a **product design
+hypothesis**, not evidence that this prototype is more valid than a professionally administered
+assessment. The mission gives the student another kind of signal to inspect and disagree with.
+The current interview is a fixed English questionnaire; adaptive conversation is planned.
 
 | Technique | Origin | Role in the design | Evidence status |
 |---|---|---|---|
-| **RIASEC** | Holland / O\*NET Interest Profiler | Six-dimension interest structure | Manual available, including its stated reliability limits |
+| **RIASEC** | Holland / O\*NET Interest Profiler | Six-dimension interest structure | O\*NET's instrument has a research manual; FutureMe's twelve items have not been validated |
 | **Socratic questioning** | Foundation for Critical Thinking | Open questions that make the student reason rather than pick | Source page was not reachable in the audit; not used as sole support for any claim |
 | **Motivational Interviewing** | Miller & Rollnick (MINT) | Lowers defensiveness | A professional training body, **not** psychometric evidence for a recommender |
 | **Laddering** | Reynolds & Gutman, 1988 | Climbs from stated behaviour to underlying values | Access-restricted; held as a bibliographic reference only |
@@ -205,7 +209,7 @@ or a README.
 |---|---|
 | Thai overall mismatch 68.6% (overeducation 35.16%, undereducation 33.45%) | Not in the cited source; 68.6 traced to a model-accuracy figure in an older TDRI PDF |
 | 63–65% of job postings require experience; entry-level 22% | No direct source |
-| 15–20% wage penalty for mismatched work | No direct source. Distinct from the OECD/Montt finding in §1.3, which is ~25% and applies only to the *combination* with overqualification |
+| 15–20% wage penalty for mismatched work | No direct source. OECD supports a narrower conclusion: negative effects are concentrated when field and qualification mismatch occur together |
 | OECD: 6–8% annual GDP loss | Cited pages do not support it |
 | Burnout 2.5× among mismatched workers | No direct source |
 | DVE graduates 85% employed in field | Not in the cited VEC curriculum data |
@@ -225,15 +229,15 @@ Every load-bearing claim with its status. **Nothing marked `unverified` may be u
 
 | Claim | Publisher | Link | Status |
 |---|---|---|---|
-| 56% work outside their field; 27% below qualification level (education above upper-secondary) | TDRI, 2025 | [tdri.or.th](https://tdri.or.th/2025/09/thailand-human-capital-development/) | ✅ verified |
+| 56% work outside their field; 27% below qualification level | TDRI, 2025 | [tdri.or.th](https://tdri.or.th/2025/09/thailand-human-capital-development/) | ⚠️ qualified — figures appear in the public article; denominator and method do not |
 | 756,300 postings from 23 sites, Jul 2024 – Jun 2025; STEM 42,374 (5.6%) | TDRI, 2025 | [tdri.or.th](https://tdri.or.th/2025/08/bigdata-report-labourmarket-q2-2025/) | ✅ verified |
 | STEM graduates: 38.1% work outside science, 2024 | NSO | [nso.go.th](https://www.nso.go.th/public/e-book/Indicators-Social/Social-Indicators-2025/) | ✅ verified — p. 185 |
-| Unemployment 2024: graduates 2.0%, Gen Z 3.8%, national 1.0% | NESDC | [nesdc.go.th](https://www.nesdc.go.th/) | ✅ verified — Q2/2568 report |
+| Unemployment 2024: higher education 2.0%, Gen Z 3.8%, national 1.0% | NESDC | [nesdc.go.th](https://www.nesdc.go.th/wordpress/wp-content/uploads/2025/08/3.2-Press-Q2_2568-TH-27.08.pdf) | ✅ verified — Q2/2568 press report |
 | ~35% qualification mismatch, >35% field mismatch, ~11% both | OECD PIAAC 2023 | [oecd.org](https://www.oecd.org/content/dam/oecd/en/publications/reports/2024/12/adult-skills-and-productivity-new-evidence-from-piaac-2023_805a88b8/8bc2c556-en.pdf) | ✅ verified |
 | 935m workers mismatched across 114 countries (72% under-, 28% over-educated) | ILO | [ilostat.ilo.org](https://ilostat.ilo.org/blog/258-million-workers-in-the-world-are-over-educated-for-their-jobs/) | ✅ verified |
 | 44% of core skills change by 2027 | WEF 2023 | [weforum.org](https://www.weforum.org/publications/the-future-of-jobs-report-2023/in-full/4-skills-outlook/) | ✅ verified |
 | 39% of core skills change by 2030; 63% of employers name skills gaps | WEF 2025 | [weforum.org](https://www.weforum.org/publications/the-future-of-jobs-report-2025/in-full/3-skills-outlook/) | ✅ verified |
-| ~25% wage penalty for field-mismatched **and** overqualified workers; no penalty for field mismatch alone in most countries | OECD / Montt 2015 | [oecd.org](https://www.oecd.org/content/dam/oecd/en/publications/reports/2015/07/the-causes-and-consequences-of-field-of-study-mismatch_g17a26a5/5jrxm4dhv9r2-en.pdf) | ✅ verified |
+| Field mismatch alone has little or no wage penalty in most countries; negative effects are concentrated when it is associated with qualification mismatch | OECD / Montt 2015 | [oecd.org](https://www.oecd.org/en/publications/the-causes-and-consequences-of-field-of-study-mismatch_5jrxm4dhv9r2-en.html) | ✅ verified |
 | ปวช. 2567 curriculum structure (ประเภทวิชา / สาขาวิชา / สาขางาน) | VEC Data Catalog | [ckan.vec.go.th](https://ckan.vec.go.th/th/dataset/voc_curriculum) | ⚠️ conditional — read the current revision; do not hard-code counts |
 | TCAS structure and calendar | myTCAS | [school.mytcas.com](https://school.mytcas.com/) | ⚠️ conditional — TCAS70 / academic year 2570; changes annually |
 | GED pass mark: 145 per subject across 4 subjects | GED Testing Service | [ged.com](https://www.ged.com/about-test/scores.html) | ⚠️ conditional — admission still depends on the institution |

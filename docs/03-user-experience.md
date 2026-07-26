@@ -39,14 +39,14 @@ language and discards its social mechanics:
 2. **Evidence before confidence.** Show why a conclusion appeared, what is missing, how to challenge it.
 3. **One useful action.** Every view has exactly one visually dominant next step.
 4. **Private by default.** Consent and sharing status are visible, understandable, reversible.
-5. **Thai-first, not translated-later.** Components sized for Thai line height, long labels, mixed Thai/English study terms.
+5. **Thai-first is the target.** Components should accommodate Thai line height, long labels and mixed Thai/English study terms; the current app copy is English.
 6. **Motion with an exit.** Animation is subtle, non-essential, and disabled under `prefers-reduced-motion`.
 
 ---
 
 ## Visual system
 
-| Token | Dark (default) | Light | Use |
+| Token | Dark (implemented) | Light (planned) | Use |
 |---|---|---|---|
 | Canvas | `#0B0B14` | `#F7F6FB` | Page background |
 | Surface | `#14141F` | `#FFFFFF` | Cards, header |
@@ -64,7 +64,8 @@ language and discards its social mechanics:
 - Mint CTAs use `#07130F` text. Never white on mint.
 - **Status never relies on hue alone** — always an icon, a label and a shape as well.
 - Line length capped at ~58–72 Latin characters or ~34–46 Thai glyphs.
-- Body text minimum 16px. Contrast meets WCAG AA.
+- Body text minimum 16px. The palette was selected with WCAG AA contrast targets, but the
+  interface has not yet completed a formal accessibility audit.
 
 ---
 
@@ -72,21 +73,18 @@ language and discards its social mechanics:
 
 ```mermaid
 journey
-    title Student journey — first session, about 20 minutes
+    title Student journey — current guest prototype
     section Arrive
       Start as guest: 5: Student
     section Reflect
       Interview: 4: Student
-      Recall real examples: 3: Student
     section Try
       Scenario mission: 5: Student
     section Compare
-      Read three routes: 5: Student
+      Read up to three routes: 5: Student
       Check unknowns: 4: Student
     section Plan
       Accept 30-day plan: 4: Student
-    section Share
-      Share with counsellor: 3: Student
 ```
 
 **Guest-first is deliberate, and it is implemented.** A student completes the entire interview,
@@ -99,7 +97,7 @@ This ordering is now consistent across the UX flow, the architecture diagram and
 that was a documentation error and has been corrected.
 
 ```text
-Landing → Start as guest → Interview → Mission → Three routes
+Landing → Start as guest → Interview → Mission → Up to three routes
         → Compare → 30-day plan → (optional account, not implemented)
 ```
 
@@ -112,7 +110,7 @@ Landing → Start as guest → Interview → Mission → Three routes
 | Landing | Set the promise: routes to compare, not one answer | *Start as guest* | 🟢 |
 | Interview | Visible progress, editable answers, validation | Answer the current item | 🟡 static, English |
 | Scenario mission | A short realistic task, chosen from the interview profile | Submit the attempt | 🟢 |
-| Routes | Evidence, limitations, unknowns and provenance per route | *Build a plan* on one route | 🟢 |
+| Routes | Evidence, limitations, unknowns and provenance for up to three routes | *Build a plan* on one route | 🟢 |
 | Comparison | The same criteria across every route | Select a route | 🟢 |
 | 30-day plan | Concrete weekly actions; check-ins persist | Mark an action done | 🟡 linear template |
 | Privacy | What is stored, and delete it | *Delete everything* | 🟢 |
@@ -137,7 +135,11 @@ taken this week.
 
 ---
 
-## Roles and what each can see
+## Planned access model — not implemented
+
+The current prototype has guest mode only. It has no accounts, parent access, counsellor access or
+sharing controls. The following diagram records a future permission model for design review; it is
+not evidence of a working feature.
 
 ```mermaid
 flowchart TD
@@ -156,21 +158,25 @@ flowchart TD
 | Suggested coaching questions | — | — | ● |
 | **Raw chat transcript** | ● | **never** | **never** |
 
-Consent is per-recipient, visible in the interface, and revocable.
+In that future design, consent would be per recipient, visible and revocable. It requires user
+research, security review and legal review before implementation.
 
 ---
 
 ## Accessibility and safety
 
-- WCAG AA contrast in both themes; status communicated by icon and text, not colour alone.
-- Full keyboard navigation with visible focus rings; motion respects `prefers-reduced-motion`.
-- Thai-first typography — Noto Sans Thai / IBM Plex Sans Thai, no condensed Thai, no all-caps Thai labels.
-- Controls grow rather than truncate when Thai labels wrap.
+- The implemented dark theme uses visible focus states, text alongside status colour, and reduced
+  motion under `prefers-reduced-motion`.
+- The primary flow uses native controls and visible focus states, but it has not had a formal
+  keyboard, WCAG or assistive-technology audit.
+- A light theme and Thai-native typography are planned. The current interface is English, so Thai
+  wrapping and font behaviour remain untested.
 - Every recommendation screen carries a standing disclaimer: this is information to explore, not
   a prediction or a guarantee of admission, employment or income. Verify current criteria with
   official sources and talk to a counsellor.
-- A safety escalation path for distress signals surfaced during the interview is **specified but
-  not yet implemented** — see [07 · Roadmap](07-roadmap.md).
+- A keyword-based safety pause is implemented for a small set of high-risk phrases. It offers
+  immediate support guidance and stops the normal flow, but it is not a clinical detector or an
+  emergency-response service — see [08 · Privacy and Data](08-privacy-and-data.md).
 
 ---
 
@@ -197,6 +203,10 @@ Mobile: [interview](../assets/screenshots/app/interview-mobile.png) ·
 [compare](../assets/screenshots/app/compare-mobile.png) ·
 [plan](../assets/screenshots/app/plan-mobile.png) ·
 [privacy](../assets/screenshots/app/privacy-mobile.png)
+
+Additional current states: [mobile landing](../assets/screenshots/app/landing-mobile.png) ·
+[desktop privacy](../assets/screenshots/app/privacy-desktop.png) ·
+[safety pause](../assets/screenshots/app/safety-desktop.png)
 
 ### Concept designs — not implemented
 

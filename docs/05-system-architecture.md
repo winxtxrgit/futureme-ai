@@ -49,9 +49,9 @@ An earlier version of this document placed authentication *before* the assessmen
 something worth saving. Those contradicted each other. The UX document was right, and the
 architecture is corrected here: **the assessment runs before any identity step, for guests.**
 
-Authentication exists to *save and share* results, not to gate them. Requiring a phone number
-before a 15-year-old can find out anything would lose most of them at the first screen, and it is
-also the least privacy-preserving ordering available.
+Authentication would exist to *save and share* results, not to gate them. Delaying identity avoids
+collecting contact data before the student receives value and keeps the prototype usable without
+an account.
 
 ```mermaid
 flowchart TD
@@ -138,7 +138,7 @@ The **Implemented** column is what runs in this repository today.
 | Backend | FastAPI (Python) | Pydantic validation end to end; same language as the ML tooling |
 | Vector DB | Qdrant | Native hybrid dense + sparse search |
 | Relational DB | PostgreSQL | Profiles, roadmaps, consent records, audit trail |
-| Embeddings | BAAI/BGE-M3, 1024-dim | Multilingual, strong on Thai |
+| Embeddings | BAAI/BGE-M3, 1024-dim | Multilingual candidate to benchmark on Thai guidance queries |
 | LLM | Thai-capable API (Claude / Typhoon class) | Conversation and explanation only |
 | Fine-tuning | QLoRA adapter | Low-cost Thai tone adaptation *(dataset not yet usable)* |
 | Containers | Docker → Kubernetes (OKE) | Auto-scaling for classroom bursts |
@@ -187,12 +187,17 @@ Full detail, including a correction to an earlier overstated claim, is in
 
 Privacy is an architectural constraint here, not a policy page. The users are minors.
 
-**What is enforced in the design**
+**What the current prototype enforces**
+
+- **Guest mode** allows a full session with no account or persistent real-world identity.
+- **Learner answers and progress remain in browser storage.**
+- **Delete everything** clears the FutureMe session from that browser.
+
+**What the production design would need to enforce**
 
 - **Chat transcripts are never shared with parents or counsellors.** They see derived summaries only, with no override. This is a *permission* guarantee, not a claim that data never leaves the device — the two are different, and [08 · Privacy](08-privacy-and-data.md) separates them.
 - **Consent is per-recipient**, visible in the UI, and revocable.
 - **Parent access requires a verified relationship**; counsellor access requires the student to be on that counsellor's roster.
-- **Guest mode** allows a full session with no account and no persistent identity.
 - **Data minimisation** — collect what the recommendation needs, nothing more.
 - **Retention limits and an audit trail** on every access to a student record.
 
@@ -241,11 +246,11 @@ class at once. Container auto-scaling suits that pattern better than fixed provi
 | Method | Endpoint | Purpose |
 |---|---|---|
 | `GET` | `/api/explain` | Availability probe. Returns `{ available: boolean }` so the UI can offer the rewording control only when it is configured, rather than showing a button that always falls back. |
-| `POST` | `/api/explain` | Optional LLM rewording of an explanation the engine already produced. Accepts a route name and reason codes, which are filtered against the engine's own vocabulary before anything is forwarded. Returns `{ source: "fallback" }` with the deterministic text when no API key is set, on timeout, on a provider error, or on a malformed response — always HTTP 200, so the caller never breaks. |
+| `POST` | `/api/explain` | Optional LLM rewording of an explanation the engine already produced. Accepts a catalogue route id and reason codes, then resolves both against server-owned data. Returns `{ source: "fallback" }` with server-generated deterministic text when no API key is set, on timeout, on a provider error, or on a malformed response — always HTTP 200, so the caller never breaks. |
 
 There is no recommendation endpoint, by design: the engine runs in the browser, which is what
-makes the guest-mode privacy claim true. `/api/explain` is never given the list of routes, so it
-cannot add, remove or reorder one.
+keeps learner answers and recommendation state local in the normal flow. `/api/explain` is never
+given the list of routes, so it cannot add, remove or reorder one.
 
 ### Planned
 
@@ -256,8 +261,7 @@ cannot add, remove or reorder one.
 | `POST` | `/v1/future-paths` | Full student profile → three route alternatives with matrix breakdown |
 | `GET` | `/v1/future-paths/{id}` | Retrieve a stored evaluation and route detail |
 
-These are specified with Pydantic schemas in the team's separate backend workspace. They are not
-part of this repository.
+These endpoints are design specifications only. They are not implemented in this repository.
 
 ---
 
@@ -265,7 +269,7 @@ part of this repository.
 
 ```mermaid
 flowchart LR
-    A["DEEP<br/>SSO identity"] -.-> B["NDLP<br/>national resources"]
+    A["DEEP<br/>proposed identity integration"] -.-> B["NDLP<br/>proposed resource link"]
     B -.-> C["FutureMe AI<br/>interactive guidance"]
 
     style A stroke-dasharray: 5 5

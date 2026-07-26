@@ -2,8 +2,9 @@
 
 import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
-import { Button, Card, EvidenceBadge, Notice, Shell } from "@/components/ui";
+import { Button, Card, EvidenceBadge, Shell } from "@/components/ui";
 import {
+  DIMENSION_LABELS,
   explainReason,
   freshness,
   recommend,
@@ -16,6 +17,22 @@ import {
 } from "@/lib/decision-engine";
 import { loadOrCreate, saveSession, type GuestSession } from "@/lib/session";
 import SafetyPause from "@/components/SafetyPause";
+
+/** Descriptive, not ranked — the same words the compare screen uses. */
+const COST_LABEL: Record<string, string> = { low: "Lower", moderate: "Moderate", high: "Higher" };
+const TIMING_LABEL: Record<string, string> = { soon: "Sooner", later: "Later" };
+
+function attributes(route: RouteResult): { label: string; value: string }[] {
+  return [
+    { label: "Cost", value: COST_LABEL[route.costBand] ?? "—" },
+    { label: "Time to earning", value: TIMING_LABEL[route.timeToEarning] ?? "—" },
+    { label: "Study away from home", value: route.requiresRelocation ? "Usually" : "Not needed" },
+    {
+      label: "Flexibility",
+      value: route.flexibility >= 0.66 ? "Keeps options open" : route.flexibility < 0.4 ? "More specialised" : "Balanced",
+    },
+  ];
+}
 
 export default function RoutesPage() {
   const router = useRouter();
@@ -101,7 +118,7 @@ export default function RoutesPage() {
   if (result.insufficientEvidence) {
     return (
       <Shell step={3}>
-        <Card className="border-warning/40" >
+        <Card className="border-warning/40">
           <h1 className="text-2xl font-bold" data-testid="insufficient-heading">
             We do not have enough evidence to suggest a route yet.
           </h1>
@@ -128,41 +145,26 @@ export default function RoutesPage() {
     );
   }
 
+  const many = result.routes.length > 1;
+
   return (
     <Shell step={3}>
-      <div className="mb-6">
+      {/* Level 1 — understand what the options are, fast. */}
+      <header className="mb-6">
         <h1 className="text-2xl font-bold sm:text-3xl" data-testid="routes-heading">
-          {result.routes.length === 1
-            ? "One route fits what you told us"
-            : `${result.routes.length} routes worth exploring`}
+          {many ? `${result.routes.length} directions worth exploring` : "One direction worth exploring"}
         </h1>
-        <p className="mt-3 max-w-2xl text-sm text-muted">
-          These are not ranked and none of them is a &ldquo;best match&rdquo;. Read the evidence and
-          the limitations, then compare them before you choose.
+        <p className="mt-2 max-w-2xl text-sm text-muted">
+          {many
+            ? "None of these is a “best match.” Think of them as hypotheses to test — skim the three, then compare."
+            : "This is not a “best match” — it is one hypothesis to test. Read it, then explore the evidence."}
         </p>
-      </div>
+      </header>
 
-      {result.routes.some((r) => r.tiedWith.length > 0) ? (
-        <div className="mb-5">
-          <Notice title="Some of these scored too close to separate">
-            The difference between them is smaller than this prototype can meaningfully measure, so
-            they are shown as equals.
-          </Notice>
-        </div>
-      ) : null}
-
-      {result.profile.contradictions.length > 0 ? (
-        <div className="mb-5">
-          <Notice tone="warning" title="Your interview and your mission disagree">
-            What you chose in the mission points somewhere different from what you said in the
-            interview. That is useful information, not a mistake — it usually means one of them was
-            answered aspirationally. Worth discussing with a counsellor.
-          </Notice>
-        </div>
-      ) : null}
+      <SignalSummary result={result} />
 
       {/* Equal weight by construction: same grid cell, same card, same actions. */}
-      <ul className="grid gap-4 lg:grid-cols-3">
+      <ul className="mt-6 grid gap-4 lg:grid-cols-3">
         {result.routes.map((route) => (
           <RouteCard
             key={route.routeId}
@@ -173,12 +175,27 @@ export default function RoutesPage() {
         ))}
       </ul>
 
-      <div className="mt-7 flex flex-wrap items-center gap-3">
-        <Button href="/compare" data-testid="go-compare">
-          Compare these side by side →
-        </Button>
-        <span className="text-xs text-muted">Recommended before choosing.</span>
-      </div>
+      {/* Level 2 — comparison is the intended next step, so it is the one strong CTA. */}
+      {many ? (
+        <section className="mt-8 rounded-card border border-mint/30 bg-mint/5 p-5 text-center">
+          <h2 className="text-base font-bold">Not sure which one?</h2>
+          <p className="mx-auto mt-1 max-w-md text-sm text-muted">
+            Put them side by side on cost, time to earning, flexibility and evidence before you
+            decide anything.
+          </p>
+          <div className="mt-4">
+            <Button href="/compare" data-testid="go-compare">
+              Compare the {result.routes.length} routes →
+            </Button>
+          </div>
+        </section>
+      ) : (
+        <div className="mt-8">
+          <Button href="/compare" variant="secondary" data-testid="go-compare">
+            See this route&rsquo;s details side by side →
+          </Button>
+        </div>
+      )}
 
       {result.ineligible.length > 0 ? (
         <details className="mt-8 rounded-card border border-line bg-surface p-5">
@@ -201,6 +218,7 @@ export default function RoutesPage() {
         </details>
       ) : null}
 
+      {/* Level 3 (shared) — source and freshness, once, not repeated per card. */}
       <DataFreshness />
 
       <p className="mt-4 text-xs text-muted">
@@ -212,9 +230,66 @@ export default function RoutesPage() {
 }
 
 /**
+ * Replaces the two large warning panels (ties, contradiction) with one calm
+ * summary of what the answers pointed to. The detail — why more than one route
+ * is showing — is available on demand, not shouted by default.
+ */
+function SignalSummary({ result }: { result: Recommendation }) {
+  const { profile } = result;
+  const interest = profile.topDimensions.slice(0, 2).map((d) => DIMENSION_LABELS[d]);
+  const tied = result.routes.some((r) => r.tiedWith.length > 0);
+  const contradicted = profile.contradictions.length > 0;
+  const missionLine = !profile.missionCompleted
+    ? "Not completed yet"
+    : contradicted
+      ? "Pointed somewhere different"
+      : "Agreed with your interview";
+
+  return (
+    <section className="rounded-card border border-line bg-surface p-5" data-testid="signal-summary">
+      <h2 className="text-sm font-bold">What your answers pointed to</h2>
+      <dl className="mt-3 grid gap-3 sm:grid-cols-2">
+        <div>
+          <dt className="text-xs font-semibold uppercase tracking-wide text-muted">Interview</dt>
+          <dd className="mt-1 text-sm">{interest.join(" + ") || "No clear lead"}</dd>
+        </div>
+        <div>
+          <dt className="text-xs font-semibold uppercase tracking-wide text-muted">Mission</dt>
+          <dd className="mt-1 text-sm">{missionLine}</dd>
+        </div>
+      </dl>
+
+      {tied || contradicted ? (
+        <details className="mt-3 border-t border-line pt-3">
+          <summary className="cursor-pointer text-xs font-bold" data-testid="why-multiple">
+            Why you&rsquo;re seeing more than one
+          </summary>
+          <div className="mt-2 space-y-2 text-sm text-muted">
+            {contradicted ? (
+              <p>
+                Your answers and your actions pointed in different directions. That is useful
+                evidence, not a mistake — it often means you need more real-world exploration before
+                choosing. Worth talking through with a counsellor.
+              </p>
+            ) : null}
+            {tied ? (
+              <p>
+                Some of these routes are too close to rank confidently, so FutureMe shows them as
+                equals rather than inventing an order the evidence does not support.
+              </p>
+            ) : null}
+          </div>
+        </details>
+      ) : null}
+    </section>
+  );
+}
+
+/**
  * Says how old the catalogue is and which fields have no source at all, rather
  * than only warning once it crosses a threshold. Missing information is a
  * different problem from out-of-date information and the learner deserves both.
+ * Shown once for the whole page; per-route sources live in each route's details.
  */
 function DataFreshness() {
   const f = freshness();
@@ -222,7 +297,7 @@ function DataFreshness() {
 
   return (
     <section className="mt-8 rounded-card border border-line bg-surface p-5" data-testid="data-freshness">
-      <h2 className="text-sm font-bold">Where this route information comes from</h2>
+      <h2 className="text-sm font-bold">About this information</h2>
 
       <dl className="mt-3 space-y-2 text-sm">
         <div className="flex flex-wrap gap-x-2">
@@ -250,8 +325,9 @@ function DataFreshness() {
       </dl>
 
       <p className="mt-3 text-xs text-muted">
-        Entry criteria and fees change every academic year. Check anything you would act on against
-        the institution&rsquo;s own current page before you decide.
+        Each route&rsquo;s own source is inside its <strong className="text-ink">Explore</strong>{" "}
+        panel. Entry criteria and fees change every academic year — check anything you would act on
+        against the institution&rsquo;s own current page before you decide.
       </p>
     </section>
   );
@@ -266,102 +342,150 @@ function RouteCard({
   llmAvailable: boolean;
   onSelect: () => void;
 }) {
+  const [open, setOpen] = useState(false);
+  const panelId = `route-detail-${route.routeId}`;
+
   return (
     <Card as="li" className="flex flex-col">
-      <div className="flex flex-wrap items-start justify-between gap-2">
-        <h2 className="text-base font-bold leading-snug">{route.name}</h2>
-      </div>
+      {/* Identity */}
+      <h2 className="text-base font-bold leading-snug">{route.name}</h2>
+      {route.shortName && route.shortName !== route.name ? (
+        <p className="mt-0.5 text-xs text-muted">{route.shortName}</p>
+      ) : null}
+
+      <p className="mt-2 text-sm text-muted">{route.summary}</p>
 
       <div className="mt-3">
         <EvidenceBadge strength={route.evidenceStrength} label={STRENGTH_LABELS[route.evidenceStrength]} />
         <p className="mt-1.5 text-xs text-muted">{STRENGTH_HELP[route.evidenceStrength]}</p>
       </div>
 
-      <p className="mt-3 text-sm text-muted">{route.summary}</p>
-
-      <WhyThisAppeared route={route} llmAvailable={llmAvailable} />
-
-      <section className="mt-4">
-        <h3 className="text-xs font-bold uppercase tracking-wide text-muted">Evidence used</h3>
-        <ul className="mt-2 space-y-1 text-sm text-muted">
-          {route.supportingEvidence.map((e) => (
-            <li key={e}>• {e}</li>
-          ))}
-        </ul>
-      </section>
-
-      <details className="mt-4 border-t border-line pt-3">
-        <summary className="cursor-pointer text-xs font-bold">Strengths and limitations</summary>
-        <div className="mt-3 space-y-3 text-sm">
-          <div>
-            <p className="text-xs font-bold uppercase tracking-wide text-muted">Possible strengths</p>
-            <ul className="mt-1 space-y-1 text-muted">
-              {route.strengths.map((s) => (
-                <li key={s}>• {s}</li>
-              ))}
-            </ul>
+      {/* At a glance — descriptive dimensions, not scores */}
+      <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2">
+        {attributes(route).map((a) => (
+          <div key={a.label}>
+            <dt className="text-[11px] uppercase tracking-wide text-muted">{a.label}</dt>
+            <dd className="text-sm">{a.value}</dd>
           </div>
-          <div>
-            <p className="text-xs font-bold uppercase tracking-wide text-muted">
-              Possible limitations
-            </p>
-            <ul className="mt-1 space-y-1 text-muted">
-              {route.limitations.map((s) => (
-                <li key={s}>• {s}</li>
-              ))}
-            </ul>
-          </div>
+        ))}
+      </dl>
+
+      <WhyItMayFit route={route} llmAvailable={llmAvailable} />
+
+      {route.limitations.length > 0 ? (
+        <div className="mt-4">
+          <h3 className="text-xs font-bold uppercase tracking-wide text-muted">Consider</h3>
+          <p className="mt-1 text-sm text-muted">{route.limitations[0]}</p>
         </div>
-      </details>
-
-      <section className="mt-4">
-        <h3 className="text-xs font-bold uppercase tracking-wide text-muted">Still unanswered</h3>
-        <ul className="mt-2 space-y-1 text-sm text-muted">
-          {route.openQuestions.map((q) => (
-            <li key={q}>• {q}</li>
-          ))}
-        </ul>
-      </section>
+      ) : null}
 
       <div className="mt-4 rounded-control border border-line bg-surface2 p-3">
-        <p className="text-xs font-bold uppercase tracking-wide text-muted">Next experiment</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-muted">Try this next</p>
         <p className="mt-1 text-sm">{route.nextExperiment}</p>
       </div>
 
-      <Provenance route={route} />
+      <div className="flex-1" />
 
-      {route.stale ? (
-        <p className="mt-3 text-xs text-warning">
-          ⚠ This route information may be out of date — verify against official sources.
-        </p>
-      ) : null}
-
-      {/* Every card gets the identical action, in the identical style. */}
-      <div className="mt-5 pt-1">
+      {/* Level 3 toggle — every card's action is identical in style and weight. */}
+      <div className="mt-5">
         <Button
           variant="secondary"
-          onClick={onSelect}
+          onClick={() => setOpen((v) => !v)}
           className="w-full"
           data-testid={`select-${route.routeId}`}
+          aria-expanded={open}
+          aria-controls={panelId}
         >
-          Build a 30-day plan for this
+          {open ? "Hide details" : "Explore this route"}
         </Button>
       </div>
+
+      {open ? (
+        <div id={panelId} className="mt-4 space-y-4 border-t border-line pt-4" data-testid={`detail-${route.routeId}`}>
+          <DetailBlock title="Why FutureMe showed this">
+            <ul className="space-y-1 text-sm text-muted">
+              {route.reasons.slice(0, 4).map((code) => (
+                <li key={code}>• {explainReason(code)}</li>
+              ))}
+            </ul>
+          </DetailBlock>
+
+          <DetailBlock title="Evidence used">
+            <ul className="space-y-1 text-sm text-muted">
+              {route.supportingEvidence.map((e) => (
+                <li key={e}>• {e}</li>
+              ))}
+            </ul>
+          </DetailBlock>
+
+          {route.strengths.length > 0 ? (
+            <DetailBlock title="Strengths">
+              <ul className="space-y-1 text-sm text-muted">
+                {route.strengths.map((s) => (
+                  <li key={s}>• {s}</li>
+                ))}
+              </ul>
+            </DetailBlock>
+          ) : null}
+
+          {route.limitations.length > 0 ? (
+            <DetailBlock title="Trade-offs">
+              <ul className="space-y-1 text-sm text-muted">
+                {route.limitations.map((s) => (
+                  <li key={s}>• {s}</li>
+                ))}
+              </ul>
+            </DetailBlock>
+          ) : null}
+
+          {route.openQuestions.length > 0 ? (
+            <DetailBlock title="Still unanswered">
+              <ul className="space-y-1 text-sm text-muted">
+                {route.openQuestions.map((q) => (
+                  <li key={q}>• {q}</li>
+                ))}
+              </ul>
+            </DetailBlock>
+          ) : null}
+
+          <Provenance route={route} />
+
+          <Button
+            variant="secondary"
+            onClick={onSelect}
+            className="w-full"
+            data-testid={`plan-${route.routeId}`}
+          >
+            Build a 30-day plan for this route →
+          </Button>
+        </div>
+      ) : null}
     </Card>
   );
 }
 
+function DetailBlock({ title, children }: { title: string; children: React.ReactNode }) {
+  return (
+    <section>
+      <h3 className="text-xs font-bold uppercase tracking-wide text-muted">{title}</h3>
+      <div className="mt-2">{children}</div>
+    </section>
+  );
+}
+
 /**
- * The reasons the engine gave, with an optional rewording on top.
+ * The compact "why it may fit" block, shown by default.
  *
- * The deterministic list is what renders by default and is always one click
- * away again. The rewritten version is labelled as rewritten, and the label
- * says what it did and did not change — a student who is told an AI wrote
- * something should be able to find out whether the AI chose it too.
+ * Its default content is the route's own strengths — genuinely route-specific,
+ * so the three cards differ at a glance instead of repeating the same generic
+ * sentences. The optional AI layer, when configured, restates the engine's
+ * reasoning in plainer words; it is labelled as wording only and never changes
+ * which route this is or why it appeared.
  */
-function WhyThisAppeared({ route, llmAvailable }: { route: RouteResult; llmAvailable: boolean }) {
+function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable: boolean }) {
   const codes = route.reasons.slice(0, 3);
   const deterministic = codes.map((c) => explainReason(c)).join(" ");
+  const signals = route.strengths.slice(0, 2);
 
   const [rewritten, setRewritten] = useState<string | null>(null);
   const [showing, setShowing] = useState(false);
@@ -377,11 +501,7 @@ function WhyThisAppeared({ route, llmAvailable }: { route: RouteResult; llmAvail
       const res = await fetch("/api/explain", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({
-          routeName: route.name,
-          reasons: codes,
-          fallbackText: deterministic,
-        }),
+        body: JSON.stringify({ routeId: route.routeId, reasons: codes }),
       });
       const data = (await res.json()) as { source?: string; text?: string };
       if (data.source === "llm" && data.text) {
@@ -389,18 +509,16 @@ function WhyThisAppeared({ route, llmAvailable }: { route: RouteResult; llmAvail
         setShowing(true);
         setState("idle");
       } else {
-        // The endpoint answered, but with the deterministic text. Nothing to
-        // show, so say the layer is off rather than pretending it ran.
         setState("unavailable");
       }
     } catch {
       setState("unavailable");
     }
-  }, [codes, deterministic, rewritten, route.name]);
+  }, [codes, rewritten, route.routeId]);
 
   return (
     <section className="mt-4">
-      <h3 className="text-xs font-bold uppercase tracking-wide text-muted">Why this appeared</h3>
+      <h3 className="text-xs font-bold uppercase tracking-wide text-muted">Why it may fit you</h3>
 
       {showing && rewritten ? (
         <>
@@ -411,26 +529,32 @@ function WhyThisAppeared({ route, llmAvailable }: { route: RouteResult; llmAvail
             <span className="rounded-full border border-indigo/40 bg-indigo/10 px-2 py-0.5 font-bold text-indigo">
               Reworded by AI
             </span>{" "}
-            Wording only. This route, its position and the reasons below it were decided by the
-            rule engine before any model was asked.
+            Wording only. This route and why it appeared were decided by the rule engine before any
+            model was asked.
           </p>
           <button
             type="button"
             onClick={() => setShowing(false)}
             className="mt-2 text-xs text-muted underline underline-offset-2"
           >
-            Show the original wording
+            Show the rule-engine wording
           </button>
         </>
       ) : (
         <>
-          <ul className="mt-2 space-y-1 text-sm" data-testid={`why-rules-${route.routeId}`}>
-            {codes.map((code) => (
-              <li key={code} className="text-muted">
-                • {explainReason(code)}
-              </li>
-            ))}
-          </ul>
+          {rewritten ? (
+            <p className="mt-2 text-sm text-muted" data-testid={`why-rules-${route.routeId}`}>
+              {deterministic}
+            </p>
+          ) : (
+            <ul className="mt-2 space-y-1 text-sm" data-testid={`why-rules-${route.routeId}`}>
+              {signals.map((s) => (
+                <li key={s} className="text-muted">
+                  • {s}
+                </li>
+              ))}
+            </ul>
+          )}
           {llmAvailable ? (
             <button
               type="button"
@@ -442,8 +566,8 @@ function WhyThisAppeared({ route, llmAvailable }: { route: RouteResult; llmAvail
               {state === "loading"
                 ? "Rewriting…"
                 : rewritten
-                  ? "Show the AI wording again"
-                  : "Say this in plainer words (AI)"}
+                  ? "Show the AI rewording"
+                  : "Say why in plainer words (AI)"}
             </button>
           ) : null}
           {state === "unavailable" ? (
@@ -458,7 +582,7 @@ function WhyThisAppeared({ route, llmAvailable }: { route: RouteResult; llmAvail
   );
 }
 
-/** Where this route's description came from, shown on the card that uses it. */
+/** Where this route's description came from, shown inside its Explore panel. */
 function Provenance({ route }: { route: RouteResult }) {
   const { provenance: p } = route;
   const label =
@@ -469,7 +593,7 @@ function Provenance({ route }: { route: RouteResult }) {
         : "Not supported by any source in the registry";
 
   return (
-    <details className="mt-4 border-t border-line pt-3">
+    <details className="border-t border-line pt-3">
       <summary className="cursor-pointer text-xs font-bold" data-testid={`provenance-${route.routeId}`}>
         Where this came from
       </summary>

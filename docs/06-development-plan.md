@@ -4,7 +4,7 @@
 
 ---
 
-> **Status as of 25 July 2026.** Statuses below describe *this repository*, not the team's private
+> **Status as of 26 July 2026.** Statuses below describe *this repository*, not the team's private
 > workspace. Where something exists only as a design, it says so.
 
 ## Status vocabulary
@@ -64,7 +64,7 @@ Every claim of 🟢 above corresponds to something executable.
 | Types | `npm run typecheck` | 0 errors, strict mode |
 | Lint | `npm run lint` | 0 warnings |
 | Unit and integration | `npm test` | 136 passing |
-| End-to-end | `npm run test:e2e` | 18 passing, against the production build |
+| End-to-end | `npm run test:e2e` | 20 passing, against the production build |
 | Production build | `npm run build` | 9 routes |
 | All of the above | `npm run verify` | Also runs on every pull request |
 
@@ -74,8 +74,8 @@ Every claim of 🟢 above corresponds to something executable.
 
 **1 · The QLoRA dataset is not usable.**
 The train and test files are byte-identical and contain ten examples each. Evaluating a fine-tune
-on data it trained on measures nothing. The sets must be separated and expanded by roughly two
-orders of magnitude before any evaluation figure is reported. Until then no fine-tuning metric
+on data it trained on measures nothing. The sets must be separated, materially expanded and
+independently reviewed before any evaluation figure is reported. Until then no fine-tuning metric
 exists and none may be claimed.
 
 **2 · No validated instruments.**
@@ -128,8 +128,8 @@ flowchart TD
 1. **Validate the interest instrument and mission rubrics** with qualified professionals. Until
    this happens, everything downstream inherits an unmeasured instrument.
 2. **Interview ม.3 and ม.5 students, parents and counsellors** across different Thai school
-   contexts — urban and rural, large and small. These two years sit immediately before the
-   irreversible decisions.
+   contexts — urban and rural, large and small. These years sit immediately before consequential
+   education decisions.
 3. **Replace the demo catalogue** with per-programme, per-year data carrying a source and a
    validity window.
 4. **Build an independent evaluation set and run a bias audit** across gender, region, school size

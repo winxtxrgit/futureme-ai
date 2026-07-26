@@ -165,7 +165,11 @@ async function compress() {
   console.log(`compressed ${mb(before)} MB -> ${mb(after)} MB`);
 }
 
-const browser = await chromium.launch();
+// Honour PW_CHANNEL (e.g. "chrome") so screenshots can be regenerated where the
+// bundled Chromium download is blocked — the same fallback the e2e config uses.
+const browser = await chromium.launch(
+  process.env.PW_CHANNEL ? { channel: process.env.PW_CHANNEL } : {},
+);
 try {
   await mkdir(OUT, { recursive: true });
   await capture(browser, DESKTOP, "desktop");

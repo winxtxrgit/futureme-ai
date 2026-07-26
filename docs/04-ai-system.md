@@ -126,16 +126,18 @@ completed mission.
 deterministic engine → structured result → [optional rewording] → wording on screen
 ```
 
-`/api/explain` receives a route name and a set of reason codes and returns warmer wording. It is
-reachable from each route card when an API key is configured, and absent when one is not.
+`/api/explain` receives a catalogue route id and a set of reason codes, validates both against
+server-owned data, then resolves the route name and fixed reason wording before requesting warmer
+wording. It is reachable from each route card when an API key is configured, and absent when one
+is not.
 
 Four properties make it safe to ship:
 
 - **It never sees the route list**, so it cannot add, remove or reorder a route.
-- **Reason codes are filtered against the engine's own vocabulary** before anything is forwarded,
-  so the endpoint cannot relay arbitrary strings to a third party.
-- **The learner's free text is never sent** — not the interview's "something you were proud of"
-  answer, not the mission writing.
+- **Route ids and reason codes are resolved from server-owned data** before anything is forwarded,
+  so the endpoint cannot relay arbitrary caller-supplied strings to a third party.
+- **The learner's answers and free text are never sent** — not the interview's "something you
+  were proud of" answer, not the mission writing.
 - **Every failure path returns HTTP 200 with the deterministic text**, so a provider outage
   changes nothing on screen.
 
@@ -159,6 +161,7 @@ Stated plainly, because a working demo hides all of this.
 | Route data is illustrative | Cost, location, timing and flexibility carry no source. See [02 · Research](02-research-and-evidence.md#source-registry) |
 | The safeguarding rule is a keyword match | It will miss cases and produce false positives, and nobody is alerted |
 | English only | The target users are Thai students |
+| No production abuse controls on `/api/explain` | Route and reason input is constrained, but a public deployment still needs authentication or rate limiting and provider spend limits |
 
 ---
 
@@ -176,7 +179,7 @@ submission, not because any of it runs.
 | Qdrant hybrid retrieval (dense + sparse, RRF-fused) | 📐 Planned | A seeded JSON catalogue of six routes |
 | BGE-M3 embeddings, 1024-dim | 📐 Planned | No embeddings at all |
 | LLM synthesis into structured JSON | 📐 Planned | Deterministic template text, optionally reworded |
-| FastAPI orchestrator, PostgreSQL, RBAC | 📐 Planned | Everything runs in the browser; nothing is stored server-side |
+| FastAPI orchestrator, PostgreSQL, RBAC | 📐 Planned | Learner state is stored in the browser; the optional explanation endpoint is stateless |
 | DAG roadmap with topological sort | 📐 Planned | A linear four-week plan from a template |
 | QLoRA adapter for Thai tone | 🔴 Blocked | Not attempted |
 

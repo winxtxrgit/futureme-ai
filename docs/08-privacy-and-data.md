@@ -22,7 +22,7 @@ and a PostgreSQL database. Two different claims were being blurred:
 | Claim | What it means | Where it is true |
 |---|---|---|
 | **"Not shared with parents or counsellors"** | A *permission* rule. It constrains who may read data. It says nothing about where the data physically travels. | This is the production design intent. Nothing enforces it yet, because the sharing features do not exist. |
-| **"Never transmitted outside the device"** | A *physical* claim. Far stronger. | True of the implemented prototype's guest mode today, because the engine runs in the browser and there is no server-side storage at all. |
+| **"Learner answers stay on the device"** | A narrower physical claim about interview and mission input. | True of the implemented recommendation path. An enabled explanation request sends a catalogue route id and fixed reason codes, but not the underlying answers. |
 
 The first does not imply the second. A system can faithfully hide a transcript from a parent while
 still transmitting it to a server, logging it, and retaining it indefinitely. The corrected wording
@@ -32,9 +32,10 @@ appears in the README, in the running app at `/privacy`, and below.
 
 ## What the prototype actually does
 
-**Everything in guest mode stays in the browser.** The recommendation engine
+**Learner answers and progress stay in the browser.** The recommendation engine
 (`lib/decision-engine/`) is plain TypeScript that executes on the client. There is no network
-request in the recommendation path, so there is nothing to intercept, log or retain.
+request in the recommendation path. Loading a hosted web app still creates ordinary requests to
+its host, and the optional explanation layer is a separate network path described below.
 
 | Data | Collected? | Where it goes | Retention |
 |---|---|---|---|
@@ -45,7 +46,8 @@ request in the recommendation path, so there is nothing to intercept, log or ret
 | Selected route and plan check-ins | Yes | `localStorage` only | Until the user deletes it |
 | Guest session id | Yes | `localStorage` only — random, not derived from anything about the user | Until the user deletes it |
 | Name, email, phone, school | **No** | — | — |
-| IP address, analytics, cookies, trackers | **No** — none are used | — | — |
+| Analytics, advertising cookies or trackers added by the app | **No** | — | — |
+| Normal request metadata such as IP address | Not collected by FutureMe application code | A deployment host may process or log it when serving pages or `/api/explain` | Governed by the host's configuration |
 | Server-side logs of answers | **No** — there is no server in this path | — | — |
 
 Storage key: `futureme.guest.v1`. It is inspectable in browser developer tools, which is
@@ -67,11 +69,14 @@ something was discarded.
 This is a correctness property before it is a security one: an out-of-range Likert value silently
 reaching the scorer would produce a recommendation nobody could explain.
 
-**Deletion.** `/privacy` has a *Delete my data* control that removes the key immediately. Because
-no copy exists anywhere else, deletion is complete rather than a request queued for processing.
+**Deletion.** `/privacy` has a *Delete my data* control that removes the FutureMe session key
+immediately. The app creates no server-side copy of that session. Browser extensions, screenshots,
+device backups and deployment-host request logs are outside that control.
 
-**Consent.** Guest mode collects nothing that identifies the user, so there is nothing to consent
-to sharing. The account and counsellor-sharing flows that *would* require consent are not built.
+**Identity and consent.** Guest mode does not ask for a name, email, phone number or school.
+Learners can still type identifying information into optional free-text fields, so anonymity
+cannot be guaranteed. Account and counsellor-sharing flows are not built; any future pilot needs
+an appropriate consent and legal review rather than relying on guest mode alone.
 
 ---
 
@@ -79,18 +84,23 @@ to sharing. The account and counsellor-sharing flows that *would* require consen
 
 There is an optional LLM explanation layer at `app/api/explain/route.ts`.
 
-- It is **disabled unless the operator sets `ANTHROPIC_API_KEY`**. The public demo does not set one.
+- It is **disabled unless the operator sets `ANTHROPIC_API_KEY`**.
 - When disabled it returns `{ source: "fallback" }` and the app uses deterministic template text. Behaviour is identical apart from wording.
-- If enabled, the request contains **only the route name and reason codes** — never the learner's free text, and never the interview answers.
+- If enabled, the browser request contains a **catalogue route id and fixed reason codes**. The
+  server validates both, resolves their server-owned wording, and sends no learner answers or free
+  text to the provider.
 - It cannot change which routes were selected. The engine has already decided by the time this is called.
-- Nothing is used for model training. Data handling would then be governed by the model provider's terms, which is precisely why it is off by default.
+- Provider retention and training treatment depend on the operator's current provider agreement.
+  A deployment owner must verify and disclose those terms before enabling the feature.
+- The endpoint constrains content but has no production authentication or rate limit. A public
+  deployment needs abuse controls and provider spend limits before enabling a funded API key.
 
 ```mermaid
 flowchart LR
     A["Learner's answers"] --> B["localStorage<br/>this browser only"]
     B --> C["Decision engine<br/>runs in the browser"]
     C --> D["Routes + plan<br/>rendered locally"]
-    C -.->|"optional, off by default<br/>route name + reason codes only"| E["LLM provider"]
+    C -.->|"optional, off by default<br/>catalogue route + fixed reasons"| E["LLM provider"]
 
     style E stroke-dasharray: 5 5
 ```
@@ -101,7 +111,7 @@ flowchart LR
 
 A keyword rule (`lib/safety/`) scans free-text answers. If it matches, the app stops generating
 career output from that answer and shows a support screen with the Thai Department of Mental Health
-hotline (1323).
+[hotline 1323](https://dmh.go.th/).
 
 **Its limits, stated plainly:**
 
@@ -136,8 +146,10 @@ marked as planned.
 
 The users are minors, so this matters more than usual. The honest position:
 
-- The prototype's guest mode is **privacy-preserving by construction** — it collects no identifying data and transmits nothing. That is a property of it doing less, not of a compliance programme.
-- **No PDPA compliance review has been carried out.** None is needed yet at this scope, and one will be required before any pilot involving real students.
+- The prototype minimises data by avoiding accounts and keeping learner answers in browser
+  storage. That is useful privacy-by-design work, not a compliance conclusion.
+- **No PDPA compliance review has been carried out.** A qualified review is required before a
+  real-student pilot or public deployment that processes learner data.
 - In-country data residency and ISO certification from a cloud provider would cover *where* data lives. Consent management, access control, minimisation, retention and processor governance are application-layer duties that remain with this project. Conflating the two is the most common way a project like this gets compliance wrong.
 
 ---

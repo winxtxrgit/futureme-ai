@@ -1,7 +1,7 @@
 {
   "meta": {
     "notice": "Missions produce behavioural evidence that is scored deterministically by rules in lib/decision-engine/scoring.ts. No trained model evaluates these responses, and the rubric has not been validated.",
-    "selection": "Which mission a learner is given is decided by lib/mission/select.ts from the interview profile alone — a transparent rule, not a model. `bestFor` lists the RIASEC dimensions a mission is chosen for; it does not limit the evidence it can produce, because every mission offers options across all six dimensions so that a mission can still disagree with the interview."
+    "selection": "Which mission a learner is given is decided by lib/mission/index.ts from the interview profile alone — a transparent rule, not a model. `bestFor` lists the RIASEC dimensions a mission is chosen for; it does not limit the evidence it can produce, because every mission offers options across all six dimensions so that a mission can still disagree with the interview."
   },
   "missions": [
     {

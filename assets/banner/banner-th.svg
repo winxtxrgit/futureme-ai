@@ -1,86 +1,83 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 400" width="1280" height="400" role="img" aria-label="FutureMe AI — career and study guidance for Thai students that shows its reasoning">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1280 420" width="1280" height="420" role="img" aria-labelledby="title description">
+  <title id="title">FutureMe AI</title>
+  <desc id="description">สำรวจก้าวต่อไป ไม่ใช่ฟันธงคำตอบเดียว ต้นแบบที่รวมการทบทวนตัวเอง ภารกิจสั้น ๆ หลายเส้นทางพร้อมเหตุผล และแผนทดลอง 30 วัน</desc>
   <defs>
     <linearGradient id="aurora" x1="0" y1="0" x2="1" y2="0">
-      <stop offset="0%" stop-color="#6D5EF6"/>
-      <stop offset="48%" stop-color="#C13BF0"/>
-      <stop offset="100%" stop-color="#FF6B6B"/>
+      <stop offset="0%" stop-color="#7C6CFF"/>
+      <stop offset="50%" stop-color="#D35AF4"/>
+      <stop offset="100%" stop-color="#FF7B7B"/>
     </linearGradient>
-    <radialGradient id="glowIndigo" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#6D5EF6" stop-opacity="0.55"/>
+    <linearGradient id="mark" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#7C6CFF"/>
+      <stop offset="62%" stop-color="#D35AF4"/>
+      <stop offset="100%" stop-color="#FF7B7B"/>
+    </linearGradient>
+    <radialGradient id="indigoGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#6D5EF6" stop-opacity=".48"/>
       <stop offset="100%" stop-color="#6D5EF6" stop-opacity="0"/>
     </radialGradient>
-    <radialGradient id="glowMagenta" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#C13BF0" stop-opacity="0.40"/>
-      <stop offset="100%" stop-color="#C13BF0" stop-opacity="0"/>
-    </radialGradient>
-    <radialGradient id="glowMint" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#4FE3C1" stop-opacity="0.30"/>
+    <radialGradient id="mintGlow" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#4FE3C1" stop-opacity=".24"/>
       <stop offset="100%" stop-color="#4FE3C1" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="markGrad" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%" stop-color="#6D5EF6"/>
-      <stop offset="60%" stop-color="#C13BF0"/>
-      <stop offset="100%" stop-color="#FF6B6B"/>
-    </linearGradient>
-    <clipPath id="card">
-      <rect x="0" y="0" width="1280" height="400" rx="28"/>
+    <clipPath id="frame">
+      <rect width="1280" height="420" rx="28"/>
     </clipPath>
   </defs>
 
-  <g clip-path="url(#card)">
-    <rect x="0" y="0" width="1280" height="400" fill="#0B0B14"/>
-    <ellipse cx="180" cy="60" rx="420" ry="300" fill="url(#glowIndigo)"/>
-    <ellipse cx="700" cy="420" rx="480" ry="300" fill="url(#glowMagenta)"/>
-    <ellipse cx="1150" cy="140" rx="360" ry="260" fill="url(#glowMint)"/>
+  <g clip-path="url(#frame)">
+    <rect width="1280" height="420" fill="#0B0B14"/>
+    <ellipse cx="110" cy="45" rx="430" ry="300" fill="url(#indigoGlow)"/>
+    <ellipse cx="1160" cy="160" rx="380" ry="320" fill="url(#mintGlow)"/>
+    <ellipse cx="650" cy="470" rx="500" ry="260" fill="url(#indigoGlow)" opacity=".45"/>
 
-    <!-- brand mark -->
-    <g transform="translate(72,58)">
-      <rect x="0" y="0" width="44" height="44" rx="14" fill="url(#markGrad)"/>
-      <circle cx="22" cy="22" r="12.5" fill="#0B0B14"/>
-      <circle cx="22" cy="22" r="5" fill="#4FE3C1"/>
-      <text x="60" y="20" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="17" font-weight="700" fill="#F5F5FA" letter-spacing="0.4">FutureMe AI</text>
-      <text x="60" y="38" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="600" fill="#A0A0B8" letter-spacing="1.6">AURORA DIRECTION</text>
+    <g transform="translate(72 50)">
+      <rect width="46" height="46" rx="14" fill="url(#mark)"/>
+      <circle cx="23" cy="23" r="13" fill="#0B0B14"/>
+      <circle cx="23" cy="23" r="5" fill="#4FE3C1"/>
+      <text x="62" y="21" font-family="Inter, Helvetica Neue, Arial, sans-serif" font-size="18" font-weight="700" fill="#F5F5FA">FutureMe AI</text>
+      <text x="62" y="40" font-family="Noto Sans Thai, IBM Plex Sans Thai, Tahoma, sans-serif" font-size="11" font-weight="700" letter-spacing=".5" fill="#A8A6BE">สำรวจเส้นทางเรียนและอาชีพ</text>
     </g>
 
-    <!-- eyebrow -->
-    <g transform="translate(72,140)">
-      <rect x="0" y="0" width="432" height="30" rx="15" fill="#FFFFFF" fill-opacity="0.06" stroke="#FFFFFF" stroke-opacity="0.14"/>
-      <circle cx="18" cy="15" r="4" fill="#4FE3C1"/>
-      <text x="32" y="19.5" font-family="Helvetica Neue, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" fill="#D8D4E5" letter-spacing="1.15">JUMP THAILAND HACKATHON 2026 · AIS ACADEMY × NIA</text>
+    <g transform="translate(72 132)">
+      <rect width="344" height="32" rx="16" fill="#FFFFFF" fill-opacity=".06" stroke="#FFFFFF" stroke-opacity=".14"/>
+      <circle cx="17" cy="16" r="4" fill="#4FE3C1"/>
+      <text x="31" y="21" font-family="Noto Sans Thai, IBM Plex Sans Thai, Tahoma, sans-serif" font-size="11.5" font-weight="700" fill="#D9D7E4">ต้นแบบที่ใช้งานได้ · โหมด GUEST</text>
     </g>
 
-    <!-- headline -->
-    <text x="72" y="232" font-family="Noto Sans Thai, IBM Plex Sans Thai, Leelawadee UI, Tahoma, Thonburi, Helvetica, Arial, sans-serif" font-size="46" font-weight="700" fill="#F5F5FA" letter-spacing="-1">ก้าวต่อไปที่นักเรียน</text>
-    <text x="72" y="296" font-family="Noto Sans Thai, IBM Plex Sans Thai, Leelawadee UI, Tahoma, Thonburi, Helvetica, Arial, sans-serif" font-size="46" font-weight="700" fill="url(#aurora)" letter-spacing="-1">อธิบายได้จริง</text>
+    <text x="72" y="232" font-family="Noto Sans Thai, IBM Plex Sans Thai, Tahoma, sans-serif" font-size="45" font-weight="750" fill="#F5F5FA">สำรวจก้าวต่อไป —</text>
+    <text x="72" y="296" font-family="Noto Sans Thai, IBM Plex Sans Thai, Tahoma, sans-serif" font-size="45" font-weight="750" fill="url(#aurora)">ไม่ใช่ฟันธงคำตอบเดียว</text>
+    <text x="72" y="340" font-family="Noto Sans Thai, IBM Plex Sans Thai, Tahoma, sans-serif" font-size="15.5" fill="#B1AFC4">ทบทวนตัวเอง · ภารกิจสั้น ๆ · หลายเส้นทางพร้อมเหตุผล · แผนทดลอง 30 วัน</text>
 
-    <text x="72" y="335" font-family="Noto Sans Thai, IBM Plex Sans Thai, Leelawadee UI, Tahoma, Thonburi, Helvetica, Arial, sans-serif" font-size="15.5" fill="#A0A0B8">บทสนทนาเชิงโสเครติส · ภารกิจที่ได้ลงมือทำ · 3 เส้นทางที่อธิบายได้ · แผน 30 วัน</text>
+    <g transform="translate(808 72)" font-family="Noto Sans Thai, IBM Plex Sans Thai, Tahoma, sans-serif">
+      <text x="195" y="18" text-anchor="middle" font-size="11" font-weight="700" fill="#A8A6BE">หนึ่งจุดเริ่มต้น · หลายอนาคตที่เป็นไปได้</text>
 
-    <!-- route motif -->
-    <g transform="translate(872,60)" fill="none" stroke-linecap="round">
-      <path d="M40 140 C 110 140, 120 46, 190 46 L 300 46" stroke="#6D5EF6" stroke-opacity="0.55" stroke-width="2.5"/>
-      <path d="M40 140 L 300 140" stroke="#4FE3C1" stroke-opacity="0.95" stroke-width="3"/>
-      <path d="M40 140 C 110 140, 120 234, 190 234 L 300 234" stroke="#FF6B6B" stroke-opacity="0.55" stroke-width="2.5"/>
+      <path d="M50 151 H142" fill="none" stroke="#77728D" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M190 151 H250" fill="none" stroke="#77728D" stroke-width="2.5" stroke-linecap="round"/>
+      <path d="M250 151 C294 151 299 67 348 67 H393" fill="none" stroke="#7C6CFF" stroke-width="3" stroke-linecap="round"/>
+      <path d="M250 151 H393" fill="none" stroke="#4FE3C1" stroke-width="3" stroke-linecap="round"/>
+      <path d="M250 151 C294 151 299 235 348 235 H393" fill="none" stroke="#FF7B7B" stroke-width="3" stroke-linecap="round"/>
 
-      <circle cx="40" cy="140" r="15" fill="#0B0B14" stroke="#F5F5FA" stroke-opacity="0.85" stroke-width="2.5"/>
-      <circle cx="40" cy="140" r="5.5" fill="#F5F5FA" stroke="none"/>
+      <circle cx="50" cy="151" r="24" fill="#14141F" stroke="#F5F5FA" stroke-opacity=".72" stroke-width="2"/>
+      <circle cx="50" cy="151" r="7" fill="#F5F5FA"/>
+      <rect x="142" y="127" width="48" height="48" rx="13" fill="#14141F" stroke="#D35AF4" stroke-width="2.5"/>
+      <path d="M156 151 l8 8 14-18" fill="none" stroke="#D35AF4" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <circle cx="250" cy="151" r="7" fill="#4FE3C1"/>
 
-      <g stroke="none">
-        <circle cx="190" cy="46" r="8" fill="#0B0B14" stroke="#6D5EF6" stroke-width="2.5"/>
-        <circle cx="300" cy="46" r="8" fill="#6D5EF6" fill-opacity="0.85"/>
-        <circle cx="190" cy="140" r="9" fill="#0B0B14" stroke="#4FE3C1" stroke-width="3"/>
-        <circle cx="300" cy="140" r="9" fill="#4FE3C1"/>
-        <circle cx="190" cy="234" r="8" fill="#0B0B14" stroke="#FF6B6B" stroke-width="2.5"/>
-        <circle cx="300" cy="234" r="8" fill="#FF6B6B" fill-opacity="0.85"/>
+      <circle cx="393" cy="67" r="13" fill="#14141F" stroke="#7C6CFF" stroke-width="3"/>
+      <circle cx="393" cy="151" r="13" fill="#14141F" stroke="#4FE3C1" stroke-width="3"/>
+      <circle cx="393" cy="235" r="13" fill="#14141F" stroke="#FF7B7B" stroke-width="3"/>
+
+      <g font-size="11" font-weight="700" fill="#A8A6BE" text-anchor="middle">
+        <text x="50" y="194">ทบทวน</text>
+        <text x="166" y="194">ลอง</text>
+        <text x="321" y="276">สำรวจ · เทียบ · ลงมือ</text>
       </g>
 
-      <g font-family="Noto Sans Thai, IBM Plex Sans Thai, Leelawadee UI, Tahoma, Thonburi, Helvetica, Arial, sans-serif" font-size="11.5" font-weight="700" letter-spacing="0" stroke="none">
-        <text x="-16" y="176" fill="#A0A0B8">ตอนนี้</text>
-        <text x="176" y="24" fill="#8E86C9">ทางขยายความสนใจ</text>
-        <text x="176" y="118" fill="#4FE3C1">ทางที่สมดุล</text>
-        <text x="176" y="212" fill="#D89090">ทางลงมือและเข้าถึงได้</text>
-      </g>
+      <rect x="16" y="304" width="402" height="44" rx="14" fill="#FFFFFF" fill-opacity=".045" stroke="#FFFFFF" stroke-opacity=".11"/>
+      <text x="217" y="332" text-anchor="middle" font-size="11.5" font-weight="700" fill="#D9D7E4">หลักฐาน · ข้อแลกเปลี่ยน · การลงมือครั้งถัดไป</text>
     </g>
 
-    <rect x="0" y="396" width="1280" height="4" fill="url(#aurora)"/>
+    <rect y="416" width="1280" height="4" fill="url(#aurora)"/>
   </g>
 </svg>

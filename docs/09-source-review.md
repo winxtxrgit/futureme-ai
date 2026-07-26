@@ -6,7 +6,8 @@
 
 ## What this document is
 
-The team's private research folder was re-audited on **24 July 2026**: every external URL was
+The team's research folder and the repository's public claims were re-audited through **26 July
+2026**: every external URL was
 opened and followed, every load-bearing number was compared against the page it was supposed to
 come from, and organisation home pages were replaced with links to the actual report, dataset or
 product page.
@@ -24,8 +25,7 @@ The full corrected registry is in [02 · Research and Evidence](02-research-and-
 
 | Repository said | Audit found | Resolution |
 |---|---|---|
-| "TDRI analysis of **304,378** job postings" | The report analyses **756,300** postings from 23 job sites, July 2024 – June 2025 | Figure corrected; the STEM share (42,374 postings, 5.6%) added |
-| "56% / 27% of **higher-education graduates**" | TDRI's scope is people **with education above upper-secondary level** — not new graduates specifically | Scope corrected everywhere the figure appears |
+| "56% / 27% of **higher-education graduates**" | TDRI's public article describes the group broadly as highly educated workers, but does not publish the denominator or method | Scope corrected and the remaining uncertainty shown everywhere the figures appear |
 | "WEF: 44% of skills will change" listed as a **misquote** of 39% | Both are real: **44%** is the 2023 report for 2023–2027; **39%** is the 2025 report for the period to 2030 | Removed from the withdrawn-claims list; both figures now stated with their report and window |
 | "All **12** ปวช. 2567 subject areas" | The VEC catalogue publishes ประเภทวิชา / สาขาวิชา / สาขางาน per curriculum revision. The audit explicitly warns against embedding a count as a constant | Count removed from documentation and seed data; a test now fails if one returns |
 | "NDLP's guidance component is a **static RIASEC test**" | The audit could not read NDLP's platform pages and found nothing supporting a RIASEC module | Downgraded to an unverified observation. It is no longer used as the product's justification |
@@ -36,7 +36,8 @@ The full corrected registry is in [02 · Research and Evidence](02-research-and-
 
 | Item | Change |
 |---|---|
-| TDRI 56% / 27% | Now carries a direct URL rather than "reported by TDRI, source not recorded" |
+| TDRI job-posting totals | **304,378** is the total for Q2/2568; **756,300** is the July 2024–June 2025 dataset used for the STEM comparison. Both are valid only with their window shown |
+| TDRI 56% / 27% | Now carries a direct URL and an explicit denominator/method caveat |
 | myTCAS | Now TCAS70, academic year 2570 |
 | O\*NET | Pinned to Database 30.3 with its CC BY 4.0 licence |
 | ESCO | Pinned to v1.2.1 (10 December 2025) |
@@ -46,7 +47,7 @@ The full corrected registry is in [02 · Research and Evidence](02-research-and-
 
 | Added | Why it earned its place |
 |---|---|
-| Thai graduate unemployment **2.0%**, Gen Z **3.8%**, national **1.0%** (NESDC Q2/2568) | It complicates the pitch in the right direction. Thai graduates are not mostly unemployed — they are employed in the wrong place. Mismatch, not joblessness, is the problem this product addresses |
+| Higher-education unemployment **2.0%**, Gen Z **3.8%** and national **1.0%** (NESDC Q2/2568) | Useful labour-market context when kept separate from the TDRI field-mismatch population; it is not evidence that working outside one's field is a failure |
 | STEM graduates working outside science: **38.1%** (NSO *Social Indicators 2025*, p. 185) | A Thai, recent, page-level citation for the core claim |
 | OECD PIAAC 2023: ~35% qualification mismatch, >35% field-of-study mismatch, ~11% both | Replaces a general "OECD says mismatch is high" gesture with the actual measures |
 | WEF 2025: **63%** of employers name skills gaps as a barrier | Employer-side evidence, previously absent |
@@ -85,14 +86,14 @@ to no longer exist and their links were removed rather than left dangling.
 
 ## Claims quarantined — must not reappear
 
-The audit placed sixteen claims in quarantine. These are the ones that had reached this
+The audit placed several claims in quarantine. These are the ones that had reached this
 repository or its pitch materials:
 
 | Claim | Why it is out |
 |---|---|
 | Thai overall mismatch 68.6%; overeducation 35.16%; undereducation 33.45% | Not found in the cited source. The 68.6 figure traced to a model-accuracy number in an older TDRI PDF, not a mismatch rate |
 | 63–65% of Thai job postings require experience; entry-level 22% | No direct source |
-| 15–20% wage penalty for mismatched work | No direct source. Not the same as the OECD/Montt finding this repository cites, which is ~25% and applies only to mismatch **combined with** overqualification |
+| 15–20% wage penalty for mismatched work | No direct source. OECD supports only the narrower conclusion that negative effects are concentrated where field and qualification mismatch occur together |
 | OECD: 6–8% annual GDP loss from mismatch | The cited pages do not support it |
 | Burnout 2.5× for mismatched workers | No direct source |
 | DVE graduates 85% employed in field | Not present in the VEC curriculum data cited |

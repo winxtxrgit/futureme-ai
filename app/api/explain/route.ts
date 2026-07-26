@@ -1,4 +1,5 @@
 import { NextResponse } from "next/server";
+import routesData from "@/data/routes.json";
 import { REASON_TEXT } from "@/lib/decision-engine/explanations";
 import type { ReasonCode } from "@/lib/decision-engine/types";
 
@@ -14,11 +15,10 @@ export const runtime = "nodejs";
  * browser. This endpoint receives the *conclusion* and rewrites the sentence;
  * it cannot add, remove or reorder a route, because it is never given the list.
  *
- * What the caller sends is deliberately narrow: a route name and a set of
- * reason codes drawn from a fixed vocabulary. The learner's free text — the
- * "something you were proud of" answer, the mission writing — is never
- * included, so enabling this layer does not turn guest mode into a service
- * that transmits what a child wrote about themselves.
+ * What the caller sends is deliberately narrow: a route id and a set of reason
+ * codes. The server resolves the route name from the catalogue and the wording
+ * from its fixed vocabulary, so the endpoint cannot relay arbitrary caller
+ * text to the provider. The learner's answers and free text are never included.
  *
  * Every failure path returns `{ source: "fallback" }` with HTTP 200 and the
  * deterministic text unchanged, so the page cannot break on a provider outage.
@@ -29,11 +29,11 @@ const MAX_REASONS = 8;
 const MAX_TEXT = 1000;
 
 const KNOWN_REASONS = new Set(Object.keys(REASON_TEXT));
+const ROUTE_NAMES = new Map(routesData.routes.map((route) => [route.id, route.name]));
 
 interface ExplainRequest {
-  routeName?: string;
+  routeId?: string;
   reasons?: string[];
-  fallbackText?: string;
 }
 
 /**
@@ -63,21 +63,27 @@ export async function POST(request: Request) {
     );
   }
 
-  const fallback = typeof body.fallbackText === "string" ? body.fallbackText.slice(0, MAX_TEXT) : "";
-
-  if (typeof body.routeName !== "string" || !Array.isArray(body.reasons)) {
+  if (typeof body.routeId !== "string" || !Array.isArray(body.reasons)) {
     return NextResponse.json(
-      { source: "fallback", text: fallback, note: "Missing routeName or reasons." },
+      { source: "fallback", text: "", note: "Missing routeId or reasons." },
       { status: 200 },
     );
   }
 
-  // Only reason codes the engine can actually emit are forwarded. This is not
-  // about the model's safety — it is about keeping this endpoint incapable of
-  // relaying arbitrary caller-supplied strings to a third party.
+  const routeName = ROUTE_NAMES.get(body.routeId);
+  if (!routeName) {
+    return NextResponse.json(
+      { source: "fallback", text: "", note: "Unrecognised route id." },
+      { status: 200 },
+    );
+  }
+
+  // Only reason codes the engine can actually emit are used. Both the route
+  // name and reason wording are now resolved server-side from fixed data.
   const reasons = body.reasons
     .filter((r): r is ReasonCode => typeof r === "string" && KNOWN_REASONS.has(r))
     .slice(0, MAX_REASONS);
+  const fallback = reasons.map((reason) => REASON_TEXT[reason]).join(" ").slice(0, MAX_TEXT);
 
   if (reasons.length === 0) {
     return NextResponse.json(
@@ -123,7 +129,7 @@ export async function POST(request: Request) {
           {
             role: "user",
             content:
-              `Route: ${body.routeName.slice(0, 200)}\n` +
+              `Route: ${routeName}\n` +
               `Reasons the engine gave:\n${reasons.map((r) => `- ${REASON_TEXT[r]}`).join("\n")}\n` +
               `Current wording: ${fallback}`,
           },
