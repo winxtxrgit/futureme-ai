@@ -100,11 +100,17 @@ test("guest completes interview → mission → routes → compare → 30-day pl
   expect(count).toBeGreaterThanOrEqual(1);
   expect(count).toBeLessThanOrEqual(3);
 
-  // Every card must show evidence, reasons, limitations and unknowns.
-  await expect(page.getByText("Why this appeared").first()).toBeVisible();
-  await expect(page.getByText("Evidence used").first()).toBeVisible();
-  await expect(page.getByText("Still unanswered").first()).toBeVisible();
-  await expect(page.getByText("Next experiment").first()).toBeVisible();
+  // Level 1 is scannable by default: why it may fit, one trade-off, next step.
+  await expect(page.getByText("Why it may fit you").first()).toBeVisible();
+  await expect(page.getByText("Consider").first()).toBeVisible();
+  await expect(page.getByText("Try this next").first()).toBeVisible();
+
+  // The deep evidence (Level 3) is behind Explore, not shown by default.
+  expect(await page.locator('[data-testid^="detail-"]').count()).toBe(0);
+  await page.locator('[data-testid^="select-"]').first().click();
+  const firstDetail = page.locator('[data-testid^="detail-"]').first();
+  await expect(firstDetail.getByText("Evidence used")).toBeVisible();
+  await expect(firstDetail.getByText("Still unanswered")).toBeVisible();
 
   // Compare.
   await page.getByTestId("go-compare").click();
@@ -164,6 +170,50 @@ test("no route is presented as the winner", async ({ page }) => {
   const classes = await buttons.evaluateAll((els) => els.map((e) => e.className));
   expect(new Set(classes).size).toBe(1);
   for (const c of classes) expect(c).not.toContain("bg-mint ");
+});
+
+test("route detail is hidden until the learner asks for it", async ({ page }) => {
+  await completeInterview(page);
+  await page.getByTestId("interview-continue").click();
+  await completeMission(page);
+  await expect(page).toHaveURL(/\/routes/);
+
+  // Level 1 is visible by default; Level 3 (the deep evidence) is not.
+  await expect(page.locator('[data-testid^="why-rules-"]').first()).toBeVisible();
+  expect(await page.locator('[data-testid^="detail-"]').count()).toBe(0);
+
+  // Expanding one card reveals its evidence and its own plan action.
+  const firstToggle = page.locator('[data-testid^="select-"]').first();
+  await expect(firstToggle).toHaveAttribute("aria-expanded", "false");
+  await firstToggle.click();
+  await expect(firstToggle).toHaveAttribute("aria-expanded", "true");
+
+  const detail = page.locator('[data-testid^="detail-"]').first();
+  await expect(detail).toBeVisible();
+  await expect(detail.getByText("Why FutureMe showed this")).toBeVisible();
+  await expect(detail.locator('[data-testid^="plan-"]')).toBeVisible();
+
+  // Collapsing hides it again.
+  await firstToggle.click();
+  await expect(firstToggle).toHaveAttribute("aria-expanded", "false");
+  expect(await page.locator('[data-testid^="detail-"]').count()).toBe(0);
+});
+
+test("comparison is the primary next step, and a route can still reach a plan", async ({ page }) => {
+  await completeInterview(page);
+  await page.getByTestId("interview-continue").click();
+  await completeMission(page);
+  await expect(page).toHaveURL(/\/routes/);
+
+  // The one strong CTA is Compare; no card offers a plan before it is explored.
+  await expect(page.getByTestId("go-compare")).toBeVisible();
+  expect(await page.locator('[data-testid^="plan-"]').count()).toBe(0);
+
+  // Exploring a route exposes its plan action, which reaches the 30-day plan.
+  await page.locator('[data-testid^="select-"]').first().click();
+  await page.locator('[data-testid^="plan-"]').first().click();
+  await expect(page).toHaveURL(/\/plan/);
+  await expect(page.getByTestId("plan-heading")).toBeVisible();
 });
 
 test("the mission is chosen from the interview profile", async ({ page }) => {
@@ -273,9 +323,13 @@ test("every route says where its information came from, and how old it is", asyn
   await completeMission(page);
   await expect(page).toHaveURL(/\/routes/);
 
-  // Each card carries its own provenance disclosure.
+  // Provenance now lives inside each route's Explore panel, so it is consolidated
+  // rather than repeated in every collapsed card. Open the panels to reach it.
   const cards = page.locator('li:has([data-testid^="select-"])');
   const n = await cards.count();
+  const toggles = page.locator('[data-testid^="select-"]');
+  for (let i = 0; i < n; i++) await toggles.nth(i).click();
+
   const disclosures = page.locator('[data-testid^="provenance-"]');
   expect(await disclosures.count()).toBe(n);
 
