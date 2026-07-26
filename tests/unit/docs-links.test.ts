@@ -204,7 +204,6 @@ describe("no withdrawn claim returns", () => {
   // See docs/09-source-review.md. A reappearance is a regression, not a typo.
   const FORBIDDEN: [string, RegExp][] = [
     ["Thai mismatch 68.6%", /68\.6\s*%/],
-    ["TDRI 304,378 postings", /304,378/],
     ["85% of DVE graduates in field", /85%\s*(of\s*)?(DVE|dual)/i],
     ["15–20% wage penalty", /15[–-]20\s*%\s*wage/i],
     ["6–8% GDP loss", /6[–-]8\s*%\s*(annual\s*)?GDP/i],

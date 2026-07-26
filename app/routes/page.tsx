@@ -501,7 +501,7 @@ function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable
       const res = await fetch("/api/explain", {
         method: "POST",
         headers: { "content-type": "application/json" },
-        body: JSON.stringify({ routeName: route.name, reasons: codes, fallbackText: deterministic }),
+        body: JSON.stringify({ routeId: route.routeId, reasons: codes }),
       });
       const data = (await res.json()) as { source?: string; text?: string };
       if (data.source === "llm" && data.text) {
@@ -514,7 +514,7 @@ function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable
     } catch {
       setState("unavailable");
     }
-  }, [codes, deterministic, rewritten, route.name]);
+  }, [codes, rewritten, route.routeId]);
 
   return (
     <section className="mt-4">
@@ -537,18 +537,24 @@ function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable
             onClick={() => setShowing(false)}
             className="mt-2 text-xs text-muted underline underline-offset-2"
           >
-            Show the original
+            Show the rule-engine wording
           </button>
         </>
       ) : (
         <>
-          <ul className="mt-2 space-y-1 text-sm" data-testid={`why-rules-${route.routeId}`}>
-            {signals.map((s) => (
-              <li key={s} className="text-muted">
-                • {s}
-              </li>
-            ))}
-          </ul>
+          {rewritten ? (
+            <p className="mt-2 text-sm text-muted" data-testid={`why-rules-${route.routeId}`}>
+              {deterministic}
+            </p>
+          ) : (
+            <ul className="mt-2 space-y-1 text-sm" data-testid={`why-rules-${route.routeId}`}>
+              {signals.map((s) => (
+                <li key={s} className="text-muted">
+                  • {s}
+                </li>
+              ))}
+            </ul>
+          )}
           {llmAvailable ? (
             <button
               type="button"
@@ -557,7 +563,11 @@ function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable
               data-testid={`reword-${route.routeId}`}
               className="mt-2 text-xs text-muted underline underline-offset-2 disabled:opacity-50"
             >
-              {state === "loading" ? "Rewriting…" : "Say why in plainer words (AI)"}
+              {state === "loading"
+                ? "Rewriting…"
+                : rewritten
+                  ? "Show the AI rewording"
+                  : "Say why in plainer words (AI)"}
             </button>
           ) : null}
           {state === "unavailable" ? (

@@ -2,7 +2,7 @@
 
 [← Development Plan](06-development-plan.md) · [Back to README](../READMEEN.md) · [Next: Privacy →](08-privacy-and-data.md)
 
-> **Status as of 25 July 2026.** Phase 2 closed when the guest journey became runnable end to
+> **Status as of 26 July 2026.** Phase 2 closed when the guest journey became runnable end to
 > end. What is still missing from it moved into Phase 3, rather than being left marked
 > "in progress" against a phase that is finished.
 
@@ -45,7 +45,7 @@ One complete path, working end to end, in preference to many partial ones.
 
 | Item | Status | Notes |
 |---|:--:|---|
-| Guest interview flow | 🟢 | 12 items plus context, validated, editable, survives a refresh |
+| Guest interview flow | 🟢 | 12 items plus context, input-validated, editable, survives a refresh |
 | Scenario mission | 🟢 | Three missions, rule-selected from the interview, drafts autosave |
 | Up to three explainable routes | 🟢 | Evidence, limitations, unknowns and provenance on every card |
 | Side-by-side comparison | 🟢 | Consistent criteria, coarse bands rather than false precision |
@@ -84,11 +84,11 @@ of children.
 | Interactive DAG roadmap | Medium | The linear plan understates how partial prerequisites really are |
 | Accounts, consent and counsellor summary | Medium | Guest mode covers the demo, not the product |
 | Qualitative field research | Medium | Students, parents, counsellors across varied school contexts |
-| Accessibility audit | Medium | Verify WCAG AA in both themes with real assistive technology |
+| Accessibility audit | Medium | Audit the current dark interface; repeat for any future theme and Thai localisation |
 
 **Field research first.** ม.3 and ม.5 are the two segments sitting immediately before an
-irreversible decision, and the sample must include rural and small schools — the students with
-the least guidance access are the ones the product is most meant to help.
+consequential education decision. The sample should include urban, rural, large and small school
+contexts rather than assuming that one setting represents every student.
 
 ---
 

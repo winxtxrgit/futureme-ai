@@ -6,9 +6,9 @@
 
 ## What FutureMe AI is
 
-FutureMe AI is a career and study guidance assistant for Thai students. It replaces the
-one-shot multiple-choice aptitude test with a short conversation, a hands-on mini task, and
-three concrete routes the student can compare — each one showing the evidence behind it.
+FutureMe AI is a career and study exploration assistant for Thai students. It complements
+existing guidance with a short reflection, a hands-on mini task, and up to three concrete routes
+the student can compare — each one showing the evidence behind it.
 
 The product is being built for the **JUMP Thailand Hackathon 2026** (AIS Academy × NIA), under
 the theme *AI for the Future of Thai Education*.
@@ -21,20 +21,18 @@ the theme *AI for the Future of Thai Education*.
 
 ## The problem in one line
 
-Thai students choose a study track years before anyone helps them understand what that track
-leads to — and the cost of that gap shows up after graduation.
+Thai students make consequential study choices before many have had a practical way to test what
+those directions feel like. FutureMe is designed to make that exploration happen earlier.
 
-Per TDRI's 2025 analysis, **56% of Thai people with education above upper-secondary level work
-outside their field of study** and **27% work below their skill or qualification level**.
+TDRI's 2025 public article reports that **56% of Thai workers it describes as highly educated work
+outside their field of study** and **around 27% work below their qualification level**. The
+article page does not publish the denominator or method, so these figures are problem context, not
+a product-performance baseline.
 
-The important detail is what is *not* wrong. Thai graduate unemployment is **2.0%** — close to the
-national rate of 1.0% (NESDC, 2024). Graduates are not mostly out of work; they are working in the
-wrong place. This product is therefore about direction, not employability.
-
-Internationally the picture is more specific than "mismatch is bad". OECD analysis finds that
-field-of-study mismatch **on its own** carries little or no wage penalty in most countries. The
-penalty — around 25% lower hourly earnings — appears when field mismatch is combined with
-**overqualification**, which affects roughly 40% of field-mismatched workers.
+The important detail is that "outside the field" is not automatically a poor outcome. OECD
+analysis finds that the clearest earnings concern appears when field-of-study mismatch is combined
+with **qualification mismatch**. This product is therefore about informed exploration and
+transferable options, not about forcing every learner into one permanent field match.
 
 The full evidence base, with sources and the claims we deliberately excluded, is in
 [02 · Research and Evidence](02-research-and-evidence.md).
@@ -45,13 +43,13 @@ The full evidence base, with sources and the claims we deliberately excluded, is
 
 | What students have today | What is missing |
 |---|---|
-| Static interest questionnaires | No follow-up, no probing, no adaptation to the answer |
-| Multiple-choice interest tests | Students answer with what sounds acceptable, not what is true |
+| Static interest questionnaires | Limited opportunity to test an answer through action |
+| Multiple-choice interest tests | A self-report signal, without independent behavioural evidence |
 | University open days and marketing | Shows the destination, never the steps between here and there |
-| A counsellor shared across hundreds of students | No time for individual depth; rural and small schools have less access still |
+| Time-limited guidance conversations | Useful professional support, but not always enough time for repeated low-stakes experiments |
 
-The recurring failure is the same: a student is asked to *state* a preference they have never
-had a chance to *test*.
+The design opportunity is specific: let a student *state* a preference, then give them a small,
+reversible way to *test* it.
 
 ---
 
@@ -61,21 +59,22 @@ FutureMe AI collects two independent kinds of evidence before it recommends anyt
 
 ```mermaid
 flowchart LR
-    A["Phase 1<br/>Socratic interview"] --> C["Combined<br/>evidence profile"]
+    A["Phase 1<br/>Fixed interest interview"] --> C["Combined<br/>evidence profile"]
     B["Phase 2<br/>Scenario mission"] --> C
-    C --> D["Three routes<br/>with reasons"]
-    D --> E["30-day plan<br/>+ roadmap"]
+    C --> D["Up to three routes<br/>with reasons"]
+    D --> E["30-day plan"]
 ```
 
 **Phase 1 — what the student says.** *In the running prototype:* a twelve-item interest
-questionnaire plus four context questions, producing a RIASEC profile. *Planned:* an adaptive
-Thai-language Socratic conversation using Motivational Interviewing to lower defensiveness,
-Laddering to reach underlying values, and STAR to anchor claims in things the student has
-actually done.
+questionnaire plus four context questions, producing a RIASEC-shaped profile. *Planned:* an
+adaptive Thai-language conversation. Socratic questioning, Motivational Interviewing, Laddering,
+and STAR are candidate design influences that require expert review; none validates the current
+instrument.
 
 **Phase 2 — what the student does.** A short scenario mission chosen from the interview profile by
-a transparent rule. Doing beats declaring, and the mission is scored as separate evidence — so it
-can contradict the interview, and when it does, the learner is shown the contradiction.
+a transparent rule. The mission is scored as separate evidence, so it can contradict the
+interview; when it does, the learner is shown the contradiction rather than having it hidden in an
+average.
 
 **Then: up to three routes, not one answer.** Every recommendation ships with the reasons it was
 made, the evidence supporting it, where its information came from, and an explicit statement of
@@ -87,23 +86,23 @@ what the system still does not know. When the evidence is too thin, it returns n
 
 | Tier | Grades | What the product is trying to help with |
 |---|---|---|
-| Primary | ป.4 – ป.6 | Early, playful exposure to what jobs exist at all |
 | Lower secondary | ม.1 – ม.3 | The ม.4 fork: general track vs. vocational vs. dual education |
 | Upper secondary | ม.4 – ม.6 | Faculty choice, TCAS strategy, TPAT preparation, portfolio |
 | Vocational | ปวช. – ปวส. | Continuing to ปวส./bachelor's, or entering work directly |
 
-Two secondary audiences read the output, under student consent: **parents** see an interest
-summary and the 30-day plan; **counsellors** additionally see class-level patterns and
-suggested coaching questions. Neither ever sees the raw chat transcript.
+The implemented prototype supports only the student guest journey. **Parent** and
+**counsellor** summaries are planned concepts that would require accounts, verified relationships,
+per-recipient consent, and privacy review; none is built.
 
 ---
 
 ## What makes it different
 
 **Up to three routes, never a winner.** The engine returns between zero and three routes, shown
-with equal weight and no ranking. A single ranked answer would imply a confidence the system does
-not have — and when the evidence does not support even one route, it says so instead of padding
-the list.
+without a declared winner or displayed precision score. The deterministic engine still uses
+scores to select and order candidates, but the interface makes comparison and trade-offs more
+important than the order. When the evidence does not support even one route, it says so instead
+of padding the list.
 
 **Evidence you can inspect.** Each route lists what supports it, what would change it, and what
 is still unverified — including a reversible "small step you can take first."
@@ -111,8 +110,9 @@ is still unverified — including a reversible "small step you can take first."
 **Vocational routes treated as first class.** ปวช. programmes and the ทวิภาคี dual system are
 scored by the same criteria as university paths, not offered as a fallback.
 
-**Privacy that a school can actually accept.** Role-based access, consent-gated sharing, and
-chat transcripts that stay with the student by default.
+**Privacy that can be inspected.** In the prototype, learner answers stay in browser local
+storage and can be deleted immediately. Role-based access and consent-gated sharing are future
+design requirements, not current capabilities.
 
 ---
 

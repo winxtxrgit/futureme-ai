@@ -34,7 +34,7 @@ assistive technology.
 
 ## Documentation style
 
-- Clear English, short paragraphs, tables over prose where a table fits.
+- Clear English, short paragraphs, and tables only when the information is genuinely comparative.
 - Mark estimates as estimates. Mark unbuilt things as unbuilt.
 - Thai terms keep their Thai script on first use — ม.4, ปวช., TCAS — since that is how readers
   in the domain refer to them.

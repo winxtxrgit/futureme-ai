@@ -22,14 +22,15 @@ Seven categories of Thai-language research documents, assembled before design wo
 | **06** AIS Cloud and infrastructure | Cloud architecture, CAMARA Open APIs, roadmap DAG algorithm | [02 · Research §6](../docs/02-research-and-evidence.md), [05 · Architecture](../docs/05-system-architecture.md) |
 | **07** System blueprints and flowcharts | Master operations flowchart, six sub-system flowcharts, implementation plan | [05 · Architecture](../docs/05-system-architecture.md) |
 
-Alongside these: a design library of eleven web concepts with wireframes, mockups and
-prototypes, and a FastAPI backend with the decision engine, schemas and RAG pipeline.
+Alongside these are a design library of eleven web concepts with wireframes, mockups and
+prototypes, plus internal backend and retrieval blueprints. The FastAPI, Qdrant and PostgreSQL
+designs are not code in this repository.
 
 ## What was published
 
 - **Rewritten English summaries** of all seven categories, in [`docs/`](../docs/)
-- **Six Aurora mockups**, resized and optimised, in [`assets/screenshots/`](../assets/screenshots/)
-- **Two original SVG assets** created for this repository — the banner and the decision-matrix diagram
+- **Four curated Aurora mockups**, resized and optimised, in [`assets/screenshots/`](../assets/screenshots/)
+- **Purpose-built SVG assets** — a bilingual banner pair and the current decision-matrix diagram
 
 ## What stayed private, and why
 
@@ -42,14 +43,14 @@ prototypes, and a FastAPI backend with the decision engine, schemas and RAG pipe
 | QLoRA training and test datasets | Known to be defective — identical files, ten examples each. Publishing them would invite misuse. The defect is documented in [04 · AI System](../docs/04-ai-system.md). |
 | Remaining ten design concepts | Superseded by the Aurora direction; the comparison is summarised in [03 · User Experience](../docs/03-user-experience.md) |
 
-No personal data, credentials, API keys or student information appear anywhere in this
-repository — none were present in the source materials either.
+The published repository intentionally contains no real student responses or credentials.
 
 ## Citation
 
 Statistical claims in the published documents cite their primary sources inline. Where a figure
 could not be traced to a primary source, it was removed rather than softened; the withdrawn claims
-are listed in [02 · Research §7](../docs/02-research-and-evidence.md), and the July 2026 audit that
+are listed in [02 · Research §7](../docs/02-research-and-evidence.md), and the source audit through
+26 July 2026 that
 produced most of them is documented in [09 · Source Review](../docs/09-source-review.md).
 
 If you need access to the underlying research for review, evaluation, or academic purposes,
