@@ -14,7 +14,6 @@
   <a href="https://github.com/winxtxrgit/futureme-ai/actions/workflows/ci.yml"><img src="https://github.com/winxtxrgit/futureme-ai/actions/workflows/ci.yml/badge.svg" alt="CI status"></a>
   <img src="https://img.shields.io/badge/status-runnable_prototype-6D5EF6?style=flat-square" alt="Status: runnable prototype">
   <img src="https://img.shields.io/badge/tests-136_unit_·_18_e2e-14141F?style=flat-square" alt="136 unit and integration tests, 18 end-to-end tests">
-  <img src="https://img.shields.io/badge/Next.js-15.5.21-14141F?style=flat-square" alt="Next.js 15.5.21">
   <img src="https://img.shields.io/badge/license-MIT-A0A0B8?style=flat-square" alt="MIT license">
 </p>
 
@@ -26,11 +25,11 @@
 <tr>
 <td align="center" width="50%">
 <h3><a href="READMEEN.md">Read in English&nbsp;→</a></h3>
-<sub>Overview · demo · current prototype · how it works<br>features · architecture · privacy · research · roadmap </sub>
+<sub>What it is · the problem · try it · what works today<br>how it works · architecture · privacy · research · roadmap</sub>
 </td>
 <td align="center" width="50%">
 <h3><a href="READMETH.md">อ่านภาษาไทย&nbsp;→</a></h3>
-<sub>ภาพรวม · ทดลองใช้ · ต้นแบบปัจจุบัน · ระบบทำงานอย่างไร<br>ฟีเจอร์ · สถาปัตยกรรม · ความเป็นส่วนตัว · งานวิจัย ·แผนการพัฒนา</sub>
+<sub>คืออะไร · ปัญหา · ทดลองใช้ · ทำได้แล้ววันนี้<br>ระบบทำงานอย่างไร · สถาปัตยกรรม · ความเป็นส่วนตัว · งานวิจัย · แผนการพัฒนา</sub>
 </td>
 </tr>
 </table>
