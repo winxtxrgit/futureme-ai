@@ -1,7 +1,12 @@
 import routesData from "@/data/routes.json";
 import { evaluateEligibility, isStale, type RouteDef } from "./eligibility";
-import { describeTopInterests, openQuestionsFor, REASON_TEXT } from "./explanations";
+import { openQuestionsFor, REASON_TEXT } from "./explanations";
 import {
+  FIT_LIMITED,
+  FIT_MATCH,
+  FIT_MODERATE,
+  FIT_STRONG,
+  MIN_INTEREST_RATIO,
   findContradictions,
   interestFit,
   MIN_INTEREST_ANSWERS,
@@ -12,6 +17,8 @@ import {
   WEIGHTS,
 } from "./scoring";
 import type {
+  Localised,
+  SupportingEvidence,
   Dimension,
   EvidenceStrength,
   IneligibleRoute,
@@ -28,7 +35,7 @@ export const ENGINE_VERSION = "0.1.0-prototype";
 export const MAX_ROUTES = 3;
 
 export * from "./types";
-export { WEIGHTS, MIN_INTEREST_ANSWERS, TIE_EPSILON } from "./scoring";
+export { WEIGHTS, MIN_INTEREST_ANSWERS, MIN_INTEREST_RATIO, TIE_EPSILON } from "./scoring";
 export { routeDataAsOf, isStale, freshness, unverifiedFields } from "./eligibility";
 export { REASON_TEXT, STRENGTH_LABELS, STRENGTH_HELP, DIMENSION_LABELS } from "./explanations";
 
@@ -117,7 +124,7 @@ export function recommend(
     const score = scoreRoute(route, riasec, missionEvidence.vector, missionCompleted, verdict.supporting);
     const reasons: ReasonCode[] = [...verdict.supporting];
 
-    if (score.interests >= 60) reasons.unshift("INTEREST_MATCH");
+    if (score.interests >= FIT_MATCH) reasons.unshift("INTEREST_MATCH");
     else reasons.unshift("INTEREST_WEAK");
 
     if (missionCompleted) {
@@ -246,11 +253,12 @@ export function evidenceStrength(
   const completeness = answered / total;
   const contradicted = reasons.includes("MISSION_CONTRADICTS");
 
-  if (completeness < 0.75) return "insufficient";
-  if (!missionCompleted) return score.interests >= 55 ? "limited" : "insufficient";
+  // One completeness floor, shared with the interface. See MIN_INTEREST_RATIO.
+  if (completeness < MIN_INTEREST_RATIO) return "insufficient";
+  if (!missionCompleted) return score.interests >= FIT_LIMITED ? "limited" : "insufficient";
   if (contradicted) return "limited";
-  if (score.interests >= 65 && score.strengths >= 60) return "strong";
-  if (score.interests >= 50 || score.strengths >= 50) return "moderate";
+  if (score.interests >= FIT_STRONG && score.strengths >= 60) return "strong";
+  if (score.interests >= FIT_MODERATE || score.strengths >= 50) return "moderate";
   return "limited";
 }
 
@@ -264,9 +272,16 @@ export function markTies(routes: RouteResult[]): void {
   }
 }
 
-function buildSupportingEvidence(top: Dimension[], missionNotes: string[]): string[] {
-  const out = [`Your interview leaned towards ${describeTopInterests(top.slice(0, 2))}.`];
-  for (const n of missionNotes.slice(0, 3)) out.push(`In the mission you chose: ${n}`);
+/**
+ * What backed a route up, as data rather than sentences.
+ *
+ * The interface turns these into prose in whichever language is active. This
+ * function used to return English strings, which meant the scoring module
+ * decided the wording of something a Thai student would read.
+ */
+function buildSupportingEvidence(top: Dimension[], missionNotes: Localised[]): SupportingEvidence[] {
+  const out: SupportingEvidence[] = [{ kind: "interview", dimensions: top.slice(0, 2) }];
+  for (const n of missionNotes.slice(0, 3)) out.push({ kind: "mission", note: n });
   return out;
 }
 

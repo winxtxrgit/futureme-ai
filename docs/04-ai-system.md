@@ -40,7 +40,7 @@ defensible to a student, a parent or a counsellor — and it is why the model is
 
 ```mermaid
 flowchart TD
-    A["Interview<br/>12 Likert items + context"] --> B["RIASEC profile"]
+    A["Interview<br/>30 Likert items + context"] --> B["RIASEC profile"]
     C["Mission<br/>one scenario task"] --> D["Second RIASEC vector"]
     B --> E{"Enough evidence?"}
     D --> E
@@ -52,11 +52,12 @@ flowchart TD
 
 ## A2 · Phase 1 — the interview
 
-**What it is:** twelve Likert items, two per RIASEC dimension, plus four context questions and one
-optional free-text prompt. Static, in English, presented in a fixed order.
+**What it is:** 30 Likert items, five per RIASEC dimension and interleaved rather than blocked, plus four context questions and one
+optional free-text prompt. Static, bilingual Thai/English, and presented in a fixed order.
 
-**What it is not:** it is not adaptive, not conversational, and not in Thai. It is labelled
-*"Demo assessment — shortened for prototype evaluation"* on screen for exactly that reason.
+**What it is not:** it is not adaptive or conversational, and its Thai translation has not completed
+formal cross-cultural adaptation. It is labelled *"Research-informed demo — not a validated
+test"* on screen for exactly that reason.
 
 Unanswered items are excluded from the average rather than scored as zero, so a partial interview
 does not silently look like a low score.
@@ -112,7 +113,7 @@ most confident about, because it is the one a demo is least likely to show.
 
 | Gate | Condition | Why |
 |---|---|---|
-| 1 | Fewer than 8 of 12 interest items answered | Too little was said to say anything back |
+| 1 | Fewer than 23 of 30 interest items answered | Too little was said to say anything back |
 | 2 | Profile spread below 0.15 | Every answer was the same; a "match" would be an invented preference |
 | 3 | Every surviving route rated `insufficient` | Routes passed the filters but nothing supports them |
 
@@ -152,7 +153,7 @@ Stated plainly, because a working demo hides all of this.
 
 | Gap | Consequence |
 |---|---|
-| The instrument is not validated | 12 items written from the structure of Holland's RIASEC model, never reviewed by a qualified assessment professional. It is not a RIASEC test |
+| The instrument is not validated | 30 items built on Holland's RIASEC model — 17 adapted from the openly licensed 18REST scale, 13 written for this project — never reviewed by a qualified assessment professional and never administered to anyone. It is not a RIASEC test. See [questionnaire-methodology.md](questionnaire-methodology.md) |
 | Mission rubrics are not validated | Same standard. The option→dimension maps are the team's judgement |
 | The weights are not fitted | Design judgement against no outcome data |
 | No evaluation set exists | Recommendation quality cannot be measured, so no accuracy figure may be stated in any form |
@@ -160,7 +161,7 @@ Stated plainly, because a working demo hides all of this.
 | No pilot | Every effectiveness statement in this repository is a design goal |
 | Route data is illustrative | Cost, location, timing and flexibility carry no source. See [02 · Research](02-research-and-evidence.md#source-registry) |
 | The safeguarding rule is a keyword match | It will miss cases and produce false positives, and nobody is alerted |
-| English only | The target users are Thai students |
+| The Thai translation is a first draft | The interface, the question bank, the mission and route copy are all bilingual, but the Thai has not been through a formal cross-cultural adaptation — no second forward translation, no back-translation, no expert committee, no cognitive debriefing. See [validation-plan.md §2](validation-plan.md) |
 | No production abuse controls on `/api/explain` | Route and reason input is constrained, but a public deployment still needs authentication or rate limiting and provider spend limits |
 
 ---
@@ -174,13 +175,13 @@ submission, not because any of it runs.
 
 | Capability | Status | What the prototype does instead |
 |---|---|---|
-| Adaptive Thai-language Socratic interview | 📐 Planned | Static English Likert questionnaire |
+| Adaptive Thai-language Socratic interview | 📐 Planned | Fixed bilingual Likert questionnaire |
 | STAR extraction from free text | 📐 Planned | Keyword spotting against a fixed dimension map |
 | Qdrant hybrid retrieval (dense + sparse, RRF-fused) | 📐 Planned | A seeded JSON catalogue of six routes |
 | BGE-M3 embeddings, 1024-dim | 📐 Planned | No embeddings at all |
 | LLM synthesis into structured JSON | 📐 Planned | Deterministic template text, optionally reworded |
 | FastAPI orchestrator, PostgreSQL, RBAC | 📐 Planned | Learner state is stored in the browser; the optional explanation endpoint is stateless |
-| DAG roadmap with topological sort | 📐 Planned | A linear four-week plan from a template |
+| DAG roadmap with topological sort | 📐 Planned | A linear 30-day plan from a four-week template |
 | QLoRA adapter for Thai tone | 🔴 Blocked | Not attempted |
 
 ### The planned retrieval pipeline

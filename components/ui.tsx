@@ -2,6 +2,8 @@
 
 import Link from "next/link";
 import type { EvidenceStrength } from "@/lib/decision-engine/types";
+import { useT } from "@/components/PreferencesProvider";
+import PreferenceControls from "@/components/PreferenceControls";
 
 export function Shell({
   children,
@@ -23,6 +25,7 @@ export function Shell({
 }
 
 function Header() {
+  const t = useT();
   return (
     <header className="flex flex-wrap items-center justify-between gap-3">
       <Link href="/" className="flex items-center gap-3">
@@ -35,26 +38,35 @@ function Header() {
           </span>
         </span>
         <span className="leading-tight">
-          <span className="block text-sm font-bold">FutureMe AI</span>
+          <span className="block text-sm font-bold">{t.chrome.productName}</span>
           <span className="block text-[11px] font-semibold tracking-widest text-muted">
-            PROTOTYPE
+            {t.chrome.productTag}
           </span>
         </span>
       </Link>
-      <span className="rounded-full border border-line bg-surface px-3 py-1 text-[11px] font-semibold text-muted">
-        Demo · not validated guidance
-      </span>
+      <div className="flex flex-wrap items-center gap-2">
+        <PreferenceControls />
+        <span className="rounded-full border border-line bg-surface px-3 py-1 text-[11px] font-semibold text-muted">
+          {t.chrome.demoBadge}
+        </span>
+      </div>
     </header>
   );
 }
 
-const STEP_LABELS = ["Interview", "Mission", "Routes", "Compare", "Plan"];
-
 export function Steps({ current }: { current: number }) {
+  const t = useT();
+  const stepLabels = [
+    t.chrome.steps.interview,
+    t.chrome.steps.mission,
+    t.chrome.steps.routes,
+    t.chrome.steps.compare,
+    t.chrome.steps.plan,
+  ];
   return (
-    <nav aria-label="Progress" className="mt-6">
+    <nav aria-label={t.chrome.progressLabel} className="mt-6">
       <ol className="flex flex-wrap gap-x-2 gap-y-2 text-[11px] sm:text-xs">
-        {STEP_LABELS.map((label, i) => {
+        {stepLabels.map((label, i) => {
           const n = i + 1;
           const state = n < current ? "done" : n === current ? "current" : "todo";
           return (
@@ -72,9 +84,11 @@ export function Steps({ current }: { current: number }) {
               >
                 <span aria-hidden>{state === "done" ? "✓" : n}</span>
                 <span>{label}</span>
-                {state === "done" ? <span className="sr-only">(completed)</span> : null}
+                {state === "done" ? (
+                  <span className="sr-only">{t.chrome.stepCompleted}</span>
+                ) : null}
               </span>
-              {n < STEP_LABELS.length ? (
+              {n < stepLabels.length ? (
                 <span aria-hidden className="text-line">
                   ›
                 </span>
@@ -88,16 +102,13 @@ export function Steps({ current }: { current: number }) {
 }
 
 function Footer() {
+  const t = useT();
   return (
     <footer className="mt-12 border-t border-line pt-5 text-xs text-muted">
-      <p>
-        FutureMe AI is a student prototype for exploration. It is not validated guidance and does
-        not predict admission, employment or income. Always check current criteria against official
-        sources and talk to a qualified counsellor.
-      </p>
+      <p>{t.chrome.footerDisclaimer}</p>
       <p className="mt-2">
         <Link href="/privacy" className="text-mint underline underline-offset-2">
-          Privacy &amp; your data
+          {t.chrome.privacyLink}
         </Link>
       </p>
     </footer>
@@ -160,7 +171,7 @@ export function Button({
 
 const STRENGTH_STYLE: Record<EvidenceStrength, string> = {
   strong: "border-mint/50 text-mint",
-  moderate: "border-indigo/60 text-[#A99BFF]",
+  moderate: "border-indigo/60 text-indigoText",
   limited: "border-warning/50 text-warning",
   insufficient: "border-line text-muted",
 };

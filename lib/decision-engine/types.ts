@@ -1,3 +1,16 @@
+/**
+ * A learner-visible string in both supported languages.
+ *
+ * Route and mission copy lives in the seed data, so it cannot be a key into the
+ * UI dictionary. Carrying both languages through the engine keeps the engine
+ * language-agnostic — it never chooses a wording, it just passes the pair along
+ * and the interface picks a side.
+ */
+export interface Localised {
+  en: string;
+  th: string;
+}
+
 export type Dimension = "R" | "I" | "A" | "S" | "E" | "C";
 export const DIMENSIONS: Dimension[] = ["R", "I", "A", "S", "E", "C"];
 
@@ -50,6 +63,26 @@ export type ReasonCode =
   | "MISSING_LOCATION_DATA"
   | "STALE_ROUTE_DATA";
 
+/**
+ * Questions the learner still has to answer, as codes.
+ *
+ * The engine decides *which* gaps exist; the interface decides how to say them.
+ * Returning prose from here would have meant the scoring module owned a
+ * language, which is why every one of these used to be an English sentence.
+ */
+export type OpenQuestionCode =
+  | "COST_UNKNOWN"
+  | "LOCATION_UNKNOWN"
+  | "MISSION_VS_INTERVIEW"
+  | "WHAT_WOULD_YOU_TRY"
+  | "REQUIREMENTS_CHANGED"
+  | "WHAT_WOULD_CHANGE_YOUR_MIND";
+
+/** Where a route's support came from. Formatted for display by the UI. */
+export type SupportingEvidence =
+  | { kind: "interview"; dimensions: Dimension[] }
+  | { kind: "mission"; note: Localised };
+
 export interface ScoreBreakdown {
   interests: number;
   strengths: number;
@@ -73,22 +106,22 @@ export interface RouteProvenance {
   sourceUrl: string | null;
   /** ISO date the source was last checked, or null when there is no source. */
   lastVerified: string | null;
-  note: string;
+  note: Localised;
 }
 
 export interface RouteResult {
   routeId: string;
-  name: string;
-  shortName: string;
-  summary: string;
+  name: Localised;
+  shortName: Localised;
+  summary: Localised;
   score: ScoreBreakdown;
   evidenceStrength: EvidenceStrength;
   reasons: ReasonCode[];
-  supportingEvidence: string[];
-  strengths: string[];
-  limitations: string[];
-  openQuestions: string[];
-  nextExperiment: string;
+  supportingEvidence: SupportingEvidence[];
+  strengths: Localised[];
+  limitations: Localised[];
+  openQuestions: OpenQuestionCode[];
+  nextExperiment: Localised;
   costBand: string;
   requiresRelocation: boolean;
   flexibility: number;
@@ -100,7 +133,7 @@ export interface RouteResult {
 
 export interface IneligibleRoute {
   routeId: string;
-  name: string;
+  name: Localised;
   reasons: ReasonCode[];
 }
 

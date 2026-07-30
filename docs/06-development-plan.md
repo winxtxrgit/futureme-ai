@@ -34,13 +34,13 @@ Used consistently across this repository, including in the README and the roadma
 | Route data provenance and freshness | 🟢 | Per-route source, status and last-checked date; catalogue age on screen | The catalogue itself is still illustrative |
 | Optional LLM explanation layer | 🟢 | Connected, labelled, cannot affect ranking, degrades to deterministic text | Not evaluated for quality |
 | Safeguarding pause | 🟡 | Keyword rule, Thai and English, stops recommendations and offers support | Not a risk assessment. Nobody is alerted |
-| Interest instrument | 🟡 | 12 items, static, English | Not adaptive, not Thai, not validated |
+| Interest instrument | 🟡 | 30 interleaved items, bilingual Thai/English, plus context | Fixed rather than adaptive; Thai is a first draft; instrument is not validated |
 | Route catalogue | 🟡 | Six routes with declared provenance | Cost, location, timing and flexibility carry no source |
-| 30-day plan | 🟡 | Four-week template plus gap-specific tasks, progress persists | Linear, not the planned DAG |
+| 30-day plan | 🟡 | 30-day/four-week template plus gap-specific tasks, progress persists | Linear, not the planned DAG |
 | Continuous integration | 🟢 | Typecheck, lint, unit, integration, build and end-to-end on every PR | — |
 | Accounts, sharing, server persistence | 📐 | Designed | Guest mode only today |
 | RAG pipeline — Qdrant + BGE-M3 | 📐 | Designed | Prototype reads a seeded JSON catalogue |
-| Adaptive Thai Socratic interview | 📐 | Designed | Static English questionnaire today |
+| Adaptive Thai Socratic interview | 📐 | Designed | Fixed bilingual questionnaire today |
 | STAR extraction from free text | 📐 | Designed | Keyword spotting today |
 | Interactive DAG roadmap | 📐 | Algorithm designed | Linear plan today |
 | Counsellor and parent views | 📐 | Designed | Not implemented |

@@ -149,7 +149,7 @@ The **Implemented** column is what runs in this repository today.
 
 ## Planned: the roadmap generator
 
-**Not implemented.** The prototype renders a linear four-week plan from a template in
+**Not implemented.** The prototype renders a linear 30-day plan arranged over four weeks from a template in
 `lib/plan/`. The design below is what would replace it.
 
 Recommendations would become a **Directed Acyclic Graph**, then a topological sort would order the

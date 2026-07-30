@@ -11,6 +11,10 @@
     "moduleResolution": "bundler",
     "resolveJsonModule": true,
     "isolatedModules": true,
+    // The node CLI scripts in scripts/ import sibling modules by explicit .ts
+    // path, because they run under node's type stripping rather than through a
+    // bundler. Safe here because the project never emits JS from tsc.
+    "allowImportingTsExtensions": true,
     "jsx": "preserve",
     "incremental": true,
     "plugins": [{ "name": "next" }],

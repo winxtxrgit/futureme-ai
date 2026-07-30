@@ -11,6 +11,15 @@ import { beforeEach, describe, expect, it, vi } from "vitest";
 import questions from "@/data/questions.json";
 import routes from "@/data/routes.json";
 
+/**
+ * Real item ids, taken from the bank rather than written as literals.
+ *
+ * These tests are about the validator, not about which questions exist, so
+ * hard-coded ids only make them fail when the question bank is edited — which
+ * is exactly the maintenance cost the validator is supposed to absorb.
+ */
+const [Q1, Q2, Q3] = questions.interest.map((q) => q.id);
+
 class MemoryStorage {
   private store = new Map<string, string>();
   getItem(k: string) {
@@ -41,7 +50,7 @@ function stored(overrides: Record<string, unknown> = {}): Record<string, unknown
     createdAt: "2026-07-01T00:00:00.000Z",
     updatedAt: "2026-07-01T00:00:00.000Z",
     interview: {
-      interest: { R1: 5, R2: 4, I1: 3 },
+      interest: { [Q1]: 5, [Q2]: 4, [Q3]: 3 },
       context: { tier: "LOWER_SECONDARY", cost: "moderate", mobility: "can_move", horizon: "soon" },
     },
     mission: {
@@ -97,7 +106,7 @@ describe("field-level salvage", () => {
     const result = parseSession(stored());
     expect(result.status).toBe("ok");
     expect(result.discarded).toEqual([]);
-    expect(result.session?.interview.interest).toEqual({ R1: 5, R2: 4, I1: 3 });
+    expect(result.session?.interview.interest).toEqual({ [Q1]: 5, [Q2]: 4, [Q3]: 3 });
   });
 
   it("keeps valid interview answers and drops invalid ones", () => {
@@ -105,9 +114,9 @@ describe("field-level salvage", () => {
       stored({
         interview: {
           interest: {
-            R1: 5, // valid
-            R2: 9, // outside the 1–5 scale
-            I1: "4", // right value, wrong type
+            [Q1]: 5, // valid
+            [Q2]: 9, // outside the 1–5 scale
+            [Q3]: "4", // right value, wrong type
             A1: 2.5, // not an integer
             ZZ9: 5, // not a question in this instrument
             S1: null,
@@ -118,11 +127,11 @@ describe("field-level salvage", () => {
     );
 
     expect(result.status).toBe("repaired");
-    expect(result.session?.interview.interest).toEqual({ R1: 5 });
+    expect(result.session?.interview.interest).toEqual({ [Q1]: 5 });
     expect(result.discarded).toEqual(
       expect.arrayContaining([
-        "interview.interest.R2",
-        "interview.interest.I1",
+        `interview.interest.${Q2}`,
+        `interview.interest.${Q3}`,
         "interview.interest.A1",
         "interview.interest.ZZ9",
         "interview.interest.S1",
@@ -134,7 +143,7 @@ describe("field-level salvage", () => {
     const result = parseSession(
       stored({
         interview: {
-          interest: { R1: 5 },
+          interest: { [Q1]: 5 },
           context: {
             tier: "POSTGRADUATE",
             cost: "free",
@@ -162,7 +171,7 @@ describe("field-level salvage", () => {
   it("truncates oversized free text rather than storing it", () => {
     const result = parseSession(
       stored({
-        interview: { interest: { R1: 5 }, context: { proud: "x".repeat(50_000) } },
+        interview: { interest: { [Q1]: 5 }, context: { proud: "x".repeat(50_000) } },
       }),
     );
     expect(result.session?.interview.context.proud?.length).toBeLessThanOrEqual(4_000);
@@ -307,7 +316,7 @@ describe("version migration", () => {
     const result = parseSession(v1);
     expect(result.status).toBe("repaired");
     expect(result.session?.version).toBe(SESSION_VERSION);
-    expect(result.session?.interview.interest).toEqual({ R1: 5, R2: 4, I1: 3 });
+    expect(result.session?.interview.interest).toEqual({ [Q1]: 5, [Q2]: 4, [Q3]: 3 });
     expect(result.session?.mission?.completed).toBe(true);
   });
 
@@ -316,7 +325,7 @@ describe("version migration", () => {
     // id into the scorer, where it would silently score nothing.
     const ids = new Set(questions.interest.map((q) => q.id));
     const result = parseSession(
-      stored({ version: 1, interview: { interest: { OLD_Q1: 5, R1: 4 }, context: {} } }),
+      stored({ version: 1, interview: { interest: { OLD_Q1: 5, [Q1]: 4 }, context: {} } }),
     );
     for (const id of Object.keys(result.session!.interview.interest)) {
       expect(ids.has(id)).toBe(true);
@@ -375,7 +384,7 @@ describe("reading through localStorage", () => {
 
   it("round-trips a real session without repairs", () => {
     const s = newSession();
-    s.interview = { interest: { R1: 5, I1: 4 }, context: { tier: "VOCATIONAL" } };
+    s.interview = { interest: { [Q1]: 5, [Q3]: 4 }, context: { tier: "VOCATIONAL" } };
     saveSession(s);
     const result = loadSessionResult();
     expect(result.status).toBe("ok");

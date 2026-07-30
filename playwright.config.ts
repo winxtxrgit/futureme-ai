@@ -16,7 +16,14 @@ export default defineConfig({
   fullyParallel: false,
   workers: 1,
   reporter: [["list"]],
-  use: { baseURL: "http://127.0.0.1:3100", trace: "off" },
+  use: {
+    // The app honours this: card transitions and the auto-advance delay both
+    // collapse to zero. Without it Playwright waits for an animation to settle
+    // before each of the assessment's thirty clicks, which dominates the run.
+    contextOptions: { reducedMotion: "reduce" },
+    baseURL: "http://127.0.0.1:3100",
+    trace: "off",
+  },
   projects: [
     {
       name: channel ? `chrome (${channel})` : "chromium",

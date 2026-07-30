@@ -1,155 +1,156 @@
 "use client";
 
+import Link from "next/link";
 import { useState } from "react";
 import { Button, Card, Notice, Shell } from "@/components/ui";
 import { clearSession, SESSION_KEY } from "@/lib/session";
+import { useT } from "@/components/PreferencesProvider";
+
+/**
+ * Splits a sentence around two placeholders so the emphasised phrases stay
+ * attached to the right words in both languages, where clause order differs.
+ */
+function TwoStrong({
+  template,
+  first,
+  second,
+}: {
+  template: string;
+  first: string;
+  second: string;
+}) {
+  const [a, rest = ""] = template.split("{optional}");
+  const [b, c = ""] = rest.split("{off}");
+  return (
+    <>
+      {a}
+      <strong className="text-ink">{first}</strong>
+      {b}
+      <strong className="text-ink">{second}</strong>
+      {c}
+    </>
+  );
+}
 
 export default function PrivacyPage() {
+  const t = useT();
   const [cleared, setCleared] = useState(false);
+
+  const [storedBefore, storedAfter = ""] = t.privacy.storedUnder.split("{key}");
 
   return (
     <Shell>
-      <h1 className="text-2xl font-bold sm:text-3xl">Your data, precisely</h1>
-      <p className="mt-3 max-w-2xl text-sm text-muted">
-        This page describes what the prototype actually does today — not what the production design
-        intends. Where the two differ, it says so.
-      </p>
+      <h1 className="text-2xl font-bold sm:text-3xl">{t.privacy.title}</h1>
+      <p className="mt-3 max-w-2xl text-sm text-muted">{t.privacy.intro}</p>
 
       <div className="mt-6">
-        <Notice title="The short version">
-          In guest mode, everything you type stays in this browser&apos;s local storage. The
-          recommendation engine runs on your device and does not send those answers to a server.
-          Like any website, the app still uses the network to load and can expose ordinary request
-          metadata to its host.
-        </Notice>
+        <Notice title={t.privacy.shortTitle}>{t.privacy.shortBody}</Notice>
       </div>
 
       <Card className="mt-6">
-        <h2 className="text-lg font-bold">What is collected</h2>
+        <h2 className="text-lg font-bold">{t.privacy.collectedTitle}</h2>
         <div className="mt-3 overflow-x-auto">
           <table className="w-full min-w-[560px] border-collapse text-left text-sm">
             <thead>
               <tr className="border-b border-line">
-                <th className="p-2 text-xs font-bold uppercase text-muted">Data</th>
-                <th className="p-2 text-xs font-bold uppercase text-muted">Where it goes</th>
-                <th className="p-2 text-xs font-bold uppercase text-muted">Kept for</th>
+                <th className="p-2 text-xs font-bold uppercase text-muted">{t.privacy.colData}</th>
+                <th className="p-2 text-xs font-bold uppercase text-muted">{t.privacy.colWhere}</th>
+                <th className="p-2 text-xs font-bold uppercase text-muted">{t.privacy.colKept}</th>
               </tr>
             </thead>
             <tbody className="text-muted">
               <tr className="border-b border-line/50">
-                <td className="p-2">Interview answers</td>
-                <td className="p-2">This browser only</td>
-                <td className="p-2">Until you clear it</td>
+                <td className="p-2">{t.privacy.rowInterview}</td>
+                <td className="p-2">{t.privacy.thisBrowser}</td>
+                <td className="p-2">{t.privacy.untilCleared}</td>
               </tr>
               <tr className="border-b border-line/50">
-                <td className="p-2">
-                  Mission answers, including free text — saved as you type, so a refresh does not
-                  lose unfinished writing
-                </td>
-                <td className="p-2">This browser only</td>
-                <td className="p-2">Until you clear it</td>
+                <td className="p-2">{t.privacy.rowMission}</td>
+                <td className="p-2">{t.privacy.thisBrowser}</td>
+                <td className="p-2">{t.privacy.untilCleared}</td>
               </tr>
               <tr className="border-b border-line/50">
-                <td className="p-2">Generated routes and plan progress</td>
-                <td className="p-2">This browser only</td>
-                <td className="p-2">Until you clear it</td>
+                <td className="p-2">{t.privacy.rowRoutes}</td>
+                <td className="p-2">{t.privacy.thisBrowser}</td>
+                <td className="p-2">{t.privacy.untilCleared}</td>
               </tr>
               <tr className="border-b border-line/50">
-                <td className="p-2">Guest session id</td>
-                <td className="p-2">This browser only — random, not linked to you</td>
-                <td className="p-2">Until you clear it</td>
+                <td className="p-2">{t.privacy.rowSession}</td>
+                <td className="p-2">{t.privacy.thisBrowserRandom}</td>
+                <td className="p-2">{t.privacy.untilCleared}</td>
+              </tr>
+              <tr className="border-b border-line/50">
+                <td className="p-2">{t.privacy.rowResearch}</td>
+                <td className="p-2">{t.privacy.thisBrowser}</td>
+                <td className="p-2">{t.privacy.untilCleared}</td>
               </tr>
               <tr>
-                <td className="p-2">Analytics, cookies, trackers</td>
-                <td className="p-2">
-                  None are implemented by the app. A deployment host may still process normal
-                  request metadata.
-                </td>
+                <td className="p-2">{t.privacy.rowAnalytics}</td>
+                <td className="p-2">{t.privacy.analyticsWhere}</td>
                 <td className="p-2">—</td>
               </tr>
             </tbody>
           </table>
         </div>
         <p className="mt-3 text-xs text-muted">
-          Stored under the key <code className="text-ink">{SESSION_KEY}</code> in localStorage. You
-          can inspect it in your browser&apos;s developer tools.
+          {storedBefore}
+          <code className="text-ink">{SESSION_KEY}</code>
+          {storedAfter}
         </p>
       </Card>
 
       <Card className="mt-4">
-        <h2 className="text-lg font-bold">
-          The optional path where route metadata can leave the app
-        </h2>
+        <h2 className="text-lg font-bold">{t.privacy.aiTitle}</h2>
         <p className="mt-2 text-sm text-muted">
-          The prototype has an <strong className="text-ink">optional</strong> AI explanation layer.
-          It is <strong className="text-ink">off unless the operator sets an API key</strong>.
-          Local development, automated tests, and CI use the deterministic template explanations
-          without a key.
+          <TwoStrong
+            template={t.privacy.aiBody1}
+            first={t.privacy.aiBody1Optional}
+            second={t.privacy.aiBody1Off}
+          />
         </p>
-        <p className="mt-2 text-sm text-muted">
-          If it were enabled, and only when you pressed the button on a route card, the browser
-          would send a <strong className="text-ink">catalogue route id</strong> and{" "}
-          <strong className="text-ink">fixed reason codes</strong> such as{" "}
-          <code className="text-ink">INTEREST_MATCH</code> to the application server. The server
-          validates both against its own data, then sends the catalogue route name and fixed reason
-          wording to the model provider.
-        </p>
-        <p className="mt-2 text-sm text-muted">
-          Not sent: your free text, your interview answers, your mission answers, your scores, or
-          your session id. The route selection could not change either, because the engine has
-          already decided it and the endpoint is never given the list.
-        </p>
+        <p className="mt-2 text-sm text-muted">{t.privacy.aiBody2}</p>
+        <p className="mt-2 text-sm text-muted">{t.privacy.aiBody3}</p>
       </Card>
 
       <Card className="mt-4">
-        <h2 className="text-lg font-bold">Two claims that are not the same</h2>
+        <h2 className="text-lg font-bold">{t.privacy.claimsTitle}</h2>
         <div className="mt-3 space-y-3 text-sm">
           <div className="rounded-control border border-line bg-surface2 p-3">
-            <p className="font-bold">&ldquo;Not shared with parents or counsellors&rdquo;</p>
-            <p className="mt-1 text-muted">
-              A permission rule. It says who may read your data — not where your data physically is.
-            </p>
+            <p className="font-bold">{t.privacy.claim1Title}</p>
+            <p className="mt-1 text-muted">{t.privacy.claim1Body}</p>
           </div>
           <div className="rounded-control border border-mint/40 bg-mint/5 p-3">
-            <p className="font-bold">
-              &ldquo;Learner answers do not enter the recommendation network path&rdquo;
-            </p>
-            <p className="mt-1 text-muted">
-              A narrower, verifiable claim. The engine reads answers from local storage in the
-              browser. The optional AI path sends only the validated catalogue route and fixed
-              reasons listed above, never the learner&apos;s answers or free text.
-            </p>
+            <p className="font-bold">{t.privacy.claim2Title}</p>
+            <p className="mt-1 text-muted">{t.privacy.claim2Body}</p>
           </div>
         </div>
-        <p className="mt-3 text-sm text-muted">
-          Earlier versions of this project&apos;s documentation said &ldquo;chat transcripts never
-          leave the student&rdquo; while describing a server-side architecture. That was imprecise
-          and has been corrected.
-        </p>
+        <p className="mt-3 text-sm text-muted">{t.privacy.claimsCorrection}</p>
       </Card>
 
       <Card className="mt-4">
-        <h2 className="text-lg font-bold">Not implemented yet</h2>
+        <h2 className="text-lg font-bold">{t.privacy.notYetTitle}</h2>
         <ul className="mt-2 space-y-1.5 text-sm text-muted">
-          <li>• Accounts, login, and permanent saving</li>
-          <li>• Parent and counsellor views, and the consent flow that would gate them</li>
-          <li>• Server-side storage, retention policy, and audit logging</li>
-          <li>• Data-subject request handling</li>
+          <li>• {t.privacy.notYet1}</li>
+          <li>• {t.privacy.notYet2}</li>
+          <li>• {t.privacy.notYet3}</li>
+          <li>• {t.privacy.notYet4}</li>
         </ul>
-        <p className="mt-3 text-sm text-muted">
-          Those are described as the intended design in the project documentation. None of them
-          exists in this prototype, so the app has no account-backed destination for learner
-          answers.
+        <p className="mt-3 text-sm text-muted">{t.privacy.notYetBody}</p>
+      </Card>
+
+      <Card className="mt-4">
+        <h2 className="text-lg font-bold">{t.privacy.researchLinkTitle}</h2>
+        <p className="mt-2 text-sm text-muted">{t.privacy.researchLinkBody}</p>
+        <p className="mt-3 text-sm">
+          <Link href="/research" className="text-mint underline underline-offset-2">
+            {t.privacy.researchLink}
+          </Link>
         </p>
       </Card>
 
       <Card className="mt-4 border-coral/30">
-        <h2 className="text-lg font-bold">Delete everything</h2>
-        <p className="mt-2 text-sm text-muted">
-          This removes your guest session from this browser immediately. It cannot be undone, and
-          the app keeps no server-side copy of that session. Browser extensions, screenshots and
-          device backups are outside this control.
-        </p>
+        <h2 className="text-lg font-bold">{t.privacy.deleteTitle}</h2>
+        <p className="mt-2 text-sm text-muted">{t.privacy.deleteBody}</p>
         <div className="mt-4 flex flex-wrap items-center gap-3">
           <Button
             onClick={() => {
@@ -158,11 +159,11 @@ export default function PrivacyPage() {
             }}
             data-testid="delete-data"
           >
-            Delete my data
+            {t.privacy.deleteButton}
           </Button>
           {cleared ? (
             <span className="text-sm text-mint" role="status">
-              Deleted. Starting again will create a new session.
+              {t.privacy.deleted}
             </span>
           ) : null}
         </div>
@@ -170,7 +171,7 @@ export default function PrivacyPage() {
 
       <div className="mt-6">
         <Button href="/" variant="secondary">
-          ← Back
+          {t.privacy.back}
         </Button>
       </div>
     </Shell>

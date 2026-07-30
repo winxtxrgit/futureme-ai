@@ -78,7 +78,7 @@ describe("selectMission", () => {
     const choice = selectMission({ interest: { R1: 5, R2: 5 }, context: {} });
     expect(choice.isDefault).toBe(true);
     expect(choice.matchedDimension).toBeNull();
-    expect(choice.rationale).toMatch(/not far enough along/i);
+    expect(choice.rationale.kind).toBe("default-too-few");
   });
 
   it("refuses to choose from a flat profile and says so", () => {
@@ -86,7 +86,7 @@ describe("selectMission", () => {
     // be an invented preference.
     const choice = selectMission(leaning([...DIMENSIONS], 3, 3));
     expect(choice.isDefault).toBe(true);
-    expect(choice.rationale).toMatch(/too even/i);
+    expect(choice.rationale.kind).toBe("default-too-even");
   });
 
   it("always offers the other missions as alternatives", () => {
@@ -100,7 +100,7 @@ describe("selectMission", () => {
     const overridden = selectMission(interview, "mission-run-something");
     expect(overridden.mission.id).toBe("mission-run-something");
     expect(overridden.isLearnerChoice).toBe(true);
-    expect(overridden.rationale).toMatch(/chose this mission yourself/i);
+    expect(overridden.rationale.kind).toBe("learner-choice");
   });
 
   it("ignores an override naming a mission that does not exist", () => {
@@ -109,11 +109,23 @@ describe("selectMission", () => {
     expect(choice.isLearnerChoice).toBe(false);
   });
 
-  it("always explains itself in one readable sentence", () => {
+  it("always explains itself with a rationale the interface can render", () => {
+    // The selector returns a code, not a sentence, so the assertion is that the
+    // code is one the UI knows how to say — in either language.
+    const known = new Set([
+      "learner-choice",
+      "default-too-few",
+      "default-too-even",
+      "default-no-match",
+      "matched",
+    ]);
     for (const profile of [["R"], ["I"], ["A"], ["S"], ["E"], ["C"]] as Dimension[][]) {
       const choice = selectMission(leaning(profile));
-      expect(choice.rationale.length).toBeGreaterThan(20);
-      expect(choice.rationale).toMatch(/\.$/);
+      expect(known).toContain(choice.rationale.kind);
+      if (choice.rationale.kind === "matched") {
+        expect(choice.rationale.missionId).toBe(choice.mission.id);
+        expect(choice.rationale.rank).toBeGreaterThanOrEqual(0);
+      }
     }
   });
 

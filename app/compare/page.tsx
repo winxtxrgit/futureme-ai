@@ -3,27 +3,30 @@
 import { useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, Card, EvidenceBadge, Shell } from "@/components/ui";
-import {
-  recommend,
-  STRENGTH_LABELS,
-  WEIGHTS,
-  type Recommendation,
-} from "@/lib/decision-engine";
+import { recommend, WEIGHTS, type Recommendation } from "@/lib/decision-engine";
 import { loadOrCreate, saveSession, type GuestSession } from "@/lib/session";
-
-const COST_LABEL: Record<string, string> = {
-  low: "Lower",
-  moderate: "Moderate",
-  high: "Higher",
-};
-
-const TIMING_LABEL: Record<string, string> = {
-  soon: "Sooner",
-  later: "Several years",
-};
+import { usePreferences } from "@/components/PreferencesProvider";
+import { format, localised } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/i18n";
 
 export default function ComparePage() {
   const router = useRouter();
+  const { t, lang } = usePreferences();
+
+  const COST_LABEL: Record<string, string> = {
+    low: t.compare.costLow,
+    moderate: t.compare.costModerate,
+    high: t.compare.costHigh,
+  };
+  const TIMING_LABEL: Record<string, string> = {
+    soon: t.compare.timingSoon,
+    later: t.compare.timingLater,
+  };
+  const STATUS_LABEL: Record<string, string> = {
+    "partially-verified": t.compare.statusPartiallyVerified,
+    illustrative: t.compare.statusIllustrative,
+    unverified: t.compare.statusUnverified,
+  };
   const [session, setSession] = useState<GuestSession | null>(null);
 
   useEffect(() => {
@@ -38,7 +41,7 @@ export default function ComparePage() {
   if (!session || !result) {
     return (
       <Shell step={4}>
-        <p className="text-muted">Loading your session…</p>
+        <p className="text-muted">{t.assessment.loading}</p>
       </Shell>
     );
   }
@@ -47,12 +50,10 @@ export default function ComparePage() {
     return (
       <Shell step={4}>
         <Card>
-          <h1 className="text-xl font-bold">There is nothing to compare yet</h1>
-          <p className="mt-2 text-sm text-muted">
-            No routes were generated, so there is no comparison to show.
-          </p>
+          <h1 className="text-xl font-bold">{t.compare.nothingTitle}</h1>
+          <p className="mt-2 text-sm text-muted">{t.compare.nothingBody}</p>
           <div className="mt-5">
-            <Button href="/routes">Back to results</Button>
+            <Button href="/routes">{t.compare.backToResults}</Button>
           </div>
         </Card>
       </Shell>
@@ -69,56 +70,58 @@ export default function ComparePage() {
 
   const rows: { label: string; render: (i: number) => React.ReactNode }[] = [
     {
-      label: "Evidence strength",
+      label: t.compare.rowEvidence,
       render: (i) => (
         <EvidenceBadge
           strength={routes[i].evidenceStrength}
-          label={STRENGTH_LABELS[routes[i].evidenceStrength]}
+          label={t.engine.strengthLabels[routes[i].evidenceStrength]}
         />
       ),
     },
     {
-      label: `Interest fit (${Math.round(WEIGHTS.interests * 100)}% of score)`,
-      render: (i) => <Meter value={routes[i].score.interests} />,
+      label: format(t.compare.rowInterest, { pct: Math.round(WEIGHTS.interests * 100) }),
+      render: (i) => <Meter value={routes[i].score.interests} t={t} />,
     },
     {
-      label: `Feasibility (${Math.round(WEIGHTS.feasibility * 100)}%)`,
-      render: (i) => <Meter value={routes[i].score.feasibility} />,
+      label: format(t.compare.rowFeasibility, { pct: Math.round(WEIGHTS.feasibility * 100) }),
+      render: (i) => <Meter value={routes[i].score.feasibility} t={t} />,
     },
     {
-      label: `Demonstrated strengths (${Math.round(WEIGHTS.strengths * 100)}%)`,
-      render: (i) => <Meter value={routes[i].score.strengths} />,
+      label: format(t.compare.rowStrengths, { pct: Math.round(WEIGHTS.strengths * 100) }),
+      render: (i) => <Meter value={routes[i].score.strengths} t={t} />,
     },
     {
-      label: `Learning style (${Math.round(WEIGHTS.learningStyle * 100)}%)`,
-      render: (i) => <Meter value={routes[i].score.learningStyle} />,
+      label: format(t.compare.rowLearningStyle, { pct: Math.round(WEIGHTS.learningStyle * 100) }),
+      render: (i) => <Meter value={routes[i].score.learningStyle} t={t} />,
     },
     {
-      label: "Relative cost",
+      label: t.compare.rowCost,
       render: (i) => <span className="text-sm">{COST_LABEL[routes[i].costBand] ?? "—"}</span>,
     },
     {
-      label: "Need to move away?",
+      label: t.compare.rowRelocate,
       render: (i) => (
-        <span className="text-sm">{routes[i].requiresRelocation ? "Usually yes" : "Usually no"}</span>
+        <span className="text-sm">
+          {routes[i].requiresRelocation ? t.compare.usuallyYes : t.compare.usuallyNo}
+        </span>
       ),
     },
     {
-      label: "Time before earning",
+      label: t.compare.rowTiming,
       render: (i) => (
         <span className="text-sm">{TIMING_LABEL[routes[i].timeToEarning] ?? "—"}</span>
       ),
     },
     {
-      label: "Keeps options open",
-      render: (i) => <Meter value={routes[i].flexibility * 100} />,
+      label: t.compare.rowFlexibility,
+      render: (i) => <Meter value={routes[i].flexibility * 100} t={t} />,
     },
     {
-      label: "Still unanswered",
+      label: t.compare.rowOpen,
       render: (i) => (
         <ul className="space-y-1 text-xs text-muted">
           {routes[i].openQuestions.map((q) => (
-            <li key={q}>• {q}</li>
+            <li key={q}>• {t.engine.openQuestions[q]}</li>
           ))}
         </ul>
       ),
@@ -127,7 +130,7 @@ export default function ComparePage() {
       // Last row on purpose. The three rows above it — cost, relocation and
       // timing — are the team's estimates, and this is the screen where a
       // learner is most likely to treat them as facts.
-      label: "Where this comes from",
+      label: t.compare.rowProvenance,
       render: (i) => {
         const p = routes[i].provenance;
         return (
@@ -140,7 +143,7 @@ export default function ComparePage() {
                   : "border-warning/40 bg-warning/5 text-warning",
               ].join(" ")}
             >
-              {p.status}
+              {STATUS_LABEL[p.status] ?? p.status}
             </span>
             {p.sourceUrl && p.source ? (
               <p className="text-muted">
@@ -154,7 +157,7 @@ export default function ComparePage() {
                 </a>
               </p>
             ) : (
-              <p className="text-muted">No source recorded.</p>
+              <p className="text-muted">{t.compare.noSource}</p>
             )}
           </div>
         );
@@ -165,26 +168,23 @@ export default function ComparePage() {
   return (
     <Shell step={4}>
       <div className="mb-6">
-        <h1 className="text-2xl font-bold sm:text-3xl">Compare before you choose</h1>
-        <p className="mt-3 max-w-2xl text-sm text-muted">
-          The same criteria applied to every route. Bars show this prototype&apos;s scoring — they
-          are a way to see the trade-offs, not a measurement of your future.
-        </p>
+        <h1 className="text-2xl font-bold sm:text-3xl">{t.compare.title}</h1>
+        <p className="mt-3 max-w-2xl text-sm text-muted">{t.compare.intro}</p>
       </div>
 
       <div className="overflow-x-auto rounded-card border border-line">
         <table className="w-full min-w-[640px] border-collapse text-left">
           <caption className="sr-only">
-            Comparison of {routes.length} suggested routes across consistent criteria
+            {format(t.compare.caption, { n: routes.length })}
           </caption>
           <thead>
             <tr className="border-b border-line bg-surface">
               <th scope="col" className="w-40 p-3 text-xs font-bold uppercase tracking-wide text-muted">
-                Criterion
+                {t.compare.criterion}
               </th>
               {routes.map((r) => (
                 <th key={r.routeId} scope="col" className="p-3 align-top text-sm font-bold">
-                  {r.shortName}
+                  {localised(r.shortName, lang)}
                 </th>
               ))}
             </tr>
@@ -207,7 +207,7 @@ export default function ComparePage() {
             ))}
             <tr>
               <th scope="row" className="p-3 text-xs font-semibold text-muted">
-                Choose
+                {t.compare.choose}
               </th>
               {routes.map((r) => (
                 <td key={r.routeId} className="p-3">
@@ -217,7 +217,7 @@ export default function ComparePage() {
                     className="w-full"
                     data-testid={`compare-select-${r.routeId}`}
                   >
-                    Build a plan
+                    {t.compare.buildPlan}
                   </Button>
                 </td>
               ))}
@@ -227,32 +227,29 @@ export default function ComparePage() {
       </div>
 
       <p className="mt-4 text-xs text-muted" data-testid="compare-caveat">
-        <strong className="text-ink">Read the last row before you trust the middle ones.</strong>{" "}
-        Relative cost, whether you would need to move, and time before earning are the team&rsquo;s
-        estimates — no source in this prototype supports them, and they are what the engine used to
-        rule routes in or out. Check anything you would act on against the institution&rsquo;s own
-        current page.
+        <strong className="text-ink">{t.compare.caveatStrong}</strong> {t.compare.caveat}
       </p>
 
       <div className="mt-6">
         <Button href="/routes" variant="secondary">
-          ← Back to the full cards
+          {t.compare.backToCards}
         </Button>
       </div>
     </Shell>
   );
 }
 
-function Meter({ value }: { value: number }) {
+function Meter({ value, t }: { value: number; t: Dictionary }) {
   const v = Math.max(0, Math.min(100, value));
   // Deliberately coarse: showing 62.4% would imply precision this engine does not have.
-  const band = v >= 66 ? "Higher" : v >= 40 ? "Middle" : "Lower";
+  const band =
+    v >= 66 ? t.compare.bandHigher : v >= 40 ? t.compare.bandMiddle : t.compare.bandLower;
   return (
     <div>
       <div
         className="h-2 w-full max-w-[120px] overflow-hidden rounded-full bg-surface2"
         role="img"
-        aria-label={`${band} relative to the other routes`}
+        aria-label={format(t.compare.bandLabel, { band })}
       >
         <div className="h-full bg-indigo" style={{ width: `${v}%` }} />
       </div>

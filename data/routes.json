@@ -26,13 +26,22 @@
   "routes": [
     {
       "id": "sci-math-engineering",
-      "name": "Science–Maths track towards engineering",
-      "shortName": "Sci–Maths → Engineering",
+      "name": {
+        "en": "Science–Maths track towards engineering",
+        "th": "สายวิทย์–คณิต สู่วิศวกรรม"
+      },
+      "shortName": {
+        "en": "Sci–Maths → Engineering",
+        "th": "วิทย์–คณิต → วิศวะ"
+      },
       "tiers": [
         "LOWER_SECONDARY",
         "UPPER_SECONDARY"
       ],
-      "summary": "A general upper-secondary science track aimed at engineering or applied-science faculties.",
+      "summary": {
+        "en": "A general upper-secondary science track aimed at engineering or applied-science faculties.",
+        "th": "สายวิทยาศาสตร์ระดับมัธยมปลายทั่วไป มุ่งเข้าคณะวิศวกรรมศาสตร์หรือวิทยาศาสตร์ประยุกต์"
+      },
       "interestWeights": {
         "R": 0.3,
         "I": 0.4,
@@ -47,32 +56,59 @@
       "flexibility": 0.8,
       "timeToEarning": "later",
       "strengths": [
-        "Keeps the widest range of university options open",
-        "Strong demand in engineering and applied technology"
+        {
+          "en": "Keeps the widest range of university options open",
+          "th": "เปิดทางเลือกคณะในมหาวิทยาลัยไว้กว้างที่สุด"
+        },
+        {
+          "en": "Strong demand in engineering and applied technology",
+          "th": "ความต้องการสูงในสายวิศวกรรมและเทคโนโลยีประยุกต์"
+        }
       ],
       "limitations": [
-        "Long time before earning; typically four more years after ม.6",
-        "Heavy maths and physics load that is difficult to switch out of late"
+        {
+          "en": "Long time before earning; typically four more years after ม.6",
+          "th": "ใช้เวลานานกว่าจะเริ่มมีรายได้ ปกติอีกราวสี่ปีหลังจบ ม.6"
+        },
+        {
+          "en": "Heavy maths and physics load that is difficult to switch out of late",
+          "th": "เรียนคณิตและฟิสิกส์หนัก และเปลี่ยนสายทีหลังได้ยาก"
+        }
       ],
-      "nextExperiment": "Spend one weekend following an engineering teardown video and rebuilding the explanation in your own words. Notice whether the detail energises or drains you.",
+      "nextExperiment": {
+        "en": "Spend one weekend following an engineering teardown video and rebuilding the explanation in your own words. Notice whether the detail energises or drains you.",
+        "th": "ใช้เวลาสุดสัปดาห์หนึ่งดูคลิปแกะเครื่องจักรทางวิศวกรรม แล้วลองอธิบายใหม่ด้วยคำพูดของตัวเอง สังเกตว่ารายละเอียดพวกนั้นทำให้คุณตื่นเต้นหรือเหนื่อย"
+      },
       "planTemplate": "analytical",
       "provenance": {
         "status": "partially-verified",
         "source": "myTCAS — TCAS70 programme search",
         "sourceUrl": "https://school.mytcas.com/",
         "lastVerified": "2026-07-24",
-        "note": "TCAS is the real admission route into engineering and applied-science faculties. Which subjects a given faculty requires changes by programme and by admission year and is not modelled here."
+        "note": {
+          "en": "TCAS is the real admission route into engineering and applied-science faculties. Which subjects a given faculty requires changes by programme and by admission year and is not modelled here.",
+          "th": "TCAS คือเส้นทางรับเข้าจริงสู่คณะวิศวกรรมศาสตร์และวิทยาศาสตร์ประยุกต์ วิชาที่แต่ละคณะกำหนดเปลี่ยนไปตามหลักสูตรและปีการศึกษา และไม่ได้จำลองไว้ในระบบนี้"
+        }
       }
     },
     {
       "id": "vocational-digital",
-      "name": "Vocational ปวช. — Digital and IT",
-      "shortName": "ปวช. Digital & IT",
+      "name": {
+        "en": "Vocational ปวช. — Digital and IT",
+        "th": "ปวช. สายดิจิทัลและไอที"
+      },
+      "shortName": {
+        "en": "ปวช. Digital & IT",
+        "th": "ปวช. ดิจิทัล & ไอที"
+      },
       "tiers": [
         "LOWER_SECONDARY",
         "VOCATIONAL"
       ],
-      "summary": "A ปวช. 2567 programme in the digital and IT subject area, mixing classroom study with practical work.",
+      "summary": {
+        "en": "A ปวช. 2567 programme in the digital and IT subject area, mixing classroom study with practical work.",
+        "th": "หลักสูตร ปวช. 2567 ในประเภทวิชาดิจิทัลและไอที ผสมการเรียนในห้องกับการฝึกปฏิบัติ"
+      },
       "interestWeights": {
         "R": 0.25,
         "I": 0.25,
@@ -87,33 +123,63 @@
       "flexibility": 0.6,
       "timeToEarning": "soon",
       "strengths": [
-        "Lower cost and usually available closer to home",
-        "Practical portfolio work from the first year",
-        "Can continue to ปวส. or a technology bachelor's degree later"
+        {
+          "en": "Lower cost and usually available closer to home",
+          "th": "ค่าใช้จ่ายต่ำกว่า และมักมีเรียนใกล้บ้าน"
+        },
+        {
+          "en": "Practical portfolio work from the first year",
+          "th": "ได้สร้างผลงานเชิงปฏิบัติตั้งแต่ปีแรก"
+        },
+        {
+          "en": "Can continue to ปวส. or a technology bachelor's degree later",
+          "th": "ต่อ ปวส. หรือปริญญาตรีสายเทคโนโลยีได้ในภายหลัง"
+        }
       ],
       "limitations": [
-        "Some university programmes still prefer the general track",
-        "Quality varies significantly between colleges"
+        {
+          "en": "Some university programmes still prefer the general track",
+          "th": "บางหลักสูตรในมหาวิทยาลัยยังนิยมรับจากสายสามัญมากกว่า"
+        },
+        {
+          "en": "Quality varies significantly between colleges",
+          "th": "คุณภาพแตกต่างกันมากระหว่างวิทยาลัย"
+        }
       ],
-      "nextExperiment": "Build one tiny thing end to end this week — a one-page site, a small automation, a repaired device — and write down which part you enjoyed.",
+      "nextExperiment": {
+        "en": "Build one tiny thing end to end this week — a one-page site, a small automation, a repaired device — and write down which part you enjoyed.",
+        "th": "ลองทำของเล็ก ๆ ให้จบหนึ่งชิ้นในสัปดาห์นี้ — เว็บหน้าเดียว ระบบอัตโนมัติเล็ก ๆ หรือซ่อมอุปกรณ์สักชิ้น แล้วจดว่าคุณสนุกกับส่วนไหน"
+      },
       "planTemplate": "hands-on",
       "provenance": {
         "status": "partially-verified",
         "source": "VEC Data Catalog — หลักสูตร ปวช. 2567",
         "sourceUrl": "https://ckan.vec.go.th/th/dataset/voc_curriculum",
         "lastVerified": "2026-07-24",
-        "note": "The catalogue publishes ประเภทวิชา, สาขาวิชา and สาขางาน for ปวช. 2567. The counts are deliberately not hard-coded here: they change with each curriculum revision and must be read from the current dataset."
+        "note": {
+          "en": "The catalogue publishes ประเภทวิชา, สาขาวิชา and สาขางาน for ปวช. 2567. The counts are deliberately not hard-coded here: they change with each curriculum revision and must be read from the current dataset.",
+          "th": "ฐานข้อมูลเผยแพร่ประเภทวิชา สาขาวิชา และสาขางานของ ปวช. 2567 ระบบนี้จงใจไม่ฝังจำนวนไว้ตายตัว เพราะตัวเลขเปลี่ยนทุกครั้งที่ปรับหลักสูตร และต้องอ่านจากชุดข้อมูลปัจจุบัน"
+        }
       }
     },
     {
       "id": "dve-dual",
-      "name": "Dual vocational education (ทวิภาคี)",
-      "shortName": "DVE dual system",
+      "name": {
+        "en": "Dual vocational education (ทวิภาคี)",
+        "th": "อาชีวศึกษาระบบทวิภาคี"
+      },
+      "shortName": {
+        "en": "DVE dual system",
+        "th": "ทวิภาคี"
+      },
       "tiers": [
         "LOWER_SECONDARY",
         "VOCATIONAL"
       ],
-      "summary": "Study combined with paid placement at a partner employer, alternating college and workplace.",
+      "summary": {
+        "en": "Study combined with paid placement at a partner employer, alternating college and workplace.",
+        "th": "เรียนควบคู่กับการฝึกงานแบบได้ค่าตอบแทนกับสถานประกอบการคู่สัญญา สลับระหว่างวิทยาลัยกับที่ทำงาน"
+      },
       "interestWeights": {
         "R": 0.35,
         "I": 0.15,
@@ -128,32 +194,59 @@
       "flexibility": 0.45,
       "timeToEarning": "soon",
       "strengths": [
-        "Earning and learning at the same time",
-        "Real workplace experience before you finish"
+        {
+          "en": "Earning and learning at the same time",
+          "th": "ได้เรียนและมีรายได้ไปพร้อมกัน"
+        },
+        {
+          "en": "Real workplace experience before you finish",
+          "th": "ได้ประสบการณ์ทำงานจริงก่อนเรียนจบ"
+        }
       ],
       "limitations": [
-        "Places depend on which employers partner with your college",
-        "Narrower specialisation, harder to change direction later"
+        {
+          "en": "Places depend on which employers partner with your college",
+          "th": "ที่ฝึกงานขึ้นอยู่กับว่าสถานประกอบการใดเป็นคู่สัญญากับวิทยาลัยของคุณ"
+        },
+        {
+          "en": "Narrower specialisation, harder to change direction later",
+          "th": "เชี่ยวชาญเฉพาะทางแคบกว่า เปลี่ยนทิศทางทีหลังยากกว่า"
+        }
       ],
-      "nextExperiment": "Find one company near you that takes ทวิภาคี students and ask what a first-year placement actually involves.",
+      "nextExperiment": {
+        "en": "Find one company near you that takes ทวิภาคี students and ask what a first-year placement actually involves.",
+        "th": "หาบริษัทใกล้บ้านสักแห่งที่รับนักศึกษาทวิภาคี แล้วถามว่าการฝึกงานปีแรกต้องทำอะไรบ้างจริง ๆ"
+      },
       "planTemplate": "hands-on",
       "provenance": {
         "status": "partially-verified",
         "source": "VEC Data Catalog — vocational curriculum group",
         "sourceUrl": "https://ckan.vec.go.th/group/course",
         "lastVerified": "2026-07-24",
-        "note": "ทวิภาคี is a real study-with-employer arrangement, but placement length, pay and employment outcomes depend on the agreement for each programme. Any blanket employment figure for DVE is unsupported and must not be shown."
+        "note": {
+          "en": "ทวิภาคี is a real study-with-employer arrangement, but placement length, pay and employment outcomes depend on the agreement for each programme. Any blanket employment figure for DVE is unsupported and must not be shown.",
+          "th": "ทวิภาคีเป็นระบบเรียนควบคู่การทำงานที่มีอยู่จริง แต่ระยะเวลาฝึก ค่าตอบแทน และผลด้านการมีงานทำ ขึ้นอยู่กับข้อตกลงของแต่ละหลักสูตร ตัวเลขการมีงานทำแบบเหมารวมของทวิภาคีไม่มีหลักฐานรองรับและต้องไม่นำมาแสดง"
+        }
       }
     },
     {
       "id": "arts-design",
-      "name": "Arts track towards design and creative work",
-      "shortName": "Arts → Design",
+      "name": {
+        "en": "Arts track towards design and creative work",
+        "th": "สายศิลป์ สู่งานออกแบบและงานสร้างสรรค์"
+      },
+      "shortName": {
+        "en": "Arts → Design",
+        "th": "ศิลป์ → ออกแบบ"
+      },
       "tiers": [
         "LOWER_SECONDARY",
         "UPPER_SECONDARY"
       ],
-      "summary": "An arts-leaning track towards communication design, architecture or digital media.",
+      "summary": {
+        "en": "An arts-leaning track towards communication design, architecture or digital media.",
+        "th": "สายที่เอนไปทางศิลปะ มุ่งสู่งานออกแบบนิเทศศิลป์ สถาปัตยกรรม หรือสื่อดิจิทัล"
+      },
       "interestWeights": {
         "R": 0.1,
         "I": 0.1,
@@ -168,33 +261,60 @@
       "flexibility": 0.55,
       "timeToEarning": "later",
       "strengths": [
-        "Portfolio counts as much as exam scores in many programmes",
-        "Skills transfer across media, product and marketing work"
+        {
+          "en": "Portfolio counts as much as exam scores in many programmes",
+          "th": "หลายหลักสูตรให้น้ำหนักแฟ้มผลงานพอ ๆ กับคะแนนสอบ"
+        },
+        {
+          "en": "Skills transfer across media, product and marketing work",
+          "th": "ทักษะใช้ข้ามไปงานสื่อ ผลิตภัณฑ์ และการตลาดได้"
+        }
       ],
       "limitations": [
-        "Entry is portfolio-driven, which takes sustained work to build",
-        "Early-career income is often uneven"
+        {
+          "en": "Entry is portfolio-driven, which takes sustained work to build",
+          "th": "การรับเข้าเน้นแฟ้มผลงาน ซึ่งต้องสะสมอย่างต่อเนื่อง"
+        },
+        {
+          "en": "Early-career income is often uneven",
+          "th": "รายได้ช่วงต้นอาชีพมักไม่สม่ำเสมอ"
+        }
       ],
-      "nextExperiment": "Redesign one thing you use weekly — a form, a poster, an app screen — and show it to two people who use it.",
+      "nextExperiment": {
+        "en": "Redesign one thing you use weekly — a form, a poster, an app screen — and show it to two people who use it.",
+        "th": "ลองออกแบบใหม่สักอย่างที่คุณใช้ทุกสัปดาห์ — แบบฟอร์ม โปสเตอร์ หรือหน้าจอแอป แล้วเอาไปให้คนที่ใช้จริงสองคนดู"
+      },
       "planTemplate": "portfolio",
       "provenance": {
         "status": "illustrative",
         "source": null,
         "sourceUrl": null,
         "lastVerified": null,
-        "note": "Portfolio-driven entry is normal in Thai design and architecture programmes, but no source in the registry states it as a general rule. Treat the entry description as the team's framing."
+        "note": {
+          "en": "Portfolio-driven entry is normal in Thai design and architecture programmes, but no source in the registry states it as a general rule. Treat the entry description as the team's framing.",
+          "th": "การรับเข้าโดยดูแฟ้มผลงานเป็นเรื่องปกติในหลักสูตรออกแบบและสถาปัตยกรรมของไทย แต่ไม่มีแหล่งอ้างอิงใดในทะเบียนที่ระบุว่าเป็นกฎทั่วไป ให้ถือว่าคำอธิบายการรับเข้านี้เป็นการตีความของทีม"
+        }
       }
     },
     {
       "id": "business-admin",
-      "name": "Business and administration",
-      "shortName": "Business & admin",
+      "name": {
+        "en": "Business and administration",
+        "th": "บริหารธุรกิจและการจัดการ"
+      },
+      "shortName": {
+        "en": "Business & admin",
+        "th": "ธุรกิจ & บริหาร"
+      },
       "tiers": [
         "LOWER_SECONDARY",
         "UPPER_SECONDARY",
         "VOCATIONAL"
       ],
-      "summary": "Accounting, marketing or business administration, available through both general and vocational tracks.",
+      "summary": {
+        "en": "Accounting, marketing or business administration, available through both general and vocational tracks.",
+        "th": "บัญชี การตลาด หรือบริหารธุรกิจ เรียนได้ทั้งสายสามัญและสายอาชีพ"
+      },
       "interestWeights": {
         "R": 0.05,
         "I": 0.15,
@@ -209,33 +329,60 @@
       "flexibility": 0.85,
       "timeToEarning": "soon",
       "strengths": [
-        "Available at both vocational colleges and universities",
-        "Skills apply across almost every industry"
+        {
+          "en": "Available at both vocational colleges and universities",
+          "th": "เปิดสอนทั้งในวิทยาลัยอาชีวศึกษาและมหาวิทยาลัย"
+        },
+        {
+          "en": "Skills apply across almost every industry",
+          "th": "ทักษะใช้ได้แทบทุกอุตสาหกรรม"
+        }
       ],
       "limitations": [
-        "Very common qualification, so experience matters more than the certificate",
-        "Wide field — you still have to choose a specialism later"
+        {
+          "en": "Very common qualification, so experience matters more than the certificate",
+          "th": "เป็นวุฒิที่คนเรียนเยอะมาก ประสบการณ์จึงสำคัญกว่าใบวุฒิ"
+        },
+        {
+          "en": "Wide field — you still have to choose a specialism later",
+          "th": "สาขากว้าง สุดท้ายยังต้องเลือกความเชี่ยวชาญเฉพาะทางอยู่ดี"
+        }
       ],
-      "nextExperiment": "Run the money or scheduling side of one small real thing — a club event, a family shop's stock list — for two weeks.",
+      "nextExperiment": {
+        "en": "Run the money or scheduling side of one small real thing — a club event, a family shop's stock list — for two weeks.",
+        "th": "ลองรับผิดชอบเรื่องเงินหรือตารางเวลาของกิจกรรมจริงสักอย่างเป็นเวลาสองสัปดาห์ — งานชมรม หรือรายการสต๊อกของร้านที่บ้าน"
+      },
       "planTemplate": "structured",
       "provenance": {
         "status": "illustrative",
         "source": null,
         "sourceUrl": null,
         "lastVerified": null,
-        "note": "Business and accounting are offered through both the general and the vocational systems. Nothing in the registry supports the comparative claims about how much the qualification is worth."
+        "note": {
+          "en": "Business and accounting are offered through both the general and the vocational systems. Nothing in the registry supports the comparative claims about how much the qualification is worth.",
+          "th": "ธุรกิจและบัญชีเปิดสอนทั้งในระบบสามัญและระบบอาชีวศึกษา ไม่มีข้อมูลใดในทะเบียนที่รองรับการเปรียบเทียบว่าวุฒิไหนมีมูลค่ามากกว่ากัน"
+        }
       }
     },
     {
       "id": "health-care",
-      "name": "Health and care pathway",
-      "shortName": "Health & care",
+      "name": {
+        "en": "Health and care pathway",
+        "th": "เส้นทางสายสุขภาพและการดูแล"
+      },
+      "shortName": {
+        "en": "Health & care",
+        "th": "สุขภาพ & การดูแล"
+      },
       "tiers": [
         "LOWER_SECONDARY",
         "UPPER_SECONDARY",
         "VOCATIONAL"
       ],
-      "summary": "Nursing, allied health or care work, through either the science track or a vocational health programme.",
+      "summary": {
+        "en": "Nursing, allied health or care work, through either the science track or a vocational health programme.",
+        "th": "พยาบาล สหเวชศาสตร์ หรืองานดูแล ผ่านสายวิทย์หรือหลักสูตรอาชีวศึกษาด้านสุขภาพ"
+      },
       "interestWeights": {
         "R": 0.15,
         "I": 0.25,
@@ -250,21 +397,39 @@
       "flexibility": 0.5,
       "timeToEarning": "later",
       "strengths": [
-        "Consistent demand and a clear professional ladder",
-        "Direct, visible impact on people"
+        {
+          "en": "Consistent demand and a clear professional ladder",
+          "th": "ความต้องการสม่ำเสมอ และมีเส้นทางวิชาชีพที่ชัดเจน"
+        },
+        {
+          "en": "Direct, visible impact on people",
+          "th": "เห็นผลกระทบต่อผู้คนโดยตรง"
+        }
       ],
       "limitations": [
-        "Entry requirements are strict and specific — verify each programme",
-        "Emotionally demanding; shift work is normal"
+        {
+          "en": "Entry requirements are strict and specific — verify each programme",
+          "th": "เกณฑ์รับเข้าเข้มงวดและเฉพาะเจาะจง ต้องตรวจสอบเป็นรายหลักสูตร"
+        },
+        {
+          "en": "Emotionally demanding; shift work is normal",
+          "th": "ใช้พลังใจสูง และการเข้าเวรเป็นเรื่องปกติ"
+        }
       ],
-      "nextExperiment": "Shadow or interview someone doing the day-to-day version of the job, not the version shown on television.",
+      "nextExperiment": {
+        "en": "Shadow or interview someone doing the day-to-day version of the job, not the version shown on television.",
+        "th": "ขอไปสังเกตการณ์หรือสัมภาษณ์คนที่ทำงานนี้จริงในแบบวันต่อวัน ไม่ใช่แบบที่เห็นในละคร"
+      },
       "planTemplate": "structured",
       "provenance": {
         "status": "illustrative",
         "source": null,
         "sourceUrl": null,
         "lastVerified": null,
-        "note": "Nursing and allied health are licensed professions with programme-specific entry requirements. Those requirements are not modelled here and must be checked against each institution and the relevant professional council."
+        "note": {
+          "en": "Nursing and allied health are licensed professions with programme-specific entry requirements. Those requirements are not modelled here and must be checked against each institution and the relevant professional council.",
+          "th": "พยาบาลและสหเวชศาสตร์เป็นวิชาชีพที่ต้องมีใบอนุญาต และมีเกณฑ์รับเข้าเฉพาะของแต่ละหลักสูตร ระบบนี้ไม่ได้จำลองเกณฑ์เหล่านั้น ต้องตรวจสอบกับแต่ละสถาบันและสภาวิชาชีพที่เกี่ยวข้อง"
+        }
       }
     }
   ],
@@ -272,35 +437,83 @@
     "analytical": {
       "weeks": [
         {
-          "objective": "Test whether the analytical part actually holds your attention",
+          "objective": {
+            "en": "Test whether the analytical part actually holds your attention",
+            "th": "ทดสอบว่างานเชิงวิเคราะห์ดึงความสนใจคุณได้จริงไหม"
+          },
           "tasks": [
-            "Pick one topic from the route and study it for 45 minutes, three times",
-            "Write half a page explaining it to someone two years younger",
-            "Note honestly when you got bored"
+            {
+              "en": "Pick one topic from the route and study it for 45 minutes, three times",
+              "th": "เลือกหัวข้อหนึ่งจากเส้นทางนี้แล้วอ่านครั้งละ 45 นาที สามครั้ง"
+            },
+            {
+              "en": "Write half a page explaining it to someone two years younger",
+              "th": "เขียนครึ่งหน้าอธิบายให้คนที่อายุน้อยกว่าคุณสองปีเข้าใจ"
+            },
+            {
+              "en": "Note honestly when you got bored",
+              "th": "จดตามจริงว่าคุณเริ่มเบื่อตอนไหน"
+            }
           ]
         },
         {
-          "objective": "Find out what the work looks like in practice",
+          "objective": {
+            "en": "Find out what the work looks like in practice",
+            "th": "หาดูว่างานจริงหน้าตาเป็นอย่างไร"
+          },
           "tasks": [
-            "Find two people doing this job and read or watch them describe a normal day",
-            "List three things you did not expect",
-            "Write one question you still cannot answer"
+            {
+              "en": "Find two people doing this job and read or watch them describe a normal day",
+              "th": "หาคนที่ทำงานนี้สองคน แล้วอ่านหรือดูเขาเล่าวันทำงานปกติ"
+            },
+            {
+              "en": "List three things you did not expect",
+              "th": "เขียนสามอย่างที่คุณไม่คาดคิดมาก่อน"
+            },
+            {
+              "en": "Write one question you still cannot answer",
+              "th": "เขียนคำถามหนึ่งข้อที่คุณยังตอบไม่ได้"
+            }
           ]
         },
         {
-          "objective": "Check the entry requirements yourself",
+          "objective": {
+            "en": "Check the entry requirements yourself",
+            "th": "ตรวจเกณฑ์รับเข้าด้วยตัวเอง"
+          },
           "tasks": [
-            "Look up the actual current requirements from an official source",
-            "Write down the gap between where you are and what is required",
-            "Identify the one subject that matters most"
+            {
+              "en": "Look up the actual current requirements from an official source",
+              "th": "ค้นเกณฑ์ปัจจุบันจริงจากแหล่งข้อมูลทางการ"
+            },
+            {
+              "en": "Write down the gap between where you are and what is required",
+              "th": "เขียนช่องว่างระหว่างจุดที่คุณอยู่กับสิ่งที่เกณฑ์ต้องการ"
+            },
+            {
+              "en": "Identify the one subject that matters most",
+              "th": "ระบุวิชาเดียวที่สำคัญที่สุด"
+            }
           ]
         },
         {
-          "objective": "Decide what would change your mind",
+          "objective": {
+            "en": "Decide what would change your mind",
+            "th": "ตัดสินใจว่าอะไรจะทำให้คุณเปลี่ยนใจ"
+          },
           "tasks": [
-            "Write the strongest argument against this route for you specifically",
-            "Talk it through with a counsellor or an adult who knows you",
-            "Decide whether to keep, park, or drop this route"
+            {
+              "en": "Write the strongest argument against this route for you specifically",
+              "th": "เขียนเหตุผลที่หนักแน่นที่สุดที่ค้านเส้นทางนี้สำหรับตัวคุณเอง"
+            },
+            {
+              "en": "Talk it through with a counsellor or an adult who knows you",
+              "th": "คุยเรื่องนี้กับครูแนะแนวหรือผู้ใหญ่ที่รู้จักคุณ"
+            },
+            {
+              "en": "Decide whether to keep, park, or drop this route",
+              "th": "ตัดสินใจว่าจะเก็บไว้ พักไว้ หรือตัดเส้นทางนี้ทิ้ง"
+            }
           ]
         }
       ]
@@ -308,35 +521,83 @@
     "hands-on": {
       "weeks": [
         {
-          "objective": "Make one small real thing",
+          "objective": {
+            "en": "Make one small real thing",
+            "th": "ทำของจริงเล็ก ๆ ให้เสร็จหนึ่งชิ้น"
+          },
           "tasks": [
-            "Choose the smallest useful project in this direction",
-            "Finish it, even badly, within the week",
-            "Write down which part you would happily repeat"
+            {
+              "en": "Choose the smallest useful project in this direction",
+              "th": "เลือกโปรเจกต์ที่เล็กที่สุดแต่มีประโยชน์ในทิศทางนี้"
+            },
+            {
+              "en": "Finish it, even badly, within the week",
+              "th": "ทำให้เสร็จภายในสัปดาห์นี้ ต่อให้ออกมาไม่ดีก็ตาม"
+            },
+            {
+              "en": "Write down which part you would happily repeat",
+              "th": "จดว่าส่วนไหนที่คุณยินดีทำซ้ำอีก"
+            }
           ]
         },
         {
-          "objective": "See the real workplace",
+          "objective": {
+            "en": "See the real workplace",
+            "th": "ไปดูที่ทำงานจริง"
+          },
           "tasks": [
-            "Find one local college or employer offering this route",
-            "Ask what a first-year student actually does day to day",
-            "Note the difference from what you imagined"
+            {
+              "en": "Find one local college or employer offering this route",
+              "th": "หาวิทยาลัยหรือสถานประกอบการใกล้บ้านที่เปิดเส้นทางนี้"
+            },
+            {
+              "en": "Ask what a first-year student actually does day to day",
+              "th": "ถามว่านักศึกษาปีหนึ่งทำอะไรบ้างในแต่ละวันจริง ๆ"
+            },
+            {
+              "en": "Note the difference from what you imagined",
+              "th": "จดว่าต่างจากที่คุณจินตนาการไว้อย่างไร"
+            }
           ]
         },
         {
-          "objective": "Test the routine, not the highlight",
+          "objective": {
+            "en": "Test the routine, not the highlight",
+            "th": "ทดสอบงานประจำวัน ไม่ใช่ช่วงไฮไลต์"
+          },
           "tasks": [
-            "Do the least glamorous part of the work for two sessions",
-            "Rate your energy after each one",
-            "Decide whether the routine is tolerable"
+            {
+              "en": "Do the least glamorous part of the work for two sessions",
+              "th": "ลองทำส่วนที่ดูน่าเบื่อที่สุดของงานสองรอบ"
+            },
+            {
+              "en": "Rate your energy after each one",
+              "th": "ให้คะแนนพลังงานของตัวเองหลังจบแต่ละรอบ"
+            },
+            {
+              "en": "Decide whether the routine is tolerable",
+              "th": "ตัดสินใจว่างานประจำแบบนั้นทนได้ไหม"
+            }
           ]
         },
         {
-          "objective": "Get one outside opinion",
+          "objective": {
+            "en": "Get one outside opinion",
+            "th": "ขอความเห็นจากคนนอกหนึ่งคน"
+          },
           "tasks": [
-            "Show what you made to someone who does this work",
-            "Ask what they would do differently",
-            "Decide whether to keep, park, or drop this route"
+            {
+              "en": "Show what you made to someone who does this work",
+              "th": "เอาสิ่งที่คุณทำไปให้คนที่ทำงานสายนี้ดู"
+            },
+            {
+              "en": "Ask what they would do differently",
+              "th": "ถามว่าถ้าเป็นเขาจะทำต่างออกไปตรงไหน"
+            },
+            {
+              "en": "Decide whether to keep, park, or drop this route",
+              "th": "ตัดสินใจว่าจะเก็บไว้ พักไว้ หรือตัดเส้นทางนี้ทิ้ง"
+            }
           ]
         }
       ]
@@ -344,35 +605,83 @@
     "portfolio": {
       "weeks": [
         {
-          "objective": "Start a portfolio piece, not a plan",
+          "objective": {
+            "en": "Start a portfolio piece, not a plan",
+            "th": "เริ่มลงมือทำชิ้นงาน ไม่ใช่เริ่มวางแผน"
+          },
           "tasks": [
-            "Pick one thing that annoys you and redesign it",
-            "Keep every rough draft, not just the final",
-            "Write two sentences on what you were trying to fix"
+            {
+              "en": "Pick one thing that annoys you and redesign it",
+              "th": "เลือกสิ่งที่กวนใจคุณสักอย่างแล้วออกแบบใหม่"
+            },
+            {
+              "en": "Keep every rough draft, not just the final",
+              "th": "เก็บงานร่างทุกเวอร์ชันไว้ ไม่ใช่แค่ชิ้นสุดท้าย"
+            },
+            {
+              "en": "Write two sentences on what you were trying to fix",
+              "th": "เขียนสองประโยคว่าคุณพยายามแก้อะไร"
+            }
           ]
         },
         {
-          "objective": "Put it in front of real people",
+          "objective": {
+            "en": "Put it in front of real people",
+            "th": "เอาไปให้คนจริง ๆ ดู"
+          },
           "tasks": [
-            "Show it to two people who would actually use it",
-            "Write down what confused them",
-            "Revise once based on what they said"
+            {
+              "en": "Show it to two people who would actually use it",
+              "th": "เอาไปให้คนที่จะใช้มันจริงสองคนดู"
+            },
+            {
+              "en": "Write down what confused them",
+              "th": "จดว่าเขางงตรงไหน"
+            },
+            {
+              "en": "Revise once based on what they said",
+              "th": "แก้หนึ่งรอบตามสิ่งที่เขาบอก"
+            }
           ]
         },
         {
-          "objective": "Understand how entry really works",
+          "objective": {
+            "en": "Understand how entry really works",
+            "th": "ทำความเข้าใจว่าการรับเข้าทำงานอย่างไรจริง ๆ"
+          },
           "tasks": [
-            "Find two programmes and read what their portfolio actually requires",
-            "List what you are missing",
-            "Pick the next piece to make"
+            {
+              "en": "Find two programmes and read what their portfolio actually requires",
+              "th": "หาหลักสูตรสองแห่งแล้วอ่านว่าแฟ้มผลงานของเขาต้องมีอะไรบ้าง"
+            },
+            {
+              "en": "List what you are missing",
+              "th": "เขียนรายการสิ่งที่คุณยังขาด"
+            },
+            {
+              "en": "Pick the next piece to make",
+              "th": "เลือกว่าจะทำชิ้นต่อไปเป็นอะไร"
+            }
           ]
         },
         {
-          "objective": "Check the trade-off honestly",
+          "objective": {
+            "en": "Check the trade-off honestly",
+            "th": "ชั่งข้อแลกเปลี่ยนอย่างตรงไปตรงมา"
+          },
           "tasks": [
-            "Read about early-career reality in this field, including income",
-            "Talk to a counsellor about the risk",
-            "Decide whether to keep, park, or drop this route"
+            {
+              "en": "Read about early-career reality in this field, including income",
+              "th": "อ่านเรื่องความเป็นจริงช่วงต้นอาชีพในสายนี้ รวมถึงเรื่องรายได้"
+            },
+            {
+              "en": "Talk to a counsellor about the risk",
+              "th": "คุยกับครูแนะแนวเรื่องความเสี่ยง"
+            },
+            {
+              "en": "Decide whether to keep, park, or drop this route",
+              "th": "ตัดสินใจว่าจะเก็บไว้ พักไว้ หรือตัดเส้นทางนี้ทิ้ง"
+            }
           ]
         }
       ]
@@ -380,35 +689,83 @@
     "structured": {
       "weeks": [
         {
-          "objective": "Run one small real responsibility",
+          "objective": {
+            "en": "Run one small real responsibility",
+            "th": "รับผิดชอบงานจริงเล็ก ๆ สักอย่าง"
+          },
           "tasks": [
-            "Take charge of the money, schedule, or records for one real activity",
-            "Keep it accurate for the whole week",
-            "Note where you slipped and why"
+            {
+              "en": "Take charge of the money, schedule, or records for one real activity",
+              "th": "รับดูแลเรื่องเงิน ตารางเวลา หรือบันทึกข้อมูลของกิจกรรมจริงสักอย่าง"
+            },
+            {
+              "en": "Keep it accurate for the whole week",
+              "th": "ทำให้ถูกต้องตลอดทั้งสัปดาห์"
+            },
+            {
+              "en": "Note where you slipped and why",
+              "th": "จดว่าคุณพลาดตรงไหนและเพราะอะไร"
+            }
           ]
         },
         {
-          "objective": "Meet the field",
+          "objective": {
+            "en": "Meet the field",
+            "th": "ทำความรู้จักกับวงการ"
+          },
           "tasks": [
-            "Interview one person working in this area",
-            "Ask what the boring 80% of the job is",
-            "Write down whether that 80% sounds bearable"
+            {
+              "en": "Interview one person working in this area",
+              "th": "สัมภาษณ์คนที่ทำงานในสายนี้หนึ่งคน"
+            },
+            {
+              "en": "Ask what the boring 80% of the job is",
+              "th": "ถามว่า 80% ที่น่าเบื่อของงานคืออะไร"
+            },
+            {
+              "en": "Write down whether that 80% sounds bearable",
+              "th": "เขียนว่า 80% นั้นฟังดูทนได้หรือเปล่า"
+            }
           ]
         },
         {
-          "objective": "Check requirements and cost",
+          "objective": {
+            "en": "Check requirements and cost",
+            "th": "ตรวจเกณฑ์และค่าใช้จ่าย"
+          },
           "tasks": [
-            "Find the current entry requirements from an official source",
-            "Write down the realistic total cost",
-            "Identify who could help you cover it"
+            {
+              "en": "Find the current entry requirements from an official source",
+              "th": "หาเกณฑ์รับเข้าปัจจุบันจากแหล่งข้อมูลทางการ"
+            },
+            {
+              "en": "Write down the realistic total cost",
+              "th": "เขียนค่าใช้จ่ายรวมตามความเป็นจริง"
+            },
+            {
+              "en": "Identify who could help you cover it",
+              "th": "ระบุว่าใครพอจะช่วยคุณเรื่องค่าใช้จ่ายได้"
+            }
           ]
         },
         {
-          "objective": "Decide the next step",
+          "objective": {
+            "en": "Decide the next step",
+            "th": "ตัดสินใจก้าวต่อไป"
+          },
           "tasks": [
-            "List what would make you confident, and what would put you off",
-            "Discuss with a counsellor",
-            "Decide whether to keep, park, or drop this route"
+            {
+              "en": "List what would make you confident, and what would put you off",
+              "th": "เขียนว่าอะไรจะทำให้คุณมั่นใจ และอะไรจะทำให้คุณถอย"
+            },
+            {
+              "en": "Discuss with a counsellor",
+              "th": "ปรึกษาครูแนะแนว"
+            },
+            {
+              "en": "Decide whether to keep, park, or drop this route",
+              "th": "ตัดสินใจว่าจะเก็บไว้ พักไว้ หรือตัดเส้นทางนี้ทิ้ง"
+            }
           ]
         }
       ]

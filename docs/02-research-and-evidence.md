@@ -145,7 +145,7 @@ The current interview is a fixed English questionnaire; adaptive conversation is
 
 | Technique | Origin | Role in the design | Evidence status |
 |---|---|---|---|
-| **RIASEC** | Holland / O\*NET Interest Profiler | Six-dimension interest structure | O\*NET's instrument has a research manual; FutureMe's twelve items have not been validated |
+| **RIASEC** | Holland / O\*NET Interest Profiler / 18REST | Six-dimension interest structure | O\*NET's instrument has a research manual; FutureMe's 30 items have not been validated. Cross-cultural structural equivalence of the hexagon was **not** supported by Rounds & Tracey (1996), and no Thai RIASEC validation exists — see [questionnaire-methodology.md §11](questionnaire-methodology.md#11-validity) |
 | **Socratic questioning** | Foundation for Critical Thinking | Open questions that make the student reason rather than pick | Source page was not reachable in the audit; not used as sole support for any claim |
 | **Motivational Interviewing** | Miller & Rollnick (MINT) | Lowers defensiveness | A professional training body, **not** psychometric evidence for a recommender |
 | **Laddering** | Reynolds & Gutman, 1988 | Climbs from stated behaviour to underlying values | Access-restricted; held as a bibliographic reference only |

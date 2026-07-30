@@ -6,20 +6,41 @@
   "missions": [
     {
       "id": "mission-school-problem",
-      "bestFor": ["I", "C"],
-      "title": "Fix something that annoys people at your school",
-      "chosenBecause": "your answers leaned towards working things out and keeping things organised",
+      "bestFor": [
+        "I",
+        "C"
+      ],
+      "title": {
+        "en": "Fix something that annoys people at your school",
+        "th": "แก้เรื่องที่กวนใจคนในโรงเรียนของคุณ"
+      },
+      "chosenBecause": {
+        "en": "your answers leaned towards working things out and keeping things organised",
+        "th": "คำตอบของคุณเอนไปทางการคิดวิเคราะห์และการจัดระเบียบ"
+      },
       "minutes": 12,
-      "objective": "Pick one real, small problem at your school and describe how you would actually attack it. There is no correct answer — the point is what your choices reveal about how you like to work.",
-      "prompt": "Think of something at your school that wastes people's time or makes them frustrated. A sign-up sheet nobody can read. A queue that is always chaotic. Equipment that keeps breaking.",
+      "objective": {
+        "en": "Pick one real, small problem at your school and describe how you would actually attack it. There is no correct answer — the point is what your choices reveal about how you like to work.",
+        "th": "เลือกปัญหาเล็ก ๆ ที่มีอยู่จริงในโรงเรียน แล้วอธิบายว่าคุณจะลงมือแก้มันอย่างไร ไม่มีคำตอบที่ถูก ประเด็นคือตัวเลือกของคุณบอกอะไรเกี่ยวกับวิธีทำงานที่คุณถนัด"
+      },
+      "prompt": {
+        "en": "Think of something at your school that wastes people's time or makes them frustrated. A sign-up sheet nobody can read. A queue that is always chaotic. Equipment that keeps breaking.",
+        "th": "นึกถึงบางอย่างในโรงเรียนที่ทำให้คนเสียเวลาหรือหงุดหงิด เช่น ใบลงชื่อที่อ่านไม่ออก คิวที่วุ่นวายตลอด หรืออุปกรณ์ที่พังซ้ำ ๆ"
+      },
       "steps": [
         {
           "id": "problem",
           "type": "text",
           "required": true,
           "minLength": 20,
-          "label": "What is the problem, and who does it affect?",
-          "placeholder": "Describe the problem in a sentence or two, and say who it affects."
+          "label": {
+            "en": "What is the problem, and who does it affect?",
+            "th": "ปัญหาคืออะไร และกระทบใครบ้าง"
+          },
+          "placeholder": {
+            "en": "Describe the problem in a sentence or two, and say who it affects.",
+            "th": "อธิบายปัญหาสักหนึ่งถึงสองประโยค และบอกว่ากระทบใคร"
+          }
         },
         {
           "id": "approach",
@@ -27,17 +48,100 @@
           "required": true,
           "minSelected": 2,
           "maxSelected": 4,
-          "label": "How would you start? Choose the 2–4 steps you would genuinely do first.",
-          "help": "Choose what you would really do, not what sounds best.",
+          "label": {
+            "en": "How would you start? Choose the 2–4 steps you would genuinely do first.",
+            "th": "คุณจะเริ่มอย่างไร เลือก 2–4 ขั้นที่คุณจะทำจริง ๆ"
+          },
+          "help": {
+            "en": "Choose what you would really do, not what sounds best.",
+            "th": "เลือกสิ่งที่คุณจะทำจริง ไม่ใช่สิ่งที่ฟังดูดีที่สุด"
+          },
           "options": [
-            { "value": "observe", "label": "Watch it happen a few times and take notes", "evidence": { "I": 2, "C": 1 } },
-            { "value": "interview", "label": "Ask the people affected what actually bothers them", "evidence": { "S": 2, "I": 1 } },
-            { "value": "measure", "label": "Count or measure something to see how bad it is", "evidence": { "I": 2, "C": 2 } },
-            { "value": "prototype", "label": "Sketch or mock up a better version", "evidence": { "A": 2, "R": 1 } },
-            { "value": "build", "label": "Build or physically rearrange the thing itself", "evidence": { "R": 3 } },
-            { "value": "organise", "label": "Write a clear procedure or schedule people can follow", "evidence": { "C": 3 } },
-            { "value": "pitch", "label": "Convince a teacher or committee to back the change", "evidence": { "E": 3 } },
-            { "value": "recruit", "label": "Get a group of friends together to help run it", "evidence": { "E": 2, "S": 2 } }
+            {
+              "value": "observe",
+              "label": {
+                "en": "Watch it happen a few times and take notes",
+                "th": "เฝ้าดูสักสองสามครั้งแล้วจดบันทึก"
+              },
+              "evidence": {
+                "I": 2,
+                "C": 1
+              }
+            },
+            {
+              "value": "interview",
+              "label": {
+                "en": "Ask the people affected what actually bothers them",
+                "th": "ถามคนที่ได้รับผลกระทบว่าจริง ๆ แล้วอะไรกวนใจ"
+              },
+              "evidence": {
+                "S": 2,
+                "I": 1
+              }
+            },
+            {
+              "value": "measure",
+              "label": {
+                "en": "Count or measure something to see how bad it is",
+                "th": "นับหรือวัดบางอย่างเพื่อดูว่าแย่แค่ไหน"
+              },
+              "evidence": {
+                "I": 2,
+                "C": 2
+              }
+            },
+            {
+              "value": "prototype",
+              "label": {
+                "en": "Sketch or mock up a better version",
+                "th": "ร่างหรือทำตัวอย่างเวอร์ชันที่ดีกว่า"
+              },
+              "evidence": {
+                "A": 2,
+                "R": 1
+              }
+            },
+            {
+              "value": "build",
+              "label": {
+                "en": "Build or physically rearrange the thing itself",
+                "th": "ลงมือสร้างหรือจัดวางสิ่งนั้นใหม่เอง"
+              },
+              "evidence": {
+                "R": 3
+              }
+            },
+            {
+              "value": "organise",
+              "label": {
+                "en": "Write a clear procedure or schedule people can follow",
+                "th": "เขียนขั้นตอนหรือตารางที่ชัดเจนให้คนทำตามได้"
+              },
+              "evidence": {
+                "C": 3
+              }
+            },
+            {
+              "value": "pitch",
+              "label": {
+                "en": "Convince a teacher or committee to back the change",
+                "th": "โน้มน้าวครูหรือคณะกรรมการให้สนับสนุนการเปลี่ยนแปลง"
+              },
+              "evidence": {
+                "E": 3
+              }
+            },
+            {
+              "value": "recruit",
+              "label": {
+                "en": "Get a group of friends together to help run it",
+                "th": "ชวนกลุ่มเพื่อนมาช่วยกันทำ"
+              },
+              "evidence": {
+                "E": 2,
+                "S": 2
+              }
+            }
           ]
         },
         {
@@ -45,48 +149,190 @@
           "type": "text",
           "required": true,
           "minLength": 20,
-          "label": "How would you know whether it actually worked?",
-          "placeholder": "What would you look at, count, or ask to tell whether the problem got better?"
+          "label": {
+            "en": "How would you know whether it actually worked?",
+            "th": "คุณจะรู้ได้อย่างไรว่ามันได้ผลจริง"
+          },
+          "placeholder": {
+            "en": "What would you look at, count, or ask to tell whether the problem got better?",
+            "th": "คุณจะดู นับ หรือถามอะไร เพื่อบอกว่าปัญหาดีขึ้นแล้ว"
+          }
         },
         {
           "id": "energy",
           "type": "single",
           "required": true,
-          "label": "Which part of that would you most look forward to?",
+          "label": {
+            "en": "Which part of that would you most look forward to?",
+            "th": "ส่วนไหนที่คุณตั้งตารอมากที่สุด"
+          },
           "options": [
-            { "value": "figuring", "label": "Working out what is really going on", "evidence": { "I": 3 } },
-            { "value": "making", "label": "Making or building the fix", "evidence": { "R": 2, "A": 2 } },
-            { "value": "people", "label": "Talking to the people involved", "evidence": { "S": 3 } },
-            { "value": "leading", "label": "Getting it approved and rolled out", "evidence": { "E": 3 } },
-            { "value": "ordering", "label": "Making it tidy, documented and repeatable", "evidence": { "C": 3 } }
+            {
+              "value": "figuring",
+              "label": {
+                "en": "Working out what is really going on",
+                "th": "การหาว่าจริง ๆ แล้วเกิดอะไรขึ้น"
+              },
+              "evidence": {
+                "I": 3
+              }
+            },
+            {
+              "value": "making",
+              "label": {
+                "en": "Making or building the fix",
+                "th": "การลงมือทำหรือสร้างตัวแก้ปัญหา"
+              },
+              "evidence": {
+                "R": 2,
+                "A": 2
+              }
+            },
+            {
+              "value": "people",
+              "label": {
+                "en": "Talking to the people involved",
+                "th": "การพูดคุยกับคนที่เกี่ยวข้อง"
+              },
+              "evidence": {
+                "S": 3
+              }
+            },
+            {
+              "value": "leading",
+              "label": {
+                "en": "Getting it approved and rolled out",
+                "th": "การผลักดันให้ได้รับอนุมัติและนำไปใช้จริง"
+              },
+              "evidence": {
+                "E": 3
+              }
+            },
+            {
+              "value": "ordering",
+              "label": {
+                "en": "Making it tidy, documented and repeatable",
+                "th": "การทำให้มันเป็นระเบียบ มีเอกสาร และทำซ้ำได้"
+              },
+              "evidence": {
+                "C": 3
+              }
+            }
           ]
         }
       ],
       "textEvidenceKeywords": {
-        "R": ["build", "built", "fix", "fixed", "repair", "machine", "wire", "tool", "assemble", "hardware"],
-        "I": ["why", "data", "measure", "test", "analyse", "analyze", "research", "experiment", "cause", "pattern"],
-        "A": ["design", "draw", "poster", "video", "write", "creative", "layout", "colour", "color", "story"],
-        "S": ["help", "helped", "teach", "taught", "explain", "friend", "classmate", "together", "support", "listen"],
-        "E": ["organise", "organize", "lead", "led", "start", "started", "convince", "pitch", "sell", "team"],
-        "C": ["schedule", "spreadsheet", "record", "list", "sort", "track", "budget", "accurate", "system", "order"]
+        "R": [
+          "build",
+          "built",
+          "fix",
+          "fixed",
+          "repair",
+          "machine",
+          "wire",
+          "tool",
+          "assemble",
+          "hardware"
+        ],
+        "I": [
+          "why",
+          "data",
+          "measure",
+          "test",
+          "analyse",
+          "analyze",
+          "research",
+          "experiment",
+          "cause",
+          "pattern"
+        ],
+        "A": [
+          "design",
+          "draw",
+          "poster",
+          "video",
+          "write",
+          "creative",
+          "layout",
+          "colour",
+          "color",
+          "story"
+        ],
+        "S": [
+          "help",
+          "helped",
+          "teach",
+          "taught",
+          "explain",
+          "friend",
+          "classmate",
+          "together",
+          "support",
+          "listen"
+        ],
+        "E": [
+          "organise",
+          "organize",
+          "lead",
+          "led",
+          "start",
+          "started",
+          "convince",
+          "pitch",
+          "sell",
+          "team"
+        ],
+        "C": [
+          "schedule",
+          "spreadsheet",
+          "record",
+          "list",
+          "sort",
+          "track",
+          "budget",
+          "accurate",
+          "system",
+          "order"
+        ]
       }
     },
     {
       "id": "mission-make-something",
-      "bestFor": ["R", "A"],
-      "title": "Make one small thing better with your own hands",
-      "chosenBecause": "your answers leaned towards making, building and designing",
+      "bestFor": [
+        "R",
+        "A"
+      ],
+      "title": {
+        "en": "Make one small thing better with your own hands",
+        "th": "ทำของสักชิ้นให้ดีขึ้นด้วยมือของคุณเอง"
+      },
+      "chosenBecause": {
+        "en": "your answers leaned towards making, building and designing",
+        "th": "คำตอบของคุณเอนไปทางการประดิษฐ์ สร้าง และออกแบบ"
+      },
       "minutes": 12,
-      "objective": "Choose one object or space you use often and plan how you would actually remake or repair it. What matters is which part of the work you reach for first.",
-      "prompt": "Think of something physical or visual you use every week that could be better. A shelf that never holds what you need. A club poster nobody reads. A bag, a bike, a workbench, a room layout.",
+      "objective": {
+        "en": "Choose one object or space you use often and plan how you would actually remake or repair it. What matters is which part of the work you reach for first.",
+        "th": "เลือกของหรือพื้นที่ที่คุณใช้บ่อย แล้ววางแผนว่าจะทำใหม่หรือซ่อมมันอย่างไร สิ่งที่สำคัญคือคุณหยิบงานส่วนไหนขึ้นมาทำก่อน"
+      },
+      "prompt": {
+        "en": "Think of something physical or visual you use every week that could be better. A shelf that never holds what you need. A club poster nobody reads. A bag, a bike, a workbench, a room layout.",
+        "th": "นึกถึงของที่จับต้องได้หรือมองเห็นได้ซึ่งคุณใช้ทุกสัปดาห์และน่าจะดีกว่านี้ได้ เช่น ชั้นวางที่ไม่เคยวางของได้พอ โปสเตอร์ชมรมที่ไม่มีใครอ่าน กระเป๋า จักรยาน โต๊ะทำงาน หรือการจัดวางห้อง"
+      },
       "steps": [
         {
           "id": "thing",
           "type": "text",
           "required": true,
           "minLength": 20,
-          "label": "What would you remake, and what is wrong with it now?",
-          "placeholder": "Name the thing and say plainly what does not work about it."
+          "label": {
+            "en": "What would you remake, and what is wrong with it now?",
+            "th": "คุณจะทำอะไรใหม่ และตอนนี้มันมีปัญหาอะไร"
+          },
+          "placeholder": {
+            "en": "Name the thing and say plainly what does not work about it.",
+            "th": "บอกชื่อสิ่งนั้น และบอกตรง ๆ ว่าอะไรที่ใช้ไม่ได้"
+          }
         },
         {
           "id": "approach",
@@ -94,17 +340,100 @@
           "required": true,
           "minSelected": 2,
           "maxSelected": 4,
-          "label": "How would you start? Choose the 2–4 steps you would genuinely do first.",
-          "help": "Choose what you would really do, not what sounds most impressive.",
+          "label": {
+            "en": "How would you start? Choose the 2–4 steps you would genuinely do first.",
+            "th": "คุณจะเริ่มอย่างไร เลือก 2–4 ขั้นที่คุณจะทำจริง ๆ"
+          },
+          "help": {
+            "en": "Choose what you would really do, not what sounds most impressive.",
+            "th": "เลือกสิ่งที่คุณจะทำจริง ไม่ใช่สิ่งที่ฟังดูน่าประทับใจที่สุด"
+          },
           "options": [
-            { "value": "takeapart", "label": "Take it apart to see how it is actually made", "evidence": { "R": 3 } },
-            { "value": "sketch", "label": "Sketch several versions before committing to one", "evidence": { "A": 3 } },
-            { "value": "measure", "label": "Measure everything and work out what will fit", "evidence": { "C": 2, "I": 1 } },
-            { "value": "research", "label": "Find out how other people solved the same thing", "evidence": { "I": 3 } },
-            { "value": "ask", "label": "Ask the people who use it what annoys them most", "evidence": { "S": 2, "I": 1 } },
-            { "value": "materials", "label": "Work out the materials, the cost and where to get them", "evidence": { "C": 2, "E": 1 } },
-            { "value": "rough", "label": "Build a rough version immediately and improve it later", "evidence": { "R": 2, "A": 1 } },
-            { "value": "recruit", "label": "Get other people involved and split up the work", "evidence": { "E": 2, "S": 2 } }
+            {
+              "value": "takeapart",
+              "label": {
+                "en": "Take it apart to see how it is actually made",
+                "th": "แกะออกดูว่าจริง ๆ มันประกอบขึ้นมาอย่างไร"
+              },
+              "evidence": {
+                "R": 3
+              }
+            },
+            {
+              "value": "sketch",
+              "label": {
+                "en": "Sketch several versions before committing to one",
+                "th": "ร่างหลาย ๆ แบบก่อนตัดสินใจเลือกอันเดียว"
+              },
+              "evidence": {
+                "A": 3
+              }
+            },
+            {
+              "value": "measure",
+              "label": {
+                "en": "Measure everything and work out what will fit",
+                "th": "วัดทุกอย่างแล้วคำนวณว่าอะไรจะพอดี"
+              },
+              "evidence": {
+                "C": 2,
+                "I": 1
+              }
+            },
+            {
+              "value": "research",
+              "label": {
+                "en": "Find out how other people solved the same thing",
+                "th": "หาดูว่าคนอื่นแก้ปัญหาเดียวกันนี้อย่างไร"
+              },
+              "evidence": {
+                "I": 3
+              }
+            },
+            {
+              "value": "ask",
+              "label": {
+                "en": "Ask the people who use it what annoys them most",
+                "th": "ถามคนที่ใช้มันว่าอะไรน่ารำคาญที่สุด"
+              },
+              "evidence": {
+                "S": 2,
+                "I": 1
+              }
+            },
+            {
+              "value": "materials",
+              "label": {
+                "en": "Work out the materials, the cost and where to get them",
+                "th": "คิดเรื่องวัสดุ ราคา และแหล่งที่จะหาซื้อ"
+              },
+              "evidence": {
+                "C": 2,
+                "E": 1
+              }
+            },
+            {
+              "value": "rough",
+              "label": {
+                "en": "Build a rough version immediately and improve it later",
+                "th": "ทำเวอร์ชันหยาบ ๆ ออกมาก่อนแล้วค่อยปรับทีหลัง"
+              },
+              "evidence": {
+                "R": 2,
+                "A": 1
+              }
+            },
+            {
+              "value": "recruit",
+              "label": {
+                "en": "Get other people involved and split up the work",
+                "th": "ชวนคนอื่นมาร่วมและแบ่งงานกัน"
+              },
+              "evidence": {
+                "E": 2,
+                "S": 2
+              }
+            }
           ]
         },
         {
@@ -112,48 +441,190 @@
           "type": "text",
           "required": true,
           "minLength": 20,
-          "label": "What would you have to give up to make it work?",
-          "placeholder": "Time, money, space, someone else's preference — say which, and why you would accept it."
+          "label": {
+            "en": "What would you have to give up to make it work?",
+            "th": "คุณต้องยอมแลกอะไรไปเพื่อให้มันสำเร็จ"
+          },
+          "placeholder": {
+            "en": "Time, money, space, someone else's preference — say which, and why you would accept it.",
+            "th": "เวลา เงิน พื้นที่ หรือความชอบของคนอื่น — บอกว่าอะไร และทำไมคุณถึงยอม"
+          }
         },
         {
           "id": "energy",
           "type": "single",
           "required": true,
-          "label": "Which part of that would you most look forward to?",
+          "label": {
+            "en": "Which part of that would you most look forward to?",
+            "th": "ส่วนไหนที่คุณตั้งตารอมากที่สุด"
+          },
           "options": [
-            { "value": "hands", "label": "The actual making — cutting, fitting, assembling", "evidence": { "R": 3 } },
-            { "value": "look", "label": "Getting the look and feel exactly right", "evidence": { "A": 3 } },
-            { "value": "solving", "label": "Working out why the old version failed", "evidence": { "I": 3 } },
-            { "value": "precision", "label": "Getting the measurements and the plan exact", "evidence": { "C": 3 } },
-            { "value": "showing", "label": "Handing it over and seeing someone use it", "evidence": { "S": 2, "E": 2 } }
+            {
+              "value": "hands",
+              "label": {
+                "en": "The actual making — cutting, fitting, assembling",
+                "th": "การลงมือทำจริง — ตัด ประกอบ ติดตั้ง"
+              },
+              "evidence": {
+                "R": 3
+              }
+            },
+            {
+              "value": "look",
+              "label": {
+                "en": "Getting the look and feel exactly right",
+                "th": "การทำให้หน้าตาและสัมผัสออกมาตรงใจเป๊ะ"
+              },
+              "evidence": {
+                "A": 3
+              }
+            },
+            {
+              "value": "solving",
+              "label": {
+                "en": "Working out why the old version failed",
+                "th": "การหาว่าทำไมเวอร์ชันเดิมถึงล้มเหลว"
+              },
+              "evidence": {
+                "I": 3
+              }
+            },
+            {
+              "value": "precision",
+              "label": {
+                "en": "Getting the measurements and the plan exact",
+                "th": "การทำให้การวัดและแผนแม่นยำ"
+              },
+              "evidence": {
+                "C": 3
+              }
+            },
+            {
+              "value": "showing",
+              "label": {
+                "en": "Handing it over and seeing someone use it",
+                "th": "การส่งมอบและได้เห็นคนอื่นใช้มัน"
+              },
+              "evidence": {
+                "S": 2,
+                "E": 2
+              }
+            }
           ]
         }
       ],
       "textEvidenceKeywords": {
-        "R": ["build", "built", "fix", "fixed", "repair", "machine", "wire", "tool", "assemble", "hardware"],
-        "I": ["why", "data", "measure", "test", "analyse", "analyze", "research", "experiment", "cause", "pattern"],
-        "A": ["design", "draw", "poster", "video", "write", "creative", "layout", "colour", "color", "story"],
-        "S": ["help", "helped", "teach", "taught", "explain", "friend", "classmate", "together", "support", "listen"],
-        "E": ["organise", "organize", "lead", "led", "start", "started", "convince", "pitch", "sell", "team"],
-        "C": ["schedule", "spreadsheet", "record", "list", "sort", "track", "budget", "accurate", "system", "order"]
+        "R": [
+          "build",
+          "built",
+          "fix",
+          "fixed",
+          "repair",
+          "machine",
+          "wire",
+          "tool",
+          "assemble",
+          "hardware"
+        ],
+        "I": [
+          "why",
+          "data",
+          "measure",
+          "test",
+          "analyse",
+          "analyze",
+          "research",
+          "experiment",
+          "cause",
+          "pattern"
+        ],
+        "A": [
+          "design",
+          "draw",
+          "poster",
+          "video",
+          "write",
+          "creative",
+          "layout",
+          "colour",
+          "color",
+          "story"
+        ],
+        "S": [
+          "help",
+          "helped",
+          "teach",
+          "taught",
+          "explain",
+          "friend",
+          "classmate",
+          "together",
+          "support",
+          "listen"
+        ],
+        "E": [
+          "organise",
+          "organize",
+          "lead",
+          "led",
+          "start",
+          "started",
+          "convince",
+          "pitch",
+          "sell",
+          "team"
+        ],
+        "C": [
+          "schedule",
+          "spreadsheet",
+          "record",
+          "list",
+          "sort",
+          "track",
+          "budget",
+          "accurate",
+          "system",
+          "order"
+        ]
       }
     },
     {
       "id": "mission-run-something",
-      "bestFor": ["S", "E"],
-      "title": "Get one small thing to happen for other people",
-      "chosenBecause": "your answers leaned towards working with people and getting things started",
+      "bestFor": [
+        "S",
+        "E"
+      ],
+      "title": {
+        "en": "Get one small thing to happen for other people",
+        "th": "ทำให้เรื่องเล็ก ๆ สักเรื่องเกิดขึ้นเพื่อคนอื่น"
+      },
+      "chosenBecause": {
+        "en": "your answers leaned towards working with people and getting things started",
+        "th": "คำตอบของคุณเอนไปทางการทำงานกับคนและการเริ่มต้นสิ่งใหม่"
+      },
       "minutes": 12,
-      "objective": "Plan one small real activity that other people would take part in, and describe how you would actually get it to happen. The interesting part is which job you would take yourself.",
-      "prompt": "Think of something small you could genuinely organise: a study session before an exam, a clean-up, a stall at a school event, a group that helps younger students with one specific subject.",
+      "objective": {
+        "en": "Plan one small real activity that other people would take part in, and describe how you would actually get it to happen. The interesting part is which job you would take yourself.",
+        "th": "วางแผนกิจกรรมเล็ก ๆ ที่มีคนอื่นมาร่วมจริง และอธิบายว่าคุณจะทำให้มันเกิดขึ้นได้อย่างไร ส่วนที่น่าสนใจคือคุณจะรับหน้าที่ไหนไว้เอง"
+      },
+      "prompt": {
+        "en": "Think of something small you could genuinely organise: a study session before an exam, a clean-up, a stall at a school event, a group that helps younger students with one specific subject.",
+        "th": "นึกถึงเรื่องเล็ก ๆ ที่คุณจัดได้จริง เช่น ติวก่อนสอบ เก็บกวาดพื้นที่ ออกร้านในงานโรงเรียน หรือตั้งกลุ่มช่วยรุ่นน้องในวิชาใดวิชาหนึ่ง"
+      },
       "steps": [
         {
           "id": "activity",
           "type": "text",
           "required": true,
           "minLength": 20,
-          "label": "What would you run, and who is it for?",
-          "placeholder": "Describe the activity in a sentence or two, and say who would turn up."
+          "label": {
+            "en": "What would you run, and who is it for?",
+            "th": "คุณจะจัดอะไร และจัดให้ใคร"
+          },
+          "placeholder": {
+            "en": "Describe the activity in a sentence or two, and say who would turn up.",
+            "th": "อธิบายกิจกรรมสักหนึ่งถึงสองประโยค และบอกว่าใครจะมาร่วม"
+          }
         },
         {
           "id": "approach",
@@ -161,17 +632,98 @@
           "required": true,
           "minSelected": 2,
           "maxSelected": 4,
-          "label": "How would you start? Choose the 2–4 steps you would genuinely do first.",
-          "help": "Choose what you would really do, not what a good organiser is supposed to do.",
+          "label": {
+            "en": "How would you start? Choose the 2–4 steps you would genuinely do first.",
+            "th": "คุณจะเริ่มอย่างไร เลือก 2–4 ขั้นที่คุณจะทำจริง ๆ"
+          },
+          "help": {
+            "en": "Choose what you would really do, not what a good organiser is supposed to do.",
+            "th": "เลือกสิ่งที่คุณจะทำจริง ไม่ใช่สิ่งที่ผู้จัดงานที่ดีควรทำ"
+          },
           "options": [
-            { "value": "askneed", "label": "Ask people what they actually need before deciding", "evidence": { "S": 3 } },
-            { "value": "persuade", "label": "Get a teacher or the school to say yes", "evidence": { "E": 3 } },
-            { "value": "plan", "label": "Write the schedule, the roles and the checklist", "evidence": { "C": 3 } },
-            { "value": "promote", "label": "Design the poster or the message that gets people there", "evidence": { "A": 2, "E": 1 } },
-            { "value": "setup", "label": "Handle the physical setup — space, chairs, equipment", "evidence": { "R": 3 } },
-            { "value": "teach", "label": "Run the session itself and explain things to people", "evidence": { "S": 2, "E": 1 } },
-            { "value": "check", "label": "Work out beforehand what could go wrong and why", "evidence": { "I": 3 } },
-            { "value": "budget", "label": "Work out what it costs and how to cover it", "evidence": { "C": 2, "E": 1 } }
+            {
+              "value": "askneed",
+              "label": {
+                "en": "Ask people what they actually need before deciding",
+                "th": "ถามคนอื่นก่อนว่าเขาต้องการอะไรจริง ๆ"
+              },
+              "evidence": {
+                "S": 3
+              }
+            },
+            {
+              "value": "persuade",
+              "label": {
+                "en": "Get a teacher or the school to say yes",
+                "th": "ขอให้ครูหรือโรงเรียนอนุมัติ"
+              },
+              "evidence": {
+                "E": 3
+              }
+            },
+            {
+              "value": "plan",
+              "label": {
+                "en": "Write the schedule, the roles and the checklist",
+                "th": "เขียนตาราง หน้าที่ และเช็กลิสต์"
+              },
+              "evidence": {
+                "C": 3
+              }
+            },
+            {
+              "value": "promote",
+              "label": {
+                "en": "Design the poster or the message that gets people there",
+                "th": "ออกแบบโปสเตอร์หรือข้อความที่ดึงคนมา"
+              },
+              "evidence": {
+                "A": 2,
+                "E": 1
+              }
+            },
+            {
+              "value": "setup",
+              "label": {
+                "en": "Handle the physical setup — space, chairs, equipment",
+                "th": "จัดการเรื่องสถานที่ โต๊ะเก้าอี้ และอุปกรณ์"
+              },
+              "evidence": {
+                "R": 3
+              }
+            },
+            {
+              "value": "teach",
+              "label": {
+                "en": "Run the session itself and explain things to people",
+                "th": "ดำเนินกิจกรรมเองและอธิบายให้คนอื่นเข้าใจ"
+              },
+              "evidence": {
+                "S": 2,
+                "E": 1
+              }
+            },
+            {
+              "value": "check",
+              "label": {
+                "en": "Work out beforehand what could go wrong and why",
+                "th": "คิดล่วงหน้าว่าอะไรอาจผิดพลาดและเพราะอะไร"
+              },
+              "evidence": {
+                "I": 3
+              }
+            },
+            {
+              "value": "budget",
+              "label": {
+                "en": "Work out what it costs and how to cover it",
+                "th": "คำนวณค่าใช้จ่ายและหาทางหาเงินมาให้พอ"
+              },
+              "evidence": {
+                "C": 2,
+                "E": 1
+              }
+            }
           ]
         },
         {
@@ -179,30 +731,150 @@
           "type": "text",
           "required": true,
           "minLength": 20,
-          "label": "What is the part most likely to go wrong, and what would you do about it?",
-          "placeholder": "Nobody turns up, the room is double-booked, one person does all the work — pick one and say how you would handle it."
+          "label": {
+            "en": "What is the part most likely to go wrong, and what would you do about it?",
+            "th": "ส่วนไหนที่มีโอกาสพลาดมากที่สุด และคุณจะรับมืออย่างไร"
+          },
+          "placeholder": {
+            "en": "Nobody turns up, the room is double-booked, one person does all the work — pick one and say how you would handle it.",
+            "th": "ไม่มีคนมา ห้องถูกจองซ้อน หรือมีคนเดียวที่ทำงานทั้งหมด — เลือกมาหนึ่งอย่างแล้วบอกว่าคุณจะจัดการยังไง"
+          }
         },
         {
           "id": "energy",
           "type": "single",
           "required": true,
-          "label": "Which part of that would you most look forward to?",
+          "label": {
+            "en": "Which part of that would you most look forward to?",
+            "th": "ส่วนไหนที่คุณตั้งตารอมากที่สุด"
+          },
           "options": [
-            { "value": "helping", "label": "Actually helping the people who came", "evidence": { "S": 3 } },
-            { "value": "rallying", "label": "Getting people on board and keeping them going", "evidence": { "E": 3 } },
-            { "value": "running", "label": "Making the plan run exactly as it should", "evidence": { "C": 3 } },
-            { "value": "makinglook", "label": "Making it look and feel like something worth joining", "evidence": { "A": 3 } },
-            { "value": "hands", "label": "Setting up and handling the practical side", "evidence": { "R": 3 } }
+            {
+              "value": "helping",
+              "label": {
+                "en": "Actually helping the people who came",
+                "th": "การได้ช่วยคนที่มาจริง ๆ"
+              },
+              "evidence": {
+                "S": 3
+              }
+            },
+            {
+              "value": "rallying",
+              "label": {
+                "en": "Getting people on board and keeping them going",
+                "th": "การชวนคนให้มาร่วมและทำให้เขาอยู่ต่อ"
+              },
+              "evidence": {
+                "E": 3
+              }
+            },
+            {
+              "value": "running",
+              "label": {
+                "en": "Making the plan run exactly as it should",
+                "th": "การทำให้แผนเดินได้ตรงตามที่ควรเป็น"
+              },
+              "evidence": {
+                "C": 3
+              }
+            },
+            {
+              "value": "makinglook",
+              "label": {
+                "en": "Making it look and feel like something worth joining",
+                "th": "การทำให้มันดูน่าเข้าร่วม"
+              },
+              "evidence": {
+                "A": 3
+              }
+            },
+            {
+              "value": "hands",
+              "label": {
+                "en": "Setting up and handling the practical side",
+                "th": "การจัดเตรียมและดูแลเรื่องปฏิบัติ"
+              },
+              "evidence": {
+                "R": 3
+              }
+            }
           ]
         }
       ],
       "textEvidenceKeywords": {
-        "R": ["build", "built", "fix", "fixed", "repair", "machine", "wire", "tool", "assemble", "hardware"],
-        "I": ["why", "data", "measure", "test", "analyse", "analyze", "research", "experiment", "cause", "pattern"],
-        "A": ["design", "draw", "poster", "video", "write", "creative", "layout", "colour", "color", "story"],
-        "S": ["help", "helped", "teach", "taught", "explain", "friend", "classmate", "together", "support", "listen"],
-        "E": ["organise", "organize", "lead", "led", "start", "started", "convince", "pitch", "sell", "team"],
-        "C": ["schedule", "spreadsheet", "record", "list", "sort", "track", "budget", "accurate", "system", "order"]
+        "R": [
+          "build",
+          "built",
+          "fix",
+          "fixed",
+          "repair",
+          "machine",
+          "wire",
+          "tool",
+          "assemble",
+          "hardware"
+        ],
+        "I": [
+          "why",
+          "data",
+          "measure",
+          "test",
+          "analyse",
+          "analyze",
+          "research",
+          "experiment",
+          "cause",
+          "pattern"
+        ],
+        "A": [
+          "design",
+          "draw",
+          "poster",
+          "video",
+          "write",
+          "creative",
+          "layout",
+          "colour",
+          "color",
+          "story"
+        ],
+        "S": [
+          "help",
+          "helped",
+          "teach",
+          "taught",
+          "explain",
+          "friend",
+          "classmate",
+          "together",
+          "support",
+          "listen"
+        ],
+        "E": [
+          "organise",
+          "organize",
+          "lead",
+          "led",
+          "start",
+          "started",
+          "convince",
+          "pitch",
+          "sell",
+          "team"
+        ],
+        "C": [
+          "schedule",
+          "spreadsheet",
+          "record",
+          "list",
+          "sort",
+          "track",
+          "budget",
+          "accurate",
+          "system",
+          "order"
+        ]
       }
     }
   ]

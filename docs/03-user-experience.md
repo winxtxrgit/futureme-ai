@@ -169,8 +169,9 @@ research, security review and legal review before implementation.
   motion under `prefers-reduced-motion`.
 - The primary flow uses native controls and visible focus states, but it has not had a formal
   keyboard, WCAG or assistive-technology audit.
-- A light theme and Thai-native typography are planned. The current interface is English, so Thai
-  wrapping and font behaviour remain untested.
+- Light, dark and system themes are implemented, and the complete flow is bilingual Thai/English.
+  Thai wrapping is covered by the running interface, but the translation and typography have not
+  had a formal cross-cultural or accessibility review.
 - Every recommendation screen carries a standing disclaimer: this is information to explore, not
   a prediction or a guarantee of admission, employment or income. Verify current criteria with
   official sources and talk to a counsellor.

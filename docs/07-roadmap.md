@@ -45,11 +45,11 @@ One complete path, working end to end, in preference to many partial ones.
 
 | Item | Status | Notes |
 |---|:--:|---|
-| Guest interview flow | 🟢 | 12 items plus context, input-validated, editable, survives a refresh |
+| Guest interview flow | 🟢 | 30 interest items plus five context prompts, bilingual, input-validated, editable, survives a refresh |
 | Scenario mission | 🟢 | Three missions, rule-selected from the interview, drafts autosave |
 | Up to three explainable routes | 🟢 | Evidence, limitations, unknowns and provenance on every card |
 | Side-by-side comparison | 🟢 | Consistent criteria, coarse bands rather than false precision |
-| 30-day plan | 🟢 | Four-week template plus gap-specific tasks; check-ins persist |
+| 30-day plan | 🟢 | 30-day/four-week template plus gap-specific tasks; check-ins persist |
 | Refusal behaviour | 🟢 | Three gates return nothing rather than guess |
 | Safeguarding pause | 🟢 | Keyword rule; stops recommendations and offers support |
 | Optional LLM explanation | 🟢 | Connected, labelled, cannot affect ranking |
@@ -59,7 +59,7 @@ One complete path, working end to end, in preference to many partial ones.
 | Consented counsellor summary | 📐 | Moved to Phase 3 — needs accounts first |
 | Server-side persistence | 📐 | Moved to Phase 3 — guest mode only today |
 
-**Definition of done, as met:** a reviewer clones the repository, runs `npm install && npm run
+**Definition of done, as met:** a reviewer clones the repository, runs `npm ci && npm run
 dev`, and completes interview → mission → routes → compare → 30-day plan with no account, no API
 key and no developer intervention.
 
@@ -72,13 +72,13 @@ of children.
 
 | Item | Priority | Why |
 |---|---|---|
-| Validate the interest instrument | High | 12 items written from the Holland framework; never psychometrically reviewed |
+| Validate the interest instrument | High | 30 items (17 adapted from 18REST, 13 project-written); never administered or psychometrically validated |
 | Validate mission rubrics | High | Same standard |
 | Replace the route catalogue with licensed data | High | Cost, location and timing drive the filters and carry no source at all |
 | Build an independent evaluation set | High | No held-out benchmark exists, so quality cannot be claimed |
 | Bias audit | High | Across gender, region, school size, socioeconomic status |
 | Safety escalation path | High | Distress signals in an interview need a defined route to a human |
-| Thai language | High | The target users are Thai students; the prototype is English |
+| Formal Thai adaptation | High | The interface is bilingual, but the Thai item set is a first draft without independent translation, expert review or cognitive debriefing |
 | Fix the QLoRA dataset | Medium | Train and test sets are identical, ten examples each — unusable. Only matters once §Phase 3 conversation work starts |
 | Adaptive interview and STAR extraction | Medium | The static questionnaire is the largest gap between the prototype and the product |
 | Interactive DAG roadmap | Medium | The linear plan understates how partial prerequisites really are |

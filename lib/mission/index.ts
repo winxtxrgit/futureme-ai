@@ -1,7 +1,15 @@
 import missionsData from "@/data/missions.json";
-import { DIMENSION_LABELS, MIN_INTEREST_ANSWERS } from "@/lib/decision-engine";
+import { MIN_INTEREST_ANSWERS } from "@/lib/decision-engine";
 import { normaliseInterests, topDimensions } from "@/lib/decision-engine/scoring";
 import { DIMENSIONS, type Dimension, type InterviewInput } from "@/lib/decision-engine/types";
+
+/** Why the selector landed on a mission. Rendered by the interface. */
+export type MissionRationale =
+  | { kind: "learner-choice" }
+  | { kind: "default-too-few" }
+  | { kind: "default-too-even" }
+  | { kind: "default-no-match" }
+  | { kind: "matched"; missionId: string; dimension: Dimension; rank: number };
 
 export type MissionDef = (typeof missionsData.missions)[number];
 
@@ -28,7 +36,11 @@ export interface MissionChoice {
   /** True when the learner picked this mission themselves. */
   isLearnerChoice: boolean;
   /** One sentence, shown to the learner, explaining how this mission was picked. */
-  rationale: string;
+  /**
+   * Why this mission was chosen, as data. The interface renders it in the
+   * active language; the selector does not own a wording.
+   */
+  rationale: MissionRationale;
 }
 
 export function missionById(id: string | null | undefined): MissionDef | undefined {
@@ -65,7 +77,7 @@ export function selectMission(
       matchedDimension: null,
       isDefault: false,
       isLearnerChoice: true,
-      rationale: "You chose this mission yourself.",
+      rationale: { kind: "learner-choice" },
     };
   }
 
@@ -85,8 +97,8 @@ export function selectMission(
       isLearnerChoice: false,
       rationale:
         answered < MIN_INTEREST_ANSWERS
-          ? "Your interview is not far enough along to choose a mission from, so this is the default one. You can pick a different mission below."
-          : "Your interview answers were too even for any one direction to stand out, so this is the default mission. You can pick a different one below.",
+          ? { kind: "default-too-few" }
+          : { kind: "default-too-even" },
     };
   }
 
@@ -95,17 +107,13 @@ export function selectMission(
     const dimension = ranked[rank];
     const match = MISSIONS.find((m) => (m.bestFor as Dimension[]).includes(dimension));
     if (match) {
-      const strength =
-        rank === 0
-          ? "your strongest interest"
-          : `your ${ordinal(rank + 1)}-strongest interest, because nothing covers the ones above it`;
       return {
         mission: match,
         alternatives: MISSIONS.filter((m) => m.id !== match.id),
         matchedDimension: dimension,
         isDefault: false,
         isLearnerChoice: false,
-        rationale: `Chosen because ${match.chosenBecause}. “${DIMENSION_LABELS[dimension]}” was ${strength}.`,
+        rationale: { kind: "matched", missionId: match.id, dimension, rank },
       };
     }
   }
@@ -119,10 +127,6 @@ export function selectMission(
     matchedDimension: null,
     isDefault: true,
     isLearnerChoice: false,
-    rationale: "No mission matched your profile, so this is the default one.",
+    rationale: { kind: "default-no-match" },
   };
-}
-
-function ordinal(n: number): string {
-  return ["", "first", "second", "third", "fourth", "fifth", "sixth"][n] ?? `${n}th`;
 }

@@ -25,7 +25,10 @@ describe("route provenance", () => {
     for (const route of routesData.routes) {
       expect(route.provenance, `${route.id} has no provenance`).toBeDefined();
       expect(STATUSES).toContain(route.provenance.status);
-      expect(route.provenance.note.length).toBeGreaterThan(30);
+      // The note is bilingual now, so both sides have to be substantive — a Thai
+      // note that is an empty string would otherwise pass unnoticed.
+      expect(route.provenance.note.en.length).toBeGreaterThan(30);
+      expect(route.provenance.note.th.length).toBeGreaterThan(20);
     }
   });
 

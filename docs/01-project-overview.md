@@ -65,8 +65,9 @@ flowchart LR
     D --> E["30-day plan"]
 ```
 
-**Phase 1 — what the student says.** *In the running prototype:* a twelve-item interest
-questionnaire plus four context questions, producing a RIASEC-shaped profile. *Planned:* an
+**Phase 1 — what the student says.** *In the running prototype:* a bilingual 30-item interest
+questionnaire plus four required context questions and one optional free-text prompt, producing a RIASEC-shaped profile. Its design and
+limitations are documented in [questionnaire-methodology.md](questionnaire-methodology.md). *Planned:* an
 adaptive Thai-language conversation. Socratic questioning, Motivational Interviewing, Laddering,
 and STAR are candidate design influences that require expert review; none validates the current
 instrument.
@@ -122,11 +123,11 @@ This is hackathon-stage work with a real research base and a runnable prototype,
 product. Specifically:
 
 - The interest instrument and mission rubrics **have not been validated** by qualified assessment experts.
-- The interview is a **static English questionnaire**, not the adaptive Thai conversation described above.
+- The assessment is a **fixed bilingual Thai/English questionnaire**, not the adaptive conversation described above. The Thai translation is a first draft, not a completed cross-cultural adaptation.
 - The route catalogue is **illustrative**. Cost, location and timing carry no source, and they drive the eligibility filters.
 - **No student pilot has run.** Every effectiveness claim in this repository is a design goal, not a measured result.
 - NDLP/DEEP integration is a **future possibility**, dependent on documentation and partnership approval that do not exist. The July 2026 source audit could not verify the technical claims previously made about either platform.
-- AIS Cloud is the **intended deployment target**, described from published specifications. Nothing is deployed there yet.
+- No cloud or platform partner is confirmed. AIS Cloud remains one exploratory deployment candidate described from public specifications; nothing is deployed there.
 
 A capability-by-capability breakdown of what is implemented, what is a reduced prototype and what
 is only designed, is in [06 · Development Plan](06-development-plan.md#component-status). See

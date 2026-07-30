@@ -15,7 +15,9 @@
     "test:e2e": "playwright test",
     "test:e2e:install": "playwright install --with-deps chromium",
     "verify": "npm run typecheck && npm run lint && npm test && npm run build",
-    "screenshots": "node scripts/capture-screenshots.mjs"
+    "screenshots": "node scripts/capture-screenshots.mjs",
+    "analyse": "node scripts/analyse.ts",
+    "simulate": "node scripts/simulate-pilot.ts"
   },
   "dependencies": {
     "next": "15.5.21",

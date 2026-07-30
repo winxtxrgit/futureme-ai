@@ -13,6 +13,7 @@ import { chromium } from "@playwright/test";
 import { mkdir, readdir, stat, writeFile } from "node:fs/promises";
 import path from "node:path";
 import sharp from "sharp";
+import questions from "../data/questions.json" with { type: "json" };
 
 const BASE = process.env.SCREENSHOT_BASE_URL ?? "http://127.0.0.1:3100";
 const OUT = "assets/screenshots/app";
@@ -20,24 +21,35 @@ const OUT = "assets/screenshots/app";
 const DESKTOP = { width: 1280, height: 900 };
 const MOBILE = { width: 390, height: 844 };
 
-/** The interview answers that drive each captured state. */
-const PROFILES = {
-  practical: ["R1", "R2", "I1", "I2"],
-  people: ["S1", "S2", "E1", "E2"],
-};
-const ALL_ITEMS = ["R1", "R2", "I1", "I2", "A1", "A2", "S1", "S2", "E1", "E2", "C1", "C2"];
+/** The interview answers that drive each captured state, read from the bank. */
+const PROFILES = { practical: ["R", "I"], people: ["S", "E"] };
+const ALL_ITEMS = questions.interest.map((q) => ({ id: q.id, dimension: q.dimension }));
 
-async function answerInterview(page, profile = "practical") {
+/**
+ * Walks the step-based assessment the way a learner does, one question at a
+ * time, and stops on the review screen.
+ *
+ * `pause` is awaited just before the interest item at its index is answered,
+ * which is how the documentation captures a mid-assessment question card rather
+ * than the first or the last screen.
+ */
+async function answerInterview(page, profile = "practical", pause = null) {
   const high = PROFILES[profile];
   await page.goto(`${BASE}/`);
   await page.getByTestId("start-guest").click();
-  for (const id of ALL_ITEMS) {
-    await page.getByTestId(`q-${id}-${high.includes(id) ? 5 : 2}`).click();
+
+  for (let i = 0; i < ALL_ITEMS.length; i++) {
+    if (pause && pause.at === i) await pause.run();
+    const item = ALL_ITEMS[i];
+    await page.getByTestId(`q-${item.id}-${high.includes(item.dimension) ? 5 : 2}`).click();
   }
+
   await page.getByTestId("ctx-tier-LOWER_SECONDARY").click();
   await page.getByTestId("ctx-cost-moderate").click();
   await page.getByTestId("ctx-mobility-can_move").click();
   await page.getByTestId("ctx-horizon-soon").click();
+  // Past the optional free-text question, onto the review screen.
+  await page.getByTestId("assessment-skip").click();
 }
 
 /** Fills whichever mission the rule selected, then submits. */
@@ -81,7 +93,9 @@ async function completeMission(page) {
 }
 
 async function shot(page, name) {
-  await page.waitForTimeout(250); // let transitions settle
+  // Long enough for the assessment's auto-advance plus its card transition,
+  // otherwise the question card is captured part-way through its fade.
+  await page.waitForTimeout(600);
   await page.screenshot({ path: `${OUT}/${name}.png`, fullPage: true });
   console.log(`captured ${name}`);
 }
@@ -93,8 +107,11 @@ async function capture(browser, viewport, suffix) {
   await page.goto(`${BASE}/`);
   await shot(page, `landing-${suffix}`);
 
-  await answerInterview(page);
-  await shot(page, `interview-${suffix}`);
+  // Captured part-way through, where the question card is the whole screen.
+  await answerInterview(page, "practical", {
+    at: 3,
+    run: () => shot(page, `interview-${suffix}`),
+  });
 
   await page.getByTestId("interview-continue").click();
   await shot(page, `mission-${suffix}`);
@@ -121,7 +138,7 @@ async function captureEdgeCases(browser) {
 
   // Too-flat profile: every answer identical, so the engine refuses.
   await page.goto(`${BASE}/interview`);
-  for (const id of ALL_ITEMS) await page.getByTestId(`q-${id}-3`).click();
+  for (const item of ALL_ITEMS) await page.getByTestId(`q-${item.id}-3`).click();
   await page.getByTestId("ctx-tier-LOWER_SECONDARY").click();
   await page.getByTestId("ctx-cost-moderate").click();
   await page.getByTestId("ctx-mobility-can_move").click();
@@ -129,11 +146,14 @@ async function captureEdgeCases(browser) {
   await page.goto(`${BASE}/routes`);
   await shot(page, "insufficient-desktop");
 
-  // The safeguarding pause.
+  // The safeguarding pause. The free text is reached back through the review
+  // list, which is where the assessment leaves off.
   await page.goto(`${BASE}/privacy`);
   await page.getByTestId("delete-data").click();
   await answerInterview(page);
+  await page.getByTestId("review-proud").click();
   await page.getByTestId("ctx-proud").fill("honestly sometimes I want to die");
+  await page.getByTestId("go-review").click();
   await page.getByTestId("interview-continue").click();
   await shot(page, "safety-desktop");
 

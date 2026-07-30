@@ -13,10 +13,10 @@ import type {
 } from "@/lib/decision-engine/types";
 
 export const SESSION_KEY = "futureme.guest.v1";
-export const SESSION_VERSION = 2;
+export const SESSION_VERSION = 3;
 
 /** Versions this build knows how to read. Anything else is discarded. */
-export const READABLE_VERSIONS = [1, 2] as const;
+export const READABLE_VERSIONS = [1, 2, 3] as const;
 
 /**
  * Upper bounds on anything we read back. localStorage is writable by the user,

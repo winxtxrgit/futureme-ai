@@ -4,37 +4,52 @@ import { useCallback, useEffect, useMemo, useState } from "react";
 import { useRouter } from "next/navigation";
 import { Button, Card, EvidenceBadge, Shell } from "@/components/ui";
 import {
-  DIMENSION_LABELS,
-  explainReason,
   freshness,
   recommend,
   routeDataAsOf,
-  STRENGTH_HELP,
-  STRENGTH_LABELS,
   unverifiedFields,
   type Recommendation,
   type RouteResult,
 } from "@/lib/decision-engine";
+import { joinLabels } from "@/lib/decision-engine/explanations";
+import type { Localised, SupportingEvidence } from "@/lib/decision-engine/types";
 import { loadOrCreate, saveSession, type GuestSession } from "@/lib/session";
+import { usePreferences } from "@/components/PreferencesProvider";
+import { format, localised } from "@/lib/i18n";
+import type { Dictionary } from "@/lib/i18n";
+import type { Language } from "@/lib/preferences";
 import SafetyPause from "@/components/SafetyPause";
 
 /** Descriptive, not ranked — the same words the compare screen uses. */
-const COST_LABEL: Record<string, string> = { low: "Lower", moderate: "Moderate", high: "Higher" };
-const TIMING_LABEL: Record<string, string> = { soon: "Sooner", later: "Later" };
+function costLabel(band: string, t: Dictionary): string {
+  return { low: t.routes.costLow, moderate: t.routes.costModerate, high: t.routes.costHigh }[band] ?? "—";
+}
+function timingLabel(v: string, t: Dictionary): string {
+  return { soon: t.routes.timingSoon, later: t.routes.timingLater }[v] ?? "—";
+}
 
-function attributes(route: RouteResult): { label: string; value: string }[] {
+function attributes(route: RouteResult, t: Dictionary): { label: string; value: string }[] {
   return [
-    { label: "Cost", value: COST_LABEL[route.costBand] ?? "—" },
-    { label: "Time to earning", value: TIMING_LABEL[route.timeToEarning] ?? "—" },
-    { label: "Study away from home", value: route.requiresRelocation ? "Usually" : "Not needed" },
+    { label: t.compare.rowCost, value: costLabel(route.costBand, t) },
+    { label: t.routes.attrTimeToEarning, value: timingLabel(route.timeToEarning, t) },
     {
-      label: "Flexibility",
-      value: route.flexibility >= 0.66 ? "Keeps options open" : route.flexibility < 0.4 ? "More specialised" : "Balanced",
+      label: t.routes.attrRelocation,
+      value: route.requiresRelocation ? t.routes.relocationUsually : t.routes.relocationNotNeeded,
+    },
+    {
+      label: t.routes.attrFlexibility,
+      value:
+        route.flexibility >= 0.66
+          ? t.routes.flexOpen
+          : route.flexibility < 0.4
+            ? t.routes.flexSpecialised
+            : t.routes.flexBalanced,
     },
   ];
 }
 
 export default function RoutesPage() {
+  const { t, lang } = usePreferences();
   const router = useRouter();
   const [session, setSession] = useState<GuestSession | null>(null);
   const [error, setError] = useState<string | null>(null);
@@ -88,7 +103,7 @@ export default function RoutesPage() {
     return (
       <Shell step={3}>
         <Card className="border-coral/40">
-          <h1 className="text-xl font-bold">Something went wrong generating routes</h1>
+          <h1 className="text-xl font-bold">{t.routes.errorTitle}</h1>
           <p className="mt-2 text-sm text-muted">
             The engine could not process this session. Your answers are still saved.
           </p>
@@ -96,7 +111,7 @@ export default function RoutesPage() {
             {error}
           </pre>
           <div className="mt-5 flex flex-wrap gap-3">
-            <Button onClick={() => setSession(loadOrCreate())}>Try again</Button>
+            <Button onClick={() => setSession(loadOrCreate())}>{t.routes.tryAgain}</Button>
             <Button href="/interview" variant="secondary">
               Review my answers
             </Button>
@@ -120,24 +135,24 @@ export default function RoutesPage() {
       <Shell step={3}>
         <Card className="border-warning/40">
           <h1 className="text-2xl font-bold" data-testid="insufficient-heading">
-            We do not have enough evidence to suggest a route yet.
+            {t.routes.insufficientTitle}
           </h1>
-          <p className="mt-3 text-sm text-muted">
-            Complete another mission or review your responses.
-          </p>
+          <p className="mt-3 text-sm text-muted">{t.routes.insufficientBody}</p>
           <ul className="mt-4 space-y-1.5 text-sm text-muted">
             {result.insufficientReasons.map((r) => (
-              <li key={r}>• {explainReason(r)}</li>
+              <li key={r}>• {t.engine.reasons[r]}</li>
             ))}
           </ul>
           <p className="mt-4 text-sm text-muted">
-            You answered {result.profile.answeredInterest} of {result.profile.totalInterest}{" "}
-            statements.
+            {format(t.routes.answeredCount, {
+              answered: result.profile.answeredInterest,
+              total: result.profile.totalInterest,
+            })}
           </p>
           <div className="mt-6 flex flex-wrap gap-3">
-            <Button href="/interview">Review my answers</Button>
+            <Button href="/interview">{t.routes.reviewAnswers}</Button>
             <Button href="/mission" variant="secondary">
-              Redo the mission
+              {t.routes.redoMission}
             </Button>
           </div>
         </Card>
@@ -152,16 +167,14 @@ export default function RoutesPage() {
       {/* Level 1 — understand what the options are, fast. */}
       <header className="mb-6">
         <h1 className="text-2xl font-bold sm:text-3xl" data-testid="routes-heading">
-          {many ? `${result.routes.length} directions worth exploring` : "One direction worth exploring"}
+          {many ? format(t.routes.headingMany, { n: result.routes.length }) : t.routes.headingOne}
         </h1>
         <p className="mt-2 max-w-2xl text-sm text-muted">
-          {many
-            ? "None of these is a “best match.” Think of them as hypotheses to test — skim the three, then compare."
-            : "This is not a “best match” — it is one hypothesis to test. Read it, then explore the evidence."}
+          {many ? t.routes.introMany : t.routes.introOne}
         </p>
       </header>
 
-      <SignalSummary result={result} />
+      <SignalSummary result={result} t={t} />
 
       {/* Equal weight by construction: same grid cell, same card, same actions. */}
       <ul className="mt-6 grid gap-4 lg:grid-cols-3">
@@ -171,6 +184,8 @@ export default function RoutesPage() {
             route={route}
             llmAvailable={llmAvailable}
             onSelect={() => select(route.routeId)}
+            t={t}
+            lang={lang}
           />
         ))}
       </ul>
@@ -178,21 +193,18 @@ export default function RoutesPage() {
       {/* Level 2 — comparison is the intended next step, so it is the one strong CTA. */}
       {many ? (
         <section className="mt-8 rounded-card border border-mint/30 bg-mint/5 p-5 text-center">
-          <h2 className="text-base font-bold">Not sure which one?</h2>
-          <p className="mx-auto mt-1 max-w-md text-sm text-muted">
-            Put them side by side on cost, time to earning, flexibility and evidence before you
-            decide anything.
-          </p>
+          <h2 className="text-base font-bold">{t.routes.notSureTitle}</h2>
+          <p className="mx-auto mt-1 max-w-md text-sm text-muted">{t.routes.notSureBody}</p>
           <div className="mt-4">
             <Button href="/compare" data-testid="go-compare">
-              Compare the {result.routes.length} routes →
+              {format(t.routes.compareN, { n: result.routes.length })}
             </Button>
           </div>
         </section>
       ) : (
         <div className="mt-8">
           <Button href="/compare" variant="secondary" data-testid="go-compare">
-            See this route&rsquo;s details side by side →
+            {t.routes.compareOne}
           </Button>
         </div>
       )}
@@ -200,16 +212,15 @@ export default function RoutesPage() {
       {result.ineligible.length > 0 ? (
         <details className="mt-8 rounded-card border border-line bg-surface p-5">
           <summary className="cursor-pointer text-sm font-bold">
-            {result.ineligible.length} route{result.ineligible.length === 1 ? "" : "s"} were filtered
-            out — see why
+            {format(t.routes.filteredSummary, { n: result.ineligible.length })}
           </summary>
           <ul className="mt-4 space-y-3">
             {result.ineligible.map((r) => (
               <li key={r.routeId} className="text-sm">
-                <p className="font-semibold">{r.name}</p>
+                <p className="font-semibold">{localised(r.name, lang)}</p>
                 <ul className="mt-1 text-muted">
                   {r.reasons.map((code) => (
-                    <li key={code}>• {explainReason(code)}</li>
+                    <li key={code}>• {t.engine.reasons[code]}</li>
                   ))}
                 </ul>
               </li>
@@ -219,11 +230,13 @@ export default function RoutesPage() {
       ) : null}
 
       {/* Level 3 (shared) — source and freshness, once, not repeated per card. */}
-      <DataFreshness />
+      <DataFreshness t={t} />
 
       <p className="mt-4 text-xs text-muted">
-        Generated in your browser by engine {result.engineVersion} from demo route data compiled{" "}
-        {routeDataAsOf()}. No model chose these routes.
+        {format(t.routes.generatedBy, {
+          version: result.engineVersion,
+          date: routeDataAsOf(),
+        })}
       </p>
     </Shell>
   );
@@ -234,27 +247,31 @@ export default function RoutesPage() {
  * summary of what the answers pointed to. The detail — why more than one route
  * is showing — is available on demand, not shouted by default.
  */
-function SignalSummary({ result }: { result: Recommendation }) {
+function SignalSummary({ result, t }: { result: Recommendation; t: Dictionary }) {
   const { profile } = result;
-  const interest = profile.topDimensions.slice(0, 2).map((d) => DIMENSION_LABELS[d]);
+  const interest = profile.topDimensions.slice(0, 2).map((d) => t.engine.dimensions[d]);
   const tied = result.routes.some((r) => r.tiedWith.length > 0);
   const contradicted = profile.contradictions.length > 0;
   const missionLine = !profile.missionCompleted
-    ? "Not completed yet"
+    ? t.routes.missionNotDone
     : contradicted
-      ? "Pointed somewhere different"
-      : "Agreed with your interview";
+      ? t.routes.missionDiffered
+      : t.routes.missionAgreed;
 
   return (
     <section className="rounded-card border border-line bg-surface p-5" data-testid="signal-summary">
-      <h2 className="text-sm font-bold">What your answers pointed to</h2>
+      <h2 className="text-sm font-bold">{t.routes.summaryTitle}</h2>
       <dl className="mt-3 grid gap-3 sm:grid-cols-2">
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-wide text-muted">Interview</dt>
-          <dd className="mt-1 text-sm">{interest.join(" + ") || "No clear lead"}</dd>
+          <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
+            {t.routes.summaryInterview}
+          </dt>
+          <dd className="mt-1 text-sm">{interest.join(" + ") || t.routes.summaryNoLead}</dd>
         </div>
         <div>
-          <dt className="text-xs font-semibold uppercase tracking-wide text-muted">Mission</dt>
+          <dt className="text-xs font-semibold uppercase tracking-wide text-muted">
+            {t.routes.summaryMission}
+          </dt>
           <dd className="mt-1 text-sm">{missionLine}</dd>
         </div>
       </dl>
@@ -262,21 +279,14 @@ function SignalSummary({ result }: { result: Recommendation }) {
       {tied || contradicted ? (
         <details className="mt-3 border-t border-line pt-3">
           <summary className="cursor-pointer text-xs font-bold" data-testid="why-multiple">
-            Why you&rsquo;re seeing more than one
+            {t.routes.whyMultiple}
           </summary>
           <div className="mt-2 space-y-2 text-sm text-muted">
             {contradicted ? (
-              <p>
-                Your answers and your actions pointed in different directions. That is useful
-                evidence, not a mistake — it often means you need more real-world exploration before
-                choosing. Worth talking through with a counsellor.
-              </p>
+              <p>{t.routes.whyContradicted}</p>
             ) : null}
             {tied ? (
-              <p>
-                Some of these routes are too close to rank confidently, so FutureMe shows them as
-                equals rather than inventing an order the evidence does not support.
-              </p>
+              <p>{t.routes.whyTied}</p>
             ) : null}
           </div>
         </details>
@@ -291,43 +301,44 @@ function SignalSummary({ result }: { result: Recommendation }) {
  * different problem from out-of-date information and the learner deserves both.
  * Shown once for the whole page; per-route sources live in each route's details.
  */
-function DataFreshness() {
+function DataFreshness({ t }: { t: Dictionary }) {
   const f = freshness();
   const unsourced = unverifiedFields();
 
   return (
     <section className="mt-8 rounded-card border border-line bg-surface p-5" data-testid="data-freshness">
-      <h2 className="text-sm font-bold">About this information</h2>
+      <h2 className="text-sm font-bold">{t.routes.freshnessTitle}</h2>
 
       <dl className="mt-3 space-y-2 text-sm">
         <div className="flex flex-wrap gap-x-2">
-          <dt className="font-semibold">Compiled</dt>
+          <dt className="font-semibold">{t.routes.compiled}</dt>
           <dd className="text-muted">
-            {f.dataAsOf} · {f.ageInDays} days ago
+            {format(t.routes.daysAgo, { date: f.dataAsOf, days: f.ageInDays })}
             {f.stale ? (
               <span className="ml-2 rounded-full border border-warning/40 bg-warning/5 px-2 py-0.5 text-[11px] font-bold text-warning">
-                past its {f.thresholdDays}-day review point
+                {format(t.routes.pastReview, { days: f.thresholdDays })}
               </span>
             ) : (
               <span className="ml-2 rounded-full border border-mint/40 bg-mint/5 px-2 py-0.5 text-[11px] font-bold text-mint">
-                within its {f.thresholdDays}-day review point
+                {format(t.routes.withinReview, { days: f.thresholdDays })}
               </span>
             )}
           </dd>
         </div>
         <div className="flex flex-wrap gap-x-2">
-          <dt className="font-semibold">Not sourced at all</dt>
+          <dt className="font-semibold">{t.routes.notSourced}</dt>
           <dd className="text-muted">
-            {unsourced.join(", ")} — these are the team&rsquo;s estimates, and they drive the
-            filters that ruled routes in or out.
+            {format(t.routes.notSourcedBody, {
+              fields: unsourced
+                .map((f) => t.routes.fieldNames[f as keyof typeof t.routes.fieldNames] ?? f)
+                .join(", "),
+            })}
           </dd>
         </div>
       </dl>
 
       <p className="mt-3 text-xs text-muted">
-        Each route&rsquo;s own source is inside its <strong className="text-ink">Explore</strong>{" "}
-        panel. Entry criteria and fees change every academic year — check anything you would act on
-        against the institution&rsquo;s own current page before you decide.
+        <FreshnessFooter t={t} />
       </p>
     </section>
   );
@@ -337,10 +348,14 @@ function RouteCard({
   route,
   llmAvailable,
   onSelect,
+  t,
+  lang,
 }: {
   route: RouteResult;
   llmAvailable: boolean;
   onSelect: () => void;
+  t: Dictionary;
+  lang: Language;
 }) {
   const [open, setOpen] = useState(false);
   const panelId = `route-detail-${route.routeId}`;
@@ -348,21 +363,26 @@ function RouteCard({
   return (
     <Card as="li" className="flex flex-col">
       {/* Identity */}
-      <h2 className="text-base font-bold leading-snug">{route.name}</h2>
-      {route.shortName && route.shortName !== route.name ? (
-        <p className="mt-0.5 text-xs text-muted">{route.shortName}</p>
+      <h2 className="text-base font-bold leading-snug">{localised(route.name, lang)}</h2>
+      {localised(route.shortName, lang) !== localised(route.name, lang) ? (
+        <p className="mt-0.5 text-xs text-muted">{localised(route.shortName, lang)}</p>
       ) : null}
 
-      <p className="mt-2 text-sm text-muted">{route.summary}</p>
+      <p className="mt-2 text-sm text-muted">{localised(route.summary, lang)}</p>
 
       <div className="mt-3">
-        <EvidenceBadge strength={route.evidenceStrength} label={STRENGTH_LABELS[route.evidenceStrength]} />
-        <p className="mt-1.5 text-xs text-muted">{STRENGTH_HELP[route.evidenceStrength]}</p>
+        <EvidenceBadge
+          strength={route.evidenceStrength}
+          label={t.engine.strengthLabels[route.evidenceStrength]}
+        />
+        <p className="mt-1.5 text-xs text-muted">
+          {t.engine.strengthHelp[route.evidenceStrength]}
+        </p>
       </div>
 
       {/* At a glance — descriptive dimensions, not scores */}
       <dl className="mt-4 grid grid-cols-2 gap-x-3 gap-y-2">
-        {attributes(route).map((a) => (
+        {attributes(route, t).map((a) => (
           <div key={a.label}>
             <dt className="text-[11px] uppercase tracking-wide text-muted">{a.label}</dt>
             <dd className="text-sm">{a.value}</dd>
@@ -370,18 +390,18 @@ function RouteCard({
         ))}
       </dl>
 
-      <WhyItMayFit route={route} llmAvailable={llmAvailable} />
+      <WhyItMayFit route={route} llmAvailable={llmAvailable} t={t} lang={lang} />
 
       {route.limitations.length > 0 ? (
         <div className="mt-4">
-          <h3 className="text-xs font-bold uppercase tracking-wide text-muted">Consider</h3>
-          <p className="mt-1 text-sm text-muted">{route.limitations[0]}</p>
+          <h3 className="text-xs font-bold uppercase tracking-wide text-muted">{t.routes.consider}</h3>
+          <p className="mt-1 text-sm text-muted">{localised(route.limitations[0], lang)}</p>
         </div>
       ) : null}
 
       <div className="mt-4 rounded-control border border-line bg-surface2 p-3">
-        <p className="text-xs font-bold uppercase tracking-wide text-muted">Try this next</p>
-        <p className="mt-1 text-sm">{route.nextExperiment}</p>
+        <p className="text-xs font-bold uppercase tracking-wide text-muted">{t.routes.tryThisNext}</p>
+        <p className="mt-1 text-sm">{localised(route.nextExperiment, lang)}</p>
       </div>
 
       <div className="flex-1" />
@@ -396,59 +416,59 @@ function RouteCard({
           aria-expanded={open}
           aria-controls={panelId}
         >
-          {open ? "Hide details" : "Explore this route"}
+          {open ? t.routes.hideDetails : t.routes.exploreRoute}
         </Button>
       </div>
 
       {open ? (
         <div id={panelId} className="mt-4 space-y-4 border-t border-line pt-4" data-testid={`detail-${route.routeId}`}>
-          <DetailBlock title="Why FutureMe showed this">
+          <DetailBlock title={t.routes.whyShown}>
             <ul className="space-y-1 text-sm text-muted">
               {route.reasons.slice(0, 4).map((code) => (
-                <li key={code}>• {explainReason(code)}</li>
+                <li key={code}>• {t.engine.reasons[code]}</li>
               ))}
             </ul>
           </DetailBlock>
 
-          <DetailBlock title="Evidence used">
+          <DetailBlock title={t.routes.evidenceUsed}>
             <ul className="space-y-1 text-sm text-muted">
-              {route.supportingEvidence.map((e) => (
-                <li key={e}>• {e}</li>
+              {route.supportingEvidence.map((e, i) => (
+                <li key={i}>• {renderEvidence(e, lang, t)}</li>
               ))}
             </ul>
           </DetailBlock>
 
           {route.strengths.length > 0 ? (
-            <DetailBlock title="Strengths">
+            <DetailBlock title={t.routes.strengths}>
               <ul className="space-y-1 text-sm text-muted">
                 {route.strengths.map((s) => (
-                  <li key={s}>• {s}</li>
+                  <li key={s.en}>• {localised(s, lang)}</li>
                 ))}
               </ul>
             </DetailBlock>
           ) : null}
 
           {route.limitations.length > 0 ? (
-            <DetailBlock title="Trade-offs">
+            <DetailBlock title={t.routes.tradeOffs}>
               <ul className="space-y-1 text-sm text-muted">
                 {route.limitations.map((s) => (
-                  <li key={s}>• {s}</li>
+                  <li key={s.en}>• {localised(s, lang)}</li>
                 ))}
               </ul>
             </DetailBlock>
           ) : null}
 
           {route.openQuestions.length > 0 ? (
-            <DetailBlock title="Still unanswered">
+            <DetailBlock title={t.routes.stillUnanswered}>
               <ul className="space-y-1 text-sm text-muted">
                 {route.openQuestions.map((q) => (
-                  <li key={q}>• {q}</li>
+                  <li key={q}>• {t.engine.openQuestions[q]}</li>
                 ))}
               </ul>
             </DetailBlock>
           ) : null}
 
-          <Provenance route={route} />
+          <Provenance route={route} t={t} lang={lang} />
 
           <Button
             variant="secondary"
@@ -456,11 +476,34 @@ function RouteCard({
             className="w-full"
             data-testid={`plan-${route.routeId}`}
           >
-            Build a 30-day plan for this route →
+            {t.routes.buildPlan}
           </Button>
         </div>
       ) : null}
     </Card>
+  );
+}
+
+/** Turns a structured evidence item into a sentence in the active language. */
+function renderEvidence(e: SupportingEvidence, lang: Language, t: Dictionary): string {
+  if (e.kind === "mission") {
+    return format(t.engine.evidenceMission, { note: localised(e.note, lang) });
+  }
+  const names = e.dimensions.map((d) => t.engine.dimensions[d]);
+  return format(t.engine.evidenceInterview, {
+    interests: joinLabels(names, t.engine.listConjunction, t.engine.noPattern),
+  });
+}
+
+/** The freshness footer has an emphasised word mid-sentence in both languages. */
+function FreshnessFooter({ t }: { t: Dictionary }) {
+  const [before, after = ""] = t.routes.freshnessFooter.split("{strong}");
+  return (
+    <>
+      {before}
+      <strong className="text-ink">{t.routes.freshnessFooterStrong}</strong>
+      {after}
+    </>
   );
 }
 
@@ -482,9 +525,19 @@ function DetailBlock({ title, children }: { title: string; children: React.React
  * reasoning in plainer words; it is labelled as wording only and never changes
  * which route this is or why it appeared.
  */
-function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable: boolean }) {
+function WhyItMayFit({
+  route,
+  llmAvailable,
+  t,
+  lang,
+}: {
+  route: RouteResult;
+  llmAvailable: boolean;
+  t: Dictionary;
+  lang: Language;
+}) {
   const codes = route.reasons.slice(0, 3);
-  const deterministic = codes.map((c) => explainReason(c)).join(" ");
+  const deterministic = codes.map((c) => t.engine.reasons[c]).join(" ");
   const signals = route.strengths.slice(0, 2);
 
   const [rewritten, setRewritten] = useState<string | null>(null);
@@ -518,7 +571,7 @@ function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable
 
   return (
     <section className="mt-4">
-      <h3 className="text-xs font-bold uppercase tracking-wide text-muted">Why it may fit you</h3>
+      <h3 className="text-xs font-bold uppercase tracking-wide text-muted">{t.routes.whyItMayFit}</h3>
 
       {showing && rewritten ? (
         <>
@@ -526,7 +579,7 @@ function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable
             {rewritten}
           </p>
           <p className="mt-2 text-[11px] leading-relaxed text-muted">
-            <span className="rounded-full border border-indigo/40 bg-indigo/10 px-2 py-0.5 font-bold text-indigo">
+            <span className="rounded-full border border-indigo/40 bg-indigo/10 px-2 py-0.5 font-bold text-indigoText">
               Reworded by AI
             </span>{" "}
             Wording only. This route and why it appeared were decided by the rule engine before any
@@ -548,9 +601,9 @@ function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable
             </p>
           ) : (
             <ul className="mt-2 space-y-1 text-sm" data-testid={`why-rules-${route.routeId}`}>
-              {signals.map((s) => (
-                <li key={s} className="text-muted">
-                  • {s}
+              {signals.map((s: Localised) => (
+                <li key={s.en} className="text-muted">
+                  • {localised(s, lang)}
                 </li>
               ))}
             </ul>
@@ -564,10 +617,10 @@ function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable
               className="mt-2 text-xs text-muted underline underline-offset-2 disabled:opacity-50"
             >
               {state === "loading"
-                ? "Rewriting…"
+                ? t.routes.rewriting
                 : rewritten
-                  ? "Show the AI rewording"
-                  : "Say why in plainer words (AI)"}
+                  ? t.routes.showRewording
+                  : t.routes.sayPlainer}
             </button>
           ) : null}
           {state === "unavailable" ? (
@@ -583,19 +636,27 @@ function WhyItMayFit({ route, llmAvailable }: { route: RouteResult; llmAvailable
 }
 
 /** Where this route's description came from, shown inside its Explore panel. */
-function Provenance({ route }: { route: RouteResult }) {
+function Provenance({
+  route,
+  t,
+  lang,
+}: {
+  route: RouteResult;
+  t: Dictionary;
+  lang: Language;
+}) {
   const { provenance: p } = route;
   const label =
     p.status === "partially-verified"
-      ? "Structure checked against a listed source"
+      ? t.routes.provStatusPartial
       : p.status === "illustrative"
-        ? "Written by the team — no source verifies this route as described"
-        : "Not supported by any source in the registry";
+        ? t.routes.provStatusIllustrative
+        : t.routes.provStatusUnverified;
 
   return (
     <details className="border-t border-line pt-3">
       <summary className="cursor-pointer text-xs font-bold" data-testid={`provenance-${route.routeId}`}>
-        Where this came from
+        {t.routes.whereFrom}
       </summary>
       <div className="mt-2 space-y-2 text-xs text-muted">
         <p>
@@ -607,13 +668,12 @@ function Provenance({ route }: { route: RouteResult }) {
                 : "border-warning/40 bg-warning/5 text-warning",
             ].join(" ")}
           >
-            {p.status}
+            {label}
           </span>
-          {label}
         </p>
         {p.source && p.sourceUrl ? (
           <p>
-            Source:{" "}
+            {t.routes.sourceLabel}{" "}
             <a
               href={p.sourceUrl}
               target="_blank"
@@ -622,12 +682,12 @@ function Provenance({ route }: { route: RouteResult }) {
             >
               {p.source}
             </a>
-            {p.lastVerified ? ` · last checked ${p.lastVerified}` : null}
+            {p.lastVerified ? format(t.routes.lastChecked, { date: p.lastVerified }) : null}
           </p>
         ) : (
-          <p>Source: none recorded.</p>
+          <p>{t.routes.sourceNone}</p>
         )}
-        <p>{p.note}</p>
+        <p>{localised(p.note, lang)}</p>
       </div>
     </details>
   );

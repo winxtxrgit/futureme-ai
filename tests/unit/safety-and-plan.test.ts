@@ -6,9 +6,9 @@ import type { RouteResult } from "@/lib/decision-engine/types";
 function route(overrides: Partial<RouteResult> = {}): RouteResult {
   return {
     routeId: "vocational-digital",
-    name: "Vocational ปวช. — Digital and IT",
-    shortName: "ปวช. Digital & IT",
-    summary: "s",
+    name: { en: "Vocational ปวช. — Digital and IT", th: "ปวช. สายดิจิทัลและไอที" },
+    shortName: { en: "ปวช. Digital & IT", th: "ปวช. ดิจิทัล & ไอที" },
+    summary: { en: "s", th: "ส" },
     score: { interests: 70, strengths: 65, learningStyle: 60, feasibility: 70, flexibility: 60, total: 67 },
     evidenceStrength: "strong",
     reasons: [],
@@ -16,7 +16,7 @@ function route(overrides: Partial<RouteResult> = {}): RouteResult {
     strengths: [],
     limitations: [],
     openQuestions: [],
-    nextExperiment: "Build one tiny thing.",
+    nextExperiment: { en: "Build one tiny thing.", th: "ลองทำของเล็ก ๆ หนึ่งชิ้น" },
     costBand: "low",
     requiresRelocation: false,
     flexibility: 0.6,
@@ -28,7 +28,7 @@ function route(overrides: Partial<RouteResult> = {}): RouteResult {
       source: "VEC Data Catalog — หลักสูตร ปวช. 2567",
       sourceUrl: "https://ckan.vec.go.th/th/dataset/voc_curriculum",
       lastVerified: "2026-07-24",
-      note: "test fixture",
+      note: { en: "test fixture", th: "ข้อมูลทดสอบ" },
     },
     ...overrides,
   };
@@ -83,13 +83,13 @@ describe("30-day plan", () => {
 
   it("adds a repeat-the-mission task when the evidence contradicted itself", () => {
     const p = buildPlan(route({ reasons: ["MISSION_CONTRADICTS"] }));
-    expect(p.addedForGaps.some((t) => /Redo the mission/i.test(t))).toBe(true);
+    expect(p.addedForGaps).toContain("MISSION_CONTRADICTION");
   });
 
   it("adds budget and location tasks when those answers were unknown", () => {
     const p = buildPlan(route({ reasons: ["MISSING_COST_DATA", "MISSING_LOCATION_DATA"] }));
-    expect(p.addedForGaps.some((t) => /budget/i.test(t))).toBe(true);
-    expect(p.addedForGaps.some((t) => /away from home/i.test(t))).toBe(true);
+    expect(p.addedForGaps).toContain("COST_UNKNOWN");
+    expect(p.addedForGaps).toContain("LOCATION_UNKNOWN");
   });
 
   it("adds the suggested experiment when evidence is weak", () => {

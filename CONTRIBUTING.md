@@ -16,7 +16,7 @@ in [02 · Research](docs/02-research-and-evidence.md#source-registry) and the au
 **Thai education domain expertise.** Curriculum structures, TCAS criteria and ปวช. programme
 details change. If something here is out of date or wrong, we want to know.
 
-**Assessment and psychometrics review.** The twelve-item interest questionnaire and the
+**Assessment and psychometrics review.** The 30-item interest questionnaire and the
 scenario-mission rubrics have not been validated by qualified experts. Informed criticism is welcome, and formal
 review would be more welcome still.
 

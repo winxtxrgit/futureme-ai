@@ -1,26 +1,42 @@
 import { expect, test, type Page } from "@playwright/test";
+import questions from "../data/questions.json";
+
+/**
+ * Item ids come from the bank, not from literals. The instrument is expected to
+ * change as it is revised; the journey it drives is not.
+ */
+const ITEMS = questions.interest.map((q) => ({ id: q.id, dimension: q.dimension }));
 
 /**
  * End-to-end: the flow a reviewer is asked to complete.
  * Runs against the production build with no ANTHROPIC_API_KEY set.
  */
 
+/**
+ * The assessment shows one question at a time and advances when answered, so
+ * this walks the same sequence the learner does: each click lands on the next
+ * question, and the optional free text at the end is skipped to reach the
+ * review screen, where the continue button lives.
+ */
 async function completeInterview(page: Page, high: "practical" | "people" = "practical") {
   await page.goto("/");
   await page.getByTestId("start-guest").click();
   await expect(page).toHaveURL(/\/interview/);
 
-  // Answer every interest item: the chosen group high, the rest low.
-  const highIds = high === "practical" ? ["R1", "R2", "I1", "I2"] : ["S1", "S2", "E1", "E2"];
-  const allIds = ["R1", "R2", "I1", "I2", "A1", "A2", "S1", "S2", "E1", "E2", "C1", "C2"];
-  for (const id of allIds) {
-    await page.getByTestId(`q-${id}-${highIds.includes(id) ? 5 : 2}`).click();
+  // Answer every interest item: the chosen dimensions high, the rest low.
+  const highDims = high === "practical" ? ["R", "I"] : ["S", "E"];
+  for (const item of ITEMS) {
+    await page.getByTestId(`q-${item.id}-${highDims.includes(item.dimension) ? 5 : 2}`).click();
   }
 
   await page.getByTestId("ctx-tier-LOWER_SECONDARY").click();
   await page.getByTestId("ctx-cost-moderate").click();
   await page.getByTestId("ctx-mobility-can_move").click();
   await page.getByTestId("ctx-horizon-soon").click();
+
+  // Past the optional "something you were proud of" question, onto review.
+  await page.getByTestId("assessment-skip").click();
+  await expect(page.getByTestId("interview-continue")).toBeVisible();
 }
 
 /**
@@ -276,13 +292,21 @@ test("the learner can overrule the chosen mission", async ({ page }) => {
 test("guest progress survives a page refresh mid-interview", async ({ page }) => {
   await completeInterview(page);
   await page.reload();
-  await expect(page.getByTestId("q-R1-5")).toHaveAttribute("aria-pressed", "true");
-  await expect(page.getByTestId("ctx-tier-LOWER_SECONDARY")).toHaveAttribute("aria-pressed", "true");
+
+  // A refresh resumes where the learner stopped rather than at question one.
+  // Everything required is answered and only the optional free text is blank,
+  // so that is the review screen.
+  await expect(page.getByTestId("interview-continue")).toBeVisible();
+  await expect(page.getByTestId(`review-${ITEMS[0].id}`)).toContainText("Strongly like");
+  await expect(page.getByTestId("review-tier")).toContainText("ม.1 – ม.3");
 });
 
 test("an incomplete interview is blocked with an explanation, not a guess", async ({ page }) => {
   await page.goto("/interview");
-  await page.getByTestId("q-R1-5").click();
+  await page.getByTestId(`q-${ITEMS[0].id}-5`).click();
+
+  // Skipping ahead to the end is allowed; continuing on one answer is not.
+  await page.getByTestId("go-review").click();
   await page.getByTestId("interview-continue").click();
 
   await expect(page).toHaveURL(/\/interview/);
@@ -291,14 +315,16 @@ test("an incomplete interview is blocked with an explanation, not a guess", asyn
 
 test("thin evidence yields no routes rather than invented ones", async ({ page }) => {
   await page.goto("/interview");
-  // Answer the minimum count, but identically — no dimension stands out.
-  for (const id of ["R1", "R2", "I1", "I2", "A1", "A2", "S1", "S2"]) {
-    await page.getByTestId(`q-${id}-3`).click();
+  // Clear the answer floor, but answer identically — no dimension stands out.
+  for (const item of ITEMS) {
+    await page.getByTestId(`q-${item.id}-3`).click();
   }
+
   await page.getByTestId("ctx-tier-LOWER_SECONDARY").click();
   await page.getByTestId("ctx-cost-moderate").click();
   await page.getByTestId("ctx-mobility-can_move").click();
   await page.getByTestId("ctx-horizon-unsure").click();
+  await page.getByTestId("assessment-skip").click();
   await page.getByTestId("interview-continue").click();
 
   await page.goto("/routes");
@@ -308,7 +334,11 @@ test("thin evidence yields no routes rather than invented ones", async ({ page }
 
 test("the safety rule pauses recommendations and offers support", async ({ page }) => {
   await completeInterview(page);
+
+  // Back into the optional free text from the review list, then on to continue.
+  await page.getByTestId("review-proud").click();
   await page.getByTestId("ctx-proud").fill("honestly sometimes I want to die");
+  await page.getByTestId("go-review").click();
   await page.getByTestId("interview-continue").click();
 
   await expect(page.getByText(/pause the career questions/i)).toBeVisible();
@@ -337,10 +367,13 @@ test("every route says where its information came from, and how old it is", asyn
   await expect(page.getByText(/Source:/).first()).toBeVisible();
 
   // And the page as a whole states the catalogue's age and what is unsourced.
+  // The unsourced fields are named in words rather than as JSON keys — a learner
+  // cannot be expected to know what "costBand" means.
   const freshnessPanel = page.getByTestId("data-freshness");
   await expect(freshnessPanel).toBeVisible();
   await expect(freshnessPanel).toContainText(/review point/);
-  await expect(freshnessPanel).toContainText("costBand");
+  await expect(freshnessPanel).toContainText("relative cost");
+  await expect(freshnessPanel).not.toContainText("costBand");
 });
 
 test("the AI rewording control is hidden when the layer is not configured", async ({ page }) => {
@@ -405,39 +438,44 @@ test("the AI endpoint survives a malformed request", async ({ request }) => {
 });
 
 test("hand-edited local storage is repaired, not trusted", async ({ page }) => {
+  const FIRST = ITEMS[0].id;
   await completeInterview(page);
 
   // Rewrite the stored session the way an extension, an older release, or a
   // curious student with devtools might: a Likert value off the scale, a
   // question that does not exist, and a route that was deleted.
-  await page.evaluate(() => {
+  await page.evaluate((FIRST) => {
     const key = "futureme.guest.v1";
     const raw = window.localStorage.getItem(key);
     if (!raw) throw new Error("expected a stored session");
     const session = JSON.parse(raw);
-    session.interview.interest.R1 = 99;
+    session.interview.interest[FIRST] = 99;
     session.interview.interest.NOT_A_QUESTION = 5;
     session.selectedRouteId = "route-deleted-last-year";
     window.localStorage.setItem(key, JSON.stringify(session));
-  });
+  }, ITEMS[0].id);
 
   await page.goto("/interview");
 
   // The learner is told, once, that something was dropped.
   await expect(page.getByText(/could not be read/i)).toBeVisible();
 
-  // The out-of-range answer is gone rather than scored...
-  await expect(page.getByTestId("q-R1-5")).toHaveAttribute("aria-pressed", "false");
-  // ...while everything valid survived.
-  await expect(page.getByTestId("q-R2-5")).toHaveAttribute("aria-pressed", "true");
-  await expect(page.getByTestId("ctx-tier-LOWER_SECONDARY")).toHaveAttribute("aria-pressed", "true");
+  // Dropping that answer makes it the first unfinished question, so that is where the
+  // assessment resumes — with nothing selected rather than a scored 99.
+  await expect(page.getByTestId(`q-${ITEMS[0].id}-5`)).toHaveAttribute("aria-checked", "false");
+
+  // Everything valid survived, which the review list shows in one place.
+  await page.getByTestId("go-review").click();
+  await expect(page.getByTestId(`review-${ITEMS[0].id}`)).toContainText("Skipped");
+  await expect(page.getByTestId(`review-${ITEMS[1].id}`)).toContainText("Strongly like");
+  await expect(page.getByTestId("review-tier")).toContainText("ม.1 – ม.3");
 
   // The unrecognised values are not written back.
   const cleaned = await page.evaluate(() =>
     JSON.parse(window.localStorage.getItem("futureme.guest.v1") ?? "{}"),
   );
   expect(cleaned.interview.interest.NOT_A_QUESTION).toBeUndefined();
-  expect(cleaned.interview.interest.R1).toBeUndefined();
+  expect(cleaned.interview.interest[FIRST]).toBeUndefined();
   expect(cleaned.selectedRouteId).toBeNull();
 });
 
@@ -447,7 +485,7 @@ test("unreadable local storage resets to a clean session", async ({ page }) => {
 
   await page.goto("/interview");
   await expect(page.getByText(/start you a new session/i)).toBeVisible();
-  await expect(page.getByTestId("q-R1-5")).toHaveAttribute("aria-pressed", "false");
+  await expect(page.getByTestId(`q-${ITEMS[0].id}-5`)).toHaveAttribute("aria-checked", "false");
 });
 
 test("data deletion clears the guest session", async ({ page }) => {
@@ -457,5 +495,5 @@ test("data deletion clears the guest session", async ({ page }) => {
   await expect(page.getByText(/Deleted\./)).toBeVisible();
 
   await page.goto("/interview");
-  await expect(page.getByTestId("q-R1-5")).toHaveAttribute("aria-pressed", "false");
+  await expect(page.getByTestId(`q-${ITEMS[0].id}-5`)).toHaveAttribute("aria-checked", "false");
 });
