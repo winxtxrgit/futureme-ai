@@ -21,6 +21,20 @@ const OUT = "assets/screenshots/app";
 const DESKTOP = { width: 1280, height: 900 };
 const MOBILE = { width: 390, height: 844 };
 
+/**
+ * Pins the interface language and theme.
+ *
+ * Without this the capture inherits the runner's `prefers-color-scheme`, so the
+ * committed images flip between light and dark depending on which machine ran
+ * the script. Documentation that changes appearance by accident is worse than
+ * documentation that is slightly out of date, because nobody can tell which is
+ * intended.
+ */
+async function setPreferences(page, { lang = "en", theme = "dark" } = {}) {
+  await page.getByTestId(`theme-${theme}`).click();
+  await page.getByTestId(`lang-${lang}`).click();
+}
+
 /** The interview answers that drive each captured state, read from the bank. */
 const PROFILES = { practical: ["R", "I"], people: ["S", "E"] };
 const ALL_ITEMS = questions.interest.map((q) => ({ id: q.id, dimension: q.dimension }));
@@ -33,9 +47,10 @@ const ALL_ITEMS = questions.interest.map((q) => ({ id: q.id, dimension: q.dimens
  * which is how the documentation captures a mid-assessment question card rather
  * than the first or the last screen.
  */
-async function answerInterview(page, profile = "practical", pause = null) {
+async function answerInterview(page, profile = "practical", pause = null, prefs = {}) {
   const high = PROFILES[profile];
   await page.goto(`${BASE}/`);
+  await setPreferences(page, prefs);
   await page.getByTestId("start-guest").click();
 
   for (let i = 0; i < ALL_ITEMS.length; i++) {
@@ -92,11 +107,11 @@ async function completeMission(page) {
   await page.getByTestId("mission-submit").click();
 }
 
-async function shot(page, name) {
+async function shot(page, name, { fullPage = true } = {}) {
   // Long enough for the assessment's auto-advance plus its card transition,
   // otherwise the question card is captured part-way through its fade.
   await page.waitForTimeout(600);
-  await page.screenshot({ path: `${OUT}/${name}.png`, fullPage: true });
+  await page.screenshot({ path: `${OUT}/${name}.png`, fullPage });
   console.log(`captured ${name}`);
 }
 
@@ -105,9 +120,12 @@ async function capture(browser, viewport, suffix) {
   const page = await context.newPage();
 
   await page.goto(`${BASE}/`);
+  await setPreferences(page);
   await shot(page, `landing-${suffix}`);
 
   // Captured part-way through, where the question card is the whole screen.
+  // The pause deliberately does not navigate: stepping back and forward inside
+  // the answering loop desynchronises it from the item it expects next.
   await answerInterview(page, "practical", {
     at: 3,
     run: () => shot(page, `interview-${suffix}`),
@@ -131,12 +149,52 @@ async function capture(browser, viewport, suffix) {
   await context.close();
 }
 
+/**
+ * Showcase stills for the README.
+ *
+ * These exist to document capabilities that a single screenshot cannot show at
+ * once: that the assessment is one question at a time, that it runs in Thai, and
+ * that it has a real light theme rather than an inverted dark one.
+ */
+async function captureShowcase(browser) {
+  const context = await browser.newContext({ viewport: DESKTOP, deviceScaleFactor: 1 });
+  const page = await context.newPage();
+
+  // Thai, light: bilingual copy and the light palette in one frame.
+  await page.goto(`${BASE}/privacy`);
+  await setPreferences(page, { lang: "th", theme: "light" });
+  await page.getByTestId("delete-data").click();
+  await page.goto(`${BASE}/interview`);
+  for (let i = 0; i < 4; i++) {
+    const item = ALL_ITEMS[i];
+    await page.getByTestId(`q-${item.id}-4`).click();
+  }
+  // Step back one: answering advances, so the card on screen would otherwise be
+  // an unanswered one and the selected state — the thing worth showing — would
+  // not appear in the still.
+  await page.getByTestId("assessment-prev").click();
+  await shot(page, "interview-th-light-desktop");
+
+  // The review step, in English on dark, at the end of the assessment.
+  await page.goto(`${BASE}/privacy`);
+  await setPreferences(page, { lang: "en", theme: "dark" });
+  await page.getByTestId("delete-data").click();
+  await answerInterview(page);
+  // Viewport height rather than the full page: the review lists all thirty
+  // answers, and a 2,700px still would swamp the README it is embedded in.
+  await shot(page, "interview-review-desktop", { fullPage: false });
+
+  await context.close();
+}
+
 /** The two states a reviewer is least likely to reach by accident. */
 async function captureEdgeCases(browser) {
   const context = await browser.newContext({ viewport: DESKTOP, deviceScaleFactor: 1 });
   const page = await context.newPage();
 
   // Too-flat profile: every answer identical, so the engine refuses.
+  await page.goto(`${BASE}/`);
+  await setPreferences(page);
   await page.goto(`${BASE}/interview`);
   for (const item of ALL_ITEMS) await page.getByTestId(`q-${item.id}-3`).click();
   await page.getByTestId("ctx-tier-LOWER_SECONDARY").click();
@@ -194,6 +252,7 @@ try {
   await mkdir(OUT, { recursive: true });
   await capture(browser, DESKTOP, "desktop");
   await capture(browser, MOBILE, "mobile");
+  await captureShowcase(browser);
   await captureEdgeCases(browser);
 } finally {
   await browser.close();

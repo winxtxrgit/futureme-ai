@@ -123,15 +123,31 @@ FutureMe ช่วยเปลี่ยนความรู้สึกว่�
 
 <table>
 <tr>
-<td width="33%" valign="top">
+<td width="50%" valign="top">
+<a href="assets/screenshots/app/interview-th-light-desktop.png"><img src="assets/screenshots/app/interview-th-light-desktop.png" alt="หน้าตอบคำถามของ FutureMe ภาษาไทย ธีมสว่าง"></a><br>
+<strong>ตอบคำถาม</strong><br><sub>คำถามความสนใจ 30 ข้อ แสดงทีละข้อ บนสเกลชอบ–ไม่ชอบ 5 ระดับ</sub>
+</td>
+<td width="50%" valign="top">
+<a href="assets/screenshots/app/interview-desktop.png"><img src="assets/screenshots/app/interview-desktop.png" alt="หน้าเดียวกันในภาษาอังกฤษ ธีมมืด"></a><br>
+<strong>หน้าเดียวกัน อังกฤษ ธีมมืด</strong><br><sub>ทั้งภาษาและธีมถูกจำไว้ กลับมาใหม่ก็ยังเป็นค่าเดิม</sub>
+</td>
+</tr>
+<tr>
+<td width="50%" valign="top">
 <a href="assets/screenshots/app/mission-desktop.png"><img src="assets/screenshots/app/mission-desktop.png" alt="หน้าภารกิจของ FutureMe ที่สร้างแล้ว"></a><br>
 <strong>ลอง</strong><br><sub>ภารกิจสถานการณ์สั้น ๆ ที่เลือกด้วยกฎซึ่งอธิบายได้</sub>
 </td>
-<td width="33%" valign="top">
+<td width="50%" valign="top">
 <a href="assets/screenshots/app/compare-desktop.png"><img src="assets/screenshots/app/compare-desktop.png" alt="หน้าเปรียบเทียบเส้นทางของ FutureMe ที่สร้างแล้ว"></a><br>
 <strong>เทียบ</strong><br><sub>ใช้เกณฑ์ ข้อจำกัด และหลักฐานชุดเดียวกันกับทุกเส้นทาง</sub>
 </td>
-<td width="33%" valign="top">
+</tr>
+<tr>
+<td width="50%" valign="top">
+<a href="assets/screenshots/app/interview-review-desktop.png"><img src="assets/screenshots/app/interview-review-desktop.png" alt="หน้าทบทวนคำตอบของ FutureMe"></a><br>
+<strong>ทบทวน</strong><br><sub>ทุกคำตอบยังแก้ได้ก่อนส่ง โดยแตะที่บรรทัดเพื่อย้อนกลับไปแก้</sub>
+</td>
+<td width="50%" valign="top">
 <a href="assets/screenshots/app/plan-desktop.png"><img src="assets/screenshots/app/plan-desktop.png" alt="หน้าแผน 30 วันของ FutureMe ที่สร้างแล้ว"></a><br>
 <strong>ลงมือ</strong><br><sub>ทดลองเส้นทาง 30 วัน โดยเก็บความคืบหน้าไว้ในเบราว์เซอร์</sub>
 </td>

@@ -82,6 +82,30 @@ Reflect → Try → Explore → Compare → Act
   คิด      ลอง      สำรวจ       เทียบ      ลงมือ
 ```
 
+<table width="100%">
+<tr>
+<td width="50%" valign="top">
+<a href="assets/screenshots/app/interview-desktop.png"><img src="assets/screenshots/app/interview-desktop.png" alt="The assessment showing a single interest item on a five-point strongly-dislike to strongly-like scale, in English on the dark theme"></a>
+<p align="center"><sub><strong>Step 1 · one question at a time</strong><br>English · dark · ทีละคำถาม</sub></p>
+</td>
+<td width="50%" valign="top">
+<a href="assets/screenshots/app/interview-th-light-desktop.png"><img src="assets/screenshots/app/interview-th-light-desktop.png" alt="The same assessment screen rendered in Thai on the light theme, with one answer selected"></a>
+<p align="center"><sub><strong>Same screen · Thai · light</strong><br>หน้าเดียวกัน ภาษาไทย ธีมสว่าง</sub></p>
+</td>
+</tr>
+</table>
+
+<p align="center">
+  <a href="assets/screenshots/app/interview-review-desktop.png"><img src="assets/screenshots/app/interview-review-desktop.png" alt="The review step listing every interest and context answer, each row selectable to jump back and change it" width="92%"></a>
+</p>
+
+<p align="center">
+  <sub>
+  Answering advances automatically; the review step keeps every answer changeable before you continue.<br>
+  ตอบแล้วเลื่อนให้เอง และหน้าทบทวนทำให้ยังแก้ทุกคำตอบได้ก่อนไปต่อ
+  </sub>
+</p>
+
 ---
 
 <a id="current-status--สถานะปัจจุบัน"></a>
