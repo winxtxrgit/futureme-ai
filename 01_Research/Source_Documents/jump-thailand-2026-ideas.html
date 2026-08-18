@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JUMP Thailand Hackathon 2026 — แนวคิดโปรเจกต์ 7 ไอเดีย</title>
+<style>
+  :root {
+    --ink: #1a2332;
+    --muted: #5a6678;
+    --accent: #0a7d4f;
+    --accent-soft: #e6f4ee;
+    --gold: #b07d1e;
+    --gold-soft: #fdf3e0;
+    --line: #dde3ea;
+    --card: #ffffff;
+    --bg: #f5f7fa;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: 'Sukhumvit Set', 'Thonburi', 'Noto Sans Thai', -apple-system, sans-serif;
+    color: var(--ink);
+    background: var(--bg);
+    line-height: 1.75;
+    font-size: 15px;
+  }
+  .page { max-width: 860px; margin: 0 auto; padding: 40px 28px; }
+
+  /* ---------- Header ---------- */
+  header {
+    background: linear-gradient(135deg, #063d27 0%, #0a7d4f 70%, #12a86b 100%);
+    color: #fff;
+    border-radius: 16px;
+    padding: 36px 36px 30px;
+    margin-bottom: 28px;
+  }
+  header .kicker { font-size: 13px; letter-spacing: 2px; text-transform: uppercase; opacity: .85; }
+  header h1 { font-size: 30px; line-height: 1.3; margin: 6px 0 4px; }
+  header .sub { font-size: 16px; opacity: .92; }
+  .facts {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 10px;
+    margin-top: 22px;
+  }
+  .fact {
+    background: rgba(255,255,255,.12);
+    border: 1px solid rgba(255,255,255,.22);
+    border-radius: 10px;
+    padding: 10px 14px;
+    font-size: 13.5px;
+  }
+  .fact b { display: block; font-size: 15px; margin-bottom: 2px; }
+
+  /* ---------- Sections ---------- */
+  h2 {
+    font-size: 21px;
+    margin: 34px 0 6px;
+    padding-bottom: 8px;
+    border-bottom: 2px solid var(--accent);
+    display: flex; align-items: baseline; gap: 10px;
+  }
+  h2 .no {
+    color: var(--accent);
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .section-note { color: var(--muted); font-size: 14px; margin-bottom: 16px; }
+
+  /* ---------- Idea cards ---------- */
+  .idea {
+    background: var(--card);
+    border: 1px solid var(--line);
+    border-radius: 14px;
+    padding: 24px 26px;
+    margin: 18px 0;
+    break-inside: avoid;
+  }
+  .idea-head { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; margin-bottom: 4px; }
+  .idea-num {
+    background: var(--accent);
+    color: #fff;
+    min-width: 34px; height: 34px;
+    border-radius: 10px;
+    display: flex; align-items: center; justify-content: center;
+    font-weight: 700; font-size: 16px;
+  }
+  .idea h3 { font-size: 18.5px; }
+  .idea .en { color: var(--muted); font-size: 13px; font-weight: 400; }
+  .badges { display: flex; gap: 6px; flex-wrap: wrap; margin: 8px 0 14px; }
+  .badge {
+    font-size: 12px;
+    padding: 3px 10px;
+    border-radius: 99px;
+    background: var(--accent-soft);
+    color: var(--accent);
+    font-weight: 600;
+  }
+  .badge.warn { background: var(--gold-soft); color: var(--gold); }
+  .idea dl { display: grid; grid-template-columns: 110px 1fr; gap: 8px 14px; }
+  .idea dt { font-weight: 700; color: var(--accent); font-size: 13.5px; padding-top: 1px; }
+  .idea dd { color: var(--ink); }
+  .idea dd .stat { color: var(--muted); font-size: 13.5px; }
+
+  /* ---------- Top pick ---------- */
+  .top-pick { border: 2px solid var(--gold); position: relative; }
+  .top-pick::before {
+    content: "⭐ แนะนำที่สุด";
+    position: absolute; top: -13px; right: 20px;
+    background: var(--gold); color: #fff;
+    font-size: 12.5px; font-weight: 700;
+    padding: 3px 14px; border-radius: 99px;
+  }
+
+  /* ---------- Tables ---------- */
+  table { width: 100%; border-collapse: collapse; margin: 14px 0; background: var(--card); font-size: 14px; }
+  th, td { border: 1px solid var(--line); padding: 9px 13px; text-align: left; vertical-align: top; }
+  th { background: var(--accent-soft); color: var(--accent); font-size: 13.5px; }
+  tr:nth-child(even) td { background: #fafbfd; }
+
+  .callout {
+    background: var(--gold-soft);
+    border-left: 4px solid var(--gold);
+    border-radius: 0 10px 10px 0;
+    padding: 16px 20px;
+    margin: 16px 0;
+    break-inside: avoid;
+  }
+  .callout b { color: var(--gold); }
+
+  ul.tight { padding-left: 22px; }
+  ul.tight li { margin: 5px 0; }
+
+  footer {
+    margin-top: 36px;
+    padding-top: 14px;
+    border-top: 1px solid var(--line);
+    color: var(--muted);
+    font-size: 12.5px;
+    text-align: center;
+  }
+
+  @media print {
+    body { background: #fff; font-size: 13px; }
+    .page { padding: 0; max-width: none; }
+    header { border-radius: 0; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .idea, .callout, table, header, .fact { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2 { break-after: avoid; }
+  }
+  @page { margin: 14mm 12mm; }
+</style>
+</head>
+<body>
+<div class="page">
+
+<header>
+  <div class="kicker">AIS Academy · National Hackathon</div>
+  <h1>JUMP Thailand Hackathon 2026</h1>
+  <div class="sub">ธีม: <b>"AI เพื่ออนาคตการศึกษาไทย"</b> — สรุปข้อมูลการแข่งขัน + แนวคิดโปรเจกต์ 7 ไอเดีย</div>
+  <div class="facts">
+    <div class="fact"><b>📅 รับสมัคร</b>1 ก.ค. – 15 ส.ค. 2026 (Google Form)</div>
+    <div class="fact"><b>👥 ทีม</b>3–5 คน (ป.ตรี / อาชีวะ) + ที่ปรึกษา 1 คน</div>
+    <div class="fact"><b>🏆 รางวัล</b>รวม 220,000+ บาท (ที่ 1 = 100,000 บาท)</div>
+    <div class="fact"><b>🎯 Demo Day</b>11 ก.ย. 2026 — ต้องมี Functional Prototype</div>
+  </div>
+</header>
+
+<h2><span class="no">§1</span> ไทม์ไลน์ที่ต้องรู้</h2>
+<table>
+  <tr><th style="width:180px">ช่วงเวลา (2026)</th><th>เหตุการณ์</th></tr>
+  <tr><td>1 ก.ค. – 15 ส.ค.</td><td>เปิดรับสมัคร <b>(ตอนนี้เหลือเวลาไม่ถึง 1 เดือน — ควรรีบฟอร์มทีมและเขียน proposal)</b></td></tr>
+  <tr><td>18 ส.ค.</td><td>ประกาศ 30 ทีมรอบรองชนะเลิศ</td></tr>
+  <tr><td>21 ส.ค.</td><td>Pitching รอบรองชนะเลิศ (ออนไลน์)</td></tr>
+  <tr><td>24 ส.ค.</td><td>ประกาศ 10 ทีมสุดท้าย</td></tr>
+  <tr><td>29–30 ส.ค.</td><td>เตรียมความพร้อม Hackathon</td></tr>
+  <tr><td>4–6 ก.ย.</td><td>งาน Hackathon หลัก @ Pearl Bangkok</td></tr>
+  <tr><td>11 ก.ย.</td><td>Demo Day @ สามย่านมิตรทาวน์</td></tr>
+</table>
+
+<h2><span class="no">§2</span> แนวคิดโปรเจกต์ 7 ไอเดีย</h2>
+<p class="section-note">เรียงตามความน่าสนใจสำหรับเวที Hackathon — ทุกไอเดียยึดหลัก 3 ข้อ: แก้ปัญหาจริงของการศึกษาไทย, ทำ Prototype ได้ทันใน 2 เดือน, และ demo แล้ว "ว้าว" ต่อหน้ากรรมการ</p>
+
+<!-- IDEA 1 -->
+<div class="idea top-pick">
+  <div class="idea-head">
+    <div class="idea-num">1</div>
+    <h3>"อ่านออก AI" — โค้ชฝึกอ่านภาษาไทยด้วยเสียง <span class="en">(Thai Reading Coach)</span></h3>
+  </div>
+  <div class="badges">
+    <span class="badge">Speech AI</span><span class="badge">ประถมศึกษา</span><span class="badge">ลดความเหลื่อมล้ำ</span><span class="badge warn">Demo ว้าวมาก</span>
+  </div>
+  <dl>
+    <dt>ปัญหา</dt><dd>เด็กไทยจำนวนมากมีปัญหา "อ่านไม่ออก เขียนไม่ได้" ตามเกณฑ์ชั้นปี โดยเฉพาะโรงเรียนขนาดเล็กในชนบทที่ครูไม่มีเวลาฝึกอ่านรายคน และการคัดกรองภาวะบกพร่องทางการเรียนรู้ (LD) เข้าถึงยาก</dd>
+    <dt>แนวคิด</dt><dd>แอปที่ "ฟัง" เด็กอ่านออกเสียงทีละคน — AI ตรวจจับคำที่อ่านผิด การสะกด วรรณยุกต์ และความคล่อง ให้ feedback ทันทีแบบเกม (สะสมดาว, ด่านผจญภัย) พร้อม dashboard ให้ครูเห็นว่าเด็กแต่ละคนติดตรงไหน และช่วยคัดกรองสัญญาณ LD เบื้องต้นเพื่อส่งต่อผู้เชี่ยวชาญ</dd>
+    <dt>ฟีเจอร์เด่น</dt><dd>① ตรวจการอ่านแบบเรียลไทม์ (คำผิด/วรรณยุกต์/ความเร็ว) ② บทอ่านปรับระดับอัตโนมัติตามความสามารถ ③ รายงานครู–ผู้ปกครองอัตโนมัติ ④ โหมดใช้งานบนมือถือราคาถูก</dd>
+    <dt>เทคโนโลยี</dt><dd>Thai ASR (Whisper fine-tuned / Gowajee / Azure Speech), LLM สร้างบทอ่าน+แบบฝึก, mobile web app (ใช้ได้ทันทีไม่ต้องติดตั้ง)</dd>
+    <dt>ทำไมชนะ</dt><dd>เดโมสดบนเวทีได้จริง (ให้กรรมการลองอ่านผิดๆ แล้ว AI จับได้) ตัวชี้วัดชัด (คะแนนอ่านก่อน–หลัง) และตรงหัวใจธีม "ความเท่าเทียมทางการศึกษา" ที่สุด</dd>
+  </dl>
+</div>
+
+<!-- IDEA 2 -->
+<div class="idea">
+  <div class="idea-head">
+    <div class="idea-num">2</div>
+    <h3>"ครูคู่ใจ" — AI Copilot ลดภาระงานครู <span class="en">(Teacher Copilot)</span></h3>
+  </div>
+  <div class="badges">
+    <span class="badge">LLM / RAG</span><span class="badge">ครูทุกสังกัด</span><span class="badge warn">ตลาดใหญ่ ขยายผลง่าย</span>
+  </div>
+  <dl>
+    <dt>ปัญหา</dt><dd>ครูไทยเสียเวลามหาศาลไปกับงานที่ไม่ใช่การสอน — เขียนแผนการสอน, ออกข้อสอบ, ตรวจงาน, เอกสารประเมิน/ประกัน (ปพ., SAR) — เวลาที่ควรใช้กับนักเรียนจึงหายไป</dd>
+    <dt>แนวคิด</dt><dd>ผู้ช่วย AI ที่ "รู้หลักสูตรแกนกลางฯ" — พิมพ์แค่ "ป.5 วิทย์ เรื่องระบบสุริยะ 2 คาบ" แล้วได้แผนการสอนตามตัวชี้วัด + ใบงาน + ข้อสอบพร้อมเฉลย + สื่อสไลด์ ครบชุด และช่วยตรวจข้อสอบอัตนัยภาษาไทยพร้อมคำอธิบายให้นักเรียนรายคน</dd>
+    <dt>ฟีเจอร์เด่น</dt><dd>① สร้างแผนการสอนอ้างอิงตัวชี้วัดหลักสูตรแกนกลางอัตโนมัติ (RAG จากเอกสารหลักสูตรจริง) ② ตรวจงานเขียนไทยพร้อม feedback รายคน ③ ผู้ช่วยกรอกเอกสารราชการ ④ คลังแบ่งปันแผนระหว่างครู</dd>
+    <dt>เทคโนโลยี</dt><dd>Claude/GPT + RAG เอกสารหลักสูตรแกนกลาง 2551 และตัวชี้วัด, OCR สำหรับงานเขียนมือ, LINE integration (ครูไทยใช้ LINE เป็นหลัก)</dd>
+    <dt>ทำไมชนะ</dt><dd>Pain point ที่กรรมการสายการศึกษาทุกคน "พยักหน้า" ทันที ผลกระทบวัดเป็นชั่วโมงที่คืนให้ครูได้ และมีเส้นทาง commercialization ชัดที่สุดใน 7 ไอเดีย</dd>
+  </dl>
+</div>
+
+<!-- IDEA 3 -->
+<div class="idea">
+  <div class="idea-head">
+    <div class="idea-num">3</div>
+    <h3>"ไม่ทิ้งใครไว้" — ระบบเตือนภัยเด็กเสี่ยงหลุดจากระบบ <span class="en">(Dropout Early-Warning)</span></h3>
+  </div>
+  <div class="badges">
+    <span class="badge">Data / ML</span><span class="badge">ผู้บริหาร รร. + ครูแนะแนว</span><span class="badge warn">Impact เชิงนโยบายสูง</span>
+  </div>
+  <dl>
+    <dt>ปัญหา</dt><dd>เด็กไทยหลุดออกจากระบบการศึกษาจำนวนมาก (กสศ. รายงานหลักแสนถึงล้านคน) ปัญหาคือโรงเรียนมักรู้ตัว "หลังจาก" เด็กหายไปแล้ว ทั้งที่สัญญาณเตือน (ขาดเรียนถี่ เกรดร่วง ปัญหาที่บ้าน) ปรากฏล่วงหน้าเป็นเทอม</dd>
+    <dt>แนวคิด</dt><dd>ระบบวิเคราะห์ข้อมูลเข้าเรียน/คะแนน/พฤติกรรม เพื่อให้คะแนนความเสี่ยงรายคนพร้อมคำอธิบาย (explainable AI) แจ้งเตือนครูที่ปรึกษาผ่าน LINE พร้อมแนะนำแนวทางช่วยเหลือและช่องทางทุน (เชื่อมข้อมูลทุน กสศ./อปท.)</dd>
+    <dt>ฟีเจอร์เด่น</dt><dd>① Risk score รายนักเรียน + เหตุผลที่อ่านเข้าใจง่าย ② แจ้งเตือนอัตโนมัติเมื่อความเสี่ยงพุ่ง ③ ระบบติดตาม case จนปิดเคส ④ Dashboard ระดับเขตพื้นที่</dd>
+    <dt>เทคโนโลยี</dt><dd>ML (gradient boosting + SHAP explainability), สังเคราะห์ข้อมูลจำลองจากงานวิจัย กสศ./TDRI สำหรับ demo, LINE Notify</dd>
+    <dt>ทำไมชนะ</dt><dd>TDRI เป็น partner ของงานนี้ — โจทย์นี้ตรงกับงานวิจัยเขาโดยตรง เรื่องเล่าทรงพลัง ("ช่วยเด็ก 1 คนไม่ให้หลุด = เปลี่ยนทั้งชีวิต") จุดระวังคือการหาข้อมูลจริงมา demo ต้องใช้ข้อมูลจำลอง</dd>
+  </dl>
+</div>
+
+<!-- IDEA 4 -->
+<div class="idea">
+  <div class="idea-head">
+    <div class="idea-num">4</div>
+    <h3>"ติวเตอร์เท่าเทียม" — AI ติวเตอร์ส่วนตัวฟรีบน LINE <span class="en">(Equity Tutor)</span></h3>
+  </div>
+  <div class="badges">
+    <span class="badge">LLM + Adaptive Learning</span><span class="badge">ม.ปลาย / TCAS</span>
+  </div>
+  <dl>
+    <dt>ปัญหา</dt><dd>ระบบสอบเข้ามหาวิทยาลัยทำให้ "เรียนพิเศษ" เกือบเป็นภาคบังคับ ค่าใช้จ่ายหลักหมื่นต่อปี — เด็กที่บ้านไม่มีกำลังจ่ายเสียเปรียบตั้งแต่ยังไม่เริ่มสอบ</dd>
+    <dt>แนวคิด</dt><dd>ติวเตอร์ AI ฟรีบน LINE (ไม่ต้องมีคอมหรือเน็ตแรง) — วินิจฉัยจุดอ่อนรายคน สอนแบบ Socratic ไม่ใช่บอกเฉลย ปรับความยากอัตโนมัติ และวางแผนอ่านหนังสือถอยหลังจากวันสอบ TCAS/A-Level จริง</dd>
+    <dt>ฟีเจอร์เด่น</dt><dd>① Diagnostic test หา "รูโหว่" ความรู้ย้อนถึงชั้นก่อนหน้า ② สอนทีละขั้นแบบถาม–ตอบ ③ แผนอ่านหนังสือรายสัปดาห์อัตโนมัติ ④ ถ่ายรูปโจทย์แล้วสอนวิธีคิด (ไม่ใช่แค่เฉลย)</dd>
+    <dt>เทคโนโลยี</dt><dd>LLM + คลังข้อสอบเก่า, Item Response Theory อย่างง่ายสำหรับ adaptive, LINE Messaging API, vision model อ่านโจทย์จากรูป</dd>
+    <dt>ทำไมชนะ</dt><dd>เรื่องความเหลื่อมล้ำ + ทุกคนเข้าใจปัญหานี้ จุดระวัง: ไอเดีย "AI tutor" มีคนทำเยอะ ต้องชูจุดต่างที่ "ฟรี + LINE + adaptive" ให้ชัด</dd>
+  </dl>
+</div>
+
+<!-- IDEA 5 -->
+<div class="idea">
+  <div class="idea-head">
+    <div class="idea-num">5</div>
+    <h3>"เส้นทางฉัน" — AI แนะแนวอาชีพ + ปิด Skill Gap อาชีวะ <span class="en">(Career Pathfinder)</span></h3>
+  </div>
+  <div class="badges">
+    <span class="badge">LLM + Labor Data</span><span class="badge">ม.ปลาย + อาชีวะ</span>
+  </div>
+  <dl>
+    <dt>ปัญหา</dt><dd>ครูแนะแนวมีไม่พอ (หลายโรงเรียนครูวิชาอื่นควบตำแหน่ง) เด็กจำนวนมากเลือกคณะ/สาขาตามเพื่อนหรือค่านิยม แล้วพบว่าไม่ตรงกับตลาดงาน — ขณะที่ภาคอุตสาหกรรมขาดแรงงานสายอาชีวะทักษะสูง</dd>
+    <dt>แนวคิด</dt><dd>AI แนะแนวที่คุยกับเด็กเพื่อค้นหาความถนัด แล้ว match กับข้อมูลตลาดแรงงานจริง (เงินเดือน, ความต้องการ, ทักษะที่ขาด) พร้อมสร้าง roadmap รายบุคคล: เรียนอะไร → คอร์สฟรีที่ไหน → ฝึกงานอย่างไร → portfolio สำหรับ TCAS/สมัครงาน</dd>
+    <dt>ฟีเจอร์เด่น</dt><dd>① แชทค้นหาความถนัดเชิงลึก (ไม่ใช่แบบทดสอบ 20 ข้อแบบเดิม) ② แผนที่อาชีพ + ข้อมูลเงินเดือน/ความต้องการจริง ③ Roadmap + คอร์สเรียนฟรีที่ match ④ ตัวช่วยสร้าง portfolio</dd>
+    <dt>เทคโนโลยี</dt><dd>LLM, ข้อมูลตลาดแรงงาน (กรมการจัดหางาน / JobsDB / สภาอุตฯ), recommendation engine</dd>
+    <dt>ทำไมชนะ</dt><dd>งานนี้เปิดรับนักศึกษาอาชีวะโดยเฉพาะ — ไอเดียที่ยกระดับอาชีวะจะโดนใจผู้จัด (AIS Academy ทำเรื่อง upskill โดยตรง) และต่อยอดเชิงพาณิชย์กับภาคเอกชนได้</dd>
+  </dl>
+</div>
+
+<!-- IDEA 6 -->
+<div class="idea">
+  <div class="idea-head">
+    <div class="idea-num">6</div>
+    <h3>"เสียงเดียวกัน" — AI เพื่อการศึกษาพิเศษ <span class="en">(Inclusive Classroom AI)</span></h3>
+  </div>
+  <div class="badges">
+    <span class="badge">Speech + Vision</span><span class="badge">นักเรียนพิการ</span><span class="badge warn">เรื่องเล่าทรงพลัง</span>
+  </div>
+  <dl>
+    <dt>ปัญหา</dt><dd>นักเรียนหูหนวก/บกพร่องทางการได้ยิน และบกพร่องทางการเห็น เรียนร่วมในห้องปกติได้ยากมาก — ล่ามภาษามือขาดแคลนรุนแรง สื่อการสอนไทยที่เข้าถึงได้มีน้อย</dd>
+    <dt>แนวคิด</dt><dd>ชุดเครื่องมือห้องเรียน: ① Live caption ภาษาไทยของเสียงครูขึ้นจอ/มือถือแบบเรียลไทม์ พร้อมสรุปบทเรียนอัตโนมัติ ② ถ่ายรูปใบงาน/กระดาน แล้วแปลงเป็นเสียงอ่าน + อธิบายภาพสำหรับนักเรียนตาบอด ③ อวตารภาษามือไทยพื้นฐานสำหรับคำศัพท์สำคัญ</dd>
+    <dt>ฟีเจอร์เด่น</dt><dd>เน้นข้อ ① + ② ให้ทำงานได้จริงก่อน (อวตารภาษามือเป็น stretch goal) — ใช้ได้ทันทีทุกห้องเรียนด้วยมือถือเครื่องเดียว</dd>
+    <dt>เทคโนโลยี</dt><dd>Thai ASR streaming, LLM สรุปความ, Vision model + OCR ไทย, TTS ภาษาไทย</dd>
+    <dt>ทำไมชนะ</dt><dd>Demo บนเวทีเห็นภาพทันที (พูดปุ๊บ ขึ้น caption ปั๊บ) และหมวด "ไม่ทิ้งใครไว้ข้างหลัง" มักได้ทั้งใจกรรมการและ Popular Vote — จุดระวังคืออย่ากินขอบเขตกว้างเกิน เลือกผู้ใช้หลักกลุ่มเดียวให้ลึก</dd>
+  </dl>
+</div>
+
+<!-- IDEA 7 -->
+<div class="idea">
+  <div class="idea-head">
+    <div class="idea-num">7</div>
+    <h3>"ครูคนที่สอง" — AI ผู้ช่วยสอนสำหรับโรงเรียนครูไม่ครบชั้น <span class="en">(Co-Teacher for Small Schools)</span></h3>
+  </div>
+  <div class="badges">
+    <span class="badge">LLM + Content Gen</span><span class="badge">โรงเรียนขนาดเล็ก</span>
+  </div>
+  <dl>
+    <dt>ปัญหา</dt><dd>โรงเรียนขนาดเล็กหลายพันแห่งมีครูไม่ครบชั้น/ไม่ตรงเอก — ครูภาษาไทยต้องสอนวิทย์ คณิต อังกฤษ พร้อมกันหลายชั้นเรียน คุณภาพการสอนวิชาเฉพาะทางจึงต่ำกว่าเมืองมาก</dd>
+    <dt>แนวคิด</dt><dd>"ครูคนที่สอง" ในห้องเรียน: ครูเลือกบทเรียน → AI สร้างชุดกิจกรรมพร้อมสอนทีละขั้น (สคริปต์ครู + สื่อ + คำถามชวนคิด + แบบฝึกแยกตามชั้นปีในห้องเดียวกัน) ออกแบบมาเพื่อห้องเรียนคละชั้น (multi-grade) โดยเฉพาะ พร้อมโหมดถาม–ตอบเมื่อครูเจอคำถามที่ตอบไม่ได้</dd>
+    <dt>ฟีเจอร์เด่น</dt><dd>① แผนกิจกรรมคละชั้นอัตโนมัติ ② สคริปต์สอนทีละขั้นสำหรับครูไม่ตรงเอก ③ ทำงาน offline-first / ใช้เน็ตน้อย ④ สื่อ interactive ฉายจอเดียว</dd>
+    <dt>เทคโนโลยี</dt><dd>LLM + template pedagogy, PWA ที่ cache เนื้อหาไว้ใช้ offline, ปรับเนื้อหาตามบริบทท้องถิ่น</dd>
+    <dt>ทำไมชนะ</dt><dd>โจทย์ "ความเหลื่อมล้ำเชิงพื้นที่" ที่คนพูดถึงน้อยกว่า tutor ทั่วไป — มีมหาวิทยาลัยภูมิภาค (CMU, KKU, PSU, SUT) เป็น partner ซึ่งเข้าถึงโรงเรียนกลุ่มนี้เพื่อทดลองใช้จริงได้</dd>
+  </dl>
+</div>
+
+<h2><span class="no">§3</span> ถ้าให้เลือก — แนะนำ Top 3</h2>
+<table>
+  <tr><th style="width:60px">อันดับ</th><th>ไอเดีย</th><th>เหตุผล</th></tr>
+  <tr>
+    <td><b>🥇 1</b></td>
+    <td><b>อ่านออก AI</b> (ไอเดีย 1)</td>
+    <td>สมดุลที่สุดในทุกมิติ: ปัญหาระดับชาติ + demo สดบนเวทีได้ + วัดผลชัด + เทคนิคไม่เกินตัว (Speech AI ภาษาไทยมีของพร้อมใช้) + เรื่องเล่าเข้าถึงใจกรรมการทุกสาย</td>
+  </tr>
+  <tr>
+    <td><b>🥈 2</b></td>
+    <td><b>ครูคู่ใจ</b> (ไอเดีย 2)</td>
+    <td>Pain point จริงจัง ตลาดใหญ่ (ครูหลายแสนคน) เส้นทางธุรกิจชัดสุด เหมาะถ้าทีมถนัด LLM/RAG มากกว่า Speech — ข้อเสียคือเดโมเป็น "เอกสาร" ซึ่งว้าวน้อยกว่าเสียง</td>
+  </tr>
+  <tr>
+    <td><b>🥉 3</b></td>
+    <td><b>เสียงเดียวกัน</b> (ไอเดีย 6)</td>
+    <td>ม้ามืดสาย impact — demo เห็นผลทันทีบนเวที และหมวด inclusive มักกวาด Popular Vote (20,000 บาท) เหมาะถ้าทีมอยากเล่นเรื่องที่คู่แข่งน้อย</td>
+  </tr>
+</table>
+
+<div class="callout">
+  <b>💡 สูตรผสมที่น่าสนใจ:</b> ไอเดีย 1 + 6 ใช้เทคโนโลยีฐานเดียวกัน (Thai Speech AI) — เริ่มจาก "อ่านออก AI" เป็นแกน แล้ววาง roadmap ต่อยอดสู่การศึกษาพิเศษในสไลด์อนาคต จะได้ทั้งความลึกของ prototype และวิสัยทัศน์การขยายผลในการ pitch เดียว
+</div>
+
+<h2><span class="no">§4</span> กลยุทธ์เพิ่มโอกาสชนะ</h2>
+<ul class="tight">
+  <li><b>Prototype ต้องใช้งานได้จริง ไม่ใช่ mockup</b> — โจทย์ระบุ "Functional Prototype" ชัดเจน กรรมการจะกดเล่นจริง เลือก scope แคบแต่ลึก (1 ฟีเจอร์ที่เวิร์ก 100% ดีกว่า 5 ฟีเจอร์ครึ่งๆ กลางๆ)</li>
+  <li><b>ทดลองกับผู้ใช้จริงก่อน Demo Day</b> — พาไปให้ครู/นักเรียนจริงลองใช้สัก 1 โรงเรียน แล้วเอาผลตอบรับ (คลิป, คำพูด, ตัวเลข ก่อน–หลัง) ขึ้นสไลด์ — นี่คือสิ่งที่แยกทีมชนะออกจากทีมทั่วไปเกือบทุกเวที</li>
+  <li><b>ใช้ partner ให้เป็นประโยชน์</b> — AWS และ Azure เป็น partner (มักมี credit ให้ทีมแข่ง), TDRI มีข้อมูลวิจัยการศึกษา, อาจารย์ที่ปรึกษาจากมหาวิทยาลัย partner (CU, CMU, KMUTT, KKU, PSU, SUT) ช่วยเพิ่มน้ำหนัก</li>
+  <li><b>ตอบเรื่อง "ความยั่งยืน" ให้ได้</b> — ผู้จัดพูดถึง commercialization: เตรียมคำตอบว่าใครจ่าย (โรงเรียน? เขตพื้นที่? freemium?) และขยายผลผ่านกลไกไหน</li>
+  <li><b>ทีมควรมีครบ 3 บทบาท</b> — คนเขียนโค้ด/AI อย่างน้อย 2, คนออกแบบ UX/สื่อ 1, คนเล่าเรื่อง/pitch 1 (และถ้ามีสมาชิกสายครุศาสตร์/ศึกษาศาสตร์จะน่าเชื่อถือขึ้นมาก)</li>
+  <li><b>รีบสมัครก่อน 15 ส.ค.</b> — เขียนใบสมัครให้เห็นภาพปัญหา→ทางแก้→demo ที่จะส่งมอบ ชัดใน 1 ย่อหน้าแรก เพราะรอบคัดกระดาษกรรมการอ่านเร็วมาก</li>
+</ul>
+
+<footer>
+  จัดทำจากข้อมูลเว็บไซต์ jumpthailand.com (ณ 17 ก.ค. 2026) · JUMP Thailand Hackathon 2026 โดย AIS Academy · ติดต่อผู้จัด: jumpthailand@ais.co.th
+</footer>
+
+</div>
+</body>
+</html>

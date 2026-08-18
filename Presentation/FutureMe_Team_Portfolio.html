@@ -1,0 +1,389 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <title>FutureMe AI — หลักฐานผลงานและ Portfolio ของทีม</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,600&family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: A4 portrait;
+      margin: 10mm 12mm;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html[lang="th"] {
+      font-size: 100%;
+    }
+
+    body {
+      font-family: 'Sarabun', 'TH Sarabun New', sans-serif;
+      color: #0F172A;
+      background: #FFFFFF;
+      line-height: 1.45;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Reset drop-cap */
+    p::first-letter, span::first-letter, h1::first-letter, h2::first-letter, h3::first-letter {
+      font-size: inherit;
+      float: none;
+    }
+
+    .container {
+      max-width: 100%;
+      margin: 0 auto;
+    }
+
+    /* Header Bar */
+    .header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 12px;
+      border-bottom: 2px solid #059669;
+      margin-bottom: 14px;
+    }
+
+    .brand-group {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-badge {
+      width: 42px;
+      height: 42px;
+      background: linear-gradient(135deg, #059669, #0284C7);
+      color: #FFFFFF;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: 'Prompt', sans-serif;
+      font-weight: 700;
+      font-size: 24px;
+      box-shadow: 0 4px 8px rgba(5, 150, 105, 0.25);
+    }
+
+    .brand-text h1 {
+      font-family: 'Prompt', sans-serif;
+      font-size: 22px;
+      font-weight: 700;
+      color: #0F172A;
+      line-height: 1.15;
+    }
+
+    .brand-text h1 span {
+      color: #059669;
+    }
+
+    .brand-text p {
+      font-size: 12.5px;
+      color: #64748B;
+      font-weight: 500;
+    }
+
+    .meta-tag {
+      text-align: right;
+    }
+
+    .hackathon-badge {
+      display: inline-block;
+      background: #ECFDF5;
+      color: #047857;
+      border: 1.5px solid #A7F3D0;
+      padding: 3px 10px;
+      border-radius: 999px;
+      font-family: 'Prompt', sans-serif;
+      font-size: 11.5px;
+      font-weight: 600;
+    }
+
+    .doc-date {
+      font-size: 11px;
+      color: #94A3B8;
+      margin-top: 3px;
+    }
+
+    /* Lead Statement */
+    .lead-banner {
+      background: linear-gradient(135deg, #F0FDF4 0%, #F0F9FF 100%);
+      border: 1.5px solid #86EFAC;
+      border-radius: 12px;
+      padding: 10px 16px;
+      margin-bottom: 14px;
+      font-family: 'Prompt', sans-serif;
+      font-size: 14px;
+      font-weight: 600;
+      color: #065F46;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    /* Section Cards */
+    .card {
+      background: #FFFFFF;
+      border: 1.5px solid #E2E8F0;
+      border-radius: 12px;
+      padding: 12px 16px;
+      margin-bottom: 12px;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.02);
+      break-inside: avoid;
+      page-break-inside: avoid;
+    }
+
+    .card-header {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 8px;
+    }
+
+    .pill-num {
+      width: 24px;
+      height: 24px;
+      border-radius: 50%;
+      background: #059669;
+      color: #FFFFFF;
+      font-family: 'Prompt', sans-serif;
+      font-weight: 700;
+      font-size: 13px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-shrink: 0;
+    }
+
+    .pill-num.blue { background: #0284C7; }
+    .pill-num.purple { background: #7C3AED; }
+
+    .card-title {
+      font-family: 'Prompt', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .tag-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 8px;
+    }
+
+    .tech-tag {
+      background: #F1F5F9;
+      color: #334155;
+      font-family: 'Prompt', sans-serif;
+      font-size: 11px;
+      font-weight: 600;
+      padding: 2px 8px;
+      border-radius: 6px;
+      border: 1px solid #CBD5E1;
+    }
+
+    .tech-tag.highlight {
+      background: #ECFDF5;
+      color: #047857;
+      border-color: #A7F3D0;
+    }
+
+    .tech-tag.blue {
+      background: #F0F9FF;
+      color: #0369A1;
+      border-color: #BAE6FD;
+    }
+
+    .tech-tag.purple {
+      background: #FAF5FF;
+      color: #6D28D9;
+      border-color: #DDD6FE;
+    }
+
+    .feature-list {
+      list-style: none;
+      font-size: 13px;
+      color: #334155;
+      margin-bottom: 4px;
+    }
+
+    .feature-list li {
+      margin-bottom: 5px;
+      padding-left: 18px;
+      position: relative;
+    }
+
+    .feature-list li::before {
+      content: "•";
+      color: #059669;
+      font-weight: bold;
+      font-size: 16px;
+      position: absolute;
+      left: 4px;
+      top: -1px;
+    }
+
+    .feature-list li.blue::before { color: #0284C7; }
+    .feature-list li.purple::before { color: #7C3AED; }
+
+    .link-box {
+      background: #F8FAFC;
+      border: 1px solid #E2E8F0;
+      border-radius: 8px;
+      padding: 6px 12px;
+      font-size: 12px;
+      color: #0F172A;
+      margin-top: 6px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    .link-url {
+      font-family: monospace;
+      color: #0284C7;
+      font-weight: 600;
+    }
+
+    /* Verification Status Banner */
+    .verify-box {
+      background: #F8FAFC;
+      border: 1px dashed #059669;
+      border-radius: 10px;
+      padding: 8px 14px;
+      margin-top: 8px;
+      display: flex;
+      justify-content: space-around;
+      text-align: center;
+      font-size: 12px;
+    }
+
+    .verify-item strong {
+      font-family: 'Prompt', sans-serif;
+      color: #059669;
+      font-size: 13px;
+      display: block;
+    }
+
+    /* Footer */
+    .footer {
+      margin-top: 10px;
+      padding-top: 8px;
+      border-top: 1px solid #E2E8F0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 11px;
+      color: #94A3B8;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <!-- Header -->
+    <div class="header">
+      <div class="brand-group">
+        <div class="logo-badge">F</div>
+        <div class="brand-text">
+          <h1>Future<span>Me</span> AI — Portfolio & Prototype Evidence</h1>
+          <p>เอกสารหลักฐานผลงานและความพร้อมของทีมผู้พัฒนา</p>
+        </div>
+      </div>
+      <div class="meta-tag">
+        <div class="hackathon-badge">JUMP THAILAND 2026</div>
+        <div class="doc-date">AIS Academy x NIA</div>
+      </div>
+    </div>
+
+    <!-- Lead Banner -->
+    <div class="lead-banner">
+      <span>🚀</span>
+      <span>ทีม FutureMe มีความพร้อมเต็ม 100% ทั้งด้านการวิจัย สถาปัตยกรรมระบบ และโค้ดต้นแบบที่รันได้จริง</span>
+    </div>
+
+    <!-- Card 1: Web App Prototype -->
+    <div class="card">
+      <div class="card-header">
+        <div class="pill-num">1</div>
+        <div class="card-title">ผลงานต้นแบบที่ใช้งานได้จริง (Live Interactive Web App)</div>
+      </div>
+      <div class="tag-row">
+        <span class="tech-tag highlight">Next.js 15.5</span>
+        <span class="tech-tag highlight">React 19</span>
+        <span class="tech-tag highlight">TypeScript</span>
+        <span class="tech-tag highlight">Tailwind CSS</span>
+        <span class="tech-tag highlight">FastAPI Backend</span>
+        <span class="tech-tag highlight">23,257 Real Courses</span>
+      </div>
+      <ul class="feature-list">
+        <li><strong>ครอบคลุม 11 หน้าระบบจริง:</strong> แบบประเมินความถนัด 36 ข้อ RIASEC + Self-Efficacy Scale, แชทสนทนากับ Mascot AI Counselor (STAR Framework), แผนที่ค้นหาสถาบันตามระยะทาง (Geo-Distance), ระบบเปรียบเทียบหลักสูตร โอกาสงาน และค่าใช้จ่าย, แผนมินิภารกิจ 30 วัน (Action Roadmap) และนโยบายความเป็นส่วนตัว (PDPA)</li>
+        <li><strong>ฐานข้อมูลหลักสูตรจริงครอบคลุมทั้งประเทศ:</strong> แมตช์ 23,257 หลักสูตรจริง (16,908 ปวช./ปวส. + 6,349 ป.ตรี จาก 993 สถาบันทั่วไทย) ขับเคลื่อนด้วย Deterministic Cosine Matcher ร่วมกับ Kelley Shrinkage</li>
+      </ul>
+      <div class="verify-box">
+        <div class="verify-item"><strong>TypeScript Typecheck</strong>0 Errors (Clean)</div>
+        <div class="verify-item"><strong>ESLint Quality</strong>0 Warnings / 0 Errors</div>
+        <div class="verify-item"><strong>Production Build</strong>17/17 Pages Compiled Cleanly</div>
+      </div>
+    </div>
+
+    <!-- Card 2: Master Pitch Deck -->
+    <div class="card">
+      <div class="card-header">
+        <div class="pill-num blue">2</div>
+        <div class="card-title">สไลด์นำเสนอทางการ (Master Pitch Deck — 7 Slides 16:9 Widescreen)</div>
+      </div>
+      <div class="tag-row">
+        <span class="tech-tag blue">Official PDF (1.16 MB)</span>
+        <span class="tech-tag blue">16:9 Widescreen</span>
+        <span class="tech-tag blue">Prompt & Sarabun Typography</span>
+        <span class="tech-tag blue">Field 8 Ready</span>
+      </div>
+      <ul class="feature-list">
+        <li class="blue"><strong>โครงสร้างสไลด์ 7 หน้ากระชับ ตรงตามเกณฑ์ตัดสิน:</strong>
+          (1) WHAT ปัญหา & สถิติ TDRI (56% Mismatch) ➔ (2) WHO วงจรสะสมหลักฐาน 5 ขั้นตอน (Reflect ➔ Try ➔ Update ➔ Compare ➔ Act) ➔ (3) HOW นวัตกรรม 3 ขั้นตอน & หลักการ <em>“Rules decide. AI explains.”</em> ➔ (4) 9-Step Architecture & Ecosystem Workflow บน AIS Cloud Hub ➔ (5) ฐานข้อมูล 23,257 หลักสูตร & Cost Model ➔ (6) Business Model (B2C Freemium / B2G License / B2B) ➔ (7) Roadmap ขยายผล & ข้อมูลทีม
+        </li>
+      </ul>
+      <div class="link-box">
+        <span>ไฟล์สไลด์ในโครงการ:</span>
+        <span class="link-url">FutureMe_Presentation.pdf (7 หน้า)</span>
+      </div>
+    </div>
+
+    <!-- Card 3: Source Code & Research Repository -->
+    <div class="card">
+      <div class="card-header">
+        <div class="pill-num purple">3</div>
+        <div class="card-title">ซอร์สโค้ดและคลังงานวิจัย (Open Source & GitHub Repository)</div>
+      </div>
+      <div class="tag-row">
+        <span class="tech-tag purple">GitHub Verified</span>
+        <span class="tech-tag purple">18-Chapter Thai AI Research</span>
+        <span class="tech-tag purple">Evidence Catalog</span>
+        <span class="tech-tag purple">MIT License</span>
+      </div>
+      <ul class="feature-list">
+        <li class="purple"><strong>คลังงานวิจัยและหลักฐานเชิงประจักษ์ (01_Research):</strong> รวมคู่มือวิจัย Thai NLP, SLM fine-tuning, RAG Architecture บน Qdrant, ทฤษฎีจิตวิทยาอาชีพ RIASEC, แบบสอบถาม Adaptive Testing (CAT) และบัญชีการตรวจสอบตัวเลขอ้างอิง (Evidence Catalog)</li>
+        <li class="purple"><strong>โครงสร้าง Clean Hackathon Standard:</strong> โค้ดจัดแยกหมวดหมู่ชัดเจน พร้อมคู่มือ README.md ครบทั้ง 7 โฟลเดอร์หลัก</li>
+      </ul>
+      <div class="link-box">
+        <span>GitHub Repository URL:</span>
+        <span class="link-url">https://github.com/winxtxrgit/futureme-ai</span>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="footer">
+      <span>โครงสร้างพื้นฐานขับเคลื่อนโดย AIS Cloud Database & Next.js 15.5</span>
+      <span>FutureMe AI Team · JUMP THAILAND 2026</span>
+    </div>
+  </div>
+</body>
+</html>

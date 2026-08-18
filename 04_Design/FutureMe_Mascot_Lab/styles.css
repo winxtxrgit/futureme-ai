@@ -1,0 +1,477 @@
+/*
+ * Mascot Lab shell.
+ *
+ * Tokens are copied from the FutureMe app (03_WebApp/Pre_Present/app/globals.css)
+ * so the lab and the product read as the same surface. Same names, same RGB
+ * triples, same "light theme is designed, not inverted" rule — if the app's
+ * tokens move, move these with them rather than inventing a parallel palette.
+ */
+
+:root,
+:root[data-theme="light"],
+[data-theme="light"] {
+  color-scheme: light;
+  --canvas: 246 246 250;
+  --surface: 255 255 255;
+  --surface2: 239 239 245;
+  --line: 222 222 232;
+  --ink: 22 22 31;
+  --muted: 85 85 110;
+  --indigo: 85 70 214;
+  --indigo-text: 79 63 209;
+  --magenta: 163 43 204;
+  --coral: 178 40 40;
+  --mint: 11 122 99;
+  --mint-ink: 255 255 255;
+  --warning: 138 90 0;
+  --shadow-card: 0 1px 2px rgb(22 22 31 / 0.04), 0 12px 32px -20px rgb(22 22 31 / 0.28);
+}
+
+:root[data-theme="dark"],
+[data-theme="dark"] {
+  color-scheme: dark;
+  --canvas: 11 11 20;
+  --surface: 20 20 31;
+  --surface2: 28 28 43;
+  --line: 42 42 60;
+  --ink: 245 245 250;
+  --muted: 160 160 184;
+  --indigo: 109 94 246;
+  --indigo-text: 169 155 255;
+  --magenta: 193 59 240;
+  --coral: 255 107 107;
+  --mint: 79 227 193;
+  --mint-ink: 7 19 15;
+  --warning: 255 211 122;
+  --shadow-card: inset 0 1px 0 rgb(255 255 255 / 0.04), 0 18px 40px -24px rgb(0 0 0 / 0.8);
+}
+
+/*
+ * `min-width: 0` is deliberate: without it a grid or flex child refuses to
+ * shrink below its content and the 300px stage pushes the whole page wider
+ * than a phone screen. Anything that must keep its intrinsic width opts back
+ * out with `flex: none` — see .subnav a.
+ */
+* { box-sizing: border-box; min-width: 0; }
+
+body {
+  margin: 0;
+  background: rgb(var(--canvas));
+  color: rgb(var(--ink));
+  font: 15px/1.55 "Noto Sans Thai", "IBM Plex Sans Thai", -apple-system, BlinkMacSystemFont,
+        "Segoe UI", system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3 { margin: 0; line-height: 1.25; letter-spacing: -0.01em; }
+h1 { font-size: 17px; }
+h2 { font-size: 21px; }
+h3 { font-size: 15px; }
+p { margin: 0; }
+.muted { color: rgb(var(--muted)); font-size: 13px; }
+code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 0.92em; }
+
+:where(a, button, input, select, [tabindex]):focus-visible {
+  outline: 2px solid rgb(var(--mint));
+  outline-offset: 2px;
+  border-radius: 8px;
+}
+
+.skip {
+  position: absolute;
+  left: -9999px;
+  top: 8px;
+  background: rgb(var(--surface));
+  padding: 8px 14px;
+  border-radius: 8px;
+  z-index: 20;
+}
+.skip:focus { left: 8px; }
+
+/* ---------------------------------------------------------------- topbar */
+
+.topbar {
+  position: sticky;
+  top: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  flex-wrap: wrap;
+  padding: 12px 20px;
+  background: rgb(var(--surface) / 0.88);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgb(var(--line));
+}
+
+.topbar__brand { display: flex; align-items: center; gap: 12px; }
+.topbar__brand p { font-size: 12.5px; color: rgb(var(--muted)); }
+
+.topbar__mark {
+  width: 30px; height: 30px; border-radius: 10px; flex: none;
+  background: linear-gradient(135deg, rgb(var(--indigo)), rgb(var(--magenta)));
+  box-shadow: 0 0 0 3px rgb(var(--indigo) / 0.14);
+}
+
+.topbar__actions { display: flex; gap: 8px; }
+
+.subnav {
+  display: flex;
+  gap: 4px;
+  overflow-x: auto;
+  padding: 8px 20px;
+  border-bottom: 1px solid rgb(var(--line));
+  background: rgb(var(--canvas));
+  position: sticky;
+  top: 59px;
+  z-index: 9;
+}
+.subnav a {
+  flex: none;
+  white-space: nowrap;
+  padding: 5px 11px;
+  border-radius: 999px;
+  font-size: 13px;
+  color: rgb(var(--muted));
+  text-decoration: none;
+}
+.subnav a:hover { background: rgb(var(--surface2)); color: rgb(var(--ink)); }
+
+/* ---------------------------------------------------------------- layout */
+
+main {
+  max-width: 1160px;
+  margin: 0 auto;
+  padding: 24px 20px 64px;
+  display: grid;
+  gap: 24px;
+}
+
+.panel {
+  background: rgb(var(--surface));
+  border: 1px solid rgb(var(--line));
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: var(--shadow-card);
+}
+
+.panel__head { margin-bottom: 18px; display: grid; gap: 4px; }
+
+/* ----------------------------------------------------------------- stage */
+
+.stage {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 340px);
+  gap: 22px;
+  align-items: start;
+}
+
+/*
+ * Preview surfaces sit on `surface`, not `surface2`. The mascot is the subject
+ * on these three, and a grey backdrop drags its cyan down — the aurora tint is
+ * kept faint for the same reason. Borders, not fill, separate them from the
+ * panel. Built from tokens, so it holds in both themes.
+ */
+.stage__view,
+.view,
+.question {
+  border: 1px solid rgb(var(--line));
+  background:
+    radial-gradient(62% 62% at 12% 0%, rgb(var(--indigo) / 0.07), transparent 72%),
+    radial-gradient(55% 55% at 88% 100%, rgb(var(--magenta) / 0.06), transparent 72%),
+    rgb(var(--surface));
+}
+
+.stage__view {
+  border-radius: 16px;
+  padding: 20px;
+  display: grid;
+  justify-items: center;
+  gap: 10px;
+  min-height: 380px;
+  align-content: center;
+}
+
+.stage__mascot { width: 100%; max-width: 100%; display: grid; justify-items: center; }
+.stage__caption { font-size: 13px; color: rgb(var(--muted)); text-align: center; }
+
+.stage__controls { display: grid; gap: 14px; }
+
+.group {
+  border: 1px solid rgb(var(--line));
+  border-radius: 14px;
+  padding: 12px;
+  margin: 0;
+  display: grid;
+  gap: 10px;
+}
+.group legend, .group__label {
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: rgb(var(--muted));
+  padding: 0 4px;
+}
+.group legend .muted { text-transform: none; letter-spacing: 0; font-weight: 400; }
+.group__row { display: flex; align-items: center; justify-content: space-between; }
+
+.chips { display: flex; flex-wrap: wrap; gap: 6px; }
+
+.chip {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 6px;
+  padding: 6px 11px;
+  border-radius: 999px;
+  border: 1px solid rgb(var(--line));
+  background: rgb(var(--surface));
+  color: rgb(var(--ink));
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  transition: border-color 0.15s ease, background 0.15s ease;
+}
+.chip:hover { border-color: rgb(var(--indigo) / 0.5); }
+.chip small { color: rgb(var(--muted)); font-size: 11px; }
+
+.chip[aria-pressed="true"] {
+  background: rgb(var(--indigo) / 0.12);
+  border-color: rgb(var(--indigo) / 0.55);
+  color: rgb(var(--indigo-text));
+  font-weight: 600;
+}
+.chip[aria-pressed="true"] small { color: rgb(var(--indigo-text) / 0.8); }
+
+.switches { display: grid; gap: 7px; }
+
+.switch { display: flex; align-items: center; gap: 8px; font-size: 13px; cursor: pointer; }
+.switch input { width: 16px; height: 16px; accent-color: rgb(var(--indigo)); flex: none; }
+
+.code {
+  margin: 0;
+  padding: 10px 12px;
+  border-radius: 10px;
+  background: rgb(var(--surface2));
+  border: 1px solid rgb(var(--line));
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  font-size: 12px;
+  line-height: 1.6;
+  overflow-x: auto;
+  white-space: pre;
+  color: rgb(var(--ink));
+}
+.code--block { margin-top: 10px; }
+
+.btn {
+  border: 1px solid rgb(var(--line));
+  background: rgb(var(--surface));
+  color: rgb(var(--ink));
+  border-radius: 999px;
+  padding: 7px 14px;
+  font: inherit;
+  font-size: 13px;
+  cursor: pointer;
+  text-decoration: none;
+  display: inline-flex;
+  align-items: center;
+}
+.btn:hover { border-color: rgb(var(--indigo) / 0.5); }
+.btn--tiny { padding: 3px 10px; font-size: 12px; }
+
+/* ----------------------------------------------------------- 5-pt scale */
+
+.scale__tools {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+}
+
+.question {
+  border-radius: 16px;
+  padding: 20px;
+}
+.question__text { font-size: 17px; font-weight: 600; text-align: center; margin-bottom: 18px; }
+
+.scale {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.scale__option {
+  position: relative;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  padding: 12px 6px 10px;
+  border-radius: 14px;
+  border: 1px solid rgb(var(--line));
+  background: rgb(var(--surface));
+  /* The card behind is now also `surface`, so the options need a lift rather
+   * than a fill to read as separate targets. */
+  box-shadow: var(--shadow-card);
+  cursor: pointer;
+  text-align: center;
+  transition: border-color 0.15s ease, transform 0.15s ease;
+}
+.scale__option:hover { border-color: rgb(var(--indigo) / 0.5); transform: translateY(-2px); }
+.scale__option input { position: absolute; opacity: 0; pointer-events: none; }
+.scale__option:has(input:focus-visible) { outline: 2px solid rgb(var(--mint)); outline-offset: 2px; }
+
+.scale__option:has(input:checked) {
+  border-color: rgb(var(--mint));
+  box-shadow: 0 0 0 1px rgb(var(--mint) / 0.5);
+  background: rgb(var(--mint) / 0.07);
+}
+
+.scale__art { width: 100%; max-width: 132px; }
+.scale__num {
+  font-size: 11px;
+  font-weight: 700;
+  color: rgb(var(--muted));
+  letter-spacing: 0.06em;
+}
+.scale__label { font-size: 13px; font-weight: 600; }
+.scale__hint { font-size: 11.5px; color: rgb(var(--muted)); }
+
+/* Greyscale check: the five levels must still be countable without colour. */
+.question.is-grey .scale__art { filter: grayscale(1) contrast(1.05); }
+
+/* ------------------------------------------------------------ state cards */
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(230px, 1fr));
+  gap: 14px;
+}
+
+.card {
+  border: 1px solid rgb(var(--line));
+  border-radius: 16px;
+  padding: 14px;
+  background: rgb(var(--surface));
+  display: grid;
+  gap: 8px;
+  justify-items: start;
+}
+.card__art { width: 100%; display: grid; justify-items: center; }
+.card__art > div { width: 116px; }
+.card__title { font-size: 14px; font-weight: 600; }
+.card__body { font-size: 13px; color: rgb(var(--muted)); }
+
+.tag {
+  font-size: 11px;
+  font-family: ui-monospace, "SF Mono", Menlo, monospace;
+  padding: 2px 8px;
+  border-radius: 999px;
+  background: rgb(var(--surface2));
+  border: 1px solid rgb(var(--line));
+  color: rgb(var(--muted));
+}
+.card--warn { border-color: rgb(var(--warning) / 0.5); background: rgb(var(--warning) / 0.06); }
+.card--ok { border-color: rgb(var(--mint) / 0.5); background: rgb(var(--mint) / 0.06); }
+
+/* ---------------------------------------------------------------- themes */
+
+.themes { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+
+.themes__pane {
+  position: relative;
+  border: 1px solid rgb(var(--line));
+  border-radius: 16px;
+  padding: 22px 16px 16px;
+  background: rgb(var(--canvas));
+  color: rgb(var(--ink));
+}
+.themes__tag {
+  position: absolute;
+  top: 10px; left: 14px;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgb(var(--muted));
+}
+.themes__row { display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+.themes__row > div { width: 96px; }
+
+/* ------------------------------------------------------------ turnaround */
+
+.views {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+  margin-bottom: 22px;
+}
+.view {
+  border-radius: 14px;
+  padding: 12px;
+  display: grid;
+  justify-items: center;
+  gap: 6px;
+  overflow: hidden;
+}
+.view span { font-size: 12px; color: rgb(var(--muted)); }
+
+.reference { border-top: 1px solid rgb(var(--line)); padding-top: 18px; display: grid; gap: 10px; }
+.reference__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+  gap: 12px;
+  margin-top: 6px;
+}
+.reference figure { margin: 0; display: grid; gap: 6px; }
+.reference img {
+  width: 100%;
+  border-radius: 12px;
+  border: 1px solid rgb(var(--line));
+  background: #fff;
+  display: block;
+}
+.reference figcaption { font-size: 12px; color: rgb(var(--muted)); }
+
+/* --------------------------------------------------------------- handoff */
+
+.handoff { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 14px; }
+.handoff__block {
+  border: 1px solid rgb(var(--line));
+  border-radius: 16px;
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+  align-content: start;
+}
+.list { margin: 0; padding-left: 18px; font-size: 13px; display: grid; gap: 5px; }
+
+.foot {
+  border-top: 1px solid rgb(var(--line));
+  padding: 18px 20px 40px;
+  text-align: center;
+  font-size: 12.5px;
+  color: rgb(var(--muted));
+}
+
+/* ------------------------------------------------------------ responsive */
+
+@media (max-width: 900px) {
+  .stage { grid-template-columns: minmax(0, 1fr); }
+  .views { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .themes { grid-template-columns: minmax(0, 1fr); }
+}
+
+@media (max-width: 620px) {
+  .subnav { top: 0; position: static; }
+  .scale { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 4px; }
+  .scale__option { padding: 8px 2px; }
+  .scale__label { font-size: 11px; }
+  .scale__hint { display: none; }
+  .panel { padding: 16px; border-radius: 14px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}

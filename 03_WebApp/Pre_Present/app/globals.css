@@ -1,0 +1,128 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/*
+ * Theme tokens.
+ *
+ * Values are space-separated RGB triples so Tailwind's `rgb(var(--x) / <alpha>)`
+ * form keeps opacity modifiers working. `[data-theme]` is stamped on <html> by
+ * the inline script in layout.tsx before first paint, so there is no flash of
+ * the wrong theme.
+ *
+ * The light theme is designed rather than inverted: the dark theme's accents are
+ * bright because they sit on near-black, and the same values on white would fail
+ * contrast. Light mode therefore uses deeper accents with light text on top.
+ *
+ * Contrast, measured rather than asserted. Tokens used for TEXT — ink, muted,
+ * mint, warning, coral, indigo-text — reach at least 4.5:1 against canvas,
+ * surface and surface2 in both themes. `indigo` and `magenta` do NOT: they are
+ * gradient and border colours, and `indigo-text` exists for the one place an
+ * indigo-coloured label is needed. Using `text-indigo` for real text is a bug;
+ * use `text-indigoText`.
+ */
+:root,
+:root[data-theme="light"] {
+  color-scheme: light;
+
+  --canvas: 246 246 250;
+  --surface: 255 255 255;
+  --surface2: 239 239 245;
+  --line: 222 222 232;
+  --ink: 22 22 31;
+  --muted: 85 85 110;
+
+  --indigo: 85 70 214;
+  --indigo-text: 79 63 209;
+  --magenta: 163 43 204;
+  --coral: 178 40 40;
+
+  /* Deep teal: 5.3:1 as text on white, 4.9:1 as a button under white text. */
+  --mint: 11 122 99;
+  --mint-ink: 255 255 255;
+  --warning: 138 90 0;
+
+  --shadow-card: 0 1px 2px rgb(22 22 31 / 0.04), 0 12px 32px -20px rgb(22 22 31 / 0.28);
+  --shadow-selected: 0 0 0 1px rgb(11 122 99 / 0.45);
+  --shadow-selected-lift: 0 0 0 1px rgb(11 122 99 / 0.5), 0 10px 30px -12px rgb(11 122 99 / 0.3);
+  --shadow-primary: 0 8px 24px -10px rgb(11 122 99 / 0.5);
+}
+
+:root[data-theme="dark"] {
+  color-scheme: dark;
+
+  --canvas: 11 11 20;
+  --surface: 20 20 31;
+  --surface2: 28 28 43;
+  --line: 42 42 60;
+  --ink: 245 245 250;
+  --muted: 160 160 184;
+
+  --indigo: 109 94 246;
+  --indigo-text: 169 155 255;
+  --magenta: 193 59 240;
+  --coral: 255 107 107;
+
+  --mint: 79 227 193;
+  --mint-ink: 7 19 15;
+  --warning: 255 211 122;
+
+  --shadow-card: inset 0 1px 0 rgb(255 255 255 / 0.04), 0 18px 40px -24px rgb(0 0 0 / 0.8);
+  --shadow-selected: 0 0 0 1px rgb(79 227 193 / 0.45);
+  --shadow-selected-lift: 0 0 0 1px rgb(79 227 193 / 0.5), 0 10px 30px -12px rgb(79 227 193 / 0.45);
+  --shadow-primary: 0 8px 24px -10px rgb(79 227 193 / 0.7);
+}
+
+body {
+  background: rgb(var(--canvas));
+  color: rgb(var(--ink));
+}
+
+/* Aurora accent field — subtle, behind content, never over text. */
+.aurora-field {
+  background:
+    radial-gradient(60% 60% at 12% 0%, rgb(var(--indigo) / 0.28), transparent 70%),
+    radial-gradient(50% 50% at 88% 8%, rgb(var(--mint) / 0.14), transparent 70%),
+    radial-gradient(60% 60% at 50% 100%, rgb(var(--magenta) / 0.16), transparent 70%);
+}
+
+/* On white the same gradient reads as dirt rather than atmosphere. */
+:root[data-theme="light"] .aurora-field {
+  background:
+    radial-gradient(60% 60% at 12% 0%, rgb(var(--indigo) / 0.07), transparent 70%),
+    radial-gradient(50% 50% at 88% 8%, rgb(var(--mint) / 0.05), transparent 70%),
+    radial-gradient(60% 60% at 50% 100%, rgb(var(--magenta) / 0.05), transparent 70%);
+}
+
+/* Visible focus ring for keyboard users, on every interactive element. */
+:where(a, button, input, textarea, select, [tabindex]):focus-visible {
+  outline: 2px solid rgb(var(--mint));
+  outline-offset: 2px;
+  border-radius: 6px;
+}
+
+/*
+ * Assessment step transitions. Direction carries meaning: forward enters from
+ * the right, back from the left, so moving through the questions feels like
+ * travelling along them rather than watching panels swap.
+ */
+@keyframes card-in {
+  from { opacity: 0; transform: translate3d(18px, 0, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@keyframes card-in-back {
+  from { opacity: 0; transform: translate3d(-18px, 0, 0); }
+  to   { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  /* Keep the product still by default. The chat mascot's explicit
+   * data-fm-motion="on" opt-in is the only scoped exception. */
+  *:not(.fm-mascot[data-fm-motion="on"]):not(.fm-mascot[data-fm-motion="on"] *),
+  *:not(.fm-mascot[data-fm-motion="on"]):not(.fm-mascot[data-fm-motion="on"] *)::before,
+  *:not(.fm-mascot[data-fm-motion="on"]):not(.fm-mascot[data-fm-motion="on"] *)::after {
+    animation-duration: 0.01ms !important;
+    transition-duration: 0.01ms !important;
+  }
+}

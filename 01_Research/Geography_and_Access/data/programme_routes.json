@@ -1,0 +1,1273 @@
+{
+ "_note": "Which routes each degree-awarding institution actually runs an entry-level programme in. Absent institutions — every vocational college — are not covered by this source and keep the name-based inference.",
+ "_source": "data.go.th dqe_11_01 (แผนการรับนักศึกษาของแต่ละหลักสูตร)",
+ "_retrieved": "2026-08-06",
+ "_levels": [
+  "ปริญญาตรี",
+  "อนุปริญญา"
+ ],
+ "institutions": {
+  "จุฬาลงกรณ์มหาวิทยาลัย": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยกรุงเทพ": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยกรุงเทพธนบุรี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยกรุงเทพสุวรรณภูมิ": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยการจัดการและเทคโนโลยีอีสเทิร์น": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยกาฬสินธุ์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยขอนแก่น": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยคริสเตียน": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-medtech-rehab"
+  ],
+  "มหาวิทยาลัยชินวัตร": [
+   "arts-design",
+   "health-care",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยตาปี": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยทักษิณ": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยธนบุรี": [
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยธรรมศาสตร์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยธุรกิจบัณฑิตย์": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยนครพนม": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยนราธิวาสราชนครินทร์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยนวมินทราธิราช": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-medtech-rehab"
+  ],
+  "มหาวิทยาลัยนอร์ท-เชียงใหม่": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยนอร์ทกรุงเทพ": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยนานาชาติเอเชีย-แปซิฟิก": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยนานาชาติแสตมฟอร์ด": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยนเรศวร": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยบูรพา": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยปทุมธานี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยพะเยา": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยพายัพ": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยพิษณุโลก": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยฟาฏอนี": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยฟาร์อีสเทอร์น": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยภาคกลาง": [
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยภาคตะวันออกเฉียงเหนือ": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยมหาจุฬาลงกรณราชวิทยาลัย": [
+   "arts-design",
+   "business-admin",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยมหามกุฏราชวิทยาลัย": [
+   "arts-design"
+  ],
+  "มหาวิทยาลัยมหาสารคาม": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยมหิดล": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยรังสิต": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยรัตนบัณฑิต": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชธานี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชพฤกษ์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏกาญจนบุรี": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏกำแพงเพชร": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏจันทรเกษม": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏชัยภูมิ": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏธนบุรี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏนครปฐม": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏนครราชสีมา": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏนครศรีธรรมราช": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏนครสวรรค์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏบุรีรัมย์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏบ้านสมเด็จเจ้าพระยา": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏพระนคร": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏพระนครศรีอยุธยา": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏพิบูลสงคราม": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏภูเก็ต": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏมหาสารคาม": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏยะลา": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏราชนครินทร์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏรำไพพรรณี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏร้อยเอ็ด": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏลำปาง": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏวไลยอลงกรณ์ ในพระบรมราชูปถัมภ์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏศรีสะเกษ": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏสกลนคร": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏสงขลา": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏสวนสุนันทา": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏสุราษฏร์ธานี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏสุรินทร์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏหมู่บ้านจอมบึง": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏอุดรธานี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏอุตรดิตถ์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏอุบลราชธานี": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏเชียงราย": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏเชียงใหม่": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏเทพสตรี": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏเพชรบุรี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏเพชรบูรณ์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยราชภัฏเลย": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยรามคำแหง": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยวงษ์ชวลิตกุล": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยวลัยลักษณ์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยศรีนครินทรวิโรฒ": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยศรีปทุม": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยศิลปากร": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยสงขลานครินทร์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยสยาม": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยสวนดุสิต": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยสุโขทัยธรรมาธิราช": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยหอการค้าไทย": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยหัวเฉียวเฉลิมพระเกียรติ": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยหาดใหญ่": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยอัสสัมชัญ": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยอีสเทิร์นเอเชีย": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยอุบลราชธานี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเกริก": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเกษตรศาสตร์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเกษมบัณฑิต": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเจ้าพระยา": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเฉลิมกาญจนา": [
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเชียงใหม่": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเซนต์จอห์น": [
+   "business-admin"
+  ],
+  "มหาวิทยาลัยเซาธ์อีสท์บางกอก": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าธนบุรี": [
+   "arts-design",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีมหานคร": [
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีราชมงคลกรุงเทพ": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีราชมงคลตะวันออก": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีราชมงคลธัญบุรี": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีราชมงคลพระนคร": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีราชมงคลรัตนโกสินทร์": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีราชมงคลศรีวิชัย": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีราชมงคลสุวรรณภูมิ": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีราชมงคลอีสาน": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเทคโนโลยีสุรนารี": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเนชั่น": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเวสเทิร์น": [
+   "business-admin",
+   "health-care",
+   "sci-math-engineering"
+  ],
+  "มหาวิทยาลัยเว็บสเตอร์(ประเทศไทย)": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยเอเชียอาคเนย์": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยแม่ฟ้าหลวง": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "มหาวิทยาลัยแม่โจ้": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "ราชวิทยาลัยจุฬาภรณ์": [
+   "health-care",
+   "sci-math-engineering"
+  ],
+  "วิทยาลัยชุมชน": [
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "วิทยาลัยดุสิตธานี": [
+   "arts-design",
+   "business-admin"
+  ],
+  "วิทยาลัยทองสุข": [
+   "arts-design",
+   "business-admin",
+   "health-care"
+  ],
+  "วิทยาลัยนครราชสีมา": [
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-medtech-rehab",
+   "vocational-digital"
+  ],
+  "วิทยาลัยนอร์ทเทิร์น": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "วิทยาลัยนานาชาติเซนต์เทเรซา": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "วิทยาลัยบัณฑิตเอเชีย": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "วิทยาลัยพิชญบัณฑิต": [
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "วิทยาลัยสันตพล": [
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "วิทยาลัยอินเตอร์เทคลำปาง": [
+   "arts-design",
+   "business-admin"
+  ],
+  "วิทยาลัยเฉลิมกาญจนาระยอง": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "วิทยาลัยเชียงราย": [
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "วิทยาลัยเซนต์หลุยส์": [
+   "health-care",
+   "sci-math-engineering",
+   "university-medtech-rehab"
+  ],
+  "วิทยาลัยเทคโนโลยีพนมวันท์": [
+   "business-admin",
+   "health-care",
+   "sci-math-engineering"
+  ],
+  "วิทยาลัยเทคโนโลยีภาคใต้": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "วิทยาลัยเทคโนโลยีสยาม": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "วิทยาลัยแสงธรรม": [
+   "arts-design"
+  ],
+  "ศูนย์ฝึกพาณิชย์นาวี": [
+   "sci-math-engineering"
+  ],
+  "สถาบันการจัดการปัญญาภิวัฒน์": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "สถาบันการบินพลเรือน": [
+   "business-admin",
+   "sci-math-engineering"
+  ],
+  "สถาบันการพยาบาลศรีสวรินทิราสภากาชาดไทย": [
+   "health-care"
+  ],
+  "สถาบันการพลศึกษา": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering"
+  ],
+  "สถาบันการอาชีวศึกษากรุงเทพมหานคร": [
+   "arts-design",
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคกลาง1": [
+   "business-admin"
+  ],
+  "สถาบันการอาชีวศึกษาภาคกลาง2": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคกลาง3": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคกลาง4": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคกลาง5": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคตะวันออก": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคตะวันออกเฉียงเหนือ1": [
+   "arts-design",
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคตะวันออกเฉียงเหนือ3": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคตะวันออกเฉียงเหนือ4": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคตะวันออกเฉียงเหนือ5": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคเหนือ1": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคเหนือ2": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคเหนือ3": [
+   "arts-design",
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคเหนือ4": [
+   "business-admin"
+  ],
+  "สถาบันการอาชีวศึกษาภาคใต้1": [
+   "business-admin"
+  ],
+  "สถาบันการอาชีวศึกษาภาคใต้2": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการอาชีวศึกษาภาคใต้3": [
+   "business-admin",
+   "vocational-digital"
+  ],
+  "สถาบันการเรียนรู้เพื่อปวงชน": [
+   "arts-design"
+  ],
+  "สถาบันดนตรีกัลยาณิวัฒนา": [
+   "arts-design"
+  ],
+  "สถาบันบัณฑิตพัฒนศิลป์": [
+   "arts-design",
+   "vocational-digital"
+  ],
+  "สถาบันพระบรมราชชนก": [
+   "health-care",
+   "sci-math-engineering",
+   "university-medtech-rehab"
+  ],
+  "สถาบันรัชต์ภาคย์": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "สถาบันวิทยาการจัดการแห่งแปซิฟิค": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "สถาบันวิทยาการประกอบการแห่งอโยธยา": [
+   "business-admin",
+   "health-care",
+   "vocational-digital"
+  ],
+  "สถาบันอาศรมศิลป์": [
+   "arts-design"
+  ],
+  "สถาบันเทคโนโลยีจิตรลดา": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "vocational-digital"
+  ],
+  "สถาบันเทคโนโลยีปทุมวัน": [
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "สถาบันเทคโนโลยีพระจอมเกล้าเจ้าคุณทหารลาดกระบัง": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "สถาบันเทคโนโลยียานยนต์มหาชัย": [
+   "business-admin"
+  ],
+  "สถาบันเทคโนโลยีแห่งสุวรรณภูมิ": [
+   "arts-design",
+   "business-admin",
+   "health-care",
+   "sci-math-engineering",
+   "vocational-digital"
+  ],
+  "สถาบันเทคโนโลยีไทย-ญี่ปุ่น": [
+   "arts-design",
+   "business-admin",
+   "sci-math-engineering",
+   "university-ai-data",
+   "university-digital-comm",
+   "vocational-digital"
+  ],
+  "โรงเรียนนายร้อยพระจุลจอมเกล้า": [
+   "arts-design",
+   "sci-math-engineering"
+  ],
+  "โรงเรียนนายเรือ": [
+   "sci-math-engineering"
+  ],
+  "โรงเรียนนายเรืออากาศ": [
+   "business-admin",
+   "sci-math-engineering",
+   "vocational-digital"
+  ]
+ }
+}

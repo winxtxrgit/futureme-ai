@@ -1,0 +1,1007 @@
+{
+ "summary": {
+  "iso": "TH-58",
+  "province_th": "แม่ฮ่องสอน",
+  "province_en": "Mae Hong Son",
+  "options_total": 34,
+  "in_province": 3,
+  "within_30km": 1,
+  "offers_vocational": 27,
+  "offers_degree": 8,
+  "distance_unknown": 2
+ },
+ "origin": {
+  "lat": 19.301111111,
+  "lon": 97.97,
+  "kind": "provincial_capital",
+  "note": "จุดอ้างอิงคืออำเภอเมืองของจังหวัด ไม่ใช่บ้านของผู้เรียน ระยะจริงจากบ้านต่างจากนี้ได้มาก"
+ },
+ "options": [
+  {
+   "id": "ovec-pub-1358016401",
+   "name_th": "วิทยาลัยการอาชีพนวมินทราชินีแม่ฮ่องสอน",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-58",
+   "province_th": "แม่ฮ่องสอน",
+   "district": "เมืองแม่ฮ่องสอน",
+   "in_home_province": true,
+   "road_km": 2.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 4,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": null,
+   "phone": "053-611848",
+   "website": "http://www.nawamin.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-19600-TH-50",
+   "name_th": "มหาวิทยาลัยเทคโนโลยีราชมงคลล้านนา",
+   "kind": "rajamangala",
+   "sector": "มหาวิทยาลัยเทคโนโลยีราชมงคล",
+   "offers": [
+    "ปวส.",
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 218.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 233,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1350026401",
+   "name_th": "วิทยาลัยการอาชีพจอมทอง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "จอมทอง",
+   "in_home_province": false,
+   "road_km": 220.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 237,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "53341872",
+   "website": "http://www.cicec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-01300-TH-50",
+   "name_th": "มหาวิทยาลัยแม่โจ้",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยในกำกับรัฐ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 224.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 249,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-21406-TH-50",
+   "name_th": "วิทยาลัยพยาบาลบรมราชชนนี เชียงใหม่",
+   "kind": "nursing_college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 227.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 249,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1350100143",
+   "name_th": "วิทยาลัยเทคโนโลยีพายัพและบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "สันทราย",
+   "in_home_province": false,
+   "road_km": 230.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 250,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "53845133",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-14400-TH-50",
+   "name_th": "มหาวิทยาลัยราชภัฏเชียงใหม่",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 232.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 252,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1350100139",
+   "name_th": "วิทยาลัยเทคโนโลยีโปลิเทคนิคลานนา เชียงใหม่",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "เมืองเชียงใหม่",
+   "in_home_province": false,
+   "road_km": 232.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 252,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "053-213-061",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1350100132",
+   "name_th": "วิทยาลัยเทคโนโลยีพาณิชยการลานนา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "เมืองเชียงใหม่",
+   "in_home_province": false,
+   "road_km": 232.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 254,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "(053)2100578",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1350016501",
+   "name_th": "วิทยาลัยสารพัดช่างเชียงใหม่",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "เมืองเชียงใหม่",
+   "in_home_province": false,
+   "road_km": 233.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 253,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "053-211592",
+   "website": "http://www.cmpoly.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-00400-TH-50",
+   "name_th": "มหาวิทยาลัยเชียงใหม่",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยในกำกับรัฐ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 234.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 257,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1350016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาเชียงใหม่",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "เมืองเชียงใหม่",
+   "in_home_province": false,
+   "road_km": 234.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 255,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "53221493",
+   "website": "http://www.cmvc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1350016101",
+   "name_th": "วิทยาลัยเทคนิคเชียงใหม่",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "เมืองเชียงใหม่",
+   "in_home_province": false,
+   "road_km": 235.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 255,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "53217708",
+   "website": "http://www.cmtc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1350100141",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการเชียงใหม่",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "เมืองเชียงใหม่",
+   "in_home_province": false,
+   "road_km": 235.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 256,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟเชียงใหม่",
+    "name_en": "Chiang Mai Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 2.5
+   },
+   "phone": "53274715",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1350100137",
+   "name_th": "วิทยาลัยเทคโนโลยีเมโทร",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "เมืองเชียงใหม่",
+   "in_home_province": false,
+   "road_km": 235.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 257,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟเชียงใหม่",
+    "name_en": "Chiang Mai Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 2.3
+   },
+   "phone": "053-282-080",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-05300-TH-50",
+   "name_th": "มหาวิทยาลัยพายัพ",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 238.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 264,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟเชียงใหม่",
+    "name_en": "Chiang Mai Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 2.9
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-10500-TH-50",
+   "name_th": "มหาวิทยาลัยฟาร์อีสเทอร์น",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 239.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 262,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1350100324",
+   "name_th": "วิทยาลัยอาชีวศึกษาจันทร์รวี",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "เมืองเชียงใหม่",
+   "in_home_province": false,
+   "road_km": 243.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 264,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "053447754-6",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1350196601",
+   "name_th": "วิทยาลัยเทคนิคสารภี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "สารภี",
+   "in_home_province": false,
+   "road_km": 244.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 265,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสารภี",
+    "name_en": "Saraphi railway station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 2.5
+   },
+   "phone": "53423301",
+   "website": "http://www.srptc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1351036401",
+   "name_th": "วิทยาลัยการอาชีพบ้านโฮ่ง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-51",
+   "province_th": "ลำพูน",
+   "district": "บ้านโฮ่ง",
+   "in_home_province": false,
+   "road_km": 246.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 276,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "086-4311385",
+   "website": "http://www.banhong.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1350126301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีเชียงใหม่",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "สันป่าตอง",
+   "in_home_province": false,
+   "road_km": 253.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 279,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "0-5331-1392",
+   "website": "http://www.cmcat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-12300-TH-50",
+   "name_th": "มหาวิทยาลัยนอร์ท-เชียงใหม่",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 253.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 274,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1351066401",
+   "name_th": "วิทยาลัยการอาชีพป่าซาง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-51",
+   "province_th": "ลำพูน",
+   "district": "ป่าซาง",
+   "in_home_province": false,
+   "road_km": 254.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 277,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "053-555018",
+   "website": "http://www.pasangic.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1350100142",
+   "name_th": "วิทยาลัยเทคโนโลยีพิงค์พระนคร",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "สันป่าตอง",
+   "in_home_province": false,
+   "road_km": 254.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 278,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "053-311-721",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1351100028",
+   "name_th": "วิทยาลัยเทคโนโลยีหมู่บ้านครู ภาคเหนือ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-51",
+   "province_th": "ลำพูน",
+   "district": "บ้านธิ",
+   "in_home_province": false,
+   "road_km": 255.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 272,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟป่าเส้า",
+    "name_en": "Pa Sao railway station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 1.8
+   },
+   "phone": "053-982-989",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1351100031",
+   "name_th": "วิทยาลัยเทคโนโลยีชรินรัตน์ลำพูน",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-51",
+   "province_th": "ลำพูน",
+   "district": "เมืองลำพูน",
+   "in_home_province": false,
+   "road_km": 258.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 273,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟป่าเส้า",
+    "name_en": "Pa Sao railway station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 1.3
+   },
+   "phone": "053-091-319",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1350136101",
+   "name_th": "วิทยาลัยเทคนิคสันกำแพง",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "แม่ออน",
+   "in_home_province": false,
+   "road_km": 260.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 281,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "053-929079",
+   "website": "http://www.skptc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1351016101",
+   "name_th": "วิทยาลัยเทคนิคลำพูน",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-51",
+   "province_th": "ลำพูน",
+   "district": "เมืองลำพูน",
+   "in_home_province": false,
+   "road_km": 264.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 280,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "53511073",
+   "website": "http://www.ltc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1351100032",
+   "name_th": "วิทยาลัยอาชีวศึกษาเอกปัญญาหริภุญชัย",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-51",
+   "province_th": "ลำพูน",
+   "district": "เมืองลำพูน",
+   "in_home_province": false,
+   "road_km": 267.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 283,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "52030270",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1351026301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีลำพูน",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-51",
+   "province_th": "ลำพูน",
+   "district": "แม่ทา",
+   "in_home_province": false,
+   "road_km": 278.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 289,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "0-5300-6252",
+   "website": "http://www.lcat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1350096401",
+   "name_th": "วิทยาลัยการอาชีพฝาง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "ฝาง",
+   "in_home_province": false,
+   "road_km": 308.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 325,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "0-53346819",
+   "website": "http://www.fve.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1350100167",
+   "name_th": "วิทยาลัยอาชีวศึกษานอร์ทฝาง",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-50",
+   "province_th": "เชียงใหม่",
+   "district": "ฝาง",
+   "in_home_province": false,
+   "road_km": 319.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 333,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "062-5455850",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1358046401",
+   "name_th": "วิทยาลัยการอาชีพแม่สะเรียง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-58",
+   "province_th": "แม่ฮ่องสอน",
+   "district": "แม่สะเรียง",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "53681576",
+   "website": "http://www.msr.ac.th",
+   "coord_source": "quarantined"
+  },
+  {
+   "id": "mhesi-20301-TH-58",
+   "name_th": "วิทยาลัยชุมชนแม่ฮ่องสอน",
+   "kind": "college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-58",
+   "province_th": "แม่ฮ่องสอน",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  }
+ ]
+}

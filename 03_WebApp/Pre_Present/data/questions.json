@@ -1,0 +1,621 @@
+{
+  "meta": {
+    "id": "futureme-interest-v2",
+    "construct": "Holland RIASEC vocational interests",
+    "itemsPerDimension": 5,
+    "scalePoints": 5,
+    "notice": "Research-informed prototype instrument. Items are activity statements grounded in Holland's RIASEC model; some are adapted from the 18REST scale (Ambiel et al., 2018, CC BY 4.0). This specific item set and its Thai translation have NOT been psychometrically validated: no reliability or validity data exist for it. It must not be presented as a validated RIASEC test.",
+    "attribution": "Some items adapted from Ambiel, R. A. M., Hauck-Filho, N., Barros, L. D. O., Martins, G. H., Abrahams, L., & De Fruyt, F. (2018). 18REST: a short RIASEC-interest measure. Psicologia: Reflexao e Critica, 31, 6. https://doi.org/10.1186/s41155-018-0086-z — licensed CC BY 4.0.",
+    "methodology": "docs/questionnaire-methodology.md",
+    "questionBank": "docs/question-bank.md",
+    "itemOrder": "interleaved",
+    "itemOrderRationale": "The six dimensions are rotated rather than presented in blocks. O*NET reports that mixing RIASEC items reduced a general response bias found in interest inventories where items are grouped by construct.",
+    "itemCounts": {
+      "interest": 30,
+      "reverseKeyed": 0,
+      "efficacy": 6
+    },
+    "efficacyNote": "ข้อ efficacy อยู่คนละอาร์เรย์โดยเจตนา — scoring ของมันคือ none จึงต้องไม่มีทางถูกนับเข้าคะแนนความสนใจได้เลย การแยกโครงสร้างบังคับข้อนี้ แทนที่จะอาศัยว่าโค้ดจะจำ",
+    "scaleConfidenceNote": "ข้อ efficacy ถามว่า 'ทำได้ดีแค่ไหน' จึงต้องใช้ป้ายคำตอบคนละชุดกับ 'ชอบ/ไม่ชอบ' การใช้สเกลเดียวกันจะเป็นบั๊กเชิงถ้อยคำ ไม่ใช่แค่เรื่องสวยงาม"
+  },
+  "interest": [
+    {
+      "id": "INT-R-01",
+      "dimension": "R",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Repair a bicycle or a motorbike engine.",
+        "th": "ซ่อมจักรยานหรือเครื่องยนต์มอเตอร์ไซค์"
+      }
+    },
+    {
+      "id": "INT-I-01",
+      "dimension": "I",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Read articles or books about scientific discoveries.",
+        "th": "อ่านบทความหรือหนังสือเกี่ยวกับการค้นพบทางวิทยาศาสตร์"
+      }
+    },
+    {
+      "id": "INT-A-01",
+      "dimension": "A",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Design the set or the costumes for a stage show.",
+        "th": "ออกแบบฉากหรือเครื่องแต่งกายสำหรับการแสดงบนเวที"
+      }
+    },
+    {
+      "id": "INT-S-01",
+      "dimension": "S",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Volunteer for a community project in your neighbourhood.",
+        "th": "เป็นอาสาสมัครในโครงการของชุมชนละแวกบ้าน"
+      }
+    },
+    {
+      "id": "INT-E-01",
+      "dimension": "E",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Plan how a small business could grow.",
+        "th": "วางแผนว่าธุรกิจเล็ก ๆ จะเติบโตได้อย่างไร"
+      }
+    },
+    {
+      "id": "INT-C-01",
+      "dimension": "C",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Check that a set of rules or standards is being followed.",
+        "th": "ตรวจสอบว่ามีการทำตามกฎหรือมาตรฐานที่กำหนดไว้หรือไม่"
+      }
+    },
+    {
+      "id": "INT-R-02",
+      "dimension": "R",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Operate a machine that makes or cuts parts.",
+        "th": "ควบคุมเครื่องจักรที่ใช้ผลิตหรือตัดชิ้นส่วน"
+      }
+    },
+    {
+      "id": "INT-I-02",
+      "dimension": "I",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Run an experiment in a laboratory.",
+        "th": "ทำการทดลองในห้องปฏิบัติการ"
+      }
+    },
+    {
+      "id": "INT-A-02",
+      "dimension": "A",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Perform music, dance or drama in front of an audience.",
+        "th": "แสดงดนตรี เต้น หรือละครต่อหน้าผู้ชม"
+      }
+    },
+    {
+      "id": "INT-S-02",
+      "dimension": "S",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Give people advice about staying healthy.",
+        "th": "ให้คำแนะนำเรื่องการดูแลสุขภาพแก่คนอื่น"
+      }
+    },
+    {
+      "id": "INT-E-02",
+      "dimension": "E",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Lead a team and keep its work on schedule.",
+        "th": "นำทีมและดูแลให้งานเสร็จตามกำหนด"
+      }
+    },
+    {
+      "id": "INT-C-02",
+      "dimension": "C",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Keep accounts and track money coming in and going out.",
+        "th": "ทำบัญชีและติดตามรายรับรายจ่าย"
+      }
+    },
+    {
+      "id": "INT-R-03",
+      "dimension": "R",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Build something from wood or metal.",
+        "th": "สร้างของบางอย่างจากไม้หรือโลหะ"
+      }
+    },
+    {
+      "id": "INT-I-03",
+      "dimension": "I",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Work out why a natural event such as an earthquake happens.",
+        "th": "หาคำอธิบายว่าปรากฏการณ์ธรรมชาติอย่างแผ่นดินไหวเกิดขึ้นได้อย่างไร"
+      }
+    },
+    {
+      "id": "INT-A-03",
+      "dimension": "A",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Sing or play music together with a group.",
+        "th": "ร้องเพลงหรือเล่นดนตรีรวมวง"
+      }
+    },
+    {
+      "id": "INT-S-03",
+      "dimension": "S",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Help a classmate who is struggling with schoolwork.",
+        "th": "ช่วยเพื่อนร่วมชั้นที่กำลังมีปัญหากับการเรียน"
+      }
+    },
+    {
+      "id": "INT-E-03",
+      "dimension": "E",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Persuade a customer to buy a product.",
+        "th": "โน้มน้าวลูกค้าให้ตัดสินใจซื้อสินค้า"
+      }
+    },
+    {
+      "id": "INT-C-03",
+      "dimension": "C",
+      "direction": "positive",
+      "sourceType": "adapted-18rest",
+      "text": {
+        "en": "Organise and store records so they can be found easily.",
+        "th": "จัดระเบียบและจัดเก็บเอกสารให้ค้นหาได้ง่าย"
+      }
+    },
+    {
+      "id": "INT-R-04",
+      "dimension": "R",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Install or fix electrical wiring in a building.",
+        "th": "ติดตั้งหรือซ่อมระบบไฟฟ้าในอาคาร"
+      }
+    },
+    {
+      "id": "INT-I-04",
+      "dimension": "I",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Study a set of numbers to find a pattern in them.",
+        "th": "วิเคราะห์ชุดตัวเลขเพื่อหารูปแบบที่ซ่อนอยู่"
+      }
+    },
+    {
+      "id": "INT-A-04",
+      "dimension": "A",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Draw, paint, or design graphics for a poster.",
+        "th": "วาดรูป ระบายสี หรือออกแบบกราฟิกสำหรับโปสเตอร์"
+      }
+    },
+    {
+      "id": "INT-S-04",
+      "dimension": "S",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Look after young children or elderly people.",
+        "th": "ดูแลเด็กเล็กหรือผู้สูงอายุ"
+      }
+    },
+    {
+      "id": "INT-E-04",
+      "dimension": "E",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Start and run a club or a small shop.",
+        "th": "เริ่มต้นและบริหารชมรมหรือร้านเล็ก ๆ"
+      }
+    },
+    {
+      "id": "INT-C-04",
+      "dimension": "C",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Enter information into a spreadsheet accurately.",
+        "th": "กรอกข้อมูลลงในตารางคำนวณอย่างถูกต้องแม่นยำ"
+      }
+    },
+    {
+      "id": "INT-R-05",
+      "dimension": "R",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Grow plants or look after animals on a farm.",
+        "th": "ปลูกพืชหรือดูแลสัตว์ในฟาร์ม"
+      }
+    },
+    {
+      "id": "INT-I-05",
+      "dimension": "I",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Take a device apart to understand how it works.",
+        "th": "แกะอุปกรณ์ออกดูเพื่อทำความเข้าใจว่ามันทำงานอย่างไร"
+      }
+    },
+    {
+      "id": "INT-A-05",
+      "dimension": "A",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Write a story, a song, or a script.",
+        "th": "เขียนเรื่องสั้น เพลง หรือบทละคร"
+      }
+    },
+    {
+      "id": "INT-S-05",
+      "dimension": "S",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Listen to someone talk through a problem they are having.",
+        "th": "รับฟังคนที่กำลังเล่าปัญหาของเขาให้ฟัง"
+      }
+    },
+    {
+      "id": "INT-E-05",
+      "dimension": "E",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Speak to a group to convince them of your idea.",
+        "th": "พูดต่อหน้ากลุ่มคนเพื่อโน้มน้าวให้เห็นด้วยกับความคิดของคุณ"
+      }
+    },
+    {
+      "id": "INT-C-05",
+      "dimension": "C",
+      "direction": "positive",
+      "sourceType": "researcher-written",
+      "text": {
+        "en": "Follow a written procedure exactly, step by step.",
+        "th": "ทำงานตามขั้นตอนที่เขียนไว้อย่างเคร่งครัดทีละขั้น"
+      }
+    }
+  ],
+  "context": [
+    {
+      "id": "tier",
+      "type": "single",
+      "required": true,
+      "text": {
+        "en": "Where are you right now?",
+        "th": "ตอนนี้คุณอยู่ระดับชั้นไหน"
+      },
+      "help": {
+        "en": "This decides which routes are relevant to you.",
+        "th": "ข้อมูลนี้ใช้เลือกว่าเส้นทางไหนเกี่ยวข้องกับคุณ"
+      },
+      "options": [
+        {
+          "value": "LOWER_SECONDARY",
+          "label": {
+            "en": "ม.1 – ม.3 (lower secondary)",
+            "th": "ม.1 – ม.3 (มัธยมต้น)"
+          }
+        },
+        {
+          "value": "UPPER_SECONDARY",
+          "label": {
+            "en": "ม.4 – ม.6 (upper secondary)",
+            "th": "ม.4 – ม.6 (มัธยมปลาย)"
+          }
+        },
+        {
+          "value": "VOCATIONAL",
+          "label": {
+            "en": "ปวช. – ปวส. (vocational)",
+            "th": "ปวช. – ปวส. (อาชีวศึกษา)"
+          }
+        }
+      ]
+    },
+    {
+      "id": "cost",
+      "type": "single",
+      "required": true,
+      "text": {
+        "en": "How much does cost matter in your decision?",
+        "th": "ค่าใช้จ่ายมีผลกับการตัดสินใจของคุณมากแค่ไหน"
+      },
+      "help": {
+        "en": "Routes you cannot afford are not recommendations. Answer honestly.",
+        "th": "เส้นทางที่คุณจ่ายไม่ไหวไม่ใช่ข้อเสนอที่ดี ตอบตามความจริง"
+      },
+      "options": [
+        {
+          "value": "tight",
+          "label": {
+            "en": "It matters a lot — I need a low-cost route",
+            "th": "มีผลมาก — ต้องเป็นเส้นทางที่ค่าใช้จ่ายต่ำ"
+          }
+        },
+        {
+          "value": "moderate",
+          "label": {
+            "en": "It matters somewhat",
+            "th": "มีผลอยู่บ้าง"
+          }
+        },
+        {
+          "value": "flexible",
+          "label": {
+            "en": "It is not a major constraint",
+            "th": "ไม่ใช่ข้อจำกัดหลัก"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "en": "I do not know yet",
+            "th": "ยังไม่รู้"
+          }
+        }
+      ]
+    },
+    {
+      "id": "mobility",
+      "type": "single",
+      "required": true,
+      "text": {
+        "en": "Could you study away from your home province?",
+        "th": "คุณย้ายไปเรียนต่างจังหวัดได้ไหม"
+      },
+      "options": [
+        {
+          "value": "local_only",
+          "label": {
+            "en": "No — it needs to be near home",
+            "th": "ไม่ได้ — ต้องอยู่ใกล้บ้าน"
+          }
+        },
+        {
+          "value": "can_move",
+          "label": {
+            "en": "Yes — I could move",
+            "th": "ได้ — ย้ายไปอยู่ที่อื่นได้"
+          }
+        },
+        {
+          "value": "unknown",
+          "label": {
+            "en": "I do not know yet",
+            "th": "ยังไม่รู้"
+          }
+        }
+      ]
+    },
+    {
+      "id": "horizon",
+      "type": "single",
+      "required": true,
+      "text": {
+        "en": "How soon do you want to be earning?",
+        "th": "คุณอยากเริ่มมีรายได้เร็วแค่ไหน"
+      },
+      "options": [
+        {
+          "value": "soon",
+          "label": {
+            "en": "As soon as possible",
+            "th": "เร็วที่สุดเท่าที่จะเป็นไปได้"
+          }
+        },
+        {
+          "value": "later",
+          "label": {
+            "en": "I am willing to study for several years first",
+            "th": "ยอมเรียนอีกหลายปีก่อนได้"
+          }
+        },
+        {
+          "value": "unsure",
+          "label": {
+            "en": "I am not sure",
+            "th": "ยังไม่แน่ใจ"
+          }
+        }
+      ]
+    },
+    {
+      "id": "proud",
+      "type": "text",
+      "required": false,
+      "text": {
+        "en": "Describe one thing you made, fixed, organised, or helped with that you were proud of.",
+        "th": "เล่าสักเรื่องที่คุณเคยทำ ซ่อม จัดการ หรือช่วยเหลือแล้วรู้สึกภูมิใจ"
+      },
+      "help": {
+        "en": "Optional. Free text is scanned for evidence keywords only — it is never sent anywhere in guest mode.",
+        "th": "ตอบหรือไม่ก็ได้ ข้อความนี้ถูกสแกนหาคำสำคัญเท่านั้น และไม่ถูกส่งออกไปไหนในโหมดผู้เยี่ยมชม"
+      },
+      "placeholder": {
+        "en": "For example: I rebuilt the school club's sign-up sheet so nobody got double-booked…",
+        "th": "เช่น ฉันทำใบลงชื่อของชมรมใหม่ทั้งหมด เลยไม่มีใครจองเวลาชนกันอีก"
+      }
+    }
+  ],
+  "scale": [
+    {
+      "value": 1,
+      "label": {
+        "en": "Strongly dislike",
+        "th": "ไม่ชอบอย่างยิ่ง"
+      }
+    },
+    {
+      "value": 2,
+      "label": {
+        "en": "Dislike",
+        "th": "ไม่ชอบ"
+      }
+    },
+    {
+      "value": 3,
+      "label": {
+        "en": "Not sure",
+        "th": "ไม่แน่ใจ"
+      }
+    },
+    {
+      "value": 4,
+      "label": {
+        "en": "Like",
+        "th": "ชอบ"
+      }
+    },
+    {
+      "value": 5,
+      "label": {
+        "en": "Strongly like",
+        "th": "ชอบอย่างยิ่ง"
+      }
+    }
+  ],
+  "efficacy": [
+    {
+      "id": "SEF-R-01",
+      "dimension": "R",
+      "sourceType": "researcher-written",
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะซ่อมหรือประกอบอุปกรณ์ให้ใช้งานได้ได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could repair or assemble equipment so it works?"
+      },
+      "scaleId": "scale5-confidence"
+    },
+    {
+      "id": "SEF-I-01",
+      "dimension": "I",
+      "sourceType": "researcher-written",
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะหาสาเหตุของปัญหาด้วยข้อมูลและเหตุผลได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could find the cause of a problem from data and reasoning?"
+      },
+      "scaleId": "scale5-confidence"
+    },
+    {
+      "id": "SEF-A-01",
+      "dimension": "A",
+      "sourceType": "researcher-written",
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะสร้างงานออกแบบหรืองานเล่าเรื่องของตัวเองได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could create your own design or piece of storytelling?"
+      },
+      "scaleId": "scale5-confidence"
+    },
+    {
+      "id": "SEF-S-01",
+      "dimension": "S",
+      "sourceType": "researcher-written",
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะดูแลหรืออธิบายเรื่องต่าง ๆ ให้คนอื่นเข้าใจได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could care for people or explain things so they understand?"
+      },
+      "scaleId": "scale5-confidence"
+    },
+    {
+      "id": "SEF-E-01",
+      "dimension": "E",
+      "sourceType": "researcher-written",
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะนำกลุ่มหรือโน้มน้าวให้คนเห็นด้วยได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could lead a group or bring people round to an idea?"
+      },
+      "scaleId": "scale5-confidence"
+    },
+    {
+      "id": "SEF-C-01",
+      "dimension": "C",
+      "sourceType": "researcher-written",
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะทำงานที่ต้องละเอียดและถูกต้องทุกจุดได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could do work that has to be accurate in every detail?"
+      },
+      "scaleId": "scale5-confidence"
+    }
+  ],
+  "scaleConfidence": [
+    {
+      "value": 1,
+      "label": {
+        "en": "Not at all",
+        "th": "ทำไม่ได้เลย"
+      }
+    },
+    {
+      "value": 2,
+      "label": {
+        "en": "A little",
+        "th": "ทำได้นิดหน่อย"
+      }
+    },
+    {
+      "value": 3,
+      "label": {
+        "en": "Not sure",
+        "th": "ไม่แน่ใจ"
+      }
+    },
+    {
+      "value": 4,
+      "label": {
+        "en": "Fairly well",
+        "th": "ทำได้ค่อนข้างดี"
+      }
+    },
+    {
+      "value": 5,
+      "label": {
+        "en": "Very well",
+        "th": "ทำได้ดีมาก"
+      }
+    }
+  ]
+}

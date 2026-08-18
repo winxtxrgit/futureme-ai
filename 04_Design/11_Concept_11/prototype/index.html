@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="th">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="Aurora — ทดลองหลายอนาคตผ่านบทสนทนา ภารกิจ และ 3 เส้นทางที่อธิบายได้">
+  <meta name="theme-color" content="#0B0B14">
+  <title>Aurora — Future Me</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="app.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">ข้ามไปยังเนื้อหา</a>
+
+  <div class="ambient ambient-one" aria-hidden="true"></div>
+  <div class="ambient ambient-two" aria-hidden="true"></div>
+
+  <header class="site-header">
+    <a class="brand" href="?page=landing" data-page="landing" aria-label="Aurora หน้าแรก">
+      <span class="brand-mark" aria-hidden="true"><i></i></span>
+      <span class="brand-copy"><strong>Future Me</strong><small>Aurora direction</small></span>
+    </a>
+
+    <nav class="top-nav" aria-label="การนำทางหลัก">
+      <a href="?page=interview" data-page="interview">ค้นหาตัวตน</a>
+      <a href="?page=results" data-page="results">เส้นทาง</a>
+      <a href="?page=roadmap" data-page="roadmap">Roadmap</a>
+      <a href="?page=dashboard" data-page="dashboard">ของฉัน</a>
+    </nav>
+
+    <div class="header-actions">
+      <button class="icon-button theme-toggle" type="button" aria-label="เปลี่ยนเป็นโหมดสว่าง">
+        <span class="theme-icon" aria-hidden="true">☼</span>
+      </button>
+      <a class="header-cta" href="?page=interview" data-page="interview">เริ่มค้นหา <span aria-hidden="true">↗</span></a>
+    </div>
+  </header>
+
+  <main id="main" tabindex="-1"></main>
+
+  <nav class="mobile-nav" aria-label="การนำทางมือถือ">
+    <a href="?page=landing" data-page="landing"><span aria-hidden="true">⌂</span><small>หน้าแรก</small></a>
+    <a href="?page=interview" data-page="interview"><span aria-hidden="true">✦</span><small>ค้นหา</small></a>
+    <a href="?page=results" data-page="results"><span aria-hidden="true">◇</span><small>เส้นทาง</small></a>
+    <a href="?page=dashboard" data-page="dashboard"><span aria-hidden="true">▦</span><small>ของฉัน</small></a>
+  </nav>
+
+  <div class="sr-status" aria-live="polite" aria-atomic="true"></div>
+</body>
+</html>
+

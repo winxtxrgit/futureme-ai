@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="UTF-8">
+<title>รายงานสถาปัตยกรรมและพิมพ์เขียวระบบแนะแนวการศึกษาและอาชีพอัจฉริยะ (FutureMe AI System Architecture & Master Blueprint)</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Sarabun:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap');
+
+  :root {
+    --ink: #1f2733;
+    --primary: #14496e;      /* สีหลักน้ำเงินเข้ม */
+    --primary-2: #2b7bb9;    /* สีรองน้ำเงินสว่าง */
+    --accent: #0e9488;       /* สีเน้นเขียวหัวเป็ด */
+    --soft: #eef4f9;         /* สีพื้นหลังแถบตารางเว้นแถว */
+    --soft-2: #e5f3f1;       /* สีไฮไลต์พื้นหลังเน้นผลลัพธ์ */
+    --line: #d5dee6;         /* สีขอบและเส้นแบ่ง */
+    --muted: #6b7785;        /* สีเทาสำหรับหมายเหตุและคำอธิบาย */
+    --green: #1f7a4d;        /* สีเขียวสำเร็จ */
+  }
+  
+  @page {
+    size: A4;
+    margin: 12mm 14mm 12mm 14mm;
+  }
+  
+  * { box-sizing: border-box; }
+  
+  html[lang="th"] {
+    font-size: 100%;
+  }
+
+  body {
+    font-family: 'Sarabun', 'TH Sarabun New', 'TH Sarabun PSK', sans-serif;
+    font-size: 13.5px;
+    line-height: 1.6;
+    color: var(--ink);
+    margin: 0;
+    padding: 0;
+    text-align: justify;
+  }
+  
+  p::first-letter, span::first-letter {
+    font-size: inherit !important;
+    font-weight: inherit !important;
+    color: inherit !important;
+  }
+
+  p { margin: 0 0 5px 0; text-indent: 1cm; }
+  p.no-indent { text-indent: 0; }
+  
+  /* ---------- HEADER BLOCK ---------- */
+  .header-container {
+    border: 1px solid var(--line);
+    border-top: 4px solid var(--primary);
+    border-radius: 8px;
+    padding: 10px 14px;
+    margin-bottom: 10px;
+    background: #fbfdff;
+  }
+  .header-table {
+    width: 100%;
+    border-collapse: collapse;
+  }
+  .header-table td {
+    padding: 1px 0;
+    vertical-align: top;
+  }
+  .header-title {
+    font-size: 19px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 0 0 3px 0;
+    line-height: 1.25;
+  }
+  .header-subtitle {
+    font-size: 13.5px;
+    font-weight: 700;
+    color: var(--primary-2);
+    margin: 0 0 5px 0;
+  }
+  .members-title {
+    font-size: 13px;
+    font-weight: 700;
+    color: var(--primary);
+    margin-top: 2px;
+  }
+  .members-list {
+    margin: 0;
+    padding-left: 18px;
+    font-size: 12px;
+    color: var(--ink);
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1px 10px;
+  }
+  .meta-info {
+    text-align: right;
+    font-size: 12px;
+    color: var(--muted);
+    line-height: 1.45;
+  }
+  
+  /* ---------- SECTIONS ---------- */
+  .section-page {
+    break-before: auto;
+    page-break-before: auto;
+  }
+  
+  .page-break {
+    break-before: page;
+    page-break-before: always;
+  }
+
+  h2.sec {
+    font-size: 16px;
+    font-weight: 800;
+    color: var(--primary);
+    margin: 10px 0 6px;
+    padding-bottom: 3px;
+    border-bottom: 2px solid var(--line);
+    break-after: avoid;
+    page-break-after: avoid;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+  }
+  h2.sec .num {
+    flex: 0 0 auto;
+    width: 22px;
+    height: 22px;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 4px;
+    font-size: 12.5px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+  }
+  
+  h3.sub {
+    font-size: 14.5px;
+    font-weight: 700;
+    color: var(--accent);
+    margin: 9px 0 4px;
+    break-after: avoid;
+    page-break-after: avoid;
+  }
+
+  blockquote.callout {
+    background: var(--soft);
+    border-left: 4px solid var(--primary-2);
+    padding: 6px 10px;
+    margin: 6px 0;
+    border-radius: 0 5px 5px 0;
+    font-size: 12.5px;
+  }
+
+  /* ---------- TABLES ---------- */
+  table.data {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 6px 0;
+    font-size: 12px;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  table.data tr {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  table.data caption {
+    caption-side: top;
+    text-align: center;
+    font-size: 12px;
+    color: var(--muted);
+    margin-bottom: 3px;
+    font-weight: 700;
+  }
+  table.data th {
+    background: var(--primary);
+    color: #fff;
+    font-weight: 700;
+    font-size: 12.5px;
+    padding: 4px 6px;
+    text-align: center;
+    border: 1px solid #0f3a58;
+  }
+  table.data td {
+    padding: 4px 6px;
+    border: 1px solid var(--line);
+    vertical-align: middle;
+  }
+  table.data tbody tr:nth-child(even) {
+    background: var(--soft);
+  }
+  
+  /* ---------- DIAGRAM CONTAINER ---------- */
+  .diagram-container {
+    border: 1px solid var(--line);
+    border-radius: 8px;
+    background: #ffffff;
+    padding: 12px;
+    margin: 10px 0;
+    text-align: center;
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+  .diagram-container figcaption {
+    font-size: 12px;
+    color: var(--muted);
+    margin-top: 6px;
+    font-weight: 700;
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ ส่วนหัวข้อรายงาน ============ -->
+<div class="header-container">
+  <table class="header-table">
+    <tr>
+      <td style="width: 65%;">
+        <h1 class="header-title">รายงานสถาปัตยกรรมและพิมพ์เขียวระบบแนะแนวการศึกษาและอาชีพอัจฉริยะ</h1>
+        <div class="header-subtitle">FutureMe AI: Master Architecture Blueprint &amp; System Flowchart Catalog (Planning Phase)</div>
+        <div class="members-title">ผู้จัดทำและพัฒนาโครงการ (ทีม FutureMe AI):</div>
+        <ol class="members-list" style="padding-left: 18px;">
+          <li>ธนัท จงธีรธนโชติ</li>
+        </ol>
+      </td>
+      <td style="width: 35%; text-align: right;">
+        <div class="meta-info">
+          <strong>เวทีการแข่งขัน:</strong> JUMP THAILAND 2026<br>
+          <strong>หัวข้อ:</strong> AI เพื่ออนาคตการศึกษาไทย<br>
+          <strong>พันธมิตรจัดแข่งขัน:</strong> AIS Academy x NIA<br>
+          <strong>สถานะระบบ:</strong> อยู่ในขั้นวางแผนสถาปัตยกรรม<br>
+          <strong>คลาวด์เป้าหมาย:</strong> AIS Cloud Powered by OCI
+        </div>
+      </td>
+    </tr>
+  </table>
+</div>
+
+<!-- ============ หัวข้อที่ 1 ============ -->
+<section class="section-page">
+  <h2 class="sec"><span class="num">1</span>การวิเคราะห์ตรรกะและการทำงานภาพรวม <span style="color: var(--primary-2); font-size:13px; font-weight:700;">(System Logic &amp; Operational Analysis)</span></h2>
+  
+  <p>ปัญหาสำคัญของการศึกษาไทยในปัจจุบัน ไม่ใช่เด็กไม่อยากเรียน แต่คือเด็กจำนวนมาก <strong>"เลือกเรียนตามเพื่อน"</strong> หรือ <strong>"เรียนๆ ไปก่อน"</strong> โดยไร้เป้าหมายอาชีพที่ชัดเจน เมื่อจบออกมาจึงเจอกำแพงความไม่สอดคล้องระหว่างการศึกษากับตลาดแรงงาน (Skill &amp; Field Mismatch) โครงการ <strong>FutureMe AI</strong> จึงถูกออกแบบมาเพื่อแก้วิกฤตนี้โดยเฉพาะ ด้วยระบบแนะแนวทางเดินการศึกษาแบบแม่นยำสูง</p>
+
+  <h3 class="sub">1.1 หลักฐานสถิติวิเคราะห์และแหล่งอ้างอิงทางการ (Verified Research &amp; Citations)</h3>
+  <p class="no-indent">ทีมงานสกัดตัวเลขสถิติจากรายงานวิจัยของหน่วยงานระดับชาติและระดับโลก เพื่อนำมาใช้เป็นฐานอ้างอิงในการออกแบบสถาปัตยกรรมระบบ โดยมีรายละเอียดและแหล่งที่มาดังนี้:</p>
+
+  <table class="data">
+    <caption>ตารางที่ 1 สรุปสถิติตลาดแรงงาน การศึกษา และแหล่งอ้างอิงทางการ</caption>
+    <thead>
+      <tr>
+        <th style="width: 22%;">ประเด็นการสำรวจ</th>
+        <th style="width: 43%;">ข้อมูลสถิติที่ผ่านการตรวจสอบแล้ว</th>
+        <th style="width: 35%;">หน่วยงานและเอกสารอ้างอิงทางการ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>ความไม่สอดคล้องภาพรวม (Overall Mismatch)</strong></td>
+        <td>แรงงานไทยเพียง <strong>31.4%</strong> ตรงสายงาน ขณะที่ <strong>68.6% Mismatch</strong> (Over-education 35.16%, Under-education 33.45%)</td>
+        <td><strong>สถาบันวิจัยเพื่อการพัฒนาประเทศไทย (TDRI, 2025)</strong><br>รายงานวิจัย <em>"ความไม่สอดคล้องในตลาดแรงงานไทย"</em></td>
+      </tr>
+      <tr>
+        <td><strong>การทำงานไม่ตรงสาย (Field Mismatch)</strong></td>
+        <td>บัณฑิตปริญญาตรีประมาณ <strong>52% – 56%</strong> ทำงานในสายงานที่ไม่ตรงกับสาขาที่จบมา</td>
+        <td><strong>สภาพัฒน์ (สศช.) &amp; TDRI (2024-2025)</strong><br>รายงานภาวะสังคมไทย รายไตรมาส</td>
+      </tr>
+      <tr>
+        <td><strong>เงื่อนไขประสบการณ์นายจ้าง</strong></td>
+        <td>จากประกาศงานออนไลน์ 304,378 ตำแหน่ง พบว่า <strong>63% – 65% ต้องการผู้มีประสบการณ์ 1–2 ปีขึ้นไป</strong> มีตำแหน่ง Entry-level เพียง 22%</td>
+        <td><strong>TDRI Labour Market Analytics (2025)</strong><br>การวิเคราะห์ Big Data ประกาศรับสมัครงานออนไลน์</td>
+      </tr>
+      <tr>
+        <td><strong>ทักษะที่ถูกดิสรัปต์ (Skill Shift)</strong></td>
+        <td><strong>39% (WEF 2025 Update)</strong> / <strong>44% (WEF 2023)</strong> ของทักษะหลักคาดว่าจะเปลี่ยนหรือล้าสมัยภายในปี 2030</td>
+        <td><strong>World Economic Forum (WEF)</strong><br><em>Future of Jobs Report 2023 &amp; 2025 Edition</em></td>
+      </tr>
+      <tr>
+        <td><strong>Mismatch ระดับโลก</strong></td>
+        <td>เฉลี่ย <strong>35% – 40%</strong> ของผู้จบอุดมศึกษาในประเทศ OECD ทำงานไม่ตรงสายวิชาที่เรียน</td>
+        <td><strong>OECD &amp; ILOSTAT (2024)</strong><br><em>OECD PIAAC Skills Survey &amp; ILO Statistics</em></td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">1.2 ข้อเสนอเชิงสถาปัตยกรรมจากคำแนะนำอาจารย์ (Advisor's Insights)</h3>
+  <p class="no-indent">จากการถอดรหัสคำแนะนำอาจารย์ในไฟล์เสียงอ้างอิง (Advice_from_the_teacher.m4a) ร่วมกับโจทย์ JUMP THAILAND ได้ข้อสรุปสถาปัตยกรรม 3 ประการหลัก:</p>
+  <blockquote class="callout">
+    1. <em>Small LLM + RAG + LoRA:</em> ไม่จำเป็นต้องใช้ LLM ตัวใหญ่ แต่ให้ใช้ Small Language Model (SLM) เก่งภาษาไทย (เช่น Typhoon-2 8B / Qwen2.5) ร่วมกับ RAG Vector Database เป็นสมองที่สอง<br>
+    2. <em>Scoping Logic:</em> แบ่งหน้าที่ชัดเจน ใช้ <strong>Rule-based Engine</strong> กรองเงื่อนไขตายตัว (คะแนน RIASEC, วุฒิ GED/กศน., สายเรียน) และใช้ <strong>LLM Engine</strong> ขับเคลื่อนบทสนทนา Socratic Chat<br>
+    3. <em>Ecosystem Fit:</em> เชื่อมต่อเพื่อเติมเต็มแพลตฟอร์มกระทรวงศึกษาธิการ (NDLP www.ndlp.go.th และ DEEP SSO www.deep.go.th)
+  </blockquote>
+</section>
+
+<!-- ============ หัวข้อที่ 2 ============ -->
+<section class="section-page page-break">
+  <h2 class="sec"><span class="num">2</span>ผังกระบวนการและสถาปัตยกรรมระบบย่อยอย่างละเอียด <span style="color: var(--primary-2); font-size:13px; font-weight:700;">(Detailed Master &amp; Sub-system Flowcharts Catalog)</span></h2>
+  
+  <p>ระบบ FutureMe AI ถูกออกแบบตามมาตรฐาน Carrier-Grade บน AIS Cloud โดยประกอบด้วยผังกระบวนการทำงานภาพรวม (Master Operations Flowchart Diagram) ขยายขนาดใหญ่ คมชัด อ่านง่าย และผังแยกรายระบบย่อยอย่างละเอียด ถอดแบบเป๊ะครบถ้วน ดังนี้:</p>
+
+  <h3 class="sub">2.1 Master System Operations Flowchart (ผังกระบวนการทำงานภาพรวมทั้งระบบ)</h3>
+  
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 820" width="100%" height="100%" style="display: block; margin: 0 auto; max-height: 750px;">
+      <defs>
+        <marker id="arrow" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="6" markerHeight="6" orient="auto-start-reverse">
+          <path d="M 0 0 L 10 5 L 0 10 z" fill="#14496e" />
+        </marker>
+        <filter id="shadow" x="-5%" y="-5%" width="110%" height="110%">
+          <feDropShadow dx="0" dy="2" stdDeviation="2" flood-color="#000" flood-opacity="0.08"/>
+        </filter>
+      </defs>
+
+      <!-- Subgraph 1 -->
+      <g filter="url(#shadow)">
+        <rect x="20" y="10" width="610" height="155" rx="6" fill="#f8fafc" stroke="#14496e" stroke-width="1.8"/>
+        <rect x="20" y="10" width="610" height="24" rx="6" fill="#14496e"/>
+        <text x="325" y="26" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">1. Client &amp; Authentication Layer (AIS Open API - CAMARA Standard)</text>
+        
+        <rect x="180" y="38" width="290" height="24" rx="4" fill="#ffffff" stroke="#14496e" stroke-width="1.2"/>
+        <text x="325" y="54" fill="#1f2733" font-size="11.5" font-weight="bold" text-anchor="middle">นักเรียน / ผู้ปกครอง / ครู เข้าใช้งาน Web App</text>
+        <line x1="325" y1="62" x2="325" y2="72" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+        <polygon points="325,72 415,88 325,104 235,88" fill="#ffffff" stroke="#14496e" stroke-width="1.5"/>
+        <text x="325" y="91" fill="#14496e" font-size="11" font-weight="bold" text-anchor="middle">ผู้ใช้เข้าสู่ระบบผ่านวิธีใด?</text>
+
+        <line x1="235" y1="88" x2="135" y2="88" stroke="#b7791f" stroke-width="1.5"/>
+        <line x1="135" y1="88" x2="135" y2="110" stroke="#b7791f" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <text x="185" y="82" fill="#b7791f" font-size="10.5" font-weight="bold">เบอร์เครือข่ายอื่น</text>
+        <rect x="30" y="110" width="210" height="24" rx="4" fill="#ffffff" stroke="#b7791f" stroke-width="1.2"/>
+        <text x="135" y="126" fill="#b7791f" font-size="10.5" font-weight="bold" text-anchor="middle">เรียก AIS OTP API ส่ง SMS รหัสผ่านครั้งเดียว</text>
+
+        <line x1="415" y1="88" x2="515" y2="88" stroke="#1f7a4d" stroke-width="1.5"/>
+        <line x1="515" y1="88" x2="515" y2="110" stroke="#1f7a4d" stroke-width="1.5" marker-end="url(#arrow)"/>
+        <text x="465" y="82" fill="#1f7a4d" font-size="10.5" font-weight="bold">เบอร์มือถือ AIS</text>
+        <rect x="410" y="110" width="210" height="24" rx="4" fill="#ffffff" stroke="#1f7a4d" stroke-width="1.2"/>
+        <text x="515" y="126" fill="#1f7a4d" font-size="10.5" font-weight="bold" text-anchor="middle">เรียก AIS Number Verify API (Passwordless)</text>
+
+        <line x1="135" y1="134" x2="135" y2="142" stroke="#14496e" stroke-width="1.2"/>
+        <line x1="515" y1="134" x2="515" y2="142" stroke="#14496e" stroke-width="1.2"/>
+        <line x1="135" y1="142" x2="515" y2="142" stroke="#14496e" stroke-width="1.2"/>
+        <line x1="325" y1="142" x2="325" y2="152" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+      </g>
+      <line x1="325" y1="165" x2="325" y2="178" stroke="#14496e" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+      <!-- Subgraph 2 -->
+      <g filter="url(#shadow)">
+        <rect x="20" y="178" width="610" height="150" rx="6" fill="#f8fafc" stroke="#0e9488" stroke-width="1.8"/>
+        <rect x="20" y="178" width="610" height="24" rx="6" fill="#0e9488"/>
+        <text x="325" y="194" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">2. Sequential 2-Phase Assessment Engine</text>
+
+        <polygon points="325,206 415,220 325,234 235,220" fill="#ffffff" stroke="#0e9488" stroke-width="1.5"/>
+        <text x="325" y="223" fill="#0e9488" font-size="11" font-weight="bold" text-anchor="middle">เลือกเข้าสู่กระบวนการใด?</text>
+        <line x1="325" y1="234" x2="325" y2="246" stroke="#0e9488" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+        <rect x="100" y="246" width="450" height="24" rx="4" fill="#ffffff" stroke="#0e9488" stroke-width="1.2"/>
+        <text x="325" y="262" fill="#0e9488" font-size="11" font-weight="bold" text-anchor="middle">Phase 1: Socratic AI Adaptive Chat (STAR Method &amp; RIASEC Matrix)</text>
+        <line x1="325" y1="270" x2="325" y2="278" stroke="#0e9488" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+        <rect x="100" y="278" width="450" height="24" rx="4" fill="#e5f3f1" stroke="#0e9488" stroke-width="1.2"/>
+        <text x="325" y="294" fill="#0e9488" font-size="11" font-weight="bold" text-anchor="middle">Phase 2: Scenario Missions Sandbox (Multi-Evidence Collection)</text>
+      </g>
+      <line x1="325" y1="328" x2="325" y2="340" stroke="#14496e" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+      <!-- Subgraph 3 -->
+      <g filter="url(#shadow)">
+        <rect x="20" y="340" width="610" height="145" rx="6" fill="#f8fafc" stroke="#2b7bb9" stroke-width="1.8"/>
+        <rect x="20" y="340" width="610" height="24" rx="6" fill="#2b7bb9"/>
+        <text x="325" y="356" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">3. Hybrid Recommendation &amp; RAG Pipeline (FastAPI)</text>
+
+        <rect x="70" y="368" width="510" height="24" rx="4" fill="#ffffff" stroke="#2b7bb9" stroke-width="1.2"/>
+        <text x="325" y="384" fill="#1f2733" font-size="11" font-weight="bold" text-anchor="middle">Rule-based Engine Filter (จำกัดขอบเขต ม.ปลาย / อาชีวะ ปวช.-ปวส. / GED / สกร. / TCAS)</text>
+        <line x1="325" y1="392" x2="325" y2="400" stroke="#2b7bb9" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+        <rect x="70" y="400" width="510" height="24" rx="4" fill="#eef4f9" stroke="#2b7bb9" stroke-width="1.2"/>
+        <text x="325" y="416" fill="#14496e" font-size="11" font-weight="bold" text-anchor="middle">Qdrant Hybrid Search (Dense Vector Semantic + Sparse Keyword RRF Fusion)</text>
+        <line x1="325" y1="424" x2="325" y2="432" stroke="#2b7bb9" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+        <rect x="70" y="432" width="510" height="24" rx="4" fill="#ffffff" stroke="#14496e" stroke-width="1.2"/>
+        <text x="325" y="448" fill="#14496e" font-size="11" font-weight="bold" text-anchor="middle">LLM Synthesis Engine (สร้างคำอธิบายแบบมีหลักฐานรองรับ - Explainable AI Output)</text>
+      </g>
+      <line x1="325" y1="485" x2="325" y2="498" stroke="#14496e" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+      <!-- Subgraph 4 -->
+      <g filter="url(#shadow)">
+        <rect x="20" y="498" width="610" height="95" rx="6" fill="#f8fafc" stroke="#14496e" stroke-width="1.8"/>
+        <rect x="20" y="498" width="610" height="24" rx="6" fill="#14496e"/>
+        <text x="325" y="514" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">4. Dynamic Pathfinder Roadmap Generator (roadmap.sh style)</text>
+
+        <rect x="70" y="526" width="510" height="24" rx="4" fill="#ffffff" stroke="#14496e" stroke-width="1.2"/>
+        <text x="325" y="542" fill="#14496e" font-size="11" font-weight="bold" text-anchor="middle">สร้างโครงสร้างข้อมูล Directed Acyclic Graph (DAG) &amp; Topological Sort Algorithm</text>
+      </g>
+      <line x1="325" y1="593" x2="325" y2="605" stroke="#14496e" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+      <!-- Subgraph 5 -->
+      <g filter="url(#shadow)">
+        <rect x="20" y="605" width="610" height="120" rx="6" fill="#f8fafc" stroke="#0e9488" stroke-width="1.8"/>
+        <rect x="20" y="605" width="610" height="24" rx="6" fill="#0e9488"/>
+        <text x="325" y="621" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">5. Multi-Role RBAC &amp; Privacy Notification Layer</text>
+
+        <polygon points="325,632 415,644 325,656 235,644" fill="#ffffff" stroke="#0e9488" stroke-width="1.5"/>
+        <text x="325" y="647" fill="#0e9488" font-size="10.5" font-weight="bold" text-anchor="middle">สิทธิ์ RBAC?</text>
+
+        <line x1="235" y1="644" x2="120" y2="644" stroke="#0e9488" stroke-width="1.2"/>
+        <line x1="120" y1="644" x2="120" y2="662" stroke="#0e9488" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="30" y="662" width="180" height="22" rx="4" fill="#ffffff" stroke="#0e9488" stroke-width="1.2"/>
+        <text x="120" y="676" fill="#0e9488" font-size="10" font-weight="bold" text-anchor="middle">นักเรียน (Private 100%)</text>
+
+        <line x1="325" y1="656" x2="325" y2="662" stroke="#b7791f" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="225" y="662" width="200" height="22" rx="4" fill="#ffffff" stroke="#b7791f" stroke-width="1.2"/>
+        <text x="325" y="676" fill="#b7791f" font-size="10" font-weight="bold" text-anchor="middle">ผู้ปกครอง (Parent Summary View)</text>
+
+        <line x1="415" y1="644" x2="530" y2="644" stroke="#2b7bb9" stroke-width="1.2"/>
+        <line x1="530" y1="644" x2="530" y2="662" stroke="#2b7bb9" stroke-width="1.2" marker-end="url(#arrow)"/>
+        <rect x="440" y="662" width="180" height="22" rx="4" fill="#ffffff" stroke="#2b7bb9" stroke-width="1.2"/>
+        <text x="530" y="676" fill="#2b7bb9" font-size="10" font-weight="bold" text-anchor="middle">ครูแนะแนว (Counselor View)</text>
+
+        <line x1="120" y1="684" x2="120" y2="692" stroke="#14496e" stroke-width="1.2"/>
+        <line x1="325" y1="684" x2="325" y2="692" stroke="#14496e" stroke-width="1.2"/>
+        <line x1="530" y1="684" x2="530" y2="692" stroke="#14496e" stroke-width="1.2"/>
+        <line x1="120" y1="692" x2="530" y2="692" stroke="#14496e" stroke-width="1.2"/>
+        <line x1="325" y1="692" x2="325" y2="700" stroke="#14496e" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+        <rect x="100" y="700" width="450" height="20" rx="4" fill="#ffffff" stroke="#14496e" stroke-width="1.2"/>
+        <text x="325" y="713" fill="#1f2733" font-size="10" text-anchor="middle">เรียก AIS SMS API ส่งการแจ้งเตือนแผน 30 วัน &amp; สรุปผลทาง SMS</text>
+      </g>
+      <line x1="325" y1="725" x2="325" y2="738" stroke="#14496e" stroke-width="1.8" marker-end="url(#arrow)"/>
+
+      <!-- Subgraph 6 -->
+      <g filter="url(#shadow)">
+        <rect x="20" y="738" width="610" height="65" rx="6" fill="#f0f7fc" stroke="#14496e" stroke-width="1.8" stroke-dasharray="4,2"/>
+        <rect x="20" y="738" width="610" height="24" rx="6" fill="#14496e"/>
+        <text x="325" y="754" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">6. AIS Cloud Container Infrastructure</text>
+
+        <rect x="70" y="764" width="510" height="26" rx="4" fill="#ffffff" stroke="#14496e" stroke-width="1.2"/>
+        <text x="325" y="780" fill="#14496e" font-size="11" font-weight="bold" text-anchor="middle">รันแอปพลิเคชันบน Kubernetes (OKE) บน AIS Enterprise/OCI Cloud (100% Data Sovereignty)</text>
+      </g>
+    </svg>
+    <figcaption>รูปที่ 1 แผนผังกระบวนการทำงานภาพรวมทั้งระบบ (Master System Operations Flowchart)</figcaption>
+  </div>
+
+  <h3 class="sub">2.2 ผังแยกรายระบบย่อยอย่างละเอียด (Sub-systems Detailed Flowcharts Catalog)</h3>
+
+  <!-- Sub-system 1 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 310" width="100%" height="100%" style="display: block; margin: 0 auto; max-height: 290px;">
+      <rect x="200" y="10" width="250" height="34" rx="5" fill="#14496e"/>
+      <text x="325" y="31" fill="#ffffff" font-size="12" font-weight="bold" text-anchor="middle">ผู้ใช้เริ่มต้นเข้าสู่ระบบ (Web/Mobile)</text>
+      <line x1="325" y1="44" x2="325" y2="60" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <polygon points="325,60 425,82 325,104 225,82" fill="#eef4f9" stroke="#14496e" stroke-width="1.5"/>
+      <text x="325" y="85" fill="#14496e" font-size="11" font-weight="bold" text-anchor="middle">เบอร์โทรศัพท์ AIS?</text>
+
+      <line x1="425" y1="82" x2="515" y2="82" stroke="#1f7a4d" stroke-width="1.5"/>
+      <text x="445" y="76" fill="#1f7a4d" font-size="10.5" font-weight="bold">ใช่ (AIS)</text>
+      <line x1="515" y1="82" x2="515" y2="120" stroke="#1f7a4d" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <rect x="405" y="120" width="220" height="35" rx="5" fill="#ffffff" stroke="#1f7a4d" stroke-width="1.5"/>
+      <text x="515" y="135" fill="#1f7a4d" font-size="11" font-weight="bold" text-anchor="middle">เรียก AIS Number Verify API</text>
+      <text x="515" y="148" fill="#6b7785" font-size="10" text-anchor="middle">(CAMARA Passwordless)</text>
+
+      <line x1="225" y1="82" x2="135" y2="82" stroke="#b7791f" stroke-width="1.5"/>
+      <text x="165" y="76" fill="#b7791f" font-size="10.5" font-weight="bold">ไม่ใช่ (ค่ายอื่น)</text>
+      <line x1="135" y1="82" x2="135" y2="120" stroke="#b7791f" stroke-width="1.5" marker-end="url(#arrow)"/>
+      <rect x="25" y="120" width="220" height="35" rx="5" fill="#ffffff" stroke="#b7791f" stroke-width="1.5"/>
+      <text x="135" y="135" fill="#b7791f" font-size="11" font-weight="bold" text-anchor="middle">เรียก AIS OTP API</text>
+      <text x="135" y="148" fill="#6b7785" font-size="10" text-anchor="middle">(ส่ง SMS OTP 6 หลัก)</text>
+
+      <line x1="515" y1="155" x2="515" y2="175" stroke="#14496e" stroke-width="1.2"/>
+      <line x1="135" y1="155" x2="135" y2="175" stroke="#14496e" stroke-width="1.2"/>
+      <line x1="135" y1="175" x2="515" y2="175" stroke="#14496e" stroke-width="1.2"/>
+      <line x1="325" y1="175" x2="325" y2="195" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="145" y="195" width="360" height="36" rx="5" fill="#ffffff" stroke="#2b7bb9" stroke-width="1.5"/>
+      <text x="325" y="211" fill="#2b7bb9" font-size="11" font-weight="bold" text-anchor="middle">เรียก AIS SIM Swap API (Anti-fraud Protection)</text>
+      <text x="325" y="224" fill="#6b7785" font-size="10" text-anchor="middle">ตรวจสอบประวัติการเปลี่ยน SIM ป้องกันการสวมรอย</text>
+      <line x1="325" y1="231" x2="325" y2="250" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="125" y="250" width="400" height="34" rx="5" fill="#0e9488"/>
+      <text x="325" y="271" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">ยืนยันยินยอม PDPA &amp; กำหนดสิทธิ์ใช้งาน (Student / Parent / Counselor Role)</text>
+    </svg>
+    <figcaption>รูปที่ 2 ผังย่อยที่ 1: ระบบยืนยันตัวตนและการจัดการสิทธิ์ (IAM &amp; AIS Open API Authentication Flowchart)</figcaption>
+  </div>
+
+  <!-- Sub-system 2 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 310" width="100%" height="100%" style="display: block; margin: 0 auto; max-height: 290px;">
+      <rect x="180" y="10" width="290" height="32" rx="5" fill="#14496e"/>
+      <text x="325" y="30" fill="#ffffff" font-size="11.5" font-weight="bold" text-anchor="middle">เริ่มต้นการประเมินค้นหาตัวตน 2 เฟส</text>
+      <line x1="325" y1="42" x2="325" y2="58" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <polygon points="325,58 435,78 325,98 215,78" fill="#eef4f9" stroke="#14496e" stroke-width="1.5"/>
+      <text x="325" y="81" fill="#14496e" font-size="10.5" font-weight="bold" text-anchor="middle">จำแนกกลุ่มระดับชั้นผู้เรียน?</text>
+
+      <line x1="215" y1="78" x2="100" y2="78" stroke="#14496e" stroke-width="1.2"/>
+      <line x1="100" y1="78" x2="100" y2="110" stroke="#14496e" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="15" y="110" width="170" height="34" rx="4" fill="#fff" stroke="#14496e"/>
+      <text x="100" y="124" fill="#14496e" font-size="10.5" font-weight="bold" text-anchor="middle">มัธยมต้น (ม.1-ม.3)</text>
+      <text x="100" y="137" fill="#6b7785" font-size="9.5" text-anchor="middle">เลือก ม.ปลาย / ปวช. 2567</text>
+
+      <line x1="325" y1="98" x2="325" y2="110" stroke="#14496e" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="240" y="110" width="170" height="34" rx="4" fill="#fff" stroke="#14496e"/>
+      <text x="325" y="124" fill="#14496e" font-size="10.5" font-weight="bold" text-anchor="middle">มัธยมปลาย (ม.4-ม.6)</text>
+      <text x="325" y="137" fill="#6b7785" font-size="9.5" text-anchor="middle">เป้าหมายคณะ TCAS 4 รอบ</text>
+
+      <line x1="435" y1="78" x2="550" y2="78" stroke="#14496e" stroke-width="1.2"/>
+      <line x1="550" y1="78" x2="550" y2="110" stroke="#14496e" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="465" y="110" width="170" height="34" rx="4" fill="#fff" stroke="#14496e"/>
+      <text x="550" y="124" fill="#14496e" font-size="10.5" font-weight="bold" text-anchor="middle">ทางเลือก (GED/สกร.)</text>
+      <text x="550" y="137" fill="#6b7785" font-size="9.5" text-anchor="middle">เทียบวุฒิ HSCES / Credit Bank</text>
+
+      <line x1="100" y1="144" x2="100" y2="162" stroke="#0e9488" stroke-width="1.2"/>
+      <line x1="325" y1="144" x2="325" y2="162" stroke="#0e9488" stroke-width="1.2"/>
+      <line x1="550" y1="144" x2="550" y2="162" stroke="#0e9488" stroke-width="1.2"/>
+      <line x1="100" y1="162" x2="550" y2="162" stroke="#0e9488" stroke-width="1.2"/>
+      <line x1="325" y1="162" x2="325" y2="180" stroke="#0e9488" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="80" y="180" width="490" height="40" rx="5" fill="#fff" stroke="#0e9488" stroke-width="1.5"/>
+      <text x="325" y="196" fill="#0e9488" font-size="11" font-weight="bold" text-anchor="middle">Phase 1: Socratic AI Adaptive Chat (5-10 นาที)</text>
+      <text x="325" y="211" fill="#1f2733" font-size="10" text-anchor="middle">สกัดพฤติกรรมย้อนหลัง STAR Method &amp; คะแนน RIASEC 6 ด้าน</text>
+      <line x1="325" y1="220" x2="325" y2="238" stroke="#0e9488" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="80" y="238" width="490" height="40" rx="5" fill="#e5f3f1" stroke="#0e9488" stroke-width="1.5"/>
+      <text x="325" y="254" fill="#0e9488" font-size="11" font-weight="bold" text-anchor="middle">Phase 2: Scenario Missions Sandbox (3-5 นาที)</text>
+      <text x="325" y="269" fill="#1f2733" font-size="10" text-anchor="middle">ทดลองทำภารกิจจำลองบนหน้าเว็บ รวบรวมหลักฐานพฤติกรรมจริง (Multi-Evidence Collection)</text>
+    </svg>
+    <figcaption>รูปที่ 3 ผังย่อยที่ 2: ระบบประเมิน 2 เฟสและการโค้ชด้วย AI (Sequential 2-Phase Assessment Flowchart)</figcaption>
+  </div>
+
+  <!-- Sub-system 3 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 300" width="100%" height="100%" style="display: block; margin: 0 auto; max-height: 280px;">
+      <rect x="130" y="10" width="390" height="32" rx="5" fill="#14496e"/>
+      <text x="325" y="30" fill="#ffffff" font-size="11.5" font-weight="bold" text-anchor="middle">ส่งโปรไฟล์สกัดเข้าสู่ FastAPI Backend Orchestrator</text>
+      <line x1="325" y1="42" x2="325" y2="60" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="70" y="60" width="510" height="40" rx="5" fill="#fff" stroke="#2b7bb9" stroke-width="1.5"/>
+      <text x="325" y="76" fill="#2b7bb9" font-size="11" font-weight="bold" text-anchor="middle">Rule-based Decision Engine (Hard Constraints Filter)</text>
+      <text x="325" y="91" fill="#6b7785" font-size="10" text-anchor="middle">กรองขอบเขตระดับชั้น, วุฒิ GED/สกร., และเงื่อนไขสายเรียนเฉพาะออก</text>
+      <line x1="325" y1="100" x2="325" y2="118" stroke="#2b7bb9" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="70" y="118" width="510" height="50" rx="5" fill="#eef4f9" stroke="#2b7bb9" stroke-width="1.8"/>
+      <text x="325" y="134" fill="#14496e" font-size="11" font-weight="bold" text-anchor="middle">Qdrant Hybrid Search Engine (Dense Vector + Sparse Keyword)</text>
+      <text x="325" y="149" fill="#1f2733" font-size="10" text-anchor="middle">Vector Semantic Search + Sparse Keyword Filter ➔ Reciprocal Rank Fusion (RRF)</text>
+      <text x="325" y="162" fill="#6b7785" font-size="9.5" text-anchor="middle">ดึงบริบท 50+ Career Clusters, หลักสูตร ปวช. 2567, TCAS, GED, สกร.</text>
+      <line x1="325" y1="168" x2="325" y2="186" stroke="#2b7bb9" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="70" y="186" width="510" height="40" rx="5" fill="#fff" stroke="#14496e" stroke-width="1.8"/>
+      <text x="325" y="202" fill="#14496e" font-size="11" font-weight="bold" text-anchor="middle">LLM Synthesis Engine (Typhoon-2 / Claude API)</text>
+      <text x="325" y="217" fill="#1f2733" font-size="10" text-anchor="middle">สร้างบทวิเคราะห์ Explainable AI (จุดแข็ง, หลักฐานรองรับ, และสิ่งที่ยังไม่แน่ใจ)</text>
+      <line x1="325" y1="226" x2="325" y2="244" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="130" y="244" width="390" height="32" rx="5" fill="#0e9488"/>
+      <text x="325" y="264" fill="#ffffff" font-size="11.5" font-weight="bold" text-anchor="middle">ส่งเส้นทางแนะนำ 3-5 ทางพร้อมเหตุผลไปยัง Roadmap Generator</text>
+    </svg>
+    <figcaption>รูปที่ 4 ผังย่อยที่ 3: ระบบวิเคราะห์และดึงข้อมูลอัจฉริยะ (Hybrid Recommendation &amp; RAG Pipeline Flowchart)</figcaption>
+  </div>
+
+  <!-- Sub-system 4 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 280" width="100%" height="100%" style="display: block; margin: 0 auto; max-height: 270px;">
+      <rect x="130" y="10" width="390" height="32" rx="5" fill="#14496e"/>
+      <text x="325" y="30" fill="#ffffff" font-size="11.5" font-weight="bold" text-anchor="middle">รับข้อมูลเส้นทางแนะนำเข้าสู่ Graph Data Builder</text>
+      <line x1="325" y1="42" x2="325" y2="60" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="50" y="60" width="550" height="68" rx="5" fill="#fff" stroke="#14496e" stroke-width="1.5"/>
+      <text x="325" y="76" fill="#14496e" font-size="11" font-weight="bold" text-anchor="middle">สร้างโครงสร้างข้อมูล Directed Acyclic Graph (DAG Nodes)</text>
+      <text x="325" y="92" fill="#1f2733" font-size="10" text-anchor="middle">Node 1: Current State ➔ Node 2: Skill Building ➔ Node 3: Academic Track ➔ Node 4: Criteria ➔ Node 5: Portfolio ➔ Node 6: Career</text>
+      <text x="325" y="106" fill="#6b7785" font-size="9.5" text-anchor="middle">กำหนดเงื่อนไขพึ่งพิง (Edges / Prerequisites) ระหว่าง Node</text>
+      <line x1="325" y1="128" x2="325" y2="145" stroke="#14496e" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="90" y="145" width="470" height="40" rx="5" fill="#eef4f9" stroke="#2b7bb9" stroke-width="1.8"/>
+      <text x="325" y="161" fill="#2b7bb9" font-size="11" font-weight="bold" text-anchor="middle">Topological Sort &amp; Dependency Sorting Engine</text>
+      <text x="325" y="176" fill="#1f2733" font-size="10" text-anchor="middle">เรียงลำดับก้าวเดินก่อน-หลังโดยอัตโนมัติ &amp; ตรวจสอบว่าไม่มีเงื่อนไขวนซ้ำ (Acyclic Check)</text>
+      <line x1="325" y1="185" x2="325" y2="203" stroke="#2b7bb9" stroke-width="1.5" marker-end="url(#arrow)"/>
+
+      <rect x="70" y="203" width="510" height="38" rx="5" fill="#fff" stroke="#0e9488" stroke-width="1.8"/>
+      <text x="325" y="219" fill="#0e9488" font-size="11" font-weight="bold" text-anchor="middle">แสดงผล Interactive Pathfinder Roadmap (roadmap.sh style)</text>
+      <text x="325" y="232" fill="#6b7785" font-size="9.5" text-anchor="middle">เด็กคลิกดูรายละเอียดคอร์สเรียน / กดเช็กอินความก้าวหน้า (Progress Tracker)</text>
+    </svg>
+    <figcaption>รูปที่ 5 ผังย่อยที่ 4: ระบบสร้างแผนที่เส้นทางแบบโต้ตอบ (Dynamic Pathfinder Roadmap Generator Flowchart)</figcaption>
+  </div>
+
+  <!-- Sub-system 5 & 6 -->
+  <div class="diagram-container">
+    <svg viewBox="0 0 650 280" width="100%" height="100%" style="display: block; margin: 0 auto; max-height: 270px;">
+      <rect x="130" y="10" width="390" height="30" rx="4" fill="#14496e"/>
+      <text x="325" y="29" fill="#ffffff" font-size="11" font-weight="bold" text-anchor="middle">บันทึกข้อมูลแผนลง PostgreSQL บน AIS Cloud Data Center</text>
+      <line x1="325" y1="40" x2="325" y2="52" stroke="#14496e" stroke-width="1.2" marker-end="url(#arrow)"/>
+
+      <rect x="40" y="52" width="180" height="44" rx="4" fill="#fff" stroke="#0e9488" stroke-width="1.2"/>
+      <text x="130" y="68" fill="#0e9488" font-size="10.5" font-weight="bold" text-anchor="middle">Student View (Private)</text>
+      <text x="130" y="81" fill="#6b7785" font-size="9" text-anchor="middle">เห็นส่วนตัว 100% / สิทธิ์แชร์</text>
+
+      <rect x="235" y="52" width="180" height="44" rx="4" fill="#fff" stroke="#b7791f" stroke-width="1.2"/>
+      <text x="325" y="68" fill="#b7791f" font-size="10.5" font-weight="bold" text-anchor="middle">Parent Summary View</text>
+      <text x="325" y="81" fill="#6b7785" font-size="9" text-anchor="middle">เห็นสรุปความสนใจ &amp; แผน 30 วัน</text>
+
+      <rect x="430" y="52" width="180" height="44" rx="4" fill="#fff" stroke="#2b7bb9" stroke-width="1.2"/>
+      <text x="520" y="68" fill="#2b7bb9" font-size="10.5" font-weight="bold" text-anchor="middle">Counselor Dashboard</text>
+      <text x="520" y="81" fill="#6b7785" font-size="9" text-anchor="middle">เห็นภาพรวมชั้นเรียน &amp; Prompts</text>
+
+      <line x1="325" y1="96" x2="325" y2="110" stroke="#14496e" stroke-width="1.2" marker-end="url(#arrow)"/>
+      <rect x="130" y="110" width="390" height="34" rx="4" fill="#fff" stroke="#14496e" stroke-width="1.2"/>
+      <text x="325" y="125" fill="#14496e" font-size="10.5" font-weight="bold" text-anchor="middle">เรียก AIS SMS API ส่ง SMS แจ้งเตือนแผน 30 วันทางมือถือ</text>
+      <text x="325" y="137" fill="#6b7785" font-size="9" text-anchor="middle">ซ่อนข้อความสนทนาส่วนตัว (Chat Transcript) ทั้งหมดตาม PDPA 100%</text>
+
+      <line x1="40" y1="156" x2="610" y2="156" stroke="#d5dee6" stroke-width="1" stroke-dasharray="3,3"/>
+
+      <rect x="40" y="168" width="570" height="68" rx="5" fill="#f0f7fc" stroke="#14496e" stroke-width="1.8"/>
+      <text x="325" y="186" fill="#14496e" font-size="11.5" font-weight="bold" text-anchor="middle">AIS Cloud Infrastructure (100% Data Sovereignty in Thailand)</text>
+      <text x="325" y="201" fill="#1f2733" font-size="10" text-anchor="middle">Oracle Container Engine for Kubernetes (OKE) Auto-scaling Pods (Next.js / FastAPI / Qdrant / PostgreSQL)</text>
+      <text x="325" y="216" fill="#6b7785" font-size="9.5" text-anchor="middle">VMware NSX Stateful Micro-segmentation Firewall &amp; ISO 27001 / ISO 27018 Data Center</text>
+    </svg>
+    <figcaption>รูปที่ 6 ผังย่อยที่ 5 &amp; 6: ระบบสิทธิ์ RBAC, PDPA Privacy และสถาปัตยกรรมติดตั้งบน AIS Cloud</figcaption>
+  </div>
+</section>
+
+<!-- ============ หัวข้อที่ 3 ============ -->
+<section class="section-page page-break">
+  <h2 class="sec"><span class="num">3</span>คลังข้อมูลหลักสูตรและการเชื่อมโยงยุทธศาสตร์ <span style="color: var(--primary-2); font-size:13px; font-weight:700;">(Curriculum Knowledge Base &amp; Integration Strategy)</span></h2>
+  
+  <p>ในขั้นการวางแผนสถาปัตยกรรม ระบบ FutureMe AI ถูกออกแบบมาให้รองรับคลังข้อมูลหลักสูตรการศึกษาครอบคลุมทั้งในระบบ สายอาชีพ และการศึกษาทางเลือกนอกห้องเรียน เพื่อให้สามารถเชื่อมโยงเส้นทางอนาคตของผู้เรียนได้อย่างรอบด้าน โดยอ้างอิงประกาศและกฎหมายทางการดังนี้:</p>
+
+  <h3 class="sub">3.1 การรองรับหลักสูตรการศึกษาทางเลือกนอกห้องเรียนและแหล่งอ้างอิง (Non-Formal &amp; Alternative Education Citations)</h3>
+  <table class="data">
+    <caption>ตารางที่ 3 สรุปการรองรับวุฒิการศึกษาทางเลือกและเอกสารอ้างอิงทางการ</caption>
+    <thead>
+      <tr>
+        <th style="width: 22%;">เส้นทางศึกษาทางเลือก</th>
+        <th style="width: 43%;">ข้อกำหนดหลักสูตรและการเทียบวุฒิ</th>
+        <th style="width: 35%;">หน่วยงานและเอกสารอ้างอิงทางการ</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><strong>การสอบเทียบ GED (USA)</strong></td>
+        <td>สอบผ่าน 4 วิชา (RLA, Math, Science, Social) คะแนนแต่ละวิชา &ge; 145/200</td>
+        <td><strong>GED Testing Service &amp; HSCES จุฬาฯ</strong><br>เกณฑ์การเทียบวุฒิ ทปอ. (myTCAS)</td>
+      </tr>
+      <tr>
+        <td><strong>การสอบเทียบ IGCSE / A-Level</strong></td>
+        <td>หลักสูตรอังกฤษ สอบผ่าน A-Level / AS-Level รวมไม่น้อยกว่า 3 วิชา (เกรด A*-E)</td>
+        <td><strong>Cambridge &amp; Pearson Edexcel (UK)</strong><br>ประกาศเทียบวุฒิอุดมศึกษาไทย</td>
+      </tr>
+      <tr>
+        <td><strong>การศึกษานอกระบบ (สกร./กศน.)</strong></td>
+        <td>หลักสูตร กศน.1-ป (ม.ปลาย) และระบบสะสมหน่วยกิต (Credit Bank)</td>
+        <td><strong>กรมส่งเสริมการเรียนรู้ (สกร.)</strong><br>พ.ร.บ. ส่งเสริมการเรียนรู้ พ.ศ. 2566</td>
+      </tr>
+      <tr>
+        <td><strong>การศึกษาทางเลือก (Homeschool)</strong></td>
+        <td>จดทะเบียนยื่นแผนการเรียนต่อสำนักงานเขตพื้นที่การศึกษา (สพป./สพม.)</td>
+        <td><strong>สำนักงานคณะกรรมการการศึกษาขั้นพื้นฐาน (สพฐ.)</strong><br>พ.ร.บ. การศึกษาแห่งชาติ พ.ศ. 2542 (มาตรา 12)</td>
+      </tr>
+      <tr>
+        <td><strong>คอร์สสะสมหน่วยกิต (Credit Bank)</strong></td>
+        <td>Thai MOOC, Chula MOOC Flexi, Mahidol Credit Bank, คุณวุฒิ TPQI</td>
+        <td><strong>สถาบันคุณวุฒิวิชาการ (TPQI) &amp; กระทรวง อว.</strong><br>กรอบคุณวุฒิวิชาชีพแห่งชาติ</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <h3 class="sub">3.2 สรุปแผนดำเนินงานในระยะถัดไป (Future Roadmap &amp; Next Steps)</h3>
+  <blockquote class="callout" style="border-left-color: var(--primary-2); background: #f0f7fc; margin-top: 10px;">
+    <strong>สรุปสถานะการวางแผนสถาปัตยกรรม (Planning Phase Summary):</strong><br>
+    พิมพ์เขียวสถาปัตยกรรมและผังกระบวนการทำงานทั้งหมดของระบบ FutureMe AI ได้ผ่านการวิเคราะห์เชิงลึกและออกแบบไว้อย่างสมบูรณ์ พร้อมสำหรับการเข้าสู่ขั้นตอนการพัฒนาซอฟต์แวร์ (Implementation Phase) การสร้าง RAG Knowledge Index บน Qdrant และการติดตั้งระบบบน AIS Cloud ต่อไป
+  </blockquote>
+</section>
+
+</body>
+</html>

@@ -1,0 +1,23 @@
+# ตรวจสอบเวอร์ชัน ณ 21 ก.ค. 2026 — ปักหมุดช่วงเวอร์ชันเพื่อความทำซ้ำได้ (reproducibility)
+# ⚠️ ก่อนใช้งานจริง ให้รัน `pip index versions <pkg>` หรือดู PyPI เพื่อยืนยันเวอร์ชันล่าสุดที่เข้ากันได้
+# หมายเหตุ: torch/bitsandbytes ต้องเลือกให้ตรงกับ CUDA/OS ของเครื่อง (ดู pytorch.org)
+
+# --- Core RAG (จำเป็นสำหรับ ingestion / search / rag / evaluation) ---
+python-dotenv>=1.0,<2.0
+sentence-transformers>=3.0,<6.0
+chromadb>=0.5,<2.0
+requests>=2.31,<3.0
+numpy>=1.26,<3.0
+
+# --- Thai NLP (ตัดคำ/normalize; ใช้ในการเตรียมข้อความและ BM25) ---
+pythainlp>=5.0,<6.0
+
+# --- LoRA / QLoRA training (จำเป็นเฉพาะ lora_training_example.py — ต้องมี GPU) ---
+# ถอดคอมเมนต์เมื่อจะเทรนจริง และเลือก torch ให้ตรง CUDA
+# torch>=2.3
+# transformers>=4.44,<5.0
+# peft>=0.12,<1.0
+# bitsandbytes>=0.43        # ต้องมี NVIDIA GPU + CUDA
+# trl>=0.9,<1.0
+# datasets>=2.20,<4.0
+# accelerate>=0.33,<2.0

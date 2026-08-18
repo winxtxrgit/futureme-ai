@@ -1,0 +1,244 @@
+/*
+ * Chat-only action motion layered over the synchronized Mascot Lab rig.
+ * Keep this separate from mascot.css so `npm run check:mascot` can continue to
+ * prove that the shared design source has not drifted.
+ */
+
+@keyframes fm-chat-talk {
+  0%, 100% { transform: scaleY(1); }
+  18% { transform: scaleY(0.58); }
+  38% { transform: scaleY(0.82); }
+  56% { transform: scaleY(0.48); }
+  76% { transform: scaleY(0.72); }
+}
+
+@keyframes fm-chat-present {
+  0%, 100% { transform: rotate(-104deg); }
+  32% { transform: rotate(-97deg); }
+  68% { transform: rotate(-100deg); }
+}
+
+@keyframes fm-chat-error-shake {
+  0%, 100% { transform: translateX(0) rotate(0deg); }
+  18% { transform: translateX(-4px) rotate(-1.4deg); }
+  38% { transform: translateX(3px) rotate(1deg); }
+  58% { transform: translateX(-1.5px) rotate(-0.5deg); }
+  78% { transform: translateX(0.7px) rotate(0.25deg); }
+}
+
+@keyframes fm-interview-ack-pop {
+  0%   { transform: translateY(0) scale(1); }
+  45%  { transform: translateY(-8px) scale(1.035, 0.97); }
+  72%  { transform: translateY(1px) scale(0.99, 1.015); }
+  100% { transform: translateY(0) scale(1); }
+}
+
+/* The active interviewer gets its own vivid scene without changing the
+ * synchronized Mascot Lab stylesheet. The color remains visible when motion is
+ * reduced; only the decorative movement stops. */
+.interview-mascot-scene {
+  isolation: isolate;
+  border: 1px solid rgb(var(--indigo) / 0.42);
+  background:
+    radial-gradient(circle at 50% 72%, rgb(var(--magenta) / 0.18), transparent 38%),
+    radial-gradient(circle at 76% 22%, rgb(var(--mint) / 0.13), transparent 34%),
+    radial-gradient(circle at 20% 28%, rgb(var(--indigo) / 0.2), transparent 44%),
+    linear-gradient(160deg, rgb(var(--surface2) / 0.76), rgb(var(--indigo) / 0.08));
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.1),
+    inset 0 -18px 36px rgb(var(--indigo) / 0.08),
+    0 0 0 1px rgb(var(--magenta) / 0.05),
+    0 16px 38px -28px rgb(var(--indigo) / 0.58),
+    0 0 26px -22px rgb(var(--magenta) / 0.48);
+  transition: border-color 320ms ease, box-shadow 320ms ease, background 320ms ease;
+}
+
+.interview-mascot-aura {
+  position: absolute;
+  z-index: 0;
+  left: 50%;
+  top: 50%;
+  width: 164px;
+  height: 164px;
+  border-radius: 999px;
+  pointer-events: none;
+  background: radial-gradient(
+    circle,
+    rgb(var(--mint) / 0.18) 0,
+    rgb(var(--indigo) / 0.22) 38%,
+    rgb(var(--magenta) / 0.1) 56%,
+    transparent 74%
+  );
+  filter: blur(22px);
+  opacity: 0.58;
+  transform: translate(-50%, -46%) scale(0.98);
+  animation: none;
+}
+
+.interview-mascot-orbit {
+  position: absolute;
+  z-index: 1;
+  inset: 17px 11px 12px;
+  border-radius: 48%;
+  border: 1px solid rgb(var(--mint) / 0.18);
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 18px rgb(var(--indigo) / 0.1),
+    0 0 13px rgb(var(--mint) / 0.1);
+  animation: none;
+}
+
+.interview-mascot-model {
+  filter: saturate(1.08) contrast(1.02) drop-shadow(0 10px 14px rgb(var(--indigo) / 0.24));
+  transition: filter 320ms ease;
+}
+
+.interview-mascot-spark {
+  position: absolute;
+  z-index: 2;
+  width: 5px;
+  height: 5px;
+  border-radius: 999px;
+  pointer-events: none;
+  background: rgb(var(--mint));
+  box-shadow: 0 0 4px rgb(var(--mint) / 0.72), 0 0 8px rgb(var(--mint) / 0.42);
+  opacity: 0.3;
+  animation: none;
+}
+
+.interview-mascot-spark-one { left: 17px; top: 70px; }
+.interview-mascot-spark-two {
+  right: 18px;
+  top: 48px;
+  background: rgb(var(--magenta));
+  box-shadow: 0 0 4px rgb(var(--magenta) / 0.7), 0 0 8px rgb(var(--magenta) / 0.4);
+}
+.interview-mascot-spark-three {
+  right: 31px;
+  bottom: 35px;
+}
+
+.interview-mascot-status-pill {
+  background:
+    linear-gradient(110deg, rgb(var(--indigo) / 0.16), rgb(var(--magenta) / 0.1));
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.07), 0 8px 22px -16px rgb(var(--indigo));
+}
+
+.interview-mascot-status-dot {
+  flex: none;
+  background: rgb(var(--mint));
+  box-shadow: 0 0 7px rgb(var(--mint) / 0.38);
+  animation: none;
+}
+
+.interview-mascot-stage[data-mascot-state="speaking"] .interview-mascot-scene,
+.interview-mascot-stage[data-mascot-state="offline"] .interview-mascot-scene {
+  border-color: rgb(var(--magenta) / 0.54);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.12),
+    inset 0 -18px 36px rgb(var(--magenta) / 0.08),
+    0 0 0 1px rgb(var(--mint) / 0.07),
+    0 18px 40px -27px rgb(var(--indigo) / 0.7),
+    0 0 28px -21px rgb(var(--magenta) / 0.58);
+}
+
+.interview-mascot-stage[data-mascot-state="error"] .interview-mascot-scene {
+  border-color: rgb(var(--warning) / 0.72);
+  box-shadow: inset 0 1px 0 rgb(255 255 255 / 0.12), 0 0 34px -17px rgb(var(--warning) / 0.82);
+}
+
+.interview-mascot-stage[data-mascot-state="error"] .interview-mascot-status-dot {
+  background: rgb(var(--warning));
+  animation: none;
+  box-shadow: 0 0 12px rgb(var(--warning) / 0.72);
+}
+
+/* The active bubble is vivid but remains a quiet reading surface. */
+.interview-active-bot-bubble {
+  --interview-bot-tail-bg: color-mix(
+    in srgb,
+    rgb(var(--surface)) 81%,
+    rgb(var(--indigo)) 19%
+  );
+  border-color: rgb(var(--indigo) / 0.72);
+  background:
+    radial-gradient(circle at 7% 8%, rgb(var(--magenta) / 0.15), transparent 34%),
+    radial-gradient(circle at 95% 90%, rgb(var(--mint) / 0.08), transparent 34%),
+    linear-gradient(145deg, rgb(var(--indigo) / 0.2), rgb(var(--surface) / 0.96) 72%);
+  box-shadow:
+    inset 0 1px 0 rgb(255 255 255 / 0.08),
+    0 0 0 1px rgb(var(--magenta) / 0.08),
+    0 22px 54px -36px rgb(var(--indigo)),
+    0 0 32px -24px rgb(var(--magenta));
+}
+
+.interview-active-bot-tail {
+  z-index: 0;
+  border-color: rgb(var(--indigo) / 0.72);
+  background: var(--interview-bot-tail-bg);
+  box-shadow: -4px -4px 12px -8px rgb(var(--indigo));
+}
+
+/* AI and project-data replies are both visible response actions. Their status
+ * text still distinguishes where the answer came from. */
+[data-mascot-animated="true"][data-mascot-state="speaking"]
+  .fm-mascot .fm-mouth-shape--smile,
+[data-mascot-animated="true"][data-mascot-state="offline"]
+  .fm-mascot .fm-mouth-shape--smile {
+  animation: fm-chat-talk 1.2s cubic-bezier(0.4, 0, 0.2, 1) 1;
+  transform-box: fill-box;
+  transform-origin: center;
+}
+
+[data-mascot-animated="true"][data-mascot-state="speaking"]
+  .fm-mascot .fm-arm--right .fm-arm-limb,
+[data-mascot-animated="true"][data-mascot-state="offline"]
+  .fm-mascot .fm-arm--right .fm-arm-limb {
+  /* Let the rig complete its think-to-point transition before the gesture.
+   * The one-shot cycle ends on the base pose, so returning to listen cannot
+   * cut an infinite loop halfway through. */
+  animation: fm-chat-present 1.2s cubic-bezier(0.4, 0, 0.2, 1) 600ms 1;
+}
+
+/* A failed request gets one short, readable reaction and then holds the
+ * worried expression instead of shaking forever. */
+[data-mascot-animated="true"][data-mascot-state="error"]
+  .fm-mascot .fm-body {
+  animation: fm-chat-error-shake 720ms cubic-bezier(0.22, 0.61, 0.36, 1) 1;
+}
+
+/* Interview actions finish inside the page controller's visible state windows.
+ * The general /chat timing above stays unchanged. */
+[data-mascot-animated="true"].interview-mascot-scene[data-mascot-state="speaking"]
+  .fm-mascot .fm-mouth-shape--smile {
+  animation: fm-chat-talk 900ms cubic-bezier(0.4, 0, 0.2, 1) 1;
+}
+
+[data-mascot-animated="true"].interview-mascot-scene[data-mascot-state="speaking"]
+  .fm-mascot .fm-arm--right .fm-arm-limb {
+  animation: fm-chat-present 780ms cubic-bezier(0.4, 0, 0.2, 1) 140ms 1;
+}
+
+[data-mascot-animated="true"].interview-mascot-scene[data-mascot-state="offline"]
+  .fm-mascot .fm-mouth-shape--smile {
+  animation: fm-chat-talk 360ms cubic-bezier(0.4, 0, 0.2, 1) 1;
+}
+
+[data-mascot-animated="true"].interview-mascot-scene[data-mascot-state="offline"]
+  .fm-mascot .fm-arm--right .fm-arm-limb {
+  animation: fm-chat-present 360ms cubic-bezier(0.4, 0, 0.2, 1) 1;
+}
+
+[data-mascot-animated="true"].interview-mascot-scene[data-mascot-state="offline"]
+  .fm-mascot .fm-breathe {
+  animation: fm-interview-ack-pop 420ms cubic-bezier(0.22, 0.61, 0.36, 1) 1;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .interview-mascot-aura,
+  .interview-mascot-orbit,
+  .interview-mascot-spark,
+  .interview-mascot-status-dot {
+    animation: none !important;
+  }
+}

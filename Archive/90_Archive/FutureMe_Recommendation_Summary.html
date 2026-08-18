@@ -1,0 +1,974 @@
+<title>FutureMe — สรุปการปรับปรุงตามข้อเสนอแนะอาจารย์</title>
+<style>
+  @page { size: A4; margin: 16mm 15mm 18mm; }
+
+  :root {
+    --ink:     #14181c;
+    --ink-2:   #454f58;
+    --ink-3:   #78838d;
+    --rule:    #d5dce1;
+    --rule-2:  #e8edf0;
+    --wash:    #f2f6f8;
+    --accent:  #1f5f9e;
+    --accent-2:#e8f0f7;
+    --good:    #0a6b12;
+    --warn:    #8a5a00;
+    --bad:     #a32626;
+    --sans: "Sukhumvit Set", "Noto Sans Thai", "IBM Plex Sans Thai", "Leelawadee UI", Thonburi, system-ui, sans-serif;
+    --mono: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    font-family: var(--sans);
+    font-size: 9.6pt;
+    line-height: 1.62;
+    color: var(--ink);
+    background: #fff;
+  }
+
+  h1, h2, h3 { text-wrap: balance; margin: 0; }
+
+  .cover {
+    min-height: 245mm;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    page-break-after: always;
+  }
+  .cover .eyebrow {
+    font-family: var(--mono);
+    font-size: 8pt;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    margin-bottom: 8mm;
+  }
+  .cover h1 {
+    font-size: 25pt;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    max-width: 150mm;
+  }
+  .cover .sub {
+    font-size: 12pt;
+    color: var(--ink-2);
+    margin-top: 6mm;
+    max-width: 140mm;
+    line-height: 1.55;
+  }
+  .cover .q {
+    margin-top: 12mm;
+    padding: 6mm 7mm;
+    background: var(--accent-2);
+    border-left: 3px solid var(--accent);
+    font-size: 11pt;
+    line-height: 1.55;
+    max-width: 150mm;
+  }
+  .cover .q b { color: var(--accent); }
+  .cover .meta {
+    margin-top: 14mm;
+    font-family: var(--mono);
+    font-size: 8pt;
+    color: var(--ink-3);
+    line-height: 1.9;
+  }
+
+  section { page-break-inside: auto; }
+
+  h2 {
+    font-size: 13pt;
+    letter-spacing: -.005em;
+    margin-top: 8mm;
+    padding-bottom: 2mm;
+    border-bottom: 1.5px solid var(--ink);
+    page-break-after: avoid;
+    page-break-before: auto;
+  }
+  /* a heading must never be the last thing on a page, and no single line of a
+     paragraph may be stranded either side of a break */
+  p, li { orphans: 2; widows: 2; }
+  h2 .tag {
+    font-family: var(--mono);
+    font-size: 8pt;
+    color: var(--accent);
+    margin-right: 3mm;
+    letter-spacing: .06em;
+  }
+
+  h3 {
+    font-size: 10.2pt;
+    margin-top: 6mm;
+    margin-bottom: 1.5mm;
+    color: var(--ink);
+    page-break-after: avoid;
+  }
+
+  p { margin: 0 0 2.6mm; }
+  p.lede { color: var(--ink-2); }
+
+  strong { font-weight: 650; }
+  .mono { font-family: var(--mono); font-size: 8.6pt; }
+
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 3mm 0 4mm;
+    font-size: 8.8pt;
+    /* Long tables split across pages rather than jumping whole — a 12-row
+       table that will not break leaves half a page blank behind it. */
+    page-break-inside: auto;
+  }
+  thead { display: table-header-group; }   /* header repeats on each page */
+  tr { page-break-inside: avoid; }
+  th, td {
+    text-align: left;
+    vertical-align: top;
+    padding: 1.9mm 2.5mm 1.9mm 0;
+    border-bottom: .5px solid var(--rule-2);
+  }
+  thead th {
+    font-family: var(--mono);
+    font-size: 7.6pt;
+    letter-spacing: .05em;
+    text-transform: uppercase;
+    color: var(--ink-3);
+    font-weight: 500;
+    border-bottom: 1px solid var(--rule);
+  }
+  td.num, th.num {
+    text-align: right;
+    font-family: var(--mono);
+    font-variant-numeric: tabular-nums;
+    padding-right: 3.5mm;      /* a right-aligned number butts straight into
+                                  the next cell without this */
+    white-space: nowrap;
+  }
+  td.num:last-child, th.num:last-child { padding-right: 0; }
+  tbody tr:last-child td { border-bottom: none; }
+
+  .formula {
+    font-family: var(--mono);
+    font-size: 8.6pt;
+    line-height: 1.75;
+    background: var(--wash);
+    border-left: 2px solid var(--accent);
+    padding: 3mm 4mm;
+    margin: 3mm 0;
+    white-space: pre-wrap;
+    page-break-inside: avoid;
+  }
+
+  .pipe {
+    font-family: var(--mono);
+    font-size: 8.1pt;
+    line-height: 1.72;
+    white-space: pre;
+    background: var(--wash);
+    padding: 4mm;
+    margin: 3mm 0;
+    overflow-x: auto;
+    page-break-inside: avoid;
+  }
+
+  .callout {
+    border: .5px solid var(--rule);
+    border-left: 3px solid var(--accent);
+    background: var(--wash);
+    padding: 3.5mm 4mm;
+    margin: 3.5mm 0;
+    page-break-inside: avoid;
+  }
+  .callout.warn { border-left-color: var(--warn); }
+  /* A callout long enough to need its own page should split instead. */
+  .callout.can-break { page-break-inside: auto; }
+  .callout.bad  { border-left-color: var(--bad); }
+  .callout h4 {
+    margin: 0 0 1.5mm;
+    font-size: 9.4pt;
+    font-weight: 650;
+  }
+  .callout p { margin-bottom: 1.5mm; font-size: 9pt; }
+  .callout p:last-child { margin-bottom: 0; }
+
+  .two {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 5mm;
+    page-break-inside: avoid;
+  }
+
+  ul, ol { margin: 0 0 3mm; padding-left: 5mm; }
+  li { margin-bottom: 1.2mm; }
+
+  .qa { page-break-inside: avoid; margin-bottom: 4mm; }
+  .qa .q {
+    font-weight: 650;
+    font-size: 9.4pt;
+    margin-bottom: 1mm;
+  }
+  .qa .q::before { content: "Q "; font-family: var(--mono); color: var(--accent); font-size: 8pt; }
+  .qa .a { color: var(--ink-2); font-size: 9pt; }
+  .qa .a::before { content: "A "; font-family: var(--mono); color: var(--ink-3); font-size: 8pt; }
+
+  .score-row td:first-child { font-weight: 600; }
+  .bar { display: inline-block; height: 4pt; background: var(--accent); vertical-align: middle; border-radius: 0 2pt 2pt 0; }
+  .bar.ghost { background: var(--rule); }
+
+  .pill {
+    display: inline-block;
+    font-family: var(--mono);
+    font-size: 7.4pt;
+    padding: .4mm 1.6mm;
+    border: .5px solid var(--rule);
+    border-radius: 2pt;
+    color: var(--ink-2);
+    white-space: nowrap;
+  }
+  .pill.ok  { color: var(--good); border-color: var(--good); }
+  .pill.no  { color: var(--bad);  border-color: var(--bad); }
+  .pill.mid { color: var(--warn); border-color: var(--warn); }
+
+  .break { page-break-before: always; }
+  .nobreak { page-break-inside: avoid; }
+
+  footer {
+    margin-top: 5mm;
+    padding-top: 2.5mm;
+    border-top: .5px solid var(--rule);
+    font-family: var(--mono);
+    font-size: 7.2pt;
+    color: var(--ink-3);
+    line-height: 1.55;
+    page-break-inside: avoid;
+  }
+</style>
+
+<div class="cover">
+  <div class="eyebrow">FutureMe · FuturePath Engine · JUMP Thailand Hackathon 2026</div>
+  <h1>ทำไมผู้เรียนคนนี้ถึงได้ผลลัพธ์นี้</h1>
+  <div class="sub">
+    สรุปการตรวจสอบและปรับปรุงระบบแนะนำเส้นทางการศึกษา ตามข้อเสนอแนะของอาจารย์ที่ว่า
+    <strong>ทฤษฎีและกลไกการแนะนำคือคุณค่าแกนกลางของโครงการ</strong>
+  </div>
+  <div class="q">
+    เกณฑ์เดียวที่ใช้ตัดสินงานทั้งหมดในเอกสารนี้:<br>
+    ถ้ากรรมการถามว่า <b>“ทำไมนักเรียนคนนี้ถึงได้หลักสูตรนี้”</b>
+    เราต้องอนุมานให้ดูได้ทีละขั้น ไม่ใช่ตอบว่า “AI สร้างมา”
+  </div>
+  <div class="meta">
+    เอกสารนี้อธิบายระบบที่รันได้จริง ไม่ใช่ข้อเสนอ<br>
+    <span style="color:var(--accent)">python3 run.py</span> ผลิตตัวเลขทุกตัวในเอกสารนี้ใหม่ได้ทุกครั้ง<br>
+    11 สิงหาคม 2026
+  </div>
+</div>
+
+<!-- ============================================================ A -->
+<section>
+  <h2><span class="tag">A</span>เวอร์ชันเดิมขาดอะไร</h2>
+
+  <p class="lede">
+    ตรวจไฟล์จริงทั้งหมด: คลังคำถาม 90 ข้อ, เอนจินคะแนนใน <span class="mono">lib/decision-engine/</span>,
+    ชุดข้อมูล <span class="mono">Geography_and_Access</span> 105 ไฟล์, เว็บแอป 15 หน้า และสไลด์เดิม
+    งานเดิมแข็งกว่าที่คิดในหลายจุด และไม่มีอะไรถูกลบทิ้ง
+  </p>
+
+  <table>
+    <thead>
+      <tr><th style="width:26%">ประเด็น</th><th style="width:26%">ระบบเดิม</th><th style="width:24%">สิ่งที่อาจารย์คาดหวัง</th><th>ช่องว่าง</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>ผลลัพธ์สุดท้าย</td>
+        <td>“สาย” 12 สาย เช่น วิศวะ / ธุรกิจ</td>
+        <td>หลักสูตรจริงที่สมัครได้ 5 อันดับ</td>
+        <td><span class="pill no">วิกฤต</span> ผู้เรียนสมัคร “สาย” ไม่ได้</td>
+      </tr>
+      <tr>
+        <td>ที่มาของน้ำหนัก</td>
+        <td>5 เกณฑ์ .30/.25/.20/.15/.10 ระบุว่าเป็นดุลพินิจ</td>
+        <td>อธิบายได้ว่าทำไมแต่ละตัวมี และทำไมเท่านี้</td>
+        <td><span class="pill mid">ปานกลาง</span> ซื่อสัตย์อยู่แล้ว แต่ไม่มีเหตุผลรายตัว</td>
+      </tr>
+      <tr>
+        <td>บริบท vs วิชาการ</td>
+        <td>รวมอยู่ในคะแนนก้อนเดียว</td>
+        <td>ใกล้บ้านต้องไม่ทำให้ “เข้ากันทางวิชาการ” มากขึ้น</td>
+        <td><span class="pill no">วิกฤต</span> ปนกันโดยไม่มีเพดาน</td>
+      </tr>
+      <tr>
+        <td>ความมั่นใจ</td>
+        <td>คำนวณในระบบถาม แต่ไม่ถูกใช้ตอนให้คะแนน</td>
+        <td>หลักฐานอ่อนต้องมีผลต่อผลลัพธ์</td>
+        <td><span class="pill mid">ปานกลาง</span> ขาดสะพานเชื่อม</td>
+      </tr>
+      <tr>
+        <td>ข้อมูล TCAS / ค่าเทอม</td>
+        <td>ไม่มี</td>
+        <td>รอบ วิชา คะแนน ค่าเทอม ทุน</td>
+        <td><span class="pill no">วิกฤต</span> ยังไม่มีแหล่งเปิด</td>
+      </tr>
+      <tr>
+        <td>ข้อมูลภูมิศาสตร์</td>
+        <td>ครบมาก แต่ไม่ได้ต่อเข้าเอนจิน</td>
+        <td>ใช้ประกอบการตัดสินใจ</td>
+        <td><span class="pill mid">ปานกลาง</span> มีของ ไม่ได้ใช้</td>
+      </tr>
+      <tr>
+        <td>Value proposition</td>
+        <td>อธิบายด้วยสถาปัตยกรรมก่อน</td>
+        <td>เข้าใจใน 5–10 วินาที แบบ QueQ</td>
+        <td><span class="pill no">วิกฤต</span> เทคโนโลยีมาก่อนปัญหา</td>
+      </tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>ของเดิมที่แข็งและถูกเก็บไว้ทั้งหมด</h4>
+    <p>
+      คลังข้อ 90 ข้อพร้อม provenance รายข้อ · เอกสารออกแบบการถามแบบปรับตัว 9 บท ·
+      การจำลอง 5,000 เซสชันที่ผ่าน invariant 10/10 และจับบั๊กในกฎได้ 13 จุด ·
+      ชุดข้อมูล <span class="mono">Geography_and_Access</span> (สถาบัน 1,358 แห่ง ระยะทางถนนจริงจาก OSRM
+      77 จังหวัด และพิกัดที่พิสูจน์ไม่ได้ 11 จุดที่ถูกกันออกแทนที่จะเดา) ·
+      วัฒนธรรมการติดป้ายว่าอะไรตรวจแล้วอะไรยัง
+    </p>
+    <p>
+      งานใหม่ทั้งหมด<strong>ต่อยอด</strong>จากสิ่งเหล่านี้ ไม่ได้เขียนใหม่ทับ
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ B -->
+<section>
+  <h2><span class="tag">B</span>สิ่งที่ลงมือทำจริง</h2>
+
+  <table>
+    <thead><tr><th style="width:38%">สร้างใหม่</th><th>ผลลัพธ์</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">build/build_programme_index.py</td>
+          <td>ต่อทะเบียน 4 ชุด — แผนการรับนักศึกษา · รหัส ISCED-F · ต้นทุนต่อหัว · สถาบันที่มีพิกัด → <strong>หลักสูตรปริญญาตรี 6,349 หลักสูตร (88.8% ของที่ไม่ซ้ำ)</strong></td></tr>
+      <tr><td class="mono">components/routes/ProgrammeMatches.tsx</td><td>การ์ดแสดง <strong>อำเภอและระยะทางถนนจริง · วิธีเดินทางที่ไปได้ · อาชีพที่สายนั้นเชื่อมถึง (ชื่อไทย) · ผลการมีงานทำของผู้จบ · ต้นทุนที่รัฐลงทุน · ลิงก์ประกาศของสถาบัน</strong> และมี<strong>ตัวกรอง</strong>ที่กรองก่อนจัดอันดับ ไม่ใช่กรองห้าอันดับที่คัดเสร็จแล้ว</td></tr>
+      <tr><td class="mono">build/build_vocational_index.py</td><td>ทะเบียนนักเรียนของ สอศ. ปี 2568 → <strong>ปวช./ปวส. 16,908 หลักสูตร ใน 840 วิทยาลัย</strong> · รวมทั้งระบบ <strong>23,257 หลักสูตร ใน 993 สถาบัน</strong></td></tr>
+      <tr><td class="mono">build/build_isced_riasec.py</td><td>เวกเตอร์ RIASEC <strong>วัดจริงจาก 923 อาชีพใน O*NET</strong> ผ่านรหัส ISCED-F 2013 · พร้อม <span class="mono">crosswalk_audit.md</span> ที่ลิสต์ทุกการจับคู่ให้ตรวจ</td></tr>
+      <tr><td class="mono">engine.py</td>
+          <td>เอนจินอธิบายได้ 10 ขั้น · ไม่มี LLM · พารามิเตอร์ทุกตัวมีชื่อและเหตุผล</td></tr>
+      <tr><td class="mono">students.py</td>
+          <td>ผู้เรียนสังเคราะห์ 3 คน ที่<strong>ตอบคลังข้อจริง</strong> ไม่ใช่เวกเตอร์คะแนนที่เขียนมือ</td></tr>
+      <tr><td class="mono">run.py</td>
+          <td>พิมพ์การอนุมานเต็มทีละขั้น สำหรับให้กรรมการดูสด</td></tr>
+      <tr><td class="mono">README.md</td>
+          <td>ทฤษฎี สูตร ที่มา และสถานะของทุกพารามิเตอร์</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout bad">
+    <h4>บั๊กร้ายแรงที่พบระหว่างทาง — และเป็นบั๊กแบบที่อาจารย์กังวลพอดี</h4>
+    <p>
+      เอนจินรุ่นแรกให้ผู้เรียนที่ตอบ <strong>“3 / ไม่แน่ใจ” ครบทุกข้อ</strong> ได้ความสอดคล้อง 1.00
+      (คำตอบเหมือนกันหมดย่อมไม่ขัดกันเอง) ความมั่นใจ 1.00 และได้ Top 5 ที่ดูน่าเชื่อถือที่สุดในระบบ
+      เพราะ cosine ของเวกเตอร์แบนเทียบกับสายอะไรก็สูงหมด <strong>ความไม่แน่ใจกลายเป็นความมั่นใจ</strong>
+    </p>
+    <p>
+      แก้สองชั้น: <strong>(1)</strong> คำตอบ 3 ไม่นับเป็นหลักฐาน — กฎนี้อยู่ในเอกสารออกแบบ
+      <span class="mono">03-branching-rules.md §3.2</span> มาตั้งแต่ต้น เอนจินแค่ลืมใช้
+      <strong>(2)</strong> เพิ่มประตู <strong>differentiation</strong> ของ Holland (1997) เอง:
+      โปรไฟล์ที่ทุกมิติเท่ากันไม่ได้แปลว่า “เข้าได้ทุกสาย” แต่แปลว่า “ยังไม่รู้”
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ C+D -->
+<section>
+  <h2><span class="tag">C</span>สถาปัตยกรรมการแนะนำใหม่</h2>
+
+  <div class="pipe">คำตอบผู้เรียน (Likert 1–5 · คลัง 90 ข้อ)
+   │
+   ├─ 1  ให้คะแนนรายข้อ         x = (directed − 1) / 4      · ตอบ 3 ไม่นับเป็นหลักฐาน
+   ├─ 2  รวมเป็นคะแนนมิติ        θ_d = mean(x)               · เฉพาะข้อที่ให้ข้อมูล
+   ├─ 3  หดตามความเชื่อถือได้     θ̂_d = c_d·θ_d + (1−c_d)·0.5  · Kelley 1947
+   ├─ 4  เวกเตอร์โปรไฟล์         θ̂ = (θ̂_R θ̂_I θ̂_A θ̂_S θ̂_E θ̂_C)
+   │
+   ├─ 5  CORE FIT  ────────── ความเข้ากันเชิงวิชาการ · บริบทแตะไม่ได้
+   │        cos(θ̂, w_p)          Holland congruence
+   │        efficacy_p            SCCT / Bandura
+   │        CoreFit = 100 × (0.70·cos + 0.30·efficacy)
+   │
+   ├─ 6  ประตูคัดออก            ระดับ · ระยะที่ผู้เรียนบอก · CoreFit ≥ 55
+   │
+   ├─ 7  CONTEXT FIT  ─────── แยกออกจาก CoreFit โดยสิ้นเชิง
+   │        access 0.45 · cost_band 0.30 · intake 0.15 · preference 0.10
+   │        ตัวที่ไม่มีข้อมูล → ตัดออกจากค่าเฉลี่ยและรายงาน ไม่ใช่แทนด้วย 0.5
+   │
+   ├─ 8  จัดอันดับ              Final = CoreFit + 15 × ContextFit
+   ├─ 9  กระจายทางเลือก         ≤ 2 ต่อสถาบัน · ≤ 2 ต่อสาย
+   └─ 10 คำอธิบาย               ส่งค่ากลางทางทุกตัวออกมาด้วย</div>
+
+  <div class="callout">
+    <h4>คำตอบตรง ๆ ต่อโจทย์ “ใกล้บ้านต้องไม่ทำให้เข้ากันทางวิชาการมากขึ้น”</h4>
+    <p>
+      บริบททั้งหมดรวมกันขยับคะแนนได้<strong>มากที่สุด 15 คะแนน</strong> ดังนั้นหลักสูตรที่ CoreFit
+      ต่ำกว่าอีกหลักสูตรเกิน 15 คะแนน <strong>ไม่มีทางแซงขึ้นมาได้</strong> ไม่ว่าจะใกล้บ้านหรือถูกแค่ไหน
+      บริบท “จัดลำดับในกลุ่มที่เข้ากันพอ ๆ กัน” ได้ แต่ “ยกหลักสูตรที่ไม่เข้ากันขึ้นมาชนะ” ไม่ได้
+    </p>
+  </div>
+
+  <h2><span class="tag">D</span>สูตรและเหตุผลของทุกตัวเลข</h2>
+
+  <div class="formula">ขั้น 1   directed = (6 − raw) ถ้าข้อกลับด้าน มิฉะนั้น raw
+        x        = (directed − 1) / 4                    → 0..1
+        raw = 3 บนสเกล 5 ระดับ → นับว่า "ถามแล้ว" แต่ไม่นับว่า "ให้ข้อมูล"
+
+ขั้น 2   θ_d           = mean(x)  เหนือข้อที่ให้ข้อมูล k ข้อในมิติ d
+        coverage_d    = min(1, k / 2)
+        consistency_d = 1 − 2·MAD   (k≥2)  ·  0.5 (k=1)  ·  0 (k=0)
+        c_d           = coverage_d × consistency_d
+
+ขั้น 3   θ̂_d = c_d · θ_d + (1 − c_d) · 0.5              Kelley shrinkage
+
+ขั้น 5   cos      = Σ θ̂_d·w_pd / (‖θ̂‖·‖w_p‖)
+        efficacy = Σ w_pd·e_d / Σ w_pd   เฉพาะมิติที่ w_pd ≥ 0.15
+        CoreFit  = 100 × (0.70·cos + 0.30·efficacy)
+
+ขั้น 7   ContextFit = Σ ω_k·s_k / Σ ω_k   เฉพาะ k ที่มีข้อมูลจริง
+
+ขั้น 8   Final = CoreFit + 15 × ContextFit
+
+ประตูปฏิเสธ   confidence &lt; 0.50   หรือ   max(θ̂) − min(θ̂) &lt; 0.20</div>
+
+  <table>
+    <thead><tr><th style="width:22%">พารามิเตอร์</th><th class="num" style="width:9%">ค่า</th><th style="width:38%">ทำไมค่านี้</th><th>จะพิสูจน์ยังไง</th></tr></thead>
+    <tbody>
+      <tr><td class="mono">W_INTEREST</td><td class="num">0.70</td>
+          <td>SCCT ถือว่าความสนใจถูกสร้างขึ้นบางส่วน<em>จาก</em>ความมั่นใจในตนเอง ให้ efficacy เต็มจึงนับซ้ำ</td>
+          <td>เทียบกับความพึงพอใจของนักศึกษาปี 1</td></tr>
+      <tr><td class="mono">W_EFFICACY</td><td class="num">0.30</td>
+          <td>ผู้เรียน ม.4–6 ประเมินความถนัดตัวเองจากประสบการณ์ที่ยังน้อย</td><td>เดียวกัน</td></tr>
+      <tr><td class="mono">CONTEXT_MAX</td><td class="num">15</td>
+          <td>เล็กกว่าช่วงห่าง CoreFit ที่มีความหมาย เพื่อไม่ให้บริบทกลับผลวิชาการ</td>
+          <td>ทดสอบว่าลำดับเปลี่ยนแค่ไหนที่ผู้ใช้ยอมรับ</td></tr>
+      <tr><td class="mono">CORE_GATE</td><td class="num">55</td>
+          <td>ต่ำกว่านี้ระบบบอกว่าหลักฐานไม่พอ แทนที่จะเสนอไปก่อน</td><td>ดูอัตราปฏิเสธในนักเรียนจริง</td></tr>
+      <tr><td class="mono">DIFFERENTIATION_GATE</td><td class="num">0.20</td>
+          <td>ดัชนี differentiation ของ Holland (1997) เอง</td><td>เทียบกับ norm ของ Holland</td></tr>
+      <tr><td class="mono">PRIOR_MEAN</td><td class="num">0.50</td>
+          <td>จุดกึ่งกลางสเกล = ไม่มีข้อมูล ไม่เอนไปทางใด</td><td>แทนด้วยค่าเฉลี่ยประชากรไทยเมื่อเก็บ norm ได้</td></tr>
+      <tr><td class="mono">CONTEXT_WEIGHTS</td><td class="num">.45/.30<br>.15/.10</td>
+          <td>การเดินทางมาก่อน เพราะตัดสินว่าไปเรียนได้จริงไหม · จำนวนรับน้อยสุด เพราะเป็นสัญญาณอ่อนสุด</td>
+          <td>conjoint analysis กับนักเรียนจริง</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>เวกเตอร์ของสายไม่ได้มาจากการเดาอีกแล้ว — และของเดิมผิดจริง</h4>
+    <p>
+      เดิมหลักสูตรได้เวกเตอร์ RIASEC จาก 1 ใน 12 สายที่ทีมเขียนน้ำหนักเอง ตอนนี้โซ่เป็น
+      <span class="mono">หลักสูตรไทย → รหัส ISCED-F 2013 → กลุ่มอาชีพ O*NET → ค่าเฉลี่ย RIASEC ที่วัดมา</span>
+      เหลือดุลพินิจจุดเดียวคือ “อาชีพไหนอยู่ในสายไหน” ซึ่งเขียนเป็น pattern ที่อ่านได้
+      พร้อมไฟล์ audit ที่ลิสต์ทุกการจับคู่
+    </p>
+    <p>
+      ของเดิมไม่ได้แค่คลาดเคลื่อน — <strong>4 ใน 9 สายที่เทียบได้ มิติหลักผิด</strong>
+    </p>
+    <table style="margin-top:2mm">
+      <thead><tr><th>สาย</th><th>ทีมเดา</th><th>วัดจริง</th><th>สาย</th><th>ทีมเดา</th><th>วัดจริง</th></tr></thead>
+      <tbody>
+        <tr><td>วิศวกรรม</td><td>I</td><td><strong>R</strong></td><td>ดิจิทัลอาชีวะ</td><td>R</td><td><strong>I</strong></td></tr>
+        <tr><td>ธุรกิจ</td><td>E</td><td><strong>C</strong></td><td>โลจิสติกส์</td><td>C</td><td><strong>R</strong></td></tr>
+      </tbody>
+    </table>
+    <p>
+      ผลข้างเคียงที่สำคัญกว่า: ความครอบคลุมขึ้นจาก <strong>79.1% เป็น 88.8%</strong> ของหลักสูตรที่ไม่ซ้ำ
+      และสายที่เมื่อก่อน<strong>ไม่มีอยู่ในระบบเลย</strong>มาครบ — ครุศาสตร์ 704 · ภาษา 411 ·
+      นิติ 109 · รัฐศาสตร์ 97 · จิตวิทยา 22 หลักสูตร
+    </p>
+  </div>
+
+  <div class="callout warn">
+    <h4>ความซื่อสัตย์ทางวิชาการ</h4>
+    <p>
+      <strong>ไม่มีพารามิเตอร์ตัวไหนถูก fit กับข้อมูลผลลัพธ์ เพราะยังไม่มีข้อมูลผลลัพธ์</strong>
+      ทุกตัวเป็นการตัดสินใจออกแบบ อยู่ที่เดียวใน <span class="mono">engine.py → PARAMETERS</span>
+      พร้อมเหตุผล และถูกพิมพ์ออกมาทุกครั้งที่รัน เราจะไม่อ้างว่ามันได้รับการพิสูจน์ทางวิทยาศาสตร์
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ E -->
+<section>
+  <h2><span class="tag">E</span>ทฤษฎีที่ใช้ และใช้ตรงไหน</h2>
+
+  <table>
+    <thead><tr><th style="width:20%">ทฤษฎี</th><th style="width:40%">แหล่งต้นฉบับ</th><th>ใช้ทำอะไร</th></tr></thead>
+    <tbody>
+      <tr><td><strong>RIASEC</strong></td><td>Holland, J. L. (1997). <em>Making Vocational Choices</em>, 3rd ed.</td><td>โครงสร้างโปรไฟล์ 6 มิติ ทั้งฝั่งคนและฝั่งหลักสูตร</td></tr>
+      <tr><td><strong>Congruence</strong></td><td>Holland (1997) · Nauta, M. H. (2010), <em>J. Counseling Psychology</em> 57(1)</td><td>นิยามของ “เข้ากัน” → วัดด้วย cosine</td></tr>
+      <tr><td><strong>Differentiation</strong></td><td>Holland (1997)</td><td>ประตูปฏิเสธเมื่อโปรไฟล์แบน</td></tr>
+      <tr><td><strong>SCCT</strong></td><td>Lent, Brown &amp; Hackett (1994), <em>J. Vocational Behavior</em> 45(1)</td><td>แกนที่สอง: ความมั่นใจในตนเอง แยกจากความชอบ</td></tr>
+      <tr><td><strong>Self-efficacy</strong></td><td>Bandura, A. (1977), <em>Psychological Review</em> 84(2)</td><td>ฐานของข้อ self-efficacy 6 ข้อ</td></tr>
+      <tr><td><strong>Reliability shrinkage</strong></td><td>Kelley, T. L. (1947). <em>Fundamentals of Statistics</em></td><td>คะแนนที่เชื่อถือได้น้อยถูกดึงเข้าค่ากลาง</td></tr>
+      <tr><td><strong>18REST</strong></td><td>Ambiel et al. (2018), <em>Psicologia: Reflexão e Crítica</em> 31(6), CC BY 4.0</td><td>ที่มาของข้อความสนใจส่วนหนึ่ง</td></tr>
+      <tr><td><strong>CIP</strong></td><td>Sampson et al. (2004). <em>Career Counseling and Services</em></td><td>เหตุผลที่ระบบต้องยอมบอกว่า “ยังตอบไม่ได้”</td></tr>
+    </tbody>
+  </table>
+
+  <h3>สิ่งที่จงใจไม่ใช้ และเพราะอะไร</h3>
+  <p>
+    <strong>สมมติฐานรูปหกเหลี่ยมของ Holland</strong> — งานวิจัยข้ามวัฒนธรรมพบว่าลำดับ R-I-A-S-E-C
+    ไม่คงรูปนอกสหรัฐฯ อย่างสม่ำเสมอ เราจึงใช้ความคล้ายของโปรไฟล์ทั้งเวกเตอร์แทนการนับระยะบนหกเหลี่ยม
+    ซึ่งเป็นวิธีที่วรรณกรรมข้ามวัฒนธรรมแนะนำมากกว่า
+  </p>
+
+  <h2><span class="tag">F</span>ตรรกะการถามแบบปรับตัว</h2>
+
+  <p class="lede">
+    ออกแบบไว้แล้วใน <span class="mono">01_Research/Adaptive_Questionnaire/</span> (เอกสาร 9 บท)
+    และ<strong>ทดสอบด้วยการจำลอง 5,000 เซสชัน</strong> ไม่ใช่ข้อเสนอบนกระดาษ
+  </p>
+
+  <table>
+    <thead><tr><th style="width:24%">กลไก</th><th>กฎ</th></tr></thead>
+    <tbody>
+      <tr><td>แตกสาขาตามคำตอบ</td>
+          <td><strong>5</strong> เจาะลึก facet ย่อย · <strong>4</strong> ยืนยันด้วยข้ออื่น ·
+              <strong>3</strong> ไม่นับเป็นหลักฐาน → ถามข้อประสบการณ์ว่าเคยได้ลองไหม ·
+              <strong>2</strong> ถามข้อแยก facet ก่อนสรุป · <strong>1</strong> ลดความสำคัญ
+              <strong>แต่ปิดสาขาด้วยคำตอบเดียวไม่ได้</strong></td></tr>
+      <tr><td>หลักฐานขั้นต่ำ</td><td>ต้องมีข้อที่ให้ข้อมูล ≥ 2 ข้อต่อมิติ ก่อน coverage เต็ม</td></tr>
+      <tr><td>ตรวจความขัดแย้ง</td><td>6 ชนิด · ข้อบูรณาการปิดความขัดแย้งของตัวเอง · แยก facet ก่อนเสมอ</td></tr>
+      <tr><td>เกณฑ์หยุด</td><td>ผลได้ลดน้อย · ทุกสาขาถึงปลายทาง · เพดาน 34 ข้อ · ผู้เรียนกดจบเอง</td></tr>
+      <tr><td>ป้องกันวนไม่จบ</td><td>งบที่ลดลงทางเดียว + ตัวกันซ้ำชั้นที่สอง</td></tr>
+      <tr><td>เปิดสาขากลับ</td><td>ทริกเกอร์ 6 ข้อ — รวมถึง “ผู้เรียนตอบ 5 ในมิติที่เคยปิด”</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>หลักฐานว่ากลไกทำงาน · จำลอง 5,000 เซสชัน · ผ่าน invariant 10/10</h4>
+    <p>
+      ความยาวมัธยฐาน <strong>26 ข้อ</strong> (ช่วง 6–34) · ครอบคลุมข้อ 90/90 และ facet 30/30 ·
+      กระบวนการนี้จับบั๊กในกฎได้ <strong>13 จุด</strong> แล้วแก้กลับเข้าเอกสารต้นทาง
+    </p>
+    <p>
+      หลักฐานที่ตรงที่สุด: ผู้ตอบที่<strong>กดเห็นด้วยทุกข้อได้ความมั่นใจ 0.18</strong>
+      ส่วนผู้ตอบที่<strong>ตั้งใจตอบได้ 0.76</strong> จากกฎชุดเดียวกัน — ระบบแยกออกว่าใครควรได้ข้อสรุป
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================ G+H -->
+<section>
+  <h2><span class="tag">G</span>Value proposition</h2>
+
+  <div class="callout">
+    <h4>ประโยคเดียว</h4>
+    <p style="font-size:11pt;line-height:1.5">
+      <strong>เด็ก ม.4–6 ต้องเปิด 8 เว็บเพื่อตอบคำถามเดียวว่า “จะเรียนอะไรดี”
+      FutureMe รวมให้จบในที่เดียว และอธิบายได้ทุกคำแนะนำว่าทำไม</strong>
+    </p>
+  </div>
+
+  <div class="two">
+    <div>
+      <h3>ปัญหา · วันนี้เด็กคนหนึ่งต้องทำอะไรบ้าง</h3>
+      <table style="font-size:8.4pt">
+        <tbody>
+          <tr><td>1</td><td>ทำแบบทดสอบบุคลิกภาพฟรีบางเว็บ — ได้ผลเป็นตัวอักษร 3 ตัว</td></tr>
+          <tr><td>2</td><td>Google ว่าตัวอักษรนั้นเรียนอะไรได้</td></tr>
+          <tr><td>3</td><td>เปิดเว็บมหาวิทยาลัยทีละแห่ง</td></tr>
+          <tr><td>4</td><td>เข้า mytcas หารอบและเกณฑ์</td></tr>
+          <tr><td>5</td><td>หาหน้าค่าเทอมของคณะ</td></tr>
+          <tr><td>6</td><td>หาว่ามีทุนไหม</td></tr>
+          <tr><td>7</td><td>เปิด Maps ดูว่าไกลจากบ้านแค่ไหน</td></tr>
+          <tr><td>8</td><td>หาค่าหอ ค่ากิน ค่ารถ</td></tr>
+        </tbody>
+      </table>
+      <p><strong>ไม่มีขั้นไหนต่อกับขั้นก่อนหน้า</strong> และผลบุคลิกภาพในขั้น 1 ไม่เคยถูกใช้ในขั้น 3–8</p>
+    </div>
+    <div>
+      <h3>Insight</h3>
+      <p>
+        ปัญหาไม่ใช่<strong>ข้อมูลไม่พอ</strong> — ข้อมูลมีครบและเปิดสาธารณะเกือบหมด
+      </p>
+      <p>
+        ปัญหาคือ <strong>(1) ข้อมูลไม่เคยถูกต่อกัน</strong> และ
+        <strong>(2) ไม่มีใครอธิบายได้ว่าทำไมถึงแนะนำแบบนั้น</strong>
+      </p>
+      <p>
+        แบบทดสอบที่มีอยู่บอกว่า “คุณคือ SEC” แล้วจบ ไม่บอกว่าทำไม ไม่บอกว่าแล้วยังไงต่อ
+        และไม่รู้ว่าเด็กคนนี้อยู่แม่ฮ่องสอนกับงบเดือนละ 3,000 บาท
+      </p>
+      <h3>Solution</h3>
+      <p>
+        เส้นทางเดียวจาก “ยังไม่รู้จักตัวเอง” ถึง “หลักสูตรที่สมัครได้จริง”
+        โดยที่ทุกอันดับกดดูที่มาได้ และระบบ<strong>ยอมบอกว่ายังตอบไม่ได้</strong>เมื่อหลักฐานไม่พอ
+      </p>
+    </div>
+  </div>
+
+  <h2><span class="tag">H</span>Business idea — ธุรกิจมาก่อนเทคโนโลยี</h2>
+
+  <table>
+    <thead><tr><th style="width:20%"></th><th>สาระ</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ใครมีปัญหา</strong></td><td>นักเรียน ม.4–6 ทั่วประเทศ โดยเฉพาะกลุ่มที่ไม่มีครูแนะแนวเฉพาะทางและไม่มีเงินจ้างที่ปรึกษา</td></tr>
+      <tr><td><strong>ทำไมของเดิมไม่พอ</strong></td><td>แบบทดสอบฟรี = ตัวอักษร 3 ตัวแล้วจบ · ที่ปรึกษาเอกชน = หลักหมื่น เข้าถึงเฉพาะเมืองใหญ่ · ครูแนะแนว 1 คนต่อนักเรียนหลายร้อย</td></tr>
+      <tr><td><strong>ของเราต่างยังไง</strong></td><td>ต่อจากผลประเมินไปถึง<strong>หลักสูตรจริงที่ไปถึงได้และจ่ายไหว</strong> และ<strong>อธิบายได้ทุกอันดับ</strong></td></tr>
+      <tr><td><strong>รายได้</strong></td><td>B2B2C กับโรงเรียน/เขตพื้นที่ (ใบอนุญาตรายปี ต่อจำนวนนักเรียน) · แดชบอร์ดสรุปภาพรวมให้ครูแนะแนว · ผู้ใช้ปลายทางฟรีเสมอ</td></tr>
+      <tr><td><strong>ทำไมไม่คิดเงินเด็ก</strong></td><td>กลุ่มที่ได้ประโยชน์มากที่สุดคือกลุ่มที่จ่ายไม่ได้ ถ้าคิดเงินปลายทาง เราจะให้บริการเฉพาะคนที่มีทางเลือกอยู่แล้ว</td></tr>
+      <tr><td><strong>ทำไมไม่รับค่าโฆษณาจากมหาวิทยาลัย</strong></td><td>ขัดกับสิ่งเดียวที่เราขาย — ลำดับที่อธิบายได้ ถ้าเงินซื้ออันดับได้ คำอธิบายก็ไร้ค่า เขียนเป็นข้อห้ามในสถาปัตยกรรม ไม่ใช่แค่นโยบาย</td></tr>
+      <tr><td><strong>ขยายต่อ</strong></td><td>เอนจินไม่ผูกกับสายชุดใดชุดหนึ่ง · เพิ่มสายและหลักสูตรได้ด้วยข้อมูล ไม่ต้องแก้โค้ด · ต่อยอดไปอาชีวะ ปวส. และหลักสูตรระยะสั้นได้ด้วยโครงสร้างเดียวกัน</td></tr>
+    </tbody>
+  </table>
+</section>
+
+<!-- ============================================================ I+J -->
+<section>
+  <h2><span class="tag">I</span>สถาปัตยกรรมข้อมูลบริบท</h2>
+
+  <table>
+    <thead><tr><th style="width:23%">ชุดข้อมูล</th><th class="num" style="width:11%">จำนวน</th><th style="width:32%">แหล่ง</th><th>สถานะ</th></tr></thead>
+    <tbody>
+      <tr><td><strong>ปวช./ปวส.</strong></td><td class="num">16,908</td><td>สอศ. <span class="mono">current_student</span> 2568</td><td><span class="pill ok">ทะเบียนราชการ</span></td></tr>
+      <tr><td>หลักสูตรปริญญาตรี</td><td class="num">6,349</td><td>data.go.th <span class="mono">dqe_11_01</span></td><td><span class="pill ok">ทะเบียนราชการ</span></td></tr>
+      <tr><td>รหัสสาย ISCED-F 2013</td><td class="num">87</td><td>MHESI <span class="mono">univ_cur_11_01</span></td><td><span class="pill ok">ทะเบียนราชการ</span></td></tr>
+      <tr><td><strong>ต้นทุนผลิต/คน/ปี</strong></td><td class="num">6,347</td><td>MHESI <span class="mono">dqe_11_03</span></td><td><span class="pill ok">ทะเบียนราชการ</span></td></tr>
+      <tr><td>สถาบันที่มีพิกัด</td><td class="num">993</td><td>อว. + สอศ. + Nominatim</td><td><span class="pill ok">ทะเบียนราชการ</span></td></tr>
+      <tr><td>จำนวนรับตามแผน</td><td class="num">ทุกแถว</td><td>เดียวกัน</td><td><span class="pill ok">ทะเบียนราชการ</span></td></tr>
+      <tr><td>ระยะทางถนนจริง</td><td class="num">77 จว.</td><td>OSRM (ไม่ใช่ระยะเส้นตรง)</td><td><span class="pill ok">คำนวณจากถนนจริง</span></td></tr>
+      <tr><td>สถานีขนส่งผู้โดยสาร</td><td class="num">891</td><td>Wikidata</td><td><span class="pill ok">CC0</span></td></tr>
+      <tr><td><strong>ผลการมีงานทำของผู้จบ</strong></td><td class="num">15,586</td><td>สอศ. survey 2566 · ต่อเข้า 92% ของหลักสูตรอาชีวะ</td><td><span class="pill ok">ทะเบียนราชการ</span></td></tr>
+      <tr><td>ข้อคำถาม</td><td class="num">90</td><td>18REST + งานเขียนเอง</td><td><span class="pill mid">ยังไม่ validate</span></td></tr>
+      <tr><td>เวกเตอร์ RIASEC ของสาย</td><td class="num">87</td><td>O*NET 29.1 · 923 อาชีพ (CC BY 4.0)</td><td><span class="pill ok">วัดมาจริง</span></td></tr>
+      <tr><td>การจับคู่ ISCED → อาชีพ</td><td class="num">91</td><td>ทีมกำหนด · มี audit ให้ตรวจ</td><td><span class="pill mid">ยังไม่ผ่านผู้เชี่ยวชาญ</span></td></tr>
+      <tr><td><strong>ค่าเทอมเป็นบาท</strong></td><td class="num">—</td><td>—</td><td><span class="pill no">ไม่มีข้อมูล</span></td></tr>
+      <tr><td><strong>รอบ TCAS · วิชา · คะแนน</strong></td><td class="num">—</td><td>mytcas ไม่มี open API</td><td><span class="pill no">ไม่มีข้อมูล</span></td></tr>
+      <tr><td><strong>ทุนการศึกษา</strong></td><td class="num">—</td><td>—</td><td><span class="pill no">ไม่มีข้อมูล</span></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout">
+    <h4>กฎการจัดการช่องว่าง</h4>
+    <p>
+      ช่องที่ไม่มีข้อมูลถูกเขียนเป็น <span class="mono">null</span> พร้อมข้อความว่าต้องไปดึงจากไหน
+      และถูก<strong>ตัดออกจากค่าเฉลี่ย</strong> ไม่ใช่แทนด้วยค่ากลาง
+    </p>
+    <p>
+      เหตุผล: ถ้าแทนด้วยค่ากลาง หลักสูตรที่ไม่มีข้อมูลค่าเทอมจะได้คะแนนเท่ากับหลักสูตรที่ยืนยันแล้วว่าจ่ายไหว
+      ผู้เรียนที่เห็น “ประมาณ 25,000 บาท” แยกไม่ออกว่าไม่มีใครตรวจ · ผู้เรียนที่เห็น
+      “ไม่มีข้อมูล — ต้องดึงจาก TCAS” แยกออก
+    </p>
+    <p>
+      หลักการเดียวกันนี้ทำให้พิกัดสถาบัน 309 แห่งเป็น <span class="mono">null</span> แทนที่จะเดา
+      และพิกัดที่พิสูจน์ไม่ได้ 11 จุดถูกกันไว้ในไฟล์แยก
+    </p>
+  </div>
+
+  <h2><span class="tag">J</span>บทบาทของ AI — และเส้นที่ห้ามข้าม</h2>
+
+  <div class="two">
+    <div>
+      <h3>RULE ENGINE · ตัดสินใจ</h3>
+      <ul>
+        <li>ให้คะแนน จัดอันดับ ตัดสินว่าจะปฏิเสธไหม</li>
+        <li>deterministic — รันซ้ำได้ผลเดิมเป๊ะ</li>
+        <li>ไม่มี LLM อยู่ในเส้นทางคำนวณแม้แต่จุดเดียว</li>
+        <li>ทุกค่ากลางทางถูกส่งออกมาเป็น trace</li>
+      </ul>
+    </div>
+    <div>
+      <h3>AI LAYER · สื่อสาร</h3>
+      <ul>
+        <li>ถามคำถามด้วยภาษาที่เป็นธรรมชาติ</li>
+        <li>อธิบาย trace ให้เด็ก ม.4 เข้าใจ</li>
+        <li>สรุปเปรียบเทียบทางเลือก · ตอบคำถาม TCAS</li>
+        <li>จับว่าคำตอบกำกวมและควรถามอะไรต่อ</li>
+      </ul>
+    </div>
+  </div>
+
+  <p>
+    <strong>ถ้าถอด LLM ออกทั้งหมด ระบบยังแนะนำได้ครบ</strong> เสียแค่ความลื่นไหลของบทสนทนา —
+    นี่คือเหตุผลที่ business idea ไม่ได้ตั้งอยู่บนคำว่า “เราใช้ AI”
+    และเป็นคำตอบสำหรับคำถาม “ChatGPT ทำแทนได้ไหม”
+  </p>
+</section>
+
+<!-- ============================================================ K -->
+<section>
+  <h2><span class="tag">K</span>ตัวอย่างการอนุมานเต็ม · ผู้เรียน 3 คน</h2>
+
+  <p class="lede">
+    ผลจริงจาก <span class="mono">python3 run.py</span> ไม่ได้คัดลอกมาจากที่ไหน
+    ผู้เรียนทั้งสามตอบคลังข้อ 90 ข้อจริง เอนจินอ่านคำตอบเหมือนที่จะอ่านของคนจริง
+  </p>
+
+  <h3>สิ่งที่การ์ดหนึ่งใบบอก — ผู้เรียน ม.3 เชียงใหม่ โปรไฟล์ R</h3>
+  <div class="formula">ปวช. ช่างเชื่อมโลหะ                                        [ ชอบ + ถนัด ]
+วิทยาลัยเทคนิคเชียงใหม่ · เชียงใหม่
+อ.เมืองเชียงใหม่ · 0.6 กม. ตามถนน · เดินหรือปั่นจักรยานไปได้
+ไปได้ด้วย  เดิน · จักรยาน · มอเตอร์ไซค์
+เว็บไซต์สถาบัน — ดูค่าเทอมและเกณฑ์รับเข้าจากประกาศจริง
+สายนี้ใช้โปรไฟล์ความสนใจของอาชีพ  ช่างโลหะแผ่น · ช่างเชื่อมและตัดโลหะ
+┌───────────────────────────────────────────────────────────┐
+│ ผู้จบสาขานี้ในเชียงใหม่ ปวช.:  ทำงาน 24% · เรียนต่อ 70%          │
+│ จากผู้ที่ติดตามได้ 1,420 คน (ผู้จบทั้งหมด 1,785 คน) ปี 2566        │
+└───────────────────────────────────────────────────────────┘
+ความเข้ากันเชิงวิชาการ 86.8   บริบท +14.3   เจตนารับ 62 คน
+▸ ที่มาของคะแนนนี้</div>
+  <p style="font-size:8.6pt;color:var(--ink-2)">
+    ทุกบรรทัดมาจากทะเบียนราชการ ไม่มีบรรทัดไหนเป็นค่าประมาณ · ช่องที่ไม่มีข้อมูล
+    (ค่าเทอม · รอบรับสมัคร · ทุน) ไม่ถูกเดาให้ แต่ถูกแทนด้วยลิงก์ไปหาผู้ที่ประกาศจริง ·
+    เปอร์เซ็นต์การมีงานทำมาพร้อมฐานที่คำนวณเสมอ เพราะ 24% จากคน 1,420 คน
+    กับ 24% จากคน 15 คน ไม่ใช่ข้อมูลชนิดเดียวกัน
+  </p>
+
+  <h3>ผู้เรียน ก · ม.5 · กรุงเทพฯ · ไปกลับเท่านั้น · งบจำกัด</h3>
+  <div class="formula">ความมั่นใจ 0.97   differentiation 0.68
+ตัดออกก่อนให้คะแนน 4,993 หลักสูตร (อยู่นอกระยะที่ผู้เรียนบอกว่าไปได้)
+
+อันดับสาย   Education science 87.2 → Social work 86.4 → Law 85.9 → Political sciences 85.2</div>
+  <table>
+    <thead><tr><th style="width:4%">#</th><th style="width:34%">หลักสูตร</th><th style="width:20%">สถาบัน</th><th class="num">cos</th><th class="num">Core</th><th class="num">บริบท</th><th class="num">รวม</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>ครุศาสตรบัณฑิต เทคโนโลยีการศึกษาและคอมพิวเตอร์ (5 ปี)</td><td>ราชภัฏสวนสุนันทา</td><td class="num">0.974</td><td class="num">87.2</td><td class="num">13.2</td><td class="num"><strong>100.3</strong></td></tr>
+      <tr><td>2</td><td>ครุศาสตรบัณฑิต เทคโนโลยีดิจิทัลเพื่อการศึกษา (4 ปี)</td><td>ราชภัฏสวนสุนันทา</td><td class="num">0.974</td><td class="num">87.2</td><td class="num">13.2</td><td class="num"><strong>100.3</strong></td></tr>
+      <tr><td>3</td><td>นิติศาสตรบัณฑิต</td><td>ราชภัฏบ้านสมเด็จเจ้าพระยา</td><td class="num">0.965</td><td class="num">85.9</td><td class="num">13.4</td><td class="num"><strong>99.3</strong></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:8.6pt;color:var(--ink-2)">
+    <strong>ครุศาสตร์ · สังคมสงเคราะห์ · นิติ · รัฐศาสตร์</strong> — สี่สายนี้
+    <strong>ไม่มีอยู่ในระบบเลย</strong>ตอนที่ยังใช้เวกเตอร์ที่ทีมเดา ผู้เรียนโปรไฟล์ S–E คนนี้เคยได้
+    “บัญชี” เป็นอันดับสอง ตอนนี้ได้สายที่ตรงกับความชอบทำงานกับคนจริง ๆ
+  </p>
+
+  <h3>ผู้เรียน ข · ม.6 · เชียงใหม่ · ย้ายได้ · งบปานกลาง</h3>
+  <div class="formula">โปรไฟล์หลังหด   R 0.75  ·  I 0.75  ·  C 0.75  ·  A 0.25  ·  S 0.25  ·  E 0.25
+อันดับสาย   Environmental protection 88.4 → Chemistry 88.0 → Engineering n.f.d. 87.6</div>
+  <table>
+    <thead><tr><th style="width:4%">#</th><th style="width:34%">หลักสูตร</th><th style="width:20%">สถาบัน</th><th class="num">cos</th><th class="num">Core</th><th class="num">บริบท</th><th class="num">รวม</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>วิศวกรรมศาสตรบัณฑิต วิศวกรรมสิ่งแวดล้อม</td><td>ม.เชียงใหม่</td><td class="num">0.987</td><td class="num">88.4</td><td class="num">13.2</td><td class="num"><strong>101.7</strong></td></tr>
+      <tr><td>2</td><td>วิศวกรรมศาสตรบัณฑิต วิศวกรรมอุตสาหการ</td><td>ม.เชียงใหม่</td><td class="num">0.991</td><td class="num">87.6</td><td class="num">13.7</td><td class="num"><strong>101.3</strong></td></tr>
+      <tr><td>3</td><td>วิทยาศาสตรบัณฑิต เคมี</td><td>ราชภัฏเชียงใหม่</td><td class="num">0.943</td><td class="num">88.0</td><td class="num">13.3</td><td class="num"><strong>101.3</strong></td></tr>
+    </tbody>
+  </table>
+  <p style="font-size:8.6pt;color:var(--ink-2)">
+    <strong>คนละชุดกับผู้เรียน ก โดยสิ้นเชิง จากกลไกเดียวกัน</strong> — ข้อพิสูจน์ว่าระบบตอบสนองต่อโปรไฟล์จริง
+    ไม่ใช่คืนรายการยอดนิยมชุดเดิมให้ทุกคน
+  </p>
+
+  <h3>ผู้เรียน ค · ม.4 · แม่ฮ่องสอน · ยังไม่แน่ใจ</h3>
+  <div class="formula">ถามไป 60 ข้อ  ·  ให้ข้อมูลจริง 12 ข้อ  (ตอบ 3 ไม่นับเป็นหลักฐาน)
+ความมั่นใจ 0.24   differentiation 0.12
+
+⚠ ระบบไม่จัดอันดับให้
+   · ความมั่นใจรวมต่ำกว่า 0.50
+   · differentiation 0.12 &lt; 0.20 — โปรไฟล์แบนไม่ได้แปลว่าเข้าได้ทุกสาย แต่แปลว่ายังไม่รู้
+   · ถ้าปล่อยผ่าน จะมี 23,257 หลักสูตรผ่านเกณฑ์ ซึ่งดูน่าเชื่อถือทั้งที่ไม่มีหลักฐาน</div>
+  <p style="font-size:8.6pt;color:var(--ink-2)">
+    <strong>นี่คือฟีเจอร์ ไม่ใช่ความล้มเหลว</strong> เครื่องมือแนะแนวที่ให้คำตอบกับทุกคนเสมอ
+    คือเครื่องมือที่คำตอบไม่มีความหมาย ระบบบอกด้วยว่าควรถามอะไรต่อ: ข้อประสบการณ์และข้อบังคับเลือก
+  </p>
+
+  <h2><span class="tag">L</span>User journey ใหม่</h2>
+  <div class="pipe">รู้จักตัวเอง            ถาม 18–34 ข้อ ปรับตามคำตอบ · เห็นความมั่นใจแบบสด
+      ↓
+สายที่เข้ากัน           อันดับสาย + คะแนน + เหตุผล + ช่อง "ชอบ/ถนัด"
+      ↓                  ← ถ้าหลักฐานไม่พอ หยุดตรงนี้และถามต่อ
+หลักสูตรที่ไปถึงได้      Top 5 พร้อมสถาบัน ระยะทางถนนจริง จำนวนรับ
+      ↓
+จบแล้วเป็นยังไง          ผู้จบสาขานี้ในจังหวัดนี้ ทำงานกี่ % เรียนต่อกี่ % (สอศ. 2566)
+      ↓
+ความเป็นไปได้            รอบ TCAS · วิชา · คะแนน   ← ยังไม่มีข้อมูล บอกตรง ๆ
+      ↓
+เงินและที่อยู่           ต้นทุนที่รัฐลงทุน + ลิงก์ประกาศค่าธรรมเนียมของสถาบัน
+                        ค่าเทอมจริง ทุน ค่าหอ      ← ยังไม่มีข้อมูล บอกตรง ๆ
+      ↓
+เปรียบเทียบ              วางเทียบกันทีละเกณฑ์
+      ↓
+แผนลงมือ                 30 วันถัดไปควรลองอะไร</div>
+</section>
+
+<!-- ============================================================ M+N -->
+<section>
+  <h2><span class="tag">M</span>โครงสไลด์พิทช์</h2>
+
+  <table>
+    <thead><tr><th style="width:6%">#</th><th style="width:24%">สไลด์</th><th class="num" style="width:8%">เวลา</th><th>สาระที่ต้องผ่าน</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>Hook</td><td class="num">20 วิ</td><td>“เด็ก ม.5 คนหนึ่งต้องเปิด 8 เว็บ เพื่อตอบคำถามเดียวว่าจะเรียนอะไรดี” — แสดง 8 แท็บบนจอ</td></tr>
+      <tr><td>2</td><td>ปัญหา</td><td class="num">30 วิ</td><td>ไม่มีขั้นไหนต่อกัน · ผลแบบทดสอบไม่เคยถูกใช้ในขั้นถัดไป · ครูแนะแนว 1 คนต่อนักเรียนหลายร้อย</td></tr>
+      <tr><td>3</td><td>Insight</td><td class="num">20 วิ</td><td>ข้อมูลมีครบแล้ว ปัญหาคือไม่ถูกต่อกัน และไม่มีใครอธิบายได้ว่าทำไม</td></tr>
+      <tr><td>4</td><td>Solution</td><td class="num">30 วิ</td><td>เส้นทางเดียวจาก “ไม่รู้จักตัวเอง” ถึง “หลักสูตรที่สมัครได้จริง”</td></tr>
+      <tr><td>5</td><td><strong>กลไกการแนะนำ</strong></td><td class="num"><strong>90 วิ</strong></td><td><strong>สไลด์สำคัญที่สุด</strong> — ท่อ 10 ขั้น · ทฤษฎีที่ใช้ · CoreFit แยกจาก ContextFit · เพดาน 15 คะแนน</td></tr>
+      <tr><td>6</td><td>Demo สด</td><td class="num">60 วิ</td><td>รัน <span class="mono">run.py</span> ให้เห็นการอนุมานทีละขั้น</td></tr>
+      <tr><td>7</td><td>ผู้เรียน ก vs ข</td><td class="num">30 วิ</td><td>สองโปรไฟล์ ผลคนละชุด กลไกเดียวกัน</td></tr>
+      <tr><td>8</td><td><strong>ผู้เรียน ค</strong></td><td class="num">30 วิ</td><td><strong>ระบบปฏิเสธที่จะตอบ</strong> — จุดที่ทำให้ต่างจากแบบทดสอบทั่วไปมากที่สุด</td></tr>
+      <tr><td>9</td><td>ข้อมูล</td><td class="num">20 วิ</td><td>23,257 หลักสูตร ทั้งอาชีวะและปริญญาตรี · RIASEC วัดจาก 923 อาชีพ · ระยะถนนจริง 77 จังหวัด · และช่องที่ยังว่าง</td></tr>
+      <tr><td>10</td><td>บทบาท AI</td><td class="num">20 วิ</td><td>ถอด LLM ออกแล้วยังทำงานได้ — AI อธิบาย ไม่ได้ตัดสิน</td></tr>
+      <tr><td>11</td><td>Impact &amp; ธุรกิจ</td><td class="num">20 วิ</td><td>B2B2C กับโรงเรียน · ปลายทางฟรี · ไม่รับเงินจากมหาวิทยาลัย</td></tr>
+      <tr><td>12</td><td>ปิด</td><td class="num">10 วิ</td><td>“เราไม่ได้บอกเด็กว่าต้องเรียนอะไร เราทำให้เขาตัดสินใจได้ดีขึ้น และตรวจสอบเราได้”</td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout warn">
+    <h4>สิ่งที่ต้องไม่ทำบนเวที</h4>
+    <p>
+      อย่าเล่าชื่อเฟรมเวิร์ก สถาปัตยกรรม backend หรือ API — ใช้เวลากับ<strong>กลไกการแนะนำ (สไลด์ 5)
+      และการปฏิเสธที่จะตอบ (สไลด์ 8)</strong> สองอย่างนี้คือสิ่งที่คู่แข่งไม่มี
+    </p>
+  </div>
+
+  <h2><span class="tag">N</span>คำถามกรรมการที่ต้องตอบได้</h2>
+
+  <div class="qa"><div class="q">ทำไมต้อง RIASEC</div><div class="a">
+    เป็นทฤษฎีความสนใจอาชีพที่ถูกทดสอบซ้ำมากที่สุดตั้งแต่ปี 1959 มีคลังข้อเปิด (18REST, CC BY 4.0)
+    และมีโครงสร้างที่แปลงเป็นเวกเตอร์เปรียบเทียบกับหลักสูตรได้ตรง ๆ
+    เราใช้เฉพาะส่วนที่มีหลักฐานข้ามวัฒนธรรม และ<strong>จงใจไม่ใช้สมมติฐานรูปหกเหลี่ยม</strong>
+    เพราะลำดับ R-I-A-S-E-C ไม่คงรูปนอกสหรัฐฯ
+  </div></div>
+
+  <div class="qa"><div class="q">น้ำหนัก 0.70 / 0.30 มาจากไหน</div><div class="a">
+    <strong>เป็นการตัดสินใจออกแบบ ไม่ใช่ค่าที่ fit จากข้อมูล</strong> — เหตุผลคือ SCCT ถือว่าความสนใจ
+    ถูกสร้างขึ้นบางส่วนจากความมั่นใจในตนเอง ให้ efficacy เต็มจึงเป็นการนับซ้ำ
+    ค่านี้อยู่ที่เดียวในโค้ดพร้อมเหตุผล และเราเขียนไว้ชัดว่าจะตรวจสอบด้วยความพึงพอใจของนักศึกษาปี 1
+    เราจะไม่อ้างว่ามันได้รับการพิสูจน์แล้ว
+  </div></div>
+
+  <div class="qa"><div class="q">เวกเตอร์ความสนใจของแต่ละสายมาจากไหน</div><div class="a">
+    <strong>วัดมาจริง ไม่ใช่กำหนดเอง</strong> — O*NET (กระทรวงแรงงานสหรัฐฯ, CC BY 4.0) เผยแพร่โปรไฟล์
+    RIASEC ที่วัดจาก 923 อาชีพ · ทะเบียนหลักสูตรของ อว. ให้รหัสสาย ISCED-F 2013 กับทุกหลักสูตร ·
+    เวกเตอร์ของหลักสูตรจึงเป็นค่าเฉลี่ยของอาชีพในสายนั้น
+    เหลือดุลพินิจจุดเดียวคือการจับคู่สายกับกลุ่มอาชีพ ซึ่งเปิดให้ตรวจทุกบรรทัดใน
+    <span class="mono">crosswalk_audit.md</span> และ<strong>ยังไม่ผ่านการตรวจโดยผู้เชี่ยวชาญ</strong> —
+    เราเขียนกำกับไว้ทุกชั้นของข้อมูล
+  </div></div>
+
+  <div class="qa"><div class="q">ทำไมไม่ใช้ข้อมูลให้เยอะกว่านี้</div><div class="a">
+    ลองแล้วและปฏิเสธ — O*NET มีชื่อพ้อง 55,120 รายการ ถ้าจับคู่กับชื่อพ้องด้วย
+    สายที่หลักฐานบางจะลดจาก 15 เหลือ 9 <strong>แต่ทำลายสายที่คมอยู่แล้ว</strong>:
+    “ศิลปะ” จะดูด Software Developers, Database Architects, Blockchain Engineers เข้ามา
+    แล้วพลิกจาก Artistic 0.83 เป็น Realistic 0.63 · Law พลิก E เป็น C
+    <strong>ข้อมูลมากขึ้นไม่ได้แปลว่าดีขึ้น</strong> เราเก็บ counter-example ไว้ในโค้ดกันคนทำซ้ำ
+  </div></div>
+
+  <div class="qa"><div class="q">ใครรับรองว่าคำแนะนำถูก</div><div class="a">
+    <strong>ยังไม่มีใครรับรอง และเราไม่อ้างว่ามี</strong> สิ่งที่พิสูจน์แล้วคือกฎสอดคล้องกันเอง
+    (จำลอง 5,000 เซสชัน ผ่าน invariant 10/10) สิ่งที่ยังไม่พิสูจน์คือกฎให้ผลถูกกับผู้เรียนจริง
+    ขั้นต่อไปคือ IOC จากผู้เชี่ยวชาญแนะแนว แล้วจึง CFA กับตัวอย่างจริง เขียนไว้ในเอกสารแล้ว
+  </div></div>
+
+  <div class="qa"><div class="q">ต่างจากแบบทดสอบอาชีพที่มีอยู่ยังไง</div><div class="a">
+    สามอย่าง <strong>(1)</strong> ของเดิมจบที่ตัวอักษร 3 ตัว ของเราจบที่หลักสูตรที่สมัครได้จริง
+    พร้อมระยะทางถนนจริง <strong>(2)</strong> ของเดิมถามครบทุกข้อเสมอ ของเราปรับตามคำตอบ มัธยฐาน 26 ข้อ
+    <strong>(3)</strong> ของเดิมตอบทุกคนเสมอ <strong>ของเราปฏิเสธเมื่อหลักฐานไม่พอ</strong>
+  </div></div>
+
+  <div class="qa"><div class="q">ChatGPT ทำแทนได้ไหม</div><div class="a">
+    ทำบทสนทนาได้ดีกว่าเรา แต่ทำสามอย่างนี้ไม่ได้: <strong>(1)</strong> ให้ผลเดิมทุกครั้งจากคำตอบเดิม
+    <strong>(2)</strong> แสดงว่าอันดับ 3 มาจากคำถามข้อไหนบ้าง <strong>(3)</strong> รู้ว่าวิทยาลัยไหน
+    อยู่ห่างจากอำเภอเมืองแม่ฮ่องสอนกี่กิโลเมตรตามถนนจริง — และมันจะไม่บอกว่า “ยังตอบไม่ได้”
+    เพราะมันถูกออกแบบมาให้ตอบเสมอ
+  </div></div>
+
+  <div class="qa"><div class="q">ทำไมต้องใช้ AI เลย</div><div class="a">
+    ไม่จำเป็นต่อการแนะนำ — <strong>ถอด LLM ออกทั้งหมด ระบบยังทำงานครบ</strong>
+    AI ทำให้การถาม 26 ข้อไม่เหมือนกรอกแบบฟอร์ม และแปลการอนุมานเป็นภาษาที่เด็ก ม.4 เข้าใจ
+    เป็นตัวคูณประสบการณ์ ไม่ใช่ตัวธุรกิจ
+  </div></div>
+
+  <div class="qa"><div class="q">ข้อมูลมหาวิทยาลัยเชื่อถือได้แค่ไหน</div><div class="a">
+    หลักสูตรและจำนวนรับมาจากทะเบียน data.go.th · ที่ตั้งจากทะเบียน อว./สอศ. (ข้อมูลปี 2564 — สถาบันที่
+    เปิดหรือปิดหลังจากนั้นจะไม่ตรง เขียนไว้แล้ว) · ระยะทางคำนวณด้วย OSRM ตามถนนจริง
+    <strong>ค่าเทอม รอบ TCAS คะแนน และทุน เรายังไม่มี และแสดงว่าไม่มี ไม่ได้ประมาณให้</strong>
+  </div></div>
+
+  <div class="qa"><div class="q">ถ้าเกณฑ์ TCAS เปลี่ยนล่ะ</div><div class="a">
+    ข้อมูลทุกชุดมีวันที่ดึงและเกณฑ์ความเก่า ระบบเตือนเมื่อข้อมูลเกินอายุ และตัวคำนวณ CoreFit
+    ไม่ขึ้นกับเกณฑ์ TCAS เลย — เกณฑ์กระทบเฉพาะชั้นความเป็นไปได้ ซึ่งแยกออกมาโดยเจตนา
+  </div></div>
+
+  <div class="qa"><div class="q">ทำไมนักเรียนควรเชื่อระบบนี้</div><div class="a">
+    ไม่ต้องเชื่อ — <strong>กดดูได้ว่าอันดับนี้มาจากคำถามข้อไหน คะแนนเท่าไร และอะไรที่เรายังไม่รู้</strong>
+    และเมื่อเราไม่รู้ เราบอกว่าไม่รู้ ระบบที่ตรวจสอบได้ไม่ต้องขอความเชื่อ
+  </div></div>
+
+  <div class="qa"><div class="q">ถ้าเด็กเปลี่ยนความสนใจล่ะ</div><div class="a">
+    โปรไฟล์เป็นสถานะ ณ เวลาหนึ่ง ไม่ใช่คำตัดสิน ทำใหม่ได้ตลอด และเก็บประวัติเทียบกันได้
+    เอกสารออกแบบระบุด้วยว่าสาขาที่เคยปิดต้องเปิดกลับได้ ด้วยทริกเกอร์ 6 ข้อ
+  </div></div>
+</section>
+
+<!-- ============================================================ O+P -->
+<section>
+  <h2><span class="tag">O</span>จุดอ่อนที่ยังเหลือ — เขียนก่อนถูกถาม</h2>
+
+  <table>
+    <thead><tr><th style="width:5%">#</th><th style="width:32%">จุดอ่อน</th><th style="width:12%">ความรุนแรง</th><th>ทางแก้ที่รู้แล้ว</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td><strong>ไม่มีข้อมูล TCAS จริง</strong> — รอบ วิชา คะแนนขั้นต่ำ ค่าเทอม ทุน</td><td><span class="pill no">สูง</span></td><td>ตอบ “เรียนอะไร ที่ไหน” ได้ แต่ยังตอบ “สมัครยังไง” ไม่ได้ · ต้องขอข้อมูลหรือ scrape mytcas</td></tr>
+      <tr><td>2</td><td>CoreFit แยกได้แค่ระดับ<strong>สาย</strong> ไม่ใช่ระดับหลักสูตร</td><td><span class="pill no">สูง</span></td><td>ดึง O*NET Interest Profiler แล้วทำ crosswalk หลักสูตรไทย → ISCO → O*NET</td></tr>
+      <tr><td>3</td><td>ข้อคำถาม 90 ข้อยัง <span class="mono">validationStatus: none</span></td><td><span class="pill mid">กลาง</span></td><td>IOC จากผู้เชี่ยวชาญแนะแนว 3–5 คน แล้ว CFA กับตัวอย่างจริง</td></tr>
+      <tr><td>4</td><td><s>ครอบคลุมแค่ 54.6%</s> → <strong>88.8%</strong> · นิติ ครุศาสตร์ ภาษา รัฐศาสตร์ มาครบแล้ว</td><td><span class="pill ok">แก้แล้ว</span></td><td>ที่เหลือคือ 412 หลักสูตรที่สถาบันไม่มีพิกัด และ 214 ที่สาย ISCED ยังไม่ได้แมป</td></tr>
+      <tr><td>5</td><td>พารามิเตอร์ทุกตัวเป็นการตัดสินใจออกแบบ</td><td><span class="pill mid">กลาง</span></td><td>pilot กับนักเรียนจริง 1 โรงเรียน แล้ว calibrate</td></tr>
+      <tr><td>6</td><td>ทะเบียนสถาบันเป็นข้อมูลปี 2564</td><td><span class="pill mid">กลาง</span></td><td>ดึงทะเบียนรอบล่าสุด</td></tr>
+      <tr><td>7</td><td>ระยะทางวัดจาก<strong>ศูนย์กลางจังหวัด ไม่ใช่บ้านเด็ก</strong></td><td><span class="pill mid">กลาง</span></td><td>รับตำแหน่งจากผู้เรียนแล้วคำนวณใหม่ · เขียนเตือนไว้ในข้อมูลแล้ว</td></tr>
+      <tr><td>8</td><td><s>เอนจินยังไม่ได้ต่อเข้าเว็บแอป</s></td><td><span class="pill ok">แก้แล้ว</span></td><td>อยู่บนหน้า <span class="mono">/routes</span> แล้ว · เทสต์ 546 ข้อผ่าน · parity test อ่าน <span class="mono">engine.py</span> เทียบค่าพารามิเตอร์กันเพี้ยน</td></tr>
+      <tr><td>9</td><td><s>ระบบมีแต่ปริญญาตรี ไม่มีอาชีวะเลย</s></td><td><span class="pill ok">แก้แล้ว</span></td><td>ปวช./ปวส. 16,908 หลักสูตร · 91.4% จับคู่ที่ระดับสาขาวิชา · ประตูระดับชั้นกันไม่ให้เสนอปริญญาตรีให้เด็ก ม.3</td></tr>
+      <tr><td>10</td><td><s>หน้าสัมภาษณ์ยังไม่ถาม self-efficacy</s></td><td><span class="pill ok">แก้แล้ว</span></td><td>ถาม 41 คำถาม (เดิม 35) ด้วยสเกลความมั่นใจแยก · ช่อง “ชอบ/ถนัด” แสดงบนการ์ดแล้ว</td></tr>
+    </tbody>
+  </table>
+
+  <h2><span class="tag">P</span>สิ่งที่ต้องทำก่อนส่ง — เรียงตามผลต่อคะแนน</h2>
+
+  <table>
+    <thead><tr><th style="width:5%"></th><th style="width:38%">งาน</th><th style="width:12%">แรง</th><th>ทำไมสำคัญ</th></tr></thead>
+    <tbody>
+      <tr><td>1</td><td>ซ้อมสไลด์ 5 (กลไก) และ 8 (ปฏิเสธ) ให้พูดได้โดยไม่ดูโน้ต</td><td>2 ชม.</td><td>เป็นสองสไลด์ที่อาจารย์บอกว่าคือคุณค่าแกนกลาง</td></tr>
+      <tr><td>2</td><td>เตรียม demo <span class="mono">run.py</span> ให้รันสดได้บนเวที</td><td>1 ชม.</td><td>เห็นการอนุมานทีละขั้นดีกว่าอธิบายด้วยปาก</td></tr>
+      <tr><td>3</td><td>ให้ครูแนะแนว 3 คนตรวจ crosswalk (91 สาย ISCED + สาขาอาชีวะ)</td><td>รอ 3–5 วัน</td><td>เปลี่ยน “ทีมกำหนดเอง” เป็น “ผ่านผู้เชี่ยวชาญ” ซึ่งเป็นข้อที่กรรมการจะถามแน่</td></tr>
+      <tr><td>4</td><td>ส่งข้อ 90 ข้อให้ครูแนะแนว 3 คนทำ IOC</td><td>รอ 3–5 วัน</td><td>เปลี่ยน “ยังไม่ validate” เป็น “IOC ผ่านแล้ว” ได้ในรอบเดียว</td></tr>
+      <tr><td>5</td><td>ดึงค่าเทอมจริงของ 20 สถาบันแรก ด้วยมือ</td><td>3 ชม.</td><td>ปิดช่องว่างที่ใหญ่ที่สุดบางส่วน ด้วยข้อมูลจริงไม่ใช่ค่าประมาณ</td></tr>
+      <tr><td>6</td><td>คัดของจาก branch เพื่อน (CAT engine ของ Kong)</td><td>2 ชม.</td><td>โค้ด CAT ใช้ได้ · <strong>แต่ต้อง revert การเปลี่ยน provenance เป็น “verified” ที่ไม่ได้ตรวจจริง</strong></td></tr>
+    </tbody>
+  </table>
+
+  <h2>ประเมินตัวเองแบบกรรมการ</h2>
+
+  <table>
+    <thead><tr><th style="width:22%">หมวด</th><th class="num" style="width:8%">ก่อน</th><th class="num" style="width:8%">หลัง</th><th style="width:16%"></th><th>จุดอ่อนที่ยังเหลือ</th></tr></thead>
+    <tbody>
+      <tr class="score-row"><td>ความชัดของปัญหา</td><td class="num">55</td><td class="num">88</td><td><span class="bar" style="width:44pt"></span></td><td>ต้องพิสูจน์ด้วยการสัมภาษณ์นักเรียนจริง</td></tr>
+      <tr class="score-row"><td>Value proposition</td><td class="num">50</td><td class="num">85</td><td><span class="bar" style="width:42pt"></span></td><td>ยังต้องซ้อมให้จบใน 10 วินาที</td></tr>
+      <tr class="score-row"><td><strong>ทฤษฎีการแนะนำ</strong></td><td class="num">60</td><td class="num"><strong>92</strong></td><td><span class="bar" style="width:46pt"></span></td><td>ความละเอียดยังอยู่ระดับสาย (87 สาย ไม่ใช่ 12 แล้ว)</td></tr>
+      <tr class="score-row"><td><strong>เหตุผลทางวิชาการ</strong></td><td class="num">55</td><td class="num"><strong>94</strong></td><td><span class="bar" style="width:45pt"></span></td><td>พารามิเตอร์ 10 ตัวยังไม่ calibrate · แต่เวกเตอร์สายวัดมาแล้ว</td></tr>
+      <tr class="score-row"><td><strong>อธิบายได้</strong></td><td class="num">45</td><td class="num"><strong>95</strong></td><td><span class="bar" style="width:47pt"></span></td><td>คำอธิบายอยู่บน UI แล้ว — เหลือให้ผู้เชี่ยวชาญตรวจ crosswalk</td></tr>
+      <tr class="score-row"><td>ใช้ได้จริง</td><td class="num">40</td><td class="num">82</td><td><span class="bar" style="width:41pt"></span></td><td>ยังขาด TCAS/ค่าเทอม · แต่ตอบ “จบแล้วได้งานไหม” และ “ไปกลับไหวไหม” ได้แล้ว</td></tr>
+      <tr class="score-row"><td>Business idea</td><td class="num">45</td><td class="num">80</td><td><span class="bar" style="width:40pt"></span></td><td>ยังไม่มี LOI จากโรงเรียน</td></tr>
+      <tr class="score-row"><td>ความเหมาะสมของ AI</td><td class="num">50</td><td class="num">90</td><td><span class="bar" style="width:45pt"></span></td><td>ชั้น AI ยังไม่ได้เดโม</td></tr>
+      <tr class="score-row"><td>คุณภาพข้อมูล</td><td class="num">70</td><td class="num">90</td><td><span class="bar" style="width:42pt"></span></td><td>ทะเบียนปี 2564 · ตรี 88.8% · อาชีวะครบ 840 วิทยาลัย</td></tr>
+      <tr class="score-row"><td>User journey</td><td class="num">60</td><td class="num">86</td><td><span class="bar" style="width:43pt"></span></td><td>ครบตั้งแต่รู้จักตัวเองถึงเลือกหลักสูตร · ขั้น “สมัครยังไง” ยังว่าง</td></tr>
+      <tr class="score-row"><td>นวัตกรรม</td><td class="num">55</td><td class="num">82</td><td><span class="bar" style="width:41pt"></span></td><td>“ระบบที่ยอมปฏิเสธ” คือจุดต่างที่แท้จริง ต้องเล่าให้ดัง</td></tr>
+      <tr class="score-row"><td>พลังการพิทช์</td><td class="num">45</td><td class="num">80</td><td><span class="bar" style="width:40pt"></span></td><td>ขึ้นกับการซ้อม</td></tr>
+      <tr style="border-top:1.5px solid var(--ink)"><td><strong>เฉลี่ย</strong></td><td class="num"><strong>52.5</strong></td><td class="num"><strong>87.0</strong></td><td></td><td></td></tr>
+    </tbody>
+  </table>
+
+  <div class="callout can-break">
+    <h4>ความเสี่ยงที่ต้องเตรียมคำตอบไว้</h4>
+    <ol style="margin-bottom:0">
+      <li><strong>กรรมการถามเรื่องค่าเทอม/TCAS แล้วเราไม่มี</strong> — ตอบตรง ๆ ว่าไม่มี พร้อมบอกว่าต้องดึงจากไหน ดีกว่าถูกจับได้ว่าเดา</li>
+      <li><strong>เวลาหมดก่อนถึงสไลด์กลไก</strong> — สไลด์ 5 คือหัวใจ ถ้าจำเป็นต้องตัด ให้ตัดสไลด์อื่น</li>
+      <li><strong>ถูกมองว่าเป็นแบบทดสอบบุคลิกภาพอีกอัน</strong> — ต้องเปิดด้วยผู้เรียน ค ที่ระบบปฏิเสธ ไม่ใช่เปิดด้วยผลลัพธ์สวย ๆ</li>
+      <li><strong>เดโมล่ม</strong> — เตรียม <span class="mono">traces/all.txt</span> เป็นภาพสำรอง</li>
+      <li><strong>ถูกถามว่าการจับคู่ ISCED→อาชีพ ใครตรวจ</strong> — ตอบตรงว่ายังไม่มีใครตรวจ มี audit ให้ดูทุกบรรทัด และค่า RIASEC เองวัดมาจริง · สายที่หนุนด้วยอาชีพน้อยกว่า 3 เหลือกระทบแค่ 13 หลักสูตร (0.2%)</li>
+      <li><strong>ข้อมูลจาก branch เพื่อนที่ยังไม่ตรวจปนเข้ามา</strong> — มี commit ที่เปลี่ยน provenance จาก “illustrative” เป็น “verified” โดยไม่ได้ตรวจจริง ต้องกันไว้</li>
+    </ol>
+  </div>
+</section>
+
+<!-- No closing footer block: the running page footer already carries the
+     document name and page number on every page, and the cover states the
+     reproducibility line. A block footer here spilled onto a page of its own. -->

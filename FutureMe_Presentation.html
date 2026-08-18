@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FutureMe AI — Master Presentation Deck (JUMP THAILAND 2026)</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Prompt:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Sarabun:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    @page {
+      size: 16in 9in;
+      margin: 0;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-print-color-adjust: exact !important;
+      print-color-adjust: exact !important;
+    }
+
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      background-color: #FFFFFF;
+      font-family: 'Prompt', 'Sarabun', 'TH Sarabun New', sans-serif;
+      color: #0F172A;
+      line-height: 1.5;
+    }
+
+    /* Slide Page Container (Exact 16:9 Widescreen) */
+    .slide-page {
+      width: 16in;
+      height: 9in;
+      padding: 38px 54px;
+      background-color: #FFFFFF;
+      position: relative;
+      page-break-after: always;
+      break-after: page;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* Slide Header Bar */
+    .header-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-bottom: 14px;
+      border-bottom: 3px solid #E2E8F0;
+    }
+
+    .brand-logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .brand-icon {
+      width: 46px;
+      height: 46px;
+      background: #059669;
+      border-radius: 12px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: #FFFFFF;
+      font-family: 'Prompt', sans-serif;
+      font-weight: 700;
+      font-size: 26px;
+    }
+
+    .brand-title {
+      font-family: 'Prompt', sans-serif;
+      font-size: 30px;
+      font-weight: 700;
+      color: #0F172A;
+    }
+
+    .brand-title span {
+      color: #059669;
+    }
+
+    .slide-category {
+      font-family: 'Prompt', sans-serif;
+      font-size: 16px;
+      font-weight: 700;
+      color: #0284C7;
+      background: #F0F9FF;
+      border: 1.5px solid #BAE6FD;
+      padding: 6px 18px;
+      border-radius: 9999px;
+      letter-spacing: 0.04em;
+    }
+
+    /* Main Content Area */
+    .content-area {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 14px 0;
+    }
+
+    .slide-headline {
+      font-family: 'Prompt', sans-serif;
+      font-size: 40px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .slide-subheadline {
+      font-size: 24px;
+      color: #475569;
+      font-weight: 400;
+      margin-top: 4px;
+    }
+
+    /* Grid Layouts */
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 26px;
+    }
+
+    /* Stat Cards */
+    .stat-card {
+      background: #F8FAFC;
+      border: 2px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 24px 18px;
+      text-align: center;
+    }
+
+    .stat-card.alert {
+      background: #FEF2F2;
+      border-color: #FCA5A5;
+    }
+
+    .stat-card.highlight {
+      background: #ECFDF5;
+      border-color: #A7F3D0;
+    }
+
+    .stat-number {
+      font-family: 'Prompt', sans-serif;
+      font-size: 74px;
+      font-weight: 700;
+      color: #0284C7;
+      line-height: 1.05;
+    }
+
+    .stat-number.red {
+      color: #DC2626;
+    }
+
+    .stat-number.green {
+      color: #059669;
+    }
+
+    .stat-label {
+      font-family: 'Prompt', sans-serif;
+      font-size: 22px;
+      font-weight: 600;
+      color: #0F172A;
+      margin-top: 6px;
+    }
+
+    .stat-desc {
+      font-size: 16px;
+      color: #64748B;
+      margin-top: 4px;
+    }
+
+    /* Feature Cards */
+    .feature-card {
+      background: #FFFFFF;
+      border: 2px solid #E2E8F0;
+      border-radius: 20px;
+      padding: 24px 26px;
+      box-shadow: 0 4px 12px -2px rgba(0, 0, 0, 0.05);
+    }
+
+    .feature-title {
+      font-family: 'Prompt', sans-serif;
+      font-size: 24px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-bottom: 12px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .feature-badge {
+      background: #ECFDF5;
+      color: #059669;
+      font-size: 15px;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 6px;
+    }
+
+    .feature-list {
+      list-style: none;
+      font-size: 19px;
+      color: #334155;
+      line-height: 1.5;
+    }
+
+    .feature-list li {
+      margin-bottom: 9px;
+      padding-left: 24px;
+      position: relative;
+    }
+
+    .feature-list li::before {
+      content: "•";
+      color: #059669;
+      font-weight: bold;
+      position: absolute;
+      left: 0;
+      font-size: 26px;
+      line-height: 1;
+    }
+
+    /* Flow Step Diagram (Slide 2) */
+    .flow-grid {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 14px;
+      margin-top: 12px;
+    }
+
+    .flow-box {
+      background: #F8FAFC;
+      border: 2px solid #CBD5E1;
+      border-radius: 16px;
+      padding: 16px 12px;
+      text-align: center;
+    }
+
+    .flow-box.active {
+      background: #ECFDF5;
+      border-color: #059669;
+    }
+
+    .flow-step {
+      font-family: 'Prompt', sans-serif;
+      font-size: 14px;
+      font-weight: 700;
+      color: #059669;
+      text-transform: uppercase;
+    }
+
+    .flow-title {
+      font-family: 'Prompt', sans-serif;
+      font-size: 19px;
+      font-weight: 700;
+      color: #0F172A;
+      margin-top: 3px;
+    }
+
+    .flow-desc {
+      font-size: 14.5px;
+      color: #64748B;
+      margin-top: 3px;
+    }
+
+    /* Highlight Banners */
+    .banner {
+      background: #F1F5F9;
+      border-left: 8px solid #059669;
+      padding: 16px 22px;
+      border-radius: 0 16px 16px 0;
+      font-size: 19px;
+      font-weight: 600;
+      color: #0F172A;
+      margin-top: 16px;
+      line-height: 1.45;
+    }
+
+    .banner.blue {
+      background: #F0F9FF;
+      border-left-color: #0284C7;
+    }
+
+    /* Slide Footer */
+    .footer-bar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding-top: 14px;
+      border-top: 2px solid #E2E8F0;
+      font-size: 16px;
+      color: #94A3B8;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- SLIDE 1: WHAT (PROBLEM & CHOICE POINTS) -->
+  <div class="slide-page">
+    <div class="header-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">F</div>
+        <div class="brand-title">Future<span>Me</span> AI</div>
+      </div>
+      <span class="slide-category">WHAT (PROBLEM & CHOICE POINTS)</span>
+    </div>
+
+    <div class="content-area">
+      <h1 class="slide-headline">
+        “ลองเส้นทางอนาคต ก่อนตัดสินใจจริง”<br>
+        <span class="slide-subheadline">ทางแยกสำคัญการศึกษาไทย: นักเรียนต้องเลือกอนาคต โดยไร้โอกาสทดลอง</span>
+      </h1>
+
+      <div class="grid-3">
+        <div class="stat-card alert">
+          <div class="stat-number red">56%</div>
+          <div class="stat-label">ทำงานไม่ตรงสายที่เรียน</div>
+          <div class="stat-desc">ข้อมูลสำรวจ TDRI (2025)</div>
+        </div>
+        <div class="stat-card alert">
+          <div class="stat-number red">27%</div>
+          <div class="stat-label">ทำงานต่ำกว่าคุณวุฒิ</div>
+          <div class="stat-desc">ทักษะไม่ตรงกับสายอาชีพ</div>
+        </div>
+        <div class="stat-card alert">
+          <div class="stat-number red">39%</div>
+          <div class="stat-label">ทักษะเปลี่ยนใน 5 ปี</div>
+          <div class="stat-desc">WEF Future of Jobs (2025)</div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 16px;">
+        <div class="feature-card" style="background: #FFFBEB; border-color: #FDE68A;">
+          <div class="feature-title" style="color: #92400E;">📍 ทางแยก ม.3 (Consequential Choice 1)</div>
+          <p style="font-size: 19px; color: #78350F; line-height: 1.45;">สายสามัญ (ม.ปลาย) VS สายอาชีพ (ปวช.) VS ทางเลือกท้องถิ่น ➔ เด็กเลือกจากคำบอกเล่า ไม่เคยทดลองจริง</p>
+        </div>
+        <div class="feature-card" style="background: #FFFBEB; border-color: #FDE68A;">
+          <div class="feature-title" style="color: #92400E;">📍 ทางแยก ม.6 / ปวช. (Consequential Choice 2)</div>
+          <p style="font-size: 19px; color: #78350F; line-height: 1.45;">มหาวิทยาลัย (TCAS) VS อาชีวะสูง (ปวส.) VS ทำงาน ➔ เสี่ยงย้ายคณะ/ซ้ำชั้น/Drop-out เมื่อพบว่าไม่ใช่</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-tag">JUMP THAILAND Innovation HACKATHON 2026</span>
+      <span>Page 1 of 8</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 2: WHO & USER CONTINUOUS ENGAGEMENT LOOP -->
+  <div class="slide-page">
+    <div class="header-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">F</div>
+        <div class="brand-title">Future<span>Me</span> AI</div>
+      </div>
+      <span class="slide-category">WHO & CONTINUOUS ENGAGEMENT LOOP</span>
+    </div>
+
+    <div class="content-area">
+      <h1 class="slide-headline">ไม่ทำครั้งเดียวแล้วจบ: วงจรสะสมหลักฐานอัปเดตต่อเนื่อง</h1>
+
+      <div class="flow-grid">
+        <div class="flow-box active">
+          <div class="flow-step">STEP 1</div>
+          <div class="flow-title">REFLECT</div>
+          <div class="flow-desc">ประเมินความสนใจ (Provisional Vector)</div>
+        </div>
+        <div class="flow-box active">
+          <div class="flow-step">STEP 2</div>
+          <div class="flow-title">TRY</div>
+          <div class="flow-desc">ทดลองทำ Scenario Mission จริง</div>
+        </div>
+        <div class="flow-box active">
+          <div class="flow-step">STEP 3</div>
+          <div class="flow-title">UPDATE</div>
+          <div class="flow-desc">อัปเดตความชอบจริง (Post-Mission)</div>
+        </div>
+        <div class="flow-box active">
+          <div class="flow-step">STEP 4</div>
+          <div class="flow-title">COMPARE</div>
+          <div class="flow-desc">ชั่งน้ำหนักงบ & ย้ายบ้าน</div>
+        </div>
+        <div class="flow-box active">
+          <div class="flow-step">STEP 5</div>
+          <div class="flow-title">ACT</div>
+          <div class="flow-desc">แผนมินิภารกิจ 30 วันอัปเดตต่อเนื่อง</div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div class="feature-card">
+          <div class="feature-title">💬 Engagement Touchpoints</div>
+          <ul class="feature-list">
+            <li><strong>Post-Mission Reflection:</strong> AI ทักซักถามทันทีหลังจบมินิภารกิจ เพื่อปรับเวกเตอร์ความถนัด</li>
+            <li><strong>Weekly Micro Check-in:</strong> ทักทายสั้นๆ 3 ข้อความทุกเย็นวันอาทิตย์ อัปเดตความสนใจที่เปลี่ยนไปตามช่วงวัย</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">🔐 Data Ownership & Stakeholders</div>
+          <ul class="feature-list">
+            <li><strong>นักเรียน (2.4M+ คน):</strong> เป็นเจ้าของข้อมูล 100% และเป็นผู้ตัดสินใจเอง</li>
+            <li><strong>ครูแนะแนว & ผู้ปกครอง:</strong> ได้รับ Dashboard สรุปพัฒนาการเฉพาะที่นักเรียนอนุญาตให้แชร์</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-tag">JUMP THAILAND Innovation HACKATHON 2026</span>
+      <span>Page 2 of 8</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 3: HOW (SOLUTION & 5 DESIGN PRINCIPLES) -->
+  <div class="slide-page">
+    <div class="header-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">F</div>
+        <div class="brand-title">Future<span>Me</span> AI</div>
+      </div>
+      <span class="slide-category">HOW (SOLUTION & 5 DESIGN PRINCIPLES)</span>
+    </div>
+
+    <div class="content-area">
+      <h1 class="slide-headline">3 ขั้นตอนเปลี่ยนคำถามเป็นทางเลือก + 5 หลักการออกแบบ</h1>
+
+      <div class="grid-3">
+        <div class="feature-card">
+          <div class="feature-title">1. ANSWER</div>
+          <ul class="feature-list">
+            <li>Socratic Interview & STAR Framework</li>
+            <li>36-Item RIASEC + Self-Efficacy Scale</li>
+            <li>ประเมินบริบท งบประมาณ & Geolocation</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">2. TRY</div>
+          <ul class="feature-list">
+            <li>Scenario Mission ภารกิจจำลองในชีวิตจริง</li>
+            <li>เปรียบเทียบสิ่งที่บอก vs สิ่งที่ลงมือทำ</li>
+            <li>ตรวจสอบความสอดคล้อง (Congruence)</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">3. REFLECT</div>
+          <ul class="feature-list">
+            <li>แมตช์ 23,257 หลักสูตรสถาบันจริง</li>
+            <li>อธิบายเหตุผลสิ่งที่รู้ & ยังไม่รู้</li>
+            <li>สร้างแผนมินิภารกิจ 30 วันลงมือทำจริง</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner">
+        ⚙️ <strong>Core Principle:</strong> <u>“Rules decide. AI explains.”</u> — เอนจินคณิตศาสตร์ Deterministic ควบคุมคำแนะนำ 100% (Zero Hallucination) โดยมี AI ช่วยถาม สรุป และอธิบายเหตุผล
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-tag">JUMP THAILAND Innovation HACKATHON 2026</span>
+      <span>Page 3 of 8</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 4: SYSTEM ARCHITECTURE & AIS CLOUD WORKFLOW (EXTRA LARGE TYPOGRAPHY) -->
+  <div class="slide-page">
+    <div class="header-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">F</div>
+        <div class="brand-title">Future<span>Me</span> AI</div>
+      </div>
+      <div style="display: flex; align-items: center; gap: 12px;">
+        <span style="font-family: 'Prompt', sans-serif; font-size: 16px; font-weight: 600; color: #065F46; background: #ECFDF5; border: 1.5px solid #A7F3D0; padding: 6px 18px; border-radius: 9999px;">
+          ⚡ Principle: Rules decide. AI explains.
+        </span>
+        <span class="slide-category">SYSTEM ARCHITECTURE & AIS CLOUD WORKFLOW</span>
+      </div>
+    </div>
+
+    <div class="content-area">
+      <h1 class="slide-headline" style="margin-bottom: 12px; font-size: 36px;">
+        FutureMe AI: System Architecture & Ecosystem Workflow (AIS Cloud)
+      </h1>
+
+      <div style="display: grid; grid-template-columns: 1.15fr 1.4fr 1.45fr; gap: 16px; align-items: stretch;">
+        
+        <!-- COLUMN 1: STUDENT JOURNEY (GREEN CONTAINER) -->
+        <div style="background: #F0FDF4; border: 2.5px solid #86EFAC; border-radius: 18px; padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
+          <div style="font-family: 'Prompt', sans-serif; font-size: 18px; font-weight: 700; color: #065F46; display: flex; align-items: center; gap: 8px;">
+            <span>👤</span> 1. Student Journey (Zero Barrier)
+          </div>
+
+          <div style="background: #FFFFFF; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 9px 12px;">
+            <div style="font-size: 16.5px; font-weight: 700; color: #0F172A;">📱 Next.js WebApp & PWA</div>
+            <div style="font-size: 13.5px; color: #64748B; margin-top: 1px;">Next.js 15 / React 19 · 3D Mascot · Zero-Barrier</div>
+          </div>
+
+          <div style="text-align: center; font-size: 14px; font-weight: 700; color: #059669; line-height: 1;">⬇️ ทำแบบประเมิน</div>
+
+          <div style="background: #FFFFFF; border: 1.5px solid #A7F3D0; border-radius: 12px; padding: 9px 12px;">
+            <div style="font-size: 16.5px; font-weight: 700; color: #065F46;">① RIASEC + Self-Efficacy</div>
+            <div style="font-size: 13.5px; color: #334155; margin-top: 1px;">36-Item Adaptive Test · CAT IRT 1,000 Bank</div>
+          </div>
+
+          <div style="text-align: center; font-size: 14px; font-weight: 700; color: #059669; line-height: 1;">⬇️ สัมภาษณ์เจาะลึก</div>
+
+          <div style="background: #FFFFFF; border: 1.5px solid #A7F3D0; border-radius: 12px; padding: 9px 12px;">
+            <div style="font-size: 16.5px; font-weight: 700; color: #065F46;">② Socratic Reflection</div>
+            <div style="font-size: 13.5px; color: #334155; margin-top: 1px;">STAR Deep-Dive Interview (Zero Bias)</div>
+          </div>
+
+          <div style="text-align: center; font-size: 14px; font-weight: 700; color: #059669; line-height: 1;">⬇️ รับแผนลงมือทำ</div>
+
+          <div style="background: #FFFFFF; border: 1.5px solid #A7F3D0; border-radius: 12px; padding: 9px 12px;">
+            <div style="font-size: 16.5px; font-weight: 700; color: #065F46;">③ 5-Step Continuous Loop</div>
+            <div style="font-size: 13.5px; color: #334155; margin-top: 1px;">Reflect ➔ Try ➔ Update ➔ Compare ➔ Act</div>
+          </div>
+        </div>
+
+        <!-- COLUMN 2: AI CORE ENGINES & AIS CLOUD (CENTER STACK) -->
+        <div style="display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
+          
+          <!-- TOP: DETERMINISTIC ENGINE -->
+          <div style="background: #FFFFFF; border: 2.5px solid #059669; border-radius: 16px; padding: 12px 14px; text-align: center; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.1);">
+            <div style="font-size: 19px; font-weight: 700; color: #065F46; font-family: 'Prompt', sans-serif;">
+              🧠 Deterministic Matching Engine
+            </div>
+            <div style="font-size: 15px; font-weight: 700; color: #059669; margin-top: 2px;">
+              Rules Decide · Zero Hallucination
+            </div>
+            <div style="font-size: 14px; color: #334155; margin-top: 2px;">
+              Cosine + Kelley Shrinkage + Geo-Distance<br>
+              <strong>แมตช์ 23,257 สถาบันจริง (myTCAS & TVET)</strong>
+            </div>
+          </div>
+
+          <div style="text-align: center; font-size: 13.5px; font-weight: 700; color: #0284C7; line-height: 1;">
+            ⬇️ ส่ง Matching Scores & ReasonCodes
+          </div>
+
+          <!-- MIDDLE: LLM SOCRATIC ENGINE -->
+          <div style="background: #F0F9FF; border: 2px solid #38BDF8; border-radius: 16px; padding: 11px 14px; text-align: center;">
+            <div style="font-size: 18.5px; font-weight: 700; color: #0369A1; font-family: 'Prompt', sans-serif;">
+              ✨ LLM Socratic & Explainability Engine
+            </div>
+            <div style="font-size: 14.5px; font-weight: 600; color: #B45309; margin-top: 2px;">
+              AI Explains · ReasonCodes & Socratic Guidance
+            </div>
+            <div style="font-size: 13.5px; color: #475569; margin-top: 2px;">
+              สร้างคำอธิบายโปร่งใส & มินิภารกิจ 30 วันลงมือทำจริง
+            </div>
+          </div>
+
+          <div style="text-align: center; font-size: 13.5px; font-weight: 700; color: #0284C7; line-height: 1;">
+            ⬇️ บันทึกประวัติและเวกเตอร์ลง Cloud Database
+          </div>
+
+          <!-- BOTTOM: AIS CLOUD DATABASE -->
+          <div style="background: #F8FAFC; border: 2px solid #0284C7; border-radius: 16px; padding: 11px 14px; text-align: center;">
+            <div style="font-size: 18.5px; font-weight: 700; color: #0284C7; font-family: 'Prompt', sans-serif;">
+              ☁️ ④ AIS Cloud Database & Vector Vault
+            </div>
+            <div style="font-size: 14.5px; font-weight: 600; color: #0F172A; margin-top: 2px;">
+              Qdrant Vector DB + Postgres HA · 100% Sovereign Cloud
+            </div>
+            <div style="font-size: 13px; color: #64748B; margin-top: 2px;">
+              จัดเก็บ Vector, History, Geolocation & 100% Thai PDPA Consent
+            </div>
+          </div>
+        </div>
+
+        <!-- COLUMN 3: ECOSYSTEM & STAKEHOLDERS (ORANGE CONTAINER) -->
+        <div style="background: #FFF7ED; border: 2.5px solid #FDBA74; border-radius: 18px; padding: 14px 16px; display: flex; flex-direction: column; justify-content: space-between; gap: 8px;">
+          <div style="font-family: 'Prompt', sans-serif; font-size: 18px; font-weight: 700; color: #9A3412; display: flex; align-items: center; gap: 8px;">
+            <span>🌐</span> 3. Ecosystem & Stakeholder Opportunities
+          </div>
+
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 10px; flex: 1;">
+            <!-- CARD 5: COUNSELOR -->
+            <div style="background: #FFFFFF; border: 1.5px solid #7DD3FC; border-radius: 12px; padding: 9px 11px;">
+              <div style="font-size: 15px; font-weight: 700; color: #0369A1;">
+                ⑤ Counselor Dashboard
+              </div>
+              <div style="font-size: 13px; color: #334155; margin-top: 3px; line-height: 1.35;">
+                ส่งต่อ Insight & Skill Radar แก่ครูแนะแนวและครอบครัว
+              </div>
+            </div>
+
+            <!-- CARD 6: SCHOLARSHIPS -->
+            <div style="background: #FFFFFF; border: 1.5px solid #FDBA74; border-radius: 12px; padding: 9px 11px;">
+              <div style="font-size: 15px; font-weight: 700; color: #C2410C;">
+                ⑥ Scholarship & Quota
+              </div>
+              <div style="font-size: 13px; color: #334155; margin-top: 3px; line-height: 1.35;">
+                แมตช์ทุน กสศ. / สอศ. / 993 มหาวิทยาลัย 12 สาขา
+              </div>
+            </div>
+
+            <!-- CARD 9: PORTFOLIO -->
+            <div style="background: #FAF5FF; border: 1.5px solid #D8B4FE; border-radius: 12px; padding: 9px 11px;">
+              <div style="font-size: 15px; font-weight: 700; color: #7C3AED;">
+                ⑨ Evidence Portfolio
+              </div>
+              <div style="font-size: 13px; color: #334155; margin-top: 3px; line-height: 1.35;">
+                สกัดผลงานจริงเป็น Portfolio ยื่น TCAS1 & โควตา สอศ.
+              </div>
+            </div>
+
+            <!-- CARD 7,8: FEEDBACK LOOP -->
+            <div style="background: #F0FDF4; border: 1.5px solid #86EFAC; border-radius: 12px; padding: 9px 11px;">
+              <div style="font-size: 15px; font-weight: 700; color: #059669;">
+                ⑦,⑧ Feedback Loop
+              </div>
+              <div style="font-size: 13px; color: #334155; margin-top: 3px; line-height: 1.35;">
+                Post-Mission Reflection ➔ Re-calibrate เวกเตอร์ทักษะ
+              </div>
+            </div>
+          </div>
+
+          <div style="text-align: center; font-size: 13.5px; font-weight: 700; color: #EA580C; background: #FFFFFF; border: 1.5px dashed #FDBA74; border-radius: 10px; padding: 6px;">
+            🔄 Re-calibrate เวกเตอร์ ➔ อัปเดตกลับ AIS Cloud Database
+          </div>
+        </div>
+
+      </div>
+
+      <!-- BOTTOM ROW: LEGEND + CONTINUOUS EVIDENCE BANNER -->
+      <div style="display: grid; grid-template-columns: 1.15fr 2.9fr; gap: 14px; align-items: center; margin-top: 12px;">
+        
+        <!-- LEGEND BOX -->
+        <div style="background: #F8FAFC; border: 1.5px solid #CBD5E1; border-radius: 12px; padding: 8px 14px; display: flex; align-items: center; justify-content: space-between; font-size: 14px; color: #334155;">
+          <span style="font-weight: 700; color: #0F172A;">Legend:</span>
+          <span>👤 ผู้เรียน</span>
+          <span>🧠 Rules</span>
+          <span>✨ AI Explains</span>
+          <span>☁️ AIS Cloud</span>
+        </div>
+
+        <!-- CONTINUOUS EVIDENCE LOOP BANNER -->
+        <div style="background: #ECFDF5; border: 1.5px dashed #059669; border-radius: 12px; padding: 8px 16px; display: flex; flex-direction: column; justify-content: center; text-align: center;">
+          <div style="font-size: 14.5px; font-weight: 700; color: #065F46;">
+            🔄 Continuous Evidence Loop: ทุกภารกิจที่ทำสำเร็จจะส่งผลสะท้อนคิดกลับมาปรับเวกเตอร์ความสนใจของผู้เรียนลง AIS Cloud Database โดยอัตโนมัติ
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-tag">JUMP THAILAND Innovation HACKATHON 2026</span>
+      <span>Page 4 of 8 (AIS Cloud Infrastructure Powered by OCI Thailand · 100% Data Sovereignty)</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 5: USER WORKFLOW & INTERACTION JOURNEY (EXTRA LARGE FLOWCHART DIAGRAM) -->
+  <div class="slide-page">
+    <div class="header-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">F</div>
+        <div class="brand-title">Future<span>Me</span> AI</div>
+      </div>
+      <span class="slide-category">USER WORKFLOW & INTERACTION JOURNEY</span>
+    </div>
+
+    <div class="content-area">
+      <h1 class="slide-headline" style="margin-bottom: 14px; font-size: 40px;">
+        FutureMe AI: User Workflow & Experience Diagram<br>
+        <span class="slide-subheadline" style="font-size: 24px;">แผนภาพกระบวนการใช้งานจริงของผู้เรียน: จากการค้นพบตัวตน สู่การทดลอง และยื่นศึกษาต่อสำเร็จ</span>
+      </h1>
+
+      <div style="display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 10px;">
+        
+        <!-- PHASE 1: SELF-DISCOVERY -->
+        <div style="background: #F0FDF4; border: 2.5px solid #86EFAC; border-radius: 20px; padding: 20px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(5, 150, 105, 0.06);">
+          <div>
+            <div style="background: #059669; color: #FFFFFF; font-size: 16px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-block; margin-bottom: 10px;">
+              PHASE 1: ค้นพบตัวตน
+            </div>
+            <div style="font-size: 23px; font-weight: 700; color: #065F46; margin-bottom: 8px;">1. Onboarding & Assess</div>
+            <p style="font-size: 17px; color: #1E293B; line-height: 1.45;">
+              ทำแบบประเมิน <strong>36 ข้อ RIASEC</strong> + สนทนา Socratic ผ่าน 3D Mascot UI
+            </p>
+          </div>
+          <div style="margin-top: 14px; background: #FFFFFF; border: 1.5px dashed #A7F3D0; border-radius: 12px; padding: 11px 13px; font-size: 15px; color: #047857;">
+            💡 <strong>ผลลัพธ์:</strong> สกัดเวกเตอร์ความสนใจเริ่มต้น (Provisional Vector)
+          </div>
+        </div>
+
+        <!-- PHASE 2: EXPERIMENTATION -->
+        <div style="background: #F0F9FF; border: 2.5px solid #7DD3FC; border-radius: 20px; padding: 20px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(2, 132, 199, 0.06);">
+          <div>
+            <div style="background: #0284C7; color: #FFFFFF; font-size: 16px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-block; margin-bottom: 10px;">
+              PHASE 2: ทดลองปฏิบัติ
+            </div>
+            <div style="font-size: 23px; font-weight: 700; color: #0369A1; margin-bottom: 8px;">2. Scenario & 30-Day Plan</div>
+            <p style="font-size: 17px; color: #1E293B; line-height: 1.45;">
+              ทดลองภารกิจจำลอง ➔ แมตช์ <strong>23,257 สถาบัน</strong> ➔ รับแผน 30 วันที่ย้อนกลับได้
+            </p>
+          </div>
+          <div style="margin-top: 14px; background: #FFFFFF; border: 1.5px dashed #BAE6FD; border-radius: 12px; padding: 11px 13px; font-size: 15px; color: #0369A1;">
+            📍 <strong>ผลลัพธ์:</strong> เห็นระยะทางจริง (km) + แผนค่าครองชีพ 5 ภูมิภาค
+          </div>
+        </div>
+
+        <!-- PHASE 3: REFLECT & COLLABORATE -->
+        <div style="background: #FFF7ED; border: 2.5px solid #FDBA74; border-radius: 20px; padding: 20px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(234, 88, 12, 0.06);">
+          <div>
+            <div style="background: #EA580C; color: #FFFFFF; font-size: 16px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-block; margin-bottom: 10px;">
+              PHASE 3: สะท้อนคิด & ปรับตัว
+            </div>
+            <div style="font-size: 23px; font-weight: 700; color: #9A3412; margin-bottom: 8px;">3. Post-Mission Reflection</div>
+            <p style="font-size: 17px; color: #1E293B; line-height: 1.45;">
+              AI ทักถามหลังจบภารกิจ ➔ ปรับเวกเตอร์ทักษะ + ส่ง Dashboard สู่ครู/ผู้ปกครอง
+            </p>
+          </div>
+          <div style="margin-top: 14px; background: #FFFFFF; border: 1.5px dashed #FED7AA; border-radius: 12px; padding: 11px 13px; font-size: 15px; color: #9A3412;">
+            🔄 <strong>ผลลัพธ์:</strong> Re-calibrate ความถนัด และวางแผนงบประมาณร่วมกัน
+          </div>
+        </div>
+
+        <!-- PHASE 4: ADMISSION SUCCESS -->
+        <div style="background: #FAF5FF; border: 2.5px solid #D8B4FE; border-radius: 20px; padding: 20px 18px; display: flex; flex-direction: column; justify-content: space-between; box-shadow: 0 4px 12px rgba(124, 58, 237, 0.06);">
+          <div>
+            <div style="background: #7C3AED; color: #FFFFFF; font-size: 16px; font-weight: 700; padding: 6px 14px; border-radius: 8px; display: inline-block; margin-bottom: 10px;">
+              PHASE 4: ยื่นศึกษาต่อจริง
+            </div>
+            <div style="font-size: 23px; font-weight: 700; color: #6B21A8; margin-bottom: 8px;">4. Portfolio & TCAS Apply</div>
+            <p style="font-size: 17px; color: #1E293B; line-height: 1.45;">
+              สกัด <strong>Evidence Portfolio</strong> เอกสารรับรองผลงาน ➔ ยื่น TCAS1 & โควตา สอศ.
+            </p>
+          </div>
+          <div style="margin-top: 14px; background: #FFFFFF; border: 1.5px dashed #E9D5FF; border-radius: 12px; padding: 11px 13px; font-size: 15px; color: #6B21A8;">
+            🎯 <strong>ผลลัพธ์:</strong> ติดคณะ/สถาบันที่ใช่ ด้วยหลักฐานจริงจากการลงมือทำ
+          </div>
+        </div>
+
+      </div>
+
+      <!-- WORKFLOW HIGHLIGHT FOOTER -->
+      <div style="display: flex; gap: 16px; margin-top: 16px;">
+        <div style="flex: 1; background: #F8FAFC; border: 1.5px solid #CBD5E1; border-radius: 14px; padding: 14px 20px; display: flex; align-items: center; gap: 14px;">
+          <span style="font-size: 28px;">📱</span>
+          <div style="font-size: 16.5px; color: #334155;">
+            <strong>Student Journey:</strong> ไร้ความกดดัน ปรับเปลี่ยนสมมติฐานได้เสมอ (Reversible Decision Loop)
+          </div>
+        </div>
+        <div style="flex: 1; background: #F8FAFC; border: 1.5px solid #CBD5E1; border-radius: 14px; padding: 14px 20px; display: flex; align-items: center; gap: 14px;">
+          <span style="font-size: 28px;">🤝</span>
+          <div style="font-size: 16.5px; color: #334155;">
+            <strong>Shared Support:</strong> ครูแนะแนว & ผู้ปกครอง ร่วมสนับสนุนและวางแผนงบประมาณอย่างโปร่งใส
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-tag">JUMP THAILAND Innovation HACKATHON 2026</span>
+      <span>Page 5 of 8</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 6: REAL DATABASE (23,257) & ENGINES -->
+  <div class="slide-page">
+    <div class="header-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">F</div>
+        <div class="brand-title">Future<span>Me</span> AI</div>
+      </div>
+      <span class="slide-category">REAL DATABASE (23,257) & ENGINES</span>
+    </div>
+
+    <div class="content-area">
+      <h1 class="slide-headline">ฐานข้อมูลสถาบันการศึกษาจริง 23,257 รายการทั่วไทย</h1>
+
+      <div class="grid-3">
+        <div class="stat-card highlight">
+          <div class="stat-number green">16,908</div>
+          <div class="stat-label">หลักสูตรอาชีวศึกษา (สอศ.)</div>
+          <div class="stat-desc">ปวช. / ปวส. จาก 840 วิทยาลัยทั่วไทย</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">6,349</div>
+          <div class="stat-label">หลักสูตรปริญญาตรี</div>
+          <div class="stat-desc">จาก 153 มหาวิทยาลัยทั่วประเทศ</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-number">993</div>
+          <div class="stat-label">สถาบันการศึกษา</div>
+          <div class="stat-desc">พร้อมพิกัด Geolocation จริง</div>
+        </div>
+      </div>
+
+      <div class="grid-2" style="margin-top: 18px;">
+        <div class="feature-card">
+          <div class="feature-title">⚙️ Deterministic + RAG Pipeline</div>
+          <p style="font-size: 19px; color: #334155; line-height: 1.5;">คำนวณคะแนนด้วย Cosine Similarity + Kelley Shrinkage ➔ ดึงข้อมูลหลักสูตรจริงจาก RAG Knowledge Base ➔ AI อธิบายเหตุผลอย่างเที่ยงตรง</p>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">📍 Geo-Distance & Living Cost Index</div>
+          <p style="font-size: 19px; color: #334155; line-height: 1.5;">คำนวณระยะทางถนนจริงเป็นกิโลเมตร + ประเมินค่าครองชีพรายเดือน 5 ภูมิภาค (6,000–13,000 บาท/เดือน) เพื่อการตัดสินใจที่ไม่สร้างภาระเกินจริง</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-tag">JUMP THAILAND Innovation HACKATHON 2026</span>
+      <span>Page 6 of 8</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 7: BUSINESS MODEL & SUSTAINABILITY STRATEGY -->
+  <div class="slide-page">
+    <div class="header-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">F</div>
+        <div class="brand-title">Future<span>Me</span> AI</div>
+      </div>
+      <span class="slide-category">BUSINESS MODEL & SUSTAINABILITY STRATEGY</span>
+    </div>
+
+    <div class="content-area">
+      <h1 class="slide-headline">โมเดลธุรกิจและการเติบโตอย่างยั่งยืน (B2C & B2G / B2B)</h1>
+
+      <div class="grid-2">
+        <div class="feature-card">
+          <div class="feature-title">
+            <span>B2C Freemium Model</span>
+            <span class="feature-badge">Students & Parents</span>
+          </div>
+          <ul class="feature-list">
+            <li><strong>Free Tier (นักเรียนทุกคน):</strong> ทำแบบประเมิน 36 ข้อ + ค้นหา 23,257 หลักสูตรจริง ฟรี 100%</li>
+            <li><strong>Premium — 99 บ./เดือน หรือ 999 บ./ปี:</strong> แผนอนาคต 30 วัน, แดชบอร์ดสรุปงบประมาณค่าเทอม + ค่าครองชีพ 5 ปีสำหรับผู้ปกครอง, AI Socratic Tutor 24/7 และ Export PDF Portfolio ยื่น TCAS</li>
+          </ul>
+        </div>
+
+        <div class="feature-card">
+          <div class="feature-title">
+            <span>B2G & B2B Institutional License</span>
+            <span class="feature-badge">Gov & Institutes</span>
+          </div>
+          <ul class="feature-list">
+            <li><strong>B2G District License — เริ่มต้น 300,000 บ./ปี:</strong> สิทธิ์ใช้งานหลายสถานศึกษา + National Interest Dashboard (สอศ. / ศธ. / กสศ. / อบจ.)</li>
+            <li><strong>B2B Institutional — เริ่มต้น 30,000 บ./ปี:</strong> สิทธิ์ใช้งานระดับสถาบัน + Admin Dashboard + Matching Portal (มหาวิทยาลัย / อาชีวะเอกชน)</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner blue">
+        🌱 <strong>Sustainability Vision:</strong> สร้างรายได้จากกลุ่มสถาบันและผู้ปกครองที่มีความพร้อม เพื่อเปิดโอกาสให้นักเรียนด้อยโอกาสใช้งานฟรี 100% ลดความเหลื่อมล้ำทางการศึกษา
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-tag">JUMP THAILAND Innovation HACKATHON 2026</span>
+      <span>Page 7 of 8</span>
+    </div>
+  </div>
+
+  <!-- SLIDE 8: IMPACT, ROADMAP & TEAM SUPER POWER -->
+  <div class="slide-page">
+    <div class="header-bar">
+      <div class="brand-logo">
+        <div class="brand-icon">F</div>
+        <div class="brand-title">Future<span>Me</span> AI</div>
+      </div>
+      <span class="slide-category">IMPACT, ROADMAP & TEAM SUPER POWER</span>
+    </div>
+
+    <div class="content-area">
+      <h1 class="slide-headline">แผนการทดสอบ Pilot Test & ทีมงานขับเคลื่อน</h1>
+
+      <div class="grid-2">
+        <div class="feature-card">
+          <div class="feature-title">🧪 Pilot Phase & Evidence Validation</div>
+          <ul class="feature-list">
+            <li><strong>ทดลองในโรงเรียน 3–5 แห่ง:</strong> ทดสอบเครื่องมือร่วมกับครูแนะแนวและนักเรียนจริง</li>
+            <li><strong>Evidence-First Approach:</strong> ประเมินการลดอัตรา Drop-out และความมั่นใจของผู้เรียนก่อนขยายผล</li>
+          </ul>
+        </div>
+        <div class="feature-card">
+          <div class="feature-title">👥 ทีมงาน 5 บทบาท (Team Capability)</div>
+          <ul class="feature-list">
+            <li><strong>Project Lead & Research:</strong> ยุทธศาสตร์โครงการและทฤษฎี RIASEC</li>
+            <li><strong>Backend & Frontend Eng:</strong> ระบบ Deterministic Engine & UX/UI</li>
+            <li><strong>QA Specialist:</strong> ตรวจสอบความถูกต้องและทดสอบระบบ</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="banner" style="background: #0F172A; color: #FFFFFF; border-left-color: #059669; margin-top: 18px;">
+        🌟 <strong>Super Power Statement:</strong><br>
+        <span style="font-size: 23px; font-weight: 500; color: #6EE7B7;">
+          “เพราะ AIไม่ได้เลือกอนาคตแทนเรา แต่ช่วยให้เราเห็นทางเลือกชัดเจนขึ้น”
+        </span>
+      </div>
+    </div>
+
+    <div class="footer-bar">
+      <span class="footer-tag">JUMP THAILAND Innovation HACKATHON 2026</span>
+      <span>Page 8 of 8</span>
+    </div>
+  </div>
+
+</body>
+</html>

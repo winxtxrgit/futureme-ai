@@ -1,0 +1,692 @@
+{
+  "surface": "report",
+  "manifest": {
+    "version": 1,
+    "surface": "report",
+    "title": "FutureMe AI Version 2",
+    "description": "รายงานฉบับปรับปรุงสำหรับกรรมการการแข่งขันและทีมพัฒนา สรุปปัญหา หลักฐานที่ตรวจแล้ว แนวทาง RAG และแผนสร้าง MVP",
+    "generatedAt": "2026-07-24T00:00:00+07:00",
+    "blocks": [
+      {
+        "id": "report-title",
+        "type": "markdown",
+        "body": "# FutureMe AI Version 2",
+        "layout": "full"
+      },
+      {
+        "id": "executive-summary",
+        "type": "markdown",
+        "body": "## Executive Summary\n\n- **ปัญหามีอยู่จริง แต่ต้องเล่าให้ตรงหลักฐาน** TDRI พบว่า 56% ของคนไทยที่มีการศึกษาสูงกว่ามัธยมปลายทำงานไม่ตรงสาขา และ 27% ทำงานต่ำกว่าระดับทักษะหรือคุณวุฒิ ตัวเลขนี้สะท้อนช่องว่างระหว่างการเรียนกับงาน แต่ไม่ได้แปลว่าเด็กทุกคนที่เลือกคณะผิดจะไม่มีความสุขตลอดชีวิต\n\n- **คุณค่าของ FutureMe ไม่ใช่การทายอาชีพให้แม่นที่สุด** จุดแข็งควรอยู่ที่การช่วยเด็กเก็บหลักฐานจากตัวเอง ทดลองหลายเส้นทาง แล้วเห็นว่าความสนใจ ทักษะ หลักสูตร และงานเชื่อมกันอย่างไร\n\n- **MVP ควรเริ่มด้วย RAG และกฎที่อธิบายได้** หลักสูตรและเกณฑ์รับสมัครเปลี่ยนทุกปี จึงไม่ควรฝังความรู้เหล่านี้ไว้ใน LoRA ระบบควรค้นข้อมูลล่าสุด แสดงแหล่งอ้างอิง และยอมรับได้เมื่อข้อมูลยังไม่พอ\n\n- **คลังข้อมูลพร้อมใช้เป็นฐานเริ่มต้น แต่ยังไม่พร้อมเปิด production ทั้งชุด** การตรวจรอบนี้จัดแหล่งข้อมูล 25 รายการเป็น verified หรือ conditional และกัก claim ที่ผิดหรือยังพิสูจน์ไม่ได้ 16 รายการออกจาก production RAG แล้ว",
+        "layout": "full"
+      },
+      {
+        "id": "problem-heading",
+        "type": "markdown",
+        "body": "## ปัญหาไม่ใช่แค่ “เลือกคณะผิด” แต่คือเด็กมองไม่เห็นผลของแต่ละทางเลือก\n\nข้อมูล TDRI ชี้ว่าการเรียนกับงานของคนไทยจำนวนมากไม่เชื่อมกันตรง ๆ สองตัวเลขด้านล่างใช้ประชากรกลุ่มเดียวกัน คือผู้มีการศึกษาสูงกว่ามัธยมปลาย จึงช่วยให้เห็นทั้งการทำงานนอกสาขาและการใช้ศักยภาพต่ำกว่าวุฒิ\n\nกราฟนี้ไม่ได้พิสูจน์สาเหตุว่ามาจากการแนะแนวเพียงอย่างเดียว แต่พอจะยืนยันได้ว่าเด็กควรเห็นภาพปลายทางก่อนตัดสินใจ และควรกลับมาเปลี่ยนเส้นทางได้เมื่อค้นพบข้อมูลใหม่",
+        "layout": "full"
+      },
+      {
+        "id": "mismatch-chart-block",
+        "type": "chart",
+        "chartId": "thai-mismatch-chart",
+        "layout": "full"
+      },
+      {
+        "id": "solution-heading",
+        "type": "markdown",
+        "body": "## FutureMe ควรเป็นระบบช่วยสำรวจ ไม่ใช่เครื่องตัดสินอนาคต\n\nระบบเริ่มจากการคุยแบบปลายเปิด ขอเหตุการณ์จริงจากผู้เรียน แล้วแยกสิ่งที่เด็กพูดออกจากสิ่งที่ AI อนุมาน จากนั้นจึงเสนออาชีพและเส้นทางเรียนหลายแบบ พร้อมเหตุผล ข้อจำกัด และกิจกรรมสั้น ๆ ให้ลองทำ\n\nRIASEC ใช้เป็นสัญญาณความสนใจหนึ่งชุดได้ แต่ไม่ควรใช้เป็นป้ายบุคลิกถาวร ยิ่งคำแนะนำสำคัญเท่าไร ระบบยิ่งต้องแสดงความไม่แน่นอนและให้ผู้เรียนแก้ข้อมูลของตัวเองได้",
+        "layout": "full"
+      },
+      {
+        "id": "audit-heading",
+        "type": "markdown",
+        "body": "## การตรวจรอบใหม่เปลี่ยนคลังข้อมูลจาก “บทความรวมลิงก์” เป็นหลักฐานที่ควบคุมได้\n\nลิงก์เดิมหลายรายการพาไปเพียงหน้าแรกขององค์กร บางหน้าถูกย้าย บางหน้าอ่านไม่ได้ และบาง claim ตีความตัวเลขผิด การแก้ครั้งนี้จึงเปลี่ยนไปใช้รายงานหรือหน้าฐานข้อมูลที่รองรับข้อความโดยตรง พร้อมติดสถานะและวันตรวจ\n\nในทะเบียนใหม่ 19 แหล่งผ่านการตรวจสำหรับขอบเขตที่ระบุ ส่วนอีก 6 แหล่งใช้ได้เมื่อแสดงปี รุ่นหลักสูตร เงื่อนไขบริการ หรือขอบเขตผลิตภัณฑ์ควบคู่กัน",
+        "layout": "full"
+      },
+      {
+        "id": "source-status-chart-block",
+        "type": "chart",
+        "chartId": "source-status-chart",
+        "layout": "full"
+      },
+      {
+        "id": "corrections-intro",
+        "type": "markdown",
+        "body": "## ตัวเลขที่ดูน่าเชื่อถืออาจทำให้ทั้งคำแนะนำผิดทางได้\n\nจุดเสี่ยงที่สุดไม่ใช่ลิงก์เสีย แต่คือ claim ที่ดูละเอียดจนคนอ่านเชื่อทันที เช่น 68.6%, 22% หรือ 85% หากนำตัวเลขเหล่านี้เข้า RAG โมเดลจะตอบได้คล่อง แต่ตอบบนฐานที่พิสูจน์ไม่ได้ ตารางนี้สรุปการแก้ไขที่กระทบต่อการนำเสนอและการออกแบบระบบมากที่สุด",
+        "layout": "full"
+      },
+      {
+        "id": "corrections-table-block",
+        "type": "table",
+        "tableId": "corrections-table",
+        "layout": "full"
+      },
+      {
+        "id": "rag-heading",
+        "type": "markdown",
+        "body": "## RAG เป็นแกนความรู้ ส่วน recommendation ต้องแยกออกมาให้ตรวจสอบได้\n\nข้อมูลควรแบ่งอย่างน้อยหก index ได้แก่ ความรู้อาชีพ แคตตาล็อกหลักสูตร เกณฑ์รับสมัคร ตลาดแรงงาน นโยบาย/แพลตฟอร์ม และพื้นที่กักข้อมูลที่ยังไม่ผ่าน แต่ละระเบียนต้องมีแหล่งที่มา เวอร์ชัน ขอบเขต และวันหมดอายุเมื่อข้อมูลเปลี่ยนตามปี\n\nตอนแนะนำ ระบบใช้ metadata filter หาเฉพาะข้อมูลที่ตรงปี ระดับชั้น จังหวัด และสถานะก่อน แล้วจึงค้นเชิงความหมาย จากนั้น rule/scoring engine ค่อยคำนวณความสอดคล้องห้ามให้ embeddings หรือ LLM ตัดสินทุกอย่างในขั้นเดียว",
+        "layout": "full"
+      },
+      {
+        "id": "model-decision-table-block",
+        "type": "table",
+        "tableId": "model-decision-table",
+        "layout": "full"
+      },
+      {
+        "id": "lora-heading",
+        "type": "markdown",
+        "body": "## LoRA ยังไม่ใช่งานแรกที่คุ้มที่สุด\n\nหลักสูตร อาชีพ และเกณฑ์ TCAS เปลี่ยนได้ หากเอาไป fine-tune โมเดล การแก้ข้อมูลหนึ่งครั้งจะกลายเป็นการฝึกใหม่และยังตรวจไม่ได้ว่าโมเดลจำเวอร์ชันไหนอยู่ LoRA จะเริ่มมีประโยชน์เมื่อทีมมีตัวอย่างบทสนทนาภาษาไทยที่ผู้เชี่ยวชาญตรวจแล้วมากพอ และมีชุดทดสอบแยกสำหรับวัดว่าดีกว่า prompt + RAG จริง\n\nก่อนถึงจุดนั้น structured output, prompt ที่ชัด, RAG พร้อม citation และ evaluation set จะให้ผลเร็วกว่า ถูกกว่า และแก้ไขง่ายกว่า",
+        "layout": "full"
+      },
+      {
+        "id": "mvp-heading",
+        "type": "markdown",
+        "body": "## MVP ที่แข็งแรงควรพิสูจน์วงจร “คุย–ลอง–ทบทวน” ให้จบก่อน\n\nเดโมไม่จำเป็นต้องมีทุกอาชีพหรือเชื่อมระบบรัฐทันที เลือกอาชีพ 20–30 อาชีพและหลักสูตรตัวอย่างที่ตรวจแหล่งแล้ว สร้างบทสนทนาให้เด็กเล่าเหตุการณ์จริง จากนั้นแนะนำสามเส้นทางพร้อมกิจกรรมทดลองและอธิบายว่าทำไมแต่ละทางจึงถูกเสนอ\n\nถ้าเด็กทำกิจกรรมแล้วพบว่าคำแนะนำเดิมไม่ตรง ระบบต้องปรับได้ ตรงนี้ต่างหากที่พิสูจน์ว่า FutureMe ช่วยให้เด็กตัดสินใจดีขึ้น ไม่ใช่แค่สร้างผลทดสอบที่ดูน่าสนใจ",
+        "layout": "full"
+      },
+      {
+        "id": "mvp-table-block",
+        "type": "table",
+        "tableId": "mvp-table",
+        "layout": "full"
+      },
+      {
+        "id": "next-steps",
+        "type": "markdown",
+        "body": "## สิ่งที่ทีมควรทำต่อ\n\n1. **ล็อกขอบเขตเดโม** เลือกช่วงวัย กลุ่มอาชีพ และจังหวัด/รูปแบบหลักสูตรที่จะรองรับ\n\n2. **สร้าง canonical schema** สำหรับ learner, occupation, program, pathway edge และ source evidence\n\n3. **นำเข้าเฉพาะ verified/conditional records** โดย conditional ต้องแสดงเงื่อนไขทุกครั้ง ส่วน quarantine ห้าม production retrieval\n\n4. **ทำ recommendation rubric** แยก interest fit, skill evidence, work-context fit, feasibility และ admission readiness\n\n5. **สร้างชุดทดสอบกับนักเรียนไทย** ครอบคลุมผู้ที่ยังไม่รู้ความสนใจ สายอาชีพ GED/สกร./Homeschool เด็กต่างจังหวัด และผู้มีข้อจำกัดด้านงบประมาณ\n\n6. **วัดผลที่การตัดสินใจ** เช่น เด็กเข้าใจเหตุผล เห็นทางเลือกมากขึ้น และยอมลงมือทดลอง ไม่ใช่วัดเพียงว่า AI ตอบดูฉลาดหรือไม่",
+        "layout": "full"
+      },
+      {
+        "id": "further-questions",
+        "type": "markdown",
+        "body": "## คำถามที่ต้องตอบก่อนขยายระบบ\n\n- ใครเป็นผู้ทบทวน mapping อาชีพ–หลักสูตร โดยเฉพาะวิชาชีพควบคุม\n- ทีมจะอัปเดต TCAS และหลักสูตรทุกปีจากแหล่งใด\n- ข้อมูลบทสนทนาของผู้เยาว์เก็บนานเท่าไร และใครขอลบหรือแก้ไขได้\n- ตัวชี้วัดใดจะบอกว่าคำแนะนำ “มีประโยชน์” โดยไม่บังคับให้เด็กเลือกตาม AI\n- หาก NDLP, DEEP หรือ AIS ไม่มี sandbox/API สำหรับการแข่งขัน MVP จะทำงานแบบ standalone อย่างไร",
+        "layout": "full"
+      },
+      {
+        "id": "caveats",
+        "type": "markdown",
+        "body": "## ข้อจำกัดและสมมติฐาน\n\n- การตรวจครั้งนี้อิงข้อมูลสาธารณะที่เข้าถึงได้ถึงวันที่ 24 กรกฎาคม 2026 บางเว็บไซต์อ่านไม่ได้หรือจำกัดการเข้าถึง จึงถูกติดสถานะ unverified แทนการคาดเดา\n- ไฟล์ mapping อาชีพปัจจุบันเป็น seed examples ยังไม่ใช่ฐานอาชีพครบถ้วน และยังต้องเพิ่ม TPQI/สภาวิชาชีพรายอาชีพ\n- ตัวเลขจากต่างประเทศใช้ยืนยันรูปแบบปัญหา ไม่ควรย้ายมาแทนบริบทประเทศไทยโดยตรง\n- AIS Cloud, NDLP และ DEEP ถูกวางเป็นทางเลือกในอนาคต การเชื่อมจริงขึ้นกับเอกสาร API สิทธิ์ข้อมูล สัญญา และการอนุมัติอย่างเป็นทางการ\n- รายงานนี้เป็น snapshot ไม่ใช่ข้อมูลสด ต้องตรวจเกณฑ์รับสมัครและสถานะผลิตภัณฑ์อีกครั้งก่อนใช้ตัดสินใจจริง",
+        "layout": "full"
+      }
+    ],
+    "charts": [
+      {
+        "id": "thai-mismatch-chart",
+        "title": "สัดส่วนการเรียน–งานไม่สอดคล้องในประเทศไทย",
+        "subtitle": "ผู้มีการศึกษาสูงกว่ามัธยมปลาย ตามขอบเขตงานวิจัย TDRI",
+        "type": "horizontalBar",
+        "intent": "comparison",
+        "question": "ปัญหาการเรียน–งานไม่สอดคล้องมีขนาดเท่าไรในกลุ่มประชากรเดียวกัน",
+        "rationale": "แถบแนวนอนเหมาะกับตัวชี้วัดสองรายการที่มีป้ายภาษาไทยยาวและใช้หน่วยเปอร์เซ็นต์เดียวกัน",
+        "comparisonContext": {
+          "denominator": "ผู้มีการศึกษาสูงกว่ามัธยมปลายตามขอบเขตงานวิจัย TDRI",
+          "grain": "หนึ่งแถวต่อหนึ่งตัวชี้วัด",
+          "unit": "%"
+        },
+        "dataset": "thai_mismatch",
+        "sourceId": "tdri-human-capital",
+        "encodings": {
+          "x": {
+            "field": "indicator",
+            "type": "nominal",
+            "label": "ตัวชี้วัด"
+          },
+          "y": {
+            "field": "share_pct",
+            "type": "quantitative",
+            "format": "number",
+            "label": "สัดส่วน",
+            "unit": "%"
+          }
+        },
+        "xAxisTitle": "ตัวชี้วัด",
+        "yAxisTitle": "สัดส่วน (%)",
+        "valueFormat": "number",
+        "unit": "%",
+        "palette": {
+          "kind": "sequential"
+        },
+        "labels": {
+          "values": "all"
+        },
+        "layout": "full"
+      },
+      {
+        "id": "source-status-chart",
+        "title": "สถานะแหล่งข้อมูลในทะเบียนฉบับใหม่",
+        "subtitle": "25 แหล่งที่ผ่านการจัดสถานะหลังตรวจ source-to-claim",
+        "type": "horizontalBar",
+        "intent": "status",
+        "question": "แหล่งข้อมูลที่พร้อมใช้และแหล่งที่ต้องแสดงเงื่อนไขมีจำนวนเท่าไร",
+        "rationale": "แถบสองรายการช่วยเทียบจำนวน verified กับ conditional ได้ตรงไปตรงมาโดยไม่ทำให้เป็นคะแนนคุณภาพรวม",
+        "comparisonContext": {
+          "denominator": "แหล่งข้อมูล 25 รายการใน Data/metadata/sources.jsonl",
+          "grain": "หนึ่งแถวต่อหนึ่งสถานะ",
+          "unit": "แหล่ง"
+        },
+        "dataset": "source_status",
+        "sourceId": "source-registry",
+        "encodings": {
+          "x": {
+            "field": "status_label",
+            "type": "nominal",
+            "label": "สถานะ"
+          },
+          "y": {
+            "field": "source_count",
+            "type": "quantitative",
+            "format": "number",
+            "label": "จำนวนแหล่ง",
+            "unit": "แหล่ง"
+          }
+        },
+        "xAxisTitle": "สถานะ",
+        "yAxisTitle": "จำนวนแหล่ง",
+        "valueFormat": "number",
+        "unit": "แหล่ง",
+        "palette": {
+          "kind": "categorical"
+        },
+        "labels": {
+          "values": "all"
+        },
+        "layout": "full"
+      }
+    ],
+    "tables": [
+      {
+        "id": "corrections-table",
+        "title": "รายการแก้ไข claim สำคัญ",
+        "subtitle": "เฉพาะรายการที่กระทบการนำเสนอหรือการออกแบบระบบโดยตรง",
+        "dataset": "claim_corrections",
+        "defaultSort": {
+          "field": "rank",
+          "direction": "asc"
+        },
+        "density": "spacious",
+        "sourceId": "source-audit",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "rank",
+            "label": "ลำดับ",
+            "type": "number"
+          },
+          {
+            "field": "claim",
+            "label": "ข้อความเดิม",
+            "type": "text"
+          },
+          {
+            "field": "finding",
+            "label": "ผลตรวจ",
+            "type": "text"
+          },
+          {
+            "field": "action",
+            "label": "การจัดการ",
+            "type": "text"
+          },
+          {
+            "field": "risk",
+            "label": "ความเสี่ยงหากใช้ต่อ",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "model-decision-table",
+        "title": "บทบาทของ RAG, กฎ และ LoRA",
+        "subtitle": "แยกเครื่องมือให้ตรงกับชนิดงาน เพื่อลดข้อมูลล้าสมัยและคำแนะนำที่อธิบายไม่ได้",
+        "dataset": "model_decisions",
+        "defaultSort": {
+          "field": "rank",
+          "direction": "asc"
+        },
+        "density": "spacious",
+        "sourceId": "rag-model-decisions",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "rank",
+            "label": "ลำดับ",
+            "type": "number"
+          },
+          {
+            "field": "component",
+            "label": "องค์ประกอบ",
+            "type": "text"
+          },
+          {
+            "field": "use_for",
+            "label": "ใช้ทำอะไร",
+            "type": "text"
+          },
+          {
+            "field": "mvp_status",
+            "label": "สถานะใน MVP",
+            "type": "text"
+          },
+          {
+            "field": "reason",
+            "label": "เหตุผล",
+            "type": "text"
+          }
+        ]
+      },
+      {
+        "id": "mvp-table",
+        "title": "แผนสร้าง MVP แบบมีเกณฑ์ผ่าน",
+        "subtitle": "แต่ละช่วงต้องมีหลักฐานว่าผ่านก่อนขยายข้อมูลหรือเพิ่มความซับซ้อน",
+        "dataset": "mvp_phases",
+        "defaultSort": {
+          "field": "rank",
+          "direction": "asc"
+        },
+        "density": "spacious",
+        "sourceId": "rag-mvp-phases",
+        "layout": "full",
+        "columns": [
+          {
+            "field": "rank",
+            "label": "ลำดับ",
+            "type": "number"
+          },
+          {
+            "field": "phase",
+            "label": "ช่วง",
+            "type": "text"
+          },
+          {
+            "field": "goal",
+            "label": "เป้าหมาย",
+            "type": "text"
+          },
+          {
+            "field": "deliverable",
+            "label": "สิ่งที่ต้องมี",
+            "type": "text"
+          },
+          {
+            "field": "exit_criteria",
+            "label": "เกณฑ์ผ่าน",
+            "type": "text"
+          }
+        ]
+      }
+    ],
+    "sources": [
+      {
+        "id": "tdri-human-capital",
+        "label": "TDRI — การพัฒนาทุนมนุษย์ไทย",
+        "href": "https://tdri.or.th/2025/09/thailand-human-capital-development/",
+        "path": "Data/01_Graduate_Unemployment_and_Mismatch_Stats/01_Thai_Statistics.md",
+        "query": {
+          "engine": "sqlite",
+          "description": "จัดรูปค่าที่ตรวจจากบทความ TDRI เป็นสองตัวชี้วัดสำหรับกราฟ โดยคงประชากรและขอบเขตเดียวกัน",
+          "sql": "WITH reviewed(indicator, share_pct) AS (VALUES ('ทำงานไม่ตรงสาขาที่เรียน', 56), ('ทำงานต่ำกว่าทักษะหรือคุณวุฒิ', 27)) SELECT indicator, share_pct FROM reviewed ORDER BY share_pct DESC;",
+          "executed_at": "2026-07-24T00:00:00+07:00",
+          "language": "sql",
+          "filters": [
+            "ประชากร: ผู้มีการศึกษาสูงกว่ามัธยมปลายตามขอบเขต TDRI"
+          ],
+          "metric_definitions": [
+            "share_pct = สัดส่วนร้อยละที่ TDRI รายงานในแต่ละตัวชี้วัด"
+          ],
+          "tables_used": [
+            "TDRI: การพัฒนาทุนมนุษย์ไทย"
+          ]
+        }
+      },
+      {
+        "id": "source-registry",
+        "label": "FutureMe AI — Source Registry",
+        "path": "Data/metadata/sources.jsonl",
+        "query": {
+          "engine": "local-jsonl",
+          "description": "นับสถานะจากทะเบียนแหล่งข้อมูลที่ผ่านการตรวจ 25 รายการ",
+          "sql": "WITH reviewed(status_label, source_count) AS (VALUES ('ผ่านการตรวจในขอบเขตที่ระบุ', 19), ('ใช้ได้เมื่อแสดงเงื่อนไข', 6)) SELECT status_label, source_count FROM reviewed ORDER BY source_count DESC;",
+          "executed_at": "2026-07-24T00:00:00+07:00",
+          "language": "jsonl",
+          "filters": [
+            "รวมเฉพาะ records ใน Data/metadata/sources.jsonl",
+            "จัดกลุ่มตาม status"
+          ],
+          "metric_definitions": [
+            "source_count = จำนวนระเบียนต่อสถานะ",
+            "verified = มีแหล่งตรงรองรับข้อความในขอบเขตที่ระบุ",
+            "conditional = ใช้ได้เมื่อแสดงปี รุ่น ขอบเขต หรือเงื่อนไขร่วมด้วย"
+          ],
+          "tables_used": [
+            "Data/metadata/sources.jsonl"
+          ]
+        }
+      },
+      {
+        "id": "source-audit",
+        "label": "FutureMe AI — Source-to-Claim Audit",
+        "path": "Data/SOURCE_AUDIT.md",
+        "query": {
+          "engine": "document-review",
+          "description": "ผลเปิดตรวจ URL เดิม 27 รายการ เปรียบเทียบกับ claim ในคลังข้อมูล และบันทึกการแก้ไข",
+          "sql": "WITH reviewed(rank, claim, finding, action, risk) AS (VALUES (1, 'แรงงานไทย 68.6% อยู่ในภาวะ mismatch', 'ไม่พบแหล่งตรง เลข 68.6 ที่พบในเอกสาร TDRI เก่าเป็นความแม่นยำของแบบจำลอง', 'ถอน', 'ใช้ตัวเลขผิดเป็น problem statement'), (2, 'TDRI วิเคราะห์ประกาศงาน 304,378 รายการ', 'รายงานตรงระบุ 756,300 รายการจาก 23 เว็บไซต์ในช่วง ก.ค. 2024–มิ.ย. 2025', 'แก้ตัวเลขและขอบเขต', 'อ้างขนาดฐานข้อมูลผิด'), (3, 'งาน 63–65% ต้องมีประสบการณ์ และ entry-level มี 22%', 'ไม่พบหลักฐานตรงในแหล่งที่อ้าง', 'ถอน', 'ทำให้ตลาดงานดูปิดกั้นเกินหลักฐาน'), (4, 'ILO ระบุแรงงานโลก 56% มี mismatch', '56% คือสัดส่วนการจ้างงานโลกที่ 114 ประเทศตัวอย่างครอบคลุม', 'แก้ความหมาย', 'ขยาย coverage เป็นอัตราปัญหา'), (5, 'ผู้จบทวิภาคีได้งานตรงสายมากกว่า 85%', 'ไม่พบในชุดข้อมูลหลักสูตร สอศ. ที่อ้าง', 'ถอน', 'รับรองผลลัพธ์เส้นทางเรียนเกินจริง'), (6, 'NDLP มี RIASEC แบบนิ่ง และ DEEP มี SSO/API พร้อมเชื่อม', 'ข้อมูลสาธารณะที่ตรวจไม่รองรับรายละเอียดปัจจุบัน', 'ย้ายเป็น unverified/future option', 'Pitch integration ที่ยังทำไม่ได้'), (7, 'AIS Cloud ทำให้ระบบผ่าน PDPA และมี 100% data sovereignty โดยอัตโนมัติ', 'หน้า AIS รองรับ Data Center ในไทยและมาตรฐานบางรายการ แต่ compliance ขึ้นกับบริการ สัญญา และการออกแบบ', 'ลดขอบเขต claim', 'เข้าใจความรับผิดชอบด้านข้อมูลผิด')) SELECT rank, claim, finding, action, risk FROM reviewed ORDER BY rank;",
+          "executed_at": "2026-07-24T00:00:00+07:00",
+          "language": "markdown",
+          "tables_used": [
+            "Data/SOURCE_AUDIT.md",
+            "Data/metadata/quarantine_unverified.jsonl"
+          ]
+        }
+      },
+      {
+        "id": "rag-spec",
+        "label": "FutureMe AI — RAG Data Specification",
+        "path": "Data/RAG_DATA_SPEC.md",
+        "query": {
+          "engine": "design-document",
+          "description": "ข้อกำหนดการแบ่งข้อมูล การค้นคืน การให้คะแนน การใช้ LoRA และการประเมินระบบ",
+          "executed_at": "2026-07-24T00:00:00+07:00",
+          "language": "markdown",
+          "tables_used": [
+            "Data/RAG_DATA_SPEC.md"
+          ]
+        }
+      },
+      {
+        "id": "rag-model-decisions",
+        "label": "FutureMe AI — Model Component Decisions",
+        "path": "Data/RAG_DATA_SPEC.md",
+        "query": {
+          "engine": "sqlite",
+          "description": "จัดรูปข้อเสนอการแบ่งบทบาท RAG, rule engine, prompting และ LoRA สำหรับตารางตัดสินใจ",
+          "sql": "WITH reviewed(rank, component, use_for, mvp_status, reason) AS (VALUES (1, 'RAG', 'ค้นหลักสูตร อาชีพ เกณฑ์รับเข้า และหลักฐานล่าสุด', 'ทำตอนนี้', 'อัปเดตและอ้างแหล่งได้โดยไม่ฝึกโมเดลใหม่'), (2, 'Rule/scoring engine', 'คำนวณความสอดคล้องและตรวจเงื่อนไขที่ต้องอธิบาย', 'ทำตอนนี้', 'ทดสอบย้อนหลังและแยกเหตุผลแต่ละมิติได้'), (3, 'LLM prompting', 'สนทนา สกัด structured profile และเขียนคำอธิบาย', 'ทำตอนนี้', 'ทดลองรูปแบบได้เร็วและไม่ผูกกับโมเดลเดียว'), (4, 'LoRA', 'ปรับสไตล์สนทนา/การสกัดข้อมูลเมื่อมีตัวอย่างคุณภาพสูง', 'เลื่อนไปหลัง validation', 'ยังไม่มีชุด train/test ที่ผู้เชี่ยวชาญตรวจและไม่ควรใช้จำข้อเท็จจริงที่เปลี่ยนเร็ว')) SELECT rank, component, use_for, mvp_status, reason FROM reviewed ORDER BY rank;",
+          "executed_at": "2026-07-24T00:00:00+07:00",
+          "language": "sql",
+          "tables_used": [
+            "Data/RAG_DATA_SPEC.md"
+          ]
+        }
+      },
+      {
+        "id": "rag-mvp-phases",
+        "label": "FutureMe AI — MVP Phases",
+        "path": "Data/RAG_DATA_SPEC.md",
+        "query": {
+          "engine": "sqlite",
+          "description": "จัดรูปแผนสร้าง MVP สี่ช่วงและเกณฑ์ผ่านจากข้อกำหนด RAG",
+          "sql": "WITH reviewed(rank, phase, goal, deliverable, exit_criteria) AS (VALUES (1, '1. Data foundation', 'ทำข้อมูลให้อ้างอิงและอัปเดตได้', 'schema, source registry, quarantine และตัวอย่างอาชีพ/หลักสูตรที่ตรวจแล้ว', 'ทุก recommendation edge มี source และสถานะ'), (2, '2. Guided discovery', 'เก็บหลักฐานจากผู้เรียนโดยไม่ชี้นำ', 'บทสนทนา, RIASEC signal, STAR evidence และ user confirmation', 'ผู้เรียนแก้ profile และเห็นความไม่แน่นอนได้'), (3, '3. Explainable recommendation', 'เสนอหลายเส้นทางพร้อมเหตุผล', 'RAG, rubric ห้ามิติ, three-route output และ citations', 'คำแนะนำทุกข้อย้อนกลับถึงหลักฐานได้'), (4, '4. Trial and evaluation', 'พิสูจน์ว่าเด็กตัดสินใจดีขึ้นหลังลองทำ', 'scenario missions, feedback loop และ evaluation set', 'วัด usefulness, safety และ counselor agreement ได้')) SELECT rank, phase, goal, deliverable, exit_criteria FROM reviewed ORDER BY rank;",
+          "executed_at": "2026-07-24T00:00:00+07:00",
+          "language": "sql",
+          "tables_used": [
+            "Data/RAG_DATA_SPEC.md"
+          ]
+        }
+      },
+      {
+        "id": "onet-database",
+        "label": "O*NET Database 30.3",
+        "href": "https://www.onetcenter.org/database.html"
+      },
+      {
+        "id": "esco-current",
+        "label": "ESCO v1.2.1",
+        "href": "https://esco.ec.europa.eu/en/about-esco/what-esco"
+      },
+      {
+        "id": "mytcas-70",
+        "label": "myTCAS — TCAS70",
+        "href": "https://school.mytcas.com/"
+      }
+    ]
+  },
+  "snapshot": {
+    "version": 1,
+    "generatedAt": "2026-07-24T00:00:00+07:00",
+    "status": "ready",
+    "datasets": {
+      "thai_mismatch": [
+        {
+          "indicator": "ทำงานไม่ตรงสาขาที่เรียน",
+          "share_pct": 56,
+          "population": "ผู้มีการศึกษาสูงกว่ามัธยมปลาย",
+          "country": "ประเทศไทย",
+          "source_year": 2025
+        },
+        {
+          "indicator": "ทำงานต่ำกว่าทักษะหรือคุณวุฒิ",
+          "share_pct": 27,
+          "population": "ผู้มีการศึกษาสูงกว่ามัธยมปลาย",
+          "country": "ประเทศไทย",
+          "source_year": 2025
+        }
+      ],
+      "source_status": [
+        {
+          "status": "verified",
+          "status_label": "ผ่านการตรวจในขอบเขตที่ระบุ",
+          "source_count": 19,
+          "total_sources": 25,
+          "share": 0.76
+        },
+        {
+          "status": "conditional",
+          "status_label": "ใช้ได้เมื่อแสดงเงื่อนไข",
+          "source_count": 6,
+          "total_sources": 25,
+          "share": 0.24
+        }
+      ],
+      "claim_corrections": [
+        {
+          "rank": 1,
+          "claim": "แรงงานไทย 68.6% อยู่ในภาวะ mismatch",
+          "finding": "ไม่พบแหล่งตรง เลข 68.6 ที่พบในเอกสาร TDRI เก่าเป็นความแม่นยำของแบบจำลอง",
+          "action": "ถอน",
+          "risk": "ใช้ตัวเลขผิดเป็น problem statement"
+        },
+        {
+          "rank": 2,
+          "claim": "TDRI วิเคราะห์ประกาศงาน 304,378 รายการ",
+          "finding": "รายงานตรงระบุ 756,300 รายการจาก 23 เว็บไซต์ในช่วง ก.ค. 2024–มิ.ย. 2025",
+          "action": "แก้ตัวเลขและขอบเขต",
+          "risk": "อ้างขนาดฐานข้อมูลผิด"
+        },
+        {
+          "rank": 3,
+          "claim": "งาน 63–65% ต้องมีประสบการณ์ และ entry-level มี 22%",
+          "finding": "ไม่พบหลักฐานตรงในแหล่งที่อ้าง",
+          "action": "ถอน",
+          "risk": "ทำให้ตลาดงานดูปิดกั้นเกินหลักฐาน"
+        },
+        {
+          "rank": 4,
+          "claim": "ILO ระบุแรงงานโลก 56% มี mismatch",
+          "finding": "56% คือสัดส่วนการจ้างงานโลกที่ 114 ประเทศตัวอย่างครอบคลุม",
+          "action": "แก้ความหมาย",
+          "risk": "ขยาย coverage เป็นอัตราปัญหา"
+        },
+        {
+          "rank": 5,
+          "claim": "ผู้จบทวิภาคีได้งานตรงสายมากกว่า 85%",
+          "finding": "ไม่พบในชุดข้อมูลหลักสูตร สอศ. ที่อ้าง",
+          "action": "ถอน",
+          "risk": "รับรองผลลัพธ์เส้นทางเรียนเกินจริง"
+        },
+        {
+          "rank": 6,
+          "claim": "NDLP มี RIASEC แบบนิ่ง และ DEEP มี SSO/API พร้อมเชื่อม",
+          "finding": "ข้อมูลสาธารณะที่ตรวจไม่รองรับรายละเอียดปัจจุบัน",
+          "action": "ย้ายเป็น unverified/future option",
+          "risk": "Pitch integration ที่ยังทำไม่ได้"
+        },
+        {
+          "rank": 7,
+          "claim": "AIS Cloud ทำให้ระบบผ่าน PDPA และมี 100% data sovereignty โดยอัตโนมัติ",
+          "finding": "หน้า AIS รองรับ Data Center ในไทยและมาตรฐานบางรายการ แต่ compliance ขึ้นกับบริการ สัญญา และการออกแบบ",
+          "action": "ลดขอบเขต claim",
+          "risk": "เข้าใจความรับผิดชอบด้านข้อมูลผิด"
+        }
+      ],
+      "model_decisions": [
+        {
+          "rank": 1,
+          "component": "RAG",
+          "use_for": "ค้นหลักสูตร อาชีพ เกณฑ์รับเข้า และหลักฐานล่าสุด",
+          "mvp_status": "ทำตอนนี้",
+          "reason": "อัปเดตและอ้างแหล่งได้โดยไม่ฝึกโมเดลใหม่"
+        },
+        {
+          "rank": 2,
+          "component": "Rule/scoring engine",
+          "use_for": "คำนวณความสอดคล้องและตรวจเงื่อนไขที่ต้องอธิบาย",
+          "mvp_status": "ทำตอนนี้",
+          "reason": "ทดสอบย้อนหลังและแยกเหตุผลแต่ละมิติได้"
+        },
+        {
+          "rank": 3,
+          "component": "LLM prompting",
+          "use_for": "สนทนา สกัด structured profile และเขียนคำอธิบาย",
+          "mvp_status": "ทำตอนนี้",
+          "reason": "ทดลองรูปแบบได้เร็วและไม่ผูกกับโมเดลเดียว"
+        },
+        {
+          "rank": 4,
+          "component": "LoRA",
+          "use_for": "ปรับสไตล์สนทนา/การสกัดข้อมูลเมื่อมีตัวอย่างคุณภาพสูง",
+          "mvp_status": "เลื่อนไปหลัง validation",
+          "reason": "ยังไม่มีชุด train/test ที่ผู้เชี่ยวชาญตรวจและไม่ควรใช้จำข้อเท็จจริงที่เปลี่ยนเร็ว"
+        }
+      ],
+      "mvp_phases": [
+        {
+          "rank": 1,
+          "phase": "1. Data foundation",
+          "goal": "ทำข้อมูลให้อ้างอิงและอัปเดตได้",
+          "deliverable": "schema, source registry, quarantine และตัวอย่างอาชีพ/หลักสูตรที่ตรวจแล้ว",
+          "exit_criteria": "ทุก recommendation edge มี source และสถานะ"
+        },
+        {
+          "rank": 2,
+          "phase": "2. Guided discovery",
+          "goal": "เก็บหลักฐานจากผู้เรียนโดยไม่ชี้นำ",
+          "deliverable": "บทสนทนา, RIASEC signal, STAR evidence และ user confirmation",
+          "exit_criteria": "ผู้เรียนแก้ profile และเห็นความไม่แน่นอนได้"
+        },
+        {
+          "rank": 3,
+          "phase": "3. Explainable recommendation",
+          "goal": "เสนอหลายเส้นทางพร้อมเหตุผล",
+          "deliverable": "RAG, rubric ห้ามิติ, three-route output และ citations",
+          "exit_criteria": "คำแนะนำทุกข้อย้อนกลับถึงหลักฐานได้"
+        },
+        {
+          "rank": 4,
+          "phase": "4. Trial and evaluation",
+          "goal": "พิสูจน์ว่าเด็กตัดสินใจดีขึ้นหลังลองทำ",
+          "deliverable": "scenario missions, feedback loop และ evaluation set",
+          "exit_criteria": "วัด usefulness, safety และ counselor agreement ได้"
+        }
+      ]
+    }
+  },
+  "sources": [
+    {
+      "id": "tdri-human-capital",
+      "label": "TDRI — การพัฒนาทุนมนุษย์ไทย",
+      "href": "https://tdri.or.th/2025/09/thailand-human-capital-development/",
+      "path": "Data/01_Graduate_Unemployment_and_Mismatch_Stats/01_Thai_Statistics.md",
+      "query": {
+        "engine": "sqlite",
+        "description": "จัดรูปค่าที่ตรวจจากบทความ TDRI เป็นสองตัวชี้วัดสำหรับกราฟ โดยคงประชากรและขอบเขตเดียวกัน",
+        "sql": "WITH reviewed(indicator, share_pct) AS (VALUES ('ทำงานไม่ตรงสาขาที่เรียน', 56), ('ทำงานต่ำกว่าทักษะหรือคุณวุฒิ', 27)) SELECT indicator, share_pct FROM reviewed ORDER BY share_pct DESC;",
+        "executed_at": "2026-07-24T00:00:00+07:00",
+        "language": "sql",
+        "filters": [
+          "ประชากร: ผู้มีการศึกษาสูงกว่ามัธยมปลายตามขอบเขต TDRI"
+        ],
+        "metric_definitions": [
+          "share_pct = สัดส่วนร้อยละที่ TDRI รายงานในแต่ละตัวชี้วัด"
+        ],
+        "tables_used": [
+          "TDRI: การพัฒนาทุนมนุษย์ไทย"
+        ]
+      }
+    },
+    {
+      "id": "source-registry",
+      "label": "FutureMe AI — Source Registry",
+      "path": "Data/metadata/sources.jsonl",
+      "query": {
+        "engine": "local-jsonl",
+        "description": "นับสถานะจากทะเบียนแหล่งข้อมูลที่ผ่านการตรวจ 25 รายการ",
+        "sql": "WITH reviewed(status_label, source_count) AS (VALUES ('ผ่านการตรวจในขอบเขตที่ระบุ', 19), ('ใช้ได้เมื่อแสดงเงื่อนไข', 6)) SELECT status_label, source_count FROM reviewed ORDER BY source_count DESC;",
+        "executed_at": "2026-07-24T00:00:00+07:00",
+        "language": "jsonl",
+        "tables_used": [
+          "Data/metadata/sources.jsonl"
+        ]
+      }
+    },
+    {
+      "id": "source-audit",
+      "label": "FutureMe AI — Source-to-Claim Audit",
+      "path": "Data/SOURCE_AUDIT.md",
+      "query": {
+        "engine": "document-review",
+        "description": "ผลเปิดตรวจ URL เดิม 27 รายการและเปรียบเทียบกับ claim ในคลังข้อมูล",
+        "sql": "WITH reviewed(rank, claim, finding, action, risk) AS (VALUES (1, 'แรงงานไทย 68.6% อยู่ในภาวะ mismatch', 'ไม่พบแหล่งตรง เลข 68.6 ที่พบในเอกสาร TDRI เก่าเป็นความแม่นยำของแบบจำลอง', 'ถอน', 'ใช้ตัวเลขผิดเป็น problem statement'), (2, 'TDRI วิเคราะห์ประกาศงาน 304,378 รายการ', 'รายงานตรงระบุ 756,300 รายการจาก 23 เว็บไซต์ในช่วง ก.ค. 2024–มิ.ย. 2025', 'แก้ตัวเลขและขอบเขต', 'อ้างขนาดฐานข้อมูลผิด'), (3, 'งาน 63–65% ต้องมีประสบการณ์ และ entry-level มี 22%', 'ไม่พบหลักฐานตรงในแหล่งที่อ้าง', 'ถอน', 'ทำให้ตลาดงานดูปิดกั้นเกินหลักฐาน'), (4, 'ILO ระบุแรงงานโลก 56% มี mismatch', '56% คือสัดส่วนการจ้างงานโลกที่ 114 ประเทศตัวอย่างครอบคลุม', 'แก้ความหมาย', 'ขยาย coverage เป็นอัตราปัญหา'), (5, 'ผู้จบทวิภาคีได้งานตรงสายมากกว่า 85%', 'ไม่พบในชุดข้อมูลหลักสูตร สอศ. ที่อ้าง', 'ถอน', 'รับรองผลลัพธ์เส้นทางเรียนเกินจริง'), (6, 'NDLP มี RIASEC แบบนิ่ง และ DEEP มี SSO/API พร้อมเชื่อม', 'ข้อมูลสาธารณะที่ตรวจไม่รองรับรายละเอียดปัจจุบัน', 'ย้ายเป็น unverified/future option', 'Pitch integration ที่ยังทำไม่ได้'), (7, 'AIS Cloud ทำให้ระบบผ่าน PDPA และมี 100% data sovereignty โดยอัตโนมัติ', 'หน้า AIS รองรับ Data Center ในไทยและมาตรฐานบางรายการ แต่ compliance ขึ้นกับบริการ สัญญา และการออกแบบ', 'ลดขอบเขต claim', 'เข้าใจความรับผิดชอบด้านข้อมูลผิด')) SELECT rank, claim, finding, action, risk FROM reviewed ORDER BY rank;",
+        "executed_at": "2026-07-24T00:00:00+07:00",
+        "language": "markdown",
+        "tables_used": [
+          "Data/SOURCE_AUDIT.md",
+          "Data/metadata/quarantine_unverified.jsonl"
+        ]
+      }
+    },
+    {
+      "id": "rag-spec",
+      "label": "FutureMe AI — RAG Data Specification",
+      "path": "Data/RAG_DATA_SPEC.md",
+      "query": {
+        "engine": "design-document",
+        "description": "ข้อกำหนดการแบ่งข้อมูล การค้นคืน การให้คะแนน การใช้ LoRA และการประเมินระบบ",
+        "executed_at": "2026-07-24T00:00:00+07:00",
+        "language": "markdown",
+        "tables_used": [
+          "Data/RAG_DATA_SPEC.md"
+        ]
+      }
+    },
+    {
+      "id": "rag-model-decisions",
+      "label": "FutureMe AI — Model Component Decisions",
+      "path": "Data/RAG_DATA_SPEC.md",
+      "query": {
+        "engine": "sqlite",
+        "description": "จัดรูปข้อเสนอการแบ่งบทบาท RAG, rule engine, prompting และ LoRA สำหรับตารางตัดสินใจ",
+        "sql": "WITH reviewed(rank, component, use_for, mvp_status, reason) AS (VALUES (1, 'RAG', 'ค้นหลักสูตร อาชีพ เกณฑ์รับเข้า และหลักฐานล่าสุด', 'ทำตอนนี้', 'อัปเดตและอ้างแหล่งได้โดยไม่ฝึกโมเดลใหม่'), (2, 'Rule/scoring engine', 'คำนวณความสอดคล้องและตรวจเงื่อนไขที่ต้องอธิบาย', 'ทำตอนนี้', 'ทดสอบย้อนหลังและแยกเหตุผลแต่ละมิติได้'), (3, 'LLM prompting', 'สนทนา สกัด structured profile และเขียนคำอธิบาย', 'ทำตอนนี้', 'ทดลองรูปแบบได้เร็วและไม่ผูกกับโมเดลเดียว'), (4, 'LoRA', 'ปรับสไตล์สนทนา/การสกัดข้อมูลเมื่อมีตัวอย่างคุณภาพสูง', 'เลื่อนไปหลัง validation', 'ยังไม่มีชุด train/test ที่ผู้เชี่ยวชาญตรวจและไม่ควรใช้จำข้อเท็จจริงที่เปลี่ยนเร็ว')) SELECT rank, component, use_for, mvp_status, reason FROM reviewed ORDER BY rank;",
+        "executed_at": "2026-07-24T00:00:00+07:00",
+        "language": "sql",
+        "tables_used": [
+          "Data/RAG_DATA_SPEC.md"
+        ]
+      }
+    },
+    {
+      "id": "rag-mvp-phases",
+      "label": "FutureMe AI — MVP Phases",
+      "path": "Data/RAG_DATA_SPEC.md",
+      "query": {
+        "engine": "sqlite",
+        "description": "จัดรูปแผนสร้าง MVP สี่ช่วงและเกณฑ์ผ่านจากข้อกำหนด RAG",
+        "sql": "WITH reviewed(rank, phase, goal, deliverable, exit_criteria) AS (VALUES (1, '1. Data foundation', 'ทำข้อมูลให้อ้างอิงและอัปเดตได้', 'schema, source registry, quarantine และตัวอย่างอาชีพ/หลักสูตรที่ตรวจแล้ว', 'ทุก recommendation edge มี source และสถานะ'), (2, '2. Guided discovery', 'เก็บหลักฐานจากผู้เรียนโดยไม่ชี้นำ', 'บทสนทนา, RIASEC signal, STAR evidence และ user confirmation', 'ผู้เรียนแก้ profile และเห็นความไม่แน่นอนได้'), (3, '3. Explainable recommendation', 'เสนอหลายเส้นทางพร้อมเหตุผล', 'RAG, rubric ห้ามิติ, three-route output และ citations', 'คำแนะนำทุกข้อย้อนกลับถึงหลักฐานได้'), (4, '4. Trial and evaluation', 'พิสูจน์ว่าเด็กตัดสินใจดีขึ้นหลังลองทำ', 'scenario missions, feedback loop และ evaluation set', 'วัด usefulness, safety และ counselor agreement ได้')) SELECT rank, phase, goal, deliverable, exit_criteria FROM reviewed ORDER BY rank;",
+        "executed_at": "2026-07-24T00:00:00+07:00",
+        "language": "sql",
+        "tables_used": [
+          "Data/RAG_DATA_SPEC.md"
+        ]
+      }
+    }
+  ]
+}

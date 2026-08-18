@@ -1,0 +1,46 @@
+.DS_Store
+**/.DS_Store
+
+**/.git/
+**/node_modules/
+**/.next/
+**/test-results/
+**/playwright-report/
+**/coverage/
+
+**/__pycache__/
+**/*.py[cod]
+**/.pytest_cache/
+**/.venv/
+**/venv/
+
+**/*.tsbuildinfo
+
+**/.env
+**/.env.*
+!**/.env.example
+
+.claude/
+
+Archive/05_Team_Repo/Future_Me_Pongkarm/
+05_Team_Repo/Future_Me_Pongkarm/
+
+05_Assets/Advice_from_the_teacher.m4a
+06_Assets/Advice_from_the_teacher.m4a
+
+# Draft and temporary PDF exports
+*_Final_Verified.pdf
+*_FontsLoaded.pdf
+*_Prompt.pdf
+FutureMe_Presentation_Master_Deck.pdf
+FutureMe_Presentation_Master_Deck_*.pdf
+
+# Office lock files
+~$*
+
+# Next.js generated
+**/next-env.d.ts
+
+# LibreOffice/PowerPoint lock files and the deck build venv
+Presentation/~$*
+Presentation/.venv/

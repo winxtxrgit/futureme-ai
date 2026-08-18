@@ -1,0 +1,387 @@
+[
+ {
+  "iso": "TH-81",
+  "th": "กระบี่",
+  "en": "Krabi"
+ },
+ {
+  "iso": "TH-10",
+  "th": "กรุงเทพมหานคร",
+  "en": "Bangkok"
+ },
+ {
+  "iso": "TH-71",
+  "th": "กาญจนบุรี",
+  "en": "Kanchanaburi"
+ },
+ {
+  "iso": "TH-46",
+  "th": "กาฬสินธุ์",
+  "en": "Kalasin"
+ },
+ {
+  "iso": "TH-62",
+  "th": "กำแพงเพชร",
+  "en": "Kamphaeng Phet"
+ },
+ {
+  "iso": "TH-40",
+  "th": "ขอนแก่น",
+  "en": "Khon Kaen"
+ },
+ {
+  "iso": "TH-22",
+  "th": "จันทบุรี",
+  "en": "Chanthaburi"
+ },
+ {
+  "iso": "TH-24",
+  "th": "ฉะเชิงเทรา",
+  "en": "Chachoengsao"
+ },
+ {
+  "iso": "TH-20",
+  "th": "ชลบุรี",
+  "en": "Chon Buri"
+ },
+ {
+  "iso": "TH-18",
+  "th": "ชัยนาท",
+  "en": "Chai Nat"
+ },
+ {
+  "iso": "TH-36",
+  "th": "ชัยภูมิ",
+  "en": "Chaiyaphum"
+ },
+ {
+  "iso": "TH-86",
+  "th": "ชุมพร",
+  "en": "Chumphon"
+ },
+ {
+  "iso": "TH-92",
+  "th": "ตรัง",
+  "en": "Trang"
+ },
+ {
+  "iso": "TH-23",
+  "th": "ตราด",
+  "en": "Trat"
+ },
+ {
+  "iso": "TH-63",
+  "th": "ตาก",
+  "en": "Tak"
+ },
+ {
+  "iso": "TH-26",
+  "th": "นครนายก",
+  "en": "Nakhon Nayok"
+ },
+ {
+  "iso": "TH-73",
+  "th": "นครปฐม",
+  "en": "Nakhon Pathom"
+ },
+ {
+  "iso": "TH-48",
+  "th": "นครพนม",
+  "en": "Nakhon Phanom"
+ },
+ {
+  "iso": "TH-30",
+  "th": "นครราชสีมา",
+  "en": "Nakhon Ratchasima"
+ },
+ {
+  "iso": "TH-80",
+  "th": "นครศรีธรรมราช",
+  "en": "Nakhon Si Thammarat"
+ },
+ {
+  "iso": "TH-60",
+  "th": "นครสวรรค์",
+  "en": "Nakhon Sawan"
+ },
+ {
+  "iso": "TH-12",
+  "th": "นนทบุรี",
+  "en": "Nonthaburi"
+ },
+ {
+  "iso": "TH-96",
+  "th": "นราธิวาส",
+  "en": "Narathiwat"
+ },
+ {
+  "iso": "TH-55",
+  "th": "น่าน",
+  "en": "Nan"
+ },
+ {
+  "iso": "TH-38",
+  "th": "บึงกาฬ",
+  "en": "Bueng Kan"
+ },
+ {
+  "iso": "TH-31",
+  "th": "บุรีรัมย์",
+  "en": "Buriram"
+ },
+ {
+  "iso": "TH-13",
+  "th": "ปทุมธานี",
+  "en": "Pathum Thani"
+ },
+ {
+  "iso": "TH-77",
+  "th": "ประจวบคีรีขันธ์",
+  "en": "Prachuap Khiri Khan"
+ },
+ {
+  "iso": "TH-25",
+  "th": "ปราจีนบุรี",
+  "en": "Prachin Buri"
+ },
+ {
+  "iso": "TH-94",
+  "th": "ปัตตานี",
+  "en": "Pattani"
+ },
+ {
+  "iso": "TH-14",
+  "th": "พระนครศรีอยุธยา",
+  "en": "Phra Nakhon Si Ayutthaya"
+ },
+ {
+  "iso": "TH-56",
+  "th": "พะเยา",
+  "en": "Phayao"
+ },
+ {
+  "iso": "TH-82",
+  "th": "พังงา",
+  "en": "Phang Nga"
+ },
+ {
+  "iso": "TH-93",
+  "th": "พัทลุง",
+  "en": "Phatthalung"
+ },
+ {
+  "iso": "TH-66",
+  "th": "พิจิตร",
+  "en": "Phichit"
+ },
+ {
+  "iso": "TH-65",
+  "th": "พิษณุโลก",
+  "en": "Phitsanulok"
+ },
+ {
+  "iso": "TH-83",
+  "th": "ภูเก็ต",
+  "en": "Phuket"
+ },
+ {
+  "iso": "TH-44",
+  "th": "มหาสารคาม",
+  "en": "Maha Sarakham"
+ },
+ {
+  "iso": "TH-49",
+  "th": "มุกดาหาร",
+  "en": "Mukdahan"
+ },
+ {
+  "iso": "TH-95",
+  "th": "ยะลา",
+  "en": "Yala"
+ },
+ {
+  "iso": "TH-35",
+  "th": "ยโสธร",
+  "en": "Yasothon"
+ },
+ {
+  "iso": "TH-85",
+  "th": "ระนอง",
+  "en": "Ranong"
+ },
+ {
+  "iso": "TH-21",
+  "th": "ระยอง",
+  "en": "Rayong"
+ },
+ {
+  "iso": "TH-70",
+  "th": "ราชบุรี",
+  "en": "Ratchaburi"
+ },
+ {
+  "iso": "TH-45",
+  "th": "ร้อยเอ็ด",
+  "en": "Roi Et"
+ },
+ {
+  "iso": "TH-16",
+  "th": "ลพบุรี",
+  "en": "Lopburi"
+ },
+ {
+  "iso": "TH-52",
+  "th": "ลำปาง",
+  "en": "Lampang"
+ },
+ {
+  "iso": "TH-51",
+  "th": "ลำพูน",
+  "en": "Lamphun"
+ },
+ {
+  "iso": "TH-33",
+  "th": "ศรีสะเกษ",
+  "en": "Si Sa Ket"
+ },
+ {
+  "iso": "TH-47",
+  "th": "สกลนคร",
+  "en": "Sakon Nakhon"
+ },
+ {
+  "iso": "TH-90",
+  "th": "สงขลา",
+  "en": "Songkhla"
+ },
+ {
+  "iso": "TH-91",
+  "th": "สตูล",
+  "en": "Satun"
+ },
+ {
+  "iso": "TH-11",
+  "th": "สมุทรปราการ",
+  "en": "Samut Prakan"
+ },
+ {
+  "iso": "TH-75",
+  "th": "สมุทรสงคราม",
+  "en": "Samut Songkhram"
+ },
+ {
+  "iso": "TH-74",
+  "th": "สมุทรสาคร",
+  "en": "Samut Sakhon"
+ },
+ {
+  "iso": "TH-19",
+  "th": "สระบุรี",
+  "en": "Saraburi"
+ },
+ {
+  "iso": "TH-27",
+  "th": "สระแก้ว",
+  "en": "Sa Kaeo"
+ },
+ {
+  "iso": "TH-17",
+  "th": "สิงห์บุรี",
+  "en": "Sing Buri"
+ },
+ {
+  "iso": "TH-72",
+  "th": "สุพรรณบุรี",
+  "en": "Suphan Buri"
+ },
+ {
+  "iso": "TH-84",
+  "th": "สุราษฎร์ธานี",
+  "en": "Surat Thani"
+ },
+ {
+  "iso": "TH-32",
+  "th": "สุรินทร์",
+  "en": "Surin"
+ },
+ {
+  "iso": "TH-64",
+  "th": "สุโขทัย",
+  "en": "Sukhothai"
+ },
+ {
+  "iso": "TH-43",
+  "th": "หนองคาย",
+  "en": "Nong Khai"
+ },
+ {
+  "iso": "TH-39",
+  "th": "หนองบัวลำภู",
+  "en": "Nong Bua Lamphu"
+ },
+ {
+  "iso": "TH-37",
+  "th": "อำนาจเจริญ",
+  "en": "Amnat Charoen"
+ },
+ {
+  "iso": "TH-41",
+  "th": "อุดรธานี",
+  "en": "Udon Thani"
+ },
+ {
+  "iso": "TH-53",
+  "th": "อุตรดิตถ์",
+  "en": "Uttaradit"
+ },
+ {
+  "iso": "TH-61",
+  "th": "อุทัยธานี",
+  "en": "Uthai Thani"
+ },
+ {
+  "iso": "TH-34",
+  "th": "อุบลราชธานี",
+  "en": "Ubon Ratchathani"
+ },
+ {
+  "iso": "TH-15",
+  "th": "อ่างทอง",
+  "en": "Ang Thong"
+ },
+ {
+  "iso": "TH-57",
+  "th": "เชียงราย",
+  "en": "Chiang Rai"
+ },
+ {
+  "iso": "TH-50",
+  "th": "เชียงใหม่",
+  "en": "Chiang Mai"
+ },
+ {
+  "iso": "TH-76",
+  "th": "เพชรบุรี",
+  "en": "Phetchaburi"
+ },
+ {
+  "iso": "TH-67",
+  "th": "เพชรบูรณ์",
+  "en": "Phetchabun"
+ },
+ {
+  "iso": "TH-42",
+  "th": "เลย",
+  "en": "Loei"
+ },
+ {
+  "iso": "TH-54",
+  "th": "แพร่",
+  "en": "Phrae"
+ },
+ {
+  "iso": "TH-58",
+  "th": "แม่ฮ่องสอน",
+  "en": "Mae Hong Son"
+ }
+]

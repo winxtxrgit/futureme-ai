@@ -1,0 +1,16 @@
+{"claim_id":"q_th_mismatch_68_6","claim_text":"แรงงานไทย 68.6% อยู่ในภาวะ mismatch","reason":"ไม่พบแหล่งตรง; เลข 68.6 ที่พบในเอกสาร TDRI เก่าเป็นความแม่นยำแบบจำลอง","status":"unverified","production_rag":false}
+{"claim_id":"q_th_over_under_education","claim_text":"ไทยมี overeducation 35.16% และ undereducation 33.45%","reason":"ไม่พบในแหล่งที่ทะเบียนเดิมระบุ","status":"unverified","production_rag":false}
+{"claim_id":"q_tdri_postings_304378","claim_text":"TDRI วิเคราะห์ประกาศงาน 304,378 ตำแหน่ง","reason":"รายงานตรงที่ตรวจระบุ 756,300 รายการในช่วงและขอบเขตเฉพาะ","status":"superseded","production_rag":false}
+{"claim_id":"q_experience_63_65","claim_text":"ประกาศงานไทย 63–65% ต้องมีประสบการณ์ 1–2 ปี","reason":"ไม่พบแหล่งตรง","status":"unverified","production_rag":false}
+{"claim_id":"q_entry_level_22","claim_text":"งาน entry-level มีเพียง 22%","reason":"ไม่พบแหล่งตรง","status":"unverified","production_rag":false}
+{"claim_id":"q_ilo_56_mismatch","claim_text":"ILO ระบุแรงงานโลก 56% มี mismatch","reason":"56% คือ coverage ของ 114 ประเทศใน global employment ไม่ใช่อัตรา mismatch","status":"misinterpreted","production_rag":false}
+{"claim_id":"q_gdp_loss_6_8","claim_text":"OECD ระบุ skill mismatch ทำให้ GDP สูญเสีย 6–8% ต่อปี","reason":"แหล่งที่อ้างไม่รองรับ","status":"unverified","production_rag":false}
+{"claim_id":"q_wage_penalty_15_20","claim_text":"คนทำงานไม่ตรงสายมี wage penalty 15–20%","reason":"ไม่มีแหล่งตรงในทะเบียนเดิม","status":"unverified","production_rag":false}
+{"claim_id":"q_burnout_2_5","claim_text":"คนทำงานไม่ตรงสาย burnout สูง 2.5 เท่า","reason":"ไม่มีแหล่งตรงในทะเบียนเดิม","status":"unverified","production_rag":false}
+{"claim_id":"q_dve_employment_85","claim_text":"ผู้จบทวิภาคีได้งานตรงสายมากกว่า 85%","reason":"ไม่พบในชุดข้อมูลหลักสูตร สอศ. ที่อ้าง","status":"unverified","production_rag":false}
+{"claim_id":"q_guidance_hour_caseload","claim_text":"แนะแนว 1 ชั่วโมงต่อสัปดาห์และครูหนึ่งคนดูแล 300–500 คน","reason":"ไม่พบในเอกสารหลักสูตร สพฐ. ที่อ้าง","status":"unverified","production_rag":false}
+{"claim_id":"q_tcas_six_official_groups","claim_text":"TCAS แบ่งหลักสูตรมหาวิทยาลัยเป็น 6 กลุ่มอย่างเป็นทางการ","reason":"ไม่พบ taxonomy ทางการ; เป็นการจัดหมวดของโครงการ","status":"design_assumption","production_rag":false}
+{"claim_id":"q_ndlp_riasec_static","claim_text":"NDLP มี RIASEC แบบ static quiz และไม่มี interaction","reason":"หน้า/รายงานสาธารณะที่ตรวจไม่รองรับ","status":"unverified","production_rag":false}
+{"claim_id":"q_deep_sso_millions_api","claim_text":"DEEP มี SSO ผู้ใช้หลายล้านและ API พร้อมเชื่อม","reason":"หน้า/รายงานสาธารณะที่ตรวจไม่รองรับรายละเอียดปัจจุบัน","status":"unverified","production_rag":false}
+{"claim_id":"q_ais_100_pdpa_soc2","claim_text":"AIS Cloud รับประกัน 100% data sovereignty, PDPA compliance และ SOC 2 สำหรับ FutureMe","reason":"หน้าผลิตภัณฑ์ที่ตรวจรองรับเพียงบางองค์ประกอบ; compliance ขึ้นกับสัญญาและการออกแบบ","status":"overstated","production_rag":false}
+{"claim_id":"q_ais_playground_ready","claim_text":"AIS Playground มี sandbox ฟรีและพร้อมใช้ในการแข่งขัน","reason":"ตัวตรวจอ่านเอกสารสิทธิ์ ราคา และ sandbox ไม่ได้","status":"unverified","production_rag":false}

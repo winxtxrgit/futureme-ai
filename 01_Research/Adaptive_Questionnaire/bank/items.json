@@ -1,0 +1,4369 @@
+{
+  "meta": {
+    "id": "futureme-adaptive-bank-v1",
+    "construct": "Holland RIASEC vocational interests, with non-scoring support layers",
+    "design": "01_Research/Adaptive_Questionnaire/",
+    "schema": "01_Research/Adaptive_Questionnaire/bank/SCHEMA.md",
+    "generatedBy": "01_Research/Adaptive_Questionnaire/bank/build.py",
+    "notice": "Prototype item bank. Only items with scoring=\"dimension\" contribute to a RIASEC score; every other item is context and must never move a dimension score. No item in this bank has been psychometrically validated: no IOC, reliability, or validity evidence exists for it. It must not be presented as a validated RIASEC test, and no statistic from any source instrument may be reported as a property of this bank.",
+    "notValidatedFields": [
+      "validationStatus",
+      "psychometrics"
+    ],
+    "attribution": "Items marked sourceType=\"adapted-18rest\" are adapted from Ambiel, R. A. M., Hauck-Filho, N., Barros, L. D. O., Martins, G. H., Abrahams, L., & De Fruyt, F. (2018). 18REST: a short RIASEC-interest measure. Psicologia: Reflexao e Critica, 31, 6. https://doi.org/10.1186/s41155-018-0086-z - licensed CC BY 4.0. Adapting these items does not transfer any reliability or validity evidence to this bank.",
+    "restrictedSources": "No item is drawn from a copyrighted commercial inventory (Strong Interest Inventory, Self-Directed Search, or similar). Reproducing their items would be both a licence breach and a professional-ethics breach.",
+    "references": {
+      "ambiel-2018-18rest": "Ambiel et al. (2018), 18REST, Psicologia: Reflexao e Critica 31:6, CC BY 4.0"
+    }
+  },
+  "scales": {
+    "scale5-preference": {
+      "kind": "preference",
+      "points": [
+        {
+          "value": 1,
+          "label": {
+            "en": "Strongly dislike",
+            "th": "ไม่ชอบอย่างยิ่ง"
+          }
+        },
+        {
+          "value": 2,
+          "label": {
+            "en": "Dislike",
+            "th": "ไม่ชอบ"
+          }
+        },
+        {
+          "value": 3,
+          "label": {
+            "en": "Not sure",
+            "th": "ไม่แน่ใจ"
+          }
+        },
+        {
+          "value": 4,
+          "label": {
+            "en": "Like",
+            "th": "ชอบ"
+          }
+        },
+        {
+          "value": 5,
+          "label": {
+            "en": "Strongly like",
+            "th": "ชอบอย่างยิ่ง"
+          }
+        }
+      ]
+    },
+    "scale5-confidence": {
+      "kind": "confidence",
+      "points": [
+        {
+          "value": 1,
+          "label": {
+            "en": "I could not do this yet",
+            "th": "ยังทำไม่ได้เลย"
+          }
+        },
+        {
+          "value": 2,
+          "label": {
+            "en": "A little",
+            "th": "ทำได้เล็กน้อย"
+          }
+        },
+        {
+          "value": 3,
+          "label": {
+            "en": "Not sure",
+            "th": "ไม่แน่ใจ"
+          }
+        },
+        {
+          "value": 4,
+          "label": {
+            "en": "Fairly well",
+            "th": "ทำได้ค่อนข้างดี"
+          }
+        },
+        {
+          "value": 5,
+          "label": {
+            "en": "I am sure I could",
+            "th": "ทำได้ดีแน่นอน"
+          }
+        }
+      ]
+    }
+  },
+  "facets": {
+    "R.hardware": {
+      "th": "ต่อ ซ่อม ประกอบอุปกรณ์และวงจร",
+      "en": "Assembling, repairing and wiring equipment",
+      "dimension": "R"
+    },
+    "R.machine": {
+      "th": "เดินเครื่อง ควบคุมเครื่องจักร",
+      "en": "Operating and controlling machinery",
+      "dimension": "R"
+    },
+    "R.outdoor": {
+      "th": "งานนอกอาคาร ธรรมชาติ เกษตร",
+      "en": "Outdoor, agricultural and environmental work",
+      "dimension": "R"
+    },
+    "R.build": {
+      "th": "ก่อสร้าง ประกอบโครงสร้าง",
+      "en": "Building and fabricating structures",
+      "dimension": "R"
+    },
+    "R.body": {
+      "th": "ใช้ร่างกาย ความคล่องแคล่ว ความปลอดภัย",
+      "en": "Physical work, agility and safety",
+      "dimension": "R"
+    },
+    "I.data": {
+      "th": "ดูตัวเลขหาแบบแผน",
+      "en": "Finding patterns in numbers",
+      "dimension": "I"
+    },
+    "I.diagnose": {
+      "th": "หาสาเหตุของปัญหา",
+      "en": "Working out why something fails",
+      "dimension": "I"
+    },
+    "I.experiment": {
+      "th": "ตั้งสมมติฐาน ทดลอง",
+      "en": "Hypothesising and experimenting",
+      "dimension": "I"
+    },
+    "I.theory": {
+      "th": "คิดเชิงนามธรรม คณิตศาสตร์",
+      "en": "Abstract and mathematical reasoning",
+      "dimension": "I"
+    },
+    "I.research": {
+      "th": "สืบค้นเอกสาร รวบรวมความรู้",
+      "en": "Literature search and knowledge gathering",
+      "dimension": "I"
+    },
+    "A.visual": {
+      "th": "วาด ออกแบบภาพ",
+      "en": "Drawing and visual design",
+      "dimension": "A"
+    },
+    "A.digital": {
+      "th": "ออกแบบสื่อดิจิทัล UI ตัดต่อ",
+      "en": "Digital media, UI and editing",
+      "dimension": "A"
+    },
+    "A.perform": {
+      "th": "แสดง ดนตรี เต้น",
+      "en": "Performing, music and dance",
+      "dimension": "A"
+    },
+    "A.write": {
+      "th": "เขียน เล่าเรื่อง",
+      "en": "Writing and storytelling",
+      "dimension": "A"
+    },
+    "A.craft": {
+      "th": "งานฝีมือ ประดิษฐ์ของสวย",
+      "en": "Craft and applied making",
+      "dimension": "A"
+    },
+    "S.teach": {
+      "th": "อธิบาย สอน ทำให้คนเข้าใจ",
+      "en": "Explaining and teaching",
+      "dimension": "S"
+    },
+    "S.care": {
+      "th": "ดูแลร่างกายและสุขภาพผู้อื่น",
+      "en": "Physical and health care of others",
+      "dimension": "S"
+    },
+    "S.counsel": {
+      "th": "รับฟัง ให้คำปรึกษา",
+      "en": "Listening and counselling",
+      "dimension": "S"
+    },
+    "S.community": {
+      "th": "งานชุมชน อาสา พัฒนาสังคม",
+      "en": "Community and volunteer work",
+      "dimension": "S"
+    },
+    "S.facilitate": {
+      "th": "ประสานคน ทำให้ทีมเดินได้",
+      "en": "Coordinating people and teams",
+      "dimension": "S"
+    },
+    "E.persuade": {
+      "th": "ขาย โน้มน้าว",
+      "en": "Selling and persuading",
+      "dimension": "E"
+    },
+    "E.lead": {
+      "th": "นำทีม ตัดสินใจ",
+      "en": "Leading and deciding",
+      "dimension": "E"
+    },
+    "E.venture": {
+      "th": "ริเริ่มธุรกิจ รับความเสี่ยง",
+      "en": "Starting ventures and taking risk",
+      "dimension": "E"
+    },
+    "E.present": {
+      "th": "พูดต่อหน้าคน นำเสนอ",
+      "en": "Public speaking and presenting",
+      "dimension": "E"
+    },
+    "E.negotiate": {
+      "th": "เจรจา ต่อรอง หาข้อตกลง",
+      "en": "Negotiating and reaching agreement",
+      "dimension": "E"
+    },
+    "C.organise": {
+      "th": "จัดของ จัดระบบให้เป็นระเบียบ",
+      "en": "Organising things into systems",
+      "dimension": "C"
+    },
+    "C.verify": {
+      "th": "ตรวจความถูกต้อง ตัวเลข บัญชี",
+      "en": "Checking accuracy, figures, accounts",
+      "dimension": "C"
+    },
+    "C.procedure": {
+      "th": "ทำตามขั้นตอนและมาตรฐาน",
+      "en": "Following procedures and standards",
+      "dimension": "C"
+    },
+    "C.record": {
+      "th": "บันทึก จัดเก็บเอกสารและข้อมูล",
+      "en": "Recording and filing information",
+      "dimension": "C"
+    },
+    "C.schedule": {
+      "th": "วางแผนเวลา ตารางงาน",
+      "en": "Planning time and schedules",
+      "dimension": "C"
+    }
+  },
+  "items": [
+    {
+      "id": "INT-R-01",
+      "dimension": "R",
+      "facet": "R.hardware",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ซ่อมจักรยานหรือเครื่องยนต์มอเตอร์ไซค์",
+        "en": "Repair a bicycle or a motorbike engine."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "reverseCounterpart": "INT-R-R2"
+    },
+    {
+      "id": "INT-R-02",
+      "dimension": "R",
+      "facet": "R.machine",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ควบคุมเครื่องจักรที่ใช้ผลิตหรือตัดชิ้นส่วน",
+        "en": "Operate a machine that makes or cuts parts."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-R-03",
+      "dimension": "R",
+      "facet": "R.build",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "สร้างของบางอย่างจากไม้หรือโลหะ",
+        "en": "Build something from wood or metal."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-R-04",
+      "dimension": "R",
+      "facet": "R.hardware",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ติดตั้งหรือซ่อมระบบไฟฟ้าในอาคาร",
+        "en": "Install or fix electrical wiring in a building."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high"
+    },
+    {
+      "id": "INT-R-05",
+      "dimension": "R",
+      "facet": "R.outdoor",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ปลูกพืชหรือดูแลสัตว์ในฟาร์ม",
+        "en": "Grow plants or look after animals on a farm."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high"
+    },
+    {
+      "id": "INT-R-06",
+      "dimension": "R",
+      "facet": "R.body",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ทำงานที่ต้องเดิน ยกของ และขยับตัวเกือบทั้งวัน",
+        "en": "Work that has you walking, lifting and moving for most of the day."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "R",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-R-01",
+          "values": [
+            5
+          ]
+        }
+      ],
+      "reverseCounterpart": "INT-R-R1"
+    },
+    {
+      "id": "INT-R-07",
+      "dimension": "R",
+      "facet": "R.outdoor",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ทำงานกลางแจ้งท่ามกลางแดดและลมเกือบทั้งวัน",
+        "en": "Work outdoors in the sun and wind for most of the day."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "R",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-R-01",
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INT-R-R1",
+      "dimension": "R",
+      "facet": "R.body",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "งานที่ได้นั่งอยู่กับที่ตลอดวัน สบายกว่างานที่ต้องเดินและยกของ",
+        "en": "A job where you sit in one place all day suits you better than one with walking and lifting."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ตรวจด้วย CFA ว่าข้อนี้ไม่ตกไปโหลดกับ C"
+      ],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "R",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-R-06",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-R-R2",
+      "dimension": "R",
+      "facet": "R.hardware",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เวลาของใช้พัง เอาไปให้ร้านซ่อมดีกว่าลองแก้เอง",
+        "en": "When something breaks, taking it to a shop beats trying to fix it yourself."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "R",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-R-01",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-I-01",
+      "dimension": "I",
+      "facet": "I.research",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "อ่านบทความหรือหนังสือเกี่ยวกับการค้นพบทางวิทยาศาสตร์",
+        "en": "Read articles or books about scientific discoveries."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "reverseCounterpart": "INT-I-R1"
+    },
+    {
+      "id": "INT-I-02",
+      "dimension": "I",
+      "facet": "I.experiment",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ทำการทดลองในห้องปฏิบัติการ",
+        "en": "Run an experiment in a laboratory."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high"
+    },
+    {
+      "id": "INT-I-03",
+      "dimension": "I",
+      "facet": "I.theory",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "หาคำอธิบายว่าปรากฏการณ์ธรรมชาติอย่างแผ่นดินไหวเกิดขึ้นได้อย่างไร",
+        "en": "Work out why a natural event such as an earthquake happens."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-I-04",
+      "dimension": "I",
+      "facet": "I.data",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "วิเคราะห์ชุดตัวเลขเพื่อหารูปแบบที่ซ่อนอยู่",
+        "en": "Study a set of numbers to find a pattern in them."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "reverseCounterpart": "INT-I-R2"
+    },
+    {
+      "id": "INT-I-05",
+      "dimension": "I",
+      "facet": "I.diagnose",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "แกะอุปกรณ์ออกดูเพื่อทำความเข้าใจว่ามันทำงานอย่างไร",
+        "en": "Take a device apart to understand how it works."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ใกล้ R.hardware — ตรวจการโหลดข้ามมิติเมื่อมีข้อมูล"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high"
+    },
+    {
+      "id": "INT-I-06",
+      "dimension": "I",
+      "facet": "I.diagnose",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เครื่องใช้ไฟฟ้าที่บ้านเสีย แล้วคุณเป็นคนหาว่ามันเสียเพราะอะไร",
+        "en": "An appliance at home stops working and you are the one who works out why."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "I",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-I-01",
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INT-I-07",
+      "dimension": "I",
+      "facet": "I.data",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ดูตารางคะแนนหรือยอดขาย แล้วหาว่ามีแบบแผนอะไรซ่อนอยู่",
+        "en": "Look at a table of scores or sales and find the pattern hiding in it."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "I",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-I-01",
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INT-I-R1",
+      "dimension": "I",
+      "facet": "I.research",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "รู้แค่วิธีใช้ก็พอแล้ว ส่วนกลไกข้างในปล่อยให้เป็นเรื่องของคนอื่น",
+        "en": "Knowing how to use it is enough; how it works inside is someone else's business."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "I",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-I-01",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-I-R2",
+      "dimension": "I",
+      "facet": "I.data",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ตัดสินใจจากความรู้สึกของตัวเองได้เลย เร็วกว่าการไปหาข้อมูลมาดู",
+        "en": "Deciding on instinct is faster than going and finding the data."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "I",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-I-04",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-A-01",
+      "dimension": "A",
+      "facet": "A.craft",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ออกแบบฉากหรือเครื่องแต่งกายสำหรับการแสดงบนเวที",
+        "en": "Design the set or the costumes for a stage show."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "คาบเกี่ยว A.visual — facet นี้ตั้งไว้ชั่วคราว รอผล CFA"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-A-02",
+      "dimension": "A",
+      "facet": "A.perform",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "แสดงดนตรี เต้น หรือละครต่อหน้าผู้ชม",
+        "en": "Perform music, dance or drama in front of an audience."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "reverseCounterpart": "INT-A-R2"
+    },
+    {
+      "id": "INT-A-03",
+      "dimension": "A",
+      "facet": "A.perform",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ร้องเพลงหรือเล่นดนตรีรวมวง",
+        "en": "Sing or play music together with a group."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-A-04",
+      "dimension": "A",
+      "facet": "A.visual",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "วาดรูป ระบายสี หรือออกแบบกราฟิกสำหรับโปสเตอร์",
+        "en": "Draw, paint, or design graphics for a poster."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "reverseCounterpart": "INT-A-R1"
+    },
+    {
+      "id": "INT-A-05",
+      "dimension": "A",
+      "facet": "A.write",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เขียนเรื่องสั้น เพลง หรือบทละคร",
+        "en": "Write a story, a song, or a script."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high"
+    },
+    {
+      "id": "INT-A-06",
+      "dimension": "A",
+      "facet": "A.digital",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ออกแบบหน้าจอแอปให้คนใช้แล้วเข้าใจได้ทันที",
+        "en": "Design an app screen so that people understand it straight away."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "A",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-A-01",
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INT-A-07",
+      "dimension": "A",
+      "facet": "A.digital",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ตัดต่อคลิปวิดีโอให้เล่าเรื่องได้น่าติดตาม",
+        "en": "Edit a video clip so that it tells a story people want to follow."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "A",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-A-01",
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INT-A-R1",
+      "dimension": "A",
+      "facet": "A.visual",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ทำตามแบบที่มีคนออกแบบไว้แล้ว สบายใจกว่าการคิดรูปแบบใหม่เอง",
+        "en": "Following a design someone else made is more comfortable than inventing your own."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ใกล้ C.procedure — ต้องตรวจว่าเป็นข้อกลับด้านของ A จริง"
+      ],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "A",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-A-04",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-A-R2",
+      "dimension": "A",
+      "facet": "A.perform",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "อยู่เบื้องหลังและปล่อยให้คนอื่นเป็นคนออกไปแสดง",
+        "en": "Staying behind the scenes and letting others be the ones on stage."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "A",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-A-02",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-S-01",
+      "dimension": "S",
+      "facet": "S.community",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เป็นอาสาสมัครในโครงการของชุมชนละแวกบ้าน",
+        "en": "Volunteer for a community project in your neighbourhood."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-S-02",
+      "dimension": "S",
+      "facet": "S.care",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ให้คำแนะนำเรื่องการดูแลสุขภาพแก่คนอื่น",
+        "en": "Give people advice about staying healthy."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-S-03",
+      "dimension": "S",
+      "facet": "S.teach",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ช่วยเพื่อนร่วมชั้นที่กำลังมีปัญหากับการเรียน",
+        "en": "Help a classmate who is struggling with schoolwork."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-S-04",
+      "dimension": "S",
+      "facet": "S.care",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ดูแลเด็กเล็กหรือผู้สูงอายุ",
+        "en": "Look after young children or elderly people."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high"
+    },
+    {
+      "id": "INT-S-05",
+      "dimension": "S",
+      "facet": "S.counsel",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "รับฟังคนที่กำลังเล่าปัญหาของเขาให้ฟัง",
+        "en": "Listen to someone talk through a problem they are having."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "reverseCounterpart": "INT-S-R2"
+    },
+    {
+      "id": "INT-S-06",
+      "dimension": "S",
+      "facet": "S.facilitate",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ประสานงานให้ทุกคนในกลุ่มรู้ว่าต้องทำอะไรและงานเดินไปได้",
+        "en": "Keep everyone in a group clear on their part so the work keeps moving."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ใกล้ E.lead — ต่างกันที่ข้อนี้ไม่มีอำนาจตัดสินใจ ต้องตรวจเมื่อมีข้อมูล"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "S",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-S-01",
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INT-S-07",
+      "dimension": "S",
+      "facet": "S.teach",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "อธิบายเรื่องยาก ๆ ให้คนที่ยังไม่รู้อะไรเลยเข้าใจได้",
+        "en": "Explain something difficult to a person who knows nothing about it yet."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "S",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-S-01",
+          "values": [
+            5
+          ]
+        }
+      ],
+      "reverseCounterpart": "INT-S-R1"
+    },
+    {
+      "id": "INT-S-R1",
+      "dimension": "S",
+      "facet": "S.teach",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ทำงานของตัวเองให้จบไปเงียบ ๆ ดีกว่าต้องคอยอธิบายให้คนอื่นเข้าใจ",
+        "en": "Finishing your own work quietly beats having to keep explaining it to others."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "S",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-S-07",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-S-R2",
+      "dimension": "S",
+      "facet": "S.counsel",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "อยู่ห่างจากเรื่องอารมณ์ของคนอื่น แล้วโฟกัสที่งานตรงหน้า",
+        "en": "Keeping clear of other people's feelings and focusing on the task in front of you."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "S",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-S-05",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-E-01",
+      "dimension": "E",
+      "facet": "E.venture",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "วางแผนว่าธุรกิจเล็ก ๆ จะเติบโตได้อย่างไร",
+        "en": "Plan how a small business could grow."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-E-02",
+      "dimension": "E",
+      "facet": "E.lead",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "นำทีมและดูแลให้งานเสร็จตามกำหนด",
+        "en": "Lead a team and keep its work on schedule."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-E-03",
+      "dimension": "E",
+      "facet": "E.persuade",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "โน้มน้าวลูกค้าให้ตัดสินใจซื้อสินค้า",
+        "en": "Persuade a customer to buy a product."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "reverseCounterpart": "INT-E-R2"
+    },
+    {
+      "id": "INT-E-04",
+      "dimension": "E",
+      "facet": "E.venture",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เริ่มต้นและบริหารชมรมหรือร้านเล็ก ๆ",
+        "en": "Start and run a club or a small shop."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-E-05",
+      "dimension": "E",
+      "facet": "E.present",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "พูดต่อหน้ากลุ่มคนเพื่อโน้มน้าวให้เห็นด้วยกับความคิดของคุณ",
+        "en": "Speak to a group to convince them of your idea."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high"
+    },
+    {
+      "id": "INT-E-06",
+      "dimension": "E",
+      "facet": "E.negotiate",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ต่อรองราคาหรือหาข้อตกลงที่ทั้งสองฝ่ายรับได้",
+        "en": "Negotiate a price or find a deal both sides can accept."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "E",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-E-01",
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INT-E-07",
+      "dimension": "E",
+      "facet": "E.lead",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ตัดสินใจแทนกลุ่มในเรื่องที่ยังไม่มีใครรู้คำตอบ",
+        "en": "Make the call for a group on something nobody knows the answer to yet."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "E",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-E-01",
+          "values": [
+            5
+          ]
+        }
+      ],
+      "reverseCounterpart": "INT-E-R1"
+    },
+    {
+      "id": "INT-E-R1",
+      "dimension": "E",
+      "facet": "E.lead",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เป็นคนลงมือทำตามแผนที่คนอื่นวางไว้ สบายกว่าการเป็นคนตัดสินใจเอง",
+        "en": "Carrying out a plan someone else made is easier than being the one who decides."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "E",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-E-07",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-E-R2",
+      "dimension": "E",
+      "facet": "E.persuade",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "บอกข้อมูลไปตามจริง แล้วปล่อยให้เขาตัดสินใจเอง",
+        "en": "Give people the facts and leave the decision entirely to them."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "E",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-E-03",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-C-01",
+      "dimension": "C",
+      "facet": "C.procedure",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ตรวจสอบว่ามีการทำตามกฎหรือมาตรฐานที่กำหนดไว้หรือไม่",
+        "en": "Check that a set of rules or standards is being followed."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-C-02",
+      "dimension": "C",
+      "facet": "C.verify",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ทำบัญชีและติดตามรายรับรายจ่าย",
+        "en": "Keep accounts and track money coming in and going out."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high"
+    },
+    {
+      "id": "INT-C-03",
+      "dimension": "C",
+      "facet": "C.record",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "adapted-18rest",
+      "sourceRef": "ambiel-2018-18rest",
+      "licence": "CC BY 4.0",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "จัดระเบียบและจัดเก็บเอกสารให้ค้นหาได้ง่าย",
+        "en": "Organise and store records so they can be found easily."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high"
+    },
+    {
+      "id": "INT-C-04",
+      "dimension": "C",
+      "facet": "C.verify",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "กรอกข้อมูลลงในตารางคำนวณอย่างถูกต้องแม่นยำ",
+        "en": "Enter information into a spreadsheet accurately."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium"
+    },
+    {
+      "id": "INT-C-05",
+      "dimension": "C",
+      "facet": "C.procedure",
+      "probeType": "interest-activity",
+      "level": "L2",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ทำงานตามขั้นตอนที่เขียนไว้อย่างเคร่งครัดทีละขั้น",
+        "en": "Follow a written procedure exactly, step by step."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "reverseCounterpart": "INT-C-R1"
+    },
+    {
+      "id": "INT-C-06",
+      "dimension": "C",
+      "facet": "C.organise",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "จัดของในห้องหรือในคลังให้เป็นระบบจนหาของได้ในไม่กี่วินาที",
+        "en": "Arrange a room or a store so anything can be found in seconds."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "C",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-C-01",
+          "values": [
+            5
+          ]
+        }
+      ],
+      "reverseCounterpart": "INT-C-R2"
+    },
+    {
+      "id": "INT-C-07",
+      "dimension": "C",
+      "facet": "C.schedule",
+      "probeType": "interest-facet",
+      "level": "L3",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "วางตารางเวลาให้งานหลายอย่างเสร็จทันโดยไม่ชนกัน",
+        "en": "Build a schedule so several jobs all finish on time without clashing."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "positive",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "high",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "C",
+          "minScore": 4.0
+        },
+        {
+          "on": "response",
+          "item": "INT-C-01",
+          "values": [
+            5
+          ]
+        }
+      ]
+    },
+    {
+      "id": "INT-C-R1",
+      "dimension": "C",
+      "facet": "C.procedure",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เริ่มงานใหม่โดยยังไม่รู้ว่าขั้นตอนจะเป็นอย่างไร แล้วค่อยหาทางไปเรื่อย ๆ",
+        "en": "Starting something new with no idea of the steps and working it out as you go."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ใกล้ A — ต้องตรวจว่าเป็นข้อกลับด้านของ C จริง ไม่ใช่ข้อบวกของ A"
+      ],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "C",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-C-05",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "INT-C-R2",
+      "dimension": "C",
+      "facet": "C.organise",
+      "probeType": "reverse-keyed",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ปล่อยของให้อยู่ตามที่วางไว้ หาเจอเมื่อไหร่ก็เมื่อนั้น",
+        "en": "Leaving things where they land and finding them whenever you find them."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "direction": "reverse",
+      "diagnosticWeight": 1.0,
+      "diagnosticStrength": "medium",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "C",
+          "minScore": 3.5
+        }
+      ],
+      "reverseCounterpart": "INT-C-06",
+      "culturalNote": "ข้อกลับด้านในภาษาไทยต้องเขียนเป็นกิจกรรมตรงข้ามเชิงเนื้อหา ห้ามเติมคำว่า “ไม่ชอบ” ลงในข้อบวก เพราะจะซ้อนกับตัวสเกลที่มีคำว่าไม่ชอบอยู่แล้ว"
+    },
+    {
+      "id": "ITN-R-01",
+      "dimension": "R",
+      "facet": "R.hardware",
+      "probeType": "intensity",
+      "level": "L5",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าซ่อมแล้วยังไม่หาย ต้องลองใหม่หลายรอบจนเจอจุดที่เสีย คุณยังอยากทำไหม",
+        "en": "If the first repair fails and you have to try again and again to find the fault, would you still want to do it?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ปนความอึด (persistence) เข้ากับความสนใจ — น้ำหนักจึงลดเหลือ 0.6"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 0.6,
+      "diagnosticStrength": "low",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "R",
+          "minScore": 4.5
+        }
+      ]
+    },
+    {
+      "id": "ITN-I-01",
+      "dimension": "I",
+      "facet": "I.research",
+      "probeType": "intensity",
+      "level": "L5",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าต้องอ่านเรื่องเดิมซ้ำหลายรอบจนกว่าจะเข้าใจ คุณยังอยากทำไหม",
+        "en": "If you had to read the same thing over and over until it made sense, would you still want to?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ปนความอึด (persistence) เข้ากับความสนใจ — น้ำหนักจึงลดเหลือ 0.6"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 0.6,
+      "diagnosticStrength": "low",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "I",
+          "minScore": 4.5
+        }
+      ]
+    },
+    {
+      "id": "ITN-A-01",
+      "dimension": "A",
+      "facet": "A.visual",
+      "probeType": "intensity",
+      "level": "L5",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้างานที่ออกแบบถูกสั่งให้แก้ห้ารอบ คุณยังอยากทำไหม",
+        "en": "If a design you made had to be revised five times, would you still want to do it?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ปนความอึด (persistence) เข้ากับความสนใจ — น้ำหนักจึงลดเหลือ 0.6"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 0.6,
+      "diagnosticStrength": "low",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "A",
+          "minScore": 4.5
+        }
+      ]
+    },
+    {
+      "id": "ITN-S-01",
+      "dimension": "S",
+      "facet": "S.teach",
+      "probeType": "intensity",
+      "level": "L5",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าต้องอธิบายเรื่องเดิมให้คนที่ยังไม่เข้าใจฟังอีกหลายครั้ง คุณยังอยากทำไหม",
+        "en": "If you had to explain the same thing again and again to someone who still did not get it, would you still want to?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ปนความอึด (persistence) เข้ากับความสนใจ — น้ำหนักจึงลดเหลือ 0.6"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 0.6,
+      "diagnosticStrength": "low",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "S",
+          "minScore": 4.5
+        }
+      ]
+    },
+    {
+      "id": "ITN-E-01",
+      "dimension": "E",
+      "facet": "E.persuade",
+      "probeType": "intensity",
+      "level": "L5",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าถูกปฏิเสธสิบครั้งก่อนจะมีคนตกลงหนึ่งครั้ง คุณยังอยากทำไหม",
+        "en": "If ten people said no before one said yes, would you still want to do it?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ปนความอึด (persistence) เข้ากับความสนใจ — น้ำหนักจึงลดเหลือ 0.6"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 0.6,
+      "diagnosticStrength": "low",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "E",
+          "minScore": 4.5
+        }
+      ]
+    },
+    {
+      "id": "ITN-C-01",
+      "dimension": "C",
+      "facet": "C.verify",
+      "probeType": "intensity",
+      "level": "L5",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าต้องตรวจตัวเลขชุดเดิมซ้ำเพื่อให้แน่ใจว่าไม่มีที่ผิด คุณยังอยากทำไหม",
+        "en": "If you had to recheck the same figures to be sure nothing was wrong, would you still want to?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ปนความอึด (persistence) เข้ากับความสนใจ — น้ำหนักจึงลดเหลือ 0.6"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 0.6,
+      "diagnosticStrength": "low",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "C",
+          "minScore": 4.5
+        }
+      ]
+    },
+    {
+      "id": "SEF-R-01",
+      "dimension": "R",
+      "facet": null,
+      "probeType": "self-efficacy",
+      "level": "L2",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-confidence",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะซ่อมหรือประกอบอุปกรณ์ให้ใช้งานได้ได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could repair or assemble equipment so it works?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ต้องแสดงแยกจากคะแนนความสนใจในทุกหน้าจอ"
+      ],
+      "diagnosticStrength": "medium",
+      "help": {
+        "th": "ข้อนี้ถามความมั่นใจ ไม่ได้ถามว่าชอบหรือไม่ชอบ",
+        "en": "This asks about confidence, not about liking."
+      },
+      "culturalNote": "ห้ามเรียกผลของข้อนี้ว่า “ทักษะ” หรือ “ความสามารถ” — เป็นการประเมินตนเองเท่านั้น และห้ามใช้ลดคะแนนความสนใจ",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "R",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "SEF-I-01",
+      "dimension": "I",
+      "facet": null,
+      "probeType": "self-efficacy",
+      "level": "L2",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-confidence",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะหาสาเหตุของปัญหาด้วยข้อมูลและเหตุผลได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could find the cause of a problem from data and reasoning?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ต้องแสดงแยกจากคะแนนความสนใจในทุกหน้าจอ"
+      ],
+      "diagnosticStrength": "medium",
+      "help": {
+        "th": "ข้อนี้ถามความมั่นใจ ไม่ได้ถามว่าชอบหรือไม่ชอบ",
+        "en": "This asks about confidence, not about liking."
+      },
+      "culturalNote": "ห้ามเรียกผลของข้อนี้ว่า “ทักษะ” หรือ “ความสามารถ” — เป็นการประเมินตนเองเท่านั้น และห้ามใช้ลดคะแนนความสนใจ",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "I",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "SEF-A-01",
+      "dimension": "A",
+      "facet": null,
+      "probeType": "self-efficacy",
+      "level": "L2",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-confidence",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะสร้างงานออกแบบหรืองานเล่าเรื่องของตัวเองได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could create your own design or piece of storytelling?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ต้องแสดงแยกจากคะแนนความสนใจในทุกหน้าจอ"
+      ],
+      "diagnosticStrength": "medium",
+      "help": {
+        "th": "ข้อนี้ถามความมั่นใจ ไม่ได้ถามว่าชอบหรือไม่ชอบ",
+        "en": "This asks about confidence, not about liking."
+      },
+      "culturalNote": "ห้ามเรียกผลของข้อนี้ว่า “ทักษะ” หรือ “ความสามารถ” — เป็นการประเมินตนเองเท่านั้น และห้ามใช้ลดคะแนนความสนใจ",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "A",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "SEF-S-01",
+      "dimension": "S",
+      "facet": null,
+      "probeType": "self-efficacy",
+      "level": "L2",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-confidence",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะดูแลหรืออธิบายเรื่องต่าง ๆ ให้คนอื่นเข้าใจได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could care for people or explain things so they understand?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ต้องแสดงแยกจากคะแนนความสนใจในทุกหน้าจอ"
+      ],
+      "diagnosticStrength": "medium",
+      "help": {
+        "th": "ข้อนี้ถามความมั่นใจ ไม่ได้ถามว่าชอบหรือไม่ชอบ",
+        "en": "This asks about confidence, not about liking."
+      },
+      "culturalNote": "ห้ามเรียกผลของข้อนี้ว่า “ทักษะ” หรือ “ความสามารถ” — เป็นการประเมินตนเองเท่านั้น และห้ามใช้ลดคะแนนความสนใจ",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "S",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "SEF-E-01",
+      "dimension": "E",
+      "facet": null,
+      "probeType": "self-efficacy",
+      "level": "L2",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-confidence",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะนำกลุ่มหรือโน้มน้าวให้คนเห็นด้วยได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could lead a group or bring people round to an idea?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ต้องแสดงแยกจากคะแนนความสนใจในทุกหน้าจอ"
+      ],
+      "diagnosticStrength": "medium",
+      "help": {
+        "th": "ข้อนี้ถามความมั่นใจ ไม่ได้ถามว่าชอบหรือไม่ชอบ",
+        "en": "This asks about confidence, not about liking."
+      },
+      "culturalNote": "ห้ามเรียกผลของข้อนี้ว่า “ทักษะ” หรือ “ความสามารถ” — เป็นการประเมินตนเองเท่านั้น และห้ามใช้ลดคะแนนความสนใจ",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "E",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "SEF-C-01",
+      "dimension": "C",
+      "facet": null,
+      "probeType": "self-efficacy",
+      "level": "L2",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-confidence",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้ามีคนสอนให้ คุณคิดว่าตัวเองจะทำงานที่ต้องละเอียดและถูกต้องทุกจุดได้ดีแค่ไหน",
+        "en": "If someone taught you, how well do you think you could do work that has to be accurate in every detail?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ต้องแสดงแยกจากคะแนนความสนใจในทุกหน้าจอ"
+      ],
+      "diagnosticStrength": "medium",
+      "help": {
+        "th": "ข้อนี้ถามความมั่นใจ ไม่ได้ถามว่าชอบหรือไม่ชอบ",
+        "en": "This asks about confidence, not about liking."
+      },
+      "culturalNote": "ห้ามเรียกผลของข้อนี้ว่า “ทักษะ” หรือ “ความสามารถ” — เป็นการประเมินตนเองเท่านั้น และห้ามใช้ลดคะแนนความสนใจ",
+      "triggers": [
+        {
+          "on": "dimensionHigh",
+          "dimension": "C",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "EXP-R-01",
+      "dimension": "R",
+      "facet": null,
+      "probeType": "experience",
+      "level": "L4",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เคยได้ลองงานซ่อม ประกอบ หรือสร้างของด้วยมือจริง ๆ ไหม",
+        "en": "Have you actually had a chance to try hands-on repairing, assembling or building?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "often",
+          "label": {
+            "th": "เคย และได้ทำหลายครั้ง",
+            "en": "Yes, many times"
+          },
+          "maps": {}
+        },
+        {
+          "value": "once",
+          "label": {
+            "th": "เคยครั้งเดียวสองครั้ง",
+            "en": "Once or twice"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-curious",
+          "label": {
+            "th": "ไม่เคย แต่อยากลอง",
+            "en": "Never, but I would like to try"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-uninterested",
+          "label": {
+            "th": "ไม่เคย และไม่คิดจะลอง",
+            "en": "Never, and I do not plan to"
+          },
+          "maps": {}
+        }
+      ],
+      "help": {
+        "th": "คำตอบนี้ไม่มีผลต่อคะแนน ใช้เพื่อรู้ว่าคุณเคยมีโอกาสลองหรือยัง",
+        "en": "This does not affect any score. It tells us whether you have had the chance."
+      },
+      "culturalNote": "คำตอบ “ไม่เคย แต่อยากลอง” ต้องนำไปสู่ข้อเสนอให้ไปลอง ห้ามตีความว่าไม่สนใจ",
+      "triggers": [
+        {
+          "on": "uncertain",
+          "dimension": "R"
+        },
+        {
+          "on": "dimensionHigh",
+          "dimension": "R",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "EXP-I-01",
+      "dimension": "I",
+      "facet": null,
+      "probeType": "experience",
+      "level": "L4",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เคยได้ลองการทดลอง วิเคราะห์ข้อมูล หรือหาสาเหตุของปัญหาจริง ๆ ไหม",
+        "en": "Have you actually had a chance to try experimenting, analysing data or diagnosing a fault?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "often",
+          "label": {
+            "th": "เคย และได้ทำหลายครั้ง",
+            "en": "Yes, many times"
+          },
+          "maps": {}
+        },
+        {
+          "value": "once",
+          "label": {
+            "th": "เคยครั้งเดียวสองครั้ง",
+            "en": "Once or twice"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-curious",
+          "label": {
+            "th": "ไม่เคย แต่อยากลอง",
+            "en": "Never, but I would like to try"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-uninterested",
+          "label": {
+            "th": "ไม่เคย และไม่คิดจะลอง",
+            "en": "Never, and I do not plan to"
+          },
+          "maps": {}
+        }
+      ],
+      "help": {
+        "th": "คำตอบนี้ไม่มีผลต่อคะแนน ใช้เพื่อรู้ว่าคุณเคยมีโอกาสลองหรือยัง",
+        "en": "This does not affect any score. It tells us whether you have had the chance."
+      },
+      "culturalNote": "คำตอบ “ไม่เคย แต่อยากลอง” ต้องนำไปสู่ข้อเสนอให้ไปลอง ห้ามตีความว่าไม่สนใจ",
+      "triggers": [
+        {
+          "on": "uncertain",
+          "dimension": "I"
+        },
+        {
+          "on": "dimensionHigh",
+          "dimension": "I",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "EXP-A-01",
+      "dimension": "A",
+      "facet": null,
+      "probeType": "experience",
+      "level": "L4",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เคยได้ลองงานออกแบบ วาด เขียน ตัดต่อ หรือการแสดงจริง ๆ ไหม",
+        "en": "Have you actually had a chance to try designing, drawing, writing, editing or performing?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "often",
+          "label": {
+            "th": "เคย และได้ทำหลายครั้ง",
+            "en": "Yes, many times"
+          },
+          "maps": {}
+        },
+        {
+          "value": "once",
+          "label": {
+            "th": "เคยครั้งเดียวสองครั้ง",
+            "en": "Once or twice"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-curious",
+          "label": {
+            "th": "ไม่เคย แต่อยากลอง",
+            "en": "Never, but I would like to try"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-uninterested",
+          "label": {
+            "th": "ไม่เคย และไม่คิดจะลอง",
+            "en": "Never, and I do not plan to"
+          },
+          "maps": {}
+        }
+      ],
+      "help": {
+        "th": "คำตอบนี้ไม่มีผลต่อคะแนน ใช้เพื่อรู้ว่าคุณเคยมีโอกาสลองหรือยัง",
+        "en": "This does not affect any score. It tells us whether you have had the chance."
+      },
+      "culturalNote": "คำตอบ “ไม่เคย แต่อยากลอง” ต้องนำไปสู่ข้อเสนอให้ไปลอง ห้ามตีความว่าไม่สนใจ",
+      "triggers": [
+        {
+          "on": "uncertain",
+          "dimension": "A"
+        },
+        {
+          "on": "dimensionHigh",
+          "dimension": "A",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "EXP-S-01",
+      "dimension": "S",
+      "facet": null,
+      "probeType": "experience",
+      "level": "L4",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เคยได้ลองการสอน ดูแล หรือรับฟังคนอื่นจริง ๆ ไหม",
+        "en": "Have you actually had a chance to try teaching, caring for or listening to other people?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "often",
+          "label": {
+            "th": "เคย และได้ทำหลายครั้ง",
+            "en": "Yes, many times"
+          },
+          "maps": {}
+        },
+        {
+          "value": "once",
+          "label": {
+            "th": "เคยครั้งเดียวสองครั้ง",
+            "en": "Once or twice"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-curious",
+          "label": {
+            "th": "ไม่เคย แต่อยากลอง",
+            "en": "Never, but I would like to try"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-uninterested",
+          "label": {
+            "th": "ไม่เคย และไม่คิดจะลอง",
+            "en": "Never, and I do not plan to"
+          },
+          "maps": {}
+        }
+      ],
+      "help": {
+        "th": "คำตอบนี้ไม่มีผลต่อคะแนน ใช้เพื่อรู้ว่าคุณเคยมีโอกาสลองหรือยัง",
+        "en": "This does not affect any score. It tells us whether you have had the chance."
+      },
+      "culturalNote": "คำตอบ “ไม่เคย แต่อยากลอง” ต้องนำไปสู่ข้อเสนอให้ไปลอง ห้ามตีความว่าไม่สนใจ",
+      "triggers": [
+        {
+          "on": "uncertain",
+          "dimension": "S"
+        },
+        {
+          "on": "dimensionHigh",
+          "dimension": "S",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "EXP-E-01",
+      "dimension": "E",
+      "facet": null,
+      "probeType": "experience",
+      "level": "L4",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เคยได้ลองการขาย นำกลุ่ม หรือจัดกิจกรรมของตัวเองจริง ๆ ไหม",
+        "en": "Have you actually had a chance to try selling, leading a group or running your own activity?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "often",
+          "label": {
+            "th": "เคย และได้ทำหลายครั้ง",
+            "en": "Yes, many times"
+          },
+          "maps": {}
+        },
+        {
+          "value": "once",
+          "label": {
+            "th": "เคยครั้งเดียวสองครั้ง",
+            "en": "Once or twice"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-curious",
+          "label": {
+            "th": "ไม่เคย แต่อยากลอง",
+            "en": "Never, but I would like to try"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-uninterested",
+          "label": {
+            "th": "ไม่เคย และไม่คิดจะลอง",
+            "en": "Never, and I do not plan to"
+          },
+          "maps": {}
+        }
+      ],
+      "help": {
+        "th": "คำตอบนี้ไม่มีผลต่อคะแนน ใช้เพื่อรู้ว่าคุณเคยมีโอกาสลองหรือยัง",
+        "en": "This does not affect any score. It tells us whether you have had the chance."
+      },
+      "culturalNote": "คำตอบ “ไม่เคย แต่อยากลอง” ต้องนำไปสู่ข้อเสนอให้ไปลอง ห้ามตีความว่าไม่สนใจ",
+      "triggers": [
+        {
+          "on": "uncertain",
+          "dimension": "E"
+        },
+        {
+          "on": "dimensionHigh",
+          "dimension": "E",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "EXP-C-01",
+      "dimension": "C",
+      "facet": null,
+      "probeType": "experience",
+      "level": "L4",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เคยได้ลองงานเอกสาร บัญชี หรือการจัดระบบข้อมูลจริง ๆ ไหม",
+        "en": "Have you actually had a chance to try paperwork, accounts or organising records?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "often",
+          "label": {
+            "th": "เคย และได้ทำหลายครั้ง",
+            "en": "Yes, many times"
+          },
+          "maps": {}
+        },
+        {
+          "value": "once",
+          "label": {
+            "th": "เคยครั้งเดียวสองครั้ง",
+            "en": "Once or twice"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-curious",
+          "label": {
+            "th": "ไม่เคย แต่อยากลอง",
+            "en": "Never, but I would like to try"
+          },
+          "maps": {}
+        },
+        {
+          "value": "never-uninterested",
+          "label": {
+            "th": "ไม่เคย และไม่คิดจะลอง",
+            "en": "Never, and I do not plan to"
+          },
+          "maps": {}
+        }
+      ],
+      "help": {
+        "th": "คำตอบนี้ไม่มีผลต่อคะแนน ใช้เพื่อรู้ว่าคุณเคยมีโอกาสลองหรือยัง",
+        "en": "This does not affect any score. It tells us whether you have had the chance."
+      },
+      "culturalNote": "คำตอบ “ไม่เคย แต่อยากลอง” ต้องนำไปสู่ข้อเสนอให้ไปลอง ห้ามตีความว่าไม่สนใจ",
+      "triggers": [
+        {
+          "on": "uncertain",
+          "dimension": "C"
+        },
+        {
+          "on": "dimensionHigh",
+          "dimension": "C",
+          "minScore": 4.0
+        }
+      ]
+    },
+    {
+      "id": "SCN-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "scenario",
+      "level": "L4",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "งานกลุ่มวิชาวิทยาศาสตร์ ครูให้ทำโครงงานอิสระ คุณอยากรับหน้าที่ไหน",
+        "en": "Your science class has a free-choice group project. Which part would you want?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ปนบทบาททางสังคมในห้องเรียน — น้ำหนัก 0.7",
+        "ตัวเลือกที่แมปสองมิติให้ 0.5 กับแต่ละมิติ"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 0.7,
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "build",
+          "label": {
+            "th": "ประกอบชิ้นงานและทำให้มันทำงานได้จริง",
+            "en": "Build the thing and make it actually work"
+          },
+          "maps": {
+            "R": 1.0
+          }
+        },
+        {
+          "value": "design",
+          "label": {
+            "th": "หาข้อมูลและออกแบบวิธีทดลอง",
+            "en": "Find the information and design the method"
+          },
+          "maps": {
+            "I": 1.0
+          }
+        },
+        {
+          "value": "comms",
+          "label": {
+            "th": "ทำโปสเตอร์และคลิปให้คนดูเข้าใจง่าย",
+            "en": "Make the poster and clip so people get it"
+          },
+          "maps": {
+            "A": 1.0
+          }
+        },
+        {
+          "value": "coord",
+          "label": {
+            "th": "ประสานงานทุกคนและคุมให้เสร็จทันเวลา",
+            "en": "Coordinate everyone and keep it on time"
+          },
+          "maps": {
+            "E": 0.5,
+            "C": 0.5
+          }
+        }
+      ]
+    },
+    {
+      "id": "SCN-02",
+      "dimension": null,
+      "facet": null,
+      "probeType": "scenario",
+      "level": "L4",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "วันเสาร์ว่างทั้งบ่าย ไม่มีการบ้าน คุณอยากใช้เวลาไปกับอะไรมากที่สุด",
+        "en": "A free Saturday afternoon, no homework. What would you most want to spend it on?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ปนบทบาททางสังคมในห้องเรียน — น้ำหนัก 0.7",
+        "ตัวเลือกที่แมปสองมิติให้ 0.5 กับแต่ละมิติ"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 0.7,
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "make",
+          "label": {
+            "th": "ซ่อมหรือประกอบอะไรบางอย่างที่บ้าน",
+            "en": "Fixing or building something at home"
+          },
+          "maps": {
+            "R": 1.0
+          }
+        },
+        {
+          "value": "figure",
+          "label": {
+            "th": "หาคำตอบของเรื่องที่ค้างคาใจ",
+            "en": "Chasing down the answer to something you keep wondering about"
+          },
+          "maps": {
+            "I": 1.0
+          }
+        },
+        {
+          "value": "create",
+          "label": {
+            "th": "ทำงานออกแบบ วาด เขียน หรือตัดต่อ",
+            "en": "Designing, drawing, writing or editing"
+          },
+          "maps": {
+            "A": 1.0
+          }
+        },
+        {
+          "value": "people",
+          "label": {
+            "th": "ไปช่วยงานหรือไปคุยกับคนที่ต้องการคนคุย",
+            "en": "Helping out, or talking with someone who needs company"
+          },
+          "maps": {
+            "S": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "SCN-03",
+      "dimension": null,
+      "facet": null,
+      "probeType": "scenario",
+      "level": "L4",
+      "purpose": "measure",
+      "scoring": "dimension",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "โรงเรียนจัดงานเปิดบ้าน ห้องคุณได้ทำซุ้มหนึ่งซุ้ม คุณอยากรับหน้าที่ไหน",
+        "en": "Your school has an open house and your class runs a booth. Which job would you take?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ปนบทบาททางสังคมในห้องเรียน — น้ำหนัก 0.7",
+        "ตัวเลือกที่แมปสองมิติให้ 0.5 กับแต่ละมิติ"
+      ],
+      "direction": "positive",
+      "diagnosticWeight": 0.7,
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "sell",
+          "label": {
+            "th": "ชวนคนที่เดินผ่านให้เข้ามาดูซุ้ม",
+            "en": "Pull passers-by in to look at the booth"
+          },
+          "maps": {
+            "E": 1.0
+          }
+        },
+        {
+          "value": "stock",
+          "label": {
+            "th": "คุมของ คุมเงิน และคุมบัญชีของซุ้ม",
+            "en": "Run the stock, the cash and the booth's accounts"
+          },
+          "maps": {
+            "C": 1.0
+          }
+        },
+        {
+          "value": "look",
+          "label": {
+            "th": "ออกแบบและตกแต่งซุ้มให้สวย",
+            "en": "Design and decorate the booth"
+          },
+          "maps": {
+            "A": 1.0
+          }
+        },
+        {
+          "value": "host",
+          "label": {
+            "th": "ดูแลคนที่เข้ามาและตอบคำถามให้เขา",
+            "en": "Look after visitors and answer their questions"
+          },
+          "maps": {
+            "S": 1.0
+          }
+        }
+      ]
+    },
+    {
+      "id": "FC-RI-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "forced-choice",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "tiebreak",
+      "responseFormat": "pair",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าเลือกได้อย่างเดียว คุณจะเลือกอะไร",
+        "en": "If you could only pick one, which would it be?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "การจับคู่ความพึงปรารถนายังเป็นการตัดสินของทีม ยังไม่ผ่านการให้ผู้เชี่ยวชาญให้คะแนน"
+      ],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "a",
+          "label": {
+            "th": "ประกอบชุดอุปกรณ์ให้ใช้งานได้จริง",
+            "en": "Assemble a piece of equipment so it works"
+          },
+          "maps": {
+            "R": 1.0
+          }
+        },
+        {
+          "value": "b",
+          "label": {
+            "th": "หาว่าทำไมชุดอุปกรณ์นี้ทำงานผิดพลาด",
+            "en": "Work out why that equipment is failing"
+          },
+          "maps": {
+            "I": 1.0
+          }
+        }
+      ],
+      "culturalNote": "ผลข้อนี้ปรับลำดับระหว่างสองมิติที่เสมอกันเท่านั้น ไม่บวกเข้าคะแนนมิติ",
+      "triggers": [
+        {
+          "on": "tie",
+          "dimensions": [
+            "R",
+            "I"
+          ]
+        }
+      ],
+      "desirabilityMatched": true,
+      "desirabilityAxes": [
+        "prestige",
+        "expected-pay",
+        "job-security",
+        "familiarity"
+      ]
+    },
+    {
+      "id": "FC-IA-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "forced-choice",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "tiebreak",
+      "responseFormat": "pair",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าเลือกได้อย่างเดียว คุณจะเลือกอะไร",
+        "en": "If you could only pick one, which would it be?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "การจับคู่ความพึงปรารถนายังเป็นการตัดสินของทีม ยังไม่ผ่านการให้ผู้เชี่ยวชาญให้คะแนน"
+      ],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "a",
+          "label": {
+            "th": "เขียนโปรแกรมให้ระบบทำงานถูกต้อง",
+            "en": "Write the code so the system behaves correctly"
+          },
+          "maps": {
+            "I": 1.0
+          }
+        },
+        {
+          "value": "b",
+          "label": {
+            "th": "ออกแบบหน้าจอให้คนใช้ง่าย",
+            "en": "Design the screen so people find it easy"
+          },
+          "maps": {
+            "A": 1.0
+          }
+        }
+      ],
+      "culturalNote": "ผลข้อนี้ปรับลำดับระหว่างสองมิติที่เสมอกันเท่านั้น ไม่บวกเข้าคะแนนมิติ",
+      "triggers": [
+        {
+          "on": "tie",
+          "dimensions": [
+            "I",
+            "A"
+          ]
+        }
+      ],
+      "desirabilityMatched": true,
+      "desirabilityAxes": [
+        "prestige",
+        "expected-pay",
+        "job-security",
+        "familiarity"
+      ]
+    },
+    {
+      "id": "FC-AS-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "forced-choice",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "tiebreak",
+      "responseFormat": "pair",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าเลือกได้อย่างเดียว คุณจะเลือกอะไร",
+        "en": "If you could only pick one, which would it be?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "การจับคู่ความพึงปรารถนายังเป็นการตัดสินของทีม ยังไม่ผ่านการให้ผู้เชี่ยวชาญให้คะแนน"
+      ],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "a",
+          "label": {
+            "th": "ทำสื่อการสอนให้เข้าใจง่าย",
+            "en": "Make teaching material that is easy to grasp"
+          },
+          "maps": {
+            "A": 1.0
+          }
+        },
+        {
+          "value": "b",
+          "label": {
+            "th": "นั่งอธิบายให้ผู้เรียนฟังเอง",
+            "en": "Sit with the learner and explain it yourself"
+          },
+          "maps": {
+            "S": 1.0
+          }
+        }
+      ],
+      "culturalNote": "ผลข้อนี้ปรับลำดับระหว่างสองมิติที่เสมอกันเท่านั้น ไม่บวกเข้าคะแนนมิติ",
+      "triggers": [
+        {
+          "on": "tie",
+          "dimensions": [
+            "A",
+            "S"
+          ]
+        }
+      ],
+      "desirabilityMatched": true,
+      "desirabilityAxes": [
+        "prestige",
+        "expected-pay",
+        "job-security",
+        "familiarity"
+      ]
+    },
+    {
+      "id": "FC-SE-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "forced-choice",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "tiebreak",
+      "responseFormat": "pair",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าเลือกได้อย่างเดียว คุณจะเลือกอะไร",
+        "en": "If you could only pick one, which would it be?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "การจับคู่ความพึงปรารถนายังเป็นการตัดสินของทีม ยังไม่ผ่านการให้ผู้เชี่ยวชาญให้คะแนน"
+      ],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "a",
+          "label": {
+            "th": "ช่วยเพื่อนในทีมให้ทำงานของตัวเองได้",
+            "en": "Help teammates get their own part done"
+          },
+          "maps": {
+            "S": 1.0
+          }
+        },
+        {
+          "value": "b",
+          "label": {
+            "th": "เป็นคนแบ่งงานและตัดสินใจให้ทีม",
+            "en": "Be the one who splits the work and decides"
+          },
+          "maps": {
+            "E": 1.0
+          }
+        }
+      ],
+      "culturalNote": "ผลข้อนี้ปรับลำดับระหว่างสองมิติที่เสมอกันเท่านั้น ไม่บวกเข้าคะแนนมิติ",
+      "triggers": [
+        {
+          "on": "tie",
+          "dimensions": [
+            "S",
+            "E"
+          ]
+        }
+      ],
+      "desirabilityMatched": true,
+      "desirabilityAxes": [
+        "prestige",
+        "expected-pay",
+        "job-security",
+        "familiarity"
+      ]
+    },
+    {
+      "id": "FC-EC-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "forced-choice",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "tiebreak",
+      "responseFormat": "pair",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าเลือกได้อย่างเดียว คุณจะเลือกอะไร",
+        "en": "If you could only pick one, which would it be?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "การจับคู่ความพึงปรารถนายังเป็นการตัดสินของทีม ยังไม่ผ่านการให้ผู้เชี่ยวชาญให้คะแนน"
+      ],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "a",
+          "label": {
+            "th": "หาลูกค้าใหม่ให้ร้าน",
+            "en": "Find new customers for the shop"
+          },
+          "maps": {
+            "E": 1.0
+          }
+        },
+        {
+          "value": "b",
+          "label": {
+            "th": "ทำให้บัญชีของร้านถูกต้องทุกบาท",
+            "en": "Keep the shop's accounts right to the last baht"
+          },
+          "maps": {
+            "C": 1.0
+          }
+        }
+      ],
+      "culturalNote": "ผลข้อนี้ปรับลำดับระหว่างสองมิติที่เสมอกันเท่านั้น ไม่บวกเข้าคะแนนมิติ",
+      "triggers": [
+        {
+          "on": "tie",
+          "dimensions": [
+            "E",
+            "C"
+          ]
+        }
+      ],
+      "desirabilityMatched": true,
+      "desirabilityAxes": [
+        "prestige",
+        "expected-pay",
+        "job-security",
+        "familiarity"
+      ]
+    },
+    {
+      "id": "FC-CR-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "forced-choice",
+      "level": "L4",
+      "purpose": "validate",
+      "scoring": "tiebreak",
+      "responseFormat": "pair",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้าเลือกได้อย่างเดียว คุณจะเลือกอะไร",
+        "en": "If you could only pick one, which would it be?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "การจับคู่ความพึงปรารถนายังเป็นการตัดสินของทีม ยังไม่ผ่านการให้ผู้เชี่ยวชาญให้คะแนน"
+      ],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "a",
+          "label": {
+            "th": "จัดคลังอุปกรณ์ให้เป็นระบบ",
+            "en": "Get the equipment store organised"
+          },
+          "maps": {
+            "C": 1.0
+          }
+        },
+        {
+          "value": "b",
+          "label": {
+            "th": "ซ่อมอุปกรณ์ในคลังที่ชำรุด",
+            "en": "Repair the broken equipment in that store"
+          },
+          "maps": {
+            "R": 1.0
+          }
+        }
+      ],
+      "culturalNote": "ผลข้อนี้ปรับลำดับระหว่างสองมิติที่เสมอกันเท่านั้น ไม่บวกเข้าคะแนนมิติ",
+      "triggers": [
+        {
+          "on": "tie",
+          "dimensions": [
+            "C",
+            "R"
+          ]
+        }
+      ],
+      "desirabilityMatched": true,
+      "desirabilityAxes": [
+        "prestige",
+        "expected-pay",
+        "job-security",
+        "familiarity"
+      ]
+    },
+    {
+      "id": "INTG-RS-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "integration",
+      "level": "L4",
+      "purpose": "clarify",
+      "scoring": "none",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ใช้เครื่องมือและมือของคุณเอง ช่วยให้คนกลับมาเดินได้",
+        "en": "Use tools and your own hands to help a person walk again."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "help": {
+        "th": "ข้อนี้ไม่ได้วัดว่าคุณชอบด้านไหนมากกว่า แต่ถามว่าสองด้านนั้นอยู่ในงานเดียวกันได้ไหม",
+        "en": "This does not ask which side you prefer, but whether the two can sit in one job."
+      },
+      "culturalNote": "คู่ตรงข้ามที่สูงทั้งคู่ไม่ใช่ความผิดพลาดของการวัด แต่เป็นโปรไฟล์ความสอดคล้องต่ำที่ชี้ไปสาขาบูรณาการ",
+      "triggers": [
+        {
+          "on": "oppositePairHigh",
+          "pair": [
+            "R",
+            "S"
+          ]
+        }
+      ],
+      "integratesPair": [
+        "R",
+        "S"
+      ],
+      "integrativeFields": "กายภาพบำบัด · เวชศาสตร์ฟื้นฟู · วิศวกรรมชีวการแพทย์"
+    },
+    {
+      "id": "INTG-IE-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "integration",
+      "level": "L4",
+      "purpose": "clarify",
+      "scoring": "none",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "อธิบายงานวิจัยยาก ๆ ให้คนที่จะลงทุนเข้าใจว่าทำไมมันคุ้มค่า",
+        "en": "Explain hard research to an investor so they see why it is worth it."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "help": {
+        "th": "ข้อนี้ไม่ได้วัดว่าคุณชอบด้านไหนมากกว่า แต่ถามว่าสองด้านนั้นอยู่ในงานเดียวกันได้ไหม",
+        "en": "This does not ask which side you prefer, but whether the two can sit in one job."
+      },
+      "culturalNote": "คู่ตรงข้ามที่สูงทั้งคู่ไม่ใช่ความผิดพลาดของการวัด แต่เป็นโปรไฟล์ความสอดคล้องต่ำที่ชี้ไปสาขาบูรณาการ",
+      "triggers": [
+        {
+          "on": "oppositePairHigh",
+          "pair": [
+            "I",
+            "E"
+          ]
+        }
+      ],
+      "integratesPair": [
+        "I",
+        "E"
+      ],
+      "integrativeFields": "บริหารงานวิจัยสู่การพาณิชย์ · ที่ปรึกษาเชิงปริมาณ"
+    },
+    {
+      "id": "INTG-AC-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "integration",
+      "level": "L4",
+      "purpose": "clarify",
+      "scoring": "none",
+      "responseFormat": "scale5",
+      "scaleId": "scale5-preference",
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ออกแบบระบบสีและตัวอักษรให้ทุกหน้าของแอปใช้ตรงกันทั้งหมด",
+        "en": "Design a colour and type system so every screen in an app matches."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "help": {
+        "th": "ข้อนี้ไม่ได้วัดว่าคุณชอบด้านไหนมากกว่า แต่ถามว่าสองด้านนั้นอยู่ในงานเดียวกันได้ไหม",
+        "en": "This does not ask which side you prefer, but whether the two can sit in one job."
+      },
+      "culturalNote": "คู่ตรงข้ามที่สูงทั้งคู่ไม่ใช่ความผิดพลาดของการวัด แต่เป็นโปรไฟล์ความสอดคล้องต่ำที่ชี้ไปสาขาบูรณาการ",
+      "triggers": [
+        {
+          "on": "oppositePairHigh",
+          "pair": [
+            "A",
+            "C"
+          ]
+        }
+      ],
+      "integratesPair": [
+        "A",
+        "C"
+      ],
+      "integrativeFields": "design system · UX architecture · BIM"
+    },
+    {
+      "id": "CHK-FACET-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "scenario",
+      "level": "L4",
+      "purpose": "clarify",
+      "scoring": "none",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เมื่อกี้คุณบอกว่าชอบ “{A}” แต่ไม่ชอบ “{B}” ทั้งสองอย่างอยู่ในกลุ่มเดียวกัน อันไหนใกล้กับที่คุณคิดมากกว่า",
+        "en": "Earlier you liked “{A}” but not “{B}”. They belong to the same group. Which is closer to what you meant?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ข้อความมีช่องเติม {A}/{B} ที่ระบบเติมจากข้อที่ผู้เรียนตอบไปแล้ว"
+      ],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "liked-only-a",
+          "label": {
+            "th": "ชอบ “{A}” จริง ส่วน “{B}” ไม่ใช่แนวเลย",
+            "en": "I really do like “{A}”; “{B}” is not for me"
+          },
+          "maps": {},
+          "hypothesis": "facet-specific"
+        },
+        {
+          "value": "misread",
+          "label": {
+            "th": "ชอบทั้งสองอย่าง แต่ “{B}” อธิบายไม่ตรงกับที่ผมเข้าใจ",
+            "en": "I like both; “{B}” was just worded oddly"
+          },
+          "maps": {},
+          "hypothesis": "misread"
+        },
+        {
+          "value": "neither",
+          "label": {
+            "th": "ไม่ชอบทั้งสองอย่าง เมื่อกี้ตอบพลาด",
+            "en": "I like neither; my earlier answer was a slip"
+          },
+          "maps": {},
+          "hypothesis": "correct-earlier"
+        },
+        {
+          "value": "depends",
+          "label": {
+            "th": "ขึ้นกับว่าทำกับใครหรือทำที่ไหน",
+            "en": "It depends who I do it with or where"
+          },
+          "maps": {},
+          "hypothesis": "environment"
+        }
+      ],
+      "triggers": [
+        {
+          "on": "contradiction",
+          "kind": "within-dimension"
+        }
+      ],
+      "slots": [
+        "A",
+        "B"
+      ]
+    },
+    {
+      "id": "CHK-ENV-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "environment",
+      "level": "L4",
+      "purpose": "clarify",
+      "scoring": "none",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "ถ้างานเดิมนี้ แต่เปลี่ยนที่ทำ อันไหนที่คุณยังอยากทำ",
+        "en": "Same work, different setting. Which one would you still want?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "alone",
+          "label": {
+            "th": "ทำคนเดียวเงียบ ๆ",
+            "en": "On my own, quietly"
+          },
+          "maps": {},
+          "hypothesis": "solo"
+        },
+        {
+          "value": "small-team",
+          "label": {
+            "th": "ทำเป็นทีมเล็ก",
+            "en": "In a small team"
+          },
+          "maps": {},
+          "hypothesis": "small-team"
+        },
+        {
+          "value": "crowd",
+          "label": {
+            "th": "ทำที่มีคนเยอะ ๆ ตลอดเวลา",
+            "en": "Around lots of people all the time"
+          },
+          "maps": {},
+          "hypothesis": "public"
+        },
+        {
+          "value": "none",
+          "label": {
+            "th": "ไม่อยากทำเลยไม่ว่าที่ไหน",
+            "en": "I would not want it anywhere"
+          },
+          "maps": {},
+          "hypothesis": "confirms-negative"
+        }
+      ],
+      "triggers": [
+        {
+          "on": "contradiction",
+          "kind": "environment"
+        }
+      ]
+    },
+    {
+      "id": "CHK-REAL-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "scenario",
+      "level": "L4",
+      "purpose": "clarify",
+      "scoring": "none",
+      "responseFormat": "choice",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "สมมติต้องทำ “{A}” จริง ๆ วันเสาร์ ตั้งแต่เช้าถึงบ่าย และไม่มีใครเห็นว่าคุณทำ คุณจะยังอยากทำไหม",
+        "en": "Suppose you actually had to do “{A}” on a Saturday, morning to afternoon, with nobody watching. Would you still want to?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ข้อความมีช่องเติม {A}/{B} ที่ระบบเติมจากข้อที่ผู้เรียนตอบไปแล้ว"
+      ],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "full",
+          "label": {
+            "th": "อยาก ทำได้เต็มวัน",
+            "en": "Yes, all day"
+          },
+          "maps": {},
+          "hypothesis": "durable"
+        },
+        {
+          "value": "short",
+          "label": {
+            "th": "อยาก แต่ไม่นานเท่านั้น",
+            "en": "Yes, but not that long"
+          },
+          "maps": {},
+          "hypothesis": "moderate"
+        },
+        {
+          "value": "watch",
+          "label": {
+            "th": "ไม่อยาก ชอบแค่ฟังคนอื่นทำ",
+            "en": "No, I only like hearing about it"
+          },
+          "maps": {},
+          "hypothesis": "idea-only"
+        }
+      ],
+      "triggers": [
+        {
+          "on": "contradiction",
+          "kind": "format-flip"
+        }
+      ],
+      "slots": [
+        "A"
+      ]
+    },
+    {
+      "id": "VAL-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "values-ranking",
+      "level": "L1",
+      "purpose": "context",
+      "scoring": "none",
+      "responseFormat": "rank3of6",
+      "scaleId": null,
+      "sourceType": "researcher-written",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เลือกสามอย่างที่สำคัญกับคุณที่สุดเวลาคิดถึงงานในอนาคต",
+        "en": "Pick the three things that matter most to you about future work."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "medium",
+      "options": [
+        {
+          "value": "security",
+          "label": {
+            "th": "ความมั่นคงของงาน",
+            "en": "Job security"
+          },
+          "maps": {}
+        },
+        {
+          "value": "income",
+          "label": {
+            "th": "รายได้",
+            "en": "Income"
+          },
+          "maps": {}
+        },
+        {
+          "value": "autonomy",
+          "label": {
+            "th": "ความอิสระในการทำงาน",
+            "en": "Freedom in how I work"
+          },
+          "maps": {}
+        },
+        {
+          "value": "helping",
+          "label": {
+            "th": "การได้ช่วยคนอื่น",
+            "en": "Helping other people"
+          },
+          "maps": {}
+        },
+        {
+          "value": "learning",
+          "label": {
+            "th": "การได้เรียนรู้สิ่งใหม่ตลอด",
+            "en": "Always learning something new"
+          },
+          "maps": {}
+        },
+        {
+          "value": "near-home",
+          "label": {
+            "th": "การได้อยู่ใกล้บ้าน",
+            "en": "Being close to home"
+          },
+          "maps": {}
+        }
+      ],
+      "help": {
+        "th": "คำตอบนี้ไม่ตัดเส้นทางไหนออก ใช้เรียงว่าจะแสดงข้อมูลอะไรก่อน",
+        "en": "This rules nothing out. It orders which information you see first."
+      },
+      "culturalNote": "ค่านิยมของผู้เรียนวัยนี้เปลี่ยนได้ จึงห้ามใช้กรองเส้นทางออก ผู้ที่เลือก “ใกล้บ้าน” ให้แสดงข้อมูลระยะทางและการเดินทางเด่นขึ้น"
+    },
+    {
+      "id": "OPN-01",
+      "dimension": null,
+      "facet": null,
+      "probeType": "open-text",
+      "level": "L1",
+      "purpose": "explore",
+      "scoring": "none",
+      "responseFormat": "text",
+      "scaleId": null,
+      "sourceType": "exploratory",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "เล่าเรื่องอะไรก็ได้ที่คุณทำแล้วรู้สึกภูมิใจ ไม่จำเป็นต้องเกี่ยวกับเรื่องเรียน",
+        "en": "Tell us about anything you have done that you felt proud of. It does not have to be schoolwork."
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [
+        "ต้องส่งข้อความดิบให้ครูแนะแนวโดยไม่สรุปแทน"
+      ],
+      "diagnosticStrength": "low",
+      "help": {
+        "th": "ข้ามได้ ถ้าไม่อยากเล่า",
+        "en": "You can skip this."
+      },
+      "culturalNote": "ข้อความนี้ไม่ให้คะแนนและไม่ให้โมเดลภาษาตัดสิน ระบบจับเฉพาะคำที่อยู่ในพจนานุกรม facet ที่กำหนดไว้ล่วงหน้า ถ้าไม่พบก็ไม่เดา"
+    },
+    {
+      "id": "OPN-02",
+      "dimension": null,
+      "facet": null,
+      "probeType": "open-text",
+      "level": "L5",
+      "purpose": "explore",
+      "scoring": "none",
+      "responseFormat": "text",
+      "scaleId": null,
+      "sourceType": "exploratory",
+      "sourceRef": null,
+      "licence": "project",
+      "validationStatus": "none",
+      "psychometrics": null,
+      "text": {
+        "th": "มีอะไรที่คุณอยากลองแต่ยังไม่มีโอกาสได้ลองไหม",
+        "en": "Is there anything you want to try but have not had the chance to?"
+      },
+      "tierScope": [
+        "LOWER_SECONDARY",
+        "UPPER_SECONDARY",
+        "VOCATIONAL"
+      ],
+      "readingLevel": "m1",
+      "sensitivity": "none",
+      "reviewFlags": [],
+      "diagnosticStrength": "low",
+      "help": {
+        "th": "ข้ามได้",
+        "en": "You can skip this."
+      },
+      "culturalNote": "คำตอบข้อนี้เป็นทริกเกอร์เปิดสาขาที่ปิดไปแล้วกลับมาได้"
+    }
+  ]
+}

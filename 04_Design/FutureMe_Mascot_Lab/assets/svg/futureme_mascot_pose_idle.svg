@@ -1,0 +1,287 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 320 380" class="fm-mascot " data-emotion="smile" data-pose="idle" data-view="front" data-crop="full" role="img" aria-label="FutureMe mascot — Idle"><style><![CDATA[
+.fm-mascot {
+  display: block;
+  width: 100%;
+  height: auto;
+  
+  overflow: visible;
+  
+  --fm-ease: cubic-bezier(0.34, 1.28, 0.5, 1);
+}
+
+.fm-mascot[data-crop="face"] { overflow: hidden; }
+
+.fm-mascot * {
+  transform-box: view-box;
+}
+
+.fm-eye-shape,
+.fm-brow-shape,
+.fm-mouth-shape,
+.fm-hand-point,
+.fm-thought,
+.fm-listen,
+.fm-sparkles,
+.fm-side-pod {
+  display: none;
+}
+
+.fm-eye-shape--open { display: block; }
+
+.fm-mascot[data-emotion="dislike"]    .fm-eye-shape--open { display: none; }
+.fm-mascot[data-emotion="dislike"]    .fm-eye-shape--narrow { display: block; }
+.fm-mascot[data-emotion="dislike"]    .fm-brow-shape--cross { display: block; }
+.fm-mascot[data-emotion="dislike"]    .fm-mouth-shape--dislike { display: block; }
+
+.fm-mascot[data-emotion="not-okay"]   .fm-eye-shape--open { display: none; }
+.fm-mascot[data-emotion="not-okay"]   .fm-eye-shape--wobble { display: block; }
+.fm-mascot[data-emotion="not-okay"]   .fm-brow-shape--worry { display: block; }
+.fm-mascot[data-emotion="not-okay"]   .fm-mouth-shape--not-okay { display: block; }
+
+.fm-mascot[data-emotion="neutral"]    .fm-mouth-shape--neutral { display: block; }
+.fm-mascot[data-emotion="smile"]      .fm-mouth-shape--smile { display: block; }
+
+.fm-mascot[data-emotion="very-happy"] .fm-eye-shape--open { display: none; }
+.fm-mascot[data-emotion="very-happy"] .fm-eye-shape--happy { display: block; }
+.fm-mascot[data-emotion="very-happy"] .fm-mouth-shape--very-happy { display: block; }
+
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--open,
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--narrow,
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--wobble { display: none; }
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--blink { display: block; }
+
+.fm-cheeks { transition: opacity 0.3s ease; }
+.fm-mascot[data-emotion="dislike"]    .fm-cheeks { opacity: 0.7; }
+.fm-mascot[data-emotion="not-okay"]   .fm-cheeks { opacity: 0.55; }
+.fm-mascot[data-emotion="neutral"]    .fm-cheeks { opacity: 0.75; }
+.fm-mascot[data-emotion="smile"]      .fm-cheeks { opacity: 1; }
+.fm-mascot[data-emotion="very-happy"] .fm-cheeks { opacity: 1; }
+
+.fm-heart-glow { transition: opacity 0.4s ease; }
+.fm-mascot[data-emotion="dislike"]  .fm-heart-glow { opacity: 0.35; }
+.fm-mascot[data-emotion="not-okay"] .fm-heart-glow { opacity: 0.55; }
+
+.fm-ear-glow { transition: opacity 0.4s ease; }
+.fm-mascot[data-emotion="dislike"]  .fm-ear-glow,
+.fm-mascot[data-emotion="not-okay"] .fm-ear-glow { opacity: 0.12; }
+
+.fm-eyes {
+  transform: translate(var(--fm-look-x, 0px), var(--fm-look-y, 0px));
+  transition: transform 0.35s ease;
+}
+
+.fm-head {
+  transform-origin: 160px 218px;
+  transform: rotate(var(--fm-head-tilt, 0deg));
+  transition: transform 0.5s var(--fm-ease);
+}
+
+.fm-body,
+.fm-breathe {
+  transform-origin: 160px 350px;
+}
+
+.fm-body { transition: transform 0.5s var(--fm-ease); }
+
+.fm-arm-limb,
+.fm-leg-limb {
+  transform-origin: 0px 0px;
+  transition: transform 0.45s var(--fm-ease);
+}
+
+.fm-ground {
+  transform-origin: 160px 354px;
+  transition: transform 0.5s var(--fm-ease), opacity 0.5s ease;
+}
+
+@keyframes fm-breathe {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  50%      { transform: translateY(-3px) scale(1.012, 0.99); }
+}
+
+@keyframes fm-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes fm-wave-arm {
+  0%, 100% { transform: rotate(136deg); }
+  50%      { transform: rotate(162deg); }
+}
+
+@keyframes fm-think-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-2px) rotate(-1.2deg); }
+}
+
+@keyframes fm-celebrate {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  35%      { transform: translateY(-16px) scale(0.98, 1.03); }
+  70%      { transform: translateY(0) scale(1.04, 0.96); }
+}
+
+@keyframes fm-jump {
+  0%, 100% { transform: translateY(0) scale(1.05, 0.94); }
+  30%      { transform: translateY(-34px) scale(0.96, 1.06); }
+  60%      { transform: translateY(-30px) scale(1, 1); }
+}
+
+@keyframes fm-jump-shadow {
+  0%, 100% { transform: scale(1, 1); opacity: 0.16; }
+  40%      { transform: scale(0.6, 0.6); opacity: 0.07; }
+}
+
+@keyframes fm-heart-pulse {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes fm-compass-drift {
+  0%, 100% { transform: rotate(-9deg); }
+  50%      { transform: rotate(9deg); }
+}
+
+@keyframes fm-thought-pop {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  45%      { opacity: 0.9; transform: scale(1); }
+}
+
+@keyframes fm-listen-ping {
+  0%   { opacity: 0.5; transform: scale(0.6); }
+  100% { opacity: 0;   transform: scale(1.5); }
+}
+
+@keyframes fm-sparkle-pop {
+  0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  40%      { opacity: 1; transform: scale(1) rotate(35deg); }
+}
+
+.fm-breathe { animation: fm-breathe 3.6s ease-in-out infinite; }
+.fm-root    { animation: fm-float 5s ease-in-out infinite; }
+
+.fm-heart-glow {
+  transform-origin: 160px 266px;
+  animation: fm-heart-pulse 2.8s ease-in-out infinite;
+}
+
+.fm-needle-spin {
+  transform-origin: 0px 0px; 
+  animation: fm-compass-drift 7s ease-in-out infinite;
+}
+
+.fm-mascot[data-pose="wave"] .fm-arm--left {
+  transform: translate(-14px, -8px);
+}
+.fm-mascot[data-pose="wave"] .fm-arm--left .fm-arm-limb {
+  animation: fm-wave-arm 1.1s ease-in-out infinite;
+}
+
+.fm-mascot[data-pose="think"] {
+  --fm-head-tilt: -5deg;
+  --fm-look-x: 3px;
+  --fm-look-y: -4px;
+}
+.fm-mascot[data-pose="think"] .fm-arm--left .fm-arm-limb { transform: rotate(-100deg); }
+.fm-mascot[data-pose="think"] .fm-breathe { animation: fm-think-bob 3.2s ease-in-out infinite; }
+.fm-mascot[data-pose="think"] .fm-thought { display: block; }
+.fm-thought-dot {
+  fill: #7CE9FA;
+  opacity: 0.15;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fm-thought-pop 1.8s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.22s);
+}
+
+.fm-mascot[data-pose="listen"] {
+  --fm-head-tilt: 5deg;
+  --fm-look-x: 3px;
+}
+.fm-mascot[data-pose="listen"] .fm-arm--left .fm-arm-limb  { transform: rotate(-12deg); }
+.fm-mascot[data-pose="listen"] .fm-arm--right .fm-arm-limb { transform: rotate(12deg); }
+.fm-mascot[data-pose="listen"] .fm-listen { display: block; }
+.fm-listen-ring {
+  fill: none;
+  stroke: #FF6FD1;
+  stroke-width: 4;
+  transform-origin: 272px 158px;
+  animation: fm-listen-ping 1.8s ease-out infinite;
+  animation-delay: calc(var(--i) * 0.9s);
+}
+
+.fm-mascot[data-pose="point-left"] { --fm-look-x: -5px; --fm-head-tilt: -3deg; }
+.fm-mascot[data-pose="point-left"] .fm-arm--left .fm-arm-limb { transform: rotate(104deg); }
+.fm-mascot[data-pose="point-left"] .fm-arm--left .fm-hand-point { display: block; }
+
+.fm-mascot[data-pose="point-right"] { --fm-look-x: 5px; --fm-head-tilt: 3deg; }
+.fm-mascot[data-pose="point-right"] .fm-arm--right .fm-arm-limb { transform: rotate(-104deg); }
+.fm-mascot[data-pose="point-right"] .fm-arm--right .fm-hand-point { display: block; }
+
+.fm-mascot[data-pose="celebrate"] .fm-arm--left  { transform: translate(-14px, -6px); }
+.fm-mascot[data-pose="celebrate"] .fm-arm--right { transform: translate(14px, -6px); }
+.fm-mascot[data-pose="celebrate"] .fm-arm--left .fm-arm-limb  { transform: rotate(146deg); }
+.fm-mascot[data-pose="celebrate"] .fm-arm--right .fm-arm-limb { transform: rotate(-146deg); }
+.fm-mascot[data-pose="celebrate"] .fm-breathe { animation: fm-celebrate 1.4s ease-in-out infinite; }
+.fm-mascot[data-pose="celebrate"] .fm-sparkles { display: block; }
+.fm-sparkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fm-sparkle-pop 1.6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.18s);
+}
+
+.fm-mascot[data-pose="jump"] .fm-arm--left  { transform: translate(-12px, -4px); }
+.fm-mascot[data-pose="jump"] .fm-arm--right { transform: translate(12px, -4px); }
+.fm-mascot[data-pose="jump"] .fm-arm--left .fm-arm-limb  { transform: rotate(118deg); }
+.fm-mascot[data-pose="jump"] .fm-arm--right .fm-arm-limb { transform: rotate(-118deg); }
+.fm-mascot[data-pose="jump"] .fm-leg--left .fm-leg-limb  { transform: rotate(-18deg); }
+.fm-mascot[data-pose="jump"] .fm-leg--right .fm-leg-limb { transform: rotate(18deg); }
+.fm-mascot[data-pose="jump"] .fm-breathe { animation: fm-jump 1.5s cubic-bezier(0.3, 0, 0.3, 1) infinite; }
+.fm-mascot[data-pose="jump"] .fm-ground  { animation: fm-jump-shadow 1.5s cubic-bezier(0.3, 0, 0.3, 1) infinite; }
+
+.fm-mascot[data-pose="sit"] .fm-body { transform: translateY(22px); }
+.fm-mascot[data-pose="sit"] .fm-leg--left .fm-leg-limb  { transform: rotate(-34deg) scaleY(0.48); }
+.fm-mascot[data-pose="sit"] .fm-leg--right .fm-leg-limb { transform: rotate(34deg) scaleY(0.48); }
+.fm-mascot[data-pose="sit"] .fm-arm--left .fm-arm-limb  { transform: rotate(-14deg); }
+.fm-mascot[data-pose="sit"] .fm-arm--right .fm-arm-limb { transform: rotate(14deg); }
+.fm-mascot[data-pose="sit"] .fm-ground { transform: translateY(4px) scale(1.14, 0.8); }
+
+.fm-face, .fm-helmet, .fm-torso, .fm-ear, .fm-compass, .fm-arm, .fm-leg {
+  transition: transform 0.5s var(--fm-ease), opacity 0.4s ease;
+}
+
+.fm-mascot[data-view="three-quarter"] .fm-face { transform-origin: 160px 158px; transform: translateX(-13px) scaleX(0.93); }
+.fm-mascot[data-view="three-quarter"] .fm-compass { transform-origin: 160px 54px; transform: translateX(-9px); }
+.fm-mascot[data-view="three-quarter"] .fm-ear--left  { transform-origin: 48px 158px; transform: translateX(9px) scaleX(0.6); }
+.fm-mascot[data-view="three-quarter"] .fm-ear--right { transform-origin: 272px 158px; transform: translateX(6px) scale(1.08); }
+.fm-mascot[data-view="three-quarter"] .fm-torso { transform-origin: 160px 262px; transform: translateX(-4px); }
+.fm-mascot[data-view="three-quarter"] .fm-arm--left { transform-origin: 94px 262px; transform: translateX(14px) scaleX(0.8); }
+
+.fm-mascot[data-view="side"] .fm-helmet { transform-origin: 160px 150px; transform: scaleX(0.8); }
+.fm-mascot[data-view="side"] .fm-face { transform-origin: 160px 158px; transform: translateX(-32px) scaleX(0.46); }
+.fm-mascot[data-view="side"] .fm-eye--right,
+.fm-mascot[data-view="side"] .fm-brow--right { opacity: 0; }
+.fm-mascot[data-view="side"] .fm-torso { transform-origin: 160px 262px; transform: scaleX(0.76); }
+.fm-mascot[data-view="side"] .fm-heart { transform-origin: 160px 266px; transform: translateX(-24px) scaleX(0.55); }
+
+.fm-mascot[data-view="side"] .fm-ear { opacity: 0; }
+.fm-mascot[data-view="side"] .fm-side-pod { display: block; }
+.fm-mascot[data-view="side"] .fm-arm--left { opacity: 0; }
+.fm-mascot[data-view="side"] .fm-arm--right { transform-origin: 226px 232px; transform: translateX(-64px); }
+.fm-mascot[data-view="side"] .fm-leg--left { opacity: 0.45; transform-origin: 142px 300px; transform: translateX(12px); }
+.fm-mascot[data-view="side"] .fm-leg--right { transform-origin: 178px 300px; transform: translateX(-14px); }
+.fm-mascot[data-view="side"] .fm-compass { transform-origin: 160px 54px; transform: scaleX(0.45); }
+.fm-mascot[data-view="side"] .fm-ground { transform: scale(0.62, 1); }
+
+.fm-mascot[data-view="back"] .fm-face,
+.fm-mascot[data-view="back"] .fm-heart,
+.fm-mascot[data-view="back"] .fm-helmet-rim,
+.fm-mascot[data-view="back"] .fm-compass-needle { opacity: 0; }
+.fm-mascot[data-view="back"] .fm-helmet-spec { opacity: 0.16; }
+
+@media (prefers-reduced-motion: reduce) {
+  .fm-mascot * { animation: none !important; transition-duration: 0.01ms !important; }
+}
+
+]]></style>
+<defs><linearGradient id="fmHelmetx" x1="0.34" y1="0" x2="0.5" y2="1"><stop offset="0%" stop-color="#8C68F4"/><stop offset="28%" stop-color="#6E85F7"/><stop offset="60%" stop-color="#59CDFA"/><stop offset="88%" stop-color="#DDFDFF"/><stop offset="100%" stop-color="#FFFFFF"/></linearGradient><linearGradient id="fmScreenx" x1="0.3" y1="0" x2="0.7" y2="1"><stop offset="0%" stop-color="#5060BE"/><stop offset="100%" stop-color="#4453B0"/></linearGradient><radialGradient id="fmTorsox" cx="0.5" cy="0.44" r="0.8"><stop offset="0%" stop-color="#FFFFFF"/><stop offset="30%" stop-color="#CBF4FF"/><stop offset="58%" stop-color="#93CCFB"/><stop offset="82%" stop-color="#93A8F7"/><stop offset="100%" stop-color="#A484F5"/></radialGradient><linearGradient id="fmLimbx" x1="0.15" y1="0" x2="0.85" y2="1"><stop offset="0%" stop-color="#B9A6FC"/><stop offset="38%" stop-color="#9B82F8"/><stop offset="100%" stop-color="#7358E8"/></linearGradient><linearGradient id="fmEarLx" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8FF2FF"/><stop offset="100%" stop-color="#55C5F5"/></linearGradient><radialGradient id="fmEarRx" cx="0.4" cy="0.4" r="0.7"><stop offset="0%" stop-color="#FFE2F7"/><stop offset="55%" stop-color="#FF8FDC"/><stop offset="100%" stop-color="#D95BBE"/></radialGradient><radialGradient id="fmHeartx" cx="0.38" cy="0.3" r="0.8"><stop offset="0%" stop-color="#FFD6EF"/><stop offset="45%" stop-color="#FF8AD4"/><stop offset="100%" stop-color="#FF56B4"/></radialGradient><radialGradient id="fmHeartGlowx" cx="0.5" cy="0.5" r="0.5"><stop offset="0%" stop-color="#FF5FBE" stop-opacity="0.55"/><stop offset="60%" stop-color="#FF5FBE" stop-opacity="0.16"/><stop offset="100%" stop-color="#FF5FBE" stop-opacity="0"/></radialGradient><linearGradient id="fmCompassRimx" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#8FF0FB"/><stop offset="100%" stop-color="#CE85F4"/></linearGradient><filter id="fmSoftGlowx" x="-45%" y="-45%" width="190%" height="190%"><feGaussianBlur stdDeviation="7"/></filter><clipPath id="fmScreenClipx"><rect x="84" y="112" width="152" height="92" rx="34"/></clipPath></defs><g class="fm-root"><ellipse class="fm-ground" cx="160" cy="354" rx="68" ry="10" fill="#3743D6" opacity="0.16"/><g class="fm-body"><g class="fm-breathe"><g class="fm-leg fm-leg--left"><g class="fm-leg-place" transform="translate(142 300)"><g class="fm-leg-limb"><rect x="-16.5" y="0" width="33" height="50" rx="16.5" fill="url(#fmLimbx)" stroke="#3743D6" stroke-width="4.5"/><ellipse cx="-4" cy="18" rx="4" ry="8" fill="#FFFFFF" opacity="0.28"/></g></g></g><g class="fm-leg fm-leg--right"><g class="fm-leg-place" transform="translate(178 300)"><g class="fm-leg-limb"><rect x="-16.5" y="0" width="33" height="50" rx="16.5" fill="url(#fmLimbx)" stroke="#3743D6" stroke-width="4.5"/><ellipse cx="-4" cy="18" rx="4" ry="8" fill="#FFFFFF" opacity="0.28"/></g></g></g><g class="fm-torso"><path d="M 160,206 C 196,206 215,224 219,258 C 223,294 205,320 160,320 C 115,320 97,294 101,258 C 105,224 124,206 160,206 Z" fill="url(#fmTorsox)" stroke="#3743D6" stroke-width="5"/><ellipse cx="118" cy="248" rx="7" ry="14" fill="#FFFFFF" opacity="0.3" transform="rotate(-12 118 248)"/><ellipse cx="203" cy="248" rx="7" ry="13" fill="#FFFFFF" opacity="0.26" transform="rotate(12 203 248)"/><g class="fm-heart"><circle class="fm-heart-glow" cx="160" cy="266" r="56" fill="url(#fmHeartGlowx)"/><path d="M 0,17 C -12,7 -26,-2 -26,-14 C -26,-24 -18,-30 -10,-30 C -4,-30 -1,-26 0,-23 C 1,-26 4,-30 10,-30 C 18,-30 26,-24 26,-14 C 26,-2 12,7 0,17 Z" transform="translate(160 266) scale(1.000)" fill="url(#fmHeartx)"/><ellipse cx="167" cy="256" rx="7" ry="6" fill="#FFFFFF" opacity="0.85"/><circle class="fm-heart-spark" cx="134" cy="272" r="3" fill="#FFFFFF" opacity="0.7"/><circle class="fm-heart-spark" cx="187" cy="250" r="2.4" fill="#FFFFFF" opacity="0.6"/></g></g><g class="fm-listen" aria-hidden="true"><circle class="fm-listen-ring" style="--i:0" cx="272" cy="158" r="26"/><circle class="fm-listen-ring" style="--i:1" cx="272" cy="158" r="26"/></g><g class="fm-head"><g class="fm-ear fm-ear--left"><ellipse cx="48" cy="158" rx="18" ry="23" fill="url(#fmEarLx)" stroke="#3743D6" stroke-width="4.5"/><ellipse cx="45" cy="152" rx="5" ry="8" fill="#FFFFFF" opacity="0.5"/></g><g class="fm-ear fm-ear--right"><ellipse class="fm-ear-glow" cx="272" cy="158" rx="26" ry="31" fill="#FF8FDC" opacity="0.4" filter="url(#fmSoftGlowx)"/><ellipse cx="272" cy="158" rx="18" ry="23" fill="url(#fmEarRx)" stroke="#3743D6" stroke-width="4.5"/><ellipse cx="268" cy="152" rx="5" ry="7" fill="#FFFFFF" opacity="0.55"/></g><g class="fm-compass"><rect class="fm-compass-stem" x="153" y="68" width="14" height="26" rx="6" fill="url(#fmLimbx)" stroke="#3743D6" stroke-width="4"/><g class="fm-compass-dial"><circle cx="160" cy="54" r="30" fill="url(#fmCompassRimx)" stroke="#3743D6" stroke-width="4.5"/><circle cx="160" cy="54" r="24" fill="#1B2560"/><g stroke="#BFF3FF" stroke-width="2.4" stroke-linecap="round" opacity="0.85"><path d="M 160,33 v 5"/><path d="M 160,70 v 5"/><path d="M 139,54 h 5"/><path d="M 176,54 h 5"/></g><g class="fm-compass-needle" transform="translate(160 54)"><g class="fm-needle-spin"><g transform="rotate(42)"><path d="M 0,-18 L 6.5,0 L 0,4 L -6.5,0 Z" fill="#FF6FB4"/><path d="M 0,18 L 6.5,0 L 0,-4 L -6.5,0 Z" fill="#BFF3FF"/><path d="M 0,-18 L 6.5,0 L 0,4 Z" fill="#FFFFFF" opacity="0.28"/></g></g><circle r="3.4" fill="#1B2560" stroke="#FFFFFF" stroke-width="1.6"/></g></g></g><g class="fm-helmet"><path d="M 52,150 C 52,100 100,76 160,76 C 220,76 268,100 268,150 L 268,176 C 268,206 248,218 214,218 L 106,218 C 72,218 52,206 52,176 Z" fill="url(#fmHelmetx)" stroke="#3743D6" stroke-width="5"/><path class="fm-helmet-rim" d="M 58,182 C 62,208 84,216 106,216 L 214,216 C 236,216 258,208 262,182" fill="none" stroke="#DDFDFF" stroke-width="7" stroke-linecap="round" opacity="0.75"/><ellipse class="fm-helmet-spec" cx="212" cy="104" rx="13" ry="9" fill="#FFFFFF" opacity="0.42" transform="rotate(-24 212 104)"/><ellipse class="fm-helmet-spec" cx="234" cy="122" rx="7" ry="5" fill="#FFFFFF" opacity="0.3" transform="rotate(-24 234 122)"/></g><g class="fm-side-pod"><circle cx="196" cy="158" r="21" fill="url(#fmEarRx)" stroke="#3743D6" stroke-width="4.5"/><ellipse cx="190" cy="151" rx="6" ry="5" fill="#FFFFFF" opacity="0.55"/></g><g class="fm-face"><rect class="fm-screen" x="84" y="112" width="152" height="92" rx="34" fill="url(#fmScreenx)" stroke="#DDFDFF" stroke-width="3" stroke-opacity="0.4"/><g clip-path="url(#fmScreenClipx)"><g class="fm-cheeks"><ellipse cx="99" cy="180" rx="13" ry="8" fill="#FF9ACB" opacity="0.8"/><ellipse cx="221" cy="180" rx="13" ry="8" fill="#FF9ACB" opacity="0.8"/></g><g class="fm-eyes"><g class="fm-brow fm-brow--left" transform="translate(124 122) scale(1 1)"><path class="fm-brow-shape fm-brow-shape--cross" d="M -15,-4 L 13,7" stroke="#111845" stroke-width="5" stroke-linecap="round" fill="none"/><path class="fm-brow-shape fm-brow-shape--worry" d="M -15,4 Q -4,-4 12,0" stroke="#111845" stroke-width="4.4" stroke-linecap="round" fill="none"/></g><g class="fm-brow fm-brow--right" transform="translate(196 122) scale(-1 1)"><path class="fm-brow-shape fm-brow-shape--cross" d="M -15,-4 L 13,7" stroke="#111845" stroke-width="5" stroke-linecap="round" fill="none"/><path class="fm-brow-shape fm-brow-shape--worry" d="M -15,4 Q -4,-4 12,0" stroke="#111845" stroke-width="4.4" stroke-linecap="round" fill="none"/></g><g class="fm-eye fm-eye--left" transform="translate(124 152)"><g class="fm-eye-shape fm-eye-shape--open"><ellipse rx="17" ry="21" fill="#111845"/><circle cx="5.0" cy="-8" r="5.2" fill="#FFFFFF"/><circle cx="-5.5" cy="7" r="2.4" fill="#FFFFFF" opacity="0.75"/></g><g class="fm-eye-shape fm-eye-shape--narrow"><ellipse rx="17" ry="17" fill="#111845"/><circle cx="5.0" cy="-6" r="4.6" fill="#FFFFFF"/></g><g class="fm-eye-shape fm-eye-shape--wobble"><ellipse rx="15" ry="20" fill="#111845"/><circle cx="5.0" cy="-9" r="4.4" fill="#FFFFFF"/><circle cx="-6.0" cy="6" r="3.2" fill="#FFFFFF" opacity="0.8"/></g><path class="fm-eye-shape fm-eye-shape--happy" d="M -15,5 Q 0,-14 15,5" fill="none" stroke="#111845" stroke-width="5.5" stroke-linecap="round"/><path class="fm-eye-shape fm-eye-shape--blink" d="M -14,0 Q 0,7 14,0" fill="none" stroke="#111845" stroke-width="5" stroke-linecap="round"/></g><g class="fm-eye fm-eye--right" transform="translate(196 152)"><g class="fm-eye-shape fm-eye-shape--open"><ellipse rx="17" ry="21" fill="#111845"/><circle cx="-5.0" cy="-8" r="5.2" fill="#FFFFFF"/><circle cx="5.5" cy="7" r="2.4" fill="#FFFFFF" opacity="0.75"/></g><g class="fm-eye-shape fm-eye-shape--narrow"><ellipse rx="17" ry="17" fill="#111845"/><circle cx="-5.0" cy="-6" r="4.6" fill="#FFFFFF"/></g><g class="fm-eye-shape fm-eye-shape--wobble"><ellipse rx="15" ry="20" fill="#111845"/><circle cx="-5.0" cy="-9" r="4.4" fill="#FFFFFF"/><circle cx="6.0" cy="6" r="3.2" fill="#FFFFFF" opacity="0.8"/></g><path class="fm-eye-shape fm-eye-shape--happy" d="M -15,5 Q 0,-14 15,5" fill="none" stroke="#111845" stroke-width="5.5" stroke-linecap="round"/><path class="fm-eye-shape fm-eye-shape--blink" d="M -14,0 Q 0,7 14,0" fill="none" stroke="#111845" stroke-width="5" stroke-linecap="round"/></g></g><g class="fm-mouth" transform="translate(160 180)"><path class="fm-mouth-shape fm-mouth-shape--dislike" d="M -13,5 Q 0,-8 13,5" stroke-width="5" fill="none" stroke="#111845" stroke-linecap="round" stroke-linejoin="round"/><path class="fm-mouth-shape fm-mouth-shape--not-okay" d="M -13,1 q 4.3,-6 8.6,0 t 8.6,0 t 8.6,0" stroke-width="4.4" fill="none" stroke="#111845" stroke-linecap="round" stroke-linejoin="round"/><path class="fm-mouth-shape fm-mouth-shape--neutral" d="M -10,0 L 10,0" stroke-width="5" fill="none" stroke="#111845" stroke-linecap="round" stroke-linejoin="round"/><path class="fm-mouth-shape fm-mouth-shape--smile" d="M -13,-4 Q 0,9 13,-4" stroke-width="5" fill="none" stroke="#111845" stroke-linecap="round" stroke-linejoin="round"/><g class="fm-mouth-shape fm-mouth-shape--very-happy"><path d="M -20,-7 Q 0,-12 20,-7 Q 20,17 0,17 Q -20,17 -20,-7 Z" fill="#111845"/><path d="M -10,10 Q 0,3 10,10 Q 10,17 0,17 Q -10,17 -10,10 Z" fill="#FF74BE"/></g></g></g></g></g><g class="fm-arm fm-arm--left"><g class="fm-arm-place" transform="translate(94 232)"><g class="fm-arm-limb"><ellipse cx="0" cy="30" rx="18" ry="33" fill="url(#fmLimbx)" stroke="#3743D6" stroke-width="4.5"/><ellipse cx="-5" cy="17" rx="4.5" ry="10" fill="#FFFFFF" opacity="0.35"/><g class="fm-hand-point" transform="translate(-11 55) scale(1 1)"><path d="M -18,-7 q -9,5 -9,10 q 0,7 10,7 l 14,0 q 8,0 8,-8 q 0,-8 -8,-8 z" fill="url(#fmLimbx)" stroke="#3743D6" stroke-width="4.5" stroke-linejoin="round"/></g></g></g></g><g class="fm-arm fm-arm--right"><g class="fm-arm-place" transform="translate(226 232)"><g class="fm-arm-limb"><ellipse cx="0" cy="30" rx="18" ry="33" fill="url(#fmLimbx)" stroke="#3743D6" stroke-width="4.5"/><ellipse cx="5" cy="17" rx="4.5" ry="10" fill="#FFFFFF" opacity="0.35"/><g class="fm-hand-point" transform="translate(11 55) scale(-1 1)"><path d="M -18,-7 q -9,5 -9,10 q 0,7 10,7 l 14,0 q 8,0 8,-8 q 0,-8 -8,-8 z" fill="url(#fmLimbx)" stroke="#3743D6" stroke-width="4.5" stroke-linejoin="round"/></g></g></g></g><g class="fm-thought" aria-hidden="true"><circle class="fm-thought-dot" style="--i:0" cx="272" cy="126" r="5"/><circle class="fm-thought-dot" style="--i:1" cx="288" cy="106" r="7"/><circle class="fm-thought-dot" style="--i:2" cx="300" cy="82" r="9"/></g><g class="fm-sparkles" aria-hidden="true"><g transform="translate(70 132)"><path class="fm-sparkle" style="--i:0" d="M 0,-7 Q 1.4,-1.4 7,0 Q 1.4,1.4 0,7 Q -1.4,1.4 -7,0 Q -1.4,-1.4 0,-7 Z" fill="#7CE9FA"/></g><g transform="translate(252 118)"><path class="fm-sparkle" style="--i:1" d="M 0,-6 Q 1.4,-1.4 6,0 Q 1.4,1.4 0,6 Q -1.4,1.4 -6,0 Q -1.4,-1.4 0,-6 Z" fill="#7CE9FA"/></g><g transform="translate(46 208)"><path class="fm-sparkle" style="--i:2" d="M 0,-5 Q 1.4,-1.4 5,0 Q 1.4,1.4 0,5 Q -1.4,1.4 -5,0 Q -1.4,-1.4 0,-5 Z" fill="#7CE9FA"/></g><g transform="translate(276 200)"><path class="fm-sparkle" style="--i:3" d="M 0,-6 Q 1.4,-1.4 6,0 Q 1.4,1.4 0,6 Q -1.4,1.4 -6,0 Q -1.4,-1.4 0,-6 Z" fill="#7CE9FA"/></g><g transform="translate(96 76)"><path class="fm-sparkle" style="--i:4" d="M 0,-5 Q 1.4,-1.4 5,0 Q 1.4,1.4 0,5 Q -1.4,1.4 -5,0 Q -1.4,-1.4 0,-5 Z" fill="#7CE9FA"/></g><g transform="translate(232 62)"><path class="fm-sparkle" style="--i:5" d="M 0,-5 Q 1.4,-1.4 5,0 Q 1.4,1.4 0,5 Q -1.4,1.4 -5,0 Q -1.4,-1.4 0,-5 Z" fill="#7CE9FA"/></g></g></g></g></g></svg>

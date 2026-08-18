@@ -1,0 +1,2513 @@
+{
+ "summary": {
+  "iso": "TH-41",
+  "province_th": "อุดรธานี",
+  "province_en": "Udon Thani",
+  "options_total": 85,
+  "in_province": 36,
+  "within_30km": 17,
+  "offers_vocational": 77,
+  "offers_degree": 8,
+  "distance_unknown": 5
+ },
+ "origin": {
+  "lat": 17.4253,
+  "lon": 102.7902,
+  "kind": "provincial_capital",
+  "note": "จุดอ้างอิงคืออำเภอเมืองของจังหวัด ไม่ใช่บ้านของผู้เรียน ระยะจริงจากบ้านต่างจากนี้ได้มาก"
+ },
+ "options": [
+  {
+   "id": "ovec-pub-1341016101",
+   "name_th": "วิทยาลัยเทคนิคอุดรธานี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 1.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 3,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "รถไฟ",
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอุดรธานี",
+    "name_en": "Udon Thani Railway Station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 2.2
+   },
+   "phone": "42221538",
+   "website": "http://www.udontech.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1341016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาอุดรธานี",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 3.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 5,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอุดรธานี",
+    "name_en": "Udon Thani Railway Station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 2.8
+   },
+   "phone": "42246690",
+   "website": "http://www.udvc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100052",
+   "name_th": "วิทยาลัยเทคโนโลยีพิชญบัณฑิต 2",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 3.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 4,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "42930658",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1341016501",
+   "name_th": "วิทยาลัยสารพัดช่างอุดรธานี",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 3.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 6,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอุดรธานี",
+    "name_en": "Udon Thani Railway Station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 2.0
+   },
+   "phone": "42221170",
+   "website": "http://www.uptech.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100034",
+   "name_th": "วิทยาลัยเทคโนโลยีโปลีเทคนิคอุดรธานี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 3.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 5,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอุดรธานี",
+    "name_en": "Udon Thani Railway Station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 2.1
+   },
+   "phone": "42242386",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-16900-TH-41",
+   "name_th": "มหาวิทยาลัยราชภัฏอุดรธานี",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 4.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 5,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอุดรธานี",
+    "name_en": "Udon Thani Railway Station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 1.4
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1341100036",
+   "name_th": "โรงเรียนช่างกลอุดรธานี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 4.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 6,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอุดรธานี",
+    "name_en": "Udon Thani Railway Station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 1.8
+   },
+   "phone": "042-237-676",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-11000-TH-41",
+   "name_th": "วิทยาลัยสันตพล",
+   "kind": "college",
+   "sector": "วิทยาลัยเอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 6.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 7,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟหนองขอนกว้าง",
+    "name_en": "Nong Khon Kwang railway station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 2.1
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1341100035",
+   "name_th": "วิทยาลัยเทคโนโลยีสันตพล",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 6.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 7,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟหนองขอนกว้าง",
+    "name_en": "Nong Khon Kwang railway station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 2.1
+   },
+   "phone": "042-223-105",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1341016301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีอุดรธานี",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 7.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 10,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "42266103",
+   "website": "http://www.udcat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100037",
+   "name_th": "วิทยาลัยเทคโนโลยีบ้านจั่น",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 10.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 10,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟหนองขอนกว้าง",
+    "name_en": "Nong Khon Kwang railway station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 1.5
+   },
+   "phone": "42300148",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100120",
+   "name_th": "วิทยาลัยเทคโนโลยีไคโกะอุดรธานี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 12.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 13,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟคำกลิ้ง",
+    "name_en": "Kham Kling railway halt",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 2.0
+   },
+   "phone": "824591978",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100039",
+   "name_th": "วิทยาลัยเทคโนโลยีอีสานเหนือ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 13.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 13,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "42110160",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100108",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจอุดรธานี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 14.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 17,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "042-206-340",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1341016102",
+   "name_th": "วิทยาลัยเทคนิคกาญจนาภิเษกอุดรธานี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": 21.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 18,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟหนองตะไก้",
+    "name_en": "Nong Takai railway station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 1.2
+   },
+   "phone": "0-4229-5547",
+   "website": "http://www.kutcudon.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-21431-TH-41",
+   "name_th": "วิทยาลัยพยาบาลบรมราชชนนี อุดรธานี",
+   "kind": "nursing_college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 22.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 21,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟหนองตะไก้",
+    "name_en": "Nong Takai railway station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 1.5
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1341100041",
+   "name_th": "วิทยาลัยเทคโนโลยีภูมิพิชญ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "กุดจับ",
+   "in_home_province": true,
+   "road_km": 28.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 31,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "042-291-313",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1341066401",
+   "name_th": "วิทยาลัยการอาชีพหนองหาน",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "หนองหาน",
+   "in_home_province": true,
+   "road_km": 38.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 29,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "042-261289",
+   "website": "http://www.nonghan.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1341046401",
+   "name_th": "วิทยาลัยการอาชีพกุมภวาปี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "กุมภวาปี",
+   "in_home_province": true,
+   "road_km": 39.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 32,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟกุมภวาปี",
+    "name_en": "Kumphawapi Station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 0.8
+   },
+   "phone": "042-339744",
+   "website": "http://www.kpic.ac.th/",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100042",
+   "name_th": "วิทยาลัยอาชีวศึกษาหนองหาน",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "หนองหาน",
+   "in_home_province": true,
+   "road_km": 42.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 33,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "42261349",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100017",
+   "name_th": "วิทยาลัยเทคโนโลยีอีสานเหนือ 2 กุมภวาปี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "กุมภวาปี",
+   "in_home_province": true,
+   "road_km": 43.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 33,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "042-398-282",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100119",
+   "name_th": "วิทยาลัยเทคโนโลยีพิชญพิชญ์",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "หนองหาน",
+   "in_home_province": true,
+   "road_km": 43.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 32,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "042-239256",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-00301-TH-43",
+   "name_th": "มหาวิทยาลัยขอนแก่น วิทยาเขตหนองคาย",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 46.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 42,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1343100032",
+   "name_th": "วิทยาลัยเทคโนโลยีเอเชียหนองคาย",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "เมืองหนองคาย",
+   "in_home_province": false,
+   "road_km": 46.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 41,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "931018098",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1343100034",
+   "name_th": "วิทยาลัยเทคโนโลยีอาเซียน",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "เมืองหนองคาย",
+   "in_home_province": false,
+   "road_km": 49.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 44,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟนาทา",
+    "name_en": "Na Tha Station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 1.9
+   },
+   "phone": "042-421789",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1341196201",
+   "name_th": "วิทยาลัยการอาชีพอุดรธานี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เพ็ญ",
+   "in_home_province": true,
+   "road_km": 50.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 59,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "42219967",
+   "website": "http://www.udcbat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1343016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาหนองคาย",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "เมืองหนองคาย",
+   "in_home_province": false,
+   "road_km": 50.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 45,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟหนองคาย",
+    "name_en": "Nong Khai railway station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line, Nong Khai–Vientiane railway",
+    "km": 1.2
+   },
+   "phone": "042-422715-6",
+   "website": "http://www.nkvc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1339100008",
+   "name_th": "วิทยาลัยเทคโนโลยีพิชญบัณฑิต",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-39",
+   "province_th": "หนองบัวลำภู",
+   "district": "เมืองหนองบัวลำภู",
+   "in_home_province": false,
+   "road_km": 50.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 49,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "42361044",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1343010240",
+   "name_th": "วิทยาลัยเทคโนโลยีพระมหาไถ่ หนองคาย ในพระราชูปถัมภ์ สมเด็จพระกนิษฐาธิราชเจ้า กรมสมเด็จพระเทพรัตนราชสุดาฯ สยามบรมราชกุมารี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "เมืองหนองคาย",
+   "in_home_province": false,
+   "road_km": 52.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 44,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟหนองคาย",
+    "name_en": "Nong Khai railway station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line, Nong Khai–Vientiane railway",
+    "km": 0.4
+   },
+   "phone": "42465645",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1341176401",
+   "name_th": "วิทยาลัยการอาชีพบ้านผือ",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "บ้านผือ",
+   "in_home_province": true,
+   "road_km": 53.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 52,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "042-282133",
+   "website": "http://www.bec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1343016102",
+   "name_th": "วิทยาลัยการอาชีพหนองคาย",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "เมืองหนองคาย",
+   "in_home_province": false,
+   "road_km": 54.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 45,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟตลาดหนองคาย",
+    "name_en": "Talat Nong Khai railway station",
+    "mode": "rail",
+    "line": null,
+    "km": 0.7
+   },
+   "phone": "042-411245",
+   "website": "https://nbitech1.wordpress.com",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1339016101",
+   "name_th": "วิทยาลัยเทคนิคหนองบัวลำภู",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-39",
+   "province_th": "หนองบัวลำภู",
+   "district": "เมืองหนองบัวลำภู",
+   "in_home_province": false,
+   "road_km": 55.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 55,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "042-312-753",
+   "website": "http://www.nbtc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1339100027",
+   "name_th": "วิทยาลัยเทคโนโลยี ไทย - ญี่ปุ่น โยยากุ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-39",
+   "province_th": "หนองบัวลำภู",
+   "district": "เมืองหนองบัวลำภู",
+   "in_home_province": false,
+   "road_km": 56.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 55,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "828745170",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100107",
+   "name_th": "วิทยาลัยเทคโนโลยีภูมิบัณฑิต",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "บ้านผือ",
+   "in_home_province": true,
+   "road_km": 57.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 56,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "042-151-262",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1343016101",
+   "name_th": "วิทยาลัยเทคนิคหนองคาย",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "เมืองหนองคาย",
+   "in_home_province": false,
+   "road_km": 61.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 51,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "42411776",
+   "website": "http://www.nktc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100121",
+   "name_th": "วิทยาลัยเทคโนโลยีปุณปัญญาบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "บ้านผือ",
+   "in_home_province": true,
+   "road_km": 64.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 63,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100045",
+   "name_th": "วิทยาลัยอาชีวศึกษาสกลเทคนิค",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "สว่างแดนดิน",
+   "in_home_province": false,
+   "road_km": 64.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 47,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "042-704-912",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1343100057",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจรักไทย ท่าบ่อ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "ท่าบ่อ",
+   "in_home_province": false,
+   "road_km": 67.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 60,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "42414886",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1343100065",
+   "name_th": "วิทยาลัยเทคโนโลยีวิชาชีพท่าบ่อ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "ท่าบ่อ",
+   "in_home_province": false,
+   "road_km": 69.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 63,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "42432240",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1343100066",
+   "name_th": "วิทยาลัยเทคโนโลยีท่าบ่อบัณฑิต",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "ท่าบ่อ",
+   "in_home_province": false,
+   "road_km": 73.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 65,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "42991509",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100055",
+   "name_th": "วิทยาลัยเทคโนโลยีรังสิโยภาส",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "ศรีธาตุ",
+   "in_home_province": true,
+   "road_km": 74.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 70,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "42382220",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1339100017",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจรักไทยนากลาง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-39",
+   "province_th": "หนองบัวลำภู",
+   "district": "นากลาง",
+   "in_home_province": false,
+   "road_km": 76.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 72,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "042-359-601",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100076",
+   "name_th": "วิทยาลัยเทคโนโลยีแดนสยาม",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "สว่างแดนดิน",
+   "in_home_province": false,
+   "road_km": 79.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 58,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "042-704-937",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1339100026",
+   "name_th": "วิทยาลัยเทคโนโลยีสงวนบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-39",
+   "province_th": "หนองบัวลำภู",
+   "district": "นากลาง",
+   "in_home_province": false,
+   "road_km": 79.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 76,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "42315703",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1347126401",
+   "name_th": "วิทยาลัยเทคนิคสว่างแดนดิน",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "สว่างแดนดิน",
+   "in_home_province": false,
+   "road_km": 80.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 62,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "42721991",
+   "website": "http://www.swicec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1346100044",
+   "name_th": "วิทยาลัยอาชีวศึกษาไทยเทคอีสาน",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-46",
+   "province_th": "กาฬสินธุ์",
+   "district": "ท่าคันโท",
+   "in_home_province": false,
+   "road_km": 81.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 80,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "43877486",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100044",
+   "name_th": "วิทยาลัยเทคโนโลยีสว่างแดนดิน",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "สว่างแดนดิน",
+   "in_home_province": false,
+   "road_km": 82.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 60,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-722-261",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100043",
+   "name_th": "วิทยาลัยอาชีวศึกษาเทคนิคธุรกิจสว่างแดนดิน",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "สว่างแดนดิน",
+   "in_home_province": false,
+   "road_km": 83.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 61,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "42707340",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100044",
+   "name_th": "วิทยาลัยอาชีวศึกษาเทคนิคพิชญบัณฑิต",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "บ้านดุง",
+   "in_home_province": true,
+   "road_km": 84.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 77,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-271-639",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100046",
+   "name_th": "วิทยาลัยเทคโนโลยีเลิศสหพันธ์",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "น้ำโสม",
+   "in_home_province": true,
+   "road_km": 85.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 86,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-132248",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1339100025",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจศรีบุญเรือง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-39",
+   "province_th": "หนองบัวลำภู",
+   "district": "ศรีบุญเรือง",
+   "in_home_province": false,
+   "road_km": 86.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-353237",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100045",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการบ้านดุง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "บ้านดุง",
+   "in_home_province": true,
+   "road_km": 86.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 80,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-271-619",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1340076101",
+   "name_th": "วิทยาลัยเทคนิคน้ำพอง",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-40",
+   "province_th": "ขอนแก่น",
+   "district": "น้ำพอง",
+   "in_home_province": false,
+   "road_km": 87.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 66,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "43441804",
+   "website": "http://www.ntckk.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1339046401",
+   "name_th": "วิทยาลัยการอาชีพศรีบุญเรือง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-39",
+   "province_th": "หนองบัวลำภู",
+   "district": "ศรีบุญเรือง",
+   "in_home_province": false,
+   "road_km": 88.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 87,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-353732",
+   "website": "http://www.sbr.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100058",
+   "name_th": "วิทยาลัยเทคโนโลยี ไฮเทค สกลนคร",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "สว่างแดนดิน",
+   "in_home_province": false,
+   "road_km": 94.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 75,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-704-882-5",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1340100289",
+   "name_th": "วิทยาลัยเทคโนโลยีพุทธเกษม",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-40",
+   "province_th": "ขอนแก่น",
+   "district": "น้ำพอง",
+   "in_home_province": false,
+   "road_km": 98.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 80,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟน้ำพอง",
+    "name_en": "Nam Phong Station",
+    "mode": "rail",
+    "line": "Nong Khai Main Line",
+    "km": 3.0
+   },
+   "phone": "043-306-743",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1343100045",
+   "name_th": "วิทยาลัยเทคโนโลยีศรีเชียงใหม่",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "ศรีเชียงใหม่",
+   "in_home_province": false,
+   "road_km": 99.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 89,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-014-335",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1341100059",
+   "name_th": "วิทยาลัยอาชีวศึกษาไท-เทควังสามหมอ",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "วังสามหมอ",
+   "in_home_province": true,
+   "road_km": 100.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 97,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-387-311",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1343100058",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจรักไทย โพนพิสัย",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "โพนพิสัย",
+   "in_home_province": false,
+   "road_km": 102.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 90,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "42471101",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1343100037",
+   "name_th": "วิทยาลัยเทคโนโลยีโพนพิสัย",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "โพนพิสัย",
+   "in_home_province": false,
+   "road_km": 102.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 91,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "812952839",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1340100133",
+   "name_th": "วิทยาลัยเทคโนโลยีสีชมพู",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-40",
+   "province_th": "ขอนแก่น",
+   "district": "สีชมพู",
+   "in_home_province": false,
+   "road_km": 107.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 102,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "089-9414383",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1340100128",
+   "name_th": "วิทยาลัยอาชีวศึกษาคนตาบอดขอนแก่น",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-40",
+   "province_th": "ขอนแก่น",
+   "district": "เมืองขอนแก่น",
+   "in_home_province": false,
+   "road_km": 109.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 85,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "043-306-063",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1346126401",
+   "name_th": "วิทยาลัยการอาชีพหนองกุงศรี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-46",
+   "province_th": "กาฬสินธุ์",
+   "district": "หนองกุงศรี",
+   "in_home_province": false,
+   "road_km": 110.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 111,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "043840762-3",
+   "website": "http://www.nks.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100040",
+   "name_th": "วิทยาลัยเทคโนโลยีพังโคนพณิชยการ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "พังโคน",
+   "in_home_province": false,
+   "road_km": 111.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-771-162",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1340096401",
+   "name_th": "วิทยาลัยการอาชีพกระนวน",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-40",
+   "province_th": "ขอนแก่น",
+   "district": "กระนวน",
+   "in_home_province": false,
+   "road_km": 113.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 98,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "0-43923044",
+   "website": "http://www.kic.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100042",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการบ้านม่วง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "บ้านม่วง",
+   "in_home_province": false,
+   "road_km": 114.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 124,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-794-922",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1346100075",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการสามชัย",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-46",
+   "province_th": "กาฬสินธุ์",
+   "district": "สามชัย",
+   "in_home_province": false,
+   "road_km": 116.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 115,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "043-602002",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1340100099",
+   "name_th": "วิทยาลัยเทคโนโลยีขอนแก่น",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-40",
+   "province_th": "ขอนแก่น",
+   "district": "เมืองขอนแก่น",
+   "in_home_province": false,
+   "road_km": 118.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 90,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "043-237-463",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1346106401",
+   "name_th": "วิทยาลัยการอาชีพคำม่วง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-46",
+   "province_th": "กาฬสินธุ์",
+   "district": "คำม่วง",
+   "in_home_province": false,
+   "road_km": 119.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 116,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "0-864505992",
+   "website": "http://www.km.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-00300-TH-40",
+   "name_th": "มหาวิทยาลัยขอนแก่น",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยในกำกับรัฐ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-40",
+   "province_th": "ขอนแก่น",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 120.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 94,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1343100043",
+   "name_th": "วิทยาลัยอาชีวศึกษาเอกปัญญา",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-43",
+   "province_th": "หนองคาย",
+   "district": "สังคม",
+   "in_home_province": false,
+   "road_km": 121.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 109,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "42441424",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100041",
+   "name_th": "วิทยาลัยเทคโนโลยีวานรนิวาส",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "วานรนิวาส",
+   "in_home_province": false,
+   "road_km": 133.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 102,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042  973347",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100050",
+   "name_th": "วิทยาลัยเทคโนโลยีเอ็น-เทคบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "วานรนิวาส",
+   "in_home_province": false,
+   "road_km": 134.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 102,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "042-973360",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1346100042",
+   "name_th": "วิทยาลัยอาชีวศึกษาไท-เทค กาฬสินธุ์",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-46",
+   "province_th": "กาฬสินธุ์",
+   "district": "ห้วยเม็ก",
+   "in_home_province": false,
+   "road_km": 136.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 120,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "935639594",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1346100043",
+   "name_th": "วิทยาลัยเทคโนโลยีไตรชุมพล",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-46",
+   "province_th": "กาฬสินธุ์",
+   "district": "ห้วยเม็ก",
+   "in_home_province": false,
+   "road_km": 138.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 122,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "043-840-291",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1342100016",
+   "name_th": "วิทยาลัยอาชีวศึกษามหานครเลย",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-42",
+   "province_th": "เลย",
+   "district": "ภูกระดึง",
+   "in_home_province": false,
+   "road_km": 140.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 148,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "819655155",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1347100066",
+   "name_th": "วิทยาลัยเทคโนโลยีภูมิภัทรบัณฑิต",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-47",
+   "province_th": "สกลนคร",
+   "district": "นิคมน้ำอูน",
+   "in_home_province": false,
+   "road_km": 141.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 114,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "854645570",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1338100001",
+   "name_th": "วิทยาลัยเทคโนโลยีโซ่พิสัย",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-38",
+   "province_th": "บึงกาฬ",
+   "district": "โซ่พิสัย",
+   "in_home_province": false,
+   "road_km": 151.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 144,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "42086002",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1340100284",
+   "name_th": "วิทยาลัยเทคโนโลยีหนองเรือ ไทย-เยอรมัน",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-40",
+   "province_th": "ขอนแก่น",
+   "district": "หนองเรือ",
+   "in_home_province": false,
+   "road_km": 152.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 113,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "043-299245",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1340100292",
+   "name_th": "วิทยาลัยเทคโนโลยีภูเวียงพณิชยการ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-40",
+   "province_th": "ขอนแก่น",
+   "district": "ภูเวียง",
+   "in_home_province": false,
+   "road_km": 178.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 138,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "43000525",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-22017-TH-41",
+   "name_th": "มหาวิทยาลัยการกีฬาแห่งชาติ วิทยาเขตอุดรธานี",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "mhesi-08301-TH-41",
+   "name_th": "มหาวิทยาลัยราชธานี วิทยาเขตอุดรธานี",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "mhesi-00724-TH-41",
+   "name_th": "มหาวิทยาลัยรามคำแหง สาขาวิทยบริการเฉลิมพระเกียรติจังหวัดอุดรธานี",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "ovec-pri-1341100038",
+   "name_th": "วิทยาลัยเทคโนโลยีราชธานี(เลิกกิจการตั้งแต่ปีการศึกษา2557เป็นต้นไป)",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": "เมืองอุดรธานี",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "42323189",
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "mhesi-01204-TH-41",
+   "name_th": "สถาบันบัณฑิตพัฒนบริหารศาสตร์ โครงการจัดการศึกษานอกสถานที่ตั้งจังหวัดอุดรธานี",
+   "kind": "institute",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-41",
+   "province_th": "อุดรธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  }
+ ]
+}

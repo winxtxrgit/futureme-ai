@@ -1,0 +1,8 @@
+# ห้าม commit ความลับและไฟล์ที่สร้างระหว่างรัน
+.env
+.venv/
+chroma_db/
+eval_results.json
+lora-thai-adapter/
+__pycache__/
+*.pyc

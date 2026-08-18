@@ -1,0 +1,84 @@
+{
+ "generated": "2026-08-06",
+ "generated_by": "01_Research/Geography_and_Access/build/*.py",
+ "policy": "ทุกชุดเป็น conditional ตาม 00_Governance/SOURCE_POLICY.md — ตัวเลขเป็นของปีที่ระบุ ไม่ใช่ค่าถาวร",
+ "datasets": [
+  {
+   "file": "data/provinces.json",
+   "bytes": 17779,
+   "rows": 77,
+   "sha256": "4e73e2a43c11d435",
+   "source": "Wikidata SPARQL (P300 ISO 3166-2:TH)",
+   "endpoint": "https://query.wikidata.org/sparql",
+   "retrieved": "2026-08-06",
+   "license": "CC0-1.0",
+   "note": "กรอง TH-S (เมืองพัทยา) ออก เพราะเป็นองค์กรปกครองรูปแบบพิเศษ ไม่ใช่จังหวัด"
+  },
+  {
+   "file": "data/institutions.json",
+   "bytes": 840981,
+   "rows": 1358,
+   "sha256": "201ec86d7304dea4",
+   "source": [
+    "ckan.vec.go.th publicschool (ข้อมูลที่ตั้งสถานศึกษาอาชีวศึกษาภาครัฐ)",
+    "ckan.vec.go.th privateschool (ข้อมูลที่ตั้งสถานศึกษาอาชีวศึกษาภาคเอกชน)",
+    "data.mhesi.go.th univ_uni_11_03 (รายชื่อสถาบันอุดมศึกษา ปีการศึกษา 2564)",
+    "data.mhesi.go.th univ_uni_11_01 (ประเภทสถาบัน ปีการศึกษา 2563)",
+    "Nominatim (พิกัดของสถาบันอุดมศึกษาที่ทะเบียนไม่มีพิกัด)"
+   ],
+   "retrieved": "2026-08-06",
+   "license": "ทะเบียนภาครัฐไทยเผยแพร่เป็น open data; Nominatim อยู่ภายใต้ ODbL 1.0",
+   "note": "ทะเบียน อว. เป็นข้อมูลปี 2564 สถาบันที่เปิดหรือปิดหลังจากนั้นจะไม่ตรง"
+  },
+  {
+   "file": "data/stations.json",
+   "bytes": 285912,
+   "rows": 891,
+   "sha256": "cbe114a862c22320",
+   "source": "Wikidata SPARQL (P31/P279* station, P17 Thailand)",
+   "retrieved": "2026-08-06",
+   "license": "CC0-1.0",
+   "note": "ตัดสนามบิน ท่าเรือสินค้า ฐานทัพ คลังก๊าซ และสถานีสินค้า 46 จุดออก เหลือเฉพาะขนส่งผู้โดยสาร"
+  },
+  {
+   "file": "data/vocational_outcomes.json",
+   "bytes": 1492699,
+   "rows": 1014,
+   "sha256": "52c6a5dc650f21fc",
+   "source": "ckan.vec.go.th employment (ภาวะการมีงานทำของผู้สำเร็จการศึกษาอาชีวศึกษา ปีการศึกษา 2566)",
+   "retrieved": "2026-08-06",
+   "license": "open data ของ สอศ.",
+   "note": "เปอร์เซ็นต์คิดจากผู้ที่ติดตามได้ ไม่ใช่ผู้สำเร็จการศึกษาทั้งหมด; ระงับเปอร์เซ็นต์เมื่อ tracked<10; ติดธงและใส่ช่วงเชื่อมั่นเมื่อ tracked<30",
+   "prohibited_use": "ห้ามใช้จัดอันดับสาขาวิชาหรือจังหวัด"
+  },
+  {
+   "file": "data/province_access/",
+   "files": 77,
+   "rows": 5783,
+   "source": "OSRM public routing (driving profile) จากพิกัดศูนย์กลางจังหวัดไปยังสถาบัน",
+   "endpoint": "https://router.project-osrm.org/table/v1/driving/",
+   "retrieved": "2026-08-06",
+   "license": "ODbL 1.0 (ข้อมูลถนนจาก OpenStreetMap)",
+   "note": "จุดตั้งต้นคือศูนย์กลางจังหวัด ไม่ใช่ที่อยู่ผู้เรียน; จำกัด 80 ปลายทางต่อจังหวัด"
+  },
+  {
+   "file": "data/quarantine_coordinates.json",
+   "bytes": 3271,
+   "rows": 11,
+   "sha256": "22f3dabf29184baf",
+   "source": "ผลการตรวจสอบใน build/repair_coords.py",
+   "retrieved": "2026-08-06",
+   "license": "n/a",
+   "note": "พิกัดที่ไม่มีการตีความใดตกในจังหวัดที่ทะเบียนระบุ เก็บค่าเดิมไว้ตรวจสอบ ไม่ถูกใช้คำนวณ"
+  }
+ ],
+ "withdrawn": [
+  {
+   "source": "overpass.osm.ch",
+   "reason": "เป็น regional extract เฉพาะสวิตเซอร์แลนด์ ตอบ HTTP 200 พร้อม elements ว่างสำหรับพื้นที่ไทย ทำให้ 15 จังหวัดถูก cache เป็นผลว่างโดยนับว่าสำเร็จ",
+   "signature": "osm3s.timestamp_osm_base เป็นเลขลำดับแทน ISO timestamp",
+   "impact": "ไม่มี — cache ชุดนี้ไม่เคยถูกอ่านเข้าไฟล์ข้อมูลใด",
+   "action": "ลบเส้นทาง OSM Overpass ทั้งหมด ใช้ทะเบียนราชการแทน"
+  }
+ ]
+}

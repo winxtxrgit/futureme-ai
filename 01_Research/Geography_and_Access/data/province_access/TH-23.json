@@ -1,0 +1,690 @@
+{
+ "summary": {
+  "iso": "TH-23",
+  "province_th": "ตราด",
+  "province_en": "Trat",
+  "options_total": 24,
+  "in_province": 4,
+  "within_30km": 2,
+  "offers_vocational": 21,
+  "offers_degree": 3,
+  "distance_unknown": 1
+ },
+ "origin": {
+  "lat": 12.24188871,
+  "lon": 102.51492855,
+  "kind": "provincial_capital",
+  "note": "จุดอ้างอิงคืออำเภอเมืองของจังหวัด ไม่ใช่บ้านของผู้เรียน ระยะจริงจากบ้านต่างจากนี้ได้มาก"
+ },
+ "options": [
+  {
+   "id": "ovec-pub-1323016501",
+   "name_th": "วิทยาลัยสารพัดช่างตราด",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-23",
+   "province_th": "ตราด",
+   "district": "เมืองตราด",
+   "in_home_province": true,
+   "road_km": 0.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 1,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": null,
+   "phone": "039-512172",
+   "website": "http://www.tratpt.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1323016101",
+   "name_th": "วิทยาลัยเทคนิคตราด",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-23",
+   "province_th": "ตราด",
+   "district": "เมืองตราด",
+   "in_home_province": true,
+   "road_km": 10.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 11,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "039-518105",
+   "website": "http://www.trattc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1323046401",
+   "name_th": "วิทยาลัยการอาชีพบ่อไร่",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-23",
+   "province_th": "ตราด",
+   "district": "บ่อไร่",
+   "in_home_province": true,
+   "road_km": 51.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 51,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "039-510728",
+   "website": "http://www.borai.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1322016101",
+   "name_th": "วิทยาลัยเทคนิคจันทบุรี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-22",
+   "province_th": "จันทบุรี",
+   "district": "เมืองจันทบุรี",
+   "in_home_province": false,
+   "road_km": 69.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 54,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "39311198",
+   "website": "http://www.technicchan.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-21417-TH-22",
+   "name_th": "วิทยาลัยพยาบาลพระปกเกล้า จันทบุรี",
+   "kind": "nursing_college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-22",
+   "province_th": "จันทบุรี",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 69.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 54,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1322016501",
+   "name_th": "วิทยาลัยสารพัดช่างจันทบุรี",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-22",
+   "province_th": "จันทบุรี",
+   "district": "เมืองจันทบุรี",
+   "in_home_province": false,
+   "road_km": 70.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 54,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "039-324533",
+   "website": "http://www.chanpoly-college.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1322100050",
+   "name_th": "วิทยาลัยอาชีวศึกษาออมสินอุปถัมภ์",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-22",
+   "province_th": "จันทบุรี",
+   "district": "เมืองจันทบุรี",
+   "in_home_province": false,
+   "road_km": 72.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 57,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "039-391-666",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-16000-TH-22",
+   "name_th": "มหาวิทยาลัยราชภัฏรำไพพรรณี",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-22",
+   "province_th": "จันทบุรี",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 75.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 57,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1322100044",
+   "name_th": "วิทยาลัยเทคโนโลยีตากสินบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-22",
+   "province_th": "จันทบุรี",
+   "district": "มะขาม",
+   "in_home_province": false,
+   "road_km": 79.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 60,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "39389555",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1322096401",
+   "name_th": "วิทยาลัยการอาชีพนายายอาม",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-22",
+   "province_th": "จันทบุรี",
+   "district": "นายายอาม",
+   "in_home_province": false,
+   "road_km": 111.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "039-370958",
+   "website": "http://www.nic.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1322076401",
+   "name_th": "วิทยาลัยการอาชีพสอยดาว",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-22",
+   "province_th": "จันทบุรี",
+   "district": "สอยดาว",
+   "in_home_province": false,
+   "road_km": 127.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 106,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "0-39393915",
+   "website": "http://www.siacec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1322100020",
+   "name_th": "วิทยาลัยเทคโนโลยีจันทบุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-22",
+   "province_th": "จันทบุรี",
+   "district": "สอยดาว",
+   "in_home_province": false,
+   "road_km": 133.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 111,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "039-421-218",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1321100043",
+   "name_th": "วิทยาลัยเทคโนโลยีอาเซียนบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-21",
+   "province_th": "ระยอง",
+   "district": "แกลง",
+   "in_home_province": false,
+   "road_km": 134.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 100,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "038-026-400",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1321036401",
+   "name_th": "วิทยาลัยการอาชีพแกลง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-21",
+   "province_th": "ระยอง",
+   "district": "แกลง",
+   "in_home_province": false,
+   "road_km": 138.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 101,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "38992022",
+   "website": "http://www.klaengvec.go.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-28900-TH-21",
+   "name_th": "สถาบันวิทยสิริเมธี",
+   "kind": "institute",
+   "sector": "สถาบันเอกชน",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-21",
+   "province_th": "ระยอง",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 169.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 131,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1321100034",
+   "name_th": "วิทยาลัยอาชีวศึกษาโปลีเทคนิคระยอง",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-21",
+   "province_th": "ระยอง",
+   "district": "เมืองระยอง",
+   "in_home_province": false,
+   "road_km": 176.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 130,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "038-022-845",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1321100033",
+   "name_th": "วิทยาลัยเทคโนโลยีไออาร์พีซี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-21",
+   "province_th": "ระยอง",
+   "district": "เมืองระยอง",
+   "in_home_province": false,
+   "road_km": 177.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 132,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "038-022-835-7",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1327046401",
+   "name_th": "วิทยาลัยเทคนิควังน้ำเย็น",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-27",
+   "province_th": "สระแก้ว",
+   "district": "วังน้ำเย็น",
+   "in_home_province": false,
+   "road_km": 178.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 154,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "37252066",
+   "website": "http://www.wangcc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1321100032",
+   "name_th": "วิทยาลัยเทคโนโลยีระยองบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-21",
+   "province_th": "ระยอง",
+   "district": "เมืองระยอง",
+   "in_home_province": false,
+   "road_km": 181.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 134,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "38861568",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1321016101",
+   "name_th": "วิทยาลัยเทคนิคระยอง",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-21",
+   "province_th": "ระยอง",
+   "district": "เมืองระยอง",
+   "in_home_province": false,
+   "road_km": 181.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 135,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "038-611192",
+   "website": "http://www.technicrayong.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1321056101",
+   "name_th": "วิทยาลัยเทคนิคบ้านค่าย",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-21",
+   "province_th": "ระยอง",
+   "district": "บ้านค่าย",
+   "in_home_province": false,
+   "road_km": 204.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 152,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "038-017941",
+   "website": "http://www.bktech.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-01502-TH-21",
+   "name_th": "มหาวิทยาลัยเทคโนโลยีพระจอมเกล้าพระนครเหนือ วิทยาเขตระยอง",
+   "kind": "private_vocational",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-21",
+   "province_th": "ระยอง",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 205.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 155,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1327066301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีสระแก้ว",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-27",
+   "province_th": "สระแก้ว",
+   "district": "อรัญประเทศ",
+   "in_home_province": false,
+   "road_km": 211.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 194,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "037 233993,037233994",
+   "website": "http://www.skat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-20317-TH-23",
+   "name_th": "วิทยาลัยชุมชนตราด",
+   "kind": "college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-23",
+   "province_th": "ตราด",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  }
+ ]
+}

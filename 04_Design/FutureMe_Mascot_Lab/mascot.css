@@ -1,0 +1,375 @@
+/*
+ * FutureMe mascot — behaviour layer.
+ *
+ * Pairs with mascot.js. Together they are the portable unit: copy these two
+ * files into any page and the character works. Nothing in here depends on the
+ * lab's own styling.
+ *
+ * How state works
+ *   data-emotion  reveals one eye variant, one brow variant, one mouth variant
+ *   data-pose     sets limb transforms and swaps the looping animation
+ *   data-view     approximates the turnaround for modelling reference
+ *   data-blink    momentary, driven from JS so the rhythm stays irregular
+ *
+ * Motion switches live on any ancestor (the lab puts them on <body>):
+ *   data-fm-anim="off"       kill everything
+ *   data-fm-idle="off"       stop breathing
+ *   data-fm-hover="off"      stop the float
+ *   data-fm-heart="off"      stop the heart pulse
+ *   data-fm-compass="off"    stop the compass drift
+ *   data-fm-reduced="on"     preview prefers-reduced-motion
+ */
+
+.fm-mascot {
+  display: block;
+  width: 100%;
+  height: auto;
+  /* Glow and confetti live outside the drawn silhouette, so the full framing
+   * must not clip. The face crop is the one case that has to. */
+  overflow: visible;
+  /* Poses read as movement rather than as a redraw. */
+  --fm-ease: cubic-bezier(0.34, 1.28, 0.5, 1);
+}
+
+.fm-mascot[data-crop="face"] { overflow: hidden; }
+
+.fm-mascot * {
+  transform-box: view-box;
+}
+
+/* ------------------------------------------------------------ emotion map */
+
+/* Everything optional starts hidden; each state opts its parts back in. */
+.fm-eye-shape,
+.fm-brow-shape,
+.fm-mouth-shape,
+.fm-hand-point,
+.fm-thought,
+.fm-listen,
+.fm-sparkles,
+.fm-side-pod {
+  display: none;
+}
+
+.fm-eye-shape--open { display: block; }
+
+.fm-mascot[data-emotion="dislike"]    .fm-eye-shape--open { display: none; }
+.fm-mascot[data-emotion="dislike"]    .fm-eye-shape--narrow { display: block; }
+.fm-mascot[data-emotion="dislike"]    .fm-brow-shape--cross { display: block; }
+.fm-mascot[data-emotion="dislike"]    .fm-mouth-shape--dislike { display: block; }
+
+.fm-mascot[data-emotion="not-okay"]   .fm-eye-shape--open { display: none; }
+.fm-mascot[data-emotion="not-okay"]   .fm-eye-shape--wobble { display: block; }
+.fm-mascot[data-emotion="not-okay"]   .fm-brow-shape--worry { display: block; }
+.fm-mascot[data-emotion="not-okay"]   .fm-mouth-shape--not-okay { display: block; }
+
+.fm-mascot[data-emotion="neutral"]    .fm-mouth-shape--neutral { display: block; }
+.fm-mascot[data-emotion="smile"]      .fm-mouth-shape--smile { display: block; }
+
+/* Level 5 is the only state allowed to close its eyes into crescents. */
+.fm-mascot[data-emotion="very-happy"] .fm-eye-shape--open { display: none; }
+.fm-mascot[data-emotion="very-happy"] .fm-eye-shape--happy { display: block; }
+.fm-mascot[data-emotion="very-happy"] .fm-mouth-shape--very-happy { display: block; }
+
+/* Blink overrides any open-eye variant but never the level-5 crescent. */
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--open,
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--narrow,
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--wobble { display: none; }
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--blink { display: block; }
+
+/* Emotion also moves the blush and the heart, so the five levels differ by
+ * more than mouth curvature — the SKILL.md anti-pattern this avoids. */
+.fm-cheeks { transition: opacity 0.3s ease; }
+.fm-mascot[data-emotion="dislike"]    .fm-cheeks { opacity: 0.7; }
+.fm-mascot[data-emotion="not-okay"]   .fm-cheeks { opacity: 0.55; }
+.fm-mascot[data-emotion="neutral"]    .fm-cheeks { opacity: 0.75; }
+.fm-mascot[data-emotion="smile"]      .fm-cheeks { opacity: 1; }
+.fm-mascot[data-emotion="very-happy"] .fm-cheeks { opacity: 1; }
+
+.fm-heart-glow { transition: opacity 0.4s ease; }
+.fm-mascot[data-emotion="dislike"]  .fm-heart-glow { opacity: 0.35; }
+.fm-mascot[data-emotion="not-okay"] .fm-heart-glow { opacity: 0.55; }
+
+/* Ears dim slightly when the character is unhappy — a whole-body read that
+ * survives greyscale. */
+.fm-ear-glow { transition: opacity 0.4s ease; }
+.fm-mascot[data-emotion="dislike"]  .fm-ear-glow,
+.fm-mascot[data-emotion="not-okay"] .fm-ear-glow { opacity: 0.12; }
+
+/* --------------------------------------------------------------- gaze/rig */
+
+.fm-eyes {
+  transform: translate(var(--fm-look-x, 0px), var(--fm-look-y, 0px));
+  transition: transform 0.35s ease;
+}
+
+.fm-head {
+  transform-origin: 160px 218px;
+  transform: rotate(var(--fm-head-tilt, 0deg));
+  transition: transform 0.5s var(--fm-ease);
+}
+
+.fm-body,
+.fm-breathe {
+  transform-origin: 160px 350px;
+}
+
+.fm-body { transition: transform 0.5s var(--fm-ease); }
+
+/*
+ * Limbs pivot at their joint. Their parent <g> is already translated to the
+ * shoulder or hip, and `transform-origin: 0 0` resolves against the element's
+ * own local origin — so 0,0 here *is* the joint. Do not rewrite these as
+ * canvas coordinates; that swings the limb clean off the character.
+ */
+.fm-arm-limb,
+.fm-leg-limb {
+  transform-origin: 0px 0px;
+  transition: transform 0.45s var(--fm-ease);
+}
+
+.fm-ground {
+  transform-origin: 160px 354px;
+  transition: transform 0.5s var(--fm-ease), opacity 0.5s ease;
+}
+
+/* ----------------------------------------------------------------- motion */
+
+@keyframes fm-breathe {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  50%      { transform: translateY(-3px) scale(1.012, 0.99); }
+}
+
+@keyframes fm-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-6px); }
+}
+
+@keyframes fm-wave-arm {
+  0%, 100% { transform: rotate(136deg); }
+  50%      { transform: rotate(162deg); }
+}
+
+@keyframes fm-think-bob {
+  0%, 100% { transform: translateY(0) rotate(0deg); }
+  50%      { transform: translateY(-2px) rotate(-1.2deg); }
+}
+
+@keyframes fm-celebrate {
+  0%, 100% { transform: translateY(0) scale(1, 1); }
+  35%      { transform: translateY(-16px) scale(0.98, 1.03); }
+  70%      { transform: translateY(0) scale(1.04, 0.96); }
+}
+
+@keyframes fm-jump {
+  0%, 100% { transform: translateY(0) scale(1.05, 0.94); }
+  30%      { transform: translateY(-34px) scale(0.96, 1.06); }
+  60%      { transform: translateY(-30px) scale(1, 1); }
+}
+
+@keyframes fm-jump-shadow {
+  0%, 100% { transform: scale(1, 1); opacity: 0.16; }
+  40%      { transform: scale(0.6, 0.6); opacity: 0.07; }
+}
+
+@keyframes fm-heart-pulse {
+  0%, 100% { opacity: 0.75; transform: scale(1); }
+  50%      { opacity: 1; transform: scale(1.12); }
+}
+
+@keyframes fm-compass-drift {
+  0%, 100% { transform: rotate(-9deg); }
+  50%      { transform: rotate(9deg); }
+}
+
+@keyframes fm-thought-pop {
+  0%, 100% { opacity: 0.15; transform: scale(0.8); }
+  45%      { opacity: 0.9; transform: scale(1); }
+}
+
+@keyframes fm-listen-ping {
+  0%   { opacity: 0.5; transform: scale(0.6); }
+  100% { opacity: 0;   transform: scale(1.5); }
+}
+
+@keyframes fm-sparkle-pop {
+  0%, 100% { opacity: 0; transform: scale(0.4) rotate(0deg); }
+  40%      { opacity: 1; transform: scale(1) rotate(35deg); }
+}
+
+/* Always-on ambience. Slow enough to sit beside questionnaire text. */
+.fm-breathe { animation: fm-breathe 3.6s ease-in-out infinite; }
+.fm-root    { animation: fm-float 5s ease-in-out infinite; }
+
+.fm-heart-glow {
+  transform-origin: 160px 266px;
+  animation: fm-heart-pulse 2.8s ease-in-out infinite;
+}
+
+.fm-needle-spin {
+  transform-origin: 0px 0px; /* local origin = compass centre */
+  animation: fm-compass-drift 7s ease-in-out infinite;
+}
+
+/* ------------------------------------------------------------------ poses */
+
+/*
+ * wave — the raised arm is the viewer's left, matching the reference sheet.
+ * The shoulder also shifts outward: rotating alone leaves the upper arm lying
+ * across the face, because the shoulder sits under the helmet's width.
+ */
+.fm-mascot[data-pose="wave"] .fm-arm--left {
+  transform: translate(-14px, -8px);
+}
+.fm-mascot[data-pose="wave"] .fm-arm--left .fm-arm-limb {
+  animation: fm-wave-arm 1.1s ease-in-out infinite;
+}
+
+/* thinking — hand to chin, head tilted away, gaze up, dots rising */
+.fm-mascot[data-pose="think"] {
+  --fm-head-tilt: -5deg;
+  --fm-look-x: 3px;
+  --fm-look-y: -4px;
+}
+.fm-mascot[data-pose="think"] .fm-arm--left .fm-arm-limb { transform: rotate(-100deg); }
+.fm-mascot[data-pose="think"] .fm-breathe { animation: fm-think-bob 3.2s ease-in-out infinite; }
+.fm-mascot[data-pose="think"] .fm-thought { display: block; }
+.fm-thought-dot {
+  fill: #7CE9FA;
+  opacity: 0.15;
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fm-thought-pop 1.8s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.22s);
+}
+
+/* listening — head cocked toward the magenta pod, rings pinging out */
+.fm-mascot[data-pose="listen"] {
+  --fm-head-tilt: 5deg;
+  --fm-look-x: 3px;
+}
+.fm-mascot[data-pose="listen"] .fm-arm--left .fm-arm-limb  { transform: rotate(-12deg); }
+.fm-mascot[data-pose="listen"] .fm-arm--right .fm-arm-limb { transform: rotate(12deg); }
+.fm-mascot[data-pose="listen"] .fm-listen { display: block; }
+.fm-listen-ring {
+  fill: none;
+  stroke: #FF6FD1;
+  stroke-width: 4;
+  transform-origin: 272px 158px;
+  animation: fm-listen-ping 1.8s ease-out infinite;
+  animation-delay: calc(var(--i) * 0.9s);
+}
+
+/* pointing — the hand shape only exists in these two states */
+.fm-mascot[data-pose="point-left"] { --fm-look-x: -5px; --fm-head-tilt: -3deg; }
+.fm-mascot[data-pose="point-left"] .fm-arm--left .fm-arm-limb { transform: rotate(104deg); }
+.fm-mascot[data-pose="point-left"] .fm-arm--left .fm-hand-point { display: block; }
+
+.fm-mascot[data-pose="point-right"] { --fm-look-x: 5px; --fm-head-tilt: 3deg; }
+.fm-mascot[data-pose="point-right"] .fm-arm--right .fm-arm-limb { transform: rotate(-104deg); }
+.fm-mascot[data-pose="point-right"] .fm-arm--right .fm-hand-point { display: block; }
+
+/* celebrate — both arms up, confetti, a bounce that replaces breathing */
+.fm-mascot[data-pose="celebrate"] .fm-arm--left  { transform: translate(-14px, -6px); }
+.fm-mascot[data-pose="celebrate"] .fm-arm--right { transform: translate(14px, -6px); }
+.fm-mascot[data-pose="celebrate"] .fm-arm--left .fm-arm-limb  { transform: rotate(146deg); }
+.fm-mascot[data-pose="celebrate"] .fm-arm--right .fm-arm-limb { transform: rotate(-146deg); }
+.fm-mascot[data-pose="celebrate"] .fm-breathe { animation: fm-celebrate 1.4s ease-in-out infinite; }
+.fm-mascot[data-pose="celebrate"] .fm-sparkles { display: block; }
+.fm-sparkle {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: fm-sparkle-pop 1.6s ease-in-out infinite;
+  animation-delay: calc(var(--i) * 0.18s);
+}
+
+/* jump — legs tuck outward, shadow shrinks under the character */
+.fm-mascot[data-pose="jump"] .fm-arm--left  { transform: translate(-12px, -4px); }
+.fm-mascot[data-pose="jump"] .fm-arm--right { transform: translate(12px, -4px); }
+.fm-mascot[data-pose="jump"] .fm-arm--left .fm-arm-limb  { transform: rotate(118deg); }
+.fm-mascot[data-pose="jump"] .fm-arm--right .fm-arm-limb { transform: rotate(-118deg); }
+.fm-mascot[data-pose="jump"] .fm-leg--left .fm-leg-limb  { transform: rotate(-18deg); }
+.fm-mascot[data-pose="jump"] .fm-leg--right .fm-leg-limb { transform: rotate(18deg); }
+.fm-mascot[data-pose="jump"] .fm-breathe { animation: fm-jump 1.5s cubic-bezier(0.3, 0, 0.3, 1) infinite; }
+.fm-mascot[data-pose="jump"] .fm-ground  { animation: fm-jump-shadow 1.5s cubic-bezier(0.3, 0, 0.3, 1) infinite; }
+
+/* sit — grounded and lower, the waiting state */
+.fm-mascot[data-pose="sit"] .fm-body { transform: translateY(22px); }
+.fm-mascot[data-pose="sit"] .fm-leg--left .fm-leg-limb  { transform: rotate(-34deg) scaleY(0.48); }
+.fm-mascot[data-pose="sit"] .fm-leg--right .fm-leg-limb { transform: rotate(34deg) scaleY(0.48); }
+.fm-mascot[data-pose="sit"] .fm-arm--left .fm-arm-limb  { transform: rotate(-14deg); }
+.fm-mascot[data-pose="sit"] .fm-arm--right .fm-arm-limb { transform: rotate(14deg); }
+.fm-mascot[data-pose="sit"] .fm-ground { transform: translateY(4px) scale(1.14, 0.8); }
+
+/* ------------------------------------------------------- turnaround views */
+
+/*
+ * Approximations, not production art: enough to check proportion and part
+ * placement while planning the 3D build. The rendered reference sheet in
+ * assets/reference/turnaround.png is the authority on form.
+ */
+.fm-face, .fm-helmet, .fm-torso, .fm-ear, .fm-compass, .fm-arm, .fm-leg {
+  transition: transform 0.5s var(--fm-ease), opacity 0.4s ease;
+}
+
+/*
+ * Every origin below is written out. A percentage origin does not resolve
+ * against the canvas for these groups, so leaving it implicit scales each part
+ * around its own bounding box and the character comes apart.
+ */
+.fm-mascot[data-view="three-quarter"] .fm-face { transform-origin: 160px 158px; transform: translateX(-13px) scaleX(0.93); }
+.fm-mascot[data-view="three-quarter"] .fm-compass { transform-origin: 160px 54px; transform: translateX(-9px); }
+.fm-mascot[data-view="three-quarter"] .fm-ear--left  { transform-origin: 48px 158px; transform: translateX(9px) scaleX(0.6); }
+.fm-mascot[data-view="three-quarter"] .fm-ear--right { transform-origin: 272px 158px; transform: translateX(6px) scale(1.08); }
+.fm-mascot[data-view="three-quarter"] .fm-torso { transform-origin: 160px 262px; transform: translateX(-4px); }
+.fm-mascot[data-view="three-quarter"] .fm-arm--left { transform-origin: 94px 262px; transform: translateX(14px) scaleX(0.8); }
+
+.fm-mascot[data-view="side"] .fm-helmet { transform-origin: 160px 150px; transform: scaleX(0.8); }
+.fm-mascot[data-view="side"] .fm-face { transform-origin: 160px 158px; transform: translateX(-32px) scaleX(0.46); }
+.fm-mascot[data-view="side"] .fm-eye--right,
+.fm-mascot[data-view="side"] .fm-brow--right { opacity: 0; }
+.fm-mascot[data-view="side"] .fm-torso { transform-origin: 160px 262px; transform: scaleX(0.76); }
+.fm-mascot[data-view="side"] .fm-heart { transform-origin: 160px 266px; transform: translateX(-24px) scaleX(0.55); }
+/* Both moulded pods disappear into the shell; the profile pod replaces them. */
+.fm-mascot[data-view="side"] .fm-ear { opacity: 0; }
+.fm-mascot[data-view="side"] .fm-side-pod { display: block; }
+.fm-mascot[data-view="side"] .fm-arm--left { opacity: 0; }
+.fm-mascot[data-view="side"] .fm-arm--right { transform-origin: 226px 232px; transform: translateX(-64px); }
+.fm-mascot[data-view="side"] .fm-leg--left { opacity: 0.45; transform-origin: 142px 300px; transform: translateX(12px); }
+.fm-mascot[data-view="side"] .fm-leg--right { transform-origin: 178px 300px; transform: translateX(-14px); }
+.fm-mascot[data-view="side"] .fm-compass { transform-origin: 160px 54px; transform: scaleX(0.45); }
+.fm-mascot[data-view="side"] .fm-ground { transform: scale(0.62, 1); }
+
+/* Back: no face, no heart, compass seen from behind. */
+.fm-mascot[data-view="back"] .fm-face,
+.fm-mascot[data-view="back"] .fm-heart,
+.fm-mascot[data-view="back"] .fm-helmet-rim,
+.fm-mascot[data-view="back"] .fm-compass-needle { opacity: 0; }
+.fm-mascot[data-view="back"] .fm-helmet-spec { opacity: 0.16; }
+
+/* --------------------------------------------------------- motion toggles */
+
+[data-fm-idle="off"]    .fm-breathe { animation: none; }
+[data-fm-hover="off"]   .fm-root { animation: none; }
+[data-fm-heart="off"]   .fm-heart-glow { animation: none; }
+[data-fm-compass="off"] .fm-needle-spin { animation: none; }
+
+/* Master off and the reduced-motion preview both keep every static pose and
+ * emotion intact — only the looping ambience stops. State still changes
+ * instantly, which is the behaviour real reduced-motion users get. */
+[data-fm-anim="off"] .fm-mascot *,
+[data-fm-reduced="on"] .fm-mascot * {
+  animation: none !important;
+}
+
+[data-fm-reduced="on"] .fm-mascot *,
+[data-fm-anim="off"] .fm-mascot * {
+  transition-duration: 0.01ms !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fm-mascot * {
+    animation: none !important;
+    transition-duration: 0.01ms !important;
+  }
+}

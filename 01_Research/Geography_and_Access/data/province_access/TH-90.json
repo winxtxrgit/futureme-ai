@@ -1,0 +1,2751 @@
+{
+ "summary": {
+  "iso": "TH-90",
+  "province_th": "สงขลา",
+  "province_en": "Songkhla",
+  "options_total": 90,
+  "in_province": 37,
+  "within_30km": 13,
+  "offers_vocational": 77,
+  "offers_degree": 16,
+  "distance_unknown": 10
+ },
+ "origin": {
+  "lat": 7.206111111,
+  "lon": 100.596666666,
+  "kind": "provincial_capital",
+  "note": "จุดอ้างอิงคืออำเภอเมืองของจังหวัด ไม่ใช่บ้านของผู้เรียน ระยะจริงจากบ้านต่างจากนี้ได้มาก"
+ },
+ "options": [
+  {
+   "id": "mhesi-19700-TH-90",
+   "name_th": "มหาวิทยาลัยเทคโนโลยีราชมงคลศรีวิชัย",
+   "kind": "rajamangala",
+   "sector": "มหาวิทยาลัยเทคโนโลยีราชมงคล",
+   "offers": [
+    "ปวส.",
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 0.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 2,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "รถไฟ",
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสงขลา",
+    "name_en": "Songkhla",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.9
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1390016501",
+   "name_th": "วิทยาลัยเทคนิคสงขลา",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "เมืองสงขลา",
+   "in_home_province": true,
+   "road_km": 1.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 2,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "รถไฟ",
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสงขลา",
+    "name_en": "Songkhla",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.9
+   },
+   "phone": "74311590",
+   "website": "http://www.spc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100011",
+   "name_th": "วิทยาลัยเทคโนโลยีวชิราโปลีสงขลา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "เมืองสงขลา",
+   "in_home_province": true,
+   "road_km": 1.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 3,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "รถไฟ",
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสงขลา",
+    "name_en": "Songkhla",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.2
+   },
+   "phone": "074-313-748",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1390016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาสงขลา",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "เมืองสงขลา",
+   "in_home_province": true,
+   "road_km": 2.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 3,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "รถไฟ",
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสงขลา",
+    "name_en": "Songkhla",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.9
+   },
+   "phone": "74311202",
+   "website": "http://www.songkhlavc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100012",
+   "name_th": "วิทยาลัยอาชีวศึกษาบริหารธุรกิจวิทยาสงขลา",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "เมืองสงขลา",
+   "in_home_province": true,
+   "road_km": 2.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 4,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "รถไฟ",
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสงขลา",
+    "name_en": "Songkhla",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.2
+   },
+   "phone": "074-437-631",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100015",
+   "name_th": "วิทยาลัยเทคโนโลยีสงขลา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "เมืองสงขลา",
+   "in_home_province": true,
+   "road_km": 5.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 10,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "074-437-1102",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-16400-TH-90",
+   "name_th": "มหาวิทยาลัยราชภัฏสงขลา",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 6.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 8,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-02200-TH-90",
+   "name_th": "มหาวิทยาลัยทักษิณ",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยในกำกับรัฐ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 7.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 9,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1390016301",
+   "name_th": "วิทยาลัยประมงติณสูลานนท์",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "เมืองสงขลา",
+   "in_home_province": true,
+   "road_km": 16.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 17,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "74333642",
+   "website": "http://www.tfc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1390156601",
+   "name_th": "วิทยาลัยการอาชีพสิงหนคร (รัตน์ ประธานราษฎร์นิกร)",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "สิงหนคร",
+   "in_home_province": true,
+   "road_km": 22.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 27,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "06-40342952",
+   "website": "http://www.stmc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1390116101",
+   "name_th": "วิทยาลัยเทคนิคหาดใหญ่",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": 26.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 26,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "74212300",
+   "website": "http://www.htc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100323",
+   "name_th": "วิทยาลัยอาชีวศึกษาฮอไรซอนบริหารธุรกิจ",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "จะนะ",
+   "in_home_province": true,
+   "road_km": 26.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 27,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "613647538",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100109",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการหาดใหญ่",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": 28.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 29,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "074-364-948-9",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100110",
+   "name_th": "วิทยาลัยเทคโนโลยีอุดมศึกษาพณิชยการ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": 30.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 30,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟชุมทางหาดใหญ่",
+    "name_en": "Hat Yai Junction railway station",
+    "mode": "rail",
+    "line": "Southern Line, Padang Besar Branch Line",
+    "km": 2.0
+   },
+   "phone": "074-246-227",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1390036101",
+   "name_th": "วิทยาลัยเทคนิคจะนะ",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "จะนะ",
+   "in_home_province": true,
+   "road_km": 30.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 29,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟวัดควนมีด",
+    "name_en": "Wat Khuan Mit Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.5
+   },
+   "phone": "074-536077-8",
+   "website": "http://www.chanatc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100113",
+   "name_th": "วิทยาลัยเทคโนโลยีนครหาดใหญ่",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": 31.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 32,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟชุมทางหาดใหญ่",
+    "name_en": "Hat Yai Junction railway station",
+    "mode": "rail",
+    "line": "Southern Line, Padang Besar Branch Line",
+    "km": 1.3
+   },
+   "phone": "074-245-110",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1390116401",
+   "name_th": "วิทยาลัยการอาชีพหลวงประธานราษฎร์นิกร",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": 31.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 31,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟชุมทางหาดใหญ่",
+    "name_en": "Hat Yai Junction railway station",
+    "mode": "rail",
+    "line": "Southern Line, Padang Besar Branch Line",
+    "km": 2.3
+   },
+   "phone": "74232036",
+   "website": "http://www.lpt.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100111",
+   "name_th": "วิทยาลัยเทคโนโลยีหาดใหญ่",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "บางกล่ำ",
+   "in_home_province": true,
+   "road_km": 31.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 32,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟบ้านดินลาน",
+    "name_en": "Ban Din Lan Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.8
+   },
+   "phone": "074-554-333",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-01000-TH-90",
+   "name_th": "มหาวิทยาลัยสงขลานครินทร์",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยในกำกับรัฐ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 32.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 34,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-13000-TH-90",
+   "name_th": "มหาวิทยาลัยหาดใหญ่",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 32.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 34,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1390100108",
+   "name_th": "วิทยาลัยเทคโนโลยีช่างกลภาคใต้",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": 33.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 34,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟชุมทางหาดใหญ่",
+    "name_en": "Hat Yai Junction railway station",
+    "mode": "rail",
+    "line": "Southern Line, Padang Besar Branch Line",
+    "km": 1.2
+   },
+   "phone": "074-253-457",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100107",
+   "name_th": "วิทยาลัยเทคโนโลยีหาดใหญ่อำนวยวิทย์",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": 33.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 34,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟชุมทางหาดใหญ่",
+    "name_en": "Hat Yai Junction railway station",
+    "mode": "rail",
+    "line": "Southern Line, Padang Besar Branch Line",
+    "km": 1.5
+   },
+   "phone": "742532312",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100146",
+   "name_th": "วิทยาลัยเทคโนโลยีสันติวิทย์สงขลา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "จะนะ",
+   "in_home_province": true,
+   "road_km": 41.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 38,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "จะนะ",
+    "name_en": "Chana Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.4
+   },
+   "phone": "074-801727",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1390026401",
+   "name_th": "วิทยาลัยการอาชีพสมเด็จเจ้าพะโคะ",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "สทิงพระ",
+   "in_home_province": true,
+   "road_km": 52.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 49,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "074-304192",
+   "website": "http://www.pakho.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1390046401",
+   "name_th": "วิทยาลัยการอาชีพนาทวี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "นาทวี",
+   "in_home_province": true,
+   "road_km": 59.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 53,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "74371805",
+   "website": "http://www.nathawee.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1390096301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีสงขลา",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "รัตภูมิ",
+   "in_home_province": true,
+   "road_km": 62.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 55,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "74389118",
+   "website": "http://www.scat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1391100011",
+   "name_th": "โรงเรียนสันติพณิชยการ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-91",
+   "province_th": "สตูล",
+   "district": "เมืองสตูล",
+   "in_home_province": false,
+   "road_km": 85.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 86,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "74799315",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1394036101",
+   "name_th": "วิทยาลัยเทคนิคกาญจนาภิเษกปัตตานี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": "หนองจิก",
+   "in_home_province": false,
+   "road_km": 89.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 71,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "73420258",
+   "website": "http://WWW.KPTC.AC.TH",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1394036301",
+   "name_th": "วิทยาลัยเทคโนโลยีการเกษตรและประมงปัตตานี",
+   "kind": "private_vocational",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": "หนองจิก",
+   "in_home_province": false,
+   "road_km": 100.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 80,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "73420477",
+   "website": "http://www.pfc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1393096401",
+   "name_th": "วิทยาลัยการอาชีพบางแก้ว",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-93",
+   "province_th": "พัทลุง",
+   "district": "บางแก้ว",
+   "in_home_province": false,
+   "road_km": 101.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 86,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟบางแก้ว",
+    "name_en": "Bang Kaeo Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.8
+   },
+   "phone": "74697185",
+   "website": "http://www.bangkaew.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1394100024",
+   "name_th": "วิทยาลัยเทคโนโลยีอาซิซสถานพณิชยการ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": "โคกโพธิ์",
+   "in_home_province": false,
+   "road_km": 103.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 84,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟนาประดู่",
+    "name_en": "Na Pradu Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.1
+   },
+   "phone": "815992978",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1394016101",
+   "name_th": "วิทยาลัยเทคนิคปัตตานี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": "เมืองปัตตานี",
+   "in_home_province": false,
+   "road_km": 104.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "073-335913",
+   "website": "http://www.technictani.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1394016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาปัตตานี",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": "เมืองปัตตานี",
+   "in_home_province": false,
+   "road_km": 104.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "73333000",
+   "website": "http://www.pnvc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1394016401",
+   "name_th": "วิทยาลัยการอาชีพปัตตานี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": "เมืองปัตตานี",
+   "in_home_province": false,
+   "road_km": 104.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "073-333011",
+   "website": "http://www.ptnicec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1391036301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีสตูล",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-91",
+   "province_th": "สตูล",
+   "district": "ควนกาหลง",
+   "in_home_province": false,
+   "road_km": 105.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 101,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "08-1609-1424",
+   "website": "http://www.satunatc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-01003-TH-94",
+   "name_th": "มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตปัตตานี",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 106.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 85,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-20312-TH-94",
+   "name_th": "วิทยาลัยชุมชนปัตตานี",
+   "kind": "college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 106.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 85,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1380166401",
+   "name_th": "วิทยาลัยการอาชีพหัวไทร",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-80",
+   "province_th": "นครศรีธรรมราช",
+   "district": "หัวไทร",
+   "in_home_province": false,
+   "road_km": 114.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 92,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "75766525",
+   "website": "http://www.hicc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1391100039",
+   "name_th": "วิทยาลัยเทคโนโลยีอันดามันอนาโตเลียน",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-91",
+   "province_th": "สตูล",
+   "district": "ควนโดน",
+   "in_home_province": false,
+   "road_km": 116.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 108,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "873987761",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1390100325",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการมูฮำมาดีย์",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "สะบ้าย้อย",
+   "in_home_province": true,
+   "road_km": 118.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 102,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "082-2650321",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1393016301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีพัทลุง",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-93",
+   "province_th": "พัทลุง",
+   "district": "เมืองพัทลุง",
+   "in_home_province": false,
+   "road_km": 123.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 106,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟบ้านค่ายไทย",
+    "name_en": "Ban Khai Thai Railway Halt",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.8
+   },
+   "phone": "74610475",
+   "website": "http://www.kasetpt.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1393100012",
+   "name_th": "วิทยาลัยเทคโนโลยีพัทลุงบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-93",
+   "province_th": "พัทลุง",
+   "district": "เมืองพัทลุง",
+   "in_home_province": false,
+   "road_km": 124.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 98,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟพัทลุง",
+    "name_en": "Phatthalung Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.0
+   },
+   "phone": "74673641",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1393016501",
+   "name_th": "วิทยาลัยสารพัดช่างพัทลุง",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-93",
+   "province_th": "พัทลุง",
+   "district": "เมืองพัทลุง",
+   "in_home_province": false,
+   "road_km": 124.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 99,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟพัทลุง",
+    "name_en": "Phatthalung Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.1
+   },
+   "phone": "74614046",
+   "website": "http://www.ptlpoly.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1393016101",
+   "name_th": "วิทยาลัยเทคนิคพัทลุง",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-93",
+   "province_th": "พัทลุง",
+   "district": "เมืองพัทลุง",
+   "in_home_province": false,
+   "road_km": 126.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 102,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟพัทลุง",
+    "name_en": "Phatthalung Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.8
+   },
+   "phone": "74613066",
+   "website": "http://www.ptl.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1391016101",
+   "name_th": "วิทยาลัยเทคนิคสตูล",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-91",
+   "province_th": "สตูล",
+   "district": "เมืองสตูล",
+   "in_home_province": false,
+   "road_km": 128.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 116,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "074-711107",
+   "website": "http://www.sttc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1395016501",
+   "name_th": "วิทยาลัยการอาชีพนครยะลา",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-95",
+   "province_th": "ยะลา",
+   "district": "เมืองยะลา",
+   "in_home_province": false,
+   "road_km": 133.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 113,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "073274506-8",
+   "website": "http://www.nyc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1395016201",
+   "name_th": "วิทยาลัยอาชีวศึกษายะลา",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-95",
+   "province_th": "ยะลา",
+   "district": "เมืองยะลา",
+   "in_home_province": false,
+   "road_km": 134.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 114,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "73274806",
+   "website": "http://www.yvc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1395016101",
+   "name_th": "วิทยาลัยเทคนิคยะลา",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-95",
+   "province_th": "ยะลา",
+   "district": "เมืองยะลา",
+   "in_home_province": false,
+   "road_km": 135.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 111,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟยะลา",
+    "name_en": "Yala Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.4
+   },
+   "phone": "73212471",
+   "website": "http://www.ytc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-15700-TH-95",
+   "name_th": "มหาวิทยาลัยราชภัฏยะลา",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-95",
+   "province_th": "ยะลา",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 135.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 113,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟยะลา",
+    "name_en": "Yala Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.3
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1395100010",
+   "name_th": "วิทยาลัยอาชีวศึกษาผดุงประชายะลา",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-95",
+   "province_th": "ยะลา",
+   "district": "เมืองยะลา",
+   "in_home_province": false,
+   "road_km": 136.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 112,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟยะลา",
+    "name_en": "Yala Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.4
+   },
+   "phone": "073-212-338",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1395100011",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจยะลา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-95",
+   "province_th": "ยะลา",
+   "district": "เมืองยะลา",
+   "in_home_province": false,
+   "road_km": 136.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 112,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟยะลา",
+    "name_en": "Yala Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.2
+   },
+   "phone": "73222257",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-22010-TH-95",
+   "name_th": "มหาวิทยาลัยการกีฬาแห่งชาติ วิทยาเขตยะลา",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-95",
+   "province_th": "ยะลา",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 136.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 113,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟยะลา",
+    "name_en": "Yala Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.9
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1391056401",
+   "name_th": "วิทยาลัยการอาชีพละงู",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-91",
+   "province_th": "สตูล",
+   "district": "ละงู",
+   "in_home_province": false,
+   "road_km": 140.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 133,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "074-750906",
+   "website": "http://www.lc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1393056401",
+   "name_th": "วิทยาลัยการอาชีพควนขนุน",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-93",
+   "province_th": "พัทลุง",
+   "district": "ควนขนุน",
+   "in_home_province": false,
+   "road_km": 143.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 115,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "074-617187",
+   "website": "http://www.knicec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1380100121",
+   "name_th": "วิทยาลัยอาชีวศึกษาปากพนัง",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-80",
+   "province_th": "นครศรีธรรมราช",
+   "district": "ปากพนัง",
+   "in_home_province": false,
+   "road_km": 143.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 131,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "075-517383",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1380100122",
+   "name_th": "วิทยาลัยเทคโนโลยีทักษิณอาชีวศึกษา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-80",
+   "province_th": "นครศรีธรรมราช",
+   "district": "ปากพนัง",
+   "in_home_province": false,
+   "road_km": 145.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 132,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "075-370-027",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1380126101",
+   "name_th": "วิทยาลัยเทคโนโลยีและอุตสาหกรรมการต่อเรือนครศรีธรรมราช",
+   "kind": "private_vocational",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-80",
+   "province_th": "นครศรีธรรมราช",
+   "district": "ปากพนัง",
+   "in_home_province": false,
+   "road_km": 147.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 136,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "075 370 759",
+   "website": "http://www.nasic.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-02201-TH-93",
+   "name_th": "มหาวิทยาลัยทักษิณ วิทยาเขตพัทลุง",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-93",
+   "province_th": "พัทลุง",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 149.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 118,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1393106101",
+   "name_th": "วิทยาลัยเทคนิคป่าพะยอม",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-93",
+   "province_th": "พัทลุง",
+   "district": "ป่าพะยอม",
+   "in_home_province": false,
+   "road_km": 149.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 115,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "074-841009",
+   "website": "http://www.pytc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1394100050",
+   "name_th": "วิทยาลัยอาชีวศึกษาสายบุรี",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": "สายบุรี",
+   "in_home_province": false,
+   "road_km": 156.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 118,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "73411093",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1395066401",
+   "name_th": "วิทยาลัยการอาชีพรามัน",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-95",
+   "province_th": "ยะลา",
+   "district": "รามัน",
+   "in_home_province": false,
+   "road_km": 157.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 135,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟบ้านปาแต",
+    "name_en": "Ban Pa Tae railway halt",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.9
+   },
+   "phone": "73262048",
+   "website": "http://www.ric.thai.ac",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1394076401",
+   "name_th": "วิทยาลัยการอาชีพสายบุรี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-94",
+   "province_th": "ปัตตานี",
+   "district": "สายบุรี",
+   "in_home_province": false,
+   "road_km": 162.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 127,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "73419516",
+   "website": "http://www.sbricec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1380100131",
+   "name_th": "วิทยาลัยอาชีวศึกษาพณิชยการศักดิ์ศิลปิน",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-80",
+   "province_th": "นครศรีธรรมราช",
+   "district": "ร่อนพิบูลย์",
+   "in_home_province": false,
+   "road_km": 165.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 139,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "075-442-008",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1392100017",
+   "name_th": "วิทยาลัยอาชีวศึกษาสหตรัง",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": "เมืองตรัง",
+   "in_home_province": false,
+   "road_km": 173.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 133,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "075-216-297",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1380100130",
+   "name_th": "วิทยาลัยอาชีวศึกษาวีรศิลปิน",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-80",
+   "province_th": "นครศรีธรรมราช",
+   "district": "ร่อนพิบูลย์",
+   "in_home_province": false,
+   "road_km": 174.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 142,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟร่อนพิบูลย์",
+    "name_en": "Ron Phibun Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.5
+   },
+   "phone": "075-442-008",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-21407-TH-92",
+   "name_th": "วิทยาลัยพยาบาลบรมราชชนนี ตรัง",
+   "kind": "nursing_college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 177.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 137,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟตรัง",
+    "name_en": "Trang railway station",
+    "mode": "rail",
+    "line": "Thung Song Junction–Kantang railway line",
+    "km": 2.6
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-00708-TH-92",
+   "name_th": "มหาวิทยาลัยรามคำแหง สาขาวิทยบริการเฉลิมพระเกียรติจังหวัดตรัง",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 177.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 137,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1392100016",
+   "name_th": "วิทยาลัยอาชีวศึกษาโปลีเทคนิคตรัง",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": "เมืองตรัง",
+   "in_home_province": false,
+   "road_km": 177.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 137,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟตรัง",
+    "name_en": "Trang railway station",
+    "mode": "rail",
+    "line": "Thung Song Junction–Kantang railway line",
+    "km": 2.5
+   },
+   "phone": "75290416",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1392016101",
+   "name_th": "วิทยาลัยเทคนิคตรัง",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": "เมืองตรัง",
+   "in_home_province": false,
+   "road_km": 179.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 137,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟนาป้อ",
+    "name_en": "Na Po",
+    "mode": "rail",
+    "line": "Thung Song Junction–Kantang railway line",
+    "km": 2.8
+   },
+   "phone": "75501027",
+   "website": "http://www.technictrang.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1392016401",
+   "name_th": "วิทยาลัยการอาชีพตรัง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": "เมืองตรัง",
+   "in_home_province": false,
+   "road_km": 180.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 138,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟนาป้อ",
+    "name_en": "Na Po",
+    "mode": "rail",
+    "line": "Thung Song Junction–Kantang railway line",
+    "km": 2.9
+   },
+   "phone": "075-501068",
+   "website": "http://www.tic.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1392016501",
+   "name_th": "วิทยาลัยสารพัดช่างตรัง",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": "เมืองตรัง",
+   "in_home_province": false,
+   "road_km": 182.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 144,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟตรัง",
+    "name_en": "Trang railway station",
+    "mode": "rail",
+    "line": "Thung Song Junction–Kantang railway line",
+    "km": 2.9
+   },
+   "phone": "075570556-7",
+   "website": "http://www.ptt.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-01004-TH-92",
+   "name_th": "มหาวิทยาลัยสงขลานครินทร์ วิทยาเขตตรัง",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 184.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 142,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟนาป้อ",
+    "name_en": "Na Po",
+    "mode": "rail",
+    "line": "Thung Song Junction–Kantang railway line",
+    "km": 2.9
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1392016301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีตรัง",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": "เมืองตรัง",
+   "in_home_province": false,
+   "road_km": 190.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 145,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟลำภูรา",
+    "name_en": "Lam Phura",
+    "mode": "rail",
+    "line": "Thung Song Junction–Kantang railway line",
+    "km": 0.9
+   },
+   "phone": "75284152",
+   "website": "http://www.kasettrang.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1380100093",
+   "name_th": "โรงเรียนพณิชยการทุ่งสง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-80",
+   "province_th": "นครศรีธรรมราช",
+   "district": "ทุ่งสง",
+   "in_home_province": false,
+   "road_km": 192.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 158,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟชุมทางทุ่งสง",
+    "name_en": "Thung Song Junction",
+    "mode": "rail",
+    "line": "Thung Song Junction–Kantang railway line, Southern Line",
+    "km": 0.7
+   },
+   "phone": "075-332-266",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1380100094",
+   "name_th": "วิทยาลัยเทคโนโลยีภาคใต้ (เอส.เทค.)",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-80",
+   "province_th": "นครศรีธรรมราช",
+   "district": "ทุ่งสง",
+   "in_home_province": false,
+   "road_km": 194.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 155,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "075-770-136-7",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-12000-TH-80",
+   "name_th": "วิทยาลัยเทคโนโลยีภาคใต้",
+   "kind": "private_vocational",
+   "sector": "วิทยาลัยเอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-80",
+   "province_th": "นครศรีธรรมราช",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 194.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 155,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1392066401",
+   "name_th": "วิทยาลัยการอาชีพห้วยยอด",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": "ห้วยยอด",
+   "in_home_province": false,
+   "road_km": 207.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 159,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟห้วยยอด",
+    "name_en": "Huai Yot",
+    "mode": "rail",
+    "line": "Thung Song Junction–Kantang railway line",
+    "km": 2.2
+   },
+   "phone": "075-271495",
+   "website": "http://www.huaiyot.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1392026401",
+   "name_th": "วิทยาลัยการอาชีพกันตัง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": "กันตัง",
+   "in_home_province": false,
+   "road_km": 210.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 169,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "985553858",
+   "website": "http://www.kantang.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-19703-TH-92",
+   "name_th": "มหาวิทยาลัยเทคโนโลยีราชมงคลศรีวิชัย วิทยาเขตตรัง",
+   "kind": "rajamangala",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปวส.",
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 212.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 179,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1392046401",
+   "name_th": "วิทยาลัยการอาชีพปะเหลียน",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-92",
+   "province_th": "ตรัง",
+   "district": "ปะเหลียน",
+   "in_home_province": false,
+   "road_km": 218.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 175,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "075-501897",
+   "website": "http://www.palian.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-00719-TH-90",
+   "name_th": "มหาวิทยาลัยรามคำแหง สาขาวิทยบริการเฉลิมพระเกียรติจังหวัดสงขลา",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "mhesi-19701-TH-90",
+   "name_th": "มหาวิทยาลัยเทคโนโลยีราชมงคลศรีวิชัย  วิทยาเขตสงขลา",
+   "kind": "rajamangala",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปวส.",
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "mhesi-20319-TH-90",
+   "name_th": "วิทยาลัยชุมชนสงขลา",
+   "kind": "college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "mhesi-21429-TH-90",
+   "name_th": "วิทยาลัยพยาบาลบรมราชชนนี สงขลา",
+   "kind": "nursing_college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "mhesi-18400-TH-90",
+   "name_th": "วิทยาลัยพุทธศาสนานานาชาติ",
+   "kind": "college",
+   "sector": "วิทยาลัยเอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "ovec-pri-1390100151",
+   "name_th": "วิทยาลัยอาชีวศึกษาออมสินสมโภช ๙๙ ปี วิทยานุสรณ์",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "074-291-772",
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "ovec-pri-1390100326",
+   "name_th": "วิทยาลัยเทคโนโลยีนูซันตารา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "จะนะ",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "074-207179",
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "ovec-pri-1390100081",
+   "name_th": "วิทยาลัยเทคโนโลยีส่องแสงพณิชยการ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "074-291-277",
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "ovec-pri-1390100116",
+   "name_th": "วิทยาลัยเทคโนโลยีหาดใหญ่บริหารธุรกิจสากล",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "หาดใหญ่",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "74252111",
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "ovec-pri-1390100014",
+   "name_th": "โรงเรียนเทคโนโลยีพณิชยการสงขลา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-90",
+   "province_th": "สงขลา",
+   "district": "เมืองสงขลา",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "074-311-989",
+   "website": null,
+   "coord_source": "missing"
+  }
+ ]
+}

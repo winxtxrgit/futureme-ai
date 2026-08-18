@@ -1,0 +1,217 @@
+<!doctype html>
+<html lang="th" data-theme="light">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>FutureMe Mascot Lab</title>
+<meta name="description" content="Internal design tool for previewing the FutureMe mascot's emotions, poses and product states before 2D/3D production.">
+<link rel="stylesheet" href="mascot.css">
+<link rel="stylesheet" href="styles.css">
+</head>
+<body
+  data-fm-anim="on" data-fm-idle="on" data-fm-hover="on"
+  data-fm-heart="on" data-fm-compass="on" data-fm-reduced="off">
+
+<a class="skip" href="#stage">ข้ามไปที่เวทีมาสคอต</a>
+
+<header class="topbar">
+  <div class="topbar__brand">
+    <span class="topbar__mark" aria-hidden="true"></span>
+    <div>
+      <h1>FutureMe Mascot Lab</h1>
+      <p>เครื่องมือภายในสำหรับทดสอบอารมณ์ ท่าทาง และสถานะของมาสคอตก่อนผลิตจริง</p>
+    </div>
+  </div>
+  <div class="topbar__actions">
+    <a class="btn btn--ghost" href="docs/mascot-spec.md">Spec</a>
+    <button class="btn btn--ghost" id="themeToggle" type="button" aria-pressed="false">
+      <span id="themeToggleLabel">Dark</span>
+    </button>
+  </div>
+</header>
+
+<nav class="subnav" aria-label="ส่วนต่าง ๆ ของหน้า">
+  <a href="#stage">Stage</a>
+  <a href="#scale">5-point scale</a>
+  <a href="#states">Product states</a>
+  <a href="#themes">Light / Dark</a>
+  <a href="#turnaround">Turnaround</a>
+  <a href="#handoff">Handoff</a>
+</nav>
+
+<main>
+
+  <!-- 1 ─────────────────────────────────────────────────── live stage -->
+  <section id="stage" class="panel">
+    <div class="panel__head">
+      <h2>Live stage</h2>
+      <p class="muted">เลือกอารมณ์และท่าทางเพื่อดูว่าตัวละครจะสื่อสารอย่างไรในแอปจริง</p>
+    </div>
+
+    <div class="stage">
+      <div class="stage__view">
+        <div class="stage__mascot" id="stageMascot"></div>
+        <p class="stage__caption" id="stageCaption" aria-live="polite"></p>
+      </div>
+
+      <div class="stage__controls">
+        <fieldset class="group">
+          <legend>Emotion <span class="muted">— 5 ระดับ</span></legend>
+          <div class="chips" id="emotionControls"></div>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>Pose <span class="muted">— 9 ท่า</span></legend>
+          <div class="chips" id="poseControls"></div>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>Size <span class="muted">— ขนาดส่งออกจริง</span></legend>
+          <div class="chips" id="sizeControls"></div>
+        </fieldset>
+
+        <fieldset class="group">
+          <legend>Motion</legend>
+          <div class="switches" id="motionControls"></div>
+        </fieldset>
+
+        <div class="group">
+          <div class="group__row">
+            <span class="group__label">State</span>
+            <button class="btn btn--tiny" type="button" id="copyState">Copy</button>
+          </div>
+          <pre class="code" id="stateCode"></pre>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 2 ────────────────────────────────────────────── five-point scale -->
+  <section id="scale" class="panel">
+    <div class="panel__head">
+      <h2>Five-point scale</h2>
+      <p class="muted">
+        ระดับ 4 ต้องลืมตา ระดับ 5 เท่านั้นที่หลับตาเป็นเสี้ยว
+        และทั้ง 5 ระดับต้องแยกออกจากกันได้แม้ไม่มีสี
+      </p>
+    </div>
+
+    <div class="scale__tools">
+      <label class="switch">
+        <input type="checkbox" id="greyscaleToggle">
+        <span>ทดสอบแบบไม่มีสี (greyscale)</span>
+      </label>
+      <p class="muted" id="scaleAnswer" aria-live="polite">ยังไม่ได้เลือกคำตอบ</p>
+    </div>
+
+    <div class="question" id="questionCard">
+      <p class="question__text">“ฉันชอบงานที่ได้แก้ปัญหาด้วยข้อมูลและตัวเลข”</p>
+      <div class="scale" id="scaleOptions" role="radiogroup" aria-label="ระดับความชอบ 1 ถึง 5"></div>
+    </div>
+  </section>
+
+  <!-- 3 ─────────────────────────────────────────── product state cards -->
+  <section id="states" class="panel">
+    <div class="panel__head">
+      <h2>Product states</h2>
+      <p class="muted">มาสคอตในบริบทจริงของ FutureMe — หนึ่งสถานะ หนึ่งการ์ด</p>
+    </div>
+    <div class="cards" id="stateCards"></div>
+  </section>
+
+  <!-- 4 ──────────────────────────────────────────────── theme previews -->
+  <section id="themes" class="panel">
+    <div class="panel__head">
+      <h2>Light / Dark</h2>
+      <p class="muted">ตัวละครใช้ชุดสีเดียว ตรวจว่าอ่านออกทั้งสองธีมโดยไม่ต้องมีพื้นหลังติดมากับไฟล์</p>
+    </div>
+    <div class="themes">
+      <div class="themes__pane" data-theme="light">
+        <span class="themes__tag">Light</span>
+        <div class="themes__row" id="themeLight"></div>
+      </div>
+      <div class="themes__pane" data-theme="dark">
+        <span class="themes__tag">Dark</span>
+        <div class="themes__row" id="themeDark"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 5 ─────────────────────────────────────────────────── turnaround -->
+  <section id="turnaround" class="panel">
+    <div class="panel__head">
+      <h2>Turnaround &amp; 3D prep</h2>
+      <p class="muted">มุมมองสำหรับใช้เป็นแบบอ้างอิงตอนขึ้นโมเดล</p>
+    </div>
+
+    <div class="views" id="viewRow"></div>
+
+    <div class="reference">
+      <h3>Art direction reference</h3>
+      <p class="muted">
+        ภาพเรนเดอร์ต้นฉบับคือแหล่งอ้างอิงหลักของรูปทรงและวัสดุ
+        ส่วนมุมมองด้านบนเป็นการประมาณด้วย CSS สำหรับตรวจสัดส่วนและตำแหน่งชิ้นส่วน
+      </p>
+      <div class="reference__grid">
+        <figure><img src="assets/reference/hero.png" alt="ภาพเรนเดอร์มาสคอต FutureMe มุมหน้า"><figcaption>Hero</figcaption></figure>
+        <figure><img src="assets/reference/turnaround.png" alt="แผ่นภาพมาสคอต 4 มุม: หน้า สามส่วนสี่ ข้าง หลัง"><figcaption>Turnaround</figcaption></figure>
+        <figure><img src="assets/reference/emotions.png" alt="แผ่นภาพอารมณ์มาสคอต 5 ระดับ"><figcaption>Emotions</figcaption></figure>
+        <figure><img src="assets/reference/poses.png" alt="แผ่นภาพท่าทางมาสคอต 6 ท่า"><figcaption>Poses</figcaption></figure>
+      </div>
+    </div>
+  </section>
+
+  <!-- 6 ────────────────────────────────────────────────────── handoff -->
+  <section id="handoff" class="panel">
+    <div class="panel__head">
+      <h2>Handoff</h2>
+      <p class="muted">ทุกสถานะใช้ชื่อเดียวกันตลอดสาย SVG → Rive → GLB</p>
+    </div>
+
+    <div class="handoff">
+      <article class="handoff__block">
+        <h3>Next.js component API</h3>
+<pre class="code code--block"><code>&lt;FutureMeMascot
+  emotion="smile"     // dislike | not-okay | neutral | smile | very-happy
+  pose="wave"         // idle | wave | think | listen | point-left …
+  size="md"           // xs 64 · sm 96 · md 200 · lg 300 · xl 440
+  animated
+  ariaLabel="FutureMe พร้อมช่วยแล้ว"
+/&gt;</code></pre>
+        <p class="muted">ไฟล์อ้างอิงพร้อมใช้: <code>nextjs/FutureMeMascot.tsx</code></p>
+      </article>
+
+      <article class="handoff__block">
+        <h3>Asset naming</h3>
+<pre class="code code--block"><code>futureme_mascot_emotion_very_happy.svg
+futureme_mascot_pose_point_left.svg
+futureme_mascot_view_three_quarter.svg</code></pre>
+        <p class="muted">
+          สร้างไฟล์จริงด้วย <code>node tools/export-assets.js</code> →
+          <code>assets/svg/</code> (18 ไฟล์)
+        </p>
+      </article>
+
+      <article class="handoff__block">
+        <h3>Production path</h3>
+        <ul class="list">
+          <li><b>SVG + CSS</b> — ตอนนี้ เบาที่สุด ใช้ได้ทันที</li>
+          <li><b>Rive</b> — แนะนำเมื่อต้องการ state machine ตอบสนองผู้ใช้</li>
+          <li><b>Lottie</b> — เฉพาะคลิปที่ไม่ต้องโต้ตอบ</li>
+          <li><b>GLB / Three.js</b> — เมื่อต้องการความเป็น 3D จริง</li>
+        </ul>
+        <p class="muted">รายละเอียดใน <code>docs/production-plan.md</code></p>
+      </article>
+    </div>
+  </section>
+
+</main>
+
+<footer class="foot">
+  <p>FutureMe / FuturePath AI — prototype workspace. ตัวละครหนึ่งชุด ใช้ซ้ำทุกหน้าจอ</p>
+</footer>
+
+<script src="mascot.js"></script>
+<script src="app.js"></script>
+</body>
+</html>

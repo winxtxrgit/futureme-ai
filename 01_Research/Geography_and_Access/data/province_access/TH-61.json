@@ -1,0 +1,2493 @@
+{
+ "summary": {
+  "iso": "TH-61",
+  "province_th": "อุทัยธานี",
+  "province_en": "Uthai Thani",
+  "options_total": 83,
+  "in_province": 7,
+  "within_30km": 6,
+  "offers_vocational": 77,
+  "offers_degree": 6,
+  "distance_unknown": 3
+ },
+ "origin": {
+  "lat": 15.38,
+  "lon": 100.025,
+  "kind": "provincial_capital",
+  "note": "จุดอ้างอิงคืออำเภอเมืองของจังหวัด ไม่ใช่บ้านของผู้เรียน ระยะจริงจากบ้านต่างจากนี้ได้มาก"
+ },
+ "options": [
+  {
+   "id": "ovec-pub-1361016101",
+   "name_th": "วิทยาลัยเทคนิคอุทัยธานี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-61",
+   "province_th": "อุทัยธานี",
+   "district": "เมืองอุทัยธานี",
+   "in_home_province": true,
+   "road_km": 4.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 6,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "946160005",
+   "website": "http://www.uthai.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1361016501",
+   "name_th": "วิทยาลัยสารพัดช่างอุทัยธานี",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-61",
+   "province_th": "อุทัยธานี",
+   "district": "เมืองอุทัยธานี",
+   "in_home_province": true,
+   "road_km": 4.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 8,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "56970097",
+   "website": "http://www.uthaipoly.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-00725-TH-61",
+   "name_th": "มหาวิทยาลัยรามคำแหง สาขาวิทยบริการเฉลิมพระเกียรติจังหวัดอุทัยธานี",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-61",
+   "province_th": "อุทัยธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 6.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 7,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1361016301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีอุทัยธานี",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-61",
+   "province_th": "อุทัยธานี",
+   "district": "เมืองอุทัยธานี",
+   "in_home_province": true,
+   "road_km": 10.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 14,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "0-56982621",
+   "website": "http://www.utac.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1318026301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีชัยนาท",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-18",
+   "province_th": "ชัยนาท",
+   "district": "มโนรมย์",
+   "in_home_province": false,
+   "road_km": 26.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 30,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "0-5694-1292",
+   "website": "http://www.cct.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1318016101",
+   "name_th": "วิทยาลัยเทคนิคชัยนาท",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-18",
+   "province_th": "ชัยนาท",
+   "district": "เมืองชัยนาท",
+   "in_home_province": false,
+   "road_km": 28.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 27,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "056 411 276",
+   "website": "http://www.chainat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1360016401",
+   "name_th": "วิทยาลัยการอาชีพนครสวรรค์",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "เมืองนครสวรรค์",
+   "in_home_province": false,
+   "road_km": 43.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 37,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟนครสวรรค์",
+    "name_en": "Nakhon Sawan Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 2.9
+   },
+   "phone": "0-56255347",
+   "website": "http://www.nice.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1360016101",
+   "name_th": "วิทยาลัยเทคนิคนครสวรรค์",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "เมืองนครสวรรค์",
+   "in_home_province": false,
+   "road_km": 47.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 39,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "56221390",
+   "website": "http://www.nkstec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1360100052",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการนครสวรรค์",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "เมืองนครสวรรค์",
+   "in_home_province": false,
+   "road_km": 48.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 42,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "56801829",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1360100056",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจนครสวรรค์",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "เมืองนครสวรรค์",
+   "in_home_province": false,
+   "road_km": 48.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 42,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "056 801829",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-17200-TH-60",
+   "name_th": "มหาวิทยาลัยราชภัฏนครสวรรค์",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 48.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 42,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1360100004",
+   "name_th": "วิทยาลัยอาชีวศึกษาปากน้ำโพ",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "หนองบัว",
+   "in_home_province": false,
+   "road_km": 49.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 43,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟปากน้ำโพ",
+    "name_en": "Pak Nam Pho Station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 0.1
+   },
+   "phone": "854001904",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1360016201",
+   "name_th": "วิทยาลัยอาชีวศึกษานครสวรรค์",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "เมืองนครสวรรค์",
+   "in_home_province": false,
+   "road_km": 50.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 42,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟปากน้ำโพ",
+    "name_en": "Pak Nam Pho Station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 2.6
+   },
+   "phone": "56221360",
+   "website": "http://www.nwvoc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1360100055",
+   "name_th": "วิทยาลัยอาชีวศึกษาวิริยาลัยนครสวรรค์",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "เมืองนครสวรรค์",
+   "in_home_province": false,
+   "road_km": 54.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 47,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "056-340206-7",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1360100109",
+   "name_th": "วิทยาลัยเทคโนโลยีตาคลี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "ตาคลี",
+   "in_home_province": false,
+   "road_km": 54.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 47,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟบ้านตาคลี",
+    "name_en": "Ban Takhli",
+    "mode": "rail",
+    "line": null,
+    "km": 1.1
+   },
+   "phone": "056-005776",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1360016301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีนครสวรรค์",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "เมืองนครสวรรค์",
+   "in_home_province": false,
+   "road_km": 59.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 52,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "56276216",
+   "website": "http://www.nscat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1317066401",
+   "name_th": "วิทยาลัยการอาชีพอินทร์บุรี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-17",
+   "province_th": "สิงห์บุรี",
+   "district": "อินทร์บุรี",
+   "in_home_province": false,
+   "road_km": 65.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 60,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "036-699488",
+   "website": "http://www.icc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1360126601",
+   "name_th": "วิทยาลัยการอาชีพตากฟ้า",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "ตากฟ้า",
+   "in_home_province": false,
+   "road_km": 75.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 61,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "056-241906",
+   "website": "http://www.tftmc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1317016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาสิงห์บุรี",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-17",
+   "province_th": "สิงห์บุรี",
+   "district": "เมืองสิงห์บุรี",
+   "in_home_province": false,
+   "road_km": 79.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 69,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "36512515",
+   "website": "http://www.sivc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1317100015",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการสิงห์บุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-17",
+   "province_th": "สิงห์บุรี",
+   "district": "เมืองสิงห์บุรี",
+   "in_home_province": false,
+   "road_km": 80.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 69,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "36511907",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1317100014",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจสิงห์บุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-17",
+   "province_th": "สิงห์บุรี",
+   "district": "เมืองสิงห์บุรี",
+   "in_home_province": false,
+   "road_km": 80.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 69,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "36511622",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1317016101",
+   "name_th": "วิทยาลัยเทคนิคสิงห์บุรี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-17",
+   "province_th": "สิงห์บุรี",
+   "district": "เมืองสิงห์บุรี",
+   "in_home_province": false,
+   "road_km": 81.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 70,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "036-511232",
+   "website": "http://www.sbtc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1360056401",
+   "name_th": "วิทยาลัยการอาชีพบรรพตพิสัย",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "บรรพตพิสัย",
+   "in_home_province": false,
+   "road_km": 82.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 76,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "056-009536",
+   "website": "http://www.bice.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1317016301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีสิงห์บุรี",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-17",
+   "province_th": "สิงห์บุรี",
+   "district": "เมืองสิงห์บุรี",
+   "in_home_province": false,
+   "road_km": 84.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 70,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "36510982",
+   "website": "http://www.kasetsing.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1317046101",
+   "name_th": "วิทยาลัยเทคนิคสิงห์บุรี แห่งที่ 2",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-17",
+   "province_th": "สิงห์บุรี",
+   "district": "ท่าช้าง",
+   "in_home_province": false,
+   "road_km": 94.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 84,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "036-510857",
+   "website": "http://www.singtc2.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1360136101",
+   "name_th": "วิทยาลัยเทคนิคแม่วงก์",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-60",
+   "province_th": "นครสวรรค์",
+   "district": "แม่วงก์",
+   "in_home_province": false,
+   "road_km": 99.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 106,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "864175734",
+   "website": "http://www.mwtech.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1316100049",
+   "name_th": "วิทยาลัยเทคโนโลยีอาชีวศึกษาหนองม่วง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "หนองม่วง",
+   "in_home_province": false,
+   "road_km": 101.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 79,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "36432266",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1316100041",
+   "name_th": "วิทยาลัยเทคโนโลยีลพบุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "เมืองลพบุรี",
+   "in_home_province": false,
+   "road_km": 105.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 90,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟลพบุรี",
+    "name_en": "Lop Buri Railway Station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 1.7
+   },
+   "phone": "036-412-568",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372036301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีสุพรรณบุรี",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "ด่านช้าง",
+   "in_home_province": false,
+   "road_km": 106.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 101,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "35595056",
+   "website": "http://www.spcat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1316100038",
+   "name_th": "วิทยาลัยเทคโนโลยีเอเชียลพบุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "เมืองลพบุรี",
+   "in_home_province": false,
+   "road_km": 106.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 91,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟลพบุรี",
+    "name_en": "Lop Buri Railway Station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 2.5
+   },
+   "phone": "036-424-345",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1316100039",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการลพบุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "เมืองลพบุรี",
+   "in_home_province": false,
+   "road_km": 106.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 91,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟลพบุรี",
+    "name_en": "Lop Buri Railway Station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 2.4
+   },
+   "phone": "036-413-475",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1316016101",
+   "name_th": "วิทยาลัยเทคนิคลพบุรี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "เมืองลพบุรี",
+   "in_home_province": false,
+   "road_km": 106.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 91,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟลพบุรี",
+    "name_en": "Lop Buri Railway Station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 0.6
+   },
+   "phone": "036-411083",
+   "website": "http://www.lbtech.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-14500-TH-16",
+   "name_th": "มหาวิทยาลัยราชภัฏเทพสตรี",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 106.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 92,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟลพบุรี",
+    "name_en": "Lop Buri Railway Station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 0.8
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1315046401",
+   "name_th": "วิทยาลัยการอาชีพโพธิ์ทอง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-15",
+   "province_th": "อ่างทอง",
+   "district": "โพธิ์ทอง",
+   "in_home_province": false,
+   "road_km": 108.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 96,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "619178111",
+   "website": "http://www.picec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1362046401",
+   "name_th": "วิทยาลัยการอาชีพขาณุวรลักษบุรี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-62",
+   "province_th": "กำแพงเพชร",
+   "district": "ขาณุวรลักษบุรี",
+   "in_home_province": false,
+   "road_km": 109.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 94,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "055-779478",
+   "website": "http://www.khanu.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1316016501",
+   "name_th": "วิทยาลัยสารพัดช่างลพบุรี",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "เมืองลพบุรี",
+   "in_home_province": false,
+   "road_km": 110.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 94,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "036-420950",
+   "website": "http://www.lpc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1316016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาลพบุรี",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "เมืองลพบุรี",
+   "in_home_province": false,
+   "road_km": 111.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 93,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟป่าหวาย",
+    "name_en": "Ban Pa Wai Railway Station",
+    "mode": "rail",
+    "line": "Northern Line",
+    "km": 0.7
+   },
+   "phone": "36421245",
+   "website": "http://www.lbvoc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1316100040",
+   "name_th": "วิทยาลัยเทคโนโลยีละโว้",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "เมืองลพบุรี",
+   "in_home_province": false,
+   "road_km": 112.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 96,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "036-413-139",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1314156401",
+   "name_th": "วิทยาลัยการอาชีพมหาราช",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "มหาราช",
+   "in_home_province": false,
+   "road_km": 116.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 91,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "035-611959",
+   "website": "http://www.mice.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1315016101",
+   "name_th": "วิทยาลัยเทคนิคอ่างทอง",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-15",
+   "province_th": "อ่างทอง",
+   "district": "เมืองอ่างทอง",
+   "in_home_province": false,
+   "road_km": 120.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 95,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "35611656",
+   "website": "http://www.attc.ac.th/",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1318086401",
+   "name_th": "วิทยาลัยการอาชีพเนินขาม",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-18",
+   "province_th": "ชัยนาท",
+   "district": "เนินขาม",
+   "in_home_province": false,
+   "road_km": 124.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 149,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "631148348",
+   "website": "http://www.nkec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1372100007",
+   "name_th": "วิทยาลัยเทคโนโลยีสหวิทย์บริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "เมืองสุพรรณบุรี",
+   "in_home_province": false,
+   "road_km": 125.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 97,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "035-522-152",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372016101",
+   "name_th": "วิทยาลัยเทคนิคสุพรรณบุรี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "เมืองสุพรรณบุรี",
+   "in_home_province": false,
+   "road_km": 126.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 98,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสุพรรณบุรี",
+    "name_en": "Suphanburi Railway Station",
+    "mode": "rail",
+    "line": "Suphanburi Line",
+    "km": 2.2
+   },
+   "phone": "35522101",
+   "website": "http://www.stc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372016501",
+   "name_th": "วิทยาลัยสารพัดช่างบรรหาร-แจ่มใส",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "เมืองสุพรรณบุรี",
+   "in_home_province": false,
+   "road_km": 127.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 99,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสุพรรณบุรี",
+    "name_en": "Suphanburi Railway Station",
+    "mode": "rail",
+    "line": "Suphanburi Line",
+    "km": 1.3
+   },
+   "phone": "035-511880",
+   "website": "http://www.bunharnpoly.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาสุพรรณบุรี",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "เมืองสุพรรณบุรี",
+   "in_home_province": false,
+   "road_km": 128.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 100,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสุพรรณบุรี",
+    "name_en": "Suphanburi Railway Station",
+    "mode": "rail",
+    "line": "Suphanburi Line",
+    "km": 2.5
+   },
+   "phone": "35511355",
+   "website": "http://www.spvc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1319096401",
+   "name_th": "วิทยาลัยการอาชีพสระบุรี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-19",
+   "province_th": "สระบุรี",
+   "district": "พระพุทธบาท",
+   "in_home_province": false,
+   "road_km": 128.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 106,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "36266561",
+   "website": "http://www.sic.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1372100008",
+   "name_th": "วิทยาลัยเทคโนโลยีอู่ทอง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "อู่ทอง",
+   "in_home_province": false,
+   "road_km": 131.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 119,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "35969957",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1315066401",
+   "name_th": "วิทยาลัยการอาชีพวิเศษชัยชาญ",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-15",
+   "province_th": "อ่างทอง",
+   "district": "วิเศษชัยชาญ",
+   "in_home_province": false,
+   "road_km": 132.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 106,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "35632123",
+   "website": "http://www.viset.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1316036401",
+   "name_th": "วิทยาลัยเทคนิคโคกสำโรง",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "โคกสำโรง",
+   "in_home_province": false,
+   "road_km": 133.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 105,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "0-3670-8093",
+   "website": "http://www.ksrtech.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1366100023",
+   "name_th": "วิทยาลัยเทคโนโลยีสิริวัฒนาบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-66",
+   "province_th": "พิจิตร",
+   "district": "ตะพานหิน",
+   "in_home_province": false,
+   "road_km": 140.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 122,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟตะพานหิน",
+    "name_en": "Taphan Hin Station",
+    "mode": "rail",
+    "line": null,
+    "km": 2.2
+   },
+   "phone": "056-662-555",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1314100025",
+   "name_th": "วิทยาลัยเทคโนโลยีอยุธยา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "พระนครศรีอยุธยา",
+   "in_home_province": false,
+   "road_km": 141.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 110,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "035-242-247",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1314100023",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจอยุธยา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "พระนครศรีอยุธยา",
+   "in_home_province": false,
+   "road_km": 141.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 110,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "035-321-202",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1316036101",
+   "name_th": "วิทยาลัยเทคนิคลพบุรี แห่งที่ 2",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "โคกสำโรง",
+   "in_home_province": false,
+   "road_km": 143.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 119,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "036-680391",
+   "website": "http://www.lbtech2.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1314016101",
+   "name_th": "วิทยาลัยเทคนิคพระนครศรีอยุธยา",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "พระนครศรีอยุธยา",
+   "in_home_province": false,
+   "road_km": 143.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 113,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอยุธยา",
+    "name_en": "Ayutthaya Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 2.1
+   },
+   "phone": "0-3593-0651-4",
+   "website": "http://www.ayuttech.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1314016102",
+   "name_th": "วิทยาลัยเทคโนโลยีและอุตสาหกรรมการต่อเรือพระนครศรีอยุธยา",
+   "kind": "private_vocational",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "พระนครศรีอยุธยา",
+   "in_home_province": false,
+   "road_km": 144.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 110,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอยุธยา",
+    "name_en": "Ayutthaya Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 1.1
+   },
+   "phone": "0-3525-1491",
+   "website": "http://www.ayship.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-15100-TH-14",
+   "name_th": "มหาวิทยาลัยราชภัฏพระนครศรีอยุธยา",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 144.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 114,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอยุธยา",
+    "name_en": "Ayutthaya Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 2.4
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1366076301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีพิจิตร",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-66",
+   "province_th": "พิจิตร",
+   "district": "สามง่าม",
+   "in_home_province": false,
+   "road_km": 146.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 118,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "56691151",
+   "website": "http://www.pccat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1319066101",
+   "name_th": "วิทยาลัยเทคนิคท่าหลวงซิเมนต์ไทยอนุสรณ์",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-19",
+   "province_th": "สระบุรี",
+   "district": "บ้านหมอ",
+   "in_home_province": false,
+   "road_km": 147.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 124,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "36281295",
+   "website": "http://www.tl.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1314016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาพระนครศรีอยุธยา",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "พระนครศรีอยุธยา",
+   "in_home_province": false,
+   "road_km": 147.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 113,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟอยุธยา",
+    "name_en": "Ayutthaya Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 0.5
+   },
+   "phone": "0-3524-1211",
+   "website": "http://www.avc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1366100010",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจพิจิตร",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-66",
+   "province_th": "พิจิตร",
+   "district": "เมืองพิจิตร",
+   "in_home_province": false,
+   "road_km": 151.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 131,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "พิจิตร",
+    "name_en": "Phichit Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 1.4
+   },
+   "phone": "56612474",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1316026301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีลพบุรี",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "พัฒนานิคม",
+   "in_home_province": false,
+   "road_km": 151.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 137,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "36491370",
+   "website": "http://www.lbcat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1366016501",
+   "name_th": "วิทยาลัยอาชีวศึกษาพิจิตร",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-66",
+   "province_th": "พิจิตร",
+   "district": "เมืองพิจิตร",
+   "in_home_province": false,
+   "road_km": 151.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 131,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "พิจิตร",
+    "name_en": "Phichit Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 1.2
+   },
+   "phone": "56613481",
+   "website": "http://www.ppc.ac.th/pijit",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1366016101",
+   "name_th": "วิทยาลัยเทคนิคพิจิตร",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-66",
+   "province_th": "พิจิตร",
+   "district": "เมืองพิจิตร",
+   "in_home_province": false,
+   "road_km": 152.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 130,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "พิจิตร",
+    "name_en": "Phichit Railway Station",
+    "mode": "rail",
+    "line": null,
+    "km": 2.5
+   },
+   "phone": "056 608 572",
+   "website": "http://www.pjtc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1314100026",
+   "name_th": "วิทยาลัยเทคโนโลยีผดุงเสนาบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "เสนา",
+   "in_home_province": false,
+   "road_km": 157.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 127,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "035-217-154",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372096401",
+   "name_th": "วิทยาลัยการอาชีพอู่ทอง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "อู่ทอง",
+   "in_home_province": false,
+   "road_km": 158.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 125,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "035-528335",
+   "website": "http://www.uic.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1314126401",
+   "name_th": "วิทยาลัยการอาชีพเสนา",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "เสนา",
+   "in_home_province": false,
+   "road_km": 160.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 124,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "35930635",
+   "website": "http://www.senavec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372076401",
+   "name_th": "วิทยาลัยการอาชีพสองพี่น้อง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "สองพี่น้อง",
+   "in_home_province": false,
+   "road_km": 160.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 132,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "035-440479",
+   "website": "http://www.sicec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1316076801",
+   "name_th": "วิทยาลัยเทคโนโลยีและการบริหารจัดการอุตสาหกรรมอ้อยและน้ำตาลทราย",
+   "kind": "private_vocational",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "ท่าหลวง",
+   "in_home_province": false,
+   "road_km": 161.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 131,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "614168819",
+   "website": "http://www.sugartech.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1367100061",
+   "name_th": "วิทยาลัยอาชีวศึกษาพณิชยการเพชรบูรณ์",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-67",
+   "province_th": "เพชรบูรณ์",
+   "district": "ชนแดน",
+   "in_home_province": false,
+   "road_km": 163.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 149,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "56029960",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1367100055",
+   "name_th": "วิทยาลัยเทคโนโลยี ไฮเทค วิเชียรบุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-67",
+   "province_th": "เพชรบูรณ์",
+   "district": "วิเชียรบุรี",
+   "in_home_province": false,
+   "road_km": 165.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 145,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "933277343",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1367100052",
+   "name_th": "วิทยาลัยเทคโนโลยีสารสนเทศเพชรบูรณ์",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-67",
+   "province_th": "เพชรบูรณ์",
+   "district": "บึงสามพัน",
+   "in_home_province": false,
+   "road_km": 165.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 147,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "56731407",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1367100060",
+   "name_th": "วิทยาลัยเทคโนโลยีศรีเทพพณิชยการ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-67",
+   "province_th": "เพชรบูรณ์",
+   "district": "ศรีเทพ",
+   "in_home_province": false,
+   "road_km": 169.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 152,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "56020276",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1367100031",
+   "name_th": "วิทยาลัยเทคโนโลยีป่าสักธารา",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-67",
+   "province_th": "เพชรบูรณ์",
+   "district": "วิเชียรบุรี",
+   "in_home_province": false,
+   "road_km": 171.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 151,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "56797099",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-10200-TH-71",
+   "name_th": "มหาวิทยาลัยเวสเทิร์น",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 173.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 141,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1316100044",
+   "name_th": "วิทยาลัยเทคโนโลยีชัยบาดาล",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "ชัยบาดาล",
+   "in_home_province": false,
+   "road_km": 173.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 138,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟลำนารายณ์",
+    "name_en": "Lam Narai Railway Station",
+    "mode": "rail",
+    "line": "Kaeng Khoi-Bua Yai Branch Line",
+    "km": 1.2
+   },
+   "phone": "036-680-114",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1367056401",
+   "name_th": "วิทยาลัยการอาชีพวิเชียรบุรี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-67",
+   "province_th": "เพชรบูรณ์",
+   "district": "วิเชียรบุรี",
+   "in_home_province": false,
+   "road_km": 179.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 159,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "56753049",
+   "website": "http://www.wicec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1362016301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีกำแพงเพชร",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-62",
+   "province_th": "กำแพงเพชร",
+   "district": "เมืองกำแพงเพชร",
+   "in_home_province": false,
+   "road_km": 181.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 148,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "055-741660",
+   "website": "http://www.kpcat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1367100049",
+   "name_th": "วิทยาลัยอาชีวศึกษาเพชรบูรณ์",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-67",
+   "province_th": "เพชรบูรณ์",
+   "district": "บึงสามพัน",
+   "in_home_province": false,
+   "road_km": 182.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 146,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "056-713-680",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1316046401",
+   "name_th": "วิทยาลัยการอาชีพชัยบาดาล",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-16",
+   "province_th": "ลพบุรี",
+   "district": "ชัยบาดาล",
+   "in_home_province": false,
+   "road_km": 183.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 148,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "36689921",
+   "website": "http://www.chaibadan.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1367100011",
+   "name_th": "วิทยาลัยเทคโนโลยีเซนต์นีโอ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-67",
+   "province_th": "เพชรบูรณ์",
+   "district": "ชนแดน",
+   "in_home_province": false,
+   "road_km": 197.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 153,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "56761608",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-18532-TH-61",
+   "name_th": "มหาวิทยาลัยมหาจุฬาลงกรณราชวิทยาลัย วิทยาลัยสงฆ์อุทัยธานี",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-61",
+   "province_th": "อุทัยธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "mhesi-20308-TH-61",
+   "name_th": "วิทยาลัยชุมชนอุทัยธานี",
+   "kind": "college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-61",
+   "province_th": "อุทัยธานี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "ovec-pri-1361100018",
+   "name_th": "เชษฐศิลป์บริหารธุรกิจและเทคโนโลยี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-61",
+   "province_th": "อุทัยธานี",
+   "district": "เมืองอุทัยธานี",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "56525077",
+   "website": null,
+   "coord_source": "missing"
+  }
+ ]
+}

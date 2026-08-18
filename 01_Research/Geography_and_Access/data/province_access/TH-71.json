@@ -1,0 +1,2636 @@
+{
+ "summary": {
+  "iso": "TH-71",
+  "province_th": "กาญจนบุรี",
+  "province_en": "Kanchanaburi",
+  "options_total": 84,
+  "in_province": 16,
+  "within_30km": 8,
+  "offers_vocational": 67,
+  "offers_degree": 17,
+  "distance_unknown": 4
+ },
+ "origin": {
+  "lat": 14.019444444,
+  "lon": 99.531111111,
+  "kind": "provincial_capital",
+  "note": "จุดอ้างอิงคืออำเภอเมืองของจังหวัด ไม่ใช่บ้านของผู้เรียน ระยะจริงจากบ้านต่างจากนี้ได้มาก"
+ },
+ "options": [
+  {
+   "id": "ovec-pub-1371016201",
+   "name_th": "วิทยาลัยอาชีวศึกษากาญจนบุรี",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "เมืองกาญจนบุรี",
+   "in_home_province": true,
+   "road_km": 1.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 2,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "รถไฟ",
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟกาญจนบุรี",
+    "name_en": "Kanchanaburi railway station",
+    "mode": "rail",
+    "line": "Burma Railway",
+    "km": 1.1
+   },
+   "phone": "34511124",
+   "website": "http://www.kanvc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1371016101",
+   "name_th": "วิทยาลัยเทคนิคกาญจนบุรี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "เมืองกาญจนบุรี",
+   "in_home_province": true,
+   "road_km": 2.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 4,
+   "band": "walkable",
+   "band_th": "เดินหรือปั่นจักรยานไปได้",
+   "modes_th": [
+    "รถไฟ",
+    "เดิน",
+    "จักรยาน",
+    "มอเตอร์ไซค์"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟกาญจนบุรี",
+    "name_en": "Kanchanaburi railway station",
+    "mode": "rail",
+    "line": "Burma Railway",
+    "km": 2.6
+   },
+   "phone": "34511176",
+   "website": "http://www.technickan.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1371016501",
+   "name_th": "วิทยาลัยการอาชีพแม่น้ำแคว",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "เมืองกาญจนบุรี",
+   "in_home_province": true,
+   "road_km": 5.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 7,
+   "band": "local",
+   "band_th": "ไปกลับทุกวันได้ตามปกติ",
+   "modes_th": [
+    "รถไฟ",
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถเมล์"
+   ],
+   "nearest_station": {
+    "name_th": "ป้ายหยุดรถไฟสะพานแควใหญ่",
+    "name_en": "River Kwai Bridge railway stop",
+    "mode": "rail",
+    "line": "Burma Railway",
+    "km": 1.2
+   },
+   "phone": "064 856 2239",
+   "website": "https://www.maenamkwai.ac.th/kan/",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1371016301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีกาญจนบุรี",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "เมืองกาญจนบุรี",
+   "in_home_province": true,
+   "road_km": 10.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 14,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "034 552 106 - 7",
+   "website": "http://www.kasetkan.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-13900-TH-71",
+   "name_th": "มหาวิทยาลัยราชภัฏกาญจนบุรี",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 15.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 17,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1371100027",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจกาญจนบุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "ท่าม่วง",
+   "in_home_province": true,
+   "road_km": 17.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 19,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "034611658 ,034613408",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1371066401",
+   "name_th": "วิทยาลัยการอาชีพกาญจนบุรี",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "ท่าม่วง",
+   "in_home_province": true,
+   "road_km": 17.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 20,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "034-611792",
+   "website": "http://www.kicec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1371096401",
+   "name_th": "วิทยาลัยการอาชีพพนมทวน",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "พนมทวน",
+   "in_home_province": true,
+   "road_km": 22.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 23,
+   "band": "commute",
+   "band_th": "ไปกลับได้ แต่กินเวลาและค่าเดินทางทุกวัน",
+   "modes_th": [
+    "มอเตอร์ไซค์",
+    "รถสองแถว",
+    "รถตู้",
+    "รถเมล์"
+   ],
+   "nearest_station": null,
+   "phone": "034-579597",
+   "website": "http://www.pnt.ac.th/",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1371100028",
+   "name_th": "วิทยาลัยเทคโนโลยีสารสาสน์บริหารธุรกิจกาญจนบุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "ท่ามะกา",
+   "in_home_province": true,
+   "road_km": 31.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 32,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "0-3454-0428",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1370056401",
+   "name_th": "วิทยาลัยการอาชีพบ้านโป่ง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "บ้านโป่ง",
+   "in_home_province": false,
+   "road_km": 45.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 50,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สระโกสินารายณ์",
+    "name_en": "Sa Kosi Narai railway station",
+    "mode": "rail",
+    "line": "Burma Railway",
+    "km": 2.9
+   },
+   "phone": "032-720351",
+   "website": "http://www.bpg.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-00601-TH-71",
+   "name_th": "มหาวิทยาลัยมหิดล วิทยาเขตกาญจนบุรี",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 46.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 47,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟวังโพ",
+    "name_en": "Wang Pho railway station",
+    "mode": "rail",
+    "line": "Burma Railway",
+    "km": 2.1
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1370100034",
+   "name_th": "วิทยาลัยเทคโนโลยีบ้านโป่งบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "บ้านโป่ง",
+   "in_home_province": false,
+   "road_km": 50.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 50,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟบ้านโป่ง",
+    "name_en": "Ban Pong Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.8
+   },
+   "phone": "032-211-955",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1370076301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีราชบุรี",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "โพธาราม",
+   "in_home_province": false,
+   "road_km": 52.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 65,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "32740039",
+   "website": "http://www.rbcat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1370100035",
+   "name_th": "วิทยาลัยเทคโนโลยีดอนบอสโก บ้านโป่ง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "บ้านโป่ง",
+   "in_home_province": false,
+   "road_km": 53.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 52,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟชุมทางหนองปลาดุก",
+    "name_en": "Nong Pladuk Junction",
+    "mode": "rail",
+    "line": "Southern Line, Burma Railway, Suphanburi Line",
+    "km": 1.9
+   },
+   "phone": "032-211-933",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1370056101",
+   "name_th": "วิทยาลัยเทคนิคราชบุรี 2",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "บ้านโป่ง",
+   "in_home_province": false,
+   "road_km": 55.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 57,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟนครชุมน์",
+    "name_en": "Nakhon Chum Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.3
+   },
+   "phone": "32297119",
+   "website": "http://rtech2.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-10200-TH-71",
+   "name_th": "มหาวิทยาลัยเวสเทิร์น",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": 59.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 67,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-00201-TH-73",
+   "name_th": "มหาวิทยาลัยเกษตรศาสตร์ วิทยาเขตกำแพงแสน",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 59.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 60,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "ป้ายหยุดรถไฟทุ่งบัว",
+    "name_en": "Thung Bua Halt Railway Station",
+    "mode": "rail",
+    "line": "Suphanburi Line",
+    "km": 2.4
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1373100019",
+   "name_th": "วิทยาลัยเทคโนโลยีพัฒนบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "เมืองนครปฐม",
+   "in_home_province": false,
+   "road_km": 60.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 58,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟคลองบางตาล",
+    "name_en": "Khlong Bang Tan railway station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.7
+   },
+   "phone": "0-3420-0385",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372096401",
+   "name_th": "วิทยาลัยการอาชีพอู่ทอง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "อู่ทอง",
+   "in_home_province": false,
+   "road_km": 66.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 62,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "035-528335",
+   "website": "http://www.uic.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-14700-TH-73",
+   "name_th": "มหาวิทยาลัยราชภัฏนครปฐม",
+   "kind": "rajabhat",
+   "sector": "มหาวิทยาลัยราชภัฎ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 67.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 49,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟพระราชวังสนามจันทร์",
+    "name_en": "Sanam Chandra Palace Railway Halt",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.0
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-00801-TH-73",
+   "name_th": "มหาวิทยาลัยศิลปากร วิทยาเขตพระราชวังสนามจันทร์",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 68.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 51,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟพระราชวังสนามจันทร์",
+    "name_en": "Sanam Chandra Palace Railway Halt",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.5
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1370076101",
+   "name_th": "วิทยาลัยเทคนิคโพธาราม",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "โพธาราม",
+   "in_home_province": false,
+   "road_km": 70.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 69,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟโพธาราม",
+    "name_en": "Photharam Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.1
+   },
+   "phone": "032-231313",
+   "website": "http://www.photharam.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372076401",
+   "name_th": "วิทยาลัยการอาชีพสองพี่น้อง",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "สองพี่น้อง",
+   "in_home_province": false,
+   "road_km": 70.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 72,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "035-440479",
+   "website": "http://www.sicec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1373016201",
+   "name_th": "วิทยาลัยอาชีวศึกษานครปฐม",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "เมืองนครปฐม",
+   "in_home_province": false,
+   "road_km": 72.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 55,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟนครปฐม",
+    "name_en": "Nakhon Pathom",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.2
+   },
+   "phone": "034-252790",
+   "website": "http://www.nc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1373100017",
+   "name_th": "โรงเรียนช่างสำรวจนครปฐมและเทคโนโลยี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "เมืองนครปฐม",
+   "in_home_province": false,
+   "road_km": 74.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 57,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟนครปฐม",
+    "name_en": "Nakhon Pathom",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.4
+   },
+   "phone": "034-250-123",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1373016501",
+   "name_th": "วิทยาลัยสารพัดช่างนครปฐม",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "เมืองนครปฐม",
+   "in_home_province": false,
+   "road_km": 75.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 55,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": null,
+   "phone": "34985205",
+   "website": "http://www.nptpolytech.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1373100018",
+   "name_th": "วิทยาลัยเทคโนโลยีนครปฐม",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "เมืองนครปฐม",
+   "in_home_province": false,
+   "road_km": 76.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 57,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟต้นสำโรง",
+    "name_en": "Ton Samrong railway station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.2
+   },
+   "phone": "034-242850",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1373016101",
+   "name_th": "วิทยาลัยเทคนิคนครปฐม",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "เมืองนครปฐม",
+   "in_home_province": false,
+   "road_km": 76.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 56,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟต้นสำโรง",
+    "name_en": "Ton Samrong railway station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.3
+   },
+   "phone": "034-395093-5",
+   "website": "https://www.nptc.ac.th/",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1373100013",
+   "name_th": "วิทยาลัยเทคโนโลยีบริหารธุรกิจนครปฐม",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "นครชัยศรี",
+   "in_home_province": false,
+   "road_km": 76.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 57,
+   "band": "hard_commute",
+   "band_th": "ไปกลับทุกวันเหนื่อยมาก ควรคิดเรื่องหอพักด้วย",
+   "modes_th": [
+    "รถไฟ",
+    "รถตู้",
+    "รถทัวร์",
+    "รถยนต์ส่วนตัว"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟต้นสำโรง",
+    "name_en": "Ton Samrong railway station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.2
+   },
+   "phone": "634155429",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1370100014",
+   "name_th": "วิทยาลัยเทคโนโลยีดรุณาโปลีเทคนิค",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "เมืองราชบุรี",
+   "in_home_province": false,
+   "road_km": 87.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 80,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ป้ายหยุดรถไฟสะพานจุฬาลงกรณ์",
+    "name_en": "Saphan Chulalongkorn Railway Halt",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 2.6
+   },
+   "phone": "032-334667",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1370016501",
+   "name_th": "วิทยาลัยสารพัดช่างราชบุรี",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "เมืองราชบุรี",
+   "in_home_province": false,
+   "road_km": 87.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 80,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ป้ายหยุดรถไฟสะพานจุฬาลงกรณ์",
+    "name_en": "Saphan Chulalongkorn Railway Halt",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.2
+   },
+   "phone": "032-321903",
+   "website": "http://www.rptc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1370100011",
+   "name_th": "โรงเรียนราชบุรีบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "เมืองราชบุรี",
+   "in_home_province": false,
+   "road_km": 88.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 81,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ป้ายหยุดรถไฟสะพานจุฬาลงกรณ์",
+    "name_en": "Saphan Chulalongkorn Railway Halt",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.0
+   },
+   "phone": "32321447",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1370100012",
+   "name_th": "วิทยาลัยอาชีวศึกษาดรุณาราชบุรี",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "เมืองราชบุรี",
+   "in_home_province": false,
+   "road_km": 88.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟราชบุรี",
+    "name_en": "Ratchaburi Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.0
+   },
+   "phone": "032-338-793",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-21421-TH-70",
+   "name_th": "วิทยาลัยพยาบาลบรมราชชนนี ราชบุรี",
+   "kind": "nursing_college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 88.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟราชบุรี",
+    "name_en": "Ratchaburi Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.7
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1372100008",
+   "name_th": "วิทยาลัยเทคโนโลยีอู่ทอง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "อู่ทอง",
+   "in_home_province": false,
+   "road_km": 88.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 85,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "35969957",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372016501",
+   "name_th": "วิทยาลัยสารพัดช่างบรรหาร-แจ่มใส",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "เมืองสุพรรณบุรี",
+   "in_home_province": false,
+   "road_km": 88.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 78,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสุพรรณบุรี",
+    "name_en": "Suphanburi Railway Station",
+    "mode": "rail",
+    "line": "Suphanburi Line",
+    "km": 1.3
+   },
+   "phone": "035-511880",
+   "website": "http://www.bunharnpoly.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1370016101",
+   "name_th": "วิทยาลัยเทคนิคราชบุรี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "เมืองราชบุรี",
+   "in_home_province": false,
+   "road_km": 89.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 83,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟราชบุรี",
+    "name_en": "Ratchaburi Railway Station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.7
+   },
+   "phone": "032-338544",
+   "website": "http://www.rtc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-05900-TH-73",
+   "name_th": "มหาวิทยาลัยคริสเตียน",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 90.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 72,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1372016101",
+   "name_th": "วิทยาลัยเทคนิคสุพรรณบุรี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "เมืองสุพรรณบุรี",
+   "in_home_province": false,
+   "road_km": 90.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 81,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสุพรรณบุรี",
+    "name_en": "Suphanburi Railway Station",
+    "mode": "rail",
+    "line": "Suphanburi Line",
+    "km": 2.2
+   },
+   "phone": "35522101",
+   "website": "http://www.stc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372016201",
+   "name_th": "วิทยาลัยอาชีวศึกษาสุพรรณบุรี",
+   "kind": "vocational_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "เมืองสุพรรณบุรี",
+   "in_home_province": false,
+   "road_km": 91.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 81,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟสุพรรณบุรี",
+    "name_en": "Suphanburi Railway Station",
+    "mode": "rail",
+    "line": "Suphanburi Line",
+    "km": 2.5
+   },
+   "phone": "35511355",
+   "website": "http://www.spvc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1373036401",
+   "name_th": "วิทยาลัยการอาชีพบางแก้วฟ้า (หลวงพ่อเปิ่นอุปถัมภ์)",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "นครชัยศรี",
+   "in_home_province": false,
+   "road_km": 91.5,
+   "road_km_is_estimate": false,
+   "drive_minutes": 70,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "34277081",
+   "website": "http://www.bkf.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1372100007",
+   "name_th": "วิทยาลัยเทคโนโลยีสหวิทย์บริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "เมืองสุพรรณบุรี",
+   "in_home_province": false,
+   "road_km": 91.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "035-522-152",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1373100036",
+   "name_th": "วิทยาลัยเทคโนโลยีนาคประสิทธิ์บริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "สามพราน",
+   "in_home_province": false,
+   "road_km": 94.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 72,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "034-311-263",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-26200-TH-73",
+   "name_th": "สถาบันกันตนา",
+   "kind": "institute",
+   "sector": "สถาบันเอกชน",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 94.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 78,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-21100-TH-73",
+   "name_th": "โรงเรียนนายร้อยตำรวจ",
+   "kind": "university",
+   "sector": "สถานศึกษานอกสังกัดฯ",
+   "offers": [
+    "ปริญญาตรี"
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 95.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 74,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-18510-TH-73",
+   "name_th": "มหาวิทยาลัยมหาจุฬาลงกรณราชวิทยาลัย วิทยาเขตบาฬีศึกษาพุทธโฆส",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 98.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 74,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟคลองมหาสวัสดิ์",
+    "name_en": "Khlong Maha Sawat Railway Halt",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.6
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1373066401",
+   "name_th": "วิทยาลัยการอาชีพนครปฐม",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "สามพราน",
+   "in_home_province": false,
+   "road_km": 98.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 75,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "34321284",
+   "website": "http://www.npt.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1373076401",
+   "name_th": "วิทยาลัยการอาชีพพุทธมณฑล",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "พุทธมณฑล",
+   "in_home_province": false,
+   "road_km": 101.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 87,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "034-300165",
+   "website": "http://www.biac.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-13600-TH-73",
+   "name_th": "วิทยาลัยแสงธรรม",
+   "kind": "college",
+   "sector": "วิทยาลัยเอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 102.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 77,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1374036401",
+   "name_th": "วิทยาลัยการอาชีพบ้านแพ้ว",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-74",
+   "province_th": "สมุทรสาคร",
+   "district": "บ้านแพ้ว",
+   "in_home_province": false,
+   "road_km": 102.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 83,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "034-481817",
+   "website": "https://bpicec.ac.th/",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-18600-TH-10",
+   "name_th": "มหาวิทยาลัยมหามกุฏราชวิทยาลัย",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยในกำกับรัฐ",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 103.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 80,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟวัดสุวรรณ",
+    "name_en": "Wat Suwan railway station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.2
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1310016101",
+   "name_th": "กาญจนาภิเษกวิทยาลัยช่างทองหลวง",
+   "kind": "college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-73",
+   "province_th": "นครปฐม",
+   "district": "พุทธมณฑล",
+   "in_home_province": false,
+   "road_km": 107.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 83,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟศาลายา",
+    "name_en": "Salaya railway station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.6
+   },
+   "phone": "0-2431-3613",
+   "website": "http://www.goldsmith.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1312100102",
+   "name_th": "วิทยาลัยเทคโนโลยีพณิชยการบางบัวทอง",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-12",
+   "province_th": "นนทบุรี",
+   "district": "บางบัวทอง",
+   "in_home_province": false,
+   "road_km": 109.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 76,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟฟ้า",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีบางพลู",
+    "name_en": "Bang Phlu MRT Station",
+    "mode": "metro",
+    "line": "MRT Purple Line",
+    "km": 1.8
+   },
+   "phone": "02-9206440-1",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1310100861",
+   "name_th": "วิทยาลัยเทคโนโลยีหมู่บ้านครู",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": "หนองแขม",
+   "in_home_province": false,
+   "road_km": 109.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 85,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "02-421-0115",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-11300-TH-10",
+   "name_th": "มหาวิทยาลัยกรุงเทพธนบุรี",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 109.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 88,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1312100099",
+   "name_th": "วิทยาลัยเทคโนโลยีวานิชบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-12",
+   "province_th": "นนทบุรี",
+   "district": "บางใหญ่",
+   "in_home_province": false,
+   "road_km": 109.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 78,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "02-924-7601",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1375016101",
+   "name_th": "วิทยาลัยเทคนิคสมุทรสงคราม",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-75",
+   "province_th": "สมุทรสงคราม",
+   "district": "เมืองสมุทรสงคราม",
+   "in_home_province": false,
+   "road_km": 109.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 106,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟบางกระบูน",
+    "name_en": "Bang Krabun railway halt",
+    "mode": "rail",
+    "line": "Maeklong Railway",
+    "km": 1.1
+   },
+   "phone": "34711440",
+   "website": "http://www.sstc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-11100-TH-10",
+   "name_th": "มหาวิทยาลัยเอเชียอาคเนย์",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 110.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 86,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "mhesi-09000-TH-10",
+   "name_th": "มหาวิทยาลัยธนบุรี",
+   "kind": "university",
+   "sector": "มหาวิทยาลัยเอกชน",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 110.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 88,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1312100101",
+   "name_th": "วิทยาลัยอาชีวศึกษาดุสิตพณิชยการ นนทบุรี",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-12",
+   "province_th": "นนทบุรี",
+   "district": "บางบัวทอง",
+   "in_home_province": false,
+   "road_km": 111.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 78,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "02-571-2690",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1375016501",
+   "name_th": "วิทยาลัยสารพัดช่างสมุทรสงคราม",
+   "kind": "polytechnic",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส.",
+    "หลักสูตรระยะสั้น"
+   ],
+   "province_iso": "TH-75",
+   "province_th": "สมุทรสงคราม",
+   "district": "เมืองสมุทรสงคราม",
+   "in_home_province": false,
+   "road_km": 111.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 107,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟบางกระบูน",
+    "name_en": "Bang Krabun railway halt",
+    "mode": "rail",
+    "line": "Maeklong Railway",
+    "km": 0.7
+   },
+   "phone": "34716343",
+   "website": "http://www.ssptc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1310106742",
+   "name_th": "วิทยาลัยอาชีวศึกษาเทคโนโลยีเอเชีย",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": "หนองแขม",
+   "in_home_province": false,
+   "road_km": 111.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 91,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "24206465",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1310100902",
+   "name_th": "วิทยาลัยเทคโนโลยีกรุงธน",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": "บางแค",
+   "in_home_province": false,
+   "road_km": 112.9,
+   "road_km_is_estimate": false,
+   "drive_minutes": 89,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "02-421-1291",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1374026301",
+   "name_th": "วิทยาลัยประมงสมุทรสาคร",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-74",
+   "province_th": "สมุทรสาคร",
+   "district": "กระทุ่มแบน",
+   "in_home_province": false,
+   "road_km": 113.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 91,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "34471239",
+   "website": "http://www.skfc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1310100859",
+   "name_th": "วิทยาลัยเทคโนโลยีการจัดการเพชรเกษม",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": "หนองแขม",
+   "in_home_province": false,
+   "road_km": 113.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 95,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "028-112-5903",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1310100917",
+   "name_th": "วิทยาลัยเทคโนโลยีโพลีกรุงเทพ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": "ทวีวัฒนา",
+   "in_home_province": false,
+   "road_km": 115.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟบ้านฉิมพลี",
+    "name_en": "Ban Chimphli railway station",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 1.7
+   },
+   "phone": "028-851-7934",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1312100130",
+   "name_th": "วิทยาลัยเทคโนโลยีอัร-รอบิตี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-12",
+   "province_th": "นนทบุรี",
+   "district": "บางบัวทอง",
+   "in_home_province": false,
+   "road_km": 115.6,
+   "road_km_is_estimate": false,
+   "drive_minutes": 82,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "870066234",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1310100916",
+   "name_th": "วิทยาลัยเทคโนโลยีปิ่นมณฑล",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": "ทวีวัฒนา",
+   "in_home_province": false,
+   "road_km": 117.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 86,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถไฟพุทธมณฑล สาย 2",
+    "name_en": "Phutthamonthon Sai 2 railway stop",
+    "mode": "rail",
+    "line": "Southern Line",
+    "km": 0.9
+   },
+   "phone": "02-885-1040",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1370086401",
+   "name_th": "วิทยาลัยการอาชีพปากท่อ",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-70",
+   "province_th": "ราชบุรี",
+   "district": "ปากท่อ",
+   "in_home_province": false,
+   "road_km": 118.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 109,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "32240865",
+   "website": "http://www.ptcc.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1375036401",
+   "name_th": "วิทยาลัยการอาชีพอัมพวา",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-75",
+   "province_th": "สมุทรสงคราม",
+   "district": "อัมพวา",
+   "in_home_province": false,
+   "road_km": 119.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 107,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "34772098",
+   "website": "https://www.ampawa.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1372036301",
+   "name_th": "วิทยาลัยเกษตรและเทคโนโลยีสุพรรณบุรี",
+   "kind": "agricultural_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-72",
+   "province_th": "สุพรรณบุรี",
+   "district": "ด่านช้าง",
+   "in_home_province": false,
+   "road_km": 123.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 116,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "35595056",
+   "website": "http://www.spcat.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1376026401",
+   "name_th": "วิทยาลัยการอาชีพเขาย้อย",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-76",
+   "province_th": "เพชรบุรี",
+   "district": "เขาย้อย",
+   "in_home_province": false,
+   "road_km": 123.4,
+   "road_km_is_estimate": false,
+   "drive_minutes": 115,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "032-795-053",
+   "website": "http://www.kycec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1310100952",
+   "name_th": "วิทยาลัยเทคโนโลยียานยนต์",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": "บางแค",
+   "in_home_province": false,
+   "road_km": 124.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 88,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟฟ้า",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีหลักสอง",
+    "name_en": "Lak Song MRT Station",
+    "mode": "metro",
+    "line": "MRT Blue Line",
+    "km": 1.8
+   },
+   "phone": "028042171-2",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-20314-TH-74",
+   "name_th": "วิทยาลัยชุมชนสมุทรสาคร",
+   "kind": "college",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-74",
+   "province_th": "สมุทรสาคร",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 125.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 102,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "สถานีรถไฟบ้านแหลม",
+    "name_en": "Ban Laem Station",
+    "mode": "rail",
+    "line": "Maeklong Railway",
+    "km": 1.0
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pub-1314126401",
+   "name_th": "วิทยาลัยการอาชีพเสนา",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "เสนา",
+   "in_home_province": false,
+   "road_km": 126.0,
+   "road_km_is_estimate": false,
+   "drive_minutes": 110,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "35930635",
+   "website": "http://www.senavec.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "mhesi-22013-TH-74",
+   "name_th": "มหาวิทยาลัยการกีฬาแห่งชาติ วิทยาเขตสมุทรสาคร",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-74",
+   "province_th": "สมุทรสาคร",
+   "district": null,
+   "in_home_province": false,
+   "road_km": 128.1,
+   "road_km_is_estimate": false,
+   "drive_minutes": 106,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ที่หยุดรถนิคมรถไฟมหาชัย",
+    "name_en": "Nikhom Rotfai Maha Chai railway halt",
+    "mode": "rail",
+    "line": "Maeklong Railway",
+    "km": 0.8
+   },
+   "phone": null,
+   "website": null,
+   "coord_source": "geocoded"
+  },
+  {
+   "id": "ovec-pri-1314100026",
+   "name_th": "วิทยาลัยเทคโนโลยีผดุงเสนาบริหารธุรกิจ",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-14",
+   "province_th": "พระนครศรีอยุธยา",
+   "district": "เสนา",
+   "in_home_province": false,
+   "road_km": 130.2,
+   "road_km_is_estimate": false,
+   "drive_minutes": 117,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "035-217-154",
+   "website": null,
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1310506101",
+   "name_th": "วิทยาลัยเทคนิคราชสิทธาราม",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-10",
+   "province_th": "กรุงเทพมหานคร",
+   "district": "บางบอน",
+   "in_home_province": false,
+   "road_km": 133.7,
+   "road_km_is_estimate": false,
+   "drive_minutes": 96,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถไฟ",
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": {
+    "name_th": "ป้ายหยุดรถไฟสามแยก",
+    "name_en": "Sam Yaek railway halt",
+    "mode": "rail",
+    "line": "Maeklong Railway",
+    "km": 2.3
+   },
+   "phone": "28950856",
+   "website": "http://www.rajasit.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1371076401",
+   "name_th": "วิทยาลัยการอาชีพทองผาภูมิ",
+   "kind": "career_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "ทองผาภูมิ",
+   "in_home_province": true,
+   "road_km": 133.8,
+   "road_km_is_estimate": false,
+   "drive_minutes": 126,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "0-3451-1176",
+   "website": "http://www.technickan.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pub-1312056401",
+   "name_th": "วิทยาลัยเทคนิคนนทบุรี",
+   "kind": "technical_college",
+   "sector": "รัฐ (สอศ.)",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-12",
+   "province_th": "นนทบุรี",
+   "district": "ไทรน้อย",
+   "in_home_province": false,
+   "road_km": 136.3,
+   "road_km_is_estimate": false,
+   "drive_minutes": 101,
+   "band": "relocate",
+   "band_th": "ต้องย้ายไปอยู่ที่นั่น ไม่ใช่การเดินทางประจำวัน",
+   "modes_th": [
+    "รถทัวร์",
+    "รถไฟ",
+    "เครื่องบิน"
+   ],
+   "nearest_station": null,
+   "phone": "29855111",
+   "website": "http://www.technicnon.ac.th",
+   "coord_source": "register"
+  },
+  {
+   "id": "ovec-pri-1371100023",
+   "name_th": "บริหารธุรกิจขั้นสูงกาญจนบุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "ท่ามะกา",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "mhesi-00703-TH-71",
+   "name_th": "มหาวิทยาลัยรามคำแหง สาขาวิทยบริการเฉลิมพระเกียรติจังหวัดกาญจนบุรี",
+   "kind": "university",
+   "sector": "อุดมศึกษา",
+   "offers": [
+    "ปริญญาตรี",
+    "ปริญญาโท"
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": null,
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": null,
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "ovec-pri-1371100022",
+   "name_th": "วิทยาลัยอาชีวศึกษาบริหารธุรกิจกาญจนบุรี",
+   "kind": "vocational_college",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "ท่ามะกา",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "0-3464-0388",
+   "website": null,
+   "coord_source": "missing"
+  },
+  {
+   "id": "ovec-pri-1371100010",
+   "name_th": "วิทยาลัยเทคโนโลยีกาญจนบุรี",
+   "kind": "private_vocational",
+   "sector": "เอกชน",
+   "offers": [
+    "ปวช.",
+    "ปวส."
+   ],
+   "province_iso": "TH-71",
+   "province_th": "กาญจนบุรี",
+   "district": "เมืองกาญจนบุรี",
+   "in_home_province": true,
+   "road_km": null,
+   "road_km_is_estimate": true,
+   "drive_minutes": null,
+   "band": "unknown_distance",
+   "band_th": "อยู่ในจังหวัดนี้ แต่ยังไม่มีพิกัดที่เชื่อถือได้ จึงยังบอกระยะทางไม่ได้",
+   "modes_th": [],
+   "nearest_station": null,
+   "phone": "034-516-916",
+   "website": null,
+   "coord_source": "missing"
+  }
+ ]
+}
