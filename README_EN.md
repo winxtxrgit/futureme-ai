@@ -1,7 +1,7 @@
 <a id="top"></a>
 
 <p align="center">
-  <strong>README:</strong> <a href="README.md">ภาษาไทย (TH)</a> · <strong>[English (EN)](README_EN.md)</strong>
+  <strong>README:</strong> <a href="README.md">ภาษาไทย (TH)</a> · <strong><a href="README_EN.md">English (EN)</a></strong>
 </p>
 
 <p align="center">
@@ -9,6 +9,14 @@
 </p>
 
 # FutureMe AI — Career & Educational Exploration Platform for Thai Students
+
+<p align="center">
+  <img src="https://img.shields.io/badge/JUMP_Thailand_Hackathon-2026-00A651?style=flat-square" alt="JUMP Thailand Hackathon 2026" />
+  <img src="https://img.shields.io/badge/Next.js-15.5-000000?style=flat-square&logo=nextdotjs&logoColor=white" alt="Next.js 15.5" />
+  <img src="https://img.shields.io/badge/TypeScript-5.7-3178C6?style=flat-square&logo=typescript&logoColor=white" alt="TypeScript" />
+  <img src="https://img.shields.io/badge/FastAPI-Python-009688?style=flat-square&logo=fastapi&logoColor=white" alt="FastAPI" />
+  <a href="LICENSE"><img src="https://img.shields.io/badge/License-MIT-green?style=flat-square" alt="MIT License" /></a>
+</p>
 
 > **Competition:** JUMP THAILAND Innovation Hackathon 2026 (AIS Academy x NIA)  
 > **Core Concept:** *“Explore the next step before making irreversible decisions”* — Evidence-Based Career & Education Guidance  
@@ -178,10 +186,11 @@ winxtxrgit/futureme-ai
 │   └── Thai_AI_System_Research/ # Thai NLP, SLM, Vector Embedding & Security research
 ├── 02_Backend/                  # FastAPI Backend, Deterministic Engine & RAG Pipelines
 ├── 03_WebApp/                   # Next.js 15.5 Interactive Web Application (Pre_Present)
-│   ├── app/                     # 11 Page Routes & API Endpoints
-│   ├── components/              # UI Components in GenZ Aurora direction
-│   ├── data/                    # Curricula & Assessment datasets
-│   └── lib/                     # Matching Engine, Cosine Similarity & Utilities
+│   └── Pre_Present/             # Next.js app source
+│       ├── app/                 # 11 Page Routes & API Endpoints
+│       ├── components/          # UI Components in GenZ Aurora direction
+│       ├── data/                # Curricula & Assessment datasets
+│       └── lib/                 # Matching Engine, Cosine Similarity & Utilities
 ├── 04_Design/                   # Design Systems, Wireframes, UI Concepts & Mascot Lab
 ├── 05_Assets/                   # Brand Assets, Media & Audio guidance
 ├── Presentation/                # Master Presentation Deck (FutureMe_Presentation.pdf + HTML)
@@ -192,6 +201,7 @@ winxtxrgit/futureme-ai
 ├── FutureMe_Team_Portfolio.html # Master Team Portfolio (HTML Source)
 ├── README.md                    # Project Overview in Thai (TH)
 ├── README_EN.md                 # Project Overview in English (EN)
+├── LICENSE                      # MIT License
 └── .gitignore                   # Standard Git Ignore
 ```
 
