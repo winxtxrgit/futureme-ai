@@ -1,0 +1,12 @@
+fastapi>=0.115,<1
+pydantic>=2.7,<3
+qdrant-client>=1.12,<2
+uvicorn>=0.30
+
+# Tests
+pytest>=8
+httpx>=0.27
+
+# Optional: real BGE-M3 embeddings. Without it, app/rag/pipeline.py falls
+# back to its built-in hashed embedder, which is what the tests use.
+# sentence-transformers>=3
