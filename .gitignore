@@ -44,3 +44,6 @@ FutureMe_Presentation_Master_Deck_*.pdf
 # LibreOffice/PowerPoint lock files and the deck build venv
 Presentation/~$*
 Presentation/.venv/
+
+# Written by the backend tests
+02_Backend/data/test_qwen_qlora.jsonl
