@@ -5,10 +5,12 @@ on:
     branches: [main]
     paths:
       - "03_WebApp/Pre_Present/**"
+      - "04_Design/FutureMe_Mascot_Lab/**"
       - ".github/workflows/webapp.yml"
   pull_request:
     paths:
       - "03_WebApp/Pre_Present/**"
+      - "04_Design/FutureMe_Mascot_Lab/**"
       - ".github/workflows/webapp.yml"
 
 permissions:
@@ -28,6 +30,7 @@ jobs:
           cache: npm
           cache-dependency-path: 03_WebApp/Pre_Present/package-lock.json
       - run: npm ci
+      - run: npm run check:mascot
       - run: npm run typecheck
       - run: npm run lint
       - run: npm test
