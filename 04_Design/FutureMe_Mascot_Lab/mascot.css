@@ -27,8 +27,9 @@
   /* Glow and confetti live outside the drawn silhouette, so the full framing
    * must not clip. The face crop is the one case that has to. */
   overflow: visible;
-  /* Poses read as movement rather than as a redraw. */
-  --fm-ease: cubic-bezier(0.34, 1.28, 0.5, 1);
+  /* State changes settle without overshooting. More playful loops keep their
+   * own easing in the keyframe rules below. */
+  --fm-ease: cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 .fm-mascot[data-crop="face"] { overflow: hidden; }
@@ -40,9 +41,6 @@
 /* ------------------------------------------------------------ emotion map */
 
 /* Everything optional starts hidden; each state opts its parts back in. */
-.fm-eye-shape,
-.fm-brow-shape,
-.fm-mouth-shape,
 .fm-hand-point,
 .fm-thought,
 .fm-listen,
@@ -51,31 +49,59 @@
   display: none;
 }
 
-.fm-eye-shape--open { display: block; }
+/* Facial variants stay mounted so emotion changes can cross-fade instead of
+ * popping between SVG paths. Delayed visibility preserves the fade-out. */
+.fm-eye-shape,
+.fm-brow-shape,
+.fm-mouth-shape {
+  display: block;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 160ms ease, visibility 0s linear 160ms;
+}
 
-.fm-mascot[data-emotion="dislike"]    .fm-eye-shape--open { display: none; }
-.fm-mascot[data-emotion="dislike"]    .fm-eye-shape--narrow { display: block; }
-.fm-mascot[data-emotion="dislike"]    .fm-brow-shape--cross { display: block; }
-.fm-mascot[data-emotion="dislike"]    .fm-mouth-shape--dislike { display: block; }
+.fm-eye-shape {
+  transition-duration: 90ms, 0s;
+  transition-delay: 0s, 90ms;
+}
 
-.fm-mascot[data-emotion="not-okay"]   .fm-eye-shape--open { display: none; }
-.fm-mascot[data-emotion="not-okay"]   .fm-eye-shape--wobble { display: block; }
-.fm-mascot[data-emotion="not-okay"]   .fm-brow-shape--worry { display: block; }
-.fm-mascot[data-emotion="not-okay"]   .fm-mouth-shape--not-okay { display: block; }
+.fm-eye-shape--open {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
 
-.fm-mascot[data-emotion="neutral"]    .fm-mouth-shape--neutral { display: block; }
-.fm-mascot[data-emotion="smile"]      .fm-mouth-shape--smile { display: block; }
+.fm-mascot[data-emotion="dislike"]    .fm-eye-shape--open { opacity: 0; visibility: hidden; transition-delay: 0s, 90ms; }
+.fm-mascot[data-emotion="dislike"]    .fm-eye-shape--narrow { opacity: 1; visibility: visible; transition-delay: 0s; }
+.fm-mascot[data-emotion="dislike"]    .fm-brow-shape--cross { opacity: 1; visibility: visible; transition-delay: 0s; }
+.fm-mascot[data-emotion="dislike"]    .fm-mouth-shape--dislike { opacity: 1; visibility: visible; transition-delay: 0s; }
+
+.fm-mascot[data-emotion="not-okay"]   .fm-eye-shape--open { opacity: 0; visibility: hidden; transition-delay: 0s, 90ms; }
+.fm-mascot[data-emotion="not-okay"]   .fm-eye-shape--wobble { opacity: 1; visibility: visible; transition-delay: 0s; }
+.fm-mascot[data-emotion="not-okay"]   .fm-brow-shape--worry { opacity: 1; visibility: visible; transition-delay: 0s; }
+.fm-mascot[data-emotion="not-okay"]   .fm-mouth-shape--not-okay { opacity: 1; visibility: visible; transition-delay: 0s; }
+
+.fm-mascot[data-emotion="neutral"]    .fm-mouth-shape--neutral { opacity: 1; visibility: visible; transition-delay: 0s; }
+.fm-mascot[data-emotion="smile"]      .fm-mouth-shape--smile { opacity: 1; visibility: visible; transition-delay: 0s; }
 
 /* Level 5 is the only state allowed to close its eyes into crescents. */
-.fm-mascot[data-emotion="very-happy"] .fm-eye-shape--open { display: none; }
-.fm-mascot[data-emotion="very-happy"] .fm-eye-shape--happy { display: block; }
-.fm-mascot[data-emotion="very-happy"] .fm-mouth-shape--very-happy { display: block; }
+.fm-mascot[data-emotion="very-happy"] .fm-eye-shape--open { opacity: 0; visibility: hidden; transition-delay: 0s, 90ms; }
+.fm-mascot[data-emotion="very-happy"] .fm-eye-shape--happy { opacity: 1; visibility: visible; transition-delay: 0s; }
+.fm-mascot[data-emotion="very-happy"] .fm-mouth-shape--very-happy { opacity: 1; visibility: visible; transition-delay: 0s; }
 
 /* Blink overrides any open-eye variant but never the level-5 crescent. */
 .fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--open,
 .fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--narrow,
-.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--wobble { display: none; }
-.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--blink { display: block; }
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--wobble {
+  opacity: 0;
+  visibility: hidden;
+  transition-delay: 0s, 90ms;
+}
+.fm-mascot[data-blink]:not([data-emotion="very-happy"]) .fm-eye-shape--blink {
+  opacity: 1;
+  visibility: visible;
+  transition-delay: 0s;
+}
 
 /* Emotion also moves the blush and the heart, so the five levels differ by
  * more than mouth curvature — the SKILL.md anti-pattern this avoids. */
@@ -106,7 +132,7 @@
 .fm-head {
   transform-origin: 160px 218px;
   transform: rotate(var(--fm-head-tilt, 0deg));
-  transition: transform 0.5s var(--fm-ease);
+  transition: transform 0.6s var(--fm-ease);
 }
 
 .fm-body,
@@ -114,7 +140,7 @@
   transform-origin: 160px 350px;
 }
 
-.fm-body { transition: transform 0.5s var(--fm-ease); }
+.fm-body { transition: transform 0.6s var(--fm-ease); }
 
 /*
  * Limbs pivot at their joint. Their parent <g> is already translated to the
@@ -125,12 +151,12 @@
 .fm-arm-limb,
 .fm-leg-limb {
   transform-origin: 0px 0px;
-  transition: transform 0.45s var(--fm-ease);
+  transition: transform 0.6s var(--fm-ease);
 }
 
 .fm-ground {
   transform-origin: 160px 354px;
-  transition: transform 0.5s var(--fm-ease), opacity 0.5s ease;
+  transition: transform 0.6s var(--fm-ease), opacity 0.45s ease;
 }
 
 /* ----------------------------------------------------------------- motion */
@@ -183,13 +209,17 @@
 }
 
 @keyframes fm-thought-pop {
-  0%, 100% { opacity: 0.15; transform: scale(0.8); }
-  45%      { opacity: 0.9; transform: scale(1); }
+  0%, 100% { opacity: 0; transform: translateY(3px) scale(0.82); }
+  18%      { opacity: 0.3; }
+  48%      { opacity: 0.9; transform: translateY(-1px) scale(1); }
+  82%      { opacity: 0.24; }
 }
 
 @keyframes fm-listen-ping {
-  0%   { opacity: 0.5; transform: scale(0.6); }
-  100% { opacity: 0;   transform: scale(1.5); }
+  0%   { opacity: 0; transform: scale(0.68); }
+  12%  { opacity: 0.48; transform: scale(0.74); }
+  72%  { opacity: 0.12; }
+  100% { opacity: 0; transform: scale(1.46); }
 }
 
 @keyframes fm-sparkle-pop {
@@ -205,6 +235,10 @@
   transform-origin: 160px 266px;
   animation: fm-heart-pulse 2.8s ease-in-out infinite;
 }
+
+/* The heart sits outside the face crop, so animating it there only spends
+ * rendering work without changing a pixel the user can see. */
+.fm-mascot[data-crop="face"] .fm-heart-glow { animation: none; }
 
 .fm-needle-spin {
   transform-origin: 0px 0px; /* local origin = compass centre */
@@ -232,15 +266,15 @@
   --fm-look-y: -4px;
 }
 .fm-mascot[data-pose="think"] .fm-arm--left .fm-arm-limb { transform: rotate(-100deg); }
-.fm-mascot[data-pose="think"] .fm-breathe { animation: fm-think-bob 3.2s ease-in-out infinite; }
+.fm-mascot[data-pose="think"] .fm-breathe { animation: fm-breathe 3.6s ease-in-out infinite; }
 .fm-mascot[data-pose="think"] .fm-thought { display: block; }
 .fm-thought-dot {
   fill: #7CE9FA;
   opacity: 0.15;
   transform-box: fill-box;
   transform-origin: center;
-  animation: fm-thought-pop 1.8s ease-in-out infinite;
-  animation-delay: calc(var(--i) * 0.22s);
+  animation: fm-thought-pop 2.2s cubic-bezier(0.4, 0, 0.2, 1) infinite;
+  animation-delay: calc(var(--i) * 0.28s);
 }
 
 /* listening — head cocked toward the magenta pod, rings pinging out */
@@ -256,8 +290,8 @@
   stroke: #FF6FD1;
   stroke-width: 4;
   transform-origin: 272px 158px;
-  animation: fm-listen-ping 1.8s ease-out infinite;
-  animation-delay: calc(var(--i) * 0.9s);
+  animation: fm-listen-ping 2.4s cubic-bezier(0.22, 0.61, 0.36, 1) infinite;
+  animation-delay: calc(var(--i) * 1.2s);
 }
 
 /* pointing — the hand shape only exists in these two states */
@@ -368,7 +402,9 @@
 }
 
 @media (prefers-reduced-motion: reduce) {
-  .fm-mascot * {
+  /* An explicit user opt-in may override the OS preference for this character.
+   * With no attribute, or with `system`, reduced motion remains the default. */
+  .fm-mascot:not([data-fm-motion="on"]) * {
     animation: none !important;
     transition-duration: 0.01ms !important;
   }
