@@ -1,0 +1,34 @@
+name: Web app
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "03_WebApp/Pre_Present/**"
+      - ".github/workflows/webapp.yml"
+  pull_request:
+    paths:
+      - "03_WebApp/Pre_Present/**"
+      - ".github/workflows/webapp.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: 03_WebApp/Pre_Present
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+          cache-dependency-path: 03_WebApp/Pre_Present/package-lock.json
+      - run: npm ci
+      - run: npm run typecheck
+      - run: npm run lint
+      - run: npm test
+      - run: npm run build

@@ -209,7 +209,7 @@ prototype safeguard, not a clinical risk assessment.
 
 The mascot on `/chat` communicates listening, thinking, answer-ready, project-data and network-error
 states; the interview mascot similarly changes for asking, listening, clarification and saved-answer
-states. [`99-Model`](../../../99-Model/) remains the visual concept kit, not LLM weights or
+states. [`99-Model`](../../../Archive/99-Model/) remains the visual concept kit, not LLM weights or
 executable inference assets. The live SVG implementation comes from
 [`04_Design/FutureMe_Mascot_Lab`](../../../04_Design/FutureMe_Mascot_Lab/) and is synchronized into
 the app by `scripts/sync-mascot.mjs`; `npm run verify` fails if those source-owned files drift.
