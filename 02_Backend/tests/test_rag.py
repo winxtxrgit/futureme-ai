@@ -33,3 +33,13 @@ def test_qwen_qlora_dataset_schema_validity():
     dataset_path = generate_qwen_qlora_dataset("data/test_qwen_qlora.jsonl")
     validity = validate_dataset_schema(dataset_path)
     assert validity >= 0.98, f"QLoRA schema validity was {validity}, expected >= 0.98"
+
+
+def test_fallback_embedding_is_a_normalised_1024_vector():
+    from app.rag.pipeline import BGEM3Embedder
+
+    embedder = BGEM3Embedder()
+    embedder._st_model = None  # force the hashing fallback
+    vec = embedder.embed_text("หลักสูตร ปวช. เทคโนโลยีสารสนเทศ")
+    assert isinstance(vec, list) and len(vec) == 1024
+    assert abs(sum(v * v for v in vec) - 1.0) < 1e-9

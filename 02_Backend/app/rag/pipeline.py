@@ -61,7 +61,7 @@ class BGEM3Embedder:
             vec = [v / norm for v in vec]
         else:
             vec[0] = 1.0
-            return vec
+        return vec
 
 
 class RAGPipeline:
